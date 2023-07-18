@@ -264,10 +264,10 @@ Partial Class rmsLogin
         Me.panelBottom.Controls.Add(Me.label1)
         Me.panelBottom.Controls.Add(Me.labelRegister)
         Me.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelBottom.Location = New System.Drawing.Point(0, 554)
+        Me.panelBottom.Location = New System.Drawing.Point(0, 558)
         Me.panelBottom.Margin = New System.Windows.Forms.Padding(0)
         Me.panelBottom.Name = "panelBottom"
-        Me.panelBottom.Size = New System.Drawing.Size(415, 115)
+        Me.panelBottom.Size = New System.Drawing.Size(415, 123)
         Me.panelBottom.TabIndex = 17
         '
         'btnClose
@@ -352,7 +352,7 @@ Partial Class rmsLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(415, 669)
+        Me.ClientSize = New System.Drawing.Size(415, 681)
         Me.Controls.Add(Me.labelRFIDSwitch)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.labelPassSwitch)
