@@ -42,9 +42,9 @@ Partial Class rmsLogin
         Me.panelBottom = New System.Windows.Forms.Panel()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.panelTop = New System.Windows.Forms.Panel()
+        Me.btnMinimize = New System.Windows.Forms.Button()
         Me.panelPassLogin = New System.Windows.Forms.Panel()
         Me.panelRFIDLogin = New System.Windows.Forms.Panel()
-        Me.btnMinimize = New System.Windows.Forms.Button()
         CType(Me.picboxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBottom.SuspendLayout()
         Me.panelTop.SuspendLayout()
@@ -122,7 +122,7 @@ Partial Class rmsLogin
         Me.labelPassword.Location = New System.Drawing.Point(81, 108)
         Me.labelPassword.Name = "labelPassword"
         Me.labelPassword.Size = New System.Drawing.Size(68, 18)
-        Me.labelPassword.TabIndex = 13
+        Me.labelPassword.TabIndex = 14
         Me.labelPassword.Text = "PASSWORD"
         '
         'labelUsername
@@ -133,7 +133,7 @@ Partial Class rmsLogin
         Me.labelUsername.Location = New System.Drawing.Point(81, 35)
         Me.labelUsername.Name = "labelUsername"
         Me.labelUsername.Size = New System.Drawing.Size(69, 18)
-        Me.labelUsername.TabIndex = 0
+        Me.labelUsername.TabIndex = 13
         Me.labelUsername.Text = "USERNAME"
         '
         'checkShow
@@ -159,7 +159,7 @@ Partial Class rmsLogin
         Me.labelForgotPass.Location = New System.Drawing.Point(150, 26)
         Me.labelForgotPass.Name = "labelForgotPass"
         Me.labelForgotPass.Size = New System.Drawing.Size(114, 18)
-        Me.labelForgotPass.TabIndex = 14
+        Me.labelForgotPass.TabIndex = 7
         Me.labelForgotPass.Text = "Forgot Password?"
         '
         'labelRFIDSwitch
@@ -185,7 +185,7 @@ Partial Class rmsLogin
         Me.tboxRFID.MaxLength = 11
         Me.tboxRFID.Name = "tboxRFID"
         Me.tboxRFID.Size = New System.Drawing.Size(256, 35)
-        Me.tboxRFID.TabIndex = 7
+        Me.tboxRFID.TabIndex = 11
         Me.tboxRFID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tboxRFID.UseSystemPasswordChar = True
         '
@@ -197,7 +197,7 @@ Partial Class rmsLogin
         Me.label9.Location = New System.Drawing.Point(75, 72)
         Me.label9.Name = "label9"
         Me.label9.Size = New System.Drawing.Size(59, 18)
-        Me.label9.TabIndex = 20
+        Me.label9.TabIndex = 12
         Me.label9.Text = "RFID No."
         '
         'btnLogin
@@ -215,7 +215,7 @@ Partial Class rmsLogin
         Me.btnLogin.Margin = New System.Windows.Forms.Padding(0)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(124, 48)
-        Me.btnLogin.TabIndex = 8
+        Me.btnLogin.TabIndex = 4
         Me.btnLogin.Text = "LOGIN"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
@@ -228,7 +228,7 @@ Partial Class rmsLogin
         Me.labelPassSwitch.Location = New System.Drawing.Point(159, 484)
         Me.labelPassSwitch.Name = "labelPassSwitch"
         Me.labelPassSwitch.Size = New System.Drawing.Size(102, 20)
-        Me.labelPassSwitch.TabIndex = 9
+        Me.labelPassSwitch.TabIndex = 6
         Me.labelPassSwitch.Text = "Use Password"
         Me.labelPassSwitch.Visible = False
         '
@@ -242,7 +242,7 @@ Partial Class rmsLogin
         Me.labelRegister.Margin = New System.Windows.Forms.Padding(0)
         Me.labelRegister.Name = "labelRegister"
         Me.labelRegister.Size = New System.Drawing.Size(58, 18)
-        Me.labelRegister.TabIndex = 6
+        Me.labelRegister.TabIndex = 9
         Me.labelRegister.Text = "Register"
         '
         'label1
@@ -254,7 +254,7 @@ Partial Class rmsLogin
         Me.label1.Margin = New System.Windows.Forms.Padding(0)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(163, 18)
-        Me.label1.TabIndex = 17
+        Me.label1.TabIndex = 8
         Me.label1.Text = "Don't have an account yet?"
         '
         'panelBottom
@@ -268,7 +268,7 @@ Partial Class rmsLogin
         Me.panelBottom.Margin = New System.Windows.Forms.Padding(0)
         Me.panelBottom.Name = "panelBottom"
         Me.panelBottom.Size = New System.Drawing.Size(415, 119)
-        Me.panelBottom.TabIndex = 19
+        Me.panelBottom.TabIndex = 17
         '
         'btnClose
         '
@@ -287,7 +287,7 @@ Partial Class rmsLogin
         Me.btnClose.Margin = New System.Windows.Forms.Padding(0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(21, 30)
-        Me.btnClose.TabIndex = 2
+        Me.btnClose.TabIndex = 20
         Me.btnClose.Text = "x"
         Me.btnClose.UseVisualStyleBackColor = False
         '
@@ -302,29 +302,6 @@ Partial Class rmsLogin
         Me.panelTop.Name = "panelTop"
         Me.panelTop.Size = New System.Drawing.Size(415, 35)
         Me.panelTop.TabIndex = 18
-        '
-        'panelPassLogin
-        '
-        Me.panelPassLogin.BackColor = System.Drawing.Color.Transparent
-        Me.panelPassLogin.Controls.Add(Me.tboxUsername)
-        Me.panelPassLogin.Controls.Add(Me.labelUsername)
-        Me.panelPassLogin.Controls.Add(Me.tboxPassword)
-        Me.panelPassLogin.Controls.Add(Me.checkShow)
-        Me.panelPassLogin.Controls.Add(Me.labelPassword)
-        Me.panelPassLogin.Location = New System.Drawing.Point(0, 237)
-        Me.panelPassLogin.Name = "panelPassLogin"
-        Me.panelPassLogin.Size = New System.Drawing.Size(415, 183)
-        Me.panelPassLogin.TabIndex = 20
-        '
-        'panelRFIDLogin
-        '
-        Me.panelRFIDLogin.BackColor = System.Drawing.Color.Transparent
-        Me.panelRFIDLogin.Controls.Add(Me.tboxRFID)
-        Me.panelRFIDLogin.Controls.Add(Me.label9)
-        Me.panelRFIDLogin.Location = New System.Drawing.Point(0, 237)
-        Me.panelRFIDLogin.Name = "panelRFIDLogin"
-        Me.panelRFIDLogin.Size = New System.Drawing.Size(415, 183)
-        Me.panelRFIDLogin.TabIndex = 21
         '
         'btnMinimize
         '
@@ -343,9 +320,32 @@ Partial Class rmsLogin
         Me.btnMinimize.Margin = New System.Windows.Forms.Padding(0)
         Me.btnMinimize.Name = "btnMinimize"
         Me.btnMinimize.Size = New System.Drawing.Size(22, 30)
-        Me.btnMinimize.TabIndex = 3
+        Me.btnMinimize.TabIndex = 19
         Me.btnMinimize.Text = "_"
         Me.btnMinimize.UseVisualStyleBackColor = False
+        '
+        'panelPassLogin
+        '
+        Me.panelPassLogin.BackColor = System.Drawing.Color.Transparent
+        Me.panelPassLogin.Controls.Add(Me.tboxUsername)
+        Me.panelPassLogin.Controls.Add(Me.labelUsername)
+        Me.panelPassLogin.Controls.Add(Me.tboxPassword)
+        Me.panelPassLogin.Controls.Add(Me.checkShow)
+        Me.panelPassLogin.Controls.Add(Me.labelPassword)
+        Me.panelPassLogin.Location = New System.Drawing.Point(0, 237)
+        Me.panelPassLogin.Name = "panelPassLogin"
+        Me.panelPassLogin.Size = New System.Drawing.Size(415, 183)
+        Me.panelPassLogin.TabIndex = 0
+        '
+        'panelRFIDLogin
+        '
+        Me.panelRFIDLogin.BackColor = System.Drawing.Color.Transparent
+        Me.panelRFIDLogin.Controls.Add(Me.tboxRFID)
+        Me.panelRFIDLogin.Controls.Add(Me.label9)
+        Me.panelRFIDLogin.Location = New System.Drawing.Point(0, 237)
+        Me.panelRFIDLogin.Name = "panelRFIDLogin"
+        Me.panelRFIDLogin.Size = New System.Drawing.Size(415, 183)
+        Me.panelRFIDLogin.TabIndex = 10
         '
         'rmsLogin
         '
@@ -361,8 +361,8 @@ Partial Class rmsLogin
         Me.Controls.Add(Me.labelTItle)
         Me.Controls.Add(Me.panelBottom)
         Me.Controls.Add(Me.panelTop)
-        Me.Controls.Add(Me.panelPassLogin)
         Me.Controls.Add(Me.panelRFIDLogin)
+        Me.Controls.Add(Me.panelPassLogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rmsLogin"
@@ -383,15 +383,9 @@ Partial Class rmsLogin
     Private WithEvents labelTitle2 As Label
     Private WithEvents labelTItle As Label
     Private WithEvents labelForgotPass As Label
-    Private WithEvents labelRFIDSwitch As Label
-    Private WithEvents tboxUsername As TextBox
-    Private WithEvents checkShow As CheckBox
-    Private WithEvents tboxPassword As TextBox
     Private WithEvents labelPassword As Label
     Private WithEvents labelUsername As Label
     Private WithEvents btnLogin As Button
-    Private WithEvents labelPassSwitch As Label
-    Private WithEvents tboxRFID As TextBox
     Private WithEvents label9 As Label
     Private WithEvents labelRegister As Label
     Private WithEvents label1 As Label
@@ -401,4 +395,10 @@ Partial Class rmsLogin
     Friend WithEvents panelPassLogin As Panel
     Friend WithEvents panelRFIDLogin As Panel
     Private WithEvents btnMinimize As Button
+    Public WithEvents tboxUsername As TextBox
+    Public WithEvents tboxRFID As TextBox
+    Public WithEvents tboxPassword As TextBox
+    Public WithEvents labelRFIDSwitch As Label
+    Public WithEvents checkShow As CheckBox
+    Public WithEvents labelPassSwitch As Label
 End Class

@@ -20,7 +20,6 @@
         labelRFIDSwitch.Hide()
         tboxPassword.Clear()
         checkShow.Checked = False
-        tboxRFID.Focus()
     End Sub
     Private Sub labelPassSwitch_Click(sender As Object, e As EventArgs) Handles labelPassSwitch.Click
         panelRFIDLogin.Hide()
@@ -54,5 +53,15 @@
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         rmsDashboard.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub rmsLogin_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        tboxUsername.Focus()
+    End Sub
+
+    Private Sub panelRFIDLogin_Paint(sender As Object, e As PaintEventArgs) Handles panelRFIDLogin.Paint
+        If panelRFIDLogin.Visible = True Then
+            tboxRFID.Focus()
+        End If
     End Sub
 End Class

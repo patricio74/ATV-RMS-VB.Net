@@ -68,5 +68,6 @@
         Me.Hide()
         resetButtonColor()
         rmsLogin.Show()
+        clearLoginForm()
     End Sub
 End Class
