@@ -4,8 +4,8 @@ Imports System.Windows.Forms.VisualStyles
 Module rmsModule
 
     Public Sub resetButtonColor()
-        Dim defaultForeColor As Color = ColorTranslator.FromHtml("#151515")
-        Dim defaultBackColor As Color = ColorTranslator.FromHtml("#dcdcdc")
+        Dim defaultForeColor As Color = ColorTranslator.FromHtml("#f5f5f5")
+        Dim defaultBackColor As Color = ColorTranslator.FromHtml("#1e272e")
 
         Dim buttons As Button() = {
             rmsDashboard.btnReservations,

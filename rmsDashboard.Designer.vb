@@ -49,11 +49,11 @@ Partial Class rmsDashboard
         Me.labelTitle2.AutoSize = True
         Me.labelTitle2.BackColor = System.Drawing.Color.Transparent
         Me.labelTitle2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelTitle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer))
-        Me.labelTitle2.Location = New System.Drawing.Point(37, 133)
+        Me.labelTitle2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.labelTitle2.Location = New System.Drawing.Point(43, 177)
         Me.labelTitle2.Name = "labelTitle2"
         Me.labelTitle2.Size = New System.Drawing.Size(169, 18)
-        Me.labelTitle2.TabIndex = 1
+        Me.labelTitle2.TabIndex = 2
         Me.labelTitle2.Text = "Rental Management System"
         '
         'picboxLogo
@@ -61,9 +61,9 @@ Partial Class rmsDashboard
         Me.picboxLogo.BackColor = System.Drawing.Color.Transparent
         Me.picboxLogo.BackgroundImage = CType(resources.GetObject("picboxLogo.BackgroundImage"), System.Drawing.Image)
         Me.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picboxLogo.Location = New System.Drawing.Point(94, 48)
+        Me.picboxLogo.Location = New System.Drawing.Point(76, 34)
         Me.picboxLogo.Name = "picboxLogo"
-        Me.picboxLogo.Size = New System.Drawing.Size(55, 55)
+        Me.picboxLogo.Size = New System.Drawing.Size(100, 100)
         Me.picboxLogo.TabIndex = 4
         Me.picboxLogo.TabStop = False
         '
@@ -72,16 +72,16 @@ Partial Class rmsDashboard
         Me.labelTItle.AutoSize = True
         Me.labelTItle.BackColor = System.Drawing.Color.Transparent
         Me.labelTItle.Font = New System.Drawing.Font("Trebuchet MS", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelTItle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.labelTItle.Location = New System.Drawing.Point(56, 103)
+        Me.labelTItle.ForeColor = System.Drawing.Color.White
+        Me.labelTItle.Location = New System.Drawing.Point(62, 143)
         Me.labelTItle.Name = "labelTItle"
         Me.labelTItle.Size = New System.Drawing.Size(133, 37)
-        Me.labelTItle.TabIndex = 0
+        Me.labelTItle.TabIndex = 1
         Me.labelTItle.Text = "ATV-RMS"
         '
         'panelSide
         '
-        Me.panelSide.BackColor = System.Drawing.Color.Gainsboro
+        Me.panelSide.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.panelSide.Controls.Add(Me.btnLogout)
         Me.panelSide.Controls.Add(Me.btnRules)
         Me.panelSide.Controls.Add(Me.btnTransacHist)
@@ -95,137 +95,176 @@ Partial Class rmsDashboard
         Me.panelSide.Controls.Add(Me.labelTItle)
         Me.panelSide.Dock = System.Windows.Forms.DockStyle.Left
         Me.panelSide.Location = New System.Drawing.Point(0, 35)
+        Me.panelSide.Margin = New System.Windows.Forms.Padding(0)
         Me.panelSide.Name = "panelSide"
-        Me.panelSide.Size = New System.Drawing.Size(238, 689)
-        Me.panelSide.TabIndex = 10
+        Me.panelSide.Size = New System.Drawing.Size(254, 689)
+        Me.panelSide.TabIndex = 0
         '
         'btnLogout
         '
-        Me.btnLogout.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.btnLogout.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogout.FlatAppearance.BorderSize = 0
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogout.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnLogout.Location = New System.Drawing.Point(0, 648)
+        Me.btnLogout.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnLogout.Location = New System.Drawing.Point(0, 640)
         Me.btnLogout.Margin = New System.Windows.Forms.Padding(0)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(238, 30)
-        Me.btnLogout.TabIndex = 9
+        Me.btnLogout.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnLogout.Size = New System.Drawing.Size(254, 33)
+        Me.btnLogout.TabIndex = 10
         Me.btnLogout.Text = "Logout"
+        Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.UseVisualStyleBackColor = False
         '
         'btnRules
         '
-        Me.btnRules.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnRules.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRules.BackColor = System.Drawing.Color.Transparent
         Me.btnRules.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRules.FlatAppearance.BorderSize = 0
+        Me.btnRules.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
         Me.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRules.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRules.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnRules.Location = New System.Drawing.Point(0, 548)
+        Me.btnRules.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRules.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnRules.Location = New System.Drawing.Point(0, 568)
         Me.btnRules.Margin = New System.Windows.Forms.Padding(0)
         Me.btnRules.Name = "btnRules"
-        Me.btnRules.Size = New System.Drawing.Size(238, 49)
-        Me.btnRules.TabIndex = 8
+        Me.btnRules.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnRules.Size = New System.Drawing.Size(254, 49)
+        Me.btnRules.TabIndex = 9
         Me.btnRules.Text = "Rules && Regulations"
-        Me.btnRules.UseVisualStyleBackColor = False
+        Me.btnRules.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRules.UseVisualStyleBackColor = True
         '
         'btnTransacHist
         '
-        Me.btnTransacHist.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnTransacHist.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTransacHist.BackColor = System.Drawing.Color.Transparent
         Me.btnTransacHist.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnTransacHist.FlatAppearance.BorderSize = 0
+        Me.btnTransacHist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
         Me.btnTransacHist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTransacHist.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTransacHist.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnTransacHist.Location = New System.Drawing.Point(0, 491)
+        Me.btnTransacHist.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTransacHist.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnTransacHist.Location = New System.Drawing.Point(0, 511)
         Me.btnTransacHist.Margin = New System.Windows.Forms.Padding(0)
         Me.btnTransacHist.Name = "btnTransacHist"
-        Me.btnTransacHist.Size = New System.Drawing.Size(238, 49)
-        Me.btnTransacHist.TabIndex = 7
+        Me.btnTransacHist.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnTransacHist.Size = New System.Drawing.Size(254, 49)
+        Me.btnTransacHist.TabIndex = 8
         Me.btnTransacHist.Text = "Transaction History"
-        Me.btnTransacHist.UseVisualStyleBackColor = False
+        Me.btnTransacHist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTransacHist.UseVisualStyleBackColor = True
         '
         'btnNotif
         '
-        Me.btnNotif.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnNotif.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnNotif.BackColor = System.Drawing.Color.Transparent
         Me.btnNotif.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnNotif.FlatAppearance.BorderSize = 0
+        Me.btnNotif.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
         Me.btnNotif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNotif.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNotif.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnNotif.Location = New System.Drawing.Point(0, 434)
+        Me.btnNotif.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNotif.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnNotif.Location = New System.Drawing.Point(0, 454)
         Me.btnNotif.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNotif.Name = "btnNotif"
-        Me.btnNotif.Size = New System.Drawing.Size(238, 49)
-        Me.btnNotif.TabIndex = 6
+        Me.btnNotif.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnNotif.Size = New System.Drawing.Size(254, 49)
+        Me.btnNotif.TabIndex = 7
         Me.btnNotif.Text = "Notifications"
-        Me.btnNotif.UseVisualStyleBackColor = False
+        Me.btnNotif.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNotif.UseVisualStyleBackColor = True
         '
         'btnCustomers
         '
-        Me.btnCustomers.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnCustomers.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCustomers.BackColor = System.Drawing.Color.Transparent
         Me.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCustomers.FlatAppearance.BorderSize = 0
+        Me.btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
         Me.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCustomers.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnCustomers.Location = New System.Drawing.Point(0, 377)
+        Me.btnCustomers.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCustomers.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnCustomers.Location = New System.Drawing.Point(0, 397)
         Me.btnCustomers.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCustomers.Name = "btnCustomers"
-        Me.btnCustomers.Size = New System.Drawing.Size(238, 49)
-        Me.btnCustomers.TabIndex = 5
+        Me.btnCustomers.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnCustomers.Size = New System.Drawing.Size(254, 49)
+        Me.btnCustomers.TabIndex = 6
         Me.btnCustomers.Text = "Manage Customers"
-        Me.btnCustomers.UseVisualStyleBackColor = False
+        Me.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCustomers.UseVisualStyleBackColor = True
         '
         'btnTGuides
         '
-        Me.btnTGuides.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnTGuides.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTGuides.BackColor = System.Drawing.Color.Transparent
         Me.btnTGuides.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnTGuides.FlatAppearance.BorderSize = 0
+        Me.btnTGuides.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
         Me.btnTGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTGuides.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTGuides.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnTGuides.Location = New System.Drawing.Point(0, 320)
+        Me.btnTGuides.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTGuides.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnTGuides.Location = New System.Drawing.Point(0, 340)
         Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
         Me.btnTGuides.Name = "btnTGuides"
-        Me.btnTGuides.Size = New System.Drawing.Size(238, 49)
-        Me.btnTGuides.TabIndex = 4
+        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnTGuides.Size = New System.Drawing.Size(254, 49)
+        Me.btnTGuides.TabIndex = 5
         Me.btnTGuides.Text = "Tour Guides"
-        Me.btnTGuides.UseVisualStyleBackColor = False
+        Me.btnTGuides.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTGuides.UseVisualStyleBackColor = True
         '
         'btnInventory
         '
-        Me.btnInventory.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnInventory.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnInventory.BackColor = System.Drawing.Color.Transparent
         Me.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnInventory.FlatAppearance.BorderSize = 0
+        Me.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
         Me.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInventory.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInventory.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnInventory.Location = New System.Drawing.Point(0, 263)
+        Me.btnInventory.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventory.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnInventory.Location = New System.Drawing.Point(0, 283)
         Me.btnInventory.Margin = New System.Windows.Forms.Padding(0)
         Me.btnInventory.Name = "btnInventory"
-        Me.btnInventory.Size = New System.Drawing.Size(238, 49)
-        Me.btnInventory.TabIndex = 3
+        Me.btnInventory.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnInventory.Size = New System.Drawing.Size(254, 49)
+        Me.btnInventory.TabIndex = 4
         Me.btnInventory.Text = "Inventory"
-        Me.btnInventory.UseVisualStyleBackColor = False
+        Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnInventory.UseVisualStyleBackColor = True
         '
         'btnReservations
         '
-        Me.btnReservations.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnReservations.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnReservations.BackColor = System.Drawing.Color.Transparent
         Me.btnReservations.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnReservations.FlatAppearance.BorderSize = 0
+        Me.btnReservations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
         Me.btnReservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReservations.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReservations.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnReservations.Location = New System.Drawing.Point(0, 206)
+        Me.btnReservations.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReservations.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnReservations.Location = New System.Drawing.Point(0, 226)
         Me.btnReservations.Margin = New System.Windows.Forms.Padding(0)
         Me.btnReservations.Name = "btnReservations"
-        Me.btnReservations.Size = New System.Drawing.Size(238, 49)
-        Me.btnReservations.TabIndex = 2
+        Me.btnReservations.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnReservations.Size = New System.Drawing.Size(254, 49)
+        Me.btnReservations.TabIndex = 3
         Me.btnReservations.Text = "Reservations"
+        Me.btnReservations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReservations.UseVisualStyleBackColor = False
         '
         'panelTop
@@ -288,28 +327,29 @@ Partial Class rmsDashboard
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.admPanel.BackColor = System.Drawing.Color.Transparent
-        Me.admPanel.Location = New System.Drawing.Point(238, 35)
+        Me.admPanel.Location = New System.Drawing.Point(254, 35)
         Me.admPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.admPanel.Name = "admPanel"
-        Me.admPanel.Size = New System.Drawing.Size(998, 689)
+        Me.admPanel.Size = New System.Drawing.Size(982, 689)
         Me.admPanel.TabIndex = 11
         '
         'rmsDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1236, 724)
         Me.Controls.Add(Me.admPanel)
         Me.Controls.Add(Me.panelSide)
         Me.Controls.Add(Me.panelTop)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "rmsDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "ATV-RMS Admin"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.picboxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelSide.ResumeLayout(False)

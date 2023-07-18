@@ -10,56 +10,56 @@
     End Sub
     Private Sub btnReservations_Click(sender As Object, e As EventArgs) Handles btnReservations.Click
         resetButtonColor()
-        btnReservations.ForeColor = Color.Goldenrod
-        btnReservations.BackColor = ColorTranslator.FromHtml("#252525")
+        btnReservations.ForeColor = ColorTranslator.FromHtml("#151515")
+        btnReservations.BackColor = ColorTranslator.FromHtml("#ffc048")
         admPanel.Controls.Clear()
 
     End Sub
 
     Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
         resetButtonColor()
-        btnInventory.ForeColor = Color.Goldenrod
-        btnInventory.BackColor = ColorTranslator.FromHtml("#252525")
+        btnInventory.ForeColor = ColorTranslator.FromHtml("#151515")
+        btnInventory.BackColor = ColorTranslator.FromHtml("#ffc048")
         admPanel.Controls.Clear()
 
     End Sub
 
     Private Sub btnTGuides_Click(sender As Object, e As EventArgs) Handles btnTGuides.Click
         resetButtonColor()
-        btnTGuides.ForeColor = Color.Goldenrod
-        btnTGuides.BackColor = ColorTranslator.FromHtml("#252525")
+        btnTGuides.ForeColor = ColorTranslator.FromHtml("#151515")
+        btnTGuides.BackColor = ColorTranslator.FromHtml("#ffc048")
         admPanel.Controls.Clear()
 
     End Sub
 
     Private Sub btnCustomers_Click(sender As Object, e As EventArgs) Handles btnCustomers.Click
         resetButtonColor()
-        btnCustomers.ForeColor = Color.Goldenrod
-        btnCustomers.BackColor = ColorTranslator.FromHtml("#252525")
+        btnCustomers.ForeColor = ColorTranslator.FromHtml("#151515")
+        btnCustomers.BackColor = ColorTranslator.FromHtml("#ffc048")
         admPanel.Controls.Clear()
 
     End Sub
 
     Private Sub btnNotif_Click(sender As Object, e As EventArgs) Handles btnNotif.Click
         resetButtonColor()
-        btnNotif.ForeColor = Color.Goldenrod
-        btnNotif.BackColor = ColorTranslator.FromHtml("#252525")
+        btnNotif.ForeColor = ColorTranslator.FromHtml("#151515")
+        btnNotif.BackColor = ColorTranslator.FromHtml("#ffc048")
         admPanel.Controls.Clear()
 
     End Sub
 
     Private Sub btnTransacHist_Click(sender As Object, e As EventArgs) Handles btnTransacHist.Click
         resetButtonColor()
-        btnTransacHist.ForeColor = Color.Goldenrod
-        btnTransacHist.BackColor = ColorTranslator.FromHtml("#252525")
+        btnTransacHist.ForeColor = ColorTranslator.FromHtml("#151515")
+        btnTransacHist.BackColor = ColorTranslator.FromHtml("#ffc048")
         admPanel.Controls.Clear()
 
     End Sub
 
     Private Sub btnRules_Click(sender As Object, e As EventArgs) Handles btnRules.Click
         resetButtonColor()
-        btnRules.ForeColor = Color.Goldenrod
-        btnRules.BackColor = ColorTranslator.FromHtml("#252525")
+        btnRules.ForeColor = ColorTranslator.FromHtml("#151515")
+        btnRules.BackColor = ColorTranslator.FromHtml("#ffc048")
         admPanel.Controls.Clear()
 
     End Sub
@@ -70,4 +70,5 @@
         rmsLogin.Show()
         clearLoginForm()
     End Sub
+
 End Class
