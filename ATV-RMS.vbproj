@@ -244,9 +244,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
-    <Content Include="quad.ico" />
     <Content Include="rms.ico" />
-    <Content Include="tire.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')" />

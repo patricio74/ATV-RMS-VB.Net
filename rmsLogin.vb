@@ -1,4 +1,7 @@
-﻿Public Class rmsLogin
+﻿Imports MongoDB.Bson
+Imports MongoDB.Driver
+
+Public Class rmsLogin
     Private Sub rmsLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         panelRFIDLogin.Hide()
         panelPassLogin.Show()
@@ -51,9 +54,53 @@
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+
         'insert code dito para sa db, check kung tama cred
-        rmsDashboard.Show()
-        Me.Hide()
+        Dim username As String = tboxUsername.Text
+        Dim password As String = tboxPassword.Text
+        Dim connectionString As String = "mongodb+srv://atvrms:atvrms@atvrms.nwojtse.mongodb.net/?retryWrites=true&w=majority"
+
+        Try
+            Dim client As MongoClient = New MongoClient(connectionString)
+            Dim database As IMongoDatabase = client.GetDatabase("ATVRMS")
+            Dim collection As IMongoCollection(Of BsonDocument) = database.GetCollection(Of BsonDocument)("rmsAdmin")
+            Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("username", username)
+            Dim userDocument As BsonDocument = collection.Find(filter).FirstOrDefault()
+            If panelPassLogin.Visible Then
+                If tboxUsername.Text = "" Then
+                    MessageBox.Show("Username cannot be empty.", "Blank username!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    tboxUsername.Focus()
+                ElseIf tboxPassword.Text = "" Then
+                    MessageBox.Show("Password cannot be empty.", "Blank password!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    tboxPassword.Focus()
+                Else
+                    If userDocument IsNot Nothing Then
+                        Dim storedPassword As String = userDocument("password").ToString()
+                        If password = storedPassword Then
+                            MessageBox.Show("Login success!", "ATV-RMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            rmsDashboard.Show()
+                            Me.Hide()
+                        Else
+                            MessageBox.Show("Incorrect password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        End If
+                    Else
+                        MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                End If
+
+            ElseIf panelRFIDLogin.Visible Then
+                If tboxRFID.Text = "" Then
+                    MessageBox.Show("Username cannot be empty.", "Blank username!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    tboxRFID.Focus()
+                Else
+                    MessageBox.Show("wala pa po ako code dito", "ATV-RMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Mag login ka muna gamit passwod:>", "ATV-RMS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub rmsLogin_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
