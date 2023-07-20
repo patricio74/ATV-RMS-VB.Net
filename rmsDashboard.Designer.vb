@@ -115,7 +115,7 @@ Partial Class rmsDashboard
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnLogout.Size = New System.Drawing.Size(254, 33)
-        Me.btnLogout.TabIndex = 10
+        Me.btnLogout.TabIndex = 11
         Me.btnLogout.Text = "Logout"
         Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.UseVisualStyleBackColor = False
@@ -136,7 +136,7 @@ Partial Class rmsDashboard
         Me.btnRules.Name = "btnRules"
         Me.btnRules.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnRules.Size = New System.Drawing.Size(254, 49)
-        Me.btnRules.TabIndex = 9
+        Me.btnRules.TabIndex = 10
         Me.btnRules.Text = "Rules && Regulations"
         Me.btnRules.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRules.UseVisualStyleBackColor = True
@@ -157,7 +157,7 @@ Partial Class rmsDashboard
         Me.btnTransacHist.Name = "btnTransacHist"
         Me.btnTransacHist.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnTransacHist.Size = New System.Drawing.Size(254, 49)
-        Me.btnTransacHist.TabIndex = 8
+        Me.btnTransacHist.TabIndex = 9
         Me.btnTransacHist.Text = "Transaction History"
         Me.btnTransacHist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTransacHist.UseVisualStyleBackColor = True
@@ -178,7 +178,7 @@ Partial Class rmsDashboard
         Me.btnNotif.Name = "btnNotif"
         Me.btnNotif.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnNotif.Size = New System.Drawing.Size(254, 49)
-        Me.btnNotif.TabIndex = 7
+        Me.btnNotif.TabIndex = 8
         Me.btnNotif.Text = "Notifications"
         Me.btnNotif.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNotif.UseVisualStyleBackColor = True
@@ -199,7 +199,7 @@ Partial Class rmsDashboard
         Me.btnCustomers.Name = "btnCustomers"
         Me.btnCustomers.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnCustomers.Size = New System.Drawing.Size(254, 49)
-        Me.btnCustomers.TabIndex = 6
+        Me.btnCustomers.TabIndex = 7
         Me.btnCustomers.Text = "Manage Customers"
         Me.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.UseVisualStyleBackColor = True
@@ -220,7 +220,7 @@ Partial Class rmsDashboard
         Me.btnTGuides.Name = "btnTGuides"
         Me.btnTGuides.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnTGuides.Size = New System.Drawing.Size(254, 49)
-        Me.btnTGuides.TabIndex = 5
+        Me.btnTGuides.TabIndex = 6
         Me.btnTGuides.Text = "Tour Guides"
         Me.btnTGuides.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTGuides.UseVisualStyleBackColor = True
@@ -241,7 +241,7 @@ Partial Class rmsDashboard
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnInventory.Size = New System.Drawing.Size(254, 49)
-        Me.btnInventory.TabIndex = 4
+        Me.btnInventory.TabIndex = 5
         Me.btnInventory.Text = "Inventory"
         Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnInventory.UseVisualStyleBackColor = True
@@ -262,7 +262,7 @@ Partial Class rmsDashboard
         Me.btnReservations.Name = "btnReservations"
         Me.btnReservations.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnReservations.Size = New System.Drawing.Size(254, 49)
-        Me.btnReservations.TabIndex = 3
+        Me.btnReservations.TabIndex = 4
         Me.btnReservations.Text = "Reservations"
         Me.btnReservations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReservations.UseVisualStyleBackColor = False
@@ -331,7 +331,7 @@ Partial Class rmsDashboard
         Me.admPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.admPanel.Name = "admPanel"
         Me.admPanel.Size = New System.Drawing.Size(982, 689)
-        Me.admPanel.TabIndex = 11
+        Me.admPanel.TabIndex = 3
         '
         'rmsDashboard
         '
