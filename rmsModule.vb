@@ -121,6 +121,12 @@ Module rmsModule
         Next
     End Sub
 
+    Public Sub activeButtonColor(sender As Object, e As EventArgs)
+        Dim activeBtn As Button = CType(sender, Button)
+        activeBtn.ForeColor = ColorTranslator.FromHtml("#151515")
+        activeBtn.BackColor = ColorTranslator.FromHtml("#ffc048")
+    End Sub
+
     Public Sub clearLoginForm()
         rmsLogin.tboxUsername.Clear()
         rmsLogin.tboxPassword.Clear()

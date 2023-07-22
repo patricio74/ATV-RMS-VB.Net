@@ -51,6 +51,7 @@ Public Class rmsLogin
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         adminLogin()
     End Sub
+
     Private Sub rmsLogin_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         tboxUsername.Focus()
     End Sub
@@ -60,12 +61,19 @@ Public Class rmsLogin
             tboxRFID.Focus()
         End If
     End Sub
+
     Private Sub tboxRFID_TextChanged(sender As Object, e As EventArgs) Handles tboxRFID.TextChanged
         tboxRFID.Text = tboxRFID.Text.Replace(" ", "")
     End Sub
 
     Private Sub tboxPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles tboxPassword.KeyDown
         'enter key sa password textbox
+        If e.KeyCode = Keys.Enter Then
+            adminLogin()
+        End If
+    End Sub
+
+    Private Sub tboxUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles tboxUsername.KeyDown
         If e.KeyCode = Keys.Enter Then
             adminLogin()
         End If

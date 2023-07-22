@@ -57,7 +57,7 @@ Partial Class rmsLogin
         Me.picboxLogo.BackColor = System.Drawing.Color.Transparent
         Me.picboxLogo.BackgroundImage = CType(resources.GetObject("picboxLogo.BackgroundImage"), System.Drawing.Image)
         Me.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picboxLogo.Location = New System.Drawing.Point(173, 68)
+        Me.picboxLogo.Location = New System.Drawing.Point(173, 71)
         Me.picboxLogo.Name = "picboxLogo"
         Me.picboxLogo.Size = New System.Drawing.Size(75, 75)
         Me.picboxLogo.TabIndex = 4
@@ -69,7 +69,7 @@ Partial Class rmsLogin
         Me.labelTitle2.BackColor = System.Drawing.Color.Transparent
         Me.labelTitle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelTitle2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelTitle2.Location = New System.Drawing.Point(110, 200)
+        Me.labelTitle2.Location = New System.Drawing.Point(110, 203)
         Me.labelTitle2.Name = "labelTitle2"
         Me.labelTitle2.Size = New System.Drawing.Size(193, 20)
         Me.labelTitle2.TabIndex = 16
@@ -81,7 +81,7 @@ Partial Class rmsLogin
         Me.labelTItle.BackColor = System.Drawing.Color.Transparent
         Me.labelTItle.Font = New System.Drawing.Font("Trebuchet MS", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelTItle.ForeColor = System.Drawing.Color.White
-        Me.labelTItle.Location = New System.Drawing.Point(102, 149)
+        Me.labelTItle.Location = New System.Drawing.Point(102, 152)
         Me.labelTItle.Name = "labelTItle"
         Me.labelTItle.Size = New System.Drawing.Size(216, 61)
         Me.labelTItle.TabIndex = 15
@@ -227,7 +227,7 @@ Partial Class rmsLogin
         Me.labelPassSwitch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelPassSwitch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelPassSwitch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.labelPassSwitch.Location = New System.Drawing.Point(263, 15)
+        Me.labelPassSwitch.Location = New System.Drawing.Point(263, 41)
         Me.labelPassSwitch.Name = "labelPassSwitch"
         Me.labelPassSwitch.Size = New System.Drawing.Size(91, 18)
         Me.labelPassSwitch.TabIndex = 6
