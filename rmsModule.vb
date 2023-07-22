@@ -12,29 +12,8 @@ Module rmsModule
     Public Sub loadRMSLogin()
         rmsLogin.panelRFIDLogin.Hide()
         rmsLogin.panelPassLogin.Show()
-        rmsLogin.labelPassSwitch.Hide()
-        rmsLogin.labelRFIDSwitch.Show()
         rmsLogin.checkShow.Checked = False
         rmsLogin.tboxUsername.Focus()
-    End Sub
-
-    Public Sub rmsPassLogin()
-        rmsLogin.panelRFIDLogin.Hide()
-        rmsLogin.panelPassLogin.Show()
-        rmsLogin.labelPassSwitch.Hide()
-        rmsLogin.labelRFIDSwitch.Show()
-        rmsLogin.tboxRFID.Clear()
-        rmsLogin.checkShow.Checked = False
-        rmsLogin.tboxUsername.Focus()
-    End Sub
-
-    Public Sub rmsRFIDLogin()
-        rmsLogin.panelRFIDLogin.Show()
-        rmsLogin.panelPassLogin.Hide()
-        rmsLogin.labelPassSwitch.Show()
-        rmsLogin.labelRFIDSwitch.Hide()
-        rmsLogin.tboxPassword.Clear()
-        rmsLogin.checkShow.Checked = False
     End Sub
 
     Public Function getAdminUsername(username As String) As BsonDocument

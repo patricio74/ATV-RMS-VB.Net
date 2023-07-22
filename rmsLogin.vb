@@ -14,12 +14,21 @@ Public Class rmsLogin
         Me.Close()
     End Sub
 
-    Private Sub labelRFIDSwitch_Click(sender As Object, e As EventArgs) Handles labelRFIDSwitch.Click
-        rmsRFIDLogin()
-    End Sub
-
-    Private Sub labelPassSwitch_Click(sender As Object, e As EventArgs) Handles labelPassSwitch.Click
-        rmsPassLogin()
+    Private Sub labelLoginSwitch_Click(sender As Object, e As EventArgs) Handles labelLoginSwitch.Click
+        If panelPassLogin.Visible = True Then
+            panelRFIDLogin.Show()
+            panelPassLogin.Hide()
+            labelLoginSwitch.Text = "Use Password"
+            tboxRFID.Clear()
+            checkShow.Checked = False
+            tboxRFID.Focus()
+        Else
+            panelRFIDLogin.Hide()
+            panelPassLogin.Show()
+            labelLoginSwitch.Text = "Use RFID Card"
+            tboxPassword.Clear()
+            checkShow.Checked = False
+        End If
     End Sub
 
     Private Sub labelForgotPass_Click(sender As Object, e As EventArgs) Handles labelForgotPass.Click
@@ -34,18 +43,22 @@ Public Class rmsLogin
     Private Sub checkShow_CheckedChanged(sender As Object, e As EventArgs) Handles checkShow.CheckedChanged
         If checkShow.Checked = True Then
             tboxPassword.UseSystemPasswordChar = False
+            tboxPassword.Focus()
         Else
             tboxPassword.UseSystemPasswordChar = True
+            tboxPassword.Focus()
         End If
     End Sub
 
     Private Sub tboxUsername_TextChanged(sender As Object, e As EventArgs) Handles tboxUsername.TextChanged
         'para walang space na ma-input
         tboxUsername.Text = tboxUsername.Text.Replace(" ", "")
+        labelUsername.Hide()
     End Sub
 
     Private Sub tboxPassword_TextChanged(sender As Object, e As EventArgs) Handles tboxPassword.TextChanged
         tboxPassword.Text = tboxPassword.Text.Replace(" ", "")
+        labelPassword.Hide()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -54,12 +67,6 @@ Public Class rmsLogin
 
     Private Sub rmsLogin_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         tboxUsername.Focus()
-    End Sub
-
-    Private Sub panelRFIDLogin_Paint(sender As Object, e As PaintEventArgs) Handles panelRFIDLogin.Paint
-        If panelRFIDLogin.Visible = True Then
-            tboxRFID.Focus()
-        End If
     End Sub
 
     Private Sub tboxRFID_TextChanged(sender As Object, e As EventArgs) Handles tboxRFID.TextChanged
@@ -100,4 +107,40 @@ Public Class rmsLogin
         End If
     End Sub
 
+    Private Sub tboxUsername_Click(sender As Object, e As EventArgs) Handles tboxUsername.Click
+        labelUsername.Hide()
+    End Sub
+
+    Private Sub tboxPassword_Click(sender As Object, e As EventArgs) Handles tboxPassword.Click
+        labelPassword.Hide()
+    End Sub
+
+    Private Sub labelUsername_Click(sender As Object, e As EventArgs) Handles labelUsername.Click
+        labelUsername.Hide()
+        tboxUsername.Focus()
+    End Sub
+
+    Private Sub labelPassword_Click(sender As Object, e As EventArgs) Handles labelPassword.Click
+        labelPassword.Hide()
+        tboxPassword.Focus()
+    End Sub
+    Private Sub tboxUsername_Leave(sender As Object, e As EventArgs) Handles tboxUsername.Leave
+        If tboxUsername.Text = "" Then
+            labelUsername.Show()
+        End If
+    End Sub
+
+    Private Sub tboxPassword_Leave(sender As Object, e As EventArgs) Handles tboxPassword.Leave
+        If tboxPassword.Text = "" Then
+            labelPassword.Show()
+        End If
+    End Sub
+
+    Private Sub tboxUsername_GotFocus(sender As Object, e As EventArgs) Handles tboxUsername.GotFocus
+        labelUsername.Hide()
+    End Sub
+
+    Private Sub tboxPassword_GotFocus(sender As Object, e As EventArgs) Handles tboxPassword.GotFocus
+        labelPassword.Hide()
+    End Sub
 End Class
