@@ -32,9 +32,9 @@ Partial Class rmsDashboard
         Me.btnTransacHist = New System.Windows.Forms.Button()
         Me.btnNotif = New System.Windows.Forms.Button()
         Me.btnCustomers = New System.Windows.Forms.Button()
-        Me.btnTGuides = New System.Windows.Forms.Button()
-        Me.btnInventory = New System.Windows.Forms.Button()
         Me.btnReservations = New System.Windows.Forms.Button()
+        Me.btnInventory = New System.Windows.Forms.Button()
+        Me.btnTGuides = New System.Windows.Forms.Button()
         Me.panelTop = New System.Windows.Forms.Panel()
         Me.btnMinimize = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
@@ -209,27 +209,27 @@ Partial Class rmsDashboard
         Me.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.UseVisualStyleBackColor = True
         '
-        'btnTGuides
+        'btnReservations
         '
-        Me.btnTGuides.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.btnReservations.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTGuides.BackColor = System.Drawing.Color.Transparent
-        Me.btnTGuides.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTGuides.FlatAppearance.BorderSize = 0
-        Me.btnTGuides.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
-        Me.btnTGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTGuides.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTGuides.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnTGuides.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTGuides.Location = New System.Drawing.Point(0, 327)
-        Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnTGuides.Name = "btnTGuides"
-        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnTGuides.Size = New System.Drawing.Size(254, 49)
-        Me.btnTGuides.TabIndex = 6
-        Me.btnTGuides.Text = "Tour Guides"
-        Me.btnTGuides.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTGuides.UseVisualStyleBackColor = True
+        Me.btnReservations.BackColor = System.Drawing.Color.Transparent
+        Me.btnReservations.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnReservations.FlatAppearance.BorderSize = 0
+        Me.btnReservations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
+        Me.btnReservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReservations.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReservations.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnReservations.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReservations.Location = New System.Drawing.Point(0, 223)
+        Me.btnReservations.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnReservations.Name = "btnReservations"
+        Me.btnReservations.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.btnReservations.Size = New System.Drawing.Size(254, 49)
+        Me.btnReservations.TabIndex = 4
+        Me.btnReservations.Text = "Reservations"
+        Me.btnReservations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReservations.UseVisualStyleBackColor = False
         '
         'btnInventory
         '
@@ -253,27 +253,27 @@ Partial Class rmsDashboard
         Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnInventory.UseVisualStyleBackColor = True
         '
-        'btnReservations
+        'btnTGuides
         '
-        Me.btnReservations.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.btnTGuides.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnReservations.BackColor = System.Drawing.Color.Transparent
-        Me.btnReservations.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnReservations.FlatAppearance.BorderSize = 0
-        Me.btnReservations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
-        Me.btnReservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReservations.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReservations.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnReservations.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReservations.Location = New System.Drawing.Point(0, 223)
-        Me.btnReservations.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnReservations.Name = "btnReservations"
-        Me.btnReservations.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnReservations.Size = New System.Drawing.Size(254, 49)
-        Me.btnReservations.TabIndex = 4
-        Me.btnReservations.Text = "Reservations"
-        Me.btnReservations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReservations.UseVisualStyleBackColor = False
+        Me.btnTGuides.BackColor = System.Drawing.Color.Transparent
+        Me.btnTGuides.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTGuides.FlatAppearance.BorderSize = 0
+        Me.btnTGuides.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
+        Me.btnTGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTGuides.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTGuides.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnTGuides.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTGuides.Location = New System.Drawing.Point(0, 327)
+        Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnTGuides.Name = "btnTGuides"
+        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.btnTGuides.Size = New System.Drawing.Size(254, 49)
+        Me.btnTGuides.TabIndex = 6
+        Me.btnTGuides.Text = "Tour Guides"
+        Me.btnTGuides.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTGuides.UseVisualStyleBackColor = True
         '
         'panelTop
         '
@@ -355,7 +355,7 @@ Partial Class rmsDashboard
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "rmsDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ATV-RMS Admin"
+        Me.Text = "ATV-RMS Dashboard"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelSide.ResumeLayout(False)

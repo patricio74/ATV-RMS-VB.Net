@@ -8,6 +8,20 @@ Module rmsModule
     Public ReadOnly connectionString As String = "mongodb+srv://atvrms:atvrms@atvrms.nwojtse.mongodb.net/?retryWrites=true&w=majority"
 
 
+
+    '==============LOGIN FORM==============
+    Public Sub clearRegForm()
+        rmsRegistration.regFname.Clear()
+        rmsRegistration.regSname.Clear()
+        rmsRegistration.regEmail.Clear()
+        rmsRegistration.regPhone.Clear()
+        rmsRegistration.regUsername.Clear()
+        rmsRegistration.regPassw.Clear()
+        rmsRegistration.regRFID.Clear()
+    End Sub
+
+
+
     '==============LOGIN FORM==============
     Public Sub loadRMSLogin()
         rmsLogin.panelRFIDLogin.Hide()
