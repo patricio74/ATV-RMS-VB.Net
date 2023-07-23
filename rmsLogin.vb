@@ -1,9 +1,9 @@
 ﻿Imports MongoDB.Bson
-Imports MongoDB.Driver
 
 Public Class rmsLogin
     Private Sub rmsLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadRMSLogin()
+        connectToMongo()
     End Sub
 
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
@@ -98,8 +98,8 @@ Public Class rmsLogin
     Private Sub tboxRFID_KeyDown(sender As Object, e As KeyEventArgs) Handles tboxRFID.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
-                Dim rfid As String = tboxRFID.Text
-                Dim userDocument As BsonDocument = rmsModule.getAdminRFID(rfid)
+                Dim RFID As String = tboxRFID.Text
+                Dim userDocument As BsonDocument = rmsModule.getAdminRFID(RFID)
                 If userDocument IsNot Nothing Then
                     rmsDashboard.Show()
                     Me.Hide()
@@ -110,7 +110,7 @@ Public Class rmsLogin
                     MessageBox.Show("User not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End Try
         End If

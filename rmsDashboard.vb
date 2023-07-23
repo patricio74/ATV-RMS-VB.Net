@@ -1,5 +1,9 @@
 ﻿Public Class rmsDashboard
 
+    Private Sub rmsDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
+        connectToMongo()
+    End Sub
+
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub

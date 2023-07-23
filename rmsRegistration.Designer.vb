@@ -77,7 +77,7 @@ Partial Class rmsRegistration
         Me.btnReg.Location = New System.Drawing.Point(157, 522)
         Me.btnReg.Margin = New System.Windows.Forms.Padding(0)
         Me.btnReg.Name = "btnReg"
-        Me.btnReg.Size = New System.Drawing.Size(131, 39)
+        Me.btnReg.Size = New System.Drawing.Size(131, 45)
         Me.btnReg.TabIndex = 16
         Me.btnReg.Text = "Register"
         Me.btnReg.UseVisualStyleBackColor = False

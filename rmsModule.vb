@@ -1,15 +1,25 @@
-﻿Imports System.Drawing.Imaging
-Imports System.Windows.Forms.VisualStyles
-Imports MongoDB.Bson
+﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 
 Module rmsModule
+
     '==============MONGODB==============
-    Public ReadOnly connectionString As String = "mongodb+srv://atvrms:atvrms@atvrms.nwojtse.mongodb.net/?retryWrites=true&w=majority"
+    'Public ReadOnly connectionString As String = "mongodb+srv://atvrms:atvrms@atvrms.nwojtse.mongodb.net/?retryWrites=true&w=majority"
+
+    Public Function connectToMongo() As IMongoDatabase
+        Try
+            Dim connectionString As String = "mongodb+srv://atvrms:atvrms@atvrms.nwojtse.mongodb.net/?retryWrites=true&w=majority"
+            Dim client As MongoClient = New MongoClient(connectionString)
+            Dim database As IMongoDatabase = client.GetDatabase("ATVRMS")
+            Return database
+        Catch ex As Exception
+            MessageBox.Show("Error sa mongoDB lodz: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return Nothing
+        End Try
+    End Function
 
 
-
-    '==============LOGIN FORM==============
+    '==============REGISTRATION FORM==============
     Public Sub clearRegForm()
         rmsRegistration.regFname.Clear()
         rmsRegistration.regSname.Clear()
@@ -20,7 +30,9 @@ Module rmsModule
         rmsRegistration.regRFID.Clear()
     End Sub
 
+    Public Sub regForm()
 
+    End Sub
 
     '==============LOGIN FORM==============
     Public Sub loadRMSLogin()
@@ -32,30 +44,26 @@ Module rmsModule
 
     Public Function getAdminUsername(username As String) As BsonDocument
         Try
-            Dim client As MongoClient = New MongoClient(connectionString)
-            Dim database As IMongoDatabase = client.GetDatabase("ATVRMS")
-            Dim collection As IMongoCollection(Of BsonDocument) = database.GetCollection(Of BsonDocument)("rmsAdmin")
+            connectToMongo()
+            Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
             Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("username", username)
             Dim userDocument As BsonDocument = collection.Find(filter).FirstOrDefault()
-
             Return userDocument
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return Nothing
         End Try
     End Function
 
-    Public Function getAdminRFID(rfid As String) As BsonDocument
+    Public Function getAdminRFID(RFID As String) As BsonDocument
         Try
-            Dim client As MongoClient = New MongoClient(connectionString)
-            Dim database As IMongoDatabase = client.GetDatabase("ATVRMS")
-            Dim collection As IMongoCollection(Of BsonDocument) = database.GetCollection(Of BsonDocument)("rmsAdmin")
-            Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("rfid", rfid)
+            connectToMongo()
+            Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
+            Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", RFID)
             Dim userDocument As BsonDocument = collection.Find(filter).FirstOrDefault()
-
             Return userDocument
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return Nothing
         End Try
     End Function
@@ -64,17 +72,18 @@ Module rmsModule
         If rmsLogin.tboxUsername.Text = "" Then
             MessageBox.Show("Username cannot be empty.", "Blank username!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             rmsLogin.tboxUsername.Focus()
-        ElseIf rmslogin.tboxPassword.Text = "" Then
+        ElseIf rmsLogin.tboxPassword.Text = "" Then
             MessageBox.Show("Password cannot be empty.", "Blank password!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             rmsLogin.tboxPassword.Focus()
         Else
             Try
                 Dim username As String = rmsLogin.tboxUsername.Text
                 Dim password As String = rmsLogin.tboxPassword.Text
-                Dim connectionString As String = rmsModule.connectionString
-                Dim userDocument As BsonDocument = rmsModule.getAdminUsername(username)
+                Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username)
+                Dim userDocument As BsonDocument = collection.Find(filter).FirstOrDefault()
                 If userDocument IsNot Nothing Then
-                    Dim storedPassword As String = userDocument("password").ToString()
+                    Dim storedPassword As String = userDocument("Password").ToString()
                     If password = storedPassword Then
                         rmsDashboard.Show()
                         rmsLogin.Hide()
