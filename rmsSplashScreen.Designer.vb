@@ -56,7 +56,7 @@ Partial Class rmsSplashScreen
         '
         'DetailsLayoutPanel
         '
-        Me.DetailsLayoutPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.DetailsLayoutPanel.BackColor = System.Drawing.Color.Transparent
         Me.DetailsLayoutPanel.ColumnCount = 1
         Me.DetailsLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 496.0!))
         Me.DetailsLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142.0!))

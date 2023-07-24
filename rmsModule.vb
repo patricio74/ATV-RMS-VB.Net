@@ -44,7 +44,7 @@ Module rmsModule
 
     Public Function getAdminUsername(username As String) As BsonDocument
         Try
-            connectToMongo()
+            'connectToMongo()
             Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
             Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("username", username)
             Dim userDocument As BsonDocument = collection.Find(filter).FirstOrDefault()
@@ -57,7 +57,6 @@ Module rmsModule
 
     Public Function getAdminRFID(RFID As String) As BsonDocument
         Try
-            connectToMongo()
             Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
             Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", RFID)
             Dim userDocument As BsonDocument = collection.Find(filter).FirstOrDefault()
@@ -80,7 +79,10 @@ Module rmsModule
                 Dim username As String = rmsLogin.tboxUsername.Text
                 Dim password As String = rmsLogin.tboxPassword.Text
                 Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
-                Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username)
+                Dim filter = Builders(Of BsonDocument).Filter.Or(
+                    Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
+                    Builders(Of BsonDocument).Filter.Eq(Of String)("Email", username)
+                )
                 Dim userDocument As BsonDocument = collection.Find(filter).FirstOrDefault()
                 If userDocument IsNot Nothing Then
                     Dim storedPassword As String = userDocument("Password").ToString()
