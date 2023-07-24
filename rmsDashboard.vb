@@ -2,6 +2,7 @@
 
     Private Sub rmsDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
         connectToMongo()
+        labelAdminName.Text=rmsLogin.adminName
     End Sub
 
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click

@@ -6,6 +6,8 @@ Public Class rmsLogin
         connectToMongo()
     End Sub
 
+    Public Shared adminName As String = ""
+
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub

@@ -56,12 +56,12 @@ Partial Class rmsRegistration
         'labelFormTitle
         '
         Me.labelFormTitle.AutoSize = True
-        Me.labelFormTitle.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelFormTitle.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelFormTitle.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelFormTitle.Location = New System.Drawing.Point(33, 6)
+        Me.labelFormTitle.Location = New System.Drawing.Point(33, 7)
         Me.labelFormTitle.Margin = New System.Windows.Forms.Padding(0)
         Me.labelFormTitle.Name = "labelFormTitle"
-        Me.labelFormTitle.Size = New System.Drawing.Size(60, 18)
+        Me.labelFormTitle.Size = New System.Drawing.Size(68, 16)
         Me.labelFormTitle.TabIndex = 18
         Me.labelFormTitle.Text = "ATV-RMS"
         '
@@ -176,12 +176,12 @@ Partial Class rmsRegistration
         'label1
         '
         Me.label1.AutoSize = True
-        Me.label1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.label1.Location = New System.Drawing.Point(114, 35)
         Me.label1.Margin = New System.Windows.Forms.Padding(0)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(178, 20)
+        Me.label1.Size = New System.Drawing.Size(180, 16)
         Me.label1.TabIndex = 22
         Me.label1.Text = "Already have an account?"
         '
@@ -189,12 +189,12 @@ Partial Class rmsRegistration
         '
         Me.labelLogin.AutoSize = True
         Me.labelLogin.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.labelLogin.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelLogin.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelLogin.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.labelLogin.Location = New System.Drawing.Point(290, 35)
         Me.labelLogin.Margin = New System.Windows.Forms.Padding(0)
         Me.labelLogin.Name = "labelLogin"
-        Me.labelLogin.Size = New System.Drawing.Size(46, 20)
+        Me.labelLogin.Size = New System.Drawing.Size(46, 16)
         Me.labelLogin.TabIndex = 23
         Me.labelLogin.Text = "Login"
         '
@@ -203,12 +203,12 @@ Partial Class rmsRegistration
         Me.labelLoginSwitch.AutoSize = True
         Me.labelLoginSwitch.BackColor = System.Drawing.Color.Transparent
         Me.labelLoginSwitch.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.labelLoginSwitch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelLoginSwitch.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelLoginSwitch.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelLoginSwitch.Location = New System.Drawing.Point(69, 147)
+        Me.labelLoginSwitch.Location = New System.Drawing.Point(69, 149)
         Me.labelLoginSwitch.Margin = New System.Windows.Forms.Padding(0)
         Me.labelLoginSwitch.Name = "labelLoginSwitch"
-        Me.labelLoginSwitch.Size = New System.Drawing.Size(71, 18)
+        Me.labelLoginSwitch.Size = New System.Drawing.Size(70, 14)
         Me.labelLoginSwitch.TabIndex = 2
         Me.labelLoginSwitch.Text = "first name"
         Me.labelLoginSwitch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -242,11 +242,11 @@ Partial Class rmsRegistration
         '
         Me.labelTitle2.AutoSize = True
         Me.labelTitle2.BackColor = System.Drawing.Color.Transparent
-        Me.labelTitle2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelTitle2.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelTitle2.ForeColor = System.Drawing.Color.Gainsboro
         Me.labelTitle2.Location = New System.Drawing.Point(69, 100)
         Me.labelTitle2.Name = "labelTitle2"
-        Me.labelTitle2.Size = New System.Drawing.Size(232, 18)
+        Me.labelTitle2.Size = New System.Drawing.Size(243, 14)
         Me.labelTitle2.TabIndex = 1
         Me.labelTitle2.Text = "Fill out the form to create an account."
         '
@@ -255,12 +255,12 @@ Partial Class rmsRegistration
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(233, 147)
+        Me.Label3.Location = New System.Drawing.Point(233, 149)
         Me.Label3.Margin = New System.Windows.Forms.Padding(0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 18)
+        Me.Label3.Size = New System.Drawing.Size(62, 14)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "surname"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -297,12 +297,12 @@ Partial Class rmsRegistration
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(69, 265)
+        Me.Label4.Location = New System.Drawing.Point(69, 267)
         Me.Label4.Margin = New System.Windows.Forms.Padding(0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(98, 18)
+        Me.Label4.Size = New System.Drawing.Size(99, 14)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "phone number"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -312,12 +312,12 @@ Partial Class rmsRegistration
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label5.Location = New System.Drawing.Point(69, 446)
+        Me.Label5.Location = New System.Drawing.Point(69, 448)
         Me.Label5.Margin = New System.Windows.Forms.Padding(0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 18)
+        Me.Label5.Size = New System.Drawing.Size(60, 14)
         Me.Label5.TabIndex = 14
         Me.Label5.Text = "RFID no."
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -341,12 +341,12 @@ Partial Class rmsRegistration
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(69, 325)
+        Me.Label6.Location = New System.Drawing.Point(69, 327)
         Me.Label6.Margin = New System.Windows.Forms.Padding(0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 18)
+        Me.Label6.Size = New System.Drawing.Size(70, 14)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "username"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -369,12 +369,12 @@ Partial Class rmsRegistration
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(69, 386)
+        Me.Label7.Location = New System.Drawing.Point(69, 388)
         Me.Label7.Margin = New System.Windows.Forms.Padding(0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 18)
+        Me.Label7.Size = New System.Drawing.Size(69, 14)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "password"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -397,12 +397,12 @@ Partial Class rmsRegistration
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(69, 206)
+        Me.Label8.Location = New System.Drawing.Point(69, 208)
         Me.Label8.Margin = New System.Windows.Forms.Padding(0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(41, 18)
+        Me.Label8.Size = New System.Drawing.Size(40, 14)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "email"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter

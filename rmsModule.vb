@@ -8,7 +8,8 @@ Module rmsModule
 
     Public Function connectToMongo() As IMongoDatabase
         Try
-            Dim connectionString As String = "mongodb+srv://atvrms:atvrms@atvrms.nwojtse.mongodb.net/?retryWrites=true&w=majority"
+            'Dim connectionString As String = "mongodb+srv://atvrms:atvrms@atvrms.nwojtse.mongodb.net/?retryWrites=true&w=majority"
+            Dim connectionString As String = "mongodb://localhost:27017/"
             Dim client As MongoClient = New MongoClient(connectionString)
             Dim database As IMongoDatabase = client.GetDatabase("ATVRMS")
             Return database
@@ -87,6 +88,9 @@ Module rmsModule
                 If userDocument IsNot Nothing Then
                     Dim storedPassword As String = userDocument("Password").ToString()
                     If password = storedPassword Then
+                        Dim firstName As String = userDocument("First Name").ToString()
+                        Dim surname As String = userDocument("Surname").ToString()
+                        rmsLogin.adminName = firstName & " " & surname
                         rmsDashboard.Show()
                         rmsLogin.Hide()
                     Else
@@ -108,7 +112,7 @@ Module rmsModule
     '===============ADMIN DASHBOARD==============
     Public Sub resetButtonColor()
         Dim defaultForeColor As Color = ColorTranslator.FromHtml("#f5f5f5")
-        Dim defaultBackColor As Color = ColorTranslator.FromHtml("#1e272e")
+        Dim defaultBackColor As Color = ColorTranslator.FromHtml("#14202e")
 
         Dim buttons As Button() = {
             rmsDashboard.btnReservations,

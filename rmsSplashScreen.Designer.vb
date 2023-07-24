@@ -117,12 +117,14 @@ Partial Class rmsSplashScreen
         Me.ClientSize = New System.Drawing.Size(496, 303)
         Me.ControlBox = False
         Me.Controls.Add(Me.MainLayoutPanel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "rmsSplashScreen"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "ATV-RMS"
         Me.MainLayoutPanel.ResumeLayout(False)
         Me.DetailsLayoutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
