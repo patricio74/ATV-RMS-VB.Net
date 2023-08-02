@@ -4,8 +4,6 @@ Imports MongoDB.Driver
 Module rmsModule
 
     '==============MONGODB==============
-    'Public ReadOnly connectionString As String = "mongodb+srv://atvrms:atvrms@atvrms.nwojtse.mongodb.net/?retryWrites=true&w=majority"
-
     Public Function connectToMongo() As IMongoDatabase
         Try
             'Dim connectionString As String = "mongodb+srv://atvrms:atvrms@atvrms.nwojtse.mongodb.net/?retryWrites=true&w=majority"
@@ -31,9 +29,6 @@ Module rmsModule
         rmsRegistration.regRFID.Clear()
     End Sub
 
-    Public Sub regForm()
-
-    End Sub
 
     '==============LOGIN FORM==============
     Public Sub loadRMSLogin()
@@ -42,19 +37,6 @@ Module rmsModule
         rmsLogin.checkShow.Checked = False
         rmsLogin.tboxUsername.Focus()
     End Sub
-
-    Public Function getAdminUsername(username As String) As BsonDocument
-        Try
-            'connectToMongo()
-            Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
-            Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("username", username)
-            Dim userDocument As BsonDocument = collection.Find(filter).FirstOrDefault()
-            Return userDocument
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return Nothing
-        End Try
-    End Function
 
     Public Function getAdminRFID(RFID As String) As BsonDocument
         Try
@@ -88,9 +70,10 @@ Module rmsModule
                 If userDocument IsNot Nothing Then
                     Dim storedPassword As String = userDocument("Password").ToString()
                     If password = storedPassword Then
+                        rmsDashboard.adminName = ""
                         Dim firstName As String = userDocument("First Name").ToString()
                         Dim surname As String = userDocument("Surname").ToString()
-                        rmsLogin.adminName = firstName & " " & surname
+                        rmsDashboard.adminName = firstName & " " & surname
                         rmsDashboard.Show()
                         rmsLogin.Hide()
                     Else
@@ -110,9 +93,16 @@ Module rmsModule
 
 
     '===============ADMIN DASHBOARD==============
+    Public Sub clearLoginForm()
+        rmsLogin.tboxUsername.Clear()
+        rmsLogin.tboxPassword.Clear()
+        rmsLogin.tboxRFID.Clear()
+        rmsLogin.checkShow.Checked = False
+    End Sub
+
     Public Sub resetButtonColor()
         Dim defaultForeColor As Color = ColorTranslator.FromHtml("#f5f5f5")
-        Dim defaultBackColor As Color = ColorTranslator.FromHtml("#14202e")
+        Dim defaultBackColor As Color = ColorTranslator.FromHtml("#1e272e")
 
         Dim buttons As Button() = {
             rmsDashboard.btnReservations,
@@ -135,11 +125,5 @@ Module rmsModule
         activeBtn.BackColor = ColorTranslator.FromHtml("#ffc048")
     End Sub
 
-    Public Sub clearLoginForm()
-        rmsLogin.tboxUsername.Clear()
-        rmsLogin.tboxPassword.Clear()
-        rmsLogin.tboxRFID.Clear()
-        rmsLogin.checkShow.Checked = False
-    End Sub
 
 End Module

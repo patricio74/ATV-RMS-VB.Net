@@ -6,8 +6,6 @@ Public Class rmsLogin
         connectToMongo()
     End Sub
 
-    Public Shared adminName As String = ""
-
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
@@ -103,6 +101,10 @@ Public Class rmsLogin
                 Dim RFID As String = tboxRFID.Text
                 Dim userDocument As BsonDocument = rmsModule.getAdminRFID(RFID)
                 If userDocument IsNot Nothing Then
+                    rmsDashboard.adminName = ""
+                    Dim firstName As String = userDocument("First Name").ToString()
+                    Dim surname As String = userDocument("Surname").ToString()
+                    rmsDashboard.adminName = firstName & " " & surname
                     rmsDashboard.Show()
                     Me.Hide()
                 ElseIf tboxRFID.Text = "" Then

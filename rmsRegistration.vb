@@ -32,7 +32,7 @@ Public Class rmsRegistration
                 Dim password As String = regPassw.Text.Trim()
                 Dim rfid As String = regRFID.Text.Trim()
 
-                Dim document As New BsonDocument From {
+                Dim newAdmin As New BsonDocument From {
                     {"First Name", firstName},
                     {"Surname", surname},
                     {"Email", email},
@@ -53,10 +53,10 @@ Public Class rmsRegistration
                     MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     regRFID.Focus()
                 Else
-                    collection.InsertOne(document)
+                    collection.InsertOne(newAdmin)
                     MessageBox.Show("You may now login to ATV-RMS.", "Successfully registered!", MessageBoxButtons.OK, MessageBoxIcon.None)
                     rmsLogin.Show()
-                    'clearRegForm()
+                    clearRegForm()
                     Me.Close()
                 End If
             Catch ex As Exception

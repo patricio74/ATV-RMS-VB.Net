@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RichTextBox1.Text" xml:space="preserve">
+    <value>					       BACON IPSUM
+					A meatier lorem ipsum.
+
+Bacon ipsum dolor amet spare ribs shoulder ham hock chicken burgdoggen, landjaeger cupim pancetta tenderloin shankle. Tongue pastrami tenderloin meatloaf beef, andouille alcatra short loin spare ribs boudin fatback swine cupim porchetta. Cupim short ribs tail andouille jowl chuck beef ribs brisket. Beef ribs kevin cow cupim. Kielbasa meatball cow pork loin buffalo. Corned beef brisket drumstick, chicken prosciutto shoulder leberkas pastrami ribeye capicola shankle kevin porchetta.
+
+Frankfurter pork chop sausage andouille, beef ribs pork loin meatball chuck pig strip steak fatback ham landjaeger. Filet mignon buffalo pork loin chicken sausage alcatra capicola bacon picanha. Chicken pastrami brisket shank, bresaola turkey biltong leberkas kevin short ribs venison chuck. Fatback andouille ham hock venison doner jerky chicken, tongue pastrami flank. Bacon cupim strip steak short loin sirloin t-bone buffalo pancetta doner ground round tail corned beef flank. Ground round cupim turducken strip steak, shank drumstick t-bone short loin pork loin pastrami landjaeger rump corned beef buffalo.
+
+Tongue pork belly strip steak, shoulder cow pork chop chicken chislic meatball rump. Tongue filet mignon alcatra bresaola sirloin kielbasa bacon short ribs pork buffalo jowl salami. Tri-tip hamburger ham hock t-bone strip steak shoulder alcatra meatloaf. Picanha ham pork belly ball tip corned beef chicken.
+
+Picanha bresaola biltong, boudin meatloaf chislic pork chuck pig. Ball tip pork chop ham hock chislic, bresaola frankfurter cupim. Bacon tongue turducken, meatloaf ham picanha kielbasa flank beef frankfurter tri-tip ground round shankle. Ribeye andouille alcatra, ground round beef ribs pig sausage. Turkey alcatra ham hock pork loin doner buffalo meatball, picanha prosciutto drumstick shankle sausage corned beef. Ribeye shank venison flank alcatra boudin buffalo strip steak drumstick. Biltong venison bacon buffalo jowl shoulder burgdoggen, doner pork chop meatball corned beef landjaeger.
+
+Tenderloin pork beef, ham turducken jowl chislic. Pork belly kielbasa hamburger, ribeye ball tip landjaeger chicken pork chop jerky alcatra ham hock bacon meatloaf rump ham. Turducken rump biltong pastrami beef pork chop jowl turkey pancetta burgdoggen chicken strip steak meatball ham hock landjaeger. Venison spare ribs tail, tri-tip sirloin beef tongue strip steak. Boudin buffalo tri-tip t-bone pork.
+
+Pastrami spare ribs flank kielbasa t-bone leberkas swine ham short loin ball tip prosciutto frankfurter. Swine ball tip chislic shank, tail tongue tenderloin. Kielbasa pork chop ball tip picanha beef. Pancetta turducken tongue meatball bresaola cow. Porchetta shank sirloin turducken spare ribs swine meatloaf rump pancetta tenderloin cupim. Capicola cupim bresaola chicken kevin venison ground round boudin chislic frankfurter.
+
+Drumstick tail ribeye, ham hock rump chicken shoulder landjaeger tenderloin. Buffalo tri-tip andouille burgdoggen ham hock cow, cupim chislic strip steak hamburger venison picanha beef ribs. Pastrami turkey tail, biltong meatloaf drumstick jowl ham hock ball tip bacon salami filet mignon. Sausage spare ribs burgdoggen strip steak swine filet mignon sirloin ball tip. Brisket buffalo pork belly, sausage andouille bacon alcatra shank salami shoulder shankle porchetta. Kevin chuck sirloin turducken turkey, fatback ground round meatloaf drumstick pork belly. Frankfurter hamburger capicola picanha sausage chislic shankle chuck salami leberkas.
+
+Fatback shoulder hamburger landjaeger, biltong pork loin ground round picanha. Pork loin strip steak buffalo ground round tenderloin cupim corned beef short loin ribeye ham hock prosciutto bacon pancetta chislic kevin. Burgdoggen brisket short loin, andouille drumstick jowl ham hock turkey chislic fatback leberkas. Rump pastrami tail chuck, leberkas venison swine.
+
+Corned beef meatball pork chop, kevin picanha alcatra jerky meatloaf jowl drumstick frankfurter. Hamburger venison pastrami burgdoggen salami porchetta. Rump ball tip strip steak shoulder kielbasa meatloaf jowl shank. Kevin ham hock ground round cow tri-tip strip steak pork chop jowl kielbasa tenderloin bacon cupim frankfurter rump biltong.
+
+T-bone short ribs burgdoggen chicken. Tri-tip bresaola pork chop short ribs picanha ham. Landjaeger boudin tail pig pork belly sirloin ham ground round shoulder ham hock jerky. Rump shank strip steak burgdoggen leberkas pig, chuck biltong fatback beef ribs hamburger prosciutto short loin tenderloin. Bresaola kielbasa turducken meatball, swine boudin brisket shankle buffalo pork loin cow hamburger.
+</value>
+  </data>
+</root>

@@ -86,10 +86,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>packages\AWSSDK.Core.3.7.108.2\lib\net45\AWSSDK.Core.dll</HintPath>
+      <HintPath>packages\AWSSDK.Core.3.7.200.4\lib\net45\AWSSDK.Core.dll</HintPath>
     </Reference>
     <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>packages\AWSSDK.SecurityToken.3.7.103.22\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
+      <HintPath>packages\AWSSDK.SecurityToken.3.7.200.4\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
     </Reference>
     <Reference Include="DnsClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
       <HintPath>packages\DnsClient.1.7.0\lib\net471\DnsClient.dll</HintPath>
@@ -221,6 +221,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="ctrlCustomers.Designer.vb">
+      <DependentUpon>ctrlCustomers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlCustomers.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlInventory.Designer.vb">
+      <DependentUpon>ctrlInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlInventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlNotif.Designer.vb">
+      <DependentUpon>ctrlNotif.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlNotif.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlReservations.Designer.vb">
+      <DependentUpon>ctrlReservations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlReservations.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlRules.Designer.vb">
+      <DependentUpon>ctrlRules.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlRules.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTourGuides.Designer.vb">
+      <DependentUpon>ctrlTourGuides.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlTourGuides.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTransacHist.Designer.vb">
+      <DependentUpon>ctrlTransacHist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlTransacHist.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="rmsDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +307,27 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ctrlCustomers.resx">
+      <DependentUpon>ctrlCustomers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlInventory.resx">
+      <DependentUpon>ctrlInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlNotif.resx">
+      <DependentUpon>ctrlNotif.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlReservations.resx">
+      <DependentUpon>ctrlReservations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlRules.resx">
+      <DependentUpon>ctrlRules.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlTourGuides.resx">
+      <DependentUpon>ctrlTourGuides.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlTransacHist.resx">
+      <DependentUpon>ctrlTransacHist.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rmsDashboard.resx">
       <DependentUpon>rmsDashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +356,467 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonArray.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonBinaryData.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonBoolean.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonConstants.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonDateTime.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonDecimal128.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonDefaults.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonDocument.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonDocumentWrapper.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonDouble.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonElement.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonExtensionMethods.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonInt32.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonInt64.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonInternalException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonJavaScript.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonJavaScriptWithScope.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonMaxKey.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonMinKey.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonNull.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonObjectId.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonRegularExpression.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonSerializationException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonString.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonSymbol.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonSymbolTable.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonTimestamp.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonTypeMapper.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonTypeMapperOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonUndefined.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonUtils.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.BsonValue.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Decimal128.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.DuplicateBsonMemberMapAttributeException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.GuidConverter.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IConvertibleToBsonDocument.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.ICustomBsonTypeMapper.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonBinaryReader.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonBinaryReaderBookmark.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonBinaryReaderSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonBinaryWriter.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonBinaryWriterSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonChunkPool.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonDocumentReader.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonDocumentReaderBookmark.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonDocumentReaderSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonDocumentWriter.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonDocumentWriterSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonReader.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonReaderBookmark.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonReaderSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonStream.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonStreamAdapter.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonStreamExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonWriter.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.BsonWriterSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.ByteArrayBuffer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.ByteArrayChunk.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.ByteBufferFactory.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.ByteBufferSlice.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.ByteBufferStream.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.DateTimeJsonToken.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.DoubleJsonToken.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.IBsonChunk.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.IBsonChunkSource.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.IBsonReader.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.IBsonReaderExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.IBsonWriter.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.IBsonWriterExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.IByteBuffer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.IElementNameValidator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.INameDecoder.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.InputBufferChunkSource.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.Int32JsonToken.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.Int64JsonToken.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.IStreamEfficientCopyTo.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.JsonConvert.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.JsonReader.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.JsonReaderBookmark.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.JsonReaderSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.JsonToken.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.JsonWriter.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.JsonWriterSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.MultiChunkBuffer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.NoOpElementNameValidator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.ObjectIdJsonToken.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.OutputBufferChunkSource.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.RegularExpressionJsonToken.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.SingleChunkBuffer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.StringJsonToken.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.Utf8Encodings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.Utf8Helper.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.Utf8NameDecoder.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.IO.WrappingBsonWriter.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.LazyBsonArray.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.LazyBsonDocument.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.MaterializedOnDemandBsonArray.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.MaterializedOnDemandBsonDocument.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.ObjectId.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.PreserveAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.RawBsonArray.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.RawBsonDocument.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.AttributedSerializationProvider.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonConstructorAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonDateTimeOptionsAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonDefaultValueAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptionsAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonDiscriminatorAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonElementAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonExtraElementsAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonFactoryMethodAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonGuidRepresentationAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonIdAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonIgnoreAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonIgnoreExtraElementsAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonIgnoreIfDefaultAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonIgnoreIfNullAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonKnownTypesAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonNoIdAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonRepresentationAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonRequiredAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonSerializationOptionsAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonSerializerAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Attributes.BsonTimeSpanOptionsAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonClassMap.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonCreatorMap.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonDeserializationArgs.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonDeserializationContext+Builder.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonDeserializationContext.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonDocumentBackedClass.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonMemberMap.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonMemberMapAttributeUsageAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonObjectModelSerializationProvider.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonSerializationArgs.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonSerializationContext+Builder.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonSerializationContext.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonSerializationInfo.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonSerializationProviderBase.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.BsonSerializerRegistry.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.CollectionsSerializationProvider.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.AttributeConventionPack.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.CamelCaseElementNameConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ConventionBase.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ConventionPack.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ConventionRegistry.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ConventionRunner.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.DefaultConventionPack.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.DelegateClassMapConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.DelegateMemberMapConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.DelegatePostProcessingConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.EnumRepresentationConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.HierarchicalDiscriminatorConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.IClassMapConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.IConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.IConventionPack.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ICreatorMapConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.IDiscriminatorConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.IgnoreExtraElementsConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.IgnoreIfDefaultConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.IgnoreIfNullConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.IMemberMapConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ImmutableTypeClassMapConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.IPostProcessingConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.LookupIdGeneratorConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.MemberDefaultValueConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.MemberNameElementNameConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.NamedExtraElementsMemberConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.NamedIdMemberConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.NamedParameterCreatorMapConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.NoIdMemberConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ObjectDiscriminatorConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ReadWriteMemberFinderConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ResetClassMapConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ResetMemberMapsConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.ScalarDiscriminatorConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.StandardDiscriminatorConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.StringIdStoredAsObjectIdConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Conventions.StringObjectIdIdGeneratorConvention.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.CreatorMapDelegateCompiler.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.DiscriminatedInterfaceSerializationProvider.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.ExpressionVisitor.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonArraySerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonClassMapAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonCreatorMapAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonDictionarySerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonDocumentSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonIdProvider.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonMemberMapAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonPolymorphicSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonPostProcessingAttribute.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonSerializationProvider.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonSerializerExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IBsonSerializerRegistry.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IChildSerializerConfigurable.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IdGenerators.AscendingGuidGenerator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IdGenerators.BsonBinaryDataGuidGenerator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IdGenerators.BsonObjectIdGenerator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IdGenerators.CombGuidGenerator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IdGenerators.GuidGenerator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IdGenerators.NullIdChecker.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IdGenerators.ObjectIdGenerator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IdGenerators.StringObjectIdGenerator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IDictionaryRepresentationConfigurable.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IHasRepresentationSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IIdGenerator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IRegistryAwareBsonSerializationProvider.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IRepresentationConfigurable.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.IRepresentationConverterConfigurable.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Options.RepresentationConverter.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.PrimitiveSerializationProvider.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BitArraySerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BooleanSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonArraySerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonBinaryDataSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonBooleanSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonDateTimeSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonDecimal128Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonDoubleSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonInt32Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonInt64Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonJavaScriptSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonJavaScriptWithScopeSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonMaxKeySerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonMinKeySerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonNullSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonObjectIdSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonRegularExpressionSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonStringSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonSymbolSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonTimestampSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonUndefinedSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.ByteArraySerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.ByteSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.CharSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.CultureInfoSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.DateTimeOffsetSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.DateTimeSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.Decimal128Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.DecimalSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.DoubleSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.DowncastingSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.ExpandoObjectSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.GuidSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.IBsonTupleSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.IDowncastingSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.Int16Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.Int32Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.Int64Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.INullableSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.IOrderedEnumerableSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.IPAddressSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.IPEndPointSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.LazyBsonArraySerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.LazyBsonDocumentSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.NullableSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.ObjectSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.PartiallyRawBsonDocumentSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.QueueSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.RawBsonArraySerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.RawBsonDocumentSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.RegexSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.SByteSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.SerializerHelper+Member.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.SerializerHelper.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.SingleSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.StackSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.StringSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.TimeSpanSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.TupleSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.UInt16Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.UInt32Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.UInt64Serializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.UriSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.ValueTupleSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.Serializers.VersionSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.TypeMappingSerializationProvider.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.Serialization.TypeNameDiscriminator.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Bson.TruncationException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.AggregateBucketAutoGranularity.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.AggregateBucketAutoOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.AggregateBucketAutoResultIdSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.AggregateCountResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.AggregateFacet.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.AggregateFacetResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.AggregateFacetResults.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.AggregateOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ArrayFilterDefinition.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.BulkWriteError.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.BulkWriteOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.BulkWriteResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.BulkWriteUpsert.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ChangeStreamOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ChangeStreamPreAndPostImagesOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ChangeStreamStageOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ClientSessionOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ClusterRegistry.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.CountOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.CreateCollectionOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.CreateIndexOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.CreateManyIndexesOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.CreateOneIndexOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DeleteOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DeleteResult+Acknowledged.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DeleteResult+Unacknowledged.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DeleteResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DensifyBounds.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DensifyDateTimeBounds.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DensifyDateTimeRange.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DensifyKeywordDateTimeBounds.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DensifyLowerUpperDateTimeBounds.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DensifyRange.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DistinctOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DocumentsWindow.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DocumentsWindowBoundary.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DropCollectionOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.DropIndexOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.AutoEncryptionOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.ClientEncryption.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.ClientEncryptionOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.CreateEncryptedCollectionResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.DataKeyOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.EncryptOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.MongoEncryptionCreateCollectionException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.MongoEncryptionException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.RangeOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.RewrapManyDataKeyOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Encryption.RewrapManyDataKeyResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.EstimatedDocumentCountOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ExpressionTranslationOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ExternalEvidence.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.FindOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.FindOptionsBase.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson2DCoordinates.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson2DProjectedCoordinates.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson3DCoordinates.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson3DGeographicCoordinates.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJson3DProjectedCoordinates.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJsonCoordinateReferenceSystem.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJsonCoordinates.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJsonLinkedCoordinateReferenceSystem.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.GeoJsonNamedCoordinateReferenceSystem.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson2DCoordinatesSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson2DGeographicCoordinatesSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson2DProjectedCoordinatesSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson3DCoordinatesSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson3DGeographicCoordinatesSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJson3DProjectedCoordinatesSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJsonCoordinateReferenceSystemSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJsonCoordinatesSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJsonLinkedCoordinateReferenceSystemSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.GeoJsonObjectModel.Serializers.GeoJsonNamedCoordinateReferenceSystemSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IAggregateFluentExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IClientSession.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IClientSessionHandle.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IFindFluentExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IMongoClient.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IMongoClientExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IMongoCollectionExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IMongoDatabase.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IMongoDatabaseExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IndexKeysDefinitionExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IndexOptionDefaults.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.InsertManyOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.InsertOneOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IPipelineStageDefinition.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IRenderedPipelineStageDefinition.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.IServerSession.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.KeywordDocumentsWindowBoundary.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.KeywordRangeWindowBoundary.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.DateTimeExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.DateTimeUnit.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.ExponentialMovingAverageAlphaWeighting.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.ExponentialMovingAveragePositionalWeighting.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.ExponentialMovingAverageWeighting.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.ExpressionNotSupportedException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.IMongoQueryable.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.ISetWindowFieldsPartitionExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.LinqExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.MongoDBMath.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.MongoEnumerable.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.MongoQueryable.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.NullableDateTimeExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.QueryableExecutionModel.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Linq.StringExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ListCollectionNamesOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ListCollectionsOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ListDatabaseNamesOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ListDatabasesOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ListIndexesOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MapReduceOutputOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoBulkWriteException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoClient.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoClientBase.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoClientSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoCollectionSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoCredential.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoDatabaseBase.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoDatabaseSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoDBRef.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoDBRefSerializer.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoDefaults.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoExternalAwsIdentity.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoExternalIdentity.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoIdentity.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoIdentityEvidence.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoInternalIdentity.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoServerAddress.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoUrl.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoUrlBuilder.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoUtils.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoWriteException.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.MongoX509Identity.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.NoPipelineInput.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.PasswordEvidence.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.PipelineDefinitionBuilder.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.PipelineStageDefinitionBuilder.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.PositionDocumentsWindowBoundary.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ProjectionDefinitionExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.RangeWindow.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.RangeWindowBoundary.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.RenameCollectionOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.RenderedFieldDefinition.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ReplaceOneResult+Acknowledged.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ReplaceOneResult+Unacknowledged.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ReplaceOneResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ReplaceOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.MultiSearchQueryDefinition.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchCountOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchFuzzyOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchHighlight.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchHighlightText.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchMetaCountResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchMetaFacetBucketResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchMetaFacetResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchMetaResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchQueryDefinition.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SearchRangeBuilder.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.Search.SingleSearchQueryDefinition.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.SetWindowFieldsWindow.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.SortDefinitionExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.SslSettings.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.StringOrRegularExpression.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.TextSearchOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.TimeRangeWindowBoundary.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.UpdateDefinitionExtensions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.UpdateOptions.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.UpdateResult+Acknowledged.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.UpdateResult+Unacknowledged.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.UpdateResult.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.ValueRangeWindowBoundary.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.WriteConcernError.datasource" />
+    <None Include="My Project\DataSources\MongoDB.Driver.WriteError.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -316,6 +840,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')" />

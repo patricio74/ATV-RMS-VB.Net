@@ -108,7 +108,7 @@ Partial Class rmsSplashScreen
         Me.ApplicationTitle.Size = New System.Drawing.Size(490, 49)
         Me.ApplicationTitle.TabIndex = 0
         Me.ApplicationTitle.Text = "Application Title"
-        Me.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'rmsSplashScreen
         '
