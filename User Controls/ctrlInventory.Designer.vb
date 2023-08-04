@@ -41,10 +41,10 @@ Partial Class ctrlInventory
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnDelCust = New System.Windows.Forms.Button()
-        Me.btnUpdCust = New System.Windows.Forms.Button()
-        Me.btnAddCust = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnDel = New System.Windows.Forms.Button()
+        Me.btnUpd = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -73,9 +73,9 @@ Partial Class ctrlInventory
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(52, 38)
+        Me.ListView1.Location = New System.Drawing.Point(23, 38)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(996, 335)
+        Me.ListView1.Size = New System.Drawing.Size(1051, 335)
         Me.ListView1.TabIndex = 30
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -88,17 +88,17 @@ Partial Class ctrlInventory
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Brand"
-        Me.ColumnHeader2.Width = 148
+        Me.ColumnHeader2.Width = 161
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Unit Name"
-        Me.ColumnHeader3.Width = 154
+        Me.ColumnHeader3.Width = 185
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Status"
-        Me.ColumnHeader4.Width = 153
+        Me.ColumnHeader4.Width = 163
         '
         'ColumnHeader5
         '
@@ -136,12 +136,10 @@ Partial Class ctrlInventory
         '
         Me.txtbxEmpNo.BackColor = System.Drawing.Color.White
         Me.txtbxEmpNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxEmpNo.Enabled = False
         Me.txtbxEmpNo.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxEmpNo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.txtbxEmpNo.Location = New System.Drawing.Point(80, 416)
         Me.txtbxEmpNo.Name = "txtbxEmpNo"
-        Me.txtbxEmpNo.ReadOnly = True
         Me.txtbxEmpNo.Size = New System.Drawing.Size(172, 35)
         Me.txtbxEmpNo.TabIndex = 55
         Me.txtbxEmpNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -238,65 +236,65 @@ Partial Class ctrlInventory
         Me.PictureBox1.TabIndex = 65
         Me.PictureBox1.TabStop = False
         '
-        'btnCancel
+        'btnClear
         '
-        Me.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnCancel.Location = New System.Drawing.Point(860, 628)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(134, 50)
-        Me.btnCancel.TabIndex = 90
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnClear.Location = New System.Drawing.Point(919, 630)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(85, 50)
+        Me.btnClear.TabIndex = 94
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
-        'btnDelCust
+        'btnDel
         '
-        Me.btnDelCust.BackColor = System.Drawing.Color.DarkGray
-        Me.btnDelCust.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelCust.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnDelCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnDelCust.Location = New System.Drawing.Point(720, 628)
-        Me.btnDelCust.Name = "btnDelCust"
-        Me.btnDelCust.Size = New System.Drawing.Size(134, 50)
-        Me.btnDelCust.TabIndex = 89
-        Me.btnDelCust.Text = "Delete"
-        Me.btnDelCust.UseVisualStyleBackColor = False
+        Me.btnDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.btnDel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDel.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDel.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDel.Location = New System.Drawing.Point(818, 630)
+        Me.btnDel.Name = "btnDel"
+        Me.btnDel.Size = New System.Drawing.Size(85, 50)
+        Me.btnDel.TabIndex = 93
+        Me.btnDel.Text = "Delete"
+        Me.btnDel.UseVisualStyleBackColor = False
         '
-        'btnUpdCust
+        'btnUpd
         '
-        Me.btnUpdCust.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnUpdCust.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdCust.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnUpdCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdCust.Location = New System.Drawing.Point(580, 628)
-        Me.btnUpdCust.Name = "btnUpdCust"
-        Me.btnUpdCust.Size = New System.Drawing.Size(134, 50)
-        Me.btnUpdCust.TabIndex = 88
-        Me.btnUpdCust.Text = "Update"
-        Me.btnUpdCust.UseVisualStyleBackColor = False
+        Me.btnUpd.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnUpd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUpd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnUpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpd.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnUpd.Location = New System.Drawing.Point(717, 630)
+        Me.btnUpd.Name = "btnUpd"
+        Me.btnUpd.Size = New System.Drawing.Size(85, 50)
+        Me.btnUpd.TabIndex = 92
+        Me.btnUpd.Text = "Update"
+        Me.btnUpd.UseVisualStyleBackColor = False
         '
-        'btnAddCust
+        'btnAdd
         '
-        Me.btnAddCust.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnAddCust.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddCust.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAddCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAddCust.Location = New System.Drawing.Point(440, 628)
-        Me.btnAddCust.Name = "btnAddCust"
-        Me.btnAddCust.Size = New System.Drawing.Size(134, 50)
-        Me.btnAddCust.TabIndex = 87
-        Me.btnAddCust.Text = "Add"
-        Me.btnAddCust.UseVisualStyleBackColor = False
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnAdd.Location = New System.Drawing.Point(616, 630)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(85, 50)
+        Me.btnAdd.TabIndex = 91
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'ctrlInventory
         '
@@ -304,10 +302,10 @@ Partial Class ctrlInventory
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnDelCust)
-        Me.Controls.Add(Me.btnUpdCust)
-        Me.Controls.Add(Me.btnAddCust)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.btnDel)
+        Me.Controls.Add(Me.btnUpd)
+        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
@@ -349,8 +347,8 @@ Partial Class ctrlInventory
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents btnCancel As Button
-    Friend WithEvents btnDelCust As Button
-    Friend WithEvents btnUpdCust As Button
-    Friend WithEvents btnAddCust As Button
+    Friend WithEvents btnClear As Button
+    Friend WithEvents btnDel As Button
+    Friend WithEvents btnUpd As Button
+    Friend WithEvents btnAdd As Button
 End Class

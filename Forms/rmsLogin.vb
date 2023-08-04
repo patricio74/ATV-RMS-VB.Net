@@ -1,9 +1,11 @@
 ﻿Imports MongoDB.Bson
 
 Public Class rmsLogin
+
     Private Sub rmsLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadRMSLogin()
         connectToMongo()
+        InitializeDraggablePanel(panelTop)
     End Sub
 
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
@@ -43,6 +45,7 @@ Public Class rmsLogin
 
     Private Sub labelRegister_Click(sender As Object, e As EventArgs) Handles labelRegister.Click
         rmsRegistration.Show()
+        rmsRegistration.Location = Me.Location
         Me.Hide()
         clearLoginForm()
     End Sub
@@ -99,7 +102,7 @@ Public Class rmsLogin
         If e.KeyCode = Keys.Enter Then
             Try
                 Dim RFID As String = tboxRFID.Text
-                Dim userDocument As BsonDocument = rmsModule.getAdminRFID(RFID)
+                Dim userDocument As BsonDocument = moduleLogin.getAdminRFID(RFID)
                 If userDocument IsNot Nothing Then
                     rmsDashboard.adminName = ""
                     Dim firstName As String = userDocument("First Name").ToString()

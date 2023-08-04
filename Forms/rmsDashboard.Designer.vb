@@ -124,7 +124,7 @@ Partial Class rmsDashboard
         Me.btnRules.Location = New System.Drawing.Point(0, 515)
         Me.btnRules.Margin = New System.Windows.Forms.Padding(0)
         Me.btnRules.Name = "btnRules"
-        Me.btnRules.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.btnRules.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnRules.Size = New System.Drawing.Size(205, 49)
         Me.btnRules.TabIndex = 10
         Me.btnRules.Text = "Rules && Regulations"
@@ -146,7 +146,7 @@ Partial Class rmsDashboard
         Me.btnTransacHist.Location = New System.Drawing.Point(0, 221)
         Me.btnTransacHist.Margin = New System.Windows.Forms.Padding(0)
         Me.btnTransacHist.Name = "btnTransacHist"
-        Me.btnTransacHist.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.btnTransacHist.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnTransacHist.Size = New System.Drawing.Size(205, 49)
         Me.btnTransacHist.TabIndex = 9
         Me.btnTransacHist.Text = "Transactions"
@@ -168,7 +168,7 @@ Partial Class rmsDashboard
         Me.btnNotif.Location = New System.Drawing.Point(0, 466)
         Me.btnNotif.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNotif.Name = "btnNotif"
-        Me.btnNotif.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.btnNotif.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnNotif.Size = New System.Drawing.Size(205, 49)
         Me.btnNotif.TabIndex = 8
         Me.btnNotif.Text = "Notifications"
@@ -190,7 +190,7 @@ Partial Class rmsDashboard
         Me.btnCustomers.Location = New System.Drawing.Point(0, 417)
         Me.btnCustomers.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCustomers.Name = "btnCustomers"
-        Me.btnCustomers.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.btnCustomers.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnCustomers.Size = New System.Drawing.Size(205, 49)
         Me.btnCustomers.TabIndex = 7
         Me.btnCustomers.Text = "Manage Customers"
@@ -212,7 +212,7 @@ Partial Class rmsDashboard
         Me.btnReservations.Location = New System.Drawing.Point(0, 270)
         Me.btnReservations.Margin = New System.Windows.Forms.Padding(0)
         Me.btnReservations.Name = "btnReservations"
-        Me.btnReservations.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.btnReservations.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnReservations.Size = New System.Drawing.Size(205, 49)
         Me.btnReservations.TabIndex = 4
         Me.btnReservations.Text = "Reservations"
@@ -234,7 +234,7 @@ Partial Class rmsDashboard
         Me.btnInventory.Location = New System.Drawing.Point(0, 319)
         Me.btnInventory.Margin = New System.Windows.Forms.Padding(0)
         Me.btnInventory.Name = "btnInventory"
-        Me.btnInventory.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.btnInventory.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnInventory.Size = New System.Drawing.Size(205, 49)
         Me.btnInventory.TabIndex = 5
         Me.btnInventory.Text = "Inventory"
@@ -256,7 +256,7 @@ Partial Class rmsDashboard
         Me.btnTGuides.Location = New System.Drawing.Point(0, 368)
         Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
         Me.btnTGuides.Name = "btnTGuides"
-        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnTGuides.Size = New System.Drawing.Size(205, 49)
         Me.btnTGuides.TabIndex = 6
         Me.btnTGuides.Text = "Tour Guides"

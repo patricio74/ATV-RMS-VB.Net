@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class ctrlTourGuides
+Partial Class ctrlCustomers
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -22,6 +22,7 @@ Partial Class ctrlTourGuides
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.combGender = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtbxEmail = New System.Windows.Forms.TextBox()
@@ -35,7 +36,7 @@ Partial Class ctrlTourGuides
         Me.txtbxMidname = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtbxFrstname = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -44,11 +45,27 @@ Partial Class ctrlTourGuides
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnDelEmp = New System.Windows.Forms.Button()
-        Me.btnUpdEmp = New System.Windows.Forms.Button()
-        Me.btnAddEmp = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnDelCust = New System.Windows.Forms.Button()
+        Me.btnUpdCust = New System.Windows.Forms.Button()
+        Me.btnAddCust = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnClear = New System.Windows.Forms.Button()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(1089, 35)
+        Me.Label2.TabIndex = 25
+        Me.Label2.Text = "C  U  S  T  O  M  E  R    I  N  F  O"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'combGender
         '
@@ -60,10 +77,10 @@ Partial Class ctrlTourGuides
         Me.combGender.FormattingEnabled = True
         Me.combGender.ItemHeight = 24
         Me.combGender.Items.AddRange(New Object() {"MALE", "FEMALE"})
-        Me.combGender.Location = New System.Drawing.Point(640, 476)
+        Me.combGender.Location = New System.Drawing.Point(906, 423)
         Me.combGender.Name = "combGender"
-        Me.combGender.Size = New System.Drawing.Size(102, 32)
-        Me.combGender.TabIndex = 44
+        Me.combGender.Size = New System.Drawing.Size(99, 32)
+        Me.combGender.TabIndex = 84
         '
         'Label8
         '
@@ -71,10 +88,10 @@ Partial Class ctrlTourGuides
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(636, 451)
+        Me.Label8.Location = New System.Drawing.Point(902, 398)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(70, 22)
-        Me.Label8.TabIndex = 43
+        Me.Label8.TabIndex = 83
         Me.Label8.Text = "Gender:"
         '
         'txtbxEmail
@@ -84,10 +101,10 @@ Partial Class ctrlTourGuides
         Me.txtbxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.txtbxEmail.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxEmail.Location = New System.Drawing.Point(453, 630)
+        Me.txtbxEmail.Location = New System.Drawing.Point(716, 576)
         Me.txtbxEmail.Name = "txtbxEmail"
         Me.txtbxEmail.Size = New System.Drawing.Size(289, 35)
-        Me.txtbxEmail.TabIndex = 42
+        Me.txtbxEmail.TabIndex = 82
         Me.txtbxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label5
@@ -96,10 +113,10 @@ Partial Class ctrlTourGuides
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label5.Location = New System.Drawing.Point(454, 605)
+        Me.Label5.Location = New System.Drawing.Point(717, 551)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(57, 22)
-        Me.Label5.TabIndex = 41
+        Me.Label5.TabIndex = 81
         Me.Label5.Text = "Email:"
         '
         'txtbxContNum
@@ -108,11 +125,11 @@ Partial Class ctrlTourGuides
         Me.txtbxContNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtbxContNum.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxContNum.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxContNum.Location = New System.Drawing.Point(453, 553)
+        Me.txtbxContNum.Location = New System.Drawing.Point(716, 499)
         Me.txtbxContNum.MaxLength = 11
         Me.txtbxContNum.Name = "txtbxContNum"
         Me.txtbxContNum.Size = New System.Drawing.Size(289, 35)
-        Me.txtbxContNum.TabIndex = 40
+        Me.txtbxContNum.TabIndex = 80
         Me.txtbxContNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
@@ -121,24 +138,22 @@ Partial Class ctrlTourGuides
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(454, 528)
+        Me.Label6.Location = New System.Drawing.Point(717, 474)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(137, 22)
-        Me.Label6.TabIndex = 39
+        Me.Label6.TabIndex = 79
         Me.Label6.Text = "Contact number:"
         '
         'txtbxEmpNo
         '
         Me.txtbxEmpNo.BackColor = System.Drawing.Color.White
         Me.txtbxEmpNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxEmpNo.Enabled = False
         Me.txtbxEmpNo.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxEmpNo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxEmpNo.Location = New System.Drawing.Point(453, 477)
+        Me.txtbxEmpNo.Location = New System.Drawing.Point(716, 423)
         Me.txtbxEmpNo.Name = "txtbxEmpNo"
-        Me.txtbxEmpNo.ReadOnly = True
-        Me.txtbxEmpNo.Size = New System.Drawing.Size(181, 35)
-        Me.txtbxEmpNo.TabIndex = 38
+        Me.txtbxEmpNo.Size = New System.Drawing.Size(184, 35)
+        Me.txtbxEmpNo.TabIndex = 78
         Me.txtbxEmpNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
@@ -147,10 +162,10 @@ Partial Class ctrlTourGuides
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(454, 452)
+        Me.Label7.Location = New System.Drawing.Point(717, 398)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(73, 22)
-        Me.Label7.TabIndex = 37
+        Me.Label7.TabIndex = 77
         Me.Label7.Text = "RFID no."
         '
         'txtbxSurname
@@ -160,10 +175,10 @@ Partial Class ctrlTourGuides
         Me.txtbxSurname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtbxSurname.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxSurname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxSurname.Location = New System.Drawing.Point(85, 630)
+        Me.txtbxSurname.Location = New System.Drawing.Point(89, 576)
         Me.txtbxSurname.Name = "txtbxSurname"
         Me.txtbxSurname.Size = New System.Drawing.Size(336, 35)
-        Me.txtbxSurname.TabIndex = 36
+        Me.txtbxSurname.TabIndex = 76
         Me.txtbxSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
@@ -172,10 +187,10 @@ Partial Class ctrlTourGuides
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(81, 605)
+        Me.Label4.Location = New System.Drawing.Point(85, 551)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(81, 22)
-        Me.Label4.TabIndex = 35
+        Me.Label4.TabIndex = 75
         Me.Label4.Text = "Surname:"
         '
         'txtbxMidname
@@ -185,10 +200,10 @@ Partial Class ctrlTourGuides
         Me.txtbxMidname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtbxMidname.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxMidname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxMidname.Location = New System.Drawing.Point(85, 553)
+        Me.txtbxMidname.Location = New System.Drawing.Point(89, 499)
         Me.txtbxMidname.Name = "txtbxMidname"
         Me.txtbxMidname.Size = New System.Drawing.Size(336, 35)
-        Me.txtbxMidname.TabIndex = 34
+        Me.txtbxMidname.TabIndex = 74
         Me.txtbxMidname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
@@ -197,10 +212,10 @@ Partial Class ctrlTourGuides
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(81, 528)
+        Me.Label3.Location = New System.Drawing.Point(85, 474)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(110, 22)
-        Me.Label3.TabIndex = 33
+        Me.Label3.TabIndex = 73
         Me.Label3.Text = "Middle name:"
         '
         'txtbxFrstname
@@ -210,23 +225,23 @@ Partial Class ctrlTourGuides
         Me.txtbxFrstname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtbxFrstname.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxFrstname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxFrstname.Location = New System.Drawing.Point(85, 477)
+        Me.txtbxFrstname.Location = New System.Drawing.Point(89, 423)
         Me.txtbxFrstname.Name = "txtbxFrstname"
         Me.txtbxFrstname.Size = New System.Drawing.Size(336, 35)
-        Me.txtbxFrstname.TabIndex = 32
+        Me.txtbxFrstname.TabIndex = 72
         Me.txtbxFrstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label2
+        'Label1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(81, 458)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 22)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "First name:"
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label1.Location = New System.Drawing.Point(85, 404)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(96, 22)
+        Me.Label1.TabIndex = 71
+        Me.Label1.Text = "First name:"
         '
         'ListView1
         '
@@ -234,118 +249,130 @@ Partial Class ctrlTourGuides
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListView1.BackColor = System.Drawing.Color.White
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7})
-        Me.ListView1.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListView1.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListView1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(68, 38)
+        Me.ListView1.Location = New System.Drawing.Point(36, 38)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(957, 390)
-        Me.ListView1.TabIndex = 29
+        Me.ListView1.Size = New System.Drawing.Size(1030, 342)
+        Me.ListView1.TabIndex = 70
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
-        Me.ColumnHeader1.Text = "RFID no."
-        Me.ColumnHeader1.Width = 66
+        Me.ColumnHeader1.Text = "RFID No."
+        Me.ColumnHeader1.Width = 132
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Firstname"
-        Me.ColumnHeader2.Width = 167
+        Me.ColumnHeader2.Width = 150
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Middlename"
-        Me.ColumnHeader3.Width = 154
+        Me.ColumnHeader3.Width = 149
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Surname"
-        Me.ColumnHeader4.Width = 158
+        Me.ColumnHeader4.Width = 149
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Gender"
+        Me.ColumnHeader5.Width = 67
         '
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "Contact number"
-        Me.ColumnHeader6.Width = 139
+        Me.ColumnHeader6.Width = 144
         '
         'ColumnHeader7
         '
         Me.ColumnHeader7.Text = "Email"
-        Me.ColumnHeader7.Width = 193
+        Me.ColumnHeader7.Width = 219
         '
-        'btnDelEmp
+        'btnDelCust
         '
-        Me.btnDelEmp.BackColor = System.Drawing.Color.Gainsboro
-        Me.btnDelEmp.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelEmp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnDelEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelEmp.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelEmp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnDelEmp.Location = New System.Drawing.Point(783, 620)
-        Me.btnDelEmp.Name = "btnDelEmp"
-        Me.btnDelEmp.Size = New System.Drawing.Size(221, 57)
-        Me.btnDelEmp.TabIndex = 28
-        Me.btnDelEmp.Text = "Delete"
-        Me.btnDelEmp.UseVisualStyleBackColor = False
+        Me.btnDelCust.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.btnDelCust.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelCust.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDelCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelCust.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDelCust.Location = New System.Drawing.Point(808, 632)
+        Me.btnDelCust.Name = "btnDelCust"
+        Me.btnDelCust.Size = New System.Drawing.Size(85, 50)
+        Me.btnDelCust.TabIndex = 69
+        Me.btnDelCust.Text = "Delete"
+        Me.btnDelCust.UseVisualStyleBackColor = False
         '
-        'btnUpdEmp
+        'btnUpdCust
         '
-        Me.btnUpdEmp.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnUpdEmp.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdEmp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnUpdEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdEmp.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdEmp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdEmp.Location = New System.Drawing.Point(783, 538)
-        Me.btnUpdEmp.Name = "btnUpdEmp"
-        Me.btnUpdEmp.Size = New System.Drawing.Size(221, 57)
-        Me.btnUpdEmp.TabIndex = 27
-        Me.btnUpdEmp.Text = "Update"
-        Me.btnUpdEmp.UseVisualStyleBackColor = False
+        Me.btnUpdCust.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnUpdCust.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUpdCust.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnUpdCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnUpdCust.Location = New System.Drawing.Point(707, 632)
+        Me.btnUpdCust.Name = "btnUpdCust"
+        Me.btnUpdCust.Size = New System.Drawing.Size(85, 50)
+        Me.btnUpdCust.TabIndex = 68
+        Me.btnUpdCust.Text = "Update"
+        Me.btnUpdCust.UseVisualStyleBackColor = False
         '
-        'btnAddEmp
+        'btnAddCust
         '
-        Me.btnAddEmp.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnAddEmp.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddEmp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAddEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddEmp.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddEmp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAddEmp.Location = New System.Drawing.Point(783, 461)
-        Me.btnAddEmp.Name = "btnAddEmp"
-        Me.btnAddEmp.Size = New System.Drawing.Size(221, 57)
-        Me.btnAddEmp.TabIndex = 26
-        Me.btnAddEmp.Text = "Add"
-        Me.btnAddEmp.UseVisualStyleBackColor = False
+        Me.btnAddCust.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnAddCust.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAddCust.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnAddCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnAddCust.Location = New System.Drawing.Point(606, 632)
+        Me.btnAddCust.Name = "btnAddCust"
+        Me.btnAddCust.Size = New System.Drawing.Size(85, 50)
+        Me.btnAddCust.TabIndex = 67
+        Me.btnAddCust.Text = "Add"
+        Me.btnAddCust.UseVisualStyleBackColor = False
         '
-        'Label1
+        'PictureBox1
         '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1089, 35)
-        Me.Label1.TabIndex = 45
-        Me.Label1.Text = "T  O  U  R    G  U  I  D  E    R  E  C  O  R  D "
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PictureBox1.BackColor = System.Drawing.Color.LightGray
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(451, 423)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(240, 188)
+        Me.PictureBox1.TabIndex = 85
+        Me.PictureBox1.TabStop = False
         '
-        'ctrlTourGuides
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnClear.Location = New System.Drawing.Point(908, 632)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(85, 50)
+        Me.btnClear.TabIndex = 86
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = False
+        '
+        'ctrlCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.combGender)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtbxEmail)
@@ -359,21 +386,24 @@ Partial Class ctrlTourGuides
         Me.Controls.Add(Me.txtbxMidname)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtbxFrstname)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ListView1)
-        Me.Controls.Add(Me.btnDelEmp)
-        Me.Controls.Add(Me.btnUpdEmp)
-        Me.Controls.Add(Me.btnAddEmp)
+        Me.Controls.Add(Me.btnDelCust)
+        Me.Controls.Add(Me.btnUpdCust)
+        Me.Controls.Add(Me.btnAddCust)
+        Me.Controls.Add(Me.Label2)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Margin = New System.Windows.Forms.Padding(0)
-        Me.Name = "ctrlTourGuides"
+        Me.Name = "ctrlCustomers"
         Me.Size = New System.Drawing.Size(1095, 730)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
+    Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents combGender As ComboBox
     Friend WithEvents Label8 As Label
     Friend WithEvents txtbxEmail As TextBox
@@ -387,7 +417,7 @@ Partial Class ctrlTourGuides
     Friend WithEvents txtbxMidname As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtbxFrstname As TextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
@@ -396,8 +426,8 @@ Partial Class ctrlTourGuides
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ColumnHeader7 As ColumnHeader
-    Friend WithEvents btnDelEmp As Button
-    Friend WithEvents btnUpdEmp As Button
-    Friend WithEvents btnAddEmp As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents btnDelCust As Button
+    Friend WithEvents btnUpdCust As Button
+    Friend WithEvents btnAddCust As Button
+    Friend WithEvents btnClear As Button
 End Class

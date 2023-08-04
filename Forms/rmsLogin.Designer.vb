@@ -74,7 +74,7 @@ Partial Class rmsLogin
         Me.tboxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tboxUsername.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tboxUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tboxUsername.Location = New System.Drawing.Point(63, 23)
+        Me.tboxUsername.Location = New System.Drawing.Point(61, 23)
         Me.tboxUsername.Margin = New System.Windows.Forms.Padding(0)
         Me.tboxUsername.MaxLength = 40
         Me.tboxUsername.Name = "tboxUsername"
@@ -90,7 +90,7 @@ Partial Class rmsLogin
         Me.tboxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tboxPassword.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tboxPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tboxPassword.Location = New System.Drawing.Point(63, 80)
+        Me.tboxPassword.Location = New System.Drawing.Point(61, 80)
         Me.tboxPassword.Margin = New System.Windows.Forms.Padding(0)
         Me.tboxPassword.MaxLength = 25
         Me.tboxPassword.Name = "tboxPassword"
@@ -107,7 +107,7 @@ Partial Class rmsLogin
         Me.checkShow.Cursor = System.Windows.Forms.Cursors.Hand
         Me.checkShow.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.checkShow.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.checkShow.Location = New System.Drawing.Point(311, 111)
+        Me.checkShow.Location = New System.Drawing.Point(309, 111)
         Me.checkShow.Margin = New System.Windows.Forms.Padding(0)
         Me.checkShow.Name = "checkShow"
         Me.checkShow.Size = New System.Drawing.Size(60, 18)
@@ -117,8 +117,6 @@ Partial Class rmsLogin
         '
         'labelForgotPass
         '
-        Me.labelForgotPass.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelForgotPass.AutoSize = True
         Me.labelForgotPass.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelForgotPass.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -194,8 +192,6 @@ Partial Class rmsLogin
         '
         'labelRegister
         '
-        Me.labelRegister.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelRegister.AutoSize = True
         Me.labelRegister.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelRegister.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -209,8 +205,6 @@ Partial Class rmsLogin
         '
         'label1
         '
-        Me.label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -336,7 +330,7 @@ Partial Class rmsLogin
         Me.labelPword.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelPword.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelPword.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelPword.Location = New System.Drawing.Point(60, 62)
+        Me.labelPword.Location = New System.Drawing.Point(58, 62)
         Me.labelPword.Margin = New System.Windows.Forms.Padding(0)
         Me.labelPword.Name = "labelPword"
         Me.labelPword.Size = New System.Drawing.Size(69, 16)
@@ -353,7 +347,7 @@ Partial Class rmsLogin
         Me.labelUser.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelUser.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelUser.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelUser.Location = New System.Drawing.Point(60, 5)
+        Me.labelUser.Location = New System.Drawing.Point(58, 5)
         Me.labelUser.Margin = New System.Windows.Forms.Padding(0)
         Me.labelUser.Name = "labelUser"
         Me.labelUser.Size = New System.Drawing.Size(70, 16)

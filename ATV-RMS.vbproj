@@ -221,52 +221,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="ctrlCustomers.Designer.vb">
+    <Compile Include="Modules\moduleDatabase.vb" />
+    <Compile Include="Modules\moduleLogin.vb" />
+    <Compile Include="Modules\modulePanelTop.vb" />
+    <Compile Include="User Controls\ctrlCustomers.Designer.vb">
       <DependentUpon>ctrlCustomers.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlCustomers.vb">
+    <Compile Include="User Controls\ctrlCustomers.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlInventory.Designer.vb">
+    <Compile Include="User Controls\ctrlInventory.Designer.vb">
       <DependentUpon>ctrlInventory.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlInventory.vb">
+    <Compile Include="User Controls\ctrlInventory.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlNotif.Designer.vb">
+    <Compile Include="User Controls\ctrlNotif.Designer.vb">
       <DependentUpon>ctrlNotif.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlNotif.vb">
+    <Compile Include="User Controls\ctrlNotif.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlReservations.Designer.vb">
+    <Compile Include="User Controls\ctrlReservations.Designer.vb">
       <DependentUpon>ctrlReservations.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlReservations.vb">
+    <Compile Include="User Controls\ctrlReservations.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlRules.Designer.vb">
+    <Compile Include="User Controls\ctrlRules.Designer.vb">
       <DependentUpon>ctrlRules.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlRules.vb">
+    <Compile Include="User Controls\ctrlRules.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlTourGuides.Designer.vb">
+    <Compile Include="User Controls\ctrlTourGuides.Designer.vb">
       <DependentUpon>ctrlTourGuides.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlTourGuides.vb">
+    <Compile Include="User Controls\ctrlTourGuides.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlTransacHist.Designer.vb">
+    <Compile Include="User Controls\ctrlTransacHist.Designer.vb">
       <DependentUpon>ctrlTransacHist.vb</DependentUpon>
     </Compile>
-    <Compile Include="ctrlTransacHist.vb">
+    <Compile Include="User Controls\ctrlTransacHist.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="rmsDashboard.vb">
+    <Compile Include="Forms\rmsDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rmsDashboard.Designer.vb">
+    <Compile Include="Forms\rmsDashboard.Designer.vb">
       <DependentUpon>rmsDashboard.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -286,49 +289,49 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="rmsLogin.Designer.vb">
+    <Compile Include="Forms\rmsLogin.Designer.vb">
       <DependentUpon>rmsLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="rmsLogin.vb">
+    <Compile Include="Forms\rmsLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rmsModule.vb" />
-    <Compile Include="rmsRegistration.Designer.vb">
+    <Compile Include="Modules\moduleDashboard.vb" />
+    <Compile Include="Forms\rmsRegistration.Designer.vb">
       <DependentUpon>rmsRegistration.vb</DependentUpon>
     </Compile>
-    <Compile Include="rmsRegistration.vb">
+    <Compile Include="Forms\rmsRegistration.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rmsSplashScreen.Designer.vb">
+    <Compile Include="Forms\rmsSplashScreen.Designer.vb">
       <DependentUpon>rmsSplashScreen.vb</DependentUpon>
     </Compile>
-    <Compile Include="rmsSplashScreen.vb">
+    <Compile Include="Forms\rmsSplashScreen.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ctrlCustomers.resx">
+    <EmbeddedResource Include="User Controls\ctrlCustomers.resx">
       <DependentUpon>ctrlCustomers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlInventory.resx">
+    <EmbeddedResource Include="User Controls\ctrlInventory.resx">
       <DependentUpon>ctrlInventory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlNotif.resx">
+    <EmbeddedResource Include="User Controls\ctrlNotif.resx">
       <DependentUpon>ctrlNotif.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlReservations.resx">
+    <EmbeddedResource Include="User Controls\ctrlReservations.resx">
       <DependentUpon>ctrlReservations.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlRules.resx">
+    <EmbeddedResource Include="User Controls\ctrlRules.resx">
       <DependentUpon>ctrlRules.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlTourGuides.resx">
+    <EmbeddedResource Include="User Controls\ctrlTourGuides.resx">
       <DependentUpon>ctrlTourGuides.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlTransacHist.resx">
+    <EmbeddedResource Include="User Controls\ctrlTransacHist.resx">
       <DependentUpon>ctrlTransacHist.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rmsDashboard.resx">
+    <EmbeddedResource Include="Forms\rmsDashboard.resx">
       <DependentUpon>rmsDashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -337,13 +340,13 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="rmsLogin.resx">
+    <EmbeddedResource Include="Forms\rmsLogin.resx">
       <DependentUpon>rmsLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rmsRegistration.resx">
+    <EmbeddedResource Include="Forms\rmsRegistration.resx">
       <DependentUpon>rmsRegistration.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rmsSplashScreen.resx">
+    <EmbeddedResource Include="Forms\rmsSplashScreen.resx">
       <DependentUpon>rmsSplashScreen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -844,6 +847,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,7 +1,6 @@
 ﻿Public Class rmsDashboard
 
     Public Shared adminName As String = ""
-
     'user control reference
     Dim reserv As New ctrlReservations
     Dim inve As New ctrlInventory
@@ -22,9 +21,11 @@
         admPanel.Controls.Add(transac)
         admPanel.Controls.Add(rules)
         admPanel.Controls.Add(notifs)
-
+        'para maview yung transacthist pagkaload ng form
         btnTransacHist.PerformClick()
         transac.BringToFront()
+
+        InitializeDraggablePanel(panelTop)
     End Sub
 
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click

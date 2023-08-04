@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ctrlReservations
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class ctrlReservations
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -30,12 +31,13 @@ Partial Class ctrlReservations
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblDateTime = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnDelCust = New System.Windows.Forms.Button()
-        Me.btnUpdCust = New System.Windows.Forms.Button()
-        Me.btnAddCust = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnDelRes = New System.Windows.Forms.Button()
+        Me.btnUpdRes = New System.Windows.Forms.Button()
+        Me.btnAddRes = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -63,9 +65,9 @@ Partial Class ctrlReservations
         Me.ListView1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(38, 127)
+        Me.ListView1.Location = New System.Drawing.Point(38, 104)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1019, 497)
+        Me.ListView1.Size = New System.Drawing.Size(1019, 315)
         Me.ListView1.TabIndex = 13
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -105,23 +107,23 @@ Partial Class ctrlReservations
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.ItemHeight = 18
         Me.ComboBox2.Items.AddRange(New Object() {"APRIL", "AUGUST", "DECEMBER", "FEBRUARY", "JANUARY", "JULY", "JUNE", "MARCH", "MAY", "NOVEMBER", "OCTOBER", "SEPTEMBER"})
-        Me.ComboBox2.Location = New System.Drawing.Point(839, 74)
+        Me.ComboBox2.Location = New System.Drawing.Point(839, 72)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(146, 26)
         Me.ComboBox2.TabIndex = 65
         '
-        'Label2
+        'lblDateTime
         '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(601, 35)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(456, 22)
-        Me.Label2.TabIndex = 66
-        Me.Label2.Text = "hh; mm; ss; tt; 12/12/1212"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblDateTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDateTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblDateTime.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDateTime.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblDateTime.Location = New System.Drawing.Point(601, 35)
+        Me.lblDateTime.Name = "lblDateTime"
+        Me.lblDateTime.Size = New System.Drawing.Size(456, 22)
+        Me.lblDateTime.TabIndex = 66
+        Me.lblDateTime.Text = "MMM d, yyyy hh:mm:ss tt"
+        Me.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btnRefresh
         '
@@ -130,72 +132,75 @@ Partial Class ctrlReservations
         Me.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnRefresh.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnRefresh.Location = New System.Drawing.Point(991, 74)
+        Me.btnRefresh.Location = New System.Drawing.Point(991, 72)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(66, 26)
         Me.btnRefresh.TabIndex = 67
         Me.btnRefresh.Text = "View"
         Me.btnRefresh.UseVisualStyleBackColor = False
         '
-        'btnCancel
+        'btnClear
         '
-        Me.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnCancel.Location = New System.Drawing.Point(882, 642)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(134, 50)
-        Me.btnCancel.TabIndex = 94
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnClear.Location = New System.Drawing.Point(938, 642)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(85, 50)
+        Me.btnClear.TabIndex = 94
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
-        'btnDelCust
+        'btnDelRes
         '
-        Me.btnDelCust.BackColor = System.Drawing.Color.DarkGray
-        Me.btnDelCust.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelCust.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnDelCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnDelCust.Location = New System.Drawing.Point(742, 642)
-        Me.btnDelCust.Name = "btnDelCust"
-        Me.btnDelCust.Size = New System.Drawing.Size(134, 50)
-        Me.btnDelCust.TabIndex = 93
-        Me.btnDelCust.Text = "Delete"
-        Me.btnDelCust.UseVisualStyleBackColor = False
+        Me.btnDelRes.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.btnDelRes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelRes.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDelRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelRes.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelRes.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDelRes.Location = New System.Drawing.Point(836, 642)
+        Me.btnDelRes.Name = "btnDelRes"
+        Me.btnDelRes.Size = New System.Drawing.Size(85, 50)
+        Me.btnDelRes.TabIndex = 93
+        Me.btnDelRes.Text = "Delete"
+        Me.btnDelRes.UseVisualStyleBackColor = False
         '
-        'btnUpdCust
+        'btnUpdRes
         '
-        Me.btnUpdCust.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnUpdCust.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdCust.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnUpdCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdCust.Location = New System.Drawing.Point(602, 642)
-        Me.btnUpdCust.Name = "btnUpdCust"
-        Me.btnUpdCust.Size = New System.Drawing.Size(134, 50)
-        Me.btnUpdCust.TabIndex = 92
-        Me.btnUpdCust.Text = "Update"
-        Me.btnUpdCust.UseVisualStyleBackColor = False
+        Me.btnUpdRes.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnUpdRes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUpdRes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnUpdRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdRes.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdRes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnUpdRes.Location = New System.Drawing.Point(734, 642)
+        Me.btnUpdRes.Name = "btnUpdRes"
+        Me.btnUpdRes.Size = New System.Drawing.Size(85, 50)
+        Me.btnUpdRes.TabIndex = 92
+        Me.btnUpdRes.Text = "Update"
+        Me.btnUpdRes.UseVisualStyleBackColor = False
         '
-        'btnAddCust
+        'btnAddRes
         '
-        Me.btnAddCust.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnAddCust.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAddCust.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAddCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAddCust.Location = New System.Drawing.Point(462, 642)
-        Me.btnAddCust.Name = "btnAddCust"
-        Me.btnAddCust.Size = New System.Drawing.Size(134, 50)
-        Me.btnAddCust.TabIndex = 91
-        Me.btnAddCust.Text = "Add"
-        Me.btnAddCust.UseVisualStyleBackColor = False
+        Me.btnAddRes.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnAddRes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAddRes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnAddRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddRes.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddRes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnAddRes.Location = New System.Drawing.Point(632, 642)
+        Me.btnAddRes.Name = "btnAddRes"
+        Me.btnAddRes.Size = New System.Drawing.Size(85, 50)
+        Me.btnAddRes.TabIndex = 91
+        Me.btnAddRes.Text = "Add"
+        Me.btnAddRes.UseVisualStyleBackColor = False
+        '
+        'Timer1
+        '
         '
         'ctrlReservations
         '
@@ -203,12 +208,12 @@ Partial Class ctrlReservations
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnDelCust)
-        Me.Controls.Add(Me.btnUpdCust)
-        Me.Controls.Add(Me.btnAddCust)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.btnDelRes)
+        Me.Controls.Add(Me.btnUpdRes)
+        Me.Controls.Add(Me.btnAddRes)
         Me.Controls.Add(Me.btnRefresh)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblDateTime)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ListView1)
@@ -229,10 +234,11 @@ Partial Class ctrlReservations
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblDateTime As Label
     Friend WithEvents btnRefresh As Button
-    Friend WithEvents btnCancel As Button
-    Friend WithEvents btnDelCust As Button
-    Friend WithEvents btnUpdCust As Button
-    Friend WithEvents btnAddCust As Button
+    Friend WithEvents btnClear As Button
+    Friend WithEvents btnDelRes As Button
+    Friend WithEvents btnUpdRes As Button
+    Friend WithEvents btnAddRes As Button
+    Friend WithEvents Timer1 As Timer
 End Class

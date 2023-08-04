@@ -3,10 +3,20 @@ Imports MongoDB.Driver
 
 Public Class rmsRegistration
 
-    Private Sub rmsRegistration_Load(sender As Object, e As EventArgs) Handles Me.Load
-        connectToMongo()
+    Private Sub clearRegForm()
+        regFname.Clear()
+        regSname.Clear()
+        regEmail.Clear()
+        regPhone.Clear()
+        regUsername.Clear()
+        regPassw.Clear()
+        regRFID.Clear()
     End Sub
 
+    Private Sub rmsRegistration_Load(sender As Object, e As EventArgs) Handles Me.Load
+        connectToMongo()
+        InitializeDraggablePanel(panelTop)
+    End Sub
 
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
@@ -22,8 +32,6 @@ Public Class rmsRegistration
             MessageBox.Show("Fill out all the fields to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
-                'Dim client As MongoClient = New MongoClient(connectionString)
-                'Dim database As IMongoDatabase = client.GetDatabase("ATVRMS")
                 Dim firstName As String = regFname.Text()
                 Dim surname As String = regSname.Text()
                 Dim email As String = regEmail.Text.Trim()
@@ -48,10 +56,9 @@ Public Class rmsRegistration
                     Builders(Of BsonDocument).Filter.Eq(Of String)("Email", email)
                 )
                 Dim count As Long = collection.CountDocuments(filter)
-
                 If count > 0 Then
                     MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    regRFID.Focus()
+                    'regRFID.Focus()
                 Else
                     collection.InsertOne(newAdmin)
                     MessageBox.Show("You may now login to ATV-RMS.", "Successfully registered!", MessageBoxButtons.OK, MessageBoxIcon.None)
@@ -67,8 +74,9 @@ Public Class rmsRegistration
 
     Private Sub labelLogin_Click(sender As Object, e As EventArgs) Handles labelLogin.Click
         rmsLogin.Show()
+        rmsLogin.Location = Me.Location
+        clearRegForm()
         Me.Close()
     End Sub
-
 
 End Class
