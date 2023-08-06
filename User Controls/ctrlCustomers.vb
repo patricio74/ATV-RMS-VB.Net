@@ -1,4 +1,5 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.Net
+Imports System.Text.RegularExpressions
 Imports MongoDB.Bson
 Imports MongoDB.Driver
 
@@ -27,33 +28,45 @@ Public Class ctrlCustomers
 
     Private Sub ctrlCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         connectToMongo()
+        clearCustForm()
         refreshList()
     End Sub
 
     Private Sub ctrlCustomers_Enter(sender As Object, e As EventArgs) Handles Me.Enter
         refreshList()
+        clearCustForm()
     End Sub
 
     Private Sub populateList()
         Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("Customer")
         Dim documents As List(Of BsonDocument) = collection.Find(New BsonDocument()).ToList()
         DataGridView1.Rows.Clear()
+
         For Each document As BsonDocument In documents
             Dim row As New DataGridViewRow()
-            Dim username As String = document("Username").ToString
-            Dim fname As String = document("First Name").ToString()
+            Dim ID As String = document("_id").ToString
+            Dim fname As String = document("First Name").ToString
             Dim mname As String = document("Middle Name").ToString
-            Dim sname As String = document("Surname").ToString()
+            Dim sname As String = document("Surname").ToString
             Dim phone As String = document("Phone").ToString
             Dim email As String = document("Email").ToString
-            Dim address As String = document("Address").ToString
+
+            Dim address As BsonDocument = document("Address")
+            Dim street As String = address("Street").ToString
+            Dim barangay As String = address("Barangay").ToString
+            Dim municipality As String = address("Municipality/City").ToString
+            Dim province As String = address("Province").ToString
+            Dim country As String = address("Country").ToString
 
             Dim fullName As String = fname + " " + mname + " " + sname
 
-            row.CreateCells(DataGridView1, fullName, email, phone, address, username)
+            row.CreateCells(DataGridView1, ID, fullName, phone, address, email)
             DataGridView1.Rows.Add(row)
         Next
     End Sub
+
+
+
 
     Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
         If e.RowIndex >= 0 AndAlso e.ColumnIndex = 3 Then
@@ -100,12 +113,10 @@ Public Class ctrlCustomers
 
     End Sub
 
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        clearCustForm()
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClrCust.Click
         refreshList()
+        clearCustForm()
     End Sub
 
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
 
-    End Sub
 End Class

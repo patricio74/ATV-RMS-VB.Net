@@ -9,6 +9,8 @@
     Dim overview As New ctrlOverview
     Dim rules As New ctrlRules
     Dim notifs As New ctrlNotif
+    Dim transac As New ctrlTransaction
+    Dim settings As New ctrlUserSettings
 
     Private Sub centerLoc()
         Dim screenWidth As Integer = Screen.PrimaryScreen.WorkingArea.Width
@@ -33,6 +35,8 @@
         admPanel.Controls.Add(overview)
         admPanel.Controls.Add(rules)
         admPanel.Controls.Add(notifs)
+        admPanel.Controls.Add(transac)
+        admPanel.Controls.Add(settings)
 
         btnOverview.PerformClick()
         overview.BringToFront()
@@ -99,16 +103,16 @@
         rules.BringToFront()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
+    Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
         resetButtonColor()
         activeButtonColor(sender, e)
-        overview.BringToFront()
+        transac.BringToFront()
     End Sub
 
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
         resetButtonColor()
         activeButtonColor(sender, e)
-        overview.BringToFront()
+        settings.BringToFront()
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
