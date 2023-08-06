@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class ctrlTransacHist
+Partial Class ctrlOverview
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -29,7 +29,6 @@ Partial Class ctrlTransacHist
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -41,7 +40,6 @@ Partial Class ctrlTransacHist
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblDateTime = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -59,7 +57,7 @@ Partial Class ctrlTransacHist
         Me.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnRefresh.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnRefresh.Location = New System.Drawing.Point(1002, 170)
+        Me.btnRefresh.Location = New System.Drawing.Point(1058, 158)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(63, 27)
         Me.btnRefresh.TabIndex = 23
@@ -73,9 +71,9 @@ Partial Class ctrlTransacHist
         Me.ListView1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(30, 203)
+        Me.ListView1.Location = New System.Drawing.Point(40, 191)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(503, 468)
+        Me.ListView1.Size = New System.Drawing.Size(518, 490)
         Me.ListView1.TabIndex = 22
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -100,26 +98,12 @@ Partial Class ctrlTransacHist
         Me.ColumnHeader4.Text = "Total"
         Me.ColumnHeader4.Width = 139
         '
-        'Label2
-        '
-        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(3, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1089, 35)
-        Me.Label2.TabIndex = 24
-        Me.Label2.Text = "T  R  A  N  S  A  C  T  I  O  N    H  I  S  T  O  R  Y"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.PaleGreen
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(726, 81)
+        Me.GroupBox1.Location = New System.Drawing.Point(771, 59)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(235, 93)
         Me.GroupBox1.TabIndex = 25
@@ -142,7 +126,7 @@ Partial Class ctrlTransacHist
         Me.GroupBox2.BackColor = System.Drawing.Color.SlateBlue
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.GroupBox2.Location = New System.Drawing.Point(521, 81)
+        Me.GroupBox2.Location = New System.Drawing.Point(566, 59)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(185, 93)
         Me.GroupBox2.TabIndex = 26
@@ -165,9 +149,9 @@ Partial Class ctrlTransacHist
         Me.GroupBox3.BackColor = System.Drawing.Color.WhiteSmoke
         Me.GroupBox3.Controls.Add(Me.ListView2)
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.GroupBox3.Location = New System.Drawing.Point(555, 203)
+        Me.GroupBox3.Location = New System.Drawing.Point(587, 191)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(510, 468)
+        Me.GroupBox3.Size = New System.Drawing.Size(534, 490)
         Me.GroupBox3.TabIndex = 27
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Customer Reviews"
@@ -184,7 +168,7 @@ Partial Class ctrlTransacHist
         Me.ListView2.HideSelection = False
         Me.ListView2.Location = New System.Drawing.Point(19, 33)
         Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(477, 407)
+        Me.ListView2.Size = New System.Drawing.Size(501, 429)
         Me.ListView2.TabIndex = 23
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
@@ -209,7 +193,7 @@ Partial Class ctrlTransacHist
         Me.GroupBox4.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.GroupBox4.Controls.Add(Me.Label5)
         Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.GroupBox4.Location = New System.Drawing.Point(316, 81)
+        Me.GroupBox4.Location = New System.Drawing.Point(361, 59)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(185, 93)
         Me.GroupBox4.TabIndex = 28
@@ -227,25 +211,12 @@ Partial Class ctrlTransacHist
         Me.Label5.Text = "25/42"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblDateTime
-        '
-        Me.lblDateTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblDateTime.BackColor = System.Drawing.Color.Transparent
-        Me.lblDateTime.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDateTime.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblDateTime.Location = New System.Drawing.Point(609, 35)
-        Me.lblDateTime.Name = "lblDateTime"
-        Me.lblDateTime.Size = New System.Drawing.Size(456, 22)
-        Me.lblDateTime.TabIndex = 29
-        Me.lblDateTime.Text = "MMM d, yyyy hh:mm:ss tt"
-        Me.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'GroupBox5
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.DarkOrchid
         Me.GroupBox5.Controls.Add(Me.Label6)
         Me.GroupBox5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.GroupBox5.Location = New System.Drawing.Point(119, 81)
+        Me.GroupBox5.Location = New System.Drawing.Point(164, 59)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(176, 93)
         Me.GroupBox5.TabIndex = 33
@@ -263,27 +234,22 @@ Partial Class ctrlTransacHist
         Me.Label6.Text = "17"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Timer1
-        '
-        '
         'ctrlTransacHist
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Controls.Add(Me.GroupBox5)
-        Me.Controls.Add(Me.lblDateTime)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.ListView1)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "ctrlTransacHist"
-        Me.Size = New System.Drawing.Size(1095, 730)
+        Me.Size = New System.Drawing.Size(1161, 738)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
@@ -299,7 +265,6 @@ Partial Class ctrlTransacHist
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
@@ -308,7 +273,6 @@ Partial Class ctrlTransacHist
     Friend WithEvents ColumnHeader12 As ColumnHeader
     Friend WithEvents ColumnHeader13 As ColumnHeader
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents lblDateTime As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label

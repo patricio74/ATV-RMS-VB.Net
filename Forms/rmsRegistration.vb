@@ -24,7 +24,8 @@ Public Class rmsRegistration
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
-        rmsLogin.Close()
+        rmsLogin.Show()
+        rmsLogin.Location = Me.Location
     End Sub
 
     Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.Click

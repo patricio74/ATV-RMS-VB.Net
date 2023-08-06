@@ -12,13 +12,15 @@
         Dim defaultBackColor As Color = ColorTranslator.FromHtml("#1e272e")
 
         Dim buttons As Button() = {
+            rmsDashboard.btnTransaction,
             rmsDashboard.btnReservations,
             rmsDashboard.btnInventory,
             rmsDashboard.btnTGuides,
             rmsDashboard.btnCustomers,
             rmsDashboard.btnNotif,
-            rmsDashboard.btnTransacHist,
-            rmsDashboard.btnRules
+            rmsDashboard.btnOverview,
+            rmsDashboard.btnRules,
+            rmsDashboard.btnSettings
         }
         For Each btn In buttons
             btn.ForeColor = defaultForeColor

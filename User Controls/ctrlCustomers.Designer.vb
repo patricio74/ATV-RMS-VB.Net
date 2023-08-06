@@ -22,292 +22,225 @@ Partial Class ctrlCustomers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.combGender = New System.Windows.Forms.ComboBox()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.cmbGender = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtbxEmail = New System.Windows.Forms.TextBox()
+        Me.tbxEmail = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtbxContNum = New System.Windows.Forms.TextBox()
+        Me.tbxPhone = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtbxEmpNo = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtbxSurname = New System.Windows.Forms.TextBox()
+        Me.tbxCustID = New System.Windows.Forms.TextBox()
+        Me.tbxSurname = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtbxMidname = New System.Windows.Forms.TextBox()
+        Me.tbxMidname = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtbxFrstname = New System.Windows.Forms.TextBox()
+        Me.tbxFirname = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnDelCust = New System.Windows.Forms.Button()
         Me.btnUpdCust = New System.Windows.Forms.Button()
         Me.btnAddCust = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnClear = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tbxStreet = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tbxBarangay = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.tbxMuniCity = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cmbCountry = New System.Windows.Forms.ComboBox()
+        Me.tbxProvince = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label2
+        'cmbGender
         '
-        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(3, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1089, 35)
-        Me.Label2.TabIndex = 25
-        Me.Label2.Text = "C  U  S  T  O  M  E  R    I  N  F  O"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'combGender
-        '
-        Me.combGender.BackColor = System.Drawing.Color.White
-        Me.combGender.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.combGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.combGender.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.combGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.combGender.FormattingEnabled = True
-        Me.combGender.ItemHeight = 24
-        Me.combGender.Items.AddRange(New Object() {"MALE", "FEMALE"})
-        Me.combGender.Location = New System.Drawing.Point(906, 423)
-        Me.combGender.Name = "combGender"
-        Me.combGender.Size = New System.Drawing.Size(99, 32)
-        Me.combGender.TabIndex = 84
+        Me.cmbGender.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.cmbGender.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbGender.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.cmbGender.FormattingEnabled = True
+        Me.cmbGender.ItemHeight = 20
+        Me.cmbGender.Items.AddRange(New Object() {"MALE", "FEMALE"})
+        Me.cmbGender.Location = New System.Drawing.Point(467, 641)
+        Me.cmbGender.Name = "cmbGender"
+        Me.cmbGender.Size = New System.Drawing.Size(120, 28)
+        Me.cmbGender.TabIndex = 12
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(902, 398)
+        Me.Label8.Location = New System.Drawing.Point(404, 647)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(70, 22)
-        Me.Label8.TabIndex = 83
-        Me.Label8.Text = "Gender:"
+        Me.Label8.Size = New System.Drawing.Size(57, 18)
+        Me.Label8.TabIndex = 11
+        Me.Label8.Text = "GENDER:"
         '
-        'txtbxEmail
+        'tbxEmail
         '
-        Me.txtbxEmail.BackColor = System.Drawing.Color.White
-        Me.txtbxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
-        Me.txtbxEmail.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxEmail.Location = New System.Drawing.Point(716, 576)
-        Me.txtbxEmail.Name = "txtbxEmail"
-        Me.txtbxEmail.Size = New System.Drawing.Size(289, 35)
-        Me.txtbxEmail.TabIndex = 82
-        Me.txtbxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxEmail.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
+        Me.tbxEmail.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxEmail.Location = New System.Drawing.Point(75, 661)
+        Me.tbxEmail.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxEmail.Name = "tbxEmail"
+        Me.tbxEmail.Size = New System.Drawing.Size(296, 26)
+        Me.tbxEmail.TabIndex = 10
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label5.Location = New System.Drawing.Point(717, 551)
+        Me.Label5.Location = New System.Drawing.Point(72, 643)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 22)
-        Me.Label5.TabIndex = 81
-        Me.Label5.Text = "Email:"
+        Me.Label5.Size = New System.Drawing.Size(100, 18)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "EMAIL ADDRESS:"
         '
-        'txtbxContNum
+        'tbxPhone
         '
-        Me.txtbxContNum.BackColor = System.Drawing.Color.White
-        Me.txtbxContNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxContNum.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxContNum.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxContNum.Location = New System.Drawing.Point(716, 499)
-        Me.txtbxContNum.MaxLength = 11
-        Me.txtbxContNum.Name = "txtbxContNum"
-        Me.txtbxContNum.Size = New System.Drawing.Size(289, 35)
-        Me.txtbxContNum.TabIndex = 80
-        Me.txtbxContNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxPhone.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxPhone.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxPhone.Location = New System.Drawing.Point(75, 601)
+        Me.tbxPhone.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxPhone.MaxLength = 11
+        Me.tbxPhone.Name = "tbxPhone"
+        Me.tbxPhone.Size = New System.Drawing.Size(296, 26)
+        Me.tbxPhone.TabIndex = 8
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(717, 474)
+        Me.Label6.Location = New System.Drawing.Point(72, 586)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(137, 22)
-        Me.Label6.TabIndex = 79
-        Me.Label6.Text = "Contact number:"
+        Me.Label6.Size = New System.Drawing.Size(114, 18)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "CONTACT NUMBER:"
         '
-        'txtbxEmpNo
+        'tbxCustID
         '
-        Me.txtbxEmpNo.BackColor = System.Drawing.Color.White
-        Me.txtbxEmpNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxEmpNo.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxEmpNo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxEmpNo.Location = New System.Drawing.Point(716, 423)
-        Me.txtbxEmpNo.Name = "txtbxEmpNo"
-        Me.txtbxEmpNo.Size = New System.Drawing.Size(184, 35)
-        Me.txtbxEmpNo.TabIndex = 78
-        Me.txtbxEmpNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxCustID.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.tbxCustID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbxCustID.Cursor = System.Windows.Forms.Cursors.Default
+        Me.tbxCustID.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxCustID.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxCustID.Location = New System.Drawing.Point(407, 416)
+        Me.tbxCustID.Name = "tbxCustID"
+        Me.tbxCustID.ReadOnly = True
+        Me.tbxCustID.Size = New System.Drawing.Size(180, 13)
+        Me.tbxCustID.TabIndex = 23
+        Me.tbxCustID.Visible = False
         '
-        'Label7
+        'tbxSurname
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(717, 398)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(73, 22)
-        Me.Label7.TabIndex = 77
-        Me.Label7.Text = "RFID no."
-        '
-        'txtbxSurname
-        '
-        Me.txtbxSurname.BackColor = System.Drawing.Color.White
-        Me.txtbxSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxSurname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtbxSurname.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxSurname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxSurname.Location = New System.Drawing.Point(89, 576)
-        Me.txtbxSurname.Name = "txtbxSurname"
-        Me.txtbxSurname.Size = New System.Drawing.Size(336, 35)
-        Me.txtbxSurname.TabIndex = 76
-        Me.txtbxSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxSurname.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxSurname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxSurname.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxSurname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxSurname.Location = New System.Drawing.Point(76, 542)
+        Me.tbxSurname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxSurname.Name = "tbxSurname"
+        Me.tbxSurname.Size = New System.Drawing.Size(296, 26)
+        Me.tbxSurname.TabIndex = 6
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(85, 551)
+        Me.Label4.Location = New System.Drawing.Point(72, 523)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(81, 22)
-        Me.Label4.TabIndex = 75
-        Me.Label4.Text = "Surname:"
+        Me.Label4.Size = New System.Drawing.Size(66, 18)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "SURNAME:"
         '
-        'txtbxMidname
+        'tbxMidname
         '
-        Me.txtbxMidname.BackColor = System.Drawing.Color.White
-        Me.txtbxMidname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxMidname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtbxMidname.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxMidname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxMidname.Location = New System.Drawing.Point(89, 499)
-        Me.txtbxMidname.Name = "txtbxMidname"
-        Me.txtbxMidname.Size = New System.Drawing.Size(336, 35)
-        Me.txtbxMidname.TabIndex = 74
-        Me.txtbxMidname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxMidname.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxMidname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxMidname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxMidname.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxMidname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxMidname.Location = New System.Drawing.Point(76, 486)
+        Me.tbxMidname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxMidname.Name = "tbxMidname"
+        Me.tbxMidname.Size = New System.Drawing.Size(296, 26)
+        Me.tbxMidname.TabIndex = 4
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(85, 474)
+        Me.Label3.Location = New System.Drawing.Point(72, 467)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 22)
-        Me.Label3.TabIndex = 73
-        Me.Label3.Text = "Middle name:"
+        Me.Label3.Size = New System.Drawing.Size(92, 18)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "MIDDLE NAME:"
         '
-        'txtbxFrstname
+        'tbxFirname
         '
-        Me.txtbxFrstname.BackColor = System.Drawing.Color.White
-        Me.txtbxFrstname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxFrstname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtbxFrstname.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxFrstname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxFrstname.Location = New System.Drawing.Point(89, 423)
-        Me.txtbxFrstname.Name = "txtbxFrstname"
-        Me.txtbxFrstname.Size = New System.Drawing.Size(336, 35)
-        Me.txtbxFrstname.TabIndex = 72
-        Me.txtbxFrstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxFirname.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxFirname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxFirname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxFirname.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxFirname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxFirname.Location = New System.Drawing.Point(76, 427)
+        Me.tbxFirname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxFirname.Name = "tbxFirname"
+        Me.tbxFirname.Size = New System.Drawing.Size(296, 26)
+        Me.tbxFirname.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(85, 404)
+        Me.Label1.Location = New System.Drawing.Point(72, 408)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 22)
-        Me.Label1.TabIndex = 71
-        Me.Label1.Text = "First name:"
-        '
-        'ListView1
-        '
-        Me.ListView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView1.BackColor = System.Drawing.Color.White
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7})
-        Me.ListView1.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListView1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.ListView1.FullRowSelect = True
-        Me.ListView1.GridLines = True
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(36, 38)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1030, 342)
-        Me.ListView1.TabIndex = 70
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "RFID No."
-        Me.ColumnHeader1.Width = 132
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Firstname"
-        Me.ColumnHeader2.Width = 150
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Middlename"
-        Me.ColumnHeader3.Width = 149
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Surname"
-        Me.ColumnHeader4.Width = 149
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Gender"
-        Me.ColumnHeader5.Width = 67
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Contact number"
-        Me.ColumnHeader6.Width = 144
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Email"
-        Me.ColumnHeader7.Width = 219
+        Me.Label1.Size = New System.Drawing.Size(79, 18)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "FIRST NAME:"
         '
         'btnDelCust
         '
-        Me.btnDelCust.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.btnDelCust.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.btnDelCust.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelCust.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDelCust.FlatAppearance.BorderColor = System.Drawing.Color.Red
         Me.btnDelCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelCust.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnDelCust.Location = New System.Drawing.Point(808, 632)
+        Me.btnDelCust.ForeColor = System.Drawing.Color.Red
+        Me.btnDelCust.Location = New System.Drawing.Point(963, 569)
         Me.btnDelCust.Name = "btnDelCust"
-        Me.btnDelCust.Size = New System.Drawing.Size(85, 50)
-        Me.btnDelCust.TabIndex = 69
+        Me.btnDelCust.Size = New System.Drawing.Size(121, 44)
+        Me.btnDelCust.TabIndex = 26
         Me.btnDelCust.Text = "Delete"
         Me.btnDelCust.UseVisualStyleBackColor = False
         '
@@ -319,10 +252,10 @@ Partial Class ctrlCustomers
         Me.btnUpdCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdCust.Location = New System.Drawing.Point(707, 632)
+        Me.btnUpdCust.Location = New System.Drawing.Point(963, 493)
         Me.btnUpdCust.Name = "btnUpdCust"
-        Me.btnUpdCust.Size = New System.Drawing.Size(85, 50)
-        Me.btnUpdCust.TabIndex = 68
+        Me.btnUpdCust.Size = New System.Drawing.Size(121, 44)
+        Me.btnUpdCust.TabIndex = 25
         Me.btnUpdCust.Text = "Update"
         Me.btnUpdCust.UseVisualStyleBackColor = False
         '
@@ -334,100 +267,327 @@ Partial Class ctrlCustomers
         Me.btnAddCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAddCust.Location = New System.Drawing.Point(606, 632)
+        Me.btnAddCust.Location = New System.Drawing.Point(963, 419)
         Me.btnAddCust.Name = "btnAddCust"
-        Me.btnAddCust.Size = New System.Drawing.Size(85, 50)
-        Me.btnAddCust.TabIndex = 67
+        Me.btnAddCust.Size = New System.Drawing.Size(121, 44)
+        Me.btnAddCust.TabIndex = 24
         Me.btnAddCust.Text = "Add"
         Me.btnAddCust.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.LightGray
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(451, 423)
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Location = New System.Drawing.Point(407, 436)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(240, 188)
+        Me.PictureBox1.Size = New System.Drawing.Size(180, 180)
         Me.PictureBox1.TabIndex = 85
         Me.PictureBox1.TabStop = False
         '
         'btnClear
         '
-        Me.btnClear.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnClear.BackColor = System.Drawing.Color.LightGray
         Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnClear.Location = New System.Drawing.Point(908, 632)
+        Me.btnClear.Location = New System.Drawing.Point(963, 643)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(85, 50)
-        Me.btnClear.TabIndex = 86
+        Me.btnClear.Size = New System.Drawing.Size(121, 44)
+        Me.btnClear.TabIndex = 27
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = False
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToOrderColumns = True
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        Me.DataGridView1.EnableHeadersVisualStyles = False
+        Me.DataGridView1.GridColor = System.Drawing.Color.DarkGray
+        Me.DataGridView1.Location = New System.Drawing.Point(44, 36)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.RowHeadersVisible = False
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.ShowEditingIcon = False
+        Me.DataGridView1.Size = New System.Drawing.Size(1077, 354)
+        Me.DataGridView1.TabIndex = 0
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "FULLNAME"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 215
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "EMAIL ADDRESS"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 250
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "PHONE NUMBER"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 147
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.HeaderText = "ADDRESS"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "USERNAME"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 175
+        '
+        'tbxStreet
+        '
+        Me.tbxStreet.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxStreet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxStreet.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxStreet.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxStreet.Location = New System.Drawing.Point(618, 427)
+        Me.tbxStreet.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxStreet.Name = "tbxStreet"
+        Me.tbxStreet.Size = New System.Drawing.Size(296, 26)
+        Me.tbxStreet.TabIndex = 14
+        Me.tbxStreet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.Location = New System.Drawing.Point(614, 408)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(52, 18)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "STREET:"
+        '
+        'tbxBarangay
+        '
+        Me.tbxBarangay.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxBarangay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxBarangay.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxBarangay.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxBarangay.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxBarangay.Location = New System.Drawing.Point(618, 486)
+        Me.tbxBarangay.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxBarangay.Name = "tbxBarangay"
+        Me.tbxBarangay.Size = New System.Drawing.Size(296, 26)
+        Me.tbxBarangay.TabIndex = 16
+        Me.tbxBarangay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label7.Location = New System.Drawing.Point(614, 467)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(72, 18)
+        Me.Label7.TabIndex = 15
+        Me.Label7.Text = "BARANGAY:"
+        '
+        'tbxMuniCity
+        '
+        Me.tbxMuniCity.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxMuniCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxMuniCity.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxMuniCity.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxMuniCity.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxMuniCity.Location = New System.Drawing.Point(618, 542)
+        Me.tbxMuniCity.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxMuniCity.Name = "tbxMuniCity"
+        Me.tbxMuniCity.Size = New System.Drawing.Size(296, 26)
+        Me.tbxMuniCity.TabIndex = 18
+        Me.tbxMuniCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label9.Location = New System.Drawing.Point(615, 524)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(119, 18)
+        Me.Label9.TabIndex = 17
+        Me.Label9.Text = "MUNICIPALITY/CITY:"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label10.Location = New System.Drawing.Point(614, 583)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(67, 18)
+        Me.Label10.TabIndex = 19
+        Me.Label10.Text = "PROVINCE:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label11.Location = New System.Drawing.Point(614, 643)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(63, 18)
+        Me.Label11.TabIndex = 21
+        Me.Label11.Text = "COUNTRY:"
+        '
+        'cmbCountry
+        '
+        Me.cmbCountry.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.cmbCountry.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbCountry.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbCountry.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.cmbCountry.FormattingEnabled = True
+        Me.cmbCountry.ItemHeight = 20
+        Me.cmbCountry.Items.AddRange(New Object() {"PHILIPPINES", "CAVITE"})
+        Me.cmbCountry.Location = New System.Drawing.Point(617, 661)
+        Me.cmbCountry.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.cmbCountry.Name = "cmbCountry"
+        Me.cmbCountry.Size = New System.Drawing.Size(296, 28)
+        Me.cmbCountry.TabIndex = 22
+        '
+        'tbxProvince
+        '
+        Me.tbxProvince.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxProvince.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxProvince.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxProvince.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxProvince.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxProvince.Location = New System.Drawing.Point(617, 601)
+        Me.tbxProvince.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxProvince.Name = "tbxProvince"
+        Me.tbxProvince.Size = New System.Drawing.Size(296, 26)
+        Me.tbxProvince.TabIndex = 20
+        Me.tbxProvince.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ctrlCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Controls.Add(Me.tbxProvince)
+        Me.Controls.Add(Me.cmbCountry)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.tbxMuniCity)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.tbxBarangay)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.tbxStreet)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.combGender)
+        Me.Controls.Add(Me.cmbGender)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtbxEmail)
+        Me.Controls.Add(Me.tbxEmail)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtbxContNum)
+        Me.Controls.Add(Me.tbxPhone)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtbxEmpNo)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.txtbxSurname)
+        Me.Controls.Add(Me.tbxCustID)
+        Me.Controls.Add(Me.tbxSurname)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtbxMidname)
+        Me.Controls.Add(Me.tbxMidname)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtbxFrstname)
+        Me.Controls.Add(Me.tbxFirname)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.btnDelCust)
         Me.Controls.Add(Me.btnUpdCust)
         Me.Controls.Add(Me.btnAddCust)
-        Me.Controls.Add(Me.Label2)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "ctrlCustomers"
-        Me.Size = New System.Drawing.Size(1095, 730)
+        Me.Size = New System.Drawing.Size(1161, 738)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents combGender As ComboBox
+    Friend WithEvents cmbGender As ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtbxEmail As TextBox
+    Friend WithEvents tbxEmail As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtbxContNum As TextBox
+    Friend WithEvents tbxPhone As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtbxEmpNo As TextBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtbxSurname As TextBox
+    Friend WithEvents tbxCustID As TextBox
+    Friend WithEvents tbxSurname As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtbxMidname As TextBox
+    Friend WithEvents tbxMidname As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtbxFrstname As TextBox
+    Friend WithEvents tbxFirname As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader6 As ColumnHeader
-    Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents btnDelCust As Button
     Friend WithEvents btnUpdCust As Button
     Friend WithEvents btnAddCust As Button
     Friend WithEvents btnClear As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents tbxStreet As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents tbxBarangay As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents tbxMuniCity As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents cmbCountry As ComboBox
+    Friend WithEvents tbxProvince As TextBox
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class

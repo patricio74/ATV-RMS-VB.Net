@@ -23,7 +23,6 @@ Partial Class ctrlInventory
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ctrlInventory))
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -48,20 +47,6 @@ Partial Class ctrlInventory
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
-        '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1089, 35)
-        Me.Label1.TabIndex = 17
-        Me.Label1.Text = "I  N  V  E  N  T  O  R  Y"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'ListView1
         '
         Me.ListView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -73,9 +58,9 @@ Partial Class ctrlInventory
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(23, 38)
+        Me.ListView1.Location = New System.Drawing.Point(33, 38)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1051, 335)
+        Me.ListView1.Size = New System.Drawing.Size(1095, 335)
         Me.ListView1.TabIndex = 30
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -115,7 +100,7 @@ Partial Class ctrlInventory
         Me.combGender.FormattingEnabled = True
         Me.combGender.ItemHeight = 24
         Me.combGender.Items.AddRange(New Object() {"AVAILABLE", "NOT AVAILABLE"})
-        Me.combGender.Location = New System.Drawing.Point(258, 416)
+        Me.combGender.Location = New System.Drawing.Point(272, 425)
         Me.combGender.Name = "combGender"
         Me.combGender.Size = New System.Drawing.Size(158, 32)
         Me.combGender.TabIndex = 61
@@ -126,7 +111,7 @@ Partial Class ctrlInventory
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(254, 391)
+        Me.Label8.Location = New System.Drawing.Point(268, 400)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(61, 22)
         Me.Label8.TabIndex = 60
@@ -138,7 +123,7 @@ Partial Class ctrlInventory
         Me.txtbxEmpNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtbxEmpNo.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxEmpNo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxEmpNo.Location = New System.Drawing.Point(80, 416)
+        Me.txtbxEmpNo.Location = New System.Drawing.Point(94, 425)
         Me.txtbxEmpNo.Name = "txtbxEmpNo"
         Me.txtbxEmpNo.Size = New System.Drawing.Size(172, 35)
         Me.txtbxEmpNo.TabIndex = 55
@@ -150,7 +135,7 @@ Partial Class ctrlInventory
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(81, 391)
+        Me.Label7.Location = New System.Drawing.Point(95, 400)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(55, 22)
         Me.Label7.TabIndex = 54
@@ -162,7 +147,7 @@ Partial Class ctrlInventory
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(694, 391)
+        Me.Label3.Location = New System.Drawing.Point(738, 400)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(102, 22)
         Me.Label3.TabIndex = 50
@@ -175,7 +160,7 @@ Partial Class ctrlInventory
         Me.txtbxFrstname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtbxFrstname.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxFrstname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtbxFrstname.Location = New System.Drawing.Point(80, 489)
+        Me.txtbxFrstname.Location = New System.Drawing.Point(94, 498)
         Me.txtbxFrstname.Name = "txtbxFrstname"
         Me.txtbxFrstname.Size = New System.Drawing.Size(336, 35)
         Me.txtbxFrstname.TabIndex = 49
@@ -187,7 +172,7 @@ Partial Class ctrlInventory
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(76, 470)
+        Me.Label2.Location = New System.Drawing.Point(90, 479)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 22)
         Me.Label2.TabIndex = 48
@@ -195,7 +180,7 @@ Partial Class ctrlInventory
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(698, 416)
+        Me.RichTextBox1.Location = New System.Drawing.Point(742, 425)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(320, 187)
         Me.RichTextBox1.TabIndex = 62
@@ -208,7 +193,7 @@ Partial Class ctrlInventory
         Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBox1.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(80, 568)
+        Me.TextBox1.Location = New System.Drawing.Point(94, 577)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(336, 35)
         Me.TextBox1.TabIndex = 64
@@ -220,7 +205,7 @@ Partial Class ctrlInventory
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(76, 549)
+        Me.Label4.Location = New System.Drawing.Point(90, 558)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(93, 22)
         Me.Label4.TabIndex = 63
@@ -230,7 +215,7 @@ Partial Class ctrlInventory
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.LightGray
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(433, 416)
+        Me.PictureBox1.Location = New System.Drawing.Point(468, 425)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(246, 187)
         Me.PictureBox1.TabIndex = 65
@@ -244,9 +229,9 @@ Partial Class ctrlInventory
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnClear.Location = New System.Drawing.Point(919, 630)
+        Me.btnClear.Location = New System.Drawing.Point(969, 646)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(85, 50)
+        Me.btnClear.Size = New System.Drawing.Size(121, 44)
         Me.btnClear.TabIndex = 94
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = False
@@ -259,9 +244,9 @@ Partial Class ctrlInventory
         Me.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDel.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnDel.Location = New System.Drawing.Point(818, 630)
+        Me.btnDel.Location = New System.Drawing.Point(842, 646)
         Me.btnDel.Name = "btnDel"
-        Me.btnDel.Size = New System.Drawing.Size(85, 50)
+        Me.btnDel.Size = New System.Drawing.Size(121, 44)
         Me.btnDel.TabIndex = 93
         Me.btnDel.Text = "Delete"
         Me.btnDel.UseVisualStyleBackColor = False
@@ -274,9 +259,9 @@ Partial Class ctrlInventory
         Me.btnUpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpd.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpd.Location = New System.Drawing.Point(717, 630)
+        Me.btnUpd.Location = New System.Drawing.Point(715, 646)
         Me.btnUpd.Name = "btnUpd"
-        Me.btnUpd.Size = New System.Drawing.Size(85, 50)
+        Me.btnUpd.Size = New System.Drawing.Size(121, 44)
         Me.btnUpd.TabIndex = 92
         Me.btnUpd.Text = "Update"
         Me.btnUpd.UseVisualStyleBackColor = False
@@ -289,9 +274,9 @@ Partial Class ctrlInventory
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAdd.Location = New System.Drawing.Point(616, 630)
+        Me.btnAdd.Location = New System.Drawing.Point(588, 646)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(85, 50)
+        Me.btnAdd.Size = New System.Drawing.Size(121, 44)
         Me.btnAdd.TabIndex = 91
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -318,18 +303,16 @@ Partial Class ctrlInventory
         Me.Controls.Add(Me.txtbxFrstname)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ListView1)
-        Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "ctrlInventory"
-        Me.Size = New System.Drawing.Size(1095, 730)
+        Me.Size = New System.Drawing.Size(1161, 738)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As Label
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader

@@ -260,10 +260,10 @@
     <Compile Include="User Controls\ctrlTourGuides.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlTransacHist.Designer.vb">
-      <DependentUpon>ctrlTransacHist.vb</DependentUpon>
+    <Compile Include="User Controls\ctrlOverview.Designer.vb">
+      <DependentUpon>ctrlOverview.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlTransacHist.vb">
+    <Compile Include="User Controls\ctrlOverview.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\rmsDashboard.vb">
@@ -308,6 +308,18 @@
     <Compile Include="Forms\rmsSplashScreen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="User Controls\ctrlTransaction.Designer.vb">
+      <DependentUpon>ctrlTransaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ctrlTransaction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ctrlUserSettings.Designer.vb">
+      <DependentUpon>ctrlUserSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ctrlUserSettings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="User Controls\ctrlCustomers.resx">
@@ -328,8 +340,8 @@
     <EmbeddedResource Include="User Controls\ctrlTourGuides.resx">
       <DependentUpon>ctrlTourGuides.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlTransacHist.resx">
-      <DependentUpon>ctrlTransacHist.vb</DependentUpon>
+    <EmbeddedResource Include="User Controls\ctrlOverview.resx">
+      <DependentUpon>ctrlOverview.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\rmsDashboard.resx">
       <DependentUpon>rmsDashboard.vb</DependentUpon>
@@ -348,6 +360,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\rmsSplashScreen.resx">
       <DependentUpon>rmsSplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ctrlTransaction.resx">
+      <DependentUpon>ctrlTransaction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ctrlUserSettings.resx">
+      <DependentUpon>ctrlUserSettings.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

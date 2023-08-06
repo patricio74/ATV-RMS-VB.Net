@@ -74,7 +74,7 @@ Partial Class rmsRegistration
         Me.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReg.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReg.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnReg.Location = New System.Drawing.Point(180, 523)
+        Me.btnReg.Location = New System.Drawing.Point(180, 538)
         Me.btnReg.Margin = New System.Windows.Forms.Padding(0)
         Me.btnReg.Name = "btnReg"
         Me.btnReg.Size = New System.Drawing.Size(131, 45)
@@ -89,7 +89,7 @@ Partial Class rmsRegistration
         Me.regFname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.regFname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regFname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.regFname.Location = New System.Drawing.Point(60, 174)
+        Me.regFname.Location = New System.Drawing.Point(60, 189)
         Me.regFname.Margin = New System.Windows.Forms.Padding(0)
         Me.regFname.MaxLength = 40
         Me.regFname.Name = "regFname"
@@ -209,7 +209,7 @@ Partial Class rmsRegistration
         Me.labelLoginSwitch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelLoginSwitch.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelLoginSwitch.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelLoginSwitch.Location = New System.Drawing.Point(57, 158)
+        Me.labelLoginSwitch.Location = New System.Drawing.Point(57, 173)
         Me.labelLoginSwitch.Margin = New System.Windows.Forms.Padding(0)
         Me.labelLoginSwitch.Name = "labelLoginSwitch"
         Me.labelLoginSwitch.Size = New System.Drawing.Size(70, 14)
@@ -223,7 +223,7 @@ Partial Class rmsRegistration
         Me.regRFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.regRFID.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regRFID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.regRFID.Location = New System.Drawing.Point(60, 473)
+        Me.regRFID.Location = New System.Drawing.Point(60, 488)
         Me.regRFID.Margin = New System.Windows.Forms.Padding(0)
         Me.regRFID.MaxLength = 12
         Me.regRFID.Name = "regRFID"
@@ -261,7 +261,7 @@ Partial Class rmsRegistration
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label3.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(243, 158)
+        Me.Label3.Location = New System.Drawing.Point(243, 173)
         Me.Label3.Margin = New System.Windows.Forms.Padding(0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(62, 14)
@@ -276,7 +276,7 @@ Partial Class rmsRegistration
         Me.regSname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.regSname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regSname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.regSname.Location = New System.Drawing.Point(246, 174)
+        Me.regSname.Location = New System.Drawing.Point(246, 189)
         Me.regSname.Margin = New System.Windows.Forms.Padding(0)
         Me.regSname.MaxLength = 40
         Me.regSname.Name = "regSname"
@@ -289,7 +289,7 @@ Partial Class rmsRegistration
         Me.regPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.regPhone.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.regPhone.Location = New System.Drawing.Point(60, 292)
+        Me.regPhone.Location = New System.Drawing.Point(60, 307)
         Me.regPhone.Margin = New System.Windows.Forms.Padding(0)
         Me.regPhone.MaxLength = 13
         Me.regPhone.Name = "regPhone"
@@ -303,7 +303,7 @@ Partial Class rmsRegistration
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label4.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(57, 276)
+        Me.Label4.Location = New System.Drawing.Point(57, 291)
         Me.Label4.Margin = New System.Windows.Forms.Padding(0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(99, 14)
@@ -318,7 +318,7 @@ Partial Class rmsRegistration
         Me.Label5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label5.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label5.Location = New System.Drawing.Point(57, 457)
+        Me.Label5.Location = New System.Drawing.Point(57, 472)
         Me.Label5.Margin = New System.Windows.Forms.Padding(0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(60, 14)
@@ -333,7 +333,7 @@ Partial Class rmsRegistration
         Me.regUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.regUsername.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.regUsername.Location = New System.Drawing.Point(60, 352)
+        Me.regUsername.Location = New System.Drawing.Point(60, 367)
         Me.regUsername.Margin = New System.Windows.Forms.Padding(0)
         Me.regUsername.MaxLength = 25
         Me.regUsername.Name = "regUsername"
@@ -347,7 +347,7 @@ Partial Class rmsRegistration
         Me.Label6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label6.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(57, 336)
+        Me.Label6.Location = New System.Drawing.Point(57, 351)
         Me.Label6.Margin = New System.Windows.Forms.Padding(0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(70, 14)
@@ -361,7 +361,7 @@ Partial Class rmsRegistration
         Me.regPassw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.regPassw.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regPassw.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.regPassw.Location = New System.Drawing.Point(60, 413)
+        Me.regPassw.Location = New System.Drawing.Point(60, 428)
         Me.regPassw.Margin = New System.Windows.Forms.Padding(0)
         Me.regPassw.MaxLength = 25
         Me.regPassw.Name = "regPassw"
@@ -375,7 +375,7 @@ Partial Class rmsRegistration
         Me.Label7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label7.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(57, 397)
+        Me.Label7.Location = New System.Drawing.Point(57, 412)
         Me.Label7.Margin = New System.Windows.Forms.Padding(0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(69, 14)
@@ -389,7 +389,7 @@ Partial Class rmsRegistration
         Me.regEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.regEmail.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.regEmail.Location = New System.Drawing.Point(60, 233)
+        Me.regEmail.Location = New System.Drawing.Point(60, 248)
         Me.regEmail.Margin = New System.Windows.Forms.Padding(0)
         Me.regEmail.MaxLength = 40
         Me.regEmail.Name = "regEmail"
@@ -403,7 +403,7 @@ Partial Class rmsRegistration
         Me.Label8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label8.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(57, 217)
+        Me.Label8.Location = New System.Drawing.Point(57, 232)
         Me.Label8.Margin = New System.Windows.Forms.Padding(0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(40, 14)
