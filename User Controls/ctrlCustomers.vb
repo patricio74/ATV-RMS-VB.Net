@@ -1,17 +1,51 @@
-﻿Imports System.Net
-Imports System.Text.RegularExpressions
-Imports MongoDB.Bson
+﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 
 Public Class ctrlCustomers
 
-    Public Sub refreshList()
-        populateList()
-        DataGridView1.ClearSelection()
+    Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("Customer")
+    Private Customers As List(Of Customer)
+
+    Public Class Customer
+        Public Property custID As String
+        Public Property firstName As String
+        Public Property middleName As String
+        Public Property surname As String
+        Public Property phone As String
+        Public Property email As String
+        Public Property gender As String
+        Public Property username As String
+        Public Property password As String
+        Public Property address As Address
+    End Class
+
+    Public Class Address
+        Public Property Street As String
+        Public Property Barangay As String
+        Public Property MuniCity As String
+        Public Property Province As String
+        Public Property Country As String
+    End Class
+
+    Private Sub ctrlCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        connectToMongo()
+        refreshList()
     End Sub
 
-    Private Sub clearCustForm()
+    Private Sub ctrlCustomers_Enter(sender As Object, e As EventArgs) Handles Me.Enter
+        refreshList()
+    End Sub
+
+    Public Sub refreshList()
+        populateList()
+        clearCustForm()
+    End Sub
+
+    Public Sub clearCustForm()
+        DataGridView1.ClearSelection()
         tbxCustID.Clear()
+        tbxUsername.Clear()
+        tbxPassword.Clear()
         tbxFirname.Clear()
         tbxMidname.Clear()
         tbxSurname.Clear()
@@ -26,97 +60,150 @@ Public Class ctrlCustomers
         PictureBox1.BackgroundImage = Nothing
     End Sub
 
-    Private Sub ctrlCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connectToMongo()
-        clearCustForm()
-        refreshList()
-    End Sub
-
-    Private Sub ctrlCustomers_Enter(sender As Object, e As EventArgs) Handles Me.Enter
-        refreshList()
-        clearCustForm()
-    End Sub
-
-    Private Sub populateList()
-        Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("Customer")
-        Dim documents As List(Of BsonDocument) = collection.Find(New BsonDocument()).ToList()
+    Private Sub populateCustInfo(customers As List(Of Customer))
         DataGridView1.Rows.Clear()
-
-        For Each document As BsonDocument In documents
+        For Each customer As Customer In customers
             Dim row As New DataGridViewRow()
-            Dim ID As String = document("_id").ToString
-            Dim fname As String = document("First Name").ToString
-            Dim mname As String = document("Middle Name").ToString
-            Dim sname As String = document("Surname").ToString
-            Dim phone As String = document("Phone").ToString
-            Dim email As String = document("Email").ToString
-
-            Dim address As BsonDocument = document("Address")
-            Dim street As String = address("Street").ToString
-            Dim barangay As String = address("Barangay").ToString
-            Dim municipality As String = address("Municipality/City").ToString
-            Dim province As String = address("Province").ToString
-            Dim country As String = address("Country").ToString
-
-            Dim fullName As String = fname + " " + mname + " " + sname
-
-            row.CreateCells(DataGridView1, ID, fullName, phone, address, email)
+            row.CreateCells(DataGridView1,
+            customer.custID,
+            $"{customer.firstName} {customer.middleName} {customer.surname}",
+            customer.phone,
+            $"{customer.address.Street}, {customer.address.Barangay}, {customer.address.MuniCity}, {customer.address.Province}, {customer.address.Country}",
+            customer.email
+        )
             DataGridView1.Rows.Add(row)
         Next
     End Sub
 
+    Private Sub populateList()
+        Dim documents As List(Of BsonDocument) = collection.Find(New BsonDocument()).ToList()
+        Customers = New List(Of Customer)()
 
+        For Each document As BsonDocument In documents
+            Dim idElement = document.GetElement("_id")
+            Dim customer As New Customer() With {
+            .custID = idElement.Value.AsObjectId.ToString,
+            .firstName = document("First Name").ToString,
+            .middleName = document("Middle Name").ToString,
+            .surname = document("Surname").ToString,
+            .phone = document("Phone").ToString,
+            .email = document("Email").ToString,
+            .gender = document("Gender").ToString,
+            .username = document("Username").ToString,
+            .password = document("Password").ToString
+        }
+            Dim address As BsonDocument = document("Address")
+            customer.address = New Address With {
+            .Street = address("Street").ToString,
+            .Barangay = address("Barangay").ToString,
+            .MuniCity = address("Municipality/City").ToString,
+            .Province = address("Province").ToString,
+            .Country = address("Country").ToString
+        }
+            Customers.Add(customer)
+        Next
+        populateCustInfo(Customers)
+    End Sub
 
-
-    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
-        If e.RowIndex >= 0 AndAlso e.ColumnIndex = 3 Then
-            Dim addressJson As String = e.Value.ToString()
-            Dim streetMatch As Match = Regex.Match(addressJson, """Street""\s*:\s*""([^""]*)""")
-            Dim barangayMatch As Match = Regex.Match(addressJson, """Barangay""\s*:\s*""([^""]*)""")
-            Dim municityMatch As Match = Regex.Match(addressJson, """Municipality/City""\s*:\s*""([^""]*)""")
-            Dim provinceMatch As Match = Regex.Match(addressJson, """Province""\s*:\s*""([^""]*)""")
-            Dim countryMatch As Match = Regex.Match(addressJson, """Country""\s*:\s*""([^""]*)""")
-            Dim fullAddressParts As New List(Of String)()
-
-            If streetMatch.Success Then
-                fullAddressParts.Add(streetMatch.Groups(1).Value)
+    Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
+        If DataGridView1.SelectedRows.Count > 0 Then
+            If Customers IsNot Nothing AndAlso DataGridView1.SelectedRows(0).Index < Customers.Count Then
+                Dim selectedCustomer = Customers(DataGridView1.SelectedRows(0).Index)
+                tbxCustID.Text = selectedCustomer.custID
+                tbxFirname.Text = selectedCustomer.firstName
+                tbxMidname.Text = selectedCustomer.middleName
+                tbxSurname.Text = selectedCustomer.surname
+                tbxPhone.Text = selectedCustomer.phone
+                tbxEmail.Text = selectedCustomer.email
+                cmbGender.Text = selectedCustomer.gender
+                tbxUsername.Text = selectedCustomer.username
+                tbxPassword.Text = selectedCustomer.password
+                tbxStreet.Text = selectedCustomer.address.Street
+                tbxBarangay.Text = selectedCustomer.address.Barangay
+                tbxMuniCity.Text = selectedCustomer.address.MuniCity
+                tbxProvince.Text = selectedCustomer.address.Province
+                cmbCountry.Text = selectedCustomer.address.Country
             End If
-            If barangayMatch.Success Then
-                fullAddressParts.Add(barangayMatch.Groups(1).Value)
-            End If
-            If municityMatch.Success Then
-                fullAddressParts.Add(municityMatch.Groups(1).Value)
-            End If
-            If provinceMatch.Success AndAlso Not String.IsNullOrWhiteSpace(provinceMatch.Groups(1).Value) Then
-                fullAddressParts.Add(provinceMatch.Groups(1).Value)
-            End If
-            If countryMatch.Success Then
-                fullAddressParts.Add(countryMatch.Groups(1).Value)
-            End If
-
-            Dim fullAddress As String = String.Join(", ", fullAddressParts)
-
-            e.Value = fullAddress
-            e.FormattingApplied = True
         End If
     End Sub
 
-    Private Sub btnAddCust_Click(sender As Object, e As EventArgs) Handles btnAddCust.Click
 
+    Private Sub btnAddCust_Click(sender As Object, e As EventArgs) Handles btnAddCust.Click
+        Try
+            Dim document As New BsonDocument From {
+                {"First Name", tbxFirname.Text},
+                {"Middle Name", tbxMidname.Text},
+                {"Surname", tbxSurname.Text},
+                {"Gender", cmbGender.SelectedItem.ToString()},
+                {"Address", New BsonDocument From {
+                    {"Street", tbxStreet.Text},
+                    {"Barangay", tbxBarangay.Text},
+                    {"Province", tbxProvince.Text},
+                    {"Country", cmbCountry.SelectedItem.ToString()},
+                    {"Municipality/City", tbxMuniCity.Text}
+                }},
+                {"Phone", tbxPhone.Text},
+                {"Email", tbxEmail.Text},
+                {"Username", tbxUsername.Text},
+                {"Password", tbxPassword.Text}
+            }
+
+            collection.InsertOne(document)
+
+            MessageBox.Show("Data inserted successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            refreshList()
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnUpdCust_Click(sender As Object, e As EventArgs) Handles btnUpdCust.Click
 
     End Sub
 
-    Private Sub btnDelCust_Click(sender As Object, e As EventArgs) Handles btnDelCust.Click
+    Private Sub MoveToArchive(custID As String)
+        Try
+            Dim objectId As ObjectId
+            If ObjectId.TryParse(custID, objectId) Then
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objectId)
+                Dim document = collection.Find(filter).FirstOrDefault()
 
+                If document IsNot Nothing Then
+                    Dim archiveCollection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("archiveCustomer")
+                    archiveCollection.InsertOne(document)
+                    collection.DeleteOne(filter)
+                    MessageBox.Show("Data moved to archive successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    refreshList()
+                Else
+                    MessageBox.Show("Customer not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    refreshList()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            refreshList()
+        End Try
+    End Sub
+
+    Private Sub btnDelCust_Click(sender As Object, e As EventArgs) Handles btnDelCust.Click
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim selectedCustomer = Customers(DataGridView1.SelectedRows(0).Index)
+            Dim custID As String = selectedCustomer.custID
+            Dim result = MessageBox.Show("Are you sure you want to move this customer to the archive?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If result = DialogResult.Yes Then
+                MoveToArchive(custID)
+            ElseIf result = DialogResult.No Then
+                refreshList()
+            End If
+        Else
+            MessageBox.Show("Please select a customer to delete.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            refreshList()
+        End If
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClrCust.Click
         refreshList()
-        clearCustForm()
     End Sub
-
 
 End Class
