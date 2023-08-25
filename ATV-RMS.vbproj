@@ -221,55 +221,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Modules\moduleDatabase.vb" />
-    <Compile Include="Modules\moduleLogin.vb" />
-    <Compile Include="Modules\modulePanelTop.vb" />
-    <Compile Include="User Controls\ctrlCustomers.Designer.vb">
+    <Compile Include="rmsModules\moduleDatabase.vb" />
+    <Compile Include="rmsModules\moduleLogin.vb" />
+    <Compile Include="rmsModules\modulePanelTop.vb" />
+    <Compile Include="rmsUserControls\ctrlCustomers.Designer.vb">
       <DependentUpon>ctrlCustomers.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlCustomers.vb">
+    <Compile Include="rmsUserControls\ctrlCustomers.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlInventory.Designer.vb">
+    <Compile Include="rmsUserControls\ctrlInventory.Designer.vb">
       <DependentUpon>ctrlInventory.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlInventory.vb">
+    <Compile Include="rmsUserControls\ctrlInventory.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlNotif.Designer.vb">
+    <Compile Include="rmsUserControls\ctrlNotif.Designer.vb">
       <DependentUpon>ctrlNotif.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlNotif.vb">
+    <Compile Include="rmsUserControls\ctrlNotif.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlReservations.Designer.vb">
+    <Compile Include="rmsUserControls\ctrlReservations.Designer.vb">
       <DependentUpon>ctrlReservations.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlReservations.vb">
+    <Compile Include="rmsUserControls\ctrlReservations.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlRules.Designer.vb">
+    <Compile Include="rmsUserControls\ctrlRules.Designer.vb">
       <DependentUpon>ctrlRules.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlRules.vb">
+    <Compile Include="rmsUserControls\ctrlRules.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlTourGuides.Designer.vb">
+    <Compile Include="rmsUserControls\ctrlTourGuides.Designer.vb">
       <DependentUpon>ctrlTourGuides.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlTourGuides.vb">
+    <Compile Include="rmsUserControls\ctrlTourGuides.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlOverview.Designer.vb">
+    <Compile Include="rmsUserControls\ctrlOverview.Designer.vb">
       <DependentUpon>ctrlOverview.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlOverview.vb">
+    <Compile Include="rmsUserControls\ctrlOverview.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\rmsDashboard.vb">
+    <Compile Include="rmsForms\rmsDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\rmsDashboard.Designer.vb">
+    <Compile Include="rmsForms\rmsDashboard.Designer.vb">
       <DependentUpon>rmsDashboard.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -289,61 +289,61 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Forms\rmsLogin.Designer.vb">
+    <Compile Include="rmsForms\rmsLogin.Designer.vb">
       <DependentUpon>rmsLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\rmsLogin.vb">
+    <Compile Include="rmsForms\rmsLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\moduleDashboard.vb" />
-    <Compile Include="Forms\rmsRegistration.Designer.vb">
+    <Compile Include="rmsModules\moduleDashboard.vb" />
+    <Compile Include="rmsForms\rmsRegistration.Designer.vb">
       <DependentUpon>rmsRegistration.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\rmsRegistration.vb">
+    <Compile Include="rmsForms\rmsRegistration.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\rmsSplashScreen.Designer.vb">
+    <Compile Include="rmsForms\rmsSplashScreen.Designer.vb">
       <DependentUpon>rmsSplashScreen.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\rmsSplashScreen.vb">
+    <Compile Include="rmsForms\rmsSplashScreen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlTrails.Designer.vb">
+    <Compile Include="rmsUserControls\ctrlTrails.Designer.vb">
       <DependentUpon>ctrlTrails.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlTrails.vb">
+    <Compile Include="rmsUserControls\ctrlTrails.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlUserSettings.Designer.vb">
+    <Compile Include="rmsUserControls\ctrlUserSettings.Designer.vb">
       <DependentUpon>ctrlUserSettings.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlUserSettings.vb">
+    <Compile Include="rmsUserControls\ctrlUserSettings.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="User Controls\ctrlCustomers.resx">
+    <EmbeddedResource Include="rmsUserControls\ctrlCustomers.resx">
       <DependentUpon>ctrlCustomers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlInventory.resx">
+    <EmbeddedResource Include="rmsUserControls\ctrlInventory.resx">
       <DependentUpon>ctrlInventory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlNotif.resx">
+    <EmbeddedResource Include="rmsUserControls\ctrlNotif.resx">
       <DependentUpon>ctrlNotif.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlReservations.resx">
+    <EmbeddedResource Include="rmsUserControls\ctrlReservations.resx">
       <DependentUpon>ctrlReservations.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlRules.resx">
+    <EmbeddedResource Include="rmsUserControls\ctrlRules.resx">
       <DependentUpon>ctrlRules.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlTourGuides.resx">
+    <EmbeddedResource Include="rmsUserControls\ctrlTourGuides.resx">
       <DependentUpon>ctrlTourGuides.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlOverview.resx">
+    <EmbeddedResource Include="rmsUserControls\ctrlOverview.resx">
       <DependentUpon>ctrlOverview.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\rmsDashboard.resx">
+    <EmbeddedResource Include="rmsForms\rmsDashboard.resx">
       <DependentUpon>rmsDashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -352,19 +352,19 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\rmsLogin.resx">
+    <EmbeddedResource Include="rmsForms\rmsLogin.resx">
       <DependentUpon>rmsLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\rmsRegistration.resx">
+    <EmbeddedResource Include="rmsForms\rmsRegistration.resx">
       <DependentUpon>rmsRegistration.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\rmsSplashScreen.resx">
+    <EmbeddedResource Include="rmsForms\rmsSplashScreen.resx">
       <DependentUpon>rmsSplashScreen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlTrails.resx">
+    <EmbeddedResource Include="rmsUserControls\ctrlTrails.resx">
       <DependentUpon>ctrlTrails.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlUserSettings.resx">
+    <EmbeddedResource Include="rmsUserControls\ctrlUserSettings.resx">
       <DependentUpon>ctrlUserSettings.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

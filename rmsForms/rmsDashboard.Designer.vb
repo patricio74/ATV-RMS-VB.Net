@@ -27,17 +27,17 @@ Partial Class rmsDashboard
         Me.labelTitle2 = New System.Windows.Forms.Label()
         Me.labelTItle = New System.Windows.Forms.Label()
         Me.panelSide = New System.Windows.Forms.Panel()
+        Me.btnRules = New System.Windows.Forms.Button()
+        Me.btnTGuides = New System.Windows.Forms.Button()
+        Me.btnInventory = New System.Windows.Forms.Button()
+        Me.btnTrails = New System.Windows.Forms.Button()
         Me.lblDateTime = New System.Windows.Forms.Label()
         Me.btnSettings = New System.Windows.Forms.Button()
-        Me.btnTrails = New System.Windows.Forms.Button()
-        Me.btnLogout = New System.Windows.Forms.Button()
-        Me.btnRules = New System.Windows.Forms.Button()
-        Me.btnOverview = New System.Windows.Forms.Button()
         Me.btnNotif = New System.Windows.Forms.Button()
         Me.btnCustomers = New System.Windows.Forms.Button()
+        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.btnOverview = New System.Windows.Forms.Button()
         Me.btnReservations = New System.Windows.Forms.Button()
-        Me.btnInventory = New System.Windows.Forms.Button()
-        Me.btnTGuides = New System.Windows.Forms.Button()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.labelAdminName = New System.Windows.Forms.Label()
         Me.admPanel = New System.Windows.Forms.Panel()
@@ -99,6 +99,94 @@ Partial Class rmsDashboard
         Me.panelSide.Size = New System.Drawing.Size(205, 738)
         Me.panelSide.TabIndex = 0
         '
+        'btnRules
+        '
+        Me.btnRules.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRules.BackColor = System.Drawing.Color.Transparent
+        Me.btnRules.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRules.FlatAppearance.BorderSize = 0
+        Me.btnRules.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRules.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRules.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnRules.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRules.Location = New System.Drawing.Point(0, 528)
+        Me.btnRules.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnRules.Name = "btnRules"
+        Me.btnRules.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnRules.Size = New System.Drawing.Size(205, 43)
+        Me.btnRules.TabIndex = 10
+        Me.btnRules.Text = "Rules && Regulations"
+        Me.btnRules.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRules.UseVisualStyleBackColor = True
+        '
+        'btnTGuides
+        '
+        Me.btnTGuides.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTGuides.BackColor = System.Drawing.Color.Transparent
+        Me.btnTGuides.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTGuides.FlatAppearance.BorderSize = 0
+        Me.btnTGuides.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnTGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTGuides.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTGuides.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnTGuides.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTGuides.Location = New System.Drawing.Point(0, 485)
+        Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnTGuides.Name = "btnTGuides"
+        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnTGuides.Size = New System.Drawing.Size(205, 43)
+        Me.btnTGuides.TabIndex = 9
+        Me.btnTGuides.Text = "Tour Guides"
+        Me.btnTGuides.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTGuides.UseVisualStyleBackColor = True
+        '
+        'btnInventory
+        '
+        Me.btnInventory.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnInventory.BackColor = System.Drawing.Color.Transparent
+        Me.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnInventory.FlatAppearance.BorderSize = 0
+        Me.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInventory.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventory.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnInventory.Location = New System.Drawing.Point(0, 442)
+        Me.btnInventory.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnInventory.Name = "btnInventory"
+        Me.btnInventory.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnInventory.Size = New System.Drawing.Size(205, 43)
+        Me.btnInventory.TabIndex = 8
+        Me.btnInventory.Text = "Inventory"
+        Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnInventory.UseVisualStyleBackColor = True
+        '
+        'btnTrails
+        '
+        Me.btnTrails.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTrails.BackColor = System.Drawing.Color.Transparent
+        Me.btnTrails.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTrails.FlatAppearance.BorderSize = 0
+        Me.btnTrails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnTrails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTrails.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrails.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnTrails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTrails.Location = New System.Drawing.Point(0, 313)
+        Me.btnTrails.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnTrails.Name = "btnTrails"
+        Me.btnTrails.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnTrails.Size = New System.Drawing.Size(205, 43)
+        Me.btnTrails.TabIndex = 5
+        Me.btnTrails.Text = "ATV Trails"
+        Me.btnTrails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTrails.UseVisualStyleBackColor = True
+        '
         'lblDateTime
         '
         Me.lblDateTime.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -120,7 +208,7 @@ Partial Class rmsDashboard
         Me.btnSettings.BackColor = System.Drawing.Color.Transparent
         Me.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSettings.FlatAppearance.BorderSize = 0
-        Me.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
+        Me.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSettings.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSettings.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -135,91 +223,6 @@ Partial Class rmsDashboard
         Me.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSettings.UseVisualStyleBackColor = True
         '
-        'btnTrails
-        '
-        Me.btnTrails.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTrails.BackColor = System.Drawing.Color.Transparent
-        Me.btnTrails.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTrails.FlatAppearance.BorderSize = 0
-        Me.btnTrails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
-        Me.btnTrails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTrails.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTrails.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnTrails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTrails.Location = New System.Drawing.Point(0, 313)
-        Me.btnTrails.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnTrails.Name = "btnTrails"
-        Me.btnTrails.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnTrails.Size = New System.Drawing.Size(205, 43)
-        Me.btnTrails.TabIndex = 5
-        Me.btnTrails.Text = "ATV Trails"
-        Me.btnTrails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTrails.UseVisualStyleBackColor = True
-        '
-        'btnLogout
-        '
-        Me.btnLogout.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnLogout.AutoSize = True
-        Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLogout.FlatAppearance.BorderSize = 0
-        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogout.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.Location = New System.Drawing.Point(0, 701)
-        Me.btnLogout.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(205, 26)
-        Me.btnLogout.TabIndex = 13
-        Me.btnLogout.Text = "Logout"
-        Me.btnLogout.UseVisualStyleBackColor = False
-        '
-        'btnRules
-        '
-        Me.btnRules.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRules.BackColor = System.Drawing.Color.Transparent
-        Me.btnRules.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRules.FlatAppearance.BorderSize = 0
-        Me.btnRules.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
-        Me.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRules.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRules.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnRules.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRules.Location = New System.Drawing.Point(0, 528)
-        Me.btnRules.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnRules.Name = "btnRules"
-        Me.btnRules.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnRules.Size = New System.Drawing.Size(205, 43)
-        Me.btnRules.TabIndex = 10
-        Me.btnRules.Text = "Rules && Regulations"
-        Me.btnRules.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRules.UseVisualStyleBackColor = True
-        '
-        'btnOverview
-        '
-        Me.btnOverview.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnOverview.BackColor = System.Drawing.Color.Transparent
-        Me.btnOverview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnOverview.FlatAppearance.BorderSize = 0
-        Me.btnOverview.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
-        Me.btnOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOverview.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOverview.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnOverview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnOverview.Location = New System.Drawing.Point(0, 227)
-        Me.btnOverview.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnOverview.Name = "btnOverview"
-        Me.btnOverview.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnOverview.Size = New System.Drawing.Size(205, 43)
-        Me.btnOverview.TabIndex = 3
-        Me.btnOverview.Text = "Overview"
-        Me.btnOverview.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnOverview.UseVisualStyleBackColor = True
-        '
         'btnNotif
         '
         Me.btnNotif.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -227,7 +230,7 @@ Partial Class rmsDashboard
         Me.btnNotif.BackColor = System.Drawing.Color.Transparent
         Me.btnNotif.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnNotif.FlatAppearance.BorderSize = 0
-        Me.btnNotif.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
+        Me.btnNotif.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnNotif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNotif.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNotif.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -249,7 +252,7 @@ Partial Class rmsDashboard
         Me.btnCustomers.BackColor = System.Drawing.Color.Transparent
         Me.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCustomers.FlatAppearance.BorderSize = 0
-        Me.btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
+        Me.btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCustomers.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCustomers.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -264,6 +267,47 @@ Partial Class rmsDashboard
         Me.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.UseVisualStyleBackColor = True
         '
+        'btnLogout
+        '
+        Me.btnLogout.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnLogout.AutoSize = True
+        Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLogout.FlatAppearance.BorderSize = 0
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogout.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLogout.Location = New System.Drawing.Point(0, 701)
+        Me.btnLogout.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(205, 26)
+        Me.btnLogout.TabIndex = 13
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.UseVisualStyleBackColor = False
+        '
+        'btnOverview
+        '
+        Me.btnOverview.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnOverview.BackColor = System.Drawing.Color.Transparent
+        Me.btnOverview.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnOverview.FlatAppearance.BorderSize = 0
+        Me.btnOverview.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOverview.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOverview.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnOverview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnOverview.Location = New System.Drawing.Point(0, 227)
+        Me.btnOverview.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnOverview.Name = "btnOverview"
+        Me.btnOverview.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnOverview.Size = New System.Drawing.Size(205, 43)
+        Me.btnOverview.TabIndex = 3
+        Me.btnOverview.Text = "Overview"
+        Me.btnOverview.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnOverview.UseVisualStyleBackColor = True
+        '
         'btnReservations
         '
         Me.btnReservations.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -271,7 +315,7 @@ Partial Class rmsDashboard
         Me.btnReservations.BackColor = System.Drawing.Color.Transparent
         Me.btnReservations.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnReservations.FlatAppearance.BorderSize = 0
-        Me.btnReservations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
+        Me.btnReservations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnReservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReservations.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReservations.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -285,50 +329,6 @@ Partial Class rmsDashboard
         Me.btnReservations.Text = "Reservations"
         Me.btnReservations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReservations.UseVisualStyleBackColor = True
-        '
-        'btnInventory
-        '
-        Me.btnInventory.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnInventory.BackColor = System.Drawing.Color.Transparent
-        Me.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnInventory.FlatAppearance.BorderSize = 0
-        Me.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
-        Me.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInventory.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInventory.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInventory.Location = New System.Drawing.Point(0, 442)
-        Me.btnInventory.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnInventory.Name = "btnInventory"
-        Me.btnInventory.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnInventory.Size = New System.Drawing.Size(205, 43)
-        Me.btnInventory.TabIndex = 8
-        Me.btnInventory.Text = "Inventory"
-        Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInventory.UseVisualStyleBackColor = True
-        '
-        'btnTGuides
-        '
-        Me.btnTGuides.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTGuides.BackColor = System.Drawing.Color.Transparent
-        Me.btnTGuides.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTGuides.FlatAppearance.BorderSize = 0
-        Me.btnTGuides.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(157, Byte), Integer))
-        Me.btnTGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTGuides.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTGuides.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnTGuides.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTGuides.Location = New System.Drawing.Point(0, 485)
-        Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnTGuides.Name = "btnTGuides"
-        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnTGuides.Size = New System.Drawing.Size(205, 43)
-        Me.btnTGuides.TabIndex = 9
-        Me.btnTGuides.Text = "Tour Guides"
-        Me.btnTGuides.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTGuides.UseVisualStyleBackColor = True
         '
         'picLogo
         '

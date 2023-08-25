@@ -38,7 +38,7 @@ Public Class rmsLogin
     End Sub
 
     Private Sub tboxUsername_MouseHover(sender As Object, e As EventArgs) Handles tboxUsername.MouseHover
-        loginToolTip.Show("You may use your username or email here.", Me, Cursor.Position.X - Me.Left, Cursor.Position.Y - Me.Top + 10, 3000)
+        loginToolTip.Show("You may use your username or email here.", Me, Cursor.Position.X - Me.Left, Cursor.Position.Y - Me.Top + 10, 2000)
     End Sub
 
     Private Sub tboxPassword_TextChanged(sender As Object, e As EventArgs) Handles tboxPassword.TextChanged
