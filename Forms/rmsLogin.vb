@@ -103,18 +103,18 @@ Public Class rmsLogin
             Try
                 Dim RFID As String = tboxRFID.Text
                 Dim userDocument As BsonDocument = moduleLogin.getAdminRFID(RFID)
+
                 If userDocument IsNot Nothing Then
-                    rmsDashboard.adminName = ""
-                    Dim firstName As String = userDocument("First Name").ToString()
-                    Dim surname As String = userDocument("Surname").ToString()
-                    rmsDashboard.adminName = firstName & " " & surname
-                    rmsDashboard.Show()
+                    Dim admnFullName As String = $"{userDocument("First Name")} {userDocument("Middle Name")} {userDocument("Surname")}"
+                    Dim dashboard As New rmsDashboard
+                    dashboard.labelName = admnFullName
+                    dashboard.Show()
                     Me.Hide()
-                ElseIf tboxRFID.Text = "" Then
+                ElseIf String.IsNullOrEmpty(RFID) Then
                     MessageBox.Show("Please swipe your RFID to continue.", "Blank RFID!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     tboxRFID.Focus()
                 Else
-                    MessageBox.Show("User not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Invalid RFID.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Catch ex As Exception
                 MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -122,5 +122,6 @@ Public Class rmsLogin
             End Try
         End If
     End Sub
+
 
 End Class

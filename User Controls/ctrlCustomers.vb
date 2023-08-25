@@ -4,7 +4,7 @@ Imports MongoDB.Driver
 Public Class ctrlCustomers
 
     Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("Customer")
-    Private Customers As List(Of Customer)
+    Private customers As List(Of Customer)
 
     Public Class Customer
         Public Property custID As String
@@ -36,12 +36,12 @@ Public Class ctrlCustomers
         refreshList()
     End Sub
 
-    Public Sub refreshList()
+    Private Sub refreshList()
         populateList()
         clearCustForm()
     End Sub
 
-    Public Sub clearCustForm()
+    Private Sub clearCustForm()
         DataGridView1.ClearSelection()
         tbxCustID.Clear()
         tbxUsername.Clear()
@@ -62,14 +62,14 @@ Public Class ctrlCustomers
 
     Private Sub populateCustInfo(customers As List(Of Customer))
         DataGridView1.Rows.Clear()
-        For Each customer As Customer In customers
+        For Each cust As Customer In customers
             Dim row As New DataGridViewRow()
             row.CreateCells(DataGridView1,
-            customer.custID,
-            $"{customer.firstName} {customer.middleName} {customer.surname}",
-            customer.phone,
-            $"{customer.address.Street}, {customer.address.Barangay}, {customer.address.MuniCity}, {customer.address.Province}, {customer.address.Country}",
-            customer.email
+            cust.custID,
+            $"{cust.firstName} {cust.middleName} {cust.surname}",
+            cust.phone,
+            $"{cust.address.Street}, {cust.address.Barangay}, {cust.address.MuniCity}, {cust.address.Province}, {cust.address.Country}",
+            cust.email
         )
             DataGridView1.Rows.Add(row)
         Next
@@ -155,10 +155,6 @@ Public Class ctrlCustomers
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-    End Sub
-
-    Private Sub btnUpdCust_Click(sender As Object, e As EventArgs) Handles btnUpdCust.Click
-
     End Sub
 
     Private Sub MoveToArchive(custID As String)

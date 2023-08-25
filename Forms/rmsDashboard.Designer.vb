@@ -128,7 +128,7 @@ Partial Class rmsDashboard
         Me.btnSettings.Location = New System.Drawing.Point(0, 562)
         Me.btnSettings.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSettings.Name = "btnSettings"
-        Me.btnSettings.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnSettings.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnSettings.Size = New System.Drawing.Size(205, 43)
         Me.btnSettings.TabIndex = 13
         Me.btnSettings.Text = "Settings"
@@ -150,7 +150,7 @@ Partial Class rmsDashboard
         Me.btnTransaction.Location = New System.Drawing.Point(0, 261)
         Me.btnTransaction.Margin = New System.Windows.Forms.Padding(0)
         Me.btnTransaction.Name = "btnTransaction"
-        Me.btnTransaction.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnTransaction.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnTransaction.Size = New System.Drawing.Size(205, 43)
         Me.btnTransaction.TabIndex = 5
         Me.btnTransaction.Text = "Transaction"
@@ -165,7 +165,7 @@ Partial Class rmsDashboard
         Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogout.FlatAppearance.BorderSize = 0
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogout.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.Location = New System.Drawing.Point(0, 701)
@@ -191,7 +191,7 @@ Partial Class rmsDashboard
         Me.btnRules.Location = New System.Drawing.Point(0, 519)
         Me.btnRules.Margin = New System.Windows.Forms.Padding(0)
         Me.btnRules.Name = "btnRules"
-        Me.btnRules.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnRules.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnRules.Size = New System.Drawing.Size(205, 43)
         Me.btnRules.TabIndex = 12
         Me.btnRules.Text = "Rules && Regulations"
@@ -213,7 +213,7 @@ Partial Class rmsDashboard
         Me.btnOverview.Location = New System.Drawing.Point(0, 218)
         Me.btnOverview.Margin = New System.Windows.Forms.Padding(0)
         Me.btnOverview.Name = "btnOverview"
-        Me.btnOverview.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnOverview.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnOverview.Size = New System.Drawing.Size(205, 43)
         Me.btnOverview.TabIndex = 6
         Me.btnOverview.Text = "Overview"
@@ -235,7 +235,7 @@ Partial Class rmsDashboard
         Me.btnNotif.Location = New System.Drawing.Point(0, 476)
         Me.btnNotif.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNotif.Name = "btnNotif"
-        Me.btnNotif.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnNotif.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnNotif.Size = New System.Drawing.Size(205, 43)
         Me.btnNotif.TabIndex = 11
         Me.btnNotif.Text = "Notifications"
@@ -257,7 +257,7 @@ Partial Class rmsDashboard
         Me.btnCustomers.Location = New System.Drawing.Point(0, 433)
         Me.btnCustomers.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCustomers.Name = "btnCustomers"
-        Me.btnCustomers.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnCustomers.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnCustomers.Size = New System.Drawing.Size(205, 43)
         Me.btnCustomers.TabIndex = 10
         Me.btnCustomers.Text = "Manage Customers"
@@ -279,7 +279,7 @@ Partial Class rmsDashboard
         Me.btnReservations.Location = New System.Drawing.Point(0, 304)
         Me.btnReservations.Margin = New System.Windows.Forms.Padding(0)
         Me.btnReservations.Name = "btnReservations"
-        Me.btnReservations.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnReservations.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnReservations.Size = New System.Drawing.Size(205, 43)
         Me.btnReservations.TabIndex = 7
         Me.btnReservations.Text = "Reservations"
@@ -301,7 +301,7 @@ Partial Class rmsDashboard
         Me.btnInventory.Location = New System.Drawing.Point(0, 347)
         Me.btnInventory.Margin = New System.Windows.Forms.Padding(0)
         Me.btnInventory.Name = "btnInventory"
-        Me.btnInventory.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnInventory.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnInventory.Size = New System.Drawing.Size(205, 43)
         Me.btnInventory.TabIndex = 8
         Me.btnInventory.Text = "Inventory"
@@ -323,7 +323,7 @@ Partial Class rmsDashboard
         Me.btnTGuides.Location = New System.Drawing.Point(0, 390)
         Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
         Me.btnTGuides.Name = "btnTGuides"
-        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnTGuides.Size = New System.Drawing.Size(205, 43)
         Me.btnTGuides.TabIndex = 9
         Me.btnTGuides.Text = "Tour Guides"
@@ -346,7 +346,7 @@ Partial Class rmsDashboard
         Me.labelAdminName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelAdminName.BackColor = System.Drawing.Color.Transparent
-        Me.labelAdminName.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelAdminName.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelAdminName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.labelAdminName.Location = New System.Drawing.Point(0, 633)
         Me.labelAdminName.Margin = New System.Windows.Forms.Padding(0)

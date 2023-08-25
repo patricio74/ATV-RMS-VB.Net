@@ -1,4 +1,15 @@
 ﻿Public Class ctrlOverview
+    Private Sub ctrlOverview_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim currentYear As Integer = DateTime.Now.Year
+        For i As Integer = currentYear To currentYear + 2
+            cbxYear.Items.Add(i.ToString())
+        Next
+        cbxYear.SelectedIndex = -1
+    End Sub
+
+    Private Sub ctrlOverview_Enter(sender As Object, e As EventArgs) Handles Me.Enter
+
+    End Sub
 
     Private Sub SetGroupColors(group As GroupBox, colorEnter As Color, colorLeave As Color)
         group.BackColor = colorEnter
@@ -33,4 +44,6 @@
             grpEarnings.BackColor = Color.PaleGreen
         End If
     End Sub
+
+
 End Class

@@ -42,11 +42,10 @@ Module moduleLogin
                 If userDocument IsNot Nothing Then
                     Dim storedPassword As String = userDocument("Password").ToString()
                     If password = storedPassword Then
-                        rmsDashboard.adminName = ""
-                        Dim firstName As String = userDocument("First Name").ToString()
-                        Dim surname As String = userDocument("Surname").ToString()
-                        rmsDashboard.adminName = firstName & " " & surname
-                        rmsDashboard.Show()
+                        Dim admnFullName As String = $"{userDocument("First Name")} {userDocument("Middle Name")} {userDocument("Surname")}"
+                        Dim dashboard As New rmsDashboard
+                        dashboard.labelName = admnFullName
+                        dashboard.Show()
                         rmsLogin.Hide()
                     Else
                         MessageBox.Show("Incorrect password!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -62,5 +61,6 @@ Module moduleLogin
             End Try
         End If
     End Sub
+
 
 End Module

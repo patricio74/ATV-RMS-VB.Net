@@ -1,6 +1,6 @@
 ﻿Public Class rmsDashboard
+    Public Property labelName As String
 
-    Public Shared adminName As String = ""
     'user control reference
     Dim reserv As New ctrlReservations
     Dim inve As New ctrlInventory
@@ -11,6 +11,25 @@
     Dim notifs As New ctrlNotif
     Dim transac As New ctrlTransaction
     Dim settings As New ctrlUserSettings
+
+    Public Sub resetButtonColor()
+        Dim defaultForeColor As Color = ColorTranslator.FromHtml("#f5f5f5")
+        Dim defaultBackColor As Color = ColorTranslator.FromHtml("#1e272e")
+        Dim buttons As Button() = {
+            btnReservations,
+            btnInventory,
+            btnTGuides,
+            btnCustomers,
+            btnNotif,
+            btnOverview,
+            btnRules,
+            btnSettings
+        }
+        For Each btn In buttons
+            btn.ForeColor = defaultForeColor
+            btn.BackColor = defaultBackColor
+        Next
+    End Sub
 
     Private Sub centerLoc()
         Dim screenWidth As Integer = Screen.PrimaryScreen.WorkingArea.Width
@@ -26,7 +45,7 @@
         centerLoc()
         connectToMongo()
         InitializeDraggablePanel(panelTop)
-        labelAdminName.Text = adminName
+        labelAdminName.Text = labelName
         'load panelz
         admPanel.Controls.Add(reserv)
         admPanel.Controls.Add(inve)
@@ -38,6 +57,7 @@
         admPanel.Controls.Add(transac)
         admPanel.Controls.Add(settings)
 
+        resetButtonColor()
         btnOverview.PerformClick()
         overview.BringToFront()
 
@@ -45,9 +65,6 @@
         Timer1.Start()
     End Sub
 
-    Private Sub rmsDashboard_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        centerLoc()
-    End Sub
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
         rmsLogin.Close()
@@ -116,13 +133,13 @@
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        labelName = ""
         btnOverview.PerformClick()
         overview.BringToFront()
-        Me.Hide()
+        Me.Close()
         resetButtonColor()
         loadRMSLogin()
         clearLoginForm()
-        adminName = ""
         rmsLogin.Show()
         rmsLogin.tboxUsername.Focus()
     End Sub

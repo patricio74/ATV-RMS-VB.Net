@@ -1,4 +1,5 @@
-﻿Imports MongoDB.Driver
+﻿Imports MongoDB.Bson
+Imports MongoDB.Driver
 
 Module moduleDatabase
 
@@ -14,5 +15,6 @@ Module moduleDatabase
             Return Nothing
         End Try
     End Function
+
 
 End Module
