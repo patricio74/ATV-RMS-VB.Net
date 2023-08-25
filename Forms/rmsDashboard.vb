@@ -9,27 +9,8 @@
     Dim overview As New ctrlOverview
     Dim rules As New ctrlRules
     Dim notifs As New ctrlNotif
-    Dim transac As New ctrlTransaction
+    Dim transac As New ctrlTrails
     Dim settings As New ctrlUserSettings
-
-    Public Sub resetButtonColor()
-        Dim defaultForeColor As Color = ColorTranslator.FromHtml("#f5f5f5")
-        Dim defaultBackColor As Color = ColorTranslator.FromHtml("#1e272e")
-        Dim buttons As Button() = {
-            btnReservations,
-            btnInventory,
-            btnTGuides,
-            btnCustomers,
-            btnNotif,
-            btnOverview,
-            btnRules,
-            btnSettings
-        }
-        For Each btn In buttons
-            btn.ForeColor = defaultForeColor
-            btn.BackColor = defaultBackColor
-        Next
-    End Sub
 
     Private Sub centerLoc()
         Dim screenWidth As Integer = Screen.PrimaryScreen.WorkingArea.Width
@@ -44,7 +25,7 @@
     Private Sub rmsDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
         centerLoc()
         connectToMongo()
-        InitializeDraggablePanel(panelTop)
+        initializeDraggablePanel(panelTop)
         labelAdminName.Text = labelName
         'load panelz
         admPanel.Controls.Add(reserv)
@@ -120,7 +101,7 @@
         rules.BringToFront()
     End Sub
 
-    Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTransaction.Click
+    Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTrails.Click
         resetButtonColor()
         activeButtonColor(sender, e)
         transac.BringToFront()

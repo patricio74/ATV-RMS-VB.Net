@@ -98,9 +98,9 @@ Partial Class ctrlInventory
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Label7.Location = New System.Drawing.Point(91, 425)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(48, 18)
+        Me.Label7.Size = New System.Drawing.Size(64, 18)
         Me.Label7.TabIndex = 54
-        Me.Label7.Text = "PRICE:"
+        Me.Label7.Text = "HAHAHA:"
         '
         'Label3
         '

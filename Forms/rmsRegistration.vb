@@ -56,6 +56,7 @@ Public Class rmsRegistration
                     Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
                     Builders(Of BsonDocument).Filter.Eq(Of String)("Email", email)
                 )
+                'check if there's a same rfid, username, email sa db
                 Dim count As Long = collection.CountDocuments(filter)
                 If count > 0 Then
                     MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)

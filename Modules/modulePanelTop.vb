@@ -3,7 +3,7 @@
     Private mouseDrag As Boolean = False
     Private mouseOffset As Point
 
-    Public Sub InitializeDraggablePanel(panelTop As Panel)
+    Public Sub initializeDraggablePanel(panelTop As Panel)
         AddHandler panelTop.MouseDown, AddressOf panelTop_MouseDown
         AddHandler panelTop.MouseMove, AddressOf panelTop_MouseMove
         AddHandler panelTop.MouseUp, AddressOf panelTop_MouseUp

@@ -308,10 +308,10 @@
     <Compile Include="Forms\rmsSplashScreen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User Controls\ctrlTransaction.Designer.vb">
-      <DependentUpon>ctrlTransaction.vb</DependentUpon>
+    <Compile Include="User Controls\ctrlTrails.Designer.vb">
+      <DependentUpon>ctrlTrails.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\ctrlTransaction.vb">
+    <Compile Include="User Controls\ctrlTrails.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Controls\ctrlUserSettings.Designer.vb">
@@ -361,8 +361,8 @@
     <EmbeddedResource Include="Forms\rmsSplashScreen.resx">
       <DependentUpon>rmsSplashScreen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\ctrlTransaction.resx">
-      <DependentUpon>ctrlTransaction.vb</DependentUpon>
+    <EmbeddedResource Include="User Controls\ctrlTrails.resx">
+      <DependentUpon>ctrlTrails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\ctrlUserSettings.resx">
       <DependentUpon>ctrlUserSettings.vb</DependentUpon>

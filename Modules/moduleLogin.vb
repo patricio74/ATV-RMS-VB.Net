@@ -43,12 +43,11 @@ Module moduleLogin
                     Dim storedPassword As String = userDocument("Password").ToString()
                     If password = storedPassword Then
                         Dim admnFullName As String = $"{userDocument("First Name")} {userDocument("Middle Name")} {userDocument("Surname")}"
-                        Dim dashboard As New rmsDashboard
-                        dashboard.labelName = admnFullName
-                        dashboard.Show()
+                        rmsDashboard.labelName = admnFullName
+                        rmsDashboard.Show
                         rmsLogin.Hide()
                     Else
-                        MessageBox.Show("Incorrect password!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        MessageBox.Show("Wrong password.", "Failed to Login!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         rmsLogin.tboxPassword.Focus()
                     End If
                 Else

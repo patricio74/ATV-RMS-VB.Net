@@ -22,6 +22,7 @@ Partial Class rmsLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(rmsLogin))
         Me.picboxLogo = New System.Windows.Forms.PictureBox()
         Me.tboxUsername = New System.Windows.Forms.TextBox()
@@ -45,6 +46,7 @@ Partial Class rmsLogin
         Me.labelUser = New System.Windows.Forms.Label()
         Me.panelRFIDLogin = New System.Windows.Forms.Panel()
         Me.labelTItle = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.picboxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBottom.SuspendLayout()
         Me.panelTop.SuspendLayout()
@@ -433,4 +435,5 @@ Partial Class rmsLogin
     Private WithEvents labelFormTitle As Label
     Private WithEvents PictureBox1 As PictureBox
     Private WithEvents labelTItle As Label
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
