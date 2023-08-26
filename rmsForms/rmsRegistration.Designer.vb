@@ -547,8 +547,8 @@ Partial Class rmsRegistration
         Me.btnRet1.BackColor = System.Drawing.Color.Transparent
         Me.btnRet1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRet1.FlatAppearance.BorderSize = 0
-        Me.btnRet1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnRet1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnRet1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnRet1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnRet1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRet1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRet1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
@@ -635,8 +635,8 @@ Partial Class rmsRegistration
         Me.btnRet2.BackColor = System.Drawing.Color.Transparent
         Me.btnRet2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRet2.FlatAppearance.BorderSize = 0
-        Me.btnRet2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnRet2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnRet2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnRet2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnRet2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRet2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRet2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
@@ -711,6 +711,7 @@ Partial Class rmsRegistration
         Me.btnNext3.BackgroundImage = Global.ATV_RMS.My.Resources.Resources._next
         Me.btnNext3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnNext3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNext3.Enabled = False
         Me.btnNext3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.btnNext3.FlatAppearance.BorderSize = 0
         Me.btnNext3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -1046,10 +1047,10 @@ Partial Class rmsRegistration
         Me.ClientSize = New System.Drawing.Size(445, 636)
         Me.Controls.Add(Me.panelTop)
         Me.Controls.Add(Me.panelBottom)
-        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rmsRegistration"

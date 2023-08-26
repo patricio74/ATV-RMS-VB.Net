@@ -6,10 +6,12 @@ Public Class rmsRegistration
     Private Sub clearRegForm()
         regFName.Clear()
         regMName.Clear()
+        regSname.Clear()
         regEmail.Clear()
         regPhone.Clear()
         regUsername.Clear()
         regPassw.Clear()
+        regPassw2.Clear()
         regRFID.Clear()
     End Sub
 
@@ -42,15 +44,74 @@ Public Class rmsRegistration
             hideRegPanelz()
             Panel1.Show()
         ElseIf sender Is btnNext1 Or sender Is btnRet2 Then
-            hideRegPanelz()
-            Panel2.Show()
-            lblHello.Text = "HELLO, " + regSname.Text + "!"
+            If regFName.Text = "" Then
+                MessageBox.Show("Please enter your first name to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                regFName.Focus()
+            ElseIf regSname.Text = "" Then
+                MessageBox.Show("Please enter your surname to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                regSname.Focus()
+            Else
+                hideRegPanelz()
+                Panel2.Show()
+                lblHello.Text = "HELLO, " + regSname.Text + "!"
+            End If
         ElseIf sender Is btnNext2 Then
+            'add code to check if there's existing rfid, email in db
+            'proceed to panel3 if there's no dup..
             hideRegPanelz()
             Panel3.Show()
         ElseIf sender Is btnNext3 Then
+            'check username for duplicate
+            'check pw for both textboxes, show label if pw didn't match
+            'enable next button if username does not exist in db, password match
             hideRegPanelz()
             Panel4.Show()
+        ElseIf sender Is btnReg Then
+            If regFName.Text = "" Or regMName.Text = "" Or regEmail.Text = "" Or regPhone.Text = "" Or regUsername.Text = "" Or regPassw.Text = "" Or regRFID.Text = "" Then
+                MessageBox.Show("Fill out all the fields to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                Try
+                    Dim firstName As String = regFName.Text()
+                    Dim midName As String = regMName.Text()
+                    Dim surname As String = regSname.Text()
+                    Dim email As String = regEmail.Text.Trim()
+                    Dim phone As String = regPhone.Text.Trim()
+                    Dim username As String = regUsername.Text.Trim()
+                    Dim password As String = regPassw.Text.Trim()
+                    Dim rfid As String = regRFID.Text.Trim()
+
+                    Dim newAdmin As New BsonDocument From {
+                        {"First Name", firstName},
+                        {"Middle Name", midName},
+                        {"Surname", surname},
+                        {"Email", email},
+                        {"Phone", phone},
+                        {"Username", username},
+                        {"Password", password},
+                        {"RFID", rfid}
+                    }
+                    Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
+                    Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(
+                        Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", rfid),
+                        Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
+                        Builders(Of BsonDocument).Filter.Eq(Of String)("Email", email)
+                    )
+                    'check if there's a same rfid, username, email sa db
+                    Dim count As Long = collection.CountDocuments(filter)
+                    If count > 0 Then
+                        MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        'regRFID.Focus()
+                    Else
+                        collection.InsertOne(newAdmin)
+                        MessageBox.Show("You may now login to ATV-RMS.", "Successfully registered!", MessageBoxButtons.OK, MessageBoxIcon.None)
+                        rmsLogin.Show()
+                        clearRegForm()
+                        Me.Close()
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
         End If
     End Sub
 
@@ -78,51 +139,6 @@ Public Class rmsRegistration
         panelPasswor.Text = regPassw2.Text
     End Sub
 
-    Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.Click
-        If regFName.Text = "" Or regMName.Text = "" Or regEmail.Text = "" Or regPhone.Text = "" Or regUsername.Text = "" Or regPassw.Text = "" Or regRFID.Text = "" Then
-            MessageBox.Show("Fill out all the fields to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Else
-            Try
-                Dim firstName As String = regFName.Text()
-                Dim surname As String = regMName.Text()
-                Dim email As String = regEmail.Text.Trim()
-                Dim phone As String = regPhone.Text.Trim()
-                Dim username As String = regUsername.Text.Trim()
-                Dim password As String = regPassw.Text.Trim()
-                Dim rfid As String = regRFID.Text.Trim()
-
-                Dim newAdmin As New BsonDocument From {
-                    {"First Name", firstName},
-                    {"Surname", surname},
-                    {"Email", email},
-                    {"Phone", phone},
-                    {"Username", username},
-                    {"Password", password},
-                    {"RFID", rfid}
-                }
-                Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
-                Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(
-                    Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", rfid),
-                    Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
-                    Builders(Of BsonDocument).Filter.Eq(Of String)("Email", email)
-                )
-                'check if there's a same rfid, username, email sa db
-                Dim count As Long = collection.CountDocuments(filter)
-                If count > 0 Then
-                    MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    'regRFID.Focus()
-                Else
-                    collection.InsertOne(newAdmin)
-                    MessageBox.Show("You may now login to ATV-RMS.", "Successfully registered!", MessageBoxButtons.OK, MessageBoxIcon.None)
-                    rmsLogin.Show()
-                    clearRegForm()
-                    Me.Close()
-                End If
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End If
-    End Sub
     Private Sub labelLogin_Click(sender As Object, e As EventArgs) Handles labelLogin.Click
         rmsLogin.Show()
         rmsLogin.Location = Me.Location
