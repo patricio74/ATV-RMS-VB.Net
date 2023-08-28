@@ -60,32 +60,16 @@ Public Class ctrlCustomers
         PictureBox1.BackgroundImage = Nothing
     End Sub
 
-    Private Sub populateCustInfo(customers As List(Of Customer))
-        DataGridView1.Rows.Clear()
-        For Each cust As Customer In customers
-            Dim row As New DataGridViewRow()
-            row.CreateCells(DataGridView1,
-            cust.custID,
-            $"{cust.firstName} {cust.middleName} {cust.surname}",
-            cust.phone,
-            $"{cust.address.Street}, {cust.address.Barangay}, {cust.address.MuniCity}, {cust.address.Province}, {cust.address.Country}",
-            cust.email
-        )
-            DataGridView1.Rows.Add(row)
-        Next
-    End Sub
-
     Private Sub populateList()
         Dim documents As List(Of BsonDocument) = collection.Find(New BsonDocument()).ToList()
-        Customers = New List(Of Customer)()
-
+        customers = New List(Of Customer)()
         For Each document As BsonDocument In documents
             Dim idElement = document.GetElement("_id")
             Dim customer As New Customer() With {
             .custID = idElement.Value.AsObjectId.ToString,
-            .firstName = document("First Name").ToString,
-            .middleName = document("Middle Name").ToString,
-            .surname = document("Surname").ToString,
+            .firstName = document("FName").ToString,
+            .middleName = document("MName").ToString,
+            .surname = document("Sname").ToString,
             .phone = document("Phone").ToString,
             .email = document("Email").ToString,
             .gender = document("Gender").ToString,
@@ -96,13 +80,26 @@ Public Class ctrlCustomers
             customer.address = New Address With {
             .Street = address("Street").ToString,
             .Barangay = address("Barangay").ToString,
-            .MuniCity = address("Municipality/City").ToString,
+            .MuniCity = address("MuniCity").ToString,
             .Province = address("Province").ToString,
             .Country = address("Country").ToString
         }
-            Customers.Add(customer)
+            customers.Add(customer)
         Next
         populateCustInfo(Customers)
+    End Sub
+    Private Sub populateCustInfo(customers As List(Of Customer))
+        DataGridView1.Rows.Clear()
+        For Each cust As Customer In customers
+            Dim row As New DataGridViewRow()
+            row.CreateCells(
+            DataGridView1, cust.custID,
+            $"{cust.firstName} {cust.middleName} {cust.surname}", cust.phone,
+            $"{cust.address.Street}, {cust.address.Barangay}, {cust.address.MuniCity},
+            {cust.address.Province}, {cust.address.Country}", cust.email
+            )
+            DataGridView1.Rows.Add(row)
+        Next
     End Sub
 
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
@@ -127,20 +124,19 @@ Public Class ctrlCustomers
         End If
     End Sub
 
-
     Private Sub btnAddCust_Click(sender As Object, e As EventArgs) Handles btnAddCust.Click
         Try
             Dim document As New BsonDocument From {
-                {"First Name", tbxFirname.Text},
-                {"Middle Name", tbxMidname.Text},
-                {"Surname", tbxSurname.Text},
+                {"FName", tbxFirname.Text},
+                {"MName", tbxMidname.Text},
+                {"Sname", tbxSurname.Text},
                 {"Gender", cmbGender.SelectedItem.ToString()},
                 {"Address", New BsonDocument From {
                     {"Street", tbxStreet.Text},
                     {"Barangay", tbxBarangay.Text},
                     {"Province", tbxProvince.Text},
                     {"Country", cmbCountry.SelectedItem.ToString()},
-                    {"Municipality/City", tbxMuniCity.Text}
+                    {"MuniCity", tbxMuniCity.Text}
                 }},
                 {"Phone", tbxPhone.Text},
                 {"Email", tbxEmail.Text},
@@ -168,7 +164,7 @@ Public Class ctrlCustomers
                     Dim archiveCollection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("archiveCustomer")
                     archiveCollection.InsertOne(document)
                     collection.DeleteOne(filter)
-                    MessageBox.Show("Data moved to archive successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Data archived successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     refreshList()
                 Else
                     MessageBox.Show("Customer not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -185,7 +181,7 @@ Public Class ctrlCustomers
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim selectedCustomer = Customers(DataGridView1.SelectedRows(0).Index)
             Dim custID As String = selectedCustomer.custID
-            Dim result = MessageBox.Show("Are you sure you want to move this customer to the archive?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim result = MessageBox.Show("Are you sure you want to archive this data?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If result = DialogResult.Yes Then
                 MoveToArchive(custID)

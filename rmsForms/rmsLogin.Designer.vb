@@ -45,8 +45,9 @@ Partial Class rmsLogin
         Me.labelPword = New System.Windows.Forms.Label()
         Me.labelUser = New System.Windows.Forms.Label()
         Me.panelRFIDLogin = New System.Windows.Forms.Panel()
-        Me.labelTItle = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.lblRFIDErr = New System.Windows.Forms.Label()
+        Me.labelTItle = New System.Windows.Forms.Label()
         CType(Me.picboxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBottom.SuspendLayout()
         Me.panelTop.SuspendLayout()
@@ -57,14 +58,12 @@ Partial Class rmsLogin
         '
         'picboxLogo
         '
-        Me.picboxLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picboxLogo.BackColor = System.Drawing.Color.Transparent
         Me.picboxLogo.BackgroundImage = CType(resources.GetObject("picboxLogo.BackgroundImage"), System.Drawing.Image)
         Me.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picboxLogo.Location = New System.Drawing.Point(167, 69)
+        Me.picboxLogo.Location = New System.Drawing.Point(168, 127)
         Me.picboxLogo.Name = "picboxLogo"
-        Me.picboxLogo.Size = New System.Drawing.Size(95, 95)
+        Me.picboxLogo.Size = New System.Drawing.Size(125, 125)
         Me.picboxLogo.TabIndex = 4
         Me.picboxLogo.TabStop = False
         '
@@ -73,14 +72,13 @@ Partial Class rmsLogin
         Me.tboxUsername.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tboxUsername.BackColor = System.Drawing.Color.White
-        Me.tboxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tboxUsername.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tboxUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tboxUsername.Location = New System.Drawing.Point(57, 23)
+        Me.tboxUsername.Location = New System.Drawing.Point(57, 21)
         Me.tboxUsername.Margin = New System.Windows.Forms.Padding(0)
         Me.tboxUsername.MaxLength = 40
         Me.tboxUsername.Name = "tboxUsername"
-        Me.tboxUsername.Size = New System.Drawing.Size(308, 32)
+        Me.tboxUsername.Size = New System.Drawing.Size(343, 32)
         Me.tboxUsername.TabIndex = 5
         Me.tboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -89,14 +87,13 @@ Partial Class rmsLogin
         Me.tboxPassword.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tboxPassword.BackColor = System.Drawing.Color.White
-        Me.tboxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tboxPassword.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tboxPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tboxPassword.Location = New System.Drawing.Point(57, 80)
+        Me.tboxPassword.Location = New System.Drawing.Point(57, 88)
         Me.tboxPassword.Margin = New System.Windows.Forms.Padding(0)
         Me.tboxPassword.MaxLength = 25
         Me.tboxPassword.Name = "tboxPassword"
-        Me.tboxPassword.Size = New System.Drawing.Size(308, 32)
+        Me.tboxPassword.Size = New System.Drawing.Size(343, 32)
         Me.tboxPassword.TabIndex = 7
         Me.tboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tboxPassword.UseSystemPasswordChar = True
@@ -109,7 +106,7 @@ Partial Class rmsLogin
         Me.checkShow.Cursor = System.Windows.Forms.Cursors.Hand
         Me.checkShow.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.checkShow.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.checkShow.Location = New System.Drawing.Point(305, 113)
+        Me.checkShow.Location = New System.Drawing.Point(340, 122)
         Me.checkShow.Margin = New System.Windows.Forms.Padding(0)
         Me.checkShow.Name = "checkShow"
         Me.checkShow.Size = New System.Drawing.Size(60, 18)
@@ -122,8 +119,8 @@ Partial Class rmsLogin
         Me.labelForgotPass.AutoSize = True
         Me.labelForgotPass.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelForgotPass.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelForgotPass.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelForgotPass.Location = New System.Drawing.Point(142, 19)
+        Me.labelForgotPass.ForeColor = System.Drawing.Color.White
+        Me.labelForgotPass.Location = New System.Drawing.Point(160, 14)
         Me.labelForgotPass.Name = "labelForgotPass"
         Me.labelForgotPass.Size = New System.Drawing.Size(137, 16)
         Me.labelForgotPass.TabIndex = 15
@@ -133,14 +130,13 @@ Partial Class rmsLogin
         '
         Me.tboxRFID.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tboxRFID.BackColor = System.Drawing.Color.White
-        Me.tboxRFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tboxRFID.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tboxRFID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tboxRFID.Location = New System.Drawing.Point(57, 50)
+        Me.tboxRFID.Location = New System.Drawing.Point(57, 61)
         Me.tboxRFID.Margin = New System.Windows.Forms.Padding(0)
         Me.tboxRFID.MaxLength = 12
         Me.tboxRFID.Name = "tboxRFID"
-        Me.tboxRFID.Size = New System.Drawing.Size(308, 35)
+        Me.tboxRFID.Size = New System.Drawing.Size(343, 35)
         Me.tboxRFID.TabIndex = 12
         Me.tboxRFID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tboxRFID.UseSystemPasswordChar = True
@@ -151,15 +147,15 @@ Partial Class rmsLogin
         Me.label9.BackColor = System.Drawing.Color.Transparent
         Me.label9.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label9.ForeColor = System.Drawing.Color.Gainsboro
-        Me.label9.Location = New System.Drawing.Point(130, 87)
+        Me.label9.Location = New System.Drawing.Point(54, 42)
         Me.label9.Name = "label9"
-        Me.label9.Size = New System.Drawing.Size(166, 16)
+        Me.label9.Size = New System.Drawing.Size(71, 16)
         Me.label9.TabIndex = 11
-        Me.label9.Text = "Swipe your RFID card."
+        Me.label9.Text = "RFID NO."
         '
         'btnLogin
         '
-        Me.btnLogin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.btnLogin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -168,10 +164,10 @@ Partial Class rmsLogin
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnLogin.Location = New System.Drawing.Point(149, 144)
+        Me.btnLogin.Location = New System.Drawing.Point(163, 145)
         Me.btnLogin.Margin = New System.Windows.Forms.Padding(0)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(131, 45)
+        Me.btnLogin.Size = New System.Drawing.Size(134, 45)
         Me.btnLogin.TabIndex = 9
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
@@ -184,10 +180,10 @@ Partial Class rmsLogin
         Me.labelLoginSwitch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelLoginSwitch.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelLoginSwitch.ForeColor = System.Drawing.Color.White
-        Me.labelLoginSwitch.Location = New System.Drawing.Point(149, 446)
+        Me.labelLoginSwitch.Location = New System.Drawing.Point(149, 472)
         Me.labelLoginSwitch.Margin = New System.Windows.Forms.Padding(0)
         Me.labelLoginSwitch.Name = "labelLoginSwitch"
-        Me.labelLoginSwitch.Size = New System.Drawing.Size(131, 21)
+        Me.labelLoginSwitch.Size = New System.Drawing.Size(166, 21)
         Me.labelLoginSwitch.TabIndex = 13
         Me.labelLoginSwitch.Text = "Use RFID Card"
         Me.labelLoginSwitch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -197,8 +193,8 @@ Partial Class rmsLogin
         Me.labelRegister.AutoSize = True
         Me.labelRegister.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelRegister.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelRegister.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelRegister.Location = New System.Drawing.Point(272, 50)
+        Me.labelRegister.ForeColor = System.Drawing.Color.White
+        Me.labelRegister.Location = New System.Drawing.Point(290, 40)
         Me.labelRegister.Margin = New System.Windows.Forms.Padding(0)
         Me.labelRegister.Name = "labelRegister"
         Me.labelRegister.Size = New System.Drawing.Size(67, 16)
@@ -210,7 +206,7 @@ Partial Class rmsLogin
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.label1.Location = New System.Drawing.Point(81, 50)
+        Me.label1.Location = New System.Drawing.Point(99, 40)
         Me.label1.Margin = New System.Windows.Forms.Padding(0)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(192, 16)
@@ -224,10 +220,10 @@ Partial Class rmsLogin
         Me.panelBottom.Controls.Add(Me.label1)
         Me.panelBottom.Controls.Add(Me.labelRegister)
         Me.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelBottom.Location = New System.Drawing.Point(0, 553)
+        Me.panelBottom.Location = New System.Drawing.Point(0, 597)
         Me.panelBottom.Margin = New System.Windows.Forms.Padding(0)
         Me.panelBottom.Name = "panelBottom"
-        Me.panelBottom.Size = New System.Drawing.Size(425, 95)
+        Me.panelBottom.Size = New System.Drawing.Size(460, 80)
         Me.panelBottom.TabIndex = 14
         '
         'btnClose
@@ -242,7 +238,7 @@ Partial Class rmsLogin
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClose.ForeColor = System.Drawing.Color.Red
-        Me.btnClose.Location = New System.Drawing.Point(395, 0)
+        Me.btnClose.Location = New System.Drawing.Point(430, 0)
         Me.btnClose.Margin = New System.Windows.Forms.Padding(0)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(30, 30)
@@ -261,7 +257,7 @@ Partial Class rmsLogin
         Me.panelTop.Location = New System.Drawing.Point(0, 0)
         Me.panelTop.Margin = New System.Windows.Forms.Padding(0)
         Me.panelTop.Name = "panelTop"
-        Me.panelTop.Size = New System.Drawing.Size(425, 30)
+        Me.panelTop.Size = New System.Drawing.Size(460, 30)
         Me.panelTop.TabIndex = 18
         '
         'labelFormTitle
@@ -299,7 +295,7 @@ Partial Class rmsLogin
         Me.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMinimize.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMinimize.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnMinimize.Location = New System.Drawing.Point(362, 0)
+        Me.btnMinimize.Location = New System.Drawing.Point(397, 0)
         Me.btnMinimize.Margin = New System.Windows.Forms.Padding(0)
         Me.btnMinimize.Name = "btnMinimize"
         Me.btnMinimize.Size = New System.Drawing.Size(30, 30)
@@ -318,9 +314,9 @@ Partial Class rmsLogin
         Me.panelPassLogin.Controls.Add(Me.checkShow)
         Me.panelPassLogin.Controls.Add(Me.tboxUsername)
         Me.panelPassLogin.Controls.Add(Me.tboxPassword)
-        Me.panelPassLogin.Location = New System.Drawing.Point(0, 251)
+        Me.panelPassLogin.Location = New System.Drawing.Point(0, 277)
         Me.panelPassLogin.Name = "panelPassLogin"
-        Me.panelPassLogin.Size = New System.Drawing.Size(425, 193)
+        Me.panelPassLogin.Size = New System.Drawing.Size(460, 193)
         Me.panelPassLogin.TabIndex = 3
         '
         'labelPword
@@ -330,12 +326,12 @@ Partial Class rmsLogin
         Me.labelPword.AutoSize = True
         Me.labelPword.BackColor = System.Drawing.Color.Transparent
         Me.labelPword.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.labelPword.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelPword.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelPword.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelPword.Location = New System.Drawing.Point(54, 62)
+        Me.labelPword.Location = New System.Drawing.Point(54, 70)
         Me.labelPword.Margin = New System.Windows.Forms.Padding(0)
         Me.labelPword.Name = "labelPword"
-        Me.labelPword.Size = New System.Drawing.Size(69, 16)
+        Me.labelPword.Size = New System.Drawing.Size(77, 16)
         Me.labelPword.TabIndex = 6
         Me.labelPword.Text = "password"
         Me.labelPword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -347,12 +343,12 @@ Partial Class rmsLogin
         Me.labelUser.AutoSize = True
         Me.labelUser.BackColor = System.Drawing.Color.Transparent
         Me.labelUser.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.labelUser.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelUser.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelUser.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelUser.Location = New System.Drawing.Point(54, 5)
+        Me.labelUser.Location = New System.Drawing.Point(54, 3)
         Me.labelUser.Margin = New System.Windows.Forms.Padding(0)
         Me.labelUser.Name = "labelUser"
-        Me.labelUser.Size = New System.Drawing.Size(70, 16)
+        Me.labelUser.Size = New System.Drawing.Size(80, 16)
         Me.labelUser.TabIndex = 4
         Me.labelUser.Text = "username"
         Me.labelUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -362,31 +358,47 @@ Partial Class rmsLogin
         Me.panelRFIDLogin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelRFIDLogin.BackColor = System.Drawing.Color.Transparent
+        Me.panelRFIDLogin.Controls.Add(Me.lblRFIDErr)
         Me.panelRFIDLogin.Controls.Add(Me.label9)
         Me.panelRFIDLogin.Controls.Add(Me.tboxRFID)
-        Me.panelRFIDLogin.Location = New System.Drawing.Point(0, 251)
+        Me.panelRFIDLogin.Location = New System.Drawing.Point(0, 277)
         Me.panelRFIDLogin.Name = "panelRFIDLogin"
-        Me.panelRFIDLogin.Size = New System.Drawing.Size(425, 193)
+        Me.panelRFIDLogin.Size = New System.Drawing.Size(460, 193)
         Me.panelRFIDLogin.TabIndex = 10
+        '
+        'lblRFIDErr
+        '
+        Me.lblRFIDErr.BackColor = System.Drawing.Color.Transparent
+        Me.lblRFIDErr.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRFIDErr.ForeColor = System.Drawing.Color.Red
+        Me.lblRFIDErr.Location = New System.Drawing.Point(57, 103)
+        Me.lblRFIDErr.Name = "lblRFIDErr"
+        Me.lblRFIDErr.Size = New System.Drawing.Size(343, 19)
+        Me.lblRFIDErr.TabIndex = 13
+        Me.lblRFIDErr.Text = "Label for error message."
+        Me.lblRFIDErr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblRFIDErr.Visible = False
         '
         'labelTItle
         '
-        Me.labelTItle.AutoSize = True
-        Me.labelTItle.BackColor = System.Drawing.Color.Transparent
-        Me.labelTItle.Font = New System.Drawing.Font("Trebuchet MS", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelTItle.ForeColor = System.Drawing.Color.White
-        Me.labelTItle.Location = New System.Drawing.Point(64, 170)
+        Me.labelTItle.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.labelTItle.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.labelTItle.Font = New System.Drawing.Font("Trebuchet MS", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelTItle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.labelTItle.Location = New System.Drawing.Point(0, 53)
         Me.labelTItle.Name = "labelTItle"
-        Me.labelTItle.Size = New System.Drawing.Size(294, 40)
+        Me.labelTItle.Size = New System.Drawing.Size(460, 43)
         Me.labelTItle.TabIndex = 19
-        Me.labelTItle.Text = "LOGIN TO ATV-RMS"
+        Me.labelTItle.Text = "WELCOME TO ATV-RMS!"
+        Me.labelTItle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'rmsLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(425, 648)
+        Me.ClientSize = New System.Drawing.Size(460, 677)
         Me.Controls.Add(Me.picboxLogo)
         Me.Controls.Add(Me.labelTItle)
         Me.Controls.Add(Me.panelTop)
@@ -410,7 +422,6 @@ Partial Class rmsLogin
         Me.panelRFIDLogin.ResumeLayout(False)
         Me.panelRFIDLogin.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Private WithEvents picboxLogo As PictureBox
@@ -434,6 +445,7 @@ Partial Class rmsLogin
     Public WithEvents labelPword As Label
     Private WithEvents labelFormTitle As Label
     Private WithEvents PictureBox1 As PictureBox
-    Private WithEvents labelTItle As Label
     Friend WithEvents ToolTip1 As ToolTip
+    Private WithEvents lblRFIDErr As Label
+    Private WithEvents labelTItle As Label
 End Class

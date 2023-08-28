@@ -43,29 +43,46 @@ Public Class rmsRegistration
         If sender Is btnRet1 Then
             hideRegPanelz()
             Panel1.Show()
+
         ElseIf sender Is btnNext1 Or sender Is btnRet2 Then
-            If regFName.Text = "" Then
-                MessageBox.Show("Please enter your first name to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            regFName.Text.Trim()
+            regSname.Text.Trim()
+            If String.IsNullOrWhiteSpace(regFName.Text) Then
+                lblPanel1Note.Visible = True
                 regFName.Focus()
-            ElseIf regSname.Text = "" Then
-                MessageBox.Show("Please enter your surname to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ElseIf String.IsNullOrWhiteSpace(regSname.Text) Then
+                lblPanel1Note.Visible = True
                 regSname.Focus()
             Else
+                lblPanel1Note.Visible = False
                 hideRegPanelz()
                 Panel2.Show()
                 lblHello.Text = "HELLO, " + regSname.Text + "!"
             End If
+
         ElseIf sender Is btnNext2 Then
-            'add code to check if there's existing rfid, email in db
-            'proceed to panel3 if there's no dup..
-            hideRegPanelz()
-            Panel3.Show()
+            If String.IsNullOrWhiteSpace(regEmail.Text) Or String.IsNullOrWhiteSpace(regPhone.Text) Or String.IsNullOrWhiteSpace(regRFID.Text) Then
+                lblPanel2Note.Visible = True
+            Else
+                lblPanel2Note.Visible = False
+            End If
+            Try
+                'add code for textbox proper phone format(+639xxxx, 09xxxxx)
+                'check db for duplicates
+                'proceed to panel3 if there's no dup..
+                hideRegPanelz()
+                Panel3.Show()
+            Catch ex As Exception
+
+            End Try
+
         ElseIf sender Is btnNext3 Then
             'check username for duplicate
             'check pw for both textboxes, show label if pw didn't match
             'enable next button if username does not exist in db, password match
             hideRegPanelz()
             Panel4.Show()
+
         ElseIf sender Is btnReg Then
             If regFName.Text = "" Or regMName.Text = "" Or regEmail.Text = "" Or regPhone.Text = "" Or regUsername.Text = "" Or regPassw.Text = "" Or regRFID.Text = "" Then
                 MessageBox.Show("Fill out all the fields to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -100,7 +117,6 @@ Public Class rmsRegistration
                     Dim count As Long = collection.CountDocuments(filter)
                     If count > 0 Then
                         MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        'regRFID.Focus()
                     Else
                         collection.InsertOne(newAdmin)
                         MessageBox.Show("You may now login to ATV-RMS.", "Successfully registered!", MessageBoxButtons.OK, MessageBoxIcon.None)
@@ -146,4 +162,37 @@ Public Class rmsRegistration
         Me.Close()
     End Sub
 
+    Private Sub regEmail_TextChanged(sender As Object, e As EventArgs) Handles regEmail.TextChanged
+        'email@email.com format
+        'add code to check db for duplicates
+    End Sub
+
+    Private Sub regPhone_TextChanged(sender As Object, e As EventArgs) Handles regPhone.TextChanged
+        '09xxxxx | +639xxxx
+    End Sub
+
+    Private Sub regRFID_TextChanged(sender As Object, e As EventArgs) Handles regRFID.TextChanged
+        'if length >13 check sa db kung may duplicate
+    End Sub
+
+    Private Sub regUsername_TextChanged(sender As Object, e As EventArgs) Handles regUsername.TextChanged
+        If regUsername.TextLength < 8 Then
+            lblUsernameErr.Visible = True
+            lblUsernameErr.Text = "Username too short."
+        ElseIf regUsername.TextLength >= 8 Then
+            'check if there's existing username in the db
+            'if true-> show label
+            lblUsernameErr.Visible = True
+            lblUsernameErr.Text = "Username already exist."
+        Else
+            lblUsernameErr.Visible = False
+        End If
+    End Sub
+
+    Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.Click
+        'add confirmation dialog
+        'insert to db
+        'success message
+        'send sms if registration is successful
+    End Sub
 End Class

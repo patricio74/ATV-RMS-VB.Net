@@ -8,6 +8,15 @@ Module moduleLogin
         rmsLogin.panelPassLogin.Show()
         rmsLogin.checkShow.Checked = False
         rmsLogin.tboxUsername.Focus()
+        loginSwitchLabel()
+    End Sub
+
+    Public Sub loginSwitchLabel()
+        If rmsLogin.panelPassLogin.Visible = True Then
+            rmsLogin.labelLoginSwitch.Text = "Use Password"
+        Else
+            rmsLogin.labelLoginSwitch.Text = "Use RFID Card"
+        End If
     End Sub
 
     Public Function getAdminRFID(RFID As String) As BsonDocument
@@ -49,9 +58,18 @@ Module moduleLogin
                     Else
                         MessageBox.Show("Wrong password.", "Failed to Login!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                         rmsLogin.tboxPassword.Focus()
+                        If rmsLogin.checkShow.Checked = True Then
+                            rmsLogin.checkShow.Checked = False
+                            rmsLogin.tboxPassword.UseSystemPasswordChar = True
+                        End If
                     End If
                 Else
                     MessageBox.Show("User not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    rmsLogin.tboxPassword.Clear()
+                    If rmsLogin.checkShow.Checked = True Then
+                        rmsLogin.checkShow.Checked = False
+                        rmsLogin.tboxPassword.UseSystemPasswordChar = True
+                    End If
                     rmsLogin.tboxUsername.Focus()
                 End If
             Catch ex As Exception
