@@ -14,6 +14,7 @@ Public Class ctrlReservations
         Public Property MName As String
         Public Property SName As String
         Public Property tour As String
+        Public Property totPerson As String
         Public Property resPrice As String
         Public Property resDate As String
         Public Property resTime As String
@@ -69,14 +70,15 @@ Public Class ctrlReservations
         For Each document As BsonDocument In documents
             Dim res As New Reservations() With {
             .resID = document("resID").ToString,
-            .FName = document("First Name").ToString,
-            .MName = document("Middle Name").ToString,
-            .SName = document("Surname").ToString,
+            .FName = document("FName").ToString,
+            .MName = document("MName").ToString,
+            .SName = document("Sname").ToString,
             .tour = document("tourName").ToString,
             .resPrice = document("tourPrice").ToString,
-            .resDate = document("Date").ToString,
+            .resDate = document("date").ToString,
+            .totPerson = document("totalPerson").ToString,
             .resTime = document("timeSlot").ToString,
-            .resStatus = document("Status").ToString
+            .resStatus = document("status").ToString
         }
             reserv.Add(res)
         Next
@@ -95,30 +97,34 @@ Public Class ctrlReservations
                     tbxMName.Text = selectedReserv.MName
                     tbxSName.Text = selectedReserv.SName
                     cboxTour.Text = selectedReserv.tour
-                    'DateTimePicker1.Value = selectedReserv.resDate
+                    tbxPerson.Text = selectedReserv.totPerson
                     cboxTimeSlot.Text = selectedReserv.resTime
                     cboxStatus.Text = selectedReserv.resStatus
+                    tbxTotal.Text = "₱" + selectedReserv.resPrice
                 End If
             End If
         End If
     End Sub
 
     Private Sub btnAddRes_Click(sender As Object, e As EventArgs) Handles btnAddRes.Click
+        'TODO:
+        'add message box for confirmation before proceeding
+        'add code to fetch price of selected tour (search ATVTours collection where tourname = selected index)
+        'display price to tbxTotal on combobox selection change
         Try
             Dim document As New BsonDocument From {
-                {"resID", tbxResID.Text},
-                {"First Name", tbxFName.Text},
-                {"Middle Name", tbxMName.Text},
-                {"Surname", tbxSName.Text},
+                {"FName", tbxFName.Text},
+                {"MName", tbxMName.Text},
+                {"Sname", tbxSName.Text},
                 {"tourName", cboxTour.SelectedItem.ToString()},
                 {"tourPrice", tbxTotal.Text},
-                {"Date", DateTimePicker1.Value.ToString},
+                {"date", DateTimePicker1.Value.ToString},
                 {"timeSlot", cboxTimeSlot.SelectedItem.ToString},
-                {"Status", cboxStatus.SelectedItem.ToString}
+                {"status", cboxStatus.SelectedItem.ToString}
             }
 
             collection.InsertOne(document)
-
+            'replace msgbox with label
             MessageBox.Show("Reservation added successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             refreshRes()
         Catch ex As Exception

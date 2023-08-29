@@ -72,14 +72,14 @@ Partial Class ctrlCustomers
         Me.cmbGender.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cmbGender.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbGender.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbGender.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cmbGender.FormattingEnabled = True
-        Me.cmbGender.ItemHeight = 22
+        Me.cmbGender.ItemHeight = 24
         Me.cmbGender.Items.AddRange(New Object() {"MALE", "FEMALE"})
         Me.cmbGender.Location = New System.Drawing.Point(74, 538)
         Me.cmbGender.Name = "cmbGender"
-        Me.cmbGender.Size = New System.Drawing.Size(120, 30)
+        Me.cmbGender.Size = New System.Drawing.Size(120, 32)
         Me.cmbGender.TabIndex = 6
         '
         'Label8
@@ -479,15 +479,15 @@ Partial Class ctrlCustomers
         Me.cmbCountry.BackColor = System.Drawing.Color.WhiteSmoke
         Me.cmbCountry.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cmbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbCountry.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbCountry.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbCountry.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cmbCountry.FormattingEnabled = True
-        Me.cmbCountry.ItemHeight = 22
+        Me.cmbCountry.ItemHeight = 24
         Me.cmbCountry.Items.AddRange(New Object() {"PHILIPPINES", "CAVITE"})
         Me.cmbCountry.Location = New System.Drawing.Point(676, 662)
         Me.cmbCountry.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.cmbCountry.Name = "cmbCountry"
-        Me.cmbCountry.Size = New System.Drawing.Size(283, 30)
+        Me.cmbCountry.Size = New System.Drawing.Size(283, 32)
         Me.cmbCountry.TabIndex = 26
         '
         'tbxProvince
