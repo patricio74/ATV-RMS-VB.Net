@@ -34,6 +34,9 @@ Partial Class ctrlOverview
         Me.btnViewReserv = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgvCustReviews = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.dgvActivities = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,9 +64,6 @@ Partial Class ctrlOverview
         Me.lblRevYest = New System.Windows.Forms.Label()
         Me.lblRev = New System.Windows.Forms.Label()
         Me.lblRevMonth = New System.Windows.Forms.Label()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgvCustReviews, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
@@ -150,6 +150,27 @@ Partial Class ctrlOverview
         Me.dgvCustReviews.ShowEditingIcon = False
         Me.dgvCustReviews.Size = New System.Drawing.Size(630, 223)
         Me.dgvCustReviews.TabIndex = 35
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Ratings"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 80
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 175
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Review"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
         'GroupBox6
         '
@@ -345,7 +366,7 @@ Partial Class ctrlOverview
         Me.lblReservPending.Name = "lblReservPending"
         Me.lblReservPending.Size = New System.Drawing.Size(252, 57)
         Me.lblReservPending.TabIndex = 34
-        Me.lblReservPending.Text = "000"
+        Me.lblReservPending.Text = "0"
         Me.lblReservPending.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'lblReservCanceled
@@ -360,7 +381,7 @@ Partial Class ctrlOverview
         Me.lblReservCanceled.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.lblReservCanceled.Size = New System.Drawing.Size(252, 23)
         Me.lblReservCanceled.TabIndex = 36
-        Me.lblReservCanceled.Text = "Canceled Reservations:  00"
+        Me.lblReservCanceled.Text = "Canceled Reservations:  0"
         Me.lblReservCanceled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblReserv
@@ -415,7 +436,7 @@ Partial Class ctrlOverview
         Me.lblAtvMainten.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.lblAtvMainten.Size = New System.Drawing.Size(266, 18)
         Me.lblAtvMainten.TabIndex = 40
-        Me.lblAtvMainten.Text = "Under maintenance:  00"
+        Me.lblAtvMainten.Text = "Under maintenance:  0"
         '
         'lblAtvInUse
         '
@@ -429,7 +450,7 @@ Partial Class ctrlOverview
         Me.lblAtvInUse.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.lblAtvInUse.Size = New System.Drawing.Size(266, 23)
         Me.lblAtvInUse.TabIndex = 39
-        Me.lblAtvInUse.Text = "Currently in-use: 00"
+        Me.lblAtvInUse.Text = "Currently in-use: 0"
         Me.lblAtvInUse.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'lblAtvAvail
@@ -442,7 +463,7 @@ Partial Class ctrlOverview
         Me.lblAtvAvail.Name = "lblAtvAvail"
         Me.lblAtvAvail.Size = New System.Drawing.Size(266, 57)
         Me.lblAtvAvail.TabIndex = 37
-        Me.lblAtvAvail.Text = "00"
+        Me.lblAtvAvail.Text = "0"
         Me.lblAtvAvail.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'panelCustomer
@@ -468,7 +489,7 @@ Partial Class ctrlOverview
         Me.lblCustYest.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.lblCustYest.Size = New System.Drawing.Size(264, 23)
         Me.lblCustYest.TabIndex = 40
-        Me.lblCustYest.Text = "Total number yesterday:  000"
+        Me.lblCustYest.Text = "Total number yesterday:  0"
         Me.lblCustYest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblCust
@@ -493,7 +514,7 @@ Partial Class ctrlOverview
         Me.lblCustMonth.Name = "lblCustMonth"
         Me.lblCustMonth.Size = New System.Drawing.Size(264, 57)
         Me.lblCustMonth.TabIndex = 37
-        Me.lblCustMonth.Text = "0,000"
+        Me.lblCustMonth.Text = "0"
         Me.lblCustMonth.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'panelRevenue
@@ -519,7 +540,7 @@ Partial Class ctrlOverview
         Me.lblRevYest.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.lblRevYest.Size = New System.Drawing.Size(274, 23)
         Me.lblRevYest.TabIndex = 40
-        Me.lblRevYest.Text = "Total yesterday:  ₱00,000.00"
+        Me.lblRevYest.Text = "Total yesterday:  ₱0"
         Me.lblRevYest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblRev
@@ -546,29 +567,8 @@ Partial Class ctrlOverview
         Me.lblRevMonth.Name = "lblRevMonth"
         Me.lblRevMonth.Size = New System.Drawing.Size(274, 57)
         Me.lblRevMonth.TabIndex = 37
-        Me.lblRevMonth.Text = "₱000,000.00"
+        Me.lblRevMonth.Text = "₱0"
         Me.lblRevMonth.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Review"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 175
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Ratings"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 80
         '
         'ctrlOverview
         '

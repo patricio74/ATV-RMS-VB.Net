@@ -20,6 +20,7 @@ Public Class rmsRegistration
         Panel2.Hide()
         Panel3.Hide()
         Panel4.Hide()
+        Panel5.Hide()
     End Sub
 
     Private Sub rmsRegistration_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -57,7 +58,7 @@ Public Class rmsRegistration
                 lblPanel1Note.Visible = False
                 hideRegPanelz()
                 Panel2.Show()
-                lblHello.Text = "HELLO, " + regSname.Text + "!"
+                lblHello.Text = "Hi, " + regSname.Text + "!"
             End If
 
         ElseIf sender Is btnNext2 Then
@@ -69,6 +70,7 @@ Public Class rmsRegistration
             Try
                 'add code for textbox proper phone format(+639xxxx, 09xxxxx)
                 'check db for duplicates
+                'if email already in use: show label for email
                 'proceed to panel3 if there's no dup..
                 hideRegPanelz()
                 Panel3.Show()
@@ -78,67 +80,23 @@ Public Class rmsRegistration
 
         ElseIf sender Is btnNext3 Then
             'check username for duplicate
+            'username length >4 : show label
             'check pw for both textboxes, show label if pw didn't match
             'enable next button if username does not exist in db, password match
             hideRegPanelz()
             Panel4.Show()
-
-        ElseIf sender Is btnReg Then
-            If regFName.Text = "" Or regMName.Text = "" Or regEmail.Text = "" Or regPhone.Text = "" Or regUsername.Text = "" Or regPassw.Text = "" Or regRFID.Text = "" Then
-                MessageBox.Show("Fill out all the fields to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Else
-                Try
-                    Dim firstName As String = regFName.Text()
-                    Dim midName As String = regMName.Text()
-                    Dim surname As String = regSname.Text()
-                    Dim email As String = regEmail.Text.Trim()
-                    Dim phone As String = regPhone.Text.Trim()
-                    Dim username As String = regUsername.Text.Trim()
-                    Dim password As String = regPassw.Text.Trim()
-                    Dim rfid As String = regRFID.Text.Trim()
-
-                    Dim newAdmin As New BsonDocument From {
-                        {"First Name", firstName},
-                        {"Middle Name", midName},
-                        {"Surname", surname},
-                        {"Email", email},
-                        {"Phone", phone},
-                        {"Username", username},
-                        {"Password", password},
-                        {"RFID", rfid}
-                    }
-                    Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
-                    Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(
-                        Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", rfid),
-                        Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
-                        Builders(Of BsonDocument).Filter.Eq(Of String)("Email", email)
-                    )
-                    'check if there's a same rfid, username, email sa db
-                    Dim count As Long = collection.CountDocuments(filter)
-                    If count > 0 Then
-                        MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    Else
-                        collection.InsertOne(newAdmin)
-                        MessageBox.Show("You may now login to ATV-RMS.", "Successfully registered!", MessageBoxButtons.OK, MessageBoxIcon.None)
-                        rmsLogin.Show()
-                        clearRegForm()
-                        Me.Close()
-                    End If
-                Catch ex As Exception
-                    MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
-            End If
         End If
     End Sub
 
-    Private Sub Label_Click(sender As Object, e As EventArgs) Handles panelSname.Click, panelFName.Click, panelMName.Click, panelEmail.Click, panelPhone.Click, panelRFID.Click, panelUsernam.Click, panelPasswor.Click
-        If sender Is panelSname OrElse sender Is panelFName OrElse sender Is panelMName Then
+    Private Sub Label_Click(sender As Object, e As EventArgs) Handles panelSname.Click, panelFName.Click, panelMName.Click, panelEmail.Click, panelPhone.Click, panelRFID.Click, panelUsernam.Click, panelPasswor.Click,
+            lblReg1.Click, lblReg2.Click, lblReg3.Click, lblReg4.Click, lblReg5.Click, lblReg6.Click, lblReg7.Click, lblReg8.Click
+        If sender Is panelSname OrElse sender Is panelFName OrElse sender Is panelMName OrElse sender Is lblReg1 OrElse sender Is lblReg2 OrElse sender Is lblReg3 Then
             hideRegPanelz()
             Panel1.Show()
-        ElseIf sender Is panelEmail OrElse sender Is panelPhone OrElse sender Is panelRFID Then
+        ElseIf sender Is panelEmail OrElse sender Is panelPhone OrElse sender Is panelRFID OrElse sender Is lblreg4 OrElse sender Is lblreg5 OrElse sender Is lblreg6 Then
             hideRegPanelz()
             Panel2.Show()
-        ElseIf sender Is panelUsernam OrElse sender Is panelPasswor Then
+        ElseIf sender Is panelUsernam OrElse sender Is panelPasswor OrElse sender Is lblreg7 OrElse sender Is lblreg8 Then
             hideRegPanelz()
             Panel3.Show()
         End If
@@ -156,26 +114,61 @@ Public Class rmsRegistration
     End Sub
 
     Private Sub labelLogin_Click(sender As Object, e As EventArgs) Handles labelLogin.Click
-        rmsLogin.Show()
-        rmsLogin.Location = Me.Location
-        clearRegForm()
-        Me.Close()
+        Dim result As DialogResult = MessageBox.Show("Do you want to switch to login? Your registration will be discarded.", "Confirmation", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            rmsLogin.Show()
+            rmsLogin.Location = Me.Location
+            Me.Close()
+            clearRegForm()
+            loadRMSLogin()
+            rmsLogin.tboxUsername.Focus()
+        End If
     End Sub
 
     Private Sub regEmail_TextChanged(sender As Object, e As EventArgs) Handles regEmail.TextChanged
+        Dim cursorPos As Integer = regEmail.SelectionStart
+        regEmail.Text = regEmail.Text.Replace(" ", "")
+        regEmail.SelectionStart = cursorPos
+        If regEmail.Text = "" Then
+            lblUsernameUsed.Visible = True
+        Else
+            lblUsernameUsed.Visible = False
+        End If
         'email@email.com format
         'add code to check db for duplicates
     End Sub
 
     Private Sub regPhone_TextChanged(sender As Object, e As EventArgs) Handles regPhone.TextChanged
-        '09xxxxx | +639xxxx
+        'regPhone.Text = regPhone.Text.Replace(" ", "")
+    End Sub
+
+    Private Sub regPhone_KeyPress(sender As Object, e As KeyPressEventArgs) Handles regPhone.KeyPress
+        'check if the inputted char is a number/+ sign
+        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "+" AndAlso e.KeyChar <> ControlChars.Back Then
+            e.Handled = True
+        End If
     End Sub
 
     Private Sub regRFID_TextChanged(sender As Object, e As EventArgs) Handles regRFID.TextChanged
         'if length >13 check sa db kung may duplicate
+        regRFID.Text = regRFID.Text.Replace(" ", "")
+    End Sub
+
+    Private Sub regPassw_TextChanged(sender As Object, e As EventArgs) Handles regPassw.TextChanged
+        regPassw.Text = regPassw.Text.Replace(" ", "")
+    End Sub
+
+    Private Sub regPassw2_TextChanged(sender As Object, e As EventArgs) Handles regPassw2.TextChanged
+        regPassw2.Text = regPassw2.Text.Replace(" ", "")
+        If regPassw2.Text <> regPassw.Text Then
+            lblPassError.Visible = True
+        Else
+            lblPassError.Visible = False
+        End If
     End Sub
 
     Private Sub regUsername_TextChanged(sender As Object, e As EventArgs) Handles regUsername.TextChanged
+        regUsername.Text = regUsername.Text.Replace(" ", "")
         If regUsername.TextLength < 8 Then
             lblUsernameErr.Visible = True
             lblUsernameErr.Text = "Username too short."
@@ -183,7 +176,7 @@ Public Class rmsRegistration
             'check if there's existing username in the db
             'if true-> show label
             lblUsernameErr.Visible = True
-            lblUsernameErr.Text = "Username already exist."
+            lblUsernameErr.Text = "Username already in use."
         Else
             lblUsernameErr.Visible = False
         End If
@@ -191,8 +184,64 @@ Public Class rmsRegistration
 
     Private Sub btnReg_Click(sender As Object, e As EventArgs) Handles btnReg.Click
         'add confirmation dialog
-        'insert to db
+        'insert to pendingAdminCollection
+        If regFName.Text = "" Or regSname.Text = "" Or regEmail.Text = "" Or regPhone.Text = "" Or regRFID.Text = "" Or regUsername.Text = "" Or regPassw2.Text = "" Then
+            MessageBox.Show("Fill out all the fields to continue.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim result As DialogResult = MessageBox.Show("Do you want to submit your registration?", "Confirmation", MessageBoxButtons.YesNo)
+            If result = DialogResult.Yes Then
+                Try
+                    Dim firstName As String = regFName.Text()
+                    Dim midName As String = regMName.Text()
+                    Dim surname As String = regSname.Text()
+                    Dim email As String = regEmail.Text.Trim()
+                    Dim phone As String = regPhone.Text.Trim()
+                    Dim username As String = regUsername.Text.Trim()
+                    Dim password As String = regPassw.Text.Trim()
+                    Dim rfid As String = regRFID.Text.Trim()
+
+                    Dim newAdmin As New BsonDocument From {
+                    {"First Name", firstName},
+                    {"Middle Name", midName},
+                    {"Surname", surname},
+                    {"Email", email},
+                    {"Phone", phone},
+                    {"Username", username},
+                    {"Password", password},
+                    {"RFID", rfid}
+                }
+                    Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
+                    Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(
+                    Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", rfid),
+                    Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
+                    Builders(Of BsonDocument).Filter.Eq(Of String)("Email", email)
+                )
+                    'check if there's a same rfid, username, email sa db
+                    Dim count As Long = collection.CountDocuments(filter)
+                    If count > 0 Then
+                        MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Else
+                        Dim pendingCollection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdminPendingAcc")
+                        Try
+                            pendingCollection.InsertOne(newAdmin)
+                            MessageBox.Show("Your registration is waiting for admin approval. We will notify you through SMS once your registration is approved.", "Done!", MessageBoxButtons.OK, MessageBoxIcon.None)
+                            rmsLogin.Show()
+                            loadRMSLogin()
+                            clearRegForm()
+                            Me.Close()
+                        Catch ex As Exception
+                            MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End If
         'success message
+        'msgbx wait for admin
         'send sms if registration is successful
     End Sub
+
+
 End Class

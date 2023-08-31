@@ -6,17 +6,23 @@ Module moduleLogin
     Public Sub loadRMSLogin()
         rmsLogin.panelRFIDLogin.Hide()
         rmsLogin.panelPassLogin.Show()
-        rmsLogin.checkShow.Checked = False
+        clearLoginForm()
         rmsLogin.tboxUsername.Focus()
-        loginSwitchLabel()
     End Sub
 
-    Public Sub loginSwitchLabel()
-        If rmsLogin.panelPassLogin.Visible = True Then
-            rmsLogin.labelLoginSwitch.Text = "Use Password"
-        Else
-            rmsLogin.labelLoginSwitch.Text = "Use RFID Card"
-        End If
+    Public Sub clearLoginForm()
+        'rmsLogin.tboxUsername.Clear()
+        rmsLogin.tboxPassword.Clear()
+        rmsLogin.tboxRFID.Clear()
+        rmsLogin.checkShow.Checked = False
+        hideErrorLabel()
+    End Sub
+
+    Public Sub hideErrorLabel()
+        rmsLogin.lblLoginError.Visible = False
+        rmsLogin.lblUserError.Visible = False
+        rmsLogin.lblPassError.Visible = False
+        rmsLogin.lblRFIDErr.Visible = False
     End Sub
 
     Public Function getAdminRFID(RFID As String) As BsonDocument
@@ -32,13 +38,19 @@ Module moduleLogin
     End Function
 
     Public Sub adminLogin()
-        If rmsLogin.tboxUsername.Text = "" Then
-            MessageBox.Show("Username cannot be empty.", "Blank username!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If rmsLogin.tboxUsername.Text = "" And rmsLogin.tboxPassword.Text = "" Then
+            rmsLogin.lblLoginError.Text = "Error: Please enter the required field to continue."
+            rmsLogin.lblUserError.Visible = True
+            rmsLogin.lblPassError.Visible = True
+            rmsLogin.lblLoginError.Visible = True
+        ElseIf rmslogin.tboxUsername.Text = "" And rmslogin.tboxPassword IsNot "" Then
+            rmsLogin.lblUserError.Visible = True
             rmsLogin.tboxUsername.Focus()
-        ElseIf rmsLogin.tboxPassword.Text = "" Then
-            MessageBox.Show("Password cannot be empty.", "Blank password!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf rmslogin.tboxUsername.Text IsNot "" And rmslogin.tboxPassword.Text = "" Then
+            rmsLogin.lblPassError.Visible = True
             rmsLogin.tboxPassword.Focus()
         Else
+            hideErrorLabel()
             Try
                 Dim username As String = rmsLogin.tboxUsername.Text
                 Dim password As String = rmsLogin.tboxPassword.Text
@@ -51,25 +63,19 @@ Module moduleLogin
                 If userDocument IsNot Nothing Then
                     Dim storedPassword As String = userDocument("Password").ToString()
                     If password = storedPassword Then
+                        hideErrorLabel()
                         Dim admnFullName As String = $"{userDocument("First Name")} {userDocument("Middle Name")} {userDocument("Surname")}"
                         rmsDashboard.labelName = admnFullName
-                        rmsDashboard.Show
+                        rmsDashboard.Show()
                         rmsLogin.Hide()
                     Else
-                        MessageBox.Show("Wrong password.", "Failed to Login!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                        rmsLogin.lblLoginError.Text = "Authentication failed: Invalid password."
+                        rmsLogin.lblLoginError.Visible = True
                         rmsLogin.tboxPassword.Focus()
-                        If rmsLogin.checkShow.Checked = True Then
-                            rmsLogin.checkShow.Checked = False
-                            rmsLogin.tboxPassword.UseSystemPasswordChar = True
-                        End If
                     End If
                 Else
-                    MessageBox.Show("User not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    rmsLogin.tboxPassword.Clear()
-                    If rmsLogin.checkShow.Checked = True Then
-                        rmsLogin.checkShow.Checked = False
-                        rmsLogin.tboxPassword.UseSystemPasswordChar = True
-                    End If
+                    rmsLogin.lblLoginError.Text = "Authentication error: user not found."
+                    rmsLogin.lblLoginError.Visible = True
                     rmsLogin.tboxUsername.Focus()
                 End If
             Catch ex As Exception

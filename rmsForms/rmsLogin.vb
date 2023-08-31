@@ -11,6 +11,7 @@ Public Class rmsLogin
     End Sub
 
     Private Sub rmsLogin_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        loadRMSLogin()
         If tboxUsername.Text = "" Then
             tboxUsername.Focus()
         Else
@@ -27,8 +28,16 @@ Public Class rmsLogin
     End Sub
 
     Private Sub tboxUsername_TextChanged(sender As Object, e As EventArgs) Handles tboxUsername.TextChanged
+        Dim cursorPos As Integer = tboxUsername.SelectionStart
         'para walang space na ma-input
         tboxUsername.Text = tboxUsername.Text.Replace(" ", "")
+        tboxUsername.SelectionStart = cursorPos
+        If tboxUsername.Text = "" Then
+            lblUserError.Visible = True
+            tboxUsername.Focus()
+        Else
+            lblUserError.Visible = False
+        End If
     End Sub
 
     Private Sub tboxUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles tboxUsername.KeyDown
@@ -42,7 +51,15 @@ Public Class rmsLogin
     End Sub
 
     Private Sub tboxPassword_TextChanged(sender As Object, e As EventArgs) Handles tboxPassword.TextChanged
+        Dim cursorPos As Integer = tboxPassword.SelectionStart
         tboxPassword.Text = tboxPassword.Text.Replace(" ", "")
+        tboxPassword.SelectionStart = cursorPos
+        If tboxPassword.Text = "" Then
+            lblPassError.Visible = True
+            tboxPassword.Focus()
+        Else
+            lblPassError.Visible = False
+        End If
     End Sub
 
     Private Sub tboxPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles tboxPassword.KeyDown
@@ -66,36 +83,31 @@ Public Class rmsLogin
         adminLogin()
     End Sub
 
-    Private Sub labelLoginSwitch_Click(sender As Object, e As EventArgs) Handles labelLoginSwitch.Click
-        If panelPassLogin.Visible = True Then
-            panelRFIDLogin.Show()
-            panelPassLogin.Hide()
-            labelLoginSwitch.Text = "Use Password"
-            tboxRFID.Clear()
-            checkShow.Checked = False
-            tboxRFID.Focus()
-        Else
-            panelRFIDLogin.Hide()
-            panelPassLogin.Show()
-            labelLoginSwitch.Text = "Use RFID Card"
-            tboxPassword.Clear()
-            checkShow.Checked = False
-            If tboxUsername.Text = "" Then
-                tboxUsername.Focus()
-            Else
-                tboxPassword.Focus()
-            End If
-        End If
+    Private Sub lblSwitchLoginRFID_Click(sender As Object, e As EventArgs) Handles lblSwitchLoginRFID.Click
+        panelRFIDLogin.Show()
+        panelPassLogin.Hide()
+        clearLoginForm()
+        tboxRFID.Focus()
+    End Sub
+
+    Private Sub lblSwitchLoginPass_Click(sender As Object, e As EventArgs) Handles lblSwitchLoginPass.Click
+        panelRFIDLogin.Hide()
+        panelPassLogin.Show()
+        clearLoginForm()
+        tboxUsername.Focus()
     End Sub
 
     Private Sub tboxRFID_TextChanged(sender As Object, e As EventArgs) Handles tboxRFID.TextChanged
+        lblRFIDErr.Visible = False
+        Dim cursorPos As Integer = tboxRFID.SelectionStart
         tboxRFID.Text = tboxRFID.Text.Replace(" ", "")
+        tboxRFID.SelectionStart = cursorPos
     End Sub
 
     Private Sub tboxRFID_KeyDown(sender As Object, e As KeyEventArgs) Handles tboxRFID.KeyDown
         If e.KeyCode = Keys.Enter Then
             If String.IsNullOrEmpty(tboxRFID.Text) Then
-                lblRFIDErr.Text = "Please swipe your RFID Card to continue."
+                lblRFIDErr.Text = "Please swipe your RFID Card to login."
                 lblRFIDErr.Visible = True
                 tboxRFID.Focus()
             Else
@@ -103,11 +115,11 @@ Public Class rmsLogin
                     Dim RFID As String = tboxRFID.Text
                     Dim userDocument As BsonDocument = moduleLogin.getAdminRFID(RFID)
                     If userDocument Is Nothing Then
-                        lblRFIDErr.Text = "RFID not registered."
+                        lblRFIDErr.Text = "Error: RFID not registered."
                         lblRFIDErr.Visible = True
                         tboxRFID.Focus()
                     ElseIf userDocument IsNot Nothing Then
-                        lblRFIDErr.Visible = False
+                        hideErrorLabel()
                         Dim admnFullName As String = $"{userDocument("First Name")} {userDocument("Middle Name")} {userDocument("Surname")}"
                         rmsDashboard.labelName = admnFullName
                         rmsDashboard.Show()
@@ -126,6 +138,7 @@ Public Class rmsLogin
     Private Sub labelForgotPass_Click(sender As Object, e As EventArgs) Handles labelForgotPass.Click
         'add code para ireset yung pass. send sms code gamit gsm module pag may match na username sa db
         MessageBox.Show("Relax and try to remember your password.", "Forgot Password?", MessageBoxButtons.OK, MessageBoxIcon.None)
+
     End Sub
 
     Private Sub labelRegister_Click(sender As Object, e As EventArgs) Handles labelRegister.Click

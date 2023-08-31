@@ -10,7 +10,7 @@
     Dim rules As New ctrlRules
     Dim notifs As New ctrlNotif
     Dim transac As New ctrlTrails
-    Dim settings As New ctrlUserSettings
+    Dim settings As New ctrlAdminSettings
 
     Private Sub centerLoc()
         Dim screenWidth As Integer = Screen.PrimaryScreen.WorkingArea.Width
@@ -26,7 +26,7 @@
         centerLoc()
         connectToMongo()
         initializeDraggablePanel(panelTop)
-        labelAdminName.Text = labelName
+        btnAdminSettings.Text = labelName
         'load panelz
         admPanel.Controls.Add(reserv)
         admPanel.Controls.Add(inve)
@@ -107,9 +107,9 @@
         transac.BringToFront()
     End Sub
 
-    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+    Private Sub btnAdminSettings_Click(sender As Object, e As EventArgs) Handles btnAdminSettings.Click
         resetButtonColor()
-        activeButtonColor(sender, e)
+        'activeButtonColor(sender, e)
         settings.BringToFront()
     End Sub
 
@@ -117,9 +117,9 @@
         Me.Close()
         resetButtonColor()
         loadRMSLogin()
-        clearLoginForm()
         rmsLogin.Show()
         rmsLogin.tboxUsername.Focus()
     End Sub
+
 
 End Class

@@ -1,12 +1,5 @@
 ﻿Module moduleDashboard
 
-    Public Sub clearLoginForm()
-        rmsLogin.tboxUsername.Clear()
-        rmsLogin.tboxPassword.Clear()
-        rmsLogin.tboxRFID.Clear()
-        rmsLogin.checkShow.Checked = False
-    End Sub
-
     Public Sub resetButtonColor()
         Dim defaultForeColor As Color = ColorTranslator.FromHtml("#f5f5f5")
         Dim defaultBackColor As Color = ColorTranslator.FromHtml("#1e272e")
@@ -18,9 +11,9 @@
             rmsDashboard.btnCustomers,
             rmsDashboard.btnNotif,
             rmsDashboard.btnOverview,
-            rmsDashboard.btnRules,
-            rmsDashboard.btnSettings
+            rmsDashboard.btnRules
         }
+        'rmsDashboard.btnAdminSettings
         For Each btn In buttons
             btn.ForeColor = defaultForeColor
             btn.BackColor = defaultBackColor

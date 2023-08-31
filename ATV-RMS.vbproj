@@ -314,10 +314,10 @@
     <Compile Include="rmsUserControls\ctrlTrails.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="rmsUserControls\ctrlUserSettings.Designer.vb">
-      <DependentUpon>ctrlUserSettings.vb</DependentUpon>
+    <Compile Include="rmsUserControls\ctrlAdminSettings.Designer.vb">
+      <DependentUpon>ctrlAdminSettings.vb</DependentUpon>
     </Compile>
-    <Compile Include="rmsUserControls\ctrlUserSettings.vb">
+    <Compile Include="rmsUserControls\ctrlAdminSettings.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -364,8 +364,8 @@
     <EmbeddedResource Include="rmsUserControls\ctrlTrails.resx">
       <DependentUpon>ctrlTrails.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rmsUserControls\ctrlUserSettings.resx">
-      <DependentUpon>ctrlUserSettings.vb</DependentUpon>
+    <EmbeddedResource Include="rmsUserControls\ctrlAdminSettings.resx">
+      <DependentUpon>ctrlAdminSettings.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

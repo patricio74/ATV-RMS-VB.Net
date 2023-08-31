@@ -53,17 +53,23 @@ Partial Class rmsRegistration
         Me.lblPanel1Note = New System.Windows.Forms.Label()
         Me.btnNext1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblPanel2Note = New System.Windows.Forms.Label()
+        Me.lblRFIDUsed = New System.Windows.Forms.Label()
+        Me.lblUsernameUsed = New System.Windows.Forms.Label()
         Me.btnRet1 = New System.Windows.Forms.Button()
         Me.lblHello = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnNext2 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.lblPanel3Note = New System.Windows.Forms.Label()
+        Me.lblUsernameErr = New System.Windows.Forms.Label()
         Me.btnRet2 = New System.Windows.Forms.Button()
         Me.regPassw2 = New System.Windows.Forms.TextBox()
         Me.lblRegPassw2 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.btnNext3 = New System.Windows.Forms.Button()
+        Me.lblPassError = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btnReg = New System.Windows.Forms.Button()
         Me.panelSname = New System.Windows.Forms.Label()
@@ -84,12 +90,12 @@ Partial Class rmsRegistration
         Me.Label16 = New System.Windows.Forms.Label()
         Me.lblReg8 = New System.Windows.Forms.Label()
         Me.lblReg7 = New System.Windows.Forms.Label()
-        Me.lblUsernameUsed = New System.Windows.Forms.Label()
-        Me.lblRFIDUsed = New System.Windows.Forms.Label()
-        Me.lblPanel2Note = New System.Windows.Forms.Label()
-        Me.lblPanel3Note = New System.Windows.Forms.Label()
-        Me.lblUsernameErr = New System.Windows.Forms.Label()
-        Me.lblPasswordMatch = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.panelTop.SuspendLayout()
         CType(Me.picboxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelBottom.SuspendLayout()
@@ -97,6 +103,7 @@ Partial Class rmsRegistration
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'labelFormTitle
@@ -117,13 +124,13 @@ Partial Class rmsRegistration
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regFName.BackColor = System.Drawing.Color.White
         Me.regFName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.regFName.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.regFName.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regFName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regFName.Location = New System.Drawing.Point(58, 190)
         Me.regFName.Margin = New System.Windows.Forms.Padding(0)
         Me.regFName.MaxLength = 40
         Me.regFName.Name = "regFName"
-        Me.regFName.Size = New System.Drawing.Size(344, 32)
+        Me.regFName.Size = New System.Drawing.Size(344, 33)
         Me.regFName.TabIndex = 3
         '
         'btnMinimize
@@ -252,13 +259,14 @@ Partial Class rmsRegistration
         Me.regRFID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regRFID.BackColor = System.Drawing.Color.White
-        Me.regRFID.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.regRFID.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
+        Me.regRFID.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regRFID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regRFID.Location = New System.Drawing.Point(58, 334)
         Me.regRFID.Margin = New System.Windows.Forms.Padding(0)
         Me.regRFID.MaxLength = 12
         Me.regRFID.Name = "regRFID"
-        Me.regRFID.Size = New System.Drawing.Size(344, 32)
+        Me.regRFID.Size = New System.Drawing.Size(344, 33)
         Me.regRFID.TabIndex = 7
         '
         'labelTitle
@@ -266,7 +274,7 @@ Partial Class rmsRegistration
         Me.labelTitle.AutoSize = True
         Me.labelTitle.BackColor = System.Drawing.Color.Transparent
         Me.labelTitle.Font = New System.Drawing.Font("Trebuchet MS", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelTitle.ForeColor = System.Drawing.Color.White
+        Me.labelTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.labelTitle.Location = New System.Drawing.Point(50, 50)
         Me.labelTitle.Name = "labelTitle"
         Me.labelTitle.Size = New System.Drawing.Size(283, 43)
@@ -306,13 +314,13 @@ Partial Class rmsRegistration
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regMName.BackColor = System.Drawing.Color.White
         Me.regMName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.regMName.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.regMName.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regMName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regMName.Location = New System.Drawing.Point(58, 261)
         Me.regMName.Margin = New System.Windows.Forms.Padding(0)
         Me.regMName.MaxLength = 40
         Me.regMName.Name = "regMName"
-        Me.regMName.Size = New System.Drawing.Size(344, 32)
+        Me.regMName.Size = New System.Drawing.Size(344, 33)
         Me.regMName.TabIndex = 5
         '
         'regPhone
@@ -320,13 +328,14 @@ Partial Class rmsRegistration
         Me.regPhone.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regPhone.BackColor = System.Drawing.Color.White
-        Me.regPhone.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.regPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
+        Me.regPhone.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regPhone.Location = New System.Drawing.Point(58, 261)
         Me.regPhone.Margin = New System.Windows.Forms.Padding(0)
         Me.regPhone.MaxLength = 13
         Me.regPhone.Name = "regPhone"
-        Me.regPhone.Size = New System.Drawing.Size(344, 32)
+        Me.regPhone.Size = New System.Drawing.Size(344, 33)
         Me.regPhone.TabIndex = 5
         '
         'lblRegPhone
@@ -365,13 +374,13 @@ Partial Class rmsRegistration
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regUsername.BackColor = System.Drawing.Color.White
         Me.regUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
-        Me.regUsername.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.regUsername.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regUsername.Location = New System.Drawing.Point(58, 190)
         Me.regUsername.Margin = New System.Windows.Forms.Padding(0)
         Me.regUsername.MaxLength = 25
         Me.regUsername.Name = "regUsername"
-        Me.regUsername.Size = New System.Drawing.Size(344, 32)
+        Me.regUsername.Size = New System.Drawing.Size(344, 33)
         Me.regUsername.TabIndex = 11
         '
         'lblRegUsername
@@ -394,13 +403,13 @@ Partial Class rmsRegistration
         Me.regPassw.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regPassw.BackColor = System.Drawing.Color.White
-        Me.regPassw.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.regPassw.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regPassw.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regPassw.Location = New System.Drawing.Point(58, 261)
         Me.regPassw.Margin = New System.Windows.Forms.Padding(0)
         Me.regPassw.MaxLength = 25
         Me.regPassw.Name = "regPassw"
-        Me.regPassw.Size = New System.Drawing.Size(344, 32)
+        Me.regPassw.Size = New System.Drawing.Size(344, 33)
         Me.regPassw.TabIndex = 13
         '
         'lblRegPassw
@@ -423,13 +432,14 @@ Partial Class rmsRegistration
         Me.regEmail.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regEmail.BackColor = System.Drawing.Color.White
-        Me.regEmail.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.regEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
+        Me.regEmail.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regEmail.Location = New System.Drawing.Point(58, 190)
         Me.regEmail.Margin = New System.Windows.Forms.Padding(0)
         Me.regEmail.MaxLength = 40
         Me.regEmail.Name = "regEmail"
-        Me.regEmail.Size = New System.Drawing.Size(344, 32)
+        Me.regEmail.Size = New System.Drawing.Size(344, 33)
         Me.regEmail.TabIndex = 3
         '
         'lblRegEmail
@@ -453,13 +463,13 @@ Partial Class rmsRegistration
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regSname.BackColor = System.Drawing.Color.White
         Me.regSname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.regSname.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.regSname.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regSname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regSname.Location = New System.Drawing.Point(58, 334)
         Me.regSname.Margin = New System.Windows.Forms.Padding(0)
         Me.regSname.MaxLength = 40
         Me.regSname.Name = "regSname"
-        Me.regSname.Size = New System.Drawing.Size(344, 32)
+        Me.regSname.Size = New System.Drawing.Size(344, 33)
         Me.regSname.TabIndex = 7
         '
         'lblRegSname
@@ -559,6 +569,48 @@ Partial Class rmsRegistration
         Me.Panel2.Size = New System.Drawing.Size(460, 567)
         Me.Panel2.TabIndex = 1
         '
+        'lblPanel2Note
+        '
+        Me.lblPanel2Note.BackColor = System.Drawing.Color.Firebrick
+        Me.lblPanel2Note.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblPanel2Note.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPanel2Note.ForeColor = System.Drawing.Color.White
+        Me.lblPanel2Note.Location = New System.Drawing.Point(0, 493)
+        Me.lblPanel2Note.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblPanel2Note.Name = "lblPanel2Note"
+        Me.lblPanel2Note.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
+        Me.lblPanel2Note.Size = New System.Drawing.Size(460, 22)
+        Me.lblPanel2Note.TabIndex = 47
+        Me.lblPanel2Note.Text = "*Note: Please provide your contact details to proceed."
+        Me.lblPanel2Note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblPanel2Note.Visible = False
+        '
+        'lblRFIDUsed
+        '
+        Me.lblRFIDUsed.BackColor = System.Drawing.Color.Transparent
+        Me.lblRFIDUsed.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRFIDUsed.ForeColor = System.Drawing.Color.Red
+        Me.lblRFIDUsed.Location = New System.Drawing.Point(173, 315)
+        Me.lblRFIDUsed.Name = "lblRFIDUsed"
+        Me.lblRFIDUsed.Size = New System.Drawing.Size(229, 19)
+        Me.lblRFIDUsed.TabIndex = 46
+        Me.lblRFIDUsed.Text = "This RFID is already in use."
+        Me.lblRFIDUsed.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblRFIDUsed.Visible = False
+        '
+        'lblUsernameUsed
+        '
+        Me.lblUsernameUsed.BackColor = System.Drawing.Color.Transparent
+        Me.lblUsernameUsed.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsernameUsed.ForeColor = System.Drawing.Color.Red
+        Me.lblUsernameUsed.Location = New System.Drawing.Point(173, 171)
+        Me.lblUsernameUsed.Name = "lblUsernameUsed"
+        Me.lblUsernameUsed.Size = New System.Drawing.Size(229, 19)
+        Me.lblUsernameUsed.TabIndex = 45
+        Me.lblUsernameUsed.Text = "This email is already in use."
+        Me.lblUsernameUsed.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblUsernameUsed.Visible = False
+        '
         'btnRet1
         '
         Me.btnRet1.AutoSize = True
@@ -587,9 +639,9 @@ Partial Class rmsRegistration
         Me.lblHello.ForeColor = System.Drawing.Color.White
         Me.lblHello.Location = New System.Drawing.Point(50, 52)
         Me.lblHello.Name = "lblHello"
-        Me.lblHello.Size = New System.Drawing.Size(252, 40)
+        Me.lblHello.Size = New System.Drawing.Size(185, 40)
         Me.lblHello.TabIndex = 0
-        Me.lblHello.Text = "HELLO, +NAME!"
+        Me.lblHello.Text = "Hi, +NAME!"
         '
         'Label10
         '
@@ -641,12 +693,41 @@ Partial Class rmsRegistration
         Me.Panel3.Controls.Add(Me.regUsername)
         Me.Panel3.Controls.Add(Me.lblRegPassw)
         Me.Panel3.Controls.Add(Me.lblRegUsername)
-        Me.Panel3.Controls.Add(Me.lblPasswordMatch)
+        Me.Panel3.Controls.Add(Me.lblPassError)
         Me.Panel3.Location = New System.Drawing.Point(0, 30)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(460, 567)
         Me.Panel3.TabIndex = 2
+        '
+        'lblPanel3Note
+        '
+        Me.lblPanel3Note.BackColor = System.Drawing.Color.Firebrick
+        Me.lblPanel3Note.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblPanel3Note.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPanel3Note.ForeColor = System.Drawing.Color.White
+        Me.lblPanel3Note.Location = New System.Drawing.Point(0, 493)
+        Me.lblPanel3Note.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblPanel3Note.Name = "lblPanel3Note"
+        Me.lblPanel3Note.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
+        Me.lblPanel3Note.Size = New System.Drawing.Size(460, 22)
+        Me.lblPanel3Note.TabIndex = 49
+        Me.lblPanel3Note.Text = "Unable to proceed while due to empty field/s."
+        Me.lblPanel3Note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblPanel3Note.Visible = False
+        '
+        'lblUsernameErr
+        '
+        Me.lblUsernameErr.BackColor = System.Drawing.Color.Transparent
+        Me.lblUsernameErr.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsernameErr.ForeColor = System.Drawing.Color.Red
+        Me.lblUsernameErr.Location = New System.Drawing.Point(173, 171)
+        Me.lblUsernameErr.Name = "lblUsernameErr"
+        Me.lblUsernameErr.Size = New System.Drawing.Size(229, 19)
+        Me.lblUsernameErr.TabIndex = 48
+        Me.lblUsernameErr.Text = "Label for error."
+        Me.lblUsernameErr.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblUsernameErr.Visible = False
         '
         'btnRet2
         '
@@ -673,13 +754,13 @@ Partial Class rmsRegistration
         Me.regPassw2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regPassw2.BackColor = System.Drawing.Color.White
-        Me.regPassw2.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.regPassw2.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regPassw2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regPassw2.Location = New System.Drawing.Point(58, 334)
         Me.regPassw2.Margin = New System.Windows.Forms.Padding(0)
         Me.regPassw2.MaxLength = 25
         Me.regPassw2.Name = "regPassw2"
-        Me.regPassw2.Size = New System.Drawing.Size(344, 32)
+        Me.regPassw2.Size = New System.Drawing.Size(344, 33)
         Me.regPassw2.TabIndex = 18
         '
         'lblRegPassw2
@@ -728,7 +809,6 @@ Partial Class rmsRegistration
         Me.btnNext3.BackgroundImage = Global.ATV_RMS.My.Resources.Resources._next
         Me.btnNext3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnNext3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNext3.Enabled = False
         Me.btnNext3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.btnNext3.FlatAppearance.BorderSize = 0
         Me.btnNext3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
@@ -742,6 +822,19 @@ Partial Class rmsRegistration
         Me.btnNext3.Size = New System.Drawing.Size(85, 85)
         Me.btnNext3.TabIndex = 16
         Me.btnNext3.UseVisualStyleBackColor = False
+        '
+        'lblPassError
+        '
+        Me.lblPassError.BackColor = System.Drawing.Color.Transparent
+        Me.lblPassError.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPassError.ForeColor = System.Drawing.Color.Red
+        Me.lblPassError.Location = New System.Drawing.Point(173, 315)
+        Me.lblPassError.Name = "lblPassError"
+        Me.lblPassError.Size = New System.Drawing.Size(229, 19)
+        Me.lblPassError.TabIndex = 50
+        Me.lblPassError.Text = "Password not matched."
+        Me.lblPassError.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblPassError.Visible = False
         '
         'Panel4
         '
@@ -784,10 +877,10 @@ Partial Class rmsRegistration
         Me.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReg.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReg.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnReg.Location = New System.Drawing.Point(148, 446)
+        Me.btnReg.Location = New System.Drawing.Point(156, 446)
         Me.btnReg.Margin = New System.Windows.Forms.Padding(0)
         Me.btnReg.Name = "btnReg"
-        Me.btnReg.Size = New System.Drawing.Size(163, 45)
+        Me.btnReg.Size = New System.Drawing.Size(146, 45)
         Me.btnReg.TabIndex = 10
         Me.btnReg.Text = "REGISTER"
         Me.btnReg.UseVisualStyleBackColor = False
@@ -797,12 +890,12 @@ Partial Class rmsRegistration
         Me.panelSname.AutoSize = True
         Me.panelSname.BackColor = System.Drawing.Color.Transparent
         Me.panelSname.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.panelSname.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.panelSname.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panelSname.ForeColor = System.Drawing.Color.White
-        Me.panelSname.Location = New System.Drawing.Point(182, 220)
+        Me.panelSname.Location = New System.Drawing.Point(170, 226)
         Me.panelSname.Margin = New System.Windows.Forms.Padding(0)
         Me.panelSname.Name = "panelSname"
-        Me.panelSname.Size = New System.Drawing.Size(67, 14)
+        Me.panelSname.Size = New System.Drawing.Size(70, 16)
         Me.panelSname.TabIndex = 40
         Me.panelSname.Text = "SURNAME"
         Me.panelSname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -812,12 +905,12 @@ Partial Class rmsRegistration
         Me.panelFName.AutoSize = True
         Me.panelFName.BackColor = System.Drawing.Color.Transparent
         Me.panelFName.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.panelFName.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.panelFName.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panelFName.ForeColor = System.Drawing.Color.White
-        Me.panelFName.Location = New System.Drawing.Point(182, 152)
+        Me.panelFName.Location = New System.Drawing.Point(170, 161)
         Me.panelFName.Margin = New System.Windows.Forms.Padding(0)
         Me.panelFName.Name = "panelFName"
-        Me.panelFName.Size = New System.Drawing.Size(81, 14)
+        Me.panelFName.Size = New System.Drawing.Size(88, 16)
         Me.panelFName.TabIndex = 38
         Me.panelFName.Text = "FIRST NAME"
         Me.panelFName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -827,12 +920,12 @@ Partial Class rmsRegistration
         Me.panelMName.AutoSize = True
         Me.panelMName.BackColor = System.Drawing.Color.Transparent
         Me.panelMName.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.panelMName.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.panelMName.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panelMName.ForeColor = System.Drawing.Color.White
-        Me.panelMName.Location = New System.Drawing.Point(182, 187)
+        Me.panelMName.Location = New System.Drawing.Point(170, 193)
         Me.panelMName.Margin = New System.Windows.Forms.Padding(0)
         Me.panelMName.Name = "panelMName"
-        Me.panelMName.Size = New System.Drawing.Size(94, 14)
+        Me.panelMName.Size = New System.Drawing.Size(98, 16)
         Me.panelMName.TabIndex = 39
         Me.panelMName.Text = "MIDDLE NAME"
         Me.panelMName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -842,12 +935,12 @@ Partial Class rmsRegistration
         Me.panelEmail.AutoSize = True
         Me.panelEmail.BackColor = System.Drawing.Color.Transparent
         Me.panelEmail.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.panelEmail.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.panelEmail.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panelEmail.ForeColor = System.Drawing.Color.White
-        Me.panelEmail.Location = New System.Drawing.Point(182, 253)
+        Me.panelEmail.Location = New System.Drawing.Point(170, 259)
         Me.panelEmail.Margin = New System.Windows.Forms.Padding(0)
         Me.panelEmail.Name = "panelEmail"
-        Me.panelEmail.Size = New System.Drawing.Size(45, 14)
+        Me.panelEmail.Size = New System.Drawing.Size(47, 16)
         Me.panelEmail.TabIndex = 35
         Me.panelEmail.Text = "EMAIL"
         Me.panelEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -857,12 +950,12 @@ Partial Class rmsRegistration
         Me.panelPhone.AutoSize = True
         Me.panelPhone.BackColor = System.Drawing.Color.Transparent
         Me.panelPhone.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.panelPhone.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.panelPhone.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panelPhone.ForeColor = System.Drawing.Color.White
-        Me.panelPhone.Location = New System.Drawing.Point(182, 286)
+        Me.panelPhone.Location = New System.Drawing.Point(170, 292)
         Me.panelPhone.Margin = New System.Windows.Forms.Padding(0)
         Me.panelPhone.Name = "panelPhone"
-        Me.panelPhone.Size = New System.Drawing.Size(51, 14)
+        Me.panelPhone.Size = New System.Drawing.Size(51, 16)
         Me.panelPhone.TabIndex = 36
         Me.panelPhone.Text = "PHONE"
         Me.panelPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -872,12 +965,12 @@ Partial Class rmsRegistration
         Me.panelRFID.AutoSize = True
         Me.panelRFID.BackColor = System.Drawing.Color.Transparent
         Me.panelRFID.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.panelRFID.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.panelRFID.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panelRFID.ForeColor = System.Drawing.Color.White
-        Me.panelRFID.Location = New System.Drawing.Point(182, 321)
+        Me.panelRFID.Location = New System.Drawing.Point(170, 327)
         Me.panelRFID.Margin = New System.Windows.Forms.Padding(0)
         Me.panelRFID.Name = "panelRFID"
-        Me.panelRFID.Size = New System.Drawing.Size(60, 14)
+        Me.panelRFID.Size = New System.Drawing.Size(63, 16)
         Me.panelRFID.TabIndex = 37
         Me.panelRFID.Text = "RFID no."
         Me.panelRFID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -887,12 +980,12 @@ Partial Class rmsRegistration
         Me.panelPasswor.AutoSize = True
         Me.panelPasswor.BackColor = System.Drawing.Color.Transparent
         Me.panelPasswor.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.panelPasswor.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.panelPasswor.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panelPasswor.ForeColor = System.Drawing.Color.White
-        Me.panelPasswor.Location = New System.Drawing.Point(182, 389)
+        Me.panelPasswor.Location = New System.Drawing.Point(170, 396)
         Me.panelPasswor.Margin = New System.Windows.Forms.Padding(0)
         Me.panelPasswor.Name = "panelPasswor"
-        Me.panelPasswor.Size = New System.Drawing.Size(79, 14)
+        Me.panelPasswor.Size = New System.Drawing.Size(82, 16)
         Me.panelPasswor.TabIndex = 34
         Me.panelPasswor.Text = "PASSWORD"
         Me.panelPasswor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -902,12 +995,12 @@ Partial Class rmsRegistration
         Me.panelUsernam.AutoSize = True
         Me.panelUsernam.BackColor = System.Drawing.Color.Transparent
         Me.panelUsernam.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.panelUsernam.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.panelUsernam.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panelUsernam.ForeColor = System.Drawing.Color.White
-        Me.panelUsernam.Location = New System.Drawing.Point(182, 356)
+        Me.panelUsernam.Location = New System.Drawing.Point(170, 362)
         Me.panelUsernam.Margin = New System.Windows.Forms.Padding(0)
         Me.panelUsernam.Name = "panelUsernam"
-        Me.panelUsernam.Size = New System.Drawing.Size(75, 14)
+        Me.panelUsernam.Size = New System.Drawing.Size(78, 16)
         Me.panelUsernam.TabIndex = 33
         Me.panelUsernam.Text = "USERNAME"
         Me.panelUsernam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -916,13 +1009,13 @@ Partial Class rmsRegistration
         '
         Me.lblReg3.AutoSize = True
         Me.lblReg3.BackColor = System.Drawing.Color.Transparent
-        Me.lblReg3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblReg3.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReg3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblReg3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReg3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblReg3.Location = New System.Drawing.Point(100, 220)
+        Me.lblReg3.Location = New System.Drawing.Point(85, 223)
         Me.lblReg3.Margin = New System.Windows.Forms.Padding(0)
         Me.lblReg3.Name = "lblReg3"
-        Me.lblReg3.Size = New System.Drawing.Size(73, 14)
+        Me.lblReg3.Size = New System.Drawing.Size(77, 20)
         Me.lblReg3.TabIndex = 32
         Me.lblReg3.Text = "SURNAME"
         Me.lblReg3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -931,13 +1024,13 @@ Partial Class rmsRegistration
         '
         Me.lblReg1.AutoSize = True
         Me.lblReg1.BackColor = System.Drawing.Color.Transparent
-        Me.lblReg1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblReg1.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReg1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblReg1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReg1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblReg1.Location = New System.Drawing.Point(84, 152)
+        Me.lblReg1.Location = New System.Drawing.Point(69, 158)
         Me.lblReg1.Margin = New System.Windows.Forms.Padding(0)
         Me.lblReg1.Name = "lblReg1"
-        Me.lblReg1.Size = New System.Drawing.Size(89, 14)
+        Me.lblReg1.Size = New System.Drawing.Size(94, 20)
         Me.lblReg1.TabIndex = 30
         Me.lblReg1.Text = "FIRST NAME"
         Me.lblReg1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -946,13 +1039,13 @@ Partial Class rmsRegistration
         '
         Me.lblReg2.AutoSize = True
         Me.lblReg2.BackColor = System.Drawing.Color.Transparent
-        Me.lblReg2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblReg2.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReg2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblReg2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReg2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblReg2.Location = New System.Drawing.Point(71, 187)
+        Me.lblReg2.Location = New System.Drawing.Point(56, 190)
         Me.lblReg2.Margin = New System.Windows.Forms.Padding(0)
         Me.lblReg2.Name = "lblReg2"
-        Me.lblReg2.Size = New System.Drawing.Size(102, 14)
+        Me.lblReg2.Size = New System.Drawing.Size(108, 20)
         Me.lblReg2.TabIndex = 31
         Me.lblReg2.Text = "MIDDLE NAME"
         Me.lblReg2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -961,13 +1054,13 @@ Partial Class rmsRegistration
         '
         Me.lblReg4.AutoSize = True
         Me.lblReg4.BackColor = System.Drawing.Color.Transparent
-        Me.lblReg4.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblReg4.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReg4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblReg4.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReg4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblReg4.Location = New System.Drawing.Point(124, 253)
+        Me.lblReg4.Location = New System.Drawing.Point(109, 256)
         Me.lblReg4.Margin = New System.Windows.Forms.Padding(0)
         Me.lblReg4.Name = "lblReg4"
-        Me.lblReg4.Size = New System.Drawing.Size(49, 14)
+        Me.lblReg4.Size = New System.Drawing.Size(52, 20)
         Me.lblReg4.TabIndex = 27
         Me.lblReg4.Text = "EMAIL"
         Me.lblReg4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -976,13 +1069,13 @@ Partial Class rmsRegistration
         '
         Me.lblReg5.AutoSize = True
         Me.lblReg5.BackColor = System.Drawing.Color.Transparent
-        Me.lblReg5.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblReg5.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReg5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblReg5.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReg5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblReg5.Location = New System.Drawing.Point(118, 286)
+        Me.lblReg5.Location = New System.Drawing.Point(103, 289)
         Me.lblReg5.Margin = New System.Windows.Forms.Padding(0)
         Me.lblReg5.Name = "lblReg5"
-        Me.lblReg5.Size = New System.Drawing.Size(55, 14)
+        Me.lblReg5.Size = New System.Drawing.Size(58, 20)
         Me.lblReg5.TabIndex = 28
         Me.lblReg5.Text = "PHONE"
         Me.lblReg5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -991,13 +1084,13 @@ Partial Class rmsRegistration
         '
         Me.lblReg6.AutoSize = True
         Me.lblReg6.BackColor = System.Drawing.Color.Transparent
-        Me.lblReg6.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblReg6.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReg6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblReg6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReg6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblReg6.Location = New System.Drawing.Point(104, 321)
+        Me.lblReg6.Location = New System.Drawing.Point(89, 324)
         Me.lblReg6.Margin = New System.Windows.Forms.Padding(0)
         Me.lblReg6.Name = "lblReg6"
-        Me.lblReg6.Size = New System.Drawing.Size(69, 14)
+        Me.lblReg6.Size = New System.Drawing.Size(73, 20)
         Me.lblReg6.TabIndex = 29
         Me.lblReg6.Text = "RFID NO."
         Me.lblReg6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1034,13 +1127,13 @@ Partial Class rmsRegistration
         '
         Me.lblReg8.AutoSize = True
         Me.lblReg8.BackColor = System.Drawing.Color.Transparent
-        Me.lblReg8.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblReg8.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReg8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblReg8.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReg8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblReg8.Location = New System.Drawing.Point(90, 389)
+        Me.lblReg8.Location = New System.Drawing.Point(71, 393)
         Me.lblReg8.Margin = New System.Windows.Forms.Padding(0)
         Me.lblReg8.Name = "lblReg8"
-        Me.lblReg8.Size = New System.Drawing.Size(87, 14)
+        Me.lblReg8.Size = New System.Drawing.Size(86, 20)
         Me.lblReg8.TabIndex = 12
         Me.lblReg8.Text = "PASSWORD"
         Me.lblReg8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1049,100 +1142,109 @@ Partial Class rmsRegistration
         '
         Me.lblReg7.AutoSize = True
         Me.lblReg7.BackColor = System.Drawing.Color.Transparent
-        Me.lblReg7.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblReg7.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReg7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblReg7.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReg7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblReg7.Location = New System.Drawing.Point(94, 356)
+        Me.lblReg7.Location = New System.Drawing.Point(77, 358)
         Me.lblReg7.Margin = New System.Windows.Forms.Padding(0)
         Me.lblReg7.Name = "lblReg7"
-        Me.lblReg7.Size = New System.Drawing.Size(81, 14)
+        Me.lblReg7.Size = New System.Drawing.Size(86, 20)
         Me.lblReg7.TabIndex = 10
         Me.lblReg7.Text = "USERNAME"
         Me.lblReg7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'lblUsernameUsed
+        'Panel5
         '
-        Me.lblUsernameUsed.BackColor = System.Drawing.Color.Transparent
-        Me.lblUsernameUsed.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsernameUsed.ForeColor = System.Drawing.Color.Red
-        Me.lblUsernameUsed.Location = New System.Drawing.Point(173, 171)
-        Me.lblUsernameUsed.Name = "lblUsernameUsed"
-        Me.lblUsernameUsed.Size = New System.Drawing.Size(229, 19)
-        Me.lblUsernameUsed.TabIndex = 45
-        Me.lblUsernameUsed.Text = "This email is already in use."
-        Me.lblUsernameUsed.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.lblUsernameUsed.Visible = False
+        Me.Panel5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel5.Controls.Add(Me.Button1)
+        Me.Panel5.Controls.Add(Me.Label3)
+        Me.Panel5.Controls.Add(Me.Label14)
+        Me.Panel5.Controls.Add(Me.Label21)
+        Me.Panel5.Controls.Add(Me.Label22)
+        Me.Panel5.Location = New System.Drawing.Point(0, 30)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(460, 567)
+        Me.Panel5.TabIndex = 7
         '
-        'lblRFIDUsed
+        'Button1
         '
-        Me.lblRFIDUsed.BackColor = System.Drawing.Color.Transparent
-        Me.lblRFIDUsed.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRFIDUsed.ForeColor = System.Drawing.Color.Red
-        Me.lblRFIDUsed.Location = New System.Drawing.Point(173, 315)
-        Me.lblRFIDUsed.Name = "lblRFIDUsed"
-        Me.lblRFIDUsed.Size = New System.Drawing.Size(229, 19)
-        Me.lblRFIDUsed.TabIndex = 46
-        Me.lblRFIDUsed.Text = "This RFID is already in use."
-        Me.lblRFIDUsed.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.lblRFIDUsed.Visible = False
+        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.Button1.Location = New System.Drawing.Point(170, 334)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(123, 42)
+        Me.Button1.TabIndex = 10
+        Me.Button1.Text = "OK"
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'lblPanel2Note
+        'Label3
         '
-        Me.lblPanel2Note.BackColor = System.Drawing.Color.Firebrick
-        Me.lblPanel2Note.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblPanel2Note.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPanel2Note.ForeColor = System.Drawing.Color.White
-        Me.lblPanel2Note.Location = New System.Drawing.Point(0, 493)
-        Me.lblPanel2Note.Margin = New System.Windows.Forms.Padding(0)
-        Me.lblPanel2Note.Name = "lblPanel2Note"
-        Me.lblPanel2Note.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
-        Me.lblPanel2Note.Size = New System.Drawing.Size(460, 22)
-        Me.lblPanel2Note.TabIndex = 47
-        Me.lblPanel2Note.Text = "*Note: Please provide your contact details to proceed."
-        Me.lblPanel2Note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lblPanel2Note.Visible = False
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(170, 161)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(88, 16)
+        Me.Label3.TabIndex = 38
+        Me.Label3.Text = "FIRST NAME"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'lblPanel3Note
+        'Label14
         '
-        Me.lblPanel3Note.BackColor = System.Drawing.Color.Firebrick
-        Me.lblPanel3Note.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblPanel3Note.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPanel3Note.ForeColor = System.Drawing.Color.White
-        Me.lblPanel3Note.Location = New System.Drawing.Point(0, 493)
-        Me.lblPanel3Note.Margin = New System.Windows.Forms.Padding(0)
-        Me.lblPanel3Note.Name = "lblPanel3Note"
-        Me.lblPanel3Note.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
-        Me.lblPanel3Note.Size = New System.Drawing.Size(460, 22)
-        Me.lblPanel3Note.TabIndex = 49
-        Me.lblPanel3Note.Text = "Unable to proceed while due to empty field/s."
-        Me.lblPanel3Note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lblPanel3Note.Visible = False
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label14.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label14.Location = New System.Drawing.Point(69, 158)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(94, 20)
+        Me.Label14.TabIndex = 30
+        Me.Label14.Text = "FIRST NAME"
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'lblUsernameErr
+        'Label21
         '
-        Me.lblUsernameErr.BackColor = System.Drawing.Color.Transparent
-        Me.lblUsernameErr.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsernameErr.ForeColor = System.Drawing.Color.Red
-        Me.lblUsernameErr.Location = New System.Drawing.Point(173, 171)
-        Me.lblUsernameErr.Name = "lblUsernameErr"
-        Me.lblUsernameErr.Size = New System.Drawing.Size(229, 19)
-        Me.lblUsernameErr.TabIndex = 48
-        Me.lblUsernameErr.Text = "Label for error."
-        Me.lblUsernameErr.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.lblUsernameErr.Visible = False
+        Me.Label21.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label21.BackColor = System.Drawing.Color.Transparent
+        Me.Label21.Font = New System.Drawing.Font("Trebuchet MS", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.White
+        Me.Label21.Location = New System.Drawing.Point(0, 50)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(460, 40)
+        Me.Label21.TabIndex = 0
+        Me.Label21.Text = "REGISTRATION SUMMARY"
+        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblPasswordMatch
+        'Label22
         '
-        Me.lblPasswordMatch.BackColor = System.Drawing.Color.Transparent
-        Me.lblPasswordMatch.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPasswordMatch.ForeColor = System.Drawing.Color.Red
-        Me.lblPasswordMatch.Location = New System.Drawing.Point(173, 315)
-        Me.lblPasswordMatch.Name = "lblPasswordMatch"
-        Me.lblPasswordMatch.Size = New System.Drawing.Size(229, 19)
-        Me.lblPasswordMatch.TabIndex = 50
-        Me.lblPasswordMatch.Text = "Password not matched."
-        Me.lblPasswordMatch.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.lblPasswordMatch.Visible = False
+        Me.Label22.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.Label22.Location = New System.Drawing.Point(0, 94)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(460, 24)
+        Me.Label22.TabIndex = 1
+        Me.Label22.Text = "Please check your details below before you proceed."
+        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'rmsRegistration
         '
@@ -1152,10 +1254,11 @@ Partial Class rmsRegistration
         Me.ClientSize = New System.Drawing.Size(460, 677)
         Me.Controls.Add(Me.panelTop)
         Me.Controls.Add(Me.panelBottom)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "rmsRegistration"
@@ -1174,6 +1277,8 @@ Partial Class rmsRegistration
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1244,5 +1349,11 @@ Partial Class rmsRegistration
     Public WithEvents lblPanel2Note As Label
     Public WithEvents lblPanel3Note As Label
     Private WithEvents lblUsernameErr As Label
-    Private WithEvents lblPasswordMatch As Label
+    Private WithEvents lblPassError As Label
+    Friend WithEvents Panel5 As Panel
+    Private WithEvents Button1 As Button
+    Public WithEvents Label3 As Label
+    Public WithEvents Label14 As Label
+    Private WithEvents Label21 As Label
+    Private WithEvents Label22 As Label
 End Class
