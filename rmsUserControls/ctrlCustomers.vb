@@ -161,7 +161,7 @@ Public Class ctrlCustomers
                 Dim document = collection.Find(filter).FirstOrDefault()
 
                 If document IsNot Nothing Then
-                    Dim archiveCollection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("archiveCustomer")
+                    Dim archiveCollection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("archiveCustomerInfo")
                     archiveCollection.InsertOne(document)
                     collection.DeleteOne(filter)
                     MessageBox.Show("Data archived successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)

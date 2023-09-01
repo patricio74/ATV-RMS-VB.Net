@@ -69,12 +69,12 @@ Module moduleLogin
                         rmsDashboard.Show()
                         rmsLogin.Hide()
                     Else
-                        rmsLogin.lblLoginError.Text = "Authentication failed: Invalid password."
+                        rmsLogin.lblLoginError.Text = "Authentication failed: Wrong password."
                         rmsLogin.lblLoginError.Visible = True
                         rmsLogin.tboxPassword.Focus()
                     End If
                 Else
-                    rmsLogin.lblLoginError.Text = "Authentication error: user not found."
+                    rmsLogin.lblLoginError.Text = "Authentication error: User not found."
                     rmsLogin.lblLoginError.Visible = True
                     rmsLogin.tboxUsername.Focus()
                 End If

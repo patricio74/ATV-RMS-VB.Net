@@ -751,6 +751,17 @@
         uef+P4m3uNU1jNcKAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="lblPendingUserMessage.Text" xml:space="preserve">
+    <value>We would like to inform you that your registration has been successfully submitted and is currently waiting for approval.
+     
+Please be advised that, for security reasons, all admin registrations require approval before you can gain access to our system. This is to ensure the safety and integrity of our system.
+
+We will notify you through SMS once your registration has been approved. We appreciate your patience during this process.
+
+Should you have any questions, please do not hesitate to contact us at perezjohnpatrick077@gmail.com or jpperez077@tutanota.de
+
+Thank you and have a nice day ahead!</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIACfZAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAAAFv
