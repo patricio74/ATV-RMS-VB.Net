@@ -1,10 +1,26 @@
-﻿Public Class ctrlOverview
+﻿Imports MongoDB.Bson
+Imports MongoDB.Driver
+
+Public Class ctrlOverview
+
+    Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("custReservations")
+
+    'pangcount sa reservations
+    Dim pendingResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Pending")
+    Dim canceledResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Canceled")
+    Dim pendingReserv As Long = collection.CountDocuments(pendingResFilter)
+    Dim canceledReserv As Long = collection.CountDocuments(canceledResFilter)
+
     Private Sub ctrlOverview_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'para sa combobox sa reservation dgv
         Dim currentYear As Integer = DateTime.Now.Year
         For i As Integer = currentYear To currentYear + 1
             cbxYear.Items.Add(i.ToString())
         Next
         cbxYear.SelectedIndex = -1
+
+        lblReservPending.Text = pendingReserv
+        lblReservCanceled.Text = "Canceled Reservations: " + canceledReserv.ToString
     End Sub
 
     Private Sub MouseEnterHandler(sender As Object, e As EventArgs) Handles panelReserv.MouseEnter,
@@ -38,5 +54,6 @@
             panelRevenue.BackColor = Color.SpringGreen
         End If
     End Sub
+
 
 End Class

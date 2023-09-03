@@ -4,7 +4,7 @@ Imports MongoDB.Driver
 
 Public Class rmsRegistration
 
-    Dim tiempoAhora As Date = Date.Now
+    Dim tiempoAhora As String = DateTime.Now.ToString("MMM d, yyyy hh:mm tt")
 
     Private Sub clearRegForm()
         regFName.Clear()
@@ -113,6 +113,7 @@ Public Class rmsRegistration
                         Dim username As String = regUsername.Text.Trim()
                         Dim password As String = regPassw.Text.Trim()
                         Dim rfid As String = regRFID.Text.Trim()
+                        Dim role As String = "admin"
 
                         Dim newAdmin As New BsonDocument From {
                     {"First Name", firstName},
@@ -122,7 +123,8 @@ Public Class rmsRegistration
                     {"Phone", phone},
                     {"Username", username},
                     {"Password", password},
-                    {"RFID", rfid}
+                    {"RFID", rfid},
+                    {"role", role}
                 }
                         Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAdmin")
                         Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(
