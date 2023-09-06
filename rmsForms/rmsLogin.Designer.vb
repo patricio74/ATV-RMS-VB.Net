@@ -78,11 +78,11 @@ Partial Class rmsLogin
         Me.tboxUsername.BackColor = System.Drawing.Color.White
         Me.tboxUsername.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tboxUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tboxUsername.Location = New System.Drawing.Point(57, 30)
+        Me.tboxUsername.Location = New System.Drawing.Point(67, 30)
         Me.tboxUsername.Margin = New System.Windows.Forms.Padding(0)
         Me.tboxUsername.MaxLength = 40
         Me.tboxUsername.Name = "tboxUsername"
-        Me.tboxUsername.Size = New System.Drawing.Size(343, 33)
+        Me.tboxUsername.Size = New System.Drawing.Size(324, 33)
         Me.tboxUsername.TabIndex = 5
         Me.tboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -93,11 +93,11 @@ Partial Class rmsLogin
         Me.tboxPassword.BackColor = System.Drawing.Color.White
         Me.tboxPassword.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tboxPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tboxPassword.Location = New System.Drawing.Point(57, 97)
+        Me.tboxPassword.Location = New System.Drawing.Point(67, 97)
         Me.tboxPassword.Margin = New System.Windows.Forms.Padding(0)
         Me.tboxPassword.MaxLength = 25
         Me.tboxPassword.Name = "tboxPassword"
-        Me.tboxPassword.Size = New System.Drawing.Size(343, 33)
+        Me.tboxPassword.Size = New System.Drawing.Size(324, 33)
         Me.tboxPassword.TabIndex = 7
         Me.tboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tboxPassword.UseSystemPasswordChar = True
@@ -109,7 +109,7 @@ Partial Class rmsLogin
         Me.checkShow.Cursor = System.Windows.Forms.Cursors.Hand
         Me.checkShow.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.checkShow.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.checkShow.Location = New System.Drawing.Point(340, 132)
+        Me.checkShow.Location = New System.Drawing.Point(332, 131)
         Me.checkShow.Margin = New System.Windows.Forms.Padding(0)
         Me.checkShow.Name = "checkShow"
         Me.checkShow.Size = New System.Drawing.Size(60, 18)
@@ -137,11 +137,11 @@ Partial Class rmsLogin
         Me.tboxRFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tboxRFID.Font = New System.Drawing.Font("Verdana", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tboxRFID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tboxRFID.Location = New System.Drawing.Point(57, 69)
+        Me.tboxRFID.Location = New System.Drawing.Point(67, 69)
         Me.tboxRFID.Margin = New System.Windows.Forms.Padding(0)
         Me.tboxRFID.MaxLength = 12
         Me.tboxRFID.Name = "tboxRFID"
-        Me.tboxRFID.Size = New System.Drawing.Size(343, 37)
+        Me.tboxRFID.Size = New System.Drawing.Size(324, 37)
         Me.tboxRFID.TabIndex = 12
         Me.tboxRFID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tboxRFID.UseSystemPasswordChar = True
@@ -152,7 +152,7 @@ Partial Class rmsLogin
         Me.label9.BackColor = System.Drawing.Color.Transparent
         Me.label9.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label9.ForeColor = System.Drawing.Color.Gainsboro
-        Me.label9.Location = New System.Drawing.Point(54, 50)
+        Me.label9.Location = New System.Drawing.Point(64, 52)
         Me.label9.Name = "label9"
         Me.label9.Size = New System.Drawing.Size(69, 16)
         Me.label9.TabIndex = 11
@@ -337,7 +337,7 @@ Partial Class rmsLogin
         Me.lblLoginError.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblLoginError.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLoginError.ForeColor = System.Drawing.Color.White
-        Me.lblLoginError.Location = New System.Drawing.Point(0, 152)
+        Me.lblLoginError.Location = New System.Drawing.Point(0, 155)
         Me.lblLoginError.Margin = New System.Windows.Forms.Padding(0)
         Me.lblLoginError.Name = "lblLoginError"
         Me.lblLoginError.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
@@ -369,9 +369,9 @@ Partial Class rmsLogin
         Me.lblUserError.BackColor = System.Drawing.Color.Transparent
         Me.lblUserError.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUserError.ForeColor = System.Drawing.Color.Red
-        Me.lblUserError.Location = New System.Drawing.Point(171, 9)
+        Me.lblUserError.Location = New System.Drawing.Point(181, 9)
         Me.lblUserError.Name = "lblUserError"
-        Me.lblUserError.Size = New System.Drawing.Size(229, 19)
+        Me.lblUserError.Size = New System.Drawing.Size(210, 19)
         Me.lblUserError.TabIndex = 48
         Me.lblUserError.Text = "This field is required."
         Me.lblUserError.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -382,9 +382,9 @@ Partial Class rmsLogin
         Me.lblPassError.BackColor = System.Drawing.Color.Transparent
         Me.lblPassError.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPassError.ForeColor = System.Drawing.Color.Red
-        Me.lblPassError.Location = New System.Drawing.Point(171, 76)
+        Me.lblPassError.Location = New System.Drawing.Point(181, 76)
         Me.lblPassError.Name = "lblPassError"
-        Me.lblPassError.Size = New System.Drawing.Size(229, 19)
+        Me.lblPassError.Size = New System.Drawing.Size(210, 19)
         Me.lblPassError.TabIndex = 47
         Me.lblPassError.Text = "This field is required."
         Me.lblPassError.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -397,7 +397,7 @@ Partial Class rmsLogin
         Me.labelPword.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelPword.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelPword.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelPword.Location = New System.Drawing.Point(54, 78)
+        Me.labelPword.Location = New System.Drawing.Point(64, 78)
         Me.labelPword.Margin = New System.Windows.Forms.Padding(0)
         Me.labelPword.Name = "labelPword"
         Me.labelPword.Size = New System.Drawing.Size(77, 16)
@@ -412,7 +412,7 @@ Partial Class rmsLogin
         Me.labelUser.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelUser.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelUser.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.labelUser.Location = New System.Drawing.Point(54, 11)
+        Me.labelUser.Location = New System.Drawing.Point(64, 11)
         Me.labelUser.Margin = New System.Windows.Forms.Padding(0)
         Me.labelUser.Name = "labelUser"
         Me.labelUser.Size = New System.Drawing.Size(80, 16)

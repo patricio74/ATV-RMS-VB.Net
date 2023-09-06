@@ -19,6 +19,7 @@ Public Class ctrlOverview
         Next
         cbxYear.SelectedIndex = -1
 
+        'add mo sa module to kasama ng ibang panel label
         lblReservPending.Text = pendingReserv
         lblReservCanceled.Text = "Canceled Reservations: " + canceledReserv.ToString
     End Sub
