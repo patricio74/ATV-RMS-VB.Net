@@ -28,7 +28,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -86,10 +86,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>packages\AWSSDK.Core.3.7.200.11\lib\net45\AWSSDK.Core.dll</HintPath>
+      <HintPath>packages\AWSSDK.Core.3.7.202.3\lib\net45\AWSSDK.Core.dll</HintPath>
     </Reference>
     <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>packages\AWSSDK.SecurityToken.3.7.201.7\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
+      <HintPath>packages\AWSSDK.SecurityToken.3.7.201.30\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
     </Reference>
     <Reference Include="DnsClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
       <HintPath>packages\DnsClient.1.7.0\lib\net471\DnsClient.dll</HintPath>
@@ -103,14 +103,14 @@
     <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=2.20.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\MongoDB.Bson.2.20.0\lib\net472\MongoDB.Bson.dll</HintPath>
+    <Reference Include="MongoDB.Bson, Version=2.21.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MongoDB.Bson.2.21.0\lib\net472\MongoDB.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver, Version=2.20.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\MongoDB.Driver.2.20.0\lib\net472\MongoDB.Driver.dll</HintPath>
+    <Reference Include="MongoDB.Driver, Version=2.21.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MongoDB.Driver.2.21.0\lib\net472\MongoDB.Driver.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver.Core, Version=2.20.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\MongoDB.Driver.Core.2.20.0\lib\net472\MongoDB.Driver.Core.dll</HintPath>
+    <Reference Include="MongoDB.Driver.Core, Version=2.21.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MongoDB.Driver.Core.2.21.0\lib\net472\MongoDB.Driver.Core.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Libmongocrypt, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MongoDB.Libmongocrypt.1.8.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
@@ -242,10 +242,10 @@
     <Compile Include="rmsUserControls\ctrlNotif.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="rmsUserControls\ctrlReservations.Designer.vb">
-      <DependentUpon>ctrlReservations.vb</DependentUpon>
+    <Compile Include="rmsUserControls\ctrlTransactions.Designer.vb">
+      <DependentUpon>ctrlTransactions.vb</DependentUpon>
     </Compile>
-    <Compile Include="rmsUserControls\ctrlReservations.vb">
+    <Compile Include="rmsUserControls\ctrlTransactions.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="rmsUserControls\ctrlRules.Designer.vb">
@@ -331,8 +331,8 @@
     <EmbeddedResource Include="rmsUserControls\ctrlNotif.resx">
       <DependentUpon>ctrlNotif.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rmsUserControls\ctrlReservations.resx">
-      <DependentUpon>ctrlReservations.vb</DependentUpon>
+    <EmbeddedResource Include="rmsUserControls\ctrlTransactions.resx">
+      <DependentUpon>ctrlTransactions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rmsUserControls\ctrlRules.resx">
       <DependentUpon>ctrlRules.vb</DependentUpon>

@@ -32,13 +32,13 @@ Partial Class ctrlNotif
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.tbxBarangay = New System.Windows.Forms.TextBox()
+        Me.tbxName = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.tbxStreet = New System.Windows.Forms.TextBox()
+        Me.tbxDate = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnUpdCust = New System.Windows.Forms.Button()
         Me.btnAddCust = New System.Windows.Forms.Button()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.rtbxMsg = New System.Windows.Forms.RichTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,7 +63,7 @@ Partial Class ctrlNotif
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -79,7 +79,7 @@ Partial Class ctrlNotif
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.DarkGray
-        Me.DataGridView1.Location = New System.Drawing.Point(98, 90)
+        Me.DataGridView1.Location = New System.Drawing.Point(66, 90)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -101,15 +101,15 @@ Partial Class ctrlNotif
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.ShowEditingIcon = False
-        Me.DataGridView1.Size = New System.Drawing.Size(528, 564)
+        Me.DataGridView1.Size = New System.Drawing.Size(560, 564)
         Me.DataGridView1.TabIndex = 37
         '
         'DataGridViewTextBoxColumn4
         '
-        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn4.HeaderText = "NAME"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "SENDER"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 150
         '
         'DataGridViewTextBoxColumn5
         '
@@ -120,10 +120,10 @@ Partial Class ctrlNotif
         '
         'DataGridViewTextBoxColumn6
         '
-        Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn6.HeaderText = "DATE"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 125
         '
         'Label9
         '
@@ -137,18 +137,18 @@ Partial Class ctrlNotif
         Me.Label9.TabIndex = 42
         Me.Label9.Text = "Message:"
         '
-        'tbxBarangay
+        'tbxName
         '
-        Me.tbxBarangay.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.tbxBarangay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxBarangay.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxBarangay.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxBarangay.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxBarangay.Location = New System.Drawing.Point(41, 135)
-        Me.tbxBarangay.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
-        Me.tbxBarangay.Name = "tbxBarangay"
-        Me.tbxBarangay.Size = New System.Drawing.Size(323, 30)
-        Me.tbxBarangay.TabIndex = 41
+        Me.tbxName.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxName.Location = New System.Drawing.Point(41, 135)
+        Me.tbxName.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxName.Name = "tbxName"
+        Me.tbxName.Size = New System.Drawing.Size(323, 30)
+        Me.tbxName.TabIndex = 41
         '
         'Label7
         '
@@ -162,18 +162,18 @@ Partial Class ctrlNotif
         Me.Label7.TabIndex = 40
         Me.Label7.Text = "Name:"
         '
-        'tbxStreet
+        'tbxDate
         '
-        Me.tbxStreet.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.tbxStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxStreet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxStreet.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxStreet.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxStreet.Location = New System.Drawing.Point(41, 73)
-        Me.tbxStreet.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
-        Me.tbxStreet.Name = "tbxStreet"
-        Me.tbxStreet.Size = New System.Drawing.Size(323, 30)
-        Me.tbxStreet.TabIndex = 39
+        Me.tbxDate.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxDate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxDate.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxDate.Location = New System.Drawing.Point(41, 73)
+        Me.tbxDate.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.tbxDate.Name = "tbxDate"
+        Me.tbxDate.Size = New System.Drawing.Size(323, 30)
+        Me.tbxDate.TabIndex = 39
         '
         'Label1
         '
@@ -217,27 +217,27 @@ Partial Class ctrlNotif
         Me.btnAddCust.Text = "Send"
         Me.btnAddCust.UseVisualStyleBackColor = False
         '
-        'RichTextBox1
+        'rtbxMsg
         '
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.RichTextBox1.Location = New System.Drawing.Point(41, 202)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(323, 190)
-        Me.RichTextBox1.TabIndex = 63
-        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        Me.rtbxMsg.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.rtbxMsg.Location = New System.Drawing.Point(41, 202)
+        Me.rtbxMsg.Name = "rtbxMsg"
+        Me.rtbxMsg.Size = New System.Drawing.Size(323, 190)
+        Me.rtbxMsg.TabIndex = 63
+        Me.rtbxMsg.Text = resources.GetString("rtbxMsg.Text")
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox1.Controls.Add(Me.rtbxMsg)
         Me.GroupBox1.Controls.Add(Me.btnAddCust)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.btnUpdCust)
-        Me.GroupBox1.Controls.Add(Me.tbxBarangay)
+        Me.GroupBox1.Controls.Add(Me.tbxName)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.tbxStreet)
+        Me.GroupBox1.Controls.Add(Me.tbxDate)
         Me.GroupBox1.Location = New System.Drawing.Point(658, 123)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(413, 497)
@@ -279,17 +279,17 @@ Partial Class ctrlNotif
 
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents Label9 As Label
-    Friend WithEvents tbxBarangay As TextBox
+    Friend WithEvents tbxName As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents tbxStreet As TextBox
+    Friend WithEvents tbxDate As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnUpdCust As Button
     Friend WithEvents btnAddCust As Button
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents rtbxMsg As RichTextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
 End Class

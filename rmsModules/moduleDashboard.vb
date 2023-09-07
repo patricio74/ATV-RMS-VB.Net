@@ -1,4 +1,8 @@
-﻿Module moduleDashboard
+﻿Imports MongoDB.Bson
+Imports MongoDB.Driver
+Imports System.Globalization
+
+Module moduleDashboard
 
     Public Sub resetButtonColor()
         Dim defaultForeColor As Color = ColorTranslator.FromHtml("#f5f5f5")
@@ -25,5 +29,6 @@
         activeBtn.ForeColor = ColorTranslator.FromHtml("#151515")
         activeBtn.BackColor = ColorTranslator.FromHtml("#ffc048")
     End Sub
+
 
 End Module

@@ -28,13 +28,13 @@ Partial Class ctrlInventory
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.combGender = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtbxEmpNo = New System.Windows.Forms.TextBox()
+        Me.tbxEmpNo = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtbxFrstname = New System.Windows.Forms.TextBox()
+        Me.tbxBrand = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.rtbxDescrip = New System.Windows.Forms.RichTextBox()
+        Me.tbxModel = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnClear = New System.Windows.Forms.Button()
@@ -78,17 +78,17 @@ Partial Class ctrlInventory
         Me.Label8.TabIndex = 60
         Me.Label8.Text = "STATUS:"
         '
-        'txtbxEmpNo
+        'tbxEmpNo
         '
-        Me.txtbxEmpNo.BackColor = System.Drawing.Color.White
-        Me.txtbxEmpNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxEmpNo.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxEmpNo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.txtbxEmpNo.Location = New System.Drawing.Point(95, 446)
-        Me.txtbxEmpNo.Name = "txtbxEmpNo"
-        Me.txtbxEmpNo.Size = New System.Drawing.Size(172, 30)
-        Me.txtbxEmpNo.TabIndex = 55
-        Me.txtbxEmpNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxEmpNo.BackColor = System.Drawing.Color.White
+        Me.tbxEmpNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxEmpNo.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxEmpNo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxEmpNo.Location = New System.Drawing.Point(95, 446)
+        Me.tbxEmpNo.Name = "tbxEmpNo"
+        Me.tbxEmpNo.Size = New System.Drawing.Size(172, 30)
+        Me.tbxEmpNo.TabIndex = 55
+        Me.tbxEmpNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
@@ -114,18 +114,18 @@ Partial Class ctrlInventory
         Me.Label3.TabIndex = 50
         Me.Label3.Text = "DESCRIPTION:"
         '
-        'txtbxFrstname
+        'tbxBrand
         '
-        Me.txtbxFrstname.BackColor = System.Drawing.Color.White
-        Me.txtbxFrstname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxFrstname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtbxFrstname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxFrstname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.txtbxFrstname.Location = New System.Drawing.Point(95, 519)
-        Me.txtbxFrstname.Name = "txtbxFrstname"
-        Me.txtbxFrstname.Size = New System.Drawing.Size(336, 30)
-        Me.txtbxFrstname.TabIndex = 49
-        Me.txtbxFrstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxBrand.BackColor = System.Drawing.Color.White
+        Me.tbxBrand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxBrand.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxBrand.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxBrand.Location = New System.Drawing.Point(95, 519)
+        Me.tbxBrand.Name = "tbxBrand"
+        Me.tbxBrand.Size = New System.Drawing.Size(336, 30)
+        Me.tbxBrand.TabIndex = 49
+        Me.tbxBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -139,27 +139,27 @@ Partial Class ctrlInventory
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "BRAND:"
         '
-        'RichTextBox1
+        'rtbxDescrip
         '
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.RichTextBox1.Location = New System.Drawing.Point(743, 446)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(320, 187)
-        Me.RichTextBox1.TabIndex = 62
-        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        Me.rtbxDescrip.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.rtbxDescrip.Location = New System.Drawing.Point(743, 446)
+        Me.rtbxDescrip.Name = "rtbxDescrip"
+        Me.rtbxDescrip.Size = New System.Drawing.Size(320, 187)
+        Me.rtbxDescrip.TabIndex = 62
+        Me.rtbxDescrip.Text = resources.GetString("rtbxDescrip.Text")
         '
-        'TextBox1
+        'tbxModel
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(94, 598)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(336, 30)
-        Me.TextBox1.TabIndex = 64
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tbxModel.BackColor = System.Drawing.Color.White
+        Me.tbxModel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxModel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxModel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxModel.Location = New System.Drawing.Point(94, 598)
+        Me.tbxModel.Name = "tbxModel"
+        Me.tbxModel.Size = New System.Drawing.Size(336, 30)
+        Me.tbxModel.TabIndex = 64
+        Me.tbxModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
         '
@@ -175,7 +175,7 @@ Partial Class ctrlInventory
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.LightGray
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox1.Location = New System.Drawing.Point(469, 446)
         Me.PictureBox1.Name = "PictureBox1"
@@ -333,15 +333,15 @@ Partial Class ctrlInventory
         Me.Controls.Add(Me.btnUpd)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.tbxModel)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.rtbxDescrip)
         Me.Controls.Add(Me.combGender)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtbxEmpNo)
+        Me.Controls.Add(Me.tbxEmpNo)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtbxFrstname)
+        Me.Controls.Add(Me.tbxBrand)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -357,13 +357,13 @@ Partial Class ctrlInventory
     End Sub
     Friend WithEvents combGender As ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents txtbxEmpNo As TextBox
+    Friend WithEvents tbxEmpNo As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtbxFrstname As TextBox
+    Friend WithEvents tbxBrand As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents rtbxDescrip As RichTextBox
+    Friend WithEvents tbxModel As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnClear As Button

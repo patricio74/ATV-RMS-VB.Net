@@ -41,6 +41,14 @@ Public Class ctrlCustomers
         clearCustForm()
     End Sub
 
+    'suppress enter key sound sa mga textboxes
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxUsername.KeyPress, tbxPassword.KeyPress, tbxPhone.KeyPress,
+    tbxEmail.KeyPress, tbxFirname.KeyPress, tbxMidname.KeyPress, tbxSurname.KeyPress, tbxStreet.KeyPress, tbxBarangay.KeyPress, tbxMuniCity.KeyPress, tbxProvince.KeyPress
+        If e.KeyChar = Chr(13) Then
+            e.Handled = True
+        End If
+    End Sub
+
     Private Sub clearCustForm()
         DataGridView1.ClearSelection()
         tbxCustID.Clear()

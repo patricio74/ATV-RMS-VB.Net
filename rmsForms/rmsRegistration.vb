@@ -206,9 +206,9 @@ Public Class rmsRegistration
         End If
     End Sub
 
+    'suppress enter key sound sa mga textboxes
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles regFName.KeyPress, regMName.KeyPress, regSname.KeyPress,
         regEmail.KeyPress, regPhone.KeyPress, regRFID.KeyPress, regUsername.KeyPress, regPassw.KeyPress, regPassw2.KeyPress
-        'suppress enter key sound sa mga textboxes
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If

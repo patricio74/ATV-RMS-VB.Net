@@ -4,7 +4,11 @@ Imports ATV_RMS.ctrlCustomers
 Imports MongoDB.Bson
 Imports MongoDB.Driver
 
-Public Class ctrlReservations
+Public Class ctrlTransactions
+    Dim tourPrice As Double = 0
+    Dim numberOfPerson As Double = 0
+    Dim totalPrice As Double = 0
+
     Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("Reservation")
     Private reserv As List(Of Reservations)
 
@@ -27,19 +31,42 @@ Public Class ctrlReservations
     End Sub
 
     Private Sub ctrlReservations_Enter(sender As Object, e As EventArgs) Handles Me.Enter
-        refreshRes()
+        refreshRes() 'delete, palitan ng timer
     End Sub
 
     Private Sub refreshRes()
         populateList()
         clearResForm()
+        'reserevation label count
+        Dim colReserv As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("custReservations")
+        Dim pendingResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Pending")
+        Dim canceledResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Canceled")
+        Dim pendingReserv As Long = colReserv.CountDocuments(pendingResFilter)
+        Dim canceledReserv As Long = colReserv.CountDocuments(canceledResFilter)
+        lblResCount.Text = "Reservation count: " + pendingReserv.ToString + " Pending, " + canceledReserv.ToString + " Canceled"
+
+        'combobox list
+        Dim tourData As List(Of BsonDocument) = cbxToursList()
+        For Each tourDocument As BsonDocument In tourData
+            cboxTour.Items.Add(tourDocument("nameOfTour").ToString())
+        Next
     End Sub
+
+    'suppress enter key sound sa mga textboxes
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxResID.KeyPress, tbxFName.KeyPress, tbxMName.KeyPress,
+        tbxSName.KeyPress, tbxPerson.KeyPress, tbxTotal.KeyPress
+        If e.KeyChar = Chr(13) Then
+            e.Handled = True
+        End If
+    End Sub
+
     Private Sub clearResForm()
         DataGridView1.ClearSelection()
         tbxFName.Clear()
         tbxMName.Clear()
         tbxSName.Clear()
         cboxTour.SelectedIndex = -1
+        tbxPerson.Clear()
         DateTimePicker1.Value = DateTime.Now
         cboxStatus.SelectedIndex = -1
         cboxTimeSlot.SelectedIndex = -1
@@ -109,8 +136,6 @@ Public Class ctrlReservations
     Private Sub btnAddRes_Click(sender As Object, e As EventArgs) Handles btnAddRes.Click
         'TODO:
         'add message box for confirmation before proceeding
-        'add code to fetch price of selected tour (search ATVTours collection where tourname = selected index)
-        'display price to tbxTotal on combobox selection change
         Try
             Dim document As New BsonDocument From {
                 {"FName", tbxFName.Text},
@@ -136,35 +161,39 @@ Public Class ctrlReservations
         refreshRes()
     End Sub
 
-    Dim tourPrice As Double = 0
-    Dim numberOfPerson As Double = 0
-    Dim totalPrice As Double = 0
     Private Sub cboxTour_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxTour.SelectedIndexChanged
-        If cboxTour.SelectedIndex = 0 Then
-            tourPrice = 1500
-        ElseIf cboxTour.SelectedIndex = 1 Then
-            tourPrice = 5500
-        ElseIf cboxTour.SelectedIndex = 2 Then
-            tourPrice = 3000
-        ElseIf cboxTour.SelectedIndex = 3 Then
-            tourPrice = 3500
-        ElseIf cboxTour.SelectedIndex = 4 Then
-            tourPrice = 4000
-        ElseIf cboxTour.SelectedIndex = 5 Then
-            tourPrice = 6500
-        ElseIf cboxTour.SelectedIndex = 6 Then
-            tourPrice = 6500
-        ElseIf cboxTour.SelectedIndex = 7 Then
-            tourPrice = 5000
-        ElseIf cboxTour.SelectedIndex = 8 Then
-            tourPrice = 6500
+        If cboxTour.SelectedItem IsNot Nothing Then
+            Dim selectedTourName As String = cboxTour.SelectedItem.ToString()
+            Dim tourData As List(Of BsonDocument) = cbxToursList()
+            If tourData IsNot Nothing Then
+                Dim selectedTour = tourData.FirstOrDefault(Function(t) t("nameOfTour").ToString() = selectedTourName)
+                If selectedTour IsNot Nothing Then
+                    Dim tourPriceString As String = selectedTour("price").ToString()
+                    If Double.TryParse(tourPriceString, tourPrice) Then
+                        If tbxPerson IsNot Nothing AndAlso Not String.IsNullOrEmpty(tbxPerson.Text) Then
+                            If Double.TryParse(tbxPerson.Text, numberOfPerson) Then
+                                totalPrice = tourPrice * numberOfPerson
+                                tbxTotal.Text = totalPrice.ToString()
+                            Else
+                                tbxTotal.Clear()
+                            End If
+                        Else
+                            tbxTotal.Clear()
+                        End If
+                    End If
+                Else
+                End If
+            Else
+            End If
         End If
-        totalPrice = tourPrice * numberOfPerson
-        tbxTotal.Text = totalPrice
     End Sub
 
+
     Private Sub tbxPerson_TextChanged(sender As Object, e As EventArgs) Handles tbxPerson.TextChanged
-        If Double.TryParse(tbxPerson.Text, numberOfPerson) Then
+        If tbxPerson.Text = "" Then
+            tbxTotal.Clear()
+        ElseIf tbxPerson.Text IsNot "" Then
+            Double.TryParse(tbxPerson.Text, numberOfPerson)
             totalPrice = tourPrice * numberOfPerson
             tbxTotal.Text = totalPrice
         End If

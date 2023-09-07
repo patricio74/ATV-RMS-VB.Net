@@ -16,5 +16,12 @@ Module moduleDatabase
         End Try
     End Function
 
+    'ctrlreservations combobox
+    Public Function cbxToursList()
+        Dim col As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("rmsAtvTours")
+        Dim filter As New BsonDocument()
+        Dim tourData As List(Of BsonDocument) = col.Find(filter).ToList()
+        Return tourData
+    End Function
 
 End Module

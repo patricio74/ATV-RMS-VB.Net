@@ -133,7 +133,7 @@ Partial Class rmsDashboard
         Me.btnRules.FlatAppearance.BorderSize = 0
         Me.btnRules.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRules.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRules.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRules.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnRules.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRules.Location = New System.Drawing.Point(0, 532)
@@ -155,7 +155,7 @@ Partial Class rmsDashboard
         Me.btnTGuides.FlatAppearance.BorderSize = 0
         Me.btnTGuides.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnTGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTGuides.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTGuides.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTGuides.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnTGuides.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTGuides.Location = New System.Drawing.Point(0, 489)
@@ -177,7 +177,7 @@ Partial Class rmsDashboard
         Me.btnInventory.FlatAppearance.BorderSize = 0
         Me.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInventory.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventory.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInventory.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnInventory.Location = New System.Drawing.Point(0, 446)
@@ -199,7 +199,7 @@ Partial Class rmsDashboard
         Me.btnTrails.FlatAppearance.BorderSize = 0
         Me.btnTrails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnTrails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTrails.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrails.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTrails.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnTrails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTrails.Location = New System.Drawing.Point(0, 317)
@@ -235,7 +235,7 @@ Partial Class rmsDashboard
         Me.btnNotif.FlatAppearance.BorderSize = 0
         Me.btnNotif.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnNotif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNotif.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNotif.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNotif.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnNotif.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNotif.Location = New System.Drawing.Point(0, 403)
@@ -257,7 +257,7 @@ Partial Class rmsDashboard
         Me.btnCustomers.FlatAppearance.BorderSize = 0
         Me.btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCustomers.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCustomers.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCustomers.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.Location = New System.Drawing.Point(0, 360)
@@ -278,13 +278,13 @@ Partial Class rmsDashboard
         Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogout.FlatAppearance.BorderSize = 0
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogout.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.Location = New System.Drawing.Point(75, 705)
+        Me.btnLogout.Location = New System.Drawing.Point(73, 705)
         Me.btnLogout.Margin = New System.Windows.Forms.Padding(0)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(55, 23)
+        Me.btnLogout.Size = New System.Drawing.Size(61, 24)
         Me.btnLogout.TabIndex = 13
         Me.btnLogout.Text = "Logout"
         Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -299,7 +299,7 @@ Partial Class rmsDashboard
         Me.btnOverview.FlatAppearance.BorderSize = 0
         Me.btnOverview.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOverview.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOverview.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOverview.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnOverview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnOverview.Location = New System.Drawing.Point(0, 231)
@@ -321,7 +321,7 @@ Partial Class rmsDashboard
         Me.btnReservations.FlatAppearance.BorderSize = 0
         Me.btnReservations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
         Me.btnReservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReservations.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReservations.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReservations.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnReservations.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReservations.Location = New System.Drawing.Point(0, 274)
@@ -330,7 +330,7 @@ Partial Class rmsDashboard
         Me.btnReservations.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnReservations.Size = New System.Drawing.Size(205, 43)
         Me.btnReservations.TabIndex = 4
-        Me.btnReservations.Text = "Reservations"
+        Me.btnReservations.Text = "Transactions"
         Me.btnReservations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReservations.UseVisualStyleBackColor = True
         '
@@ -339,9 +339,9 @@ Partial Class rmsDashboard
         Me.picLogo.BackColor = System.Drawing.Color.Transparent
         Me.picLogo.BackgroundImage = CType(resources.GetObject("picLogo.BackgroundImage"), System.Drawing.Image)
         Me.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picLogo.Location = New System.Drawing.Point(70, 32)
+        Me.picLogo.Location = New System.Drawing.Point(65, 25)
         Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(65, 65)
+        Me.picLogo.Size = New System.Drawing.Size(75, 75)
         Me.picLogo.TabIndex = 4
         Me.picLogo.TabStop = False
         '

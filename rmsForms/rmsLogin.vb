@@ -27,6 +27,13 @@ Public Class rmsLogin
         Me.Close()
     End Sub
 
+    'suppress enter key sound sa mga textboxes
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tboxUsername.KeyPress, tboxPassword.KeyPress, tboxRFID.KeyPress
+        If e.KeyChar = Chr(13) Then
+            e.Handled = True
+        End If
+    End Sub
+
     Private Sub tboxUsername_TextChanged(sender As Object, e As EventArgs) Handles tboxUsername.TextChanged
         Dim cursorPos As Integer = tboxUsername.SelectionStart
         'para walang space na ma-input

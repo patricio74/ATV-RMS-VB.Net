@@ -2,7 +2,7 @@
     Public Property labelName As String
 
     'user control reference
-    Dim reserv As New ctrlReservations
+    Dim reserv As New ctrlTransactions
     Dim inve As New ctrlInventory
     Dim guide As New ctrlTourGuides
     Dim customer As New ctrlCustomers
