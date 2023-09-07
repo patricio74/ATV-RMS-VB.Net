@@ -3,6 +3,10 @@ Imports MongoDB.Bson
 Imports MongoDB.Driver
 
 Public Class ctrlOverview
+    Public Class Reservation
+        Public Property ReservationDate As DateTime
+        Public Property TimeSlot As String
+    End Class
 
     Private Sub ctrlOverview_Load(sender As Object, e As EventArgs) Handles Me.Load
         'para sa combobox year sa reservation dgv
@@ -12,8 +16,13 @@ Public Class ctrlOverview
         Next
         cbxYear.SelectedIndex = -1
 
-        'refresh content every 3secs
-        Timer1.Interval = 3000
+        'populate months sa combobox
+        For month As Integer = 1 To 12
+            cbxMonth.Items.Add(DateAndTime.MonthName(month))
+        Next
+
+        'refresh content every 5secs
+        Timer1.Interval = 5000
         Timer1.Start()
     End Sub
 
@@ -77,6 +86,19 @@ Public Class ctrlOverview
         lblRevMonth.Text = "₱" & totalRevenueThisMonth.ToString("#,##0")
         lblRevYest.Text = "Total yesterday: ₱" & totalRevenueYesterday.ToString("#,##0")
 
+
+
+        Dim colReviews As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("custReviews")
+        ' Load the data from MongoDB and sort by reviewDate in descending order
+        Dim sort = Builders(Of BsonDocument).Sort.Descending("reviewDate")
+        Dim documents = colReviews.Find(New BsonDocument()).Sort(sort).ToList()
+
+
+        dgvReviews.Rows.Clear()
+        ' Populate the DataGridView with data from MongoDB
+        For Each doc In documents
+            dgvReviews.Rows.Add(doc("Rating").ToString(), doc("Name").ToString(), doc("Review").ToString())
+        Next
     End Sub
 
     Private Sub MouseEnterHandler(sender As Object, e As EventArgs) Handles panelReserv.MouseEnter,
@@ -111,53 +133,42 @@ Public Class ctrlOverview
         End If
     End Sub
 
-    Public Class Reservation
-        Public Property _id As ObjectId
-        Public Property FName As String
-        Public Property MName As String
-        Public Property Sname As String
-        Public Property tourName As String
-        Public Property tourPrice As String
-        Public Property reservDate As String
-        Public Property timeSlot As String
-        Public Property status As String
-        Public Property totalPerson As String
-    End Class
-
     Private Sub btnViewReserv_Click(sender As Object, e As EventArgs) Handles btnViewReserv.Click
-        Try
-            Dim selectedMonth As String = cbxMonth.SelectedItem.ToString()
-            Dim selectedYear As Integer = Convert.ToInt32(cbxYear.SelectedItem)
-            Dim selectedDate As String = $"{selectedYear}-{selectedMonth.PadLeft(2, "0")}"
-            Dim reservations As New List(Of Reservation)()
-            Dim col As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("custReservations")
-            Dim filter As New BsonDocument()
-            Dim bsonReservations As List(Of BsonDocument) = col.Find(filter).ToList()
-            For Each bsonReservation As BsonDocument In bsonReservations
-                Dim reservation As New Reservation()
-                reservation.FName = bsonReservation("FName").ToString()
-                reservation.MName = bsonReservation("MName").ToString()
-                reservation.Sname = bsonReservation("Sname").ToString()
-                reservation.tourName = bsonReservation("tourName").ToString()
-                reservation.tourPrice = bsonReservation("tourPrice").ToString()
-                reservation.reservDate = bsonReservation("reservDate").ToString()
-                reservation.timeSlot = bsonReservation("timeSlot").ToString()
-                reservation.status = bsonReservation("status").ToString()
-                reservation.totalPerson = bsonReservation("totalPerson").ToString()
-                reservations.Add(reservation)
-            Next
-            dgvReservations.Rows.Clear()
-            For Each reservation As Reservation In reservations
-                If reservation.reservDate.StartsWith(selectedDate) Then
-                    Dim dayOfMonth As Integer = DateTime.Parse(reservation.reservDate).Day
-                    dgvReservations.Rows.Add(dayOfMonth, $"{reservation.FName} {reservation.Sname}", reservation.tourName)
-                End If
-            Next
-            dgvReservations.Refresh()
-        Catch ex As Exception
-            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
+        ' Get the selected month and year from ComboBoxes
+        Dim selectedMonth As Integer = cbxMonth.SelectedIndex + 1
+        Dim selectedYear As Integer = Integer.Parse(cbxYear.SelectedItem.ToString())
 
+        ' Define a collection to store the reservations
+        Dim reservations As New List(Of Reservation)()
+
+        ' Create a filter to match reservations for the selected month and year
+        Dim filter As BsonDocument = New BsonDocument(
+            New BsonElement("status", "Pending"),
+            New BsonElement("tourDate",
+                New BsonDocument(
+                    New BsonElement("$gte", New BsonDateTime(New DateTime(selectedYear, selectedMonth, 1, 0, 0, 0, DateTimeKind.Utc))),
+                    New BsonElement("$lt", New BsonDateTime(New DateTime(selectedYear, selectedMonth + 1, 1, 0, 0, 0, DateTimeKind.Utc)))
+                )
+            )
+        )
+
+        Dim collection = connectToMongo.GetCollection(Of BsonDocument)("custReservations")
+        Dim cursor = collection.Find(filter).ToCursor()
+        For Each doc In cursor.ToEnumerable()
+            ' Parse the BSON document into a Reservation object
+            Dim reservation As New Reservation() With {
+                .ReservationDate = doc("tourDate").ToUniversalTime(),
+                .TimeSlot = doc("timeSlot").ToString()
+            }
+            reservations.Add(reservation)
+        Next
+        ' Bind the reservations list to the DataGridView
+        dgvReservations.Rows.Clear()
+        For Each reservation In reservations
+            Dim day As String = reservation.ReservationDate.Day.ToString()
+            Dim timeSlot As String = reservation.TimeSlot
+            dgvReservations.Rows.Add(day, timeSlot)
+        Next
+    End Sub
 
 End Class
