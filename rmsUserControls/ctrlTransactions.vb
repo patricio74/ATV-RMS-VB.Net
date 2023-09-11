@@ -36,7 +36,7 @@ Public Class ctrlTransactions
 
     Private Sub refreshRes()
         populateList()
-        clearResForm()
+        clearTransactionForm()
         'reserevation label count
         Dim colReserv As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("custReservations")
         Dim pendingResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Pending")
@@ -48,30 +48,34 @@ Public Class ctrlTransactions
         'combobox list
         Dim tourData As List(Of BsonDocument) = cbxToursList()
         For Each tourDocument As BsonDocument In tourData
-            cboxTour.Items.Add(tourDocument("nameOfTour").ToString())
+            cboxReservTour.Items.Add(tourDocument("nameOfTour").ToString())
         Next
     End Sub
 
     'suppress enter key sound sa mga textboxes
-    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxResID.KeyPress, tbxFName.KeyPress, tbxMName.KeyPress,
-        tbxSName.KeyPress, tbxPerson.KeyPress, tbxTotal.KeyPress
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxReservID.KeyPress, tbxReservFName.KeyPress, tbxReservMName.KeyPress,
+        tbxReservSName.KeyPress, tbxReservPerson.KeyPress, tbxReservTotal.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub clearResForm()
+    Private Sub clearTransactionForm()
+        cboxReservFilter.SelectedIndex = -1
         DataGridView1.ClearSelection()
-        tbxFName.Clear()
-        tbxMName.Clear()
-        tbxSName.Clear()
-        cboxTour.SelectedIndex = -1
-        tbxPerson.Clear()
-        DateTimePicker1.Value = DateTime.Now
-        cboxStatus.SelectedIndex = -1
-        cboxTimeSlot.SelectedIndex = -1
-        tbxTotal.Clear()
-        cboxFilter.SelectedIndex = -1
+
+        tbxAddTotal.Clear()
+
+        tbxReservID.Clear()
+        tbxReservFName.Clear()
+        tbxReservMName.Clear()
+        tbxReservSName.Clear()
+        cboxReservTour.SelectedIndex = -1
+        tbxReservPerson.Clear()
+        dateTimeReserv.Value = DateTime.Now
+        cboxReservStatus.SelectedIndex = -1
+        cboxReservTimeSlot.SelectedIndex = -1
+        tbxReservTotal.Clear()
         tourPrice = 0
         numberOfPerson = 0
         totalPrice = 0
@@ -118,16 +122,16 @@ Public Class ctrlTransactions
                 Dim selectedReserv = reserv(DataGridView1.SelectedRows(0).Index)
                 Dim parsedDate As DateTime
                 If DateTime.TryParseExact(selectedReserv.resDate, "MM-dd-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, parsedDate) Then
-                    DateTimePicker1.Value = parsedDate
-                    tbxResID.Text = selectedReserv.resID
-                    tbxFName.Text = selectedReserv.FName
-                    tbxMName.Text = selectedReserv.MName
-                    tbxSName.Text = selectedReserv.SName
-                    cboxTour.Text = selectedReserv.tour
-                    tbxPerson.Text = selectedReserv.totPerson
-                    cboxTimeSlot.Text = selectedReserv.resTime
-                    cboxStatus.Text = selectedReserv.resStatus
-                    tbxTotal.Text = "₱" + selectedReserv.resPrice
+                    dateTimeReserv.Value = parsedDate
+                    tbxReservID.Text = selectedReserv.resID
+                    tbxReservFName.Text = selectedReserv.FName
+                    tbxReservMName.Text = selectedReserv.MName
+                    tbxReservSName.Text = selectedReserv.SName
+                    cboxReservTour.Text = selectedReserv.tour
+                    tbxReservPerson.Text = selectedReserv.totPerson
+                    cboxReservTimeSlot.Text = selectedReserv.resTime
+                    cboxReservStatus.Text = selectedReserv.resStatus
+                    tbxReservTotal.Text = "₱" + selectedReserv.resPrice
                 End If
             End If
         End If
@@ -138,14 +142,14 @@ Public Class ctrlTransactions
         'add message box for confirmation before proceeding
         Try
             Dim document As New BsonDocument From {
-                {"FName", tbxFName.Text},
-                {"MName", tbxMName.Text},
-                {"Sname", tbxSName.Text},
-                {"tourName", cboxTour.SelectedItem.ToString()},
-                {"tourPrice", tbxTotal.Text},
-                {"date", DateTimePicker1.Value.ToString},
-                {"timeSlot", cboxTimeSlot.SelectedItem.ToString},
-                {"status", cboxStatus.SelectedItem.ToString}
+                {"FName", tbxReservFName.Text},
+                {"MName", tbxReservMName.Text},
+                {"Sname", tbxReservSName.Text},
+                {"tourName", cboxReservTour.SelectedItem.ToString()},
+                {"tourPrice", tbxReservTotal.Text},
+                {"date", dateTimeReserv.Value.ToString},
+                {"timeSlot", cboxReservTimeSlot.SelectedItem.ToString},
+                {"status", cboxReservStatus.SelectedItem.ToString}
             }
 
             collection.InsertOne(document)
@@ -157,28 +161,32 @@ Public Class ctrlTransactions
         End Try
     End Sub
 
-    Private Sub btnClearRes_Click(sender As Object, e As EventArgs) Handles btnClearRes.Click
-        refreshRes()
+    Private Sub btnUpdRes_Click(sender As Object, e As EventArgs) Handles btnUpdRes.Click
+
     End Sub
 
-    Private Sub cboxTour_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxTour.SelectedIndexChanged
-        If cboxTour.SelectedItem IsNot Nothing Then
-            Dim selectedTourName As String = cboxTour.SelectedItem.ToString()
+    Private Sub clearForm(sender As Object, e As EventArgs) Handles lblClearAdd.Click, lblClearRes.Click
+        clearTransactionForm()
+    End Sub
+
+    Private Sub cboxTour_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxReservTour.SelectedIndexChanged
+        If cboxReservTour.SelectedItem IsNot Nothing Then
+            Dim selectedTourName As String = cboxReservTour.SelectedItem.ToString()
             Dim tourData As List(Of BsonDocument) = cbxToursList()
             If tourData IsNot Nothing Then
                 Dim selectedTour = tourData.FirstOrDefault(Function(t) t("nameOfTour").ToString() = selectedTourName)
                 If selectedTour IsNot Nothing Then
                     Dim tourPriceString As String = selectedTour("price").ToString()
                     If Double.TryParse(tourPriceString, tourPrice) Then
-                        If tbxPerson IsNot Nothing AndAlso Not String.IsNullOrEmpty(tbxPerson.Text) Then
-                            If Double.TryParse(tbxPerson.Text, numberOfPerson) Then
+                        If tbxReservPerson IsNot Nothing AndAlso Not String.IsNullOrEmpty(tbxReservPerson.Text) Then
+                            If Double.TryParse(tbxReservPerson.Text, numberOfPerson) Then
                                 totalPrice = tourPrice * numberOfPerson
-                                tbxTotal.Text = totalPrice.ToString()
+                                tbxReservTotal.Text = totalPrice.ToString()
                             Else
-                                tbxTotal.Clear()
+                                tbxReservTotal.Clear()
                             End If
                         Else
-                            tbxTotal.Clear()
+                            tbxReservTotal.Clear()
                         End If
                     End If
                 Else
@@ -189,13 +197,14 @@ Public Class ctrlTransactions
     End Sub
 
 
-    Private Sub tbxPerson_TextChanged(sender As Object, e As EventArgs) Handles tbxPerson.TextChanged
-        If tbxPerson.Text = "" Then
-            tbxTotal.Clear()
-        ElseIf tbxPerson.Text IsNot "" Then
-            Double.TryParse(tbxPerson.Text, numberOfPerson)
+    Private Sub tbxPerson_TextChanged(sender As Object, e As EventArgs) Handles tbxReservPerson.TextChanged
+        If tbxReservPerson.Text = "" Then
+            tbxReservTotal.Clear()
+        ElseIf tbxReservPerson.Text IsNot "" Then
+            Double.TryParse(tbxReservPerson.Text, numberOfPerson)
             totalPrice = tourPrice * numberOfPerson
-            tbxTotal.Text = totalPrice
+            tbxReservTotal.Text = totalPrice
         End If
     End Sub
+
 End Class

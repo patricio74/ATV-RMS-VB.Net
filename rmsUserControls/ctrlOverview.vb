@@ -21,8 +21,8 @@ Public Class ctrlOverview
             cbxMonth.Items.Add(DateAndTime.MonthName(month))
         Next
 
-        'refresh content every 5secs
-        Timer1.Interval = 5000
+        'refresh content every 3secs
+        Timer1.Interval = 3000
         Timer1.Start()
     End Sub
 
@@ -87,7 +87,7 @@ Public Class ctrlOverview
         lblRevYest.Text = "Total yesterday: ₱" & totalRevenueYesterday.ToString("#,##0")
 
 
-
+        'display reviews sa dgvReviews
         Dim colReviews As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("custReviews")
         ' Load the data from MongoDB and sort by reviewDate in descending order
         Dim sort = Builders(Of BsonDocument).Sort.Descending("reviewDate")
