@@ -24,6 +24,27 @@ Public Class ctrlOverview
         'refresh content every 3secs
         Timer1.Interval = 3000
         Timer1.Start()
+
+        loadReviews()
+    End Sub
+
+    Private Sub loadReviews()
+        'display reviews sa dgvReviews
+        Dim colReviews As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("custReviews")
+        ' Load the data from MongoDB and sort by reviewDate in descending order
+        Dim sort = Builders(Of BsonDocument).Sort.Descending("reviewDate")
+        Dim documents = colReviews.Find(New BsonDocument()).Sort(sort).ToList()
+
+        dgvReviews.Rows.Clear()
+        ' Populate the DataGridView with data from MongoDB
+        For Each doc In documents
+            dgvReviews.Rows.Add(doc("Rating").ToString(), doc("Name").ToString(), doc("Review").ToString())
+            dgvReviews.ClearSelection()
+        Next
+    End Sub
+
+    Private Sub btnRefreshReviews_Click(sender As Object, e As EventArgs) Handles btnRefreshReviews.Click
+        loadReviews()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -86,19 +107,6 @@ Public Class ctrlOverview
         lblRevMonth.Text = "₱" & totalRevenueThisMonth.ToString("#,##0")
         lblRevYest.Text = "Total yesterday: ₱" & totalRevenueYesterday.ToString("#,##0")
 
-
-        'display reviews sa dgvReviews
-        Dim colReviews As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("custReviews")
-        ' Load the data from MongoDB and sort by reviewDate in descending order
-        Dim sort = Builders(Of BsonDocument).Sort.Descending("reviewDate")
-        Dim documents = colReviews.Find(New BsonDocument()).Sort(sort).ToList()
-
-
-        dgvReviews.Rows.Clear()
-        ' Populate the DataGridView with data from MongoDB
-        For Each doc In documents
-            dgvReviews.Rows.Add(doc("Rating").ToString(), doc("Name").ToString(), doc("Review").ToString())
-        Next
     End Sub
 
     Private Sub MouseEnterHandler(sender As Object, e As EventArgs) Handles panelReserv.MouseEnter,
@@ -169,6 +177,21 @@ Public Class ctrlOverview
             Dim timeSlot As String = reservation.TimeSlot
             dgvReservations.Rows.Add(day, timeSlot)
         Next
+    End Sub
+
+    Private Sub dgvReviews_SelectionChanged(sender As Object, e As EventArgs) Handles dgvReviews.SelectionChanged
+        ' Check if a row is selected
+        If dgvReviews.SelectedRows.Count > 0 Then
+            ' Get the selected row
+            Dim selectedRow As DataGridViewRow = dgvReviews.SelectedRows(0)
+            ' Get the content of the third column ("Review") of the selected row
+            Dim reviewContent As String = selectedRow.Cells(2).Value.ToString()
+            ' Set the content of the RichTextBox (rtbxReview)
+            rtbxReview.Text = reviewContent
+        Else
+            ' Clear the RichTextBox if no row is selected
+            rtbxReview.Clear()
+        End If
     End Sub
 
 End Class

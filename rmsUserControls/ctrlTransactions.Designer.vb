@@ -737,7 +737,7 @@ Partial Class ctrlTransactions
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(278, 609)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Add"
+        Me.TabPage1.Text = "  Add"
         '
         'lblClearAdd
         '
@@ -782,7 +782,7 @@ Partial Class ctrlTransactions
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(278, 609)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Update"
+        Me.TabPage2.Text = "Update Reservation"
         '
         'lblClearRes
         '

@@ -42,8 +42,8 @@ Public Class ctrlCustomers
     End Sub
 
     'suppress enter key sound sa mga textboxes
-    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxUsername.KeyPress, tbxPassword.KeyPress, tbxPhone.KeyPress,
-    tbxEmail.KeyPress, tbxFirname.KeyPress, tbxMidname.KeyPress, tbxSurname.KeyPress, tbxStreet.KeyPress, tbxBarangay.KeyPress, tbxMuniCity.KeyPress, tbxProvince.KeyPress
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxUpdUsername.KeyPress, tbxUpdPassword.KeyPress, tbxUpdPhone.KeyPress,
+    tbxUpdEmail.KeyPress, tbxUpdFirname.KeyPress, tbxUpdMidname.KeyPress, tbxUpdSurname.KeyPress, tbxUpdStreet.KeyPress, tbxUpdBarangay.KeyPress, tbxUpdMuniCity.KeyPress, tbxUpdProvince.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
@@ -52,20 +52,20 @@ Public Class ctrlCustomers
     Private Sub clearCustForm()
         DataGridView1.ClearSelection()
         tbxCustID.Clear()
-        tbxUsername.Clear()
-        tbxPassword.Clear()
-        tbxFirname.Clear()
-        tbxMidname.Clear()
-        tbxSurname.Clear()
-        tbxPhone.Clear()
-        tbxEmail.Clear()
-        tbxStreet.Clear()
-        tbxBarangay.Clear()
-        tbxMuniCity.Clear()
-        tbxProvince.Clear()
-        cmbGender.SelectedIndex = -1
-        cmbCountry.SelectedIndex = -1
-        PictureBox1.BackgroundImage = Nothing
+        tbxUpdUsername.Clear()
+        tbxUpdPassword.Clear()
+        tbxUpdFirname.Clear()
+        tbxUpdMidname.Clear()
+        tbxUpdSurname.Clear()
+        tbxUpdPhone.Clear()
+        tbxUpdEmail.Clear()
+        tbxUpdStreet.Clear()
+        tbxUpdBarangay.Clear()
+        tbxUpdMuniCity.Clear()
+        tbxUpdProvince.Clear()
+        cbxUpdGender.SelectedIndex = -1
+        cbxUpdCountry.SelectedIndex = -1
+        'PictureBox1.BackgroundImage = Nothing
     End Sub
 
     Private Sub populateList()
@@ -94,7 +94,7 @@ Public Class ctrlCustomers
         }
             customers.Add(customer)
         Next
-        populateCustInfo(Customers)
+        populateCustInfo(customers)
     End Sub
     Private Sub populateCustInfo(customers As List(Of Customer))
         DataGridView1.Rows.Clear()
@@ -112,53 +112,28 @@ Public Class ctrlCustomers
 
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
         If DataGridView1.SelectedRows.Count > 0 Then
-            If Customers IsNot Nothing AndAlso DataGridView1.SelectedRows(0).Index < Customers.Count Then
-                Dim selectedCustomer = Customers(DataGridView1.SelectedRows(0).Index)
+            If customers IsNot Nothing AndAlso DataGridView1.SelectedRows(0).Index < customers.Count Then
+                Dim selectedCustomer = customers(DataGridView1.SelectedRows(0).Index)
                 tbxCustID.Text = selectedCustomer.custID
-                tbxFirname.Text = selectedCustomer.firstName
-                tbxMidname.Text = selectedCustomer.middleName
-                tbxSurname.Text = selectedCustomer.surname
-                tbxPhone.Text = selectedCustomer.phone
-                tbxEmail.Text = selectedCustomer.email
-                cmbGender.Text = selectedCustomer.gender
-                tbxUsername.Text = selectedCustomer.username
-                tbxPassword.Text = selectedCustomer.password
-                tbxStreet.Text = selectedCustomer.address.Street
-                tbxBarangay.Text = selectedCustomer.address.Barangay
-                tbxMuniCity.Text = selectedCustomer.address.MuniCity
-                tbxProvince.Text = selectedCustomer.address.Province
-                cmbCountry.Text = selectedCustomer.address.Country
+                tbxUpdFirname.Text = selectedCustomer.firstName
+                tbxUpdMidname.Text = selectedCustomer.middleName
+                tbxUpdSurname.Text = selectedCustomer.surname
+                tbxUpdPhone.Text = selectedCustomer.phone
+                tbxUpdEmail.Text = selectedCustomer.email
+                cbxUpdGender.Text = selectedCustomer.gender
+                tbxUpdUsername.Text = selectedCustomer.username
+                tbxUpdPassword.Text = selectedCustomer.password
+                tbxUpdStreet.Text = selectedCustomer.address.Street
+                tbxUpdBarangay.Text = selectedCustomer.address.Barangay
+                tbxUpdMuniCity.Text = selectedCustomer.address.MuniCity
+                tbxUpdProvince.Text = selectedCustomer.address.Province
+                cbxUpdCountry.Text = selectedCustomer.address.Country
             End If
         End If
     End Sub
 
-    Private Sub btnAddCust_Click(sender As Object, e As EventArgs) Handles btnAddCust.Click
-        Try
-            Dim document As New BsonDocument From {
-                {"FName", tbxFirname.Text},
-                {"MName", tbxMidname.Text},
-                {"Sname", tbxSurname.Text},
-                {"Gender", cmbGender.SelectedItem.ToString()},
-                {"Address", New BsonDocument From {
-                    {"Street", tbxStreet.Text},
-                    {"Barangay", tbxBarangay.Text},
-                    {"Province", tbxProvince.Text},
-                    {"Country", cmbCountry.SelectedItem.ToString()},
-                    {"MuniCity", tbxMuniCity.Text}
-                }},
-                {"Phone", tbxPhone.Text},
-                {"Email", tbxEmail.Text},
-                {"Username", tbxUsername.Text},
-                {"Password", tbxPassword.Text}
-            }
+    Private Sub btnUpdCust_Click(sender As Object, e As EventArgs) Handles btnUpdCust.Click
 
-            collection.InsertOne(document)
-
-            MessageBox.Show("Data inserted successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            refreshList()
-        Catch ex As Exception
-            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
     End Sub
 
     Private Sub MoveToArchive(custID As String)
@@ -187,7 +162,7 @@ Public Class ctrlCustomers
 
     Private Sub btnDelCust_Click(sender As Object, e As EventArgs) Handles btnDelCust.Click
         If DataGridView1.SelectedRows.Count > 0 Then
-            Dim selectedCustomer = Customers(DataGridView1.SelectedRows(0).Index)
+            Dim selectedCustomer = customers(DataGridView1.SelectedRows(0).Index)
             Dim custID As String = selectedCustomer.custID
             Dim result = MessageBox.Show("Are you sure you want to archive this data?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
@@ -202,8 +177,38 @@ Public Class ctrlCustomers
         End If
     End Sub
 
+    Private Sub btnAddCust_Click(sender As Object, e As EventArgs) Handles btnAddCust.Click
+        Try
+            Dim document As New BsonDocument From {
+                {"FName", tbxAddFirname.Text},
+                {"MName", tbxAddMidname.Text},
+                {"Sname", tbxAddSurname.Text},
+                {"Gender", cbxAddGender.SelectedItem.ToString()},
+                {"Address", New BsonDocument From {
+                    {"Street", tbxAddStreet.Text},
+                    {"Barangay", tbxAddBarangay.Text},
+                    {"Province", tbxAddProvince.Text},
+                    {"Country", cbxAddCountry.SelectedItem.ToString()},
+                    {"MuniCity", tbxAddMuniCity.Text}
+                }},
+                {"Phone", tbxAddPhone.Text},
+                {"Email", tbxAddEmail.Text},
+                {"Username", tbxAddUsername.Text},
+                {"Password", tbxAddPassword.Text}
+            }
+
+            collection.InsertOne(document)
+
+            MessageBox.Show("Data inserted successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            refreshList()
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClrCust.Click
         refreshList()
     End Sub
+
 
 End Class
