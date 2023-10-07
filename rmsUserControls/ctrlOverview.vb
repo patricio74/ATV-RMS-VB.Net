@@ -93,7 +93,7 @@ Public Class ctrlOverview
         Dim totalRevenueThisMonth As Decimal = 0
         For Each doc As BsonDocument In colRevenue.Find(New BsonDocument()).ToList()
             Dim reservDate As DateTime = DateTime.ParseExact(doc("reservDate").ToString(), "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
-            If reservDate >= firstDayOfMonth AndAlso reservDate <= lastDayOfMonth Then
+            If transacDate >= firstDayOfMonth AndAlso transacDate <= lastDayOfMonth Then
                 totalRevenueThisMonth += Convert.ToDecimal(doc("totalPrice").ToString())
             End If
         Next
