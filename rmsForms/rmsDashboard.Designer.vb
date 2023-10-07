@@ -37,13 +37,14 @@ Partial Class rmsDashboard
         Me.btnCustomers = New System.Windows.Forms.Button()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnOverview = New System.Windows.Forms.Button()
-        Me.btnReservations = New System.Windows.Forms.Button()
+        Me.btnTransac = New System.Windows.Forms.Button()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.admPanel = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.panelTop = New System.Windows.Forms.Panel()
         Me.btnMinimize = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.panelSide.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelTop.SuspendLayout()
@@ -90,7 +91,7 @@ Partial Class rmsDashboard
         Me.panelSide.Controls.Add(Me.btnCustomers)
         Me.panelSide.Controls.Add(Me.btnLogout)
         Me.panelSide.Controls.Add(Me.btnOverview)
-        Me.panelSide.Controls.Add(Me.btnReservations)
+        Me.panelSide.Controls.Add(Me.btnTransac)
         Me.panelSide.Controls.Add(Me.picLogo)
         Me.panelSide.Controls.Add(Me.labelTitle2)
         Me.panelSide.Controls.Add(Me.labelTItle)
@@ -112,7 +113,7 @@ Partial Class rmsDashboard
         Me.btnAdminSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnAdminSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnAdminSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdminSettings.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdminSettings.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdminSettings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnAdminSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAdminSettings.Location = New System.Drawing.Point(0, 659)
@@ -278,13 +279,13 @@ Partial Class rmsDashboard
         Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogout.FlatAppearance.BorderSize = 0
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogout.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLogout.Location = New System.Drawing.Point(73, 705)
         Me.btnLogout.Margin = New System.Windows.Forms.Padding(0)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(61, 24)
+        Me.btnLogout.Size = New System.Drawing.Size(61, 28)
         Me.btnLogout.TabIndex = 13
         Me.btnLogout.Text = "Logout"
         Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -312,36 +313,36 @@ Partial Class rmsDashboard
         Me.btnOverview.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnOverview.UseVisualStyleBackColor = True
         '
-        'btnReservations
+        'btnTransac
         '
-        Me.btnReservations.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.btnTransac.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnReservations.BackColor = System.Drawing.Color.Transparent
-        Me.btnReservations.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnReservations.FlatAppearance.BorderSize = 0
-        Me.btnReservations.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
-        Me.btnReservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReservations.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReservations.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnReservations.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReservations.Location = New System.Drawing.Point(0, 274)
-        Me.btnReservations.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnReservations.Name = "btnReservations"
-        Me.btnReservations.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnReservations.Size = New System.Drawing.Size(205, 43)
-        Me.btnReservations.TabIndex = 4
-        Me.btnReservations.Text = "Transactions"
-        Me.btnReservations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReservations.UseVisualStyleBackColor = True
+        Me.btnTransac.BackColor = System.Drawing.Color.Transparent
+        Me.btnTransac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTransac.FlatAppearance.BorderSize = 0
+        Me.btnTransac.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnTransac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTransac.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTransac.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnTransac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTransac.Location = New System.Drawing.Point(0, 274)
+        Me.btnTransac.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnTransac.Name = "btnTransac"
+        Me.btnTransac.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnTransac.Size = New System.Drawing.Size(205, 43)
+        Me.btnTransac.TabIndex = 4
+        Me.btnTransac.Text = "Transactions"
+        Me.btnTransac.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTransac.UseVisualStyleBackColor = True
         '
         'picLogo
         '
         Me.picLogo.BackColor = System.Drawing.Color.Transparent
-        Me.picLogo.BackgroundImage = CType(resources.GetObject("picLogo.BackgroundImage"), System.Drawing.Image)
+        Me.picLogo.BackgroundImage = Global.ATV_RMS.My.Resources.Resources.logo
         Me.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picLogo.Location = New System.Drawing.Point(65, 25)
+        Me.picLogo.Location = New System.Drawing.Point(43, 18)
         Me.picLogo.Name = "picLogo"
-        Me.picLogo.Size = New System.Drawing.Size(75, 75)
+        Me.picLogo.Size = New System.Drawing.Size(148, 86)
         Me.picLogo.TabIndex = 4
         Me.picLogo.TabStop = False
         '
@@ -439,7 +440,7 @@ Partial Class rmsDashboard
     Private WithEvents picLogo As PictureBox
     Private WithEvents labelTItle As Label
     Friend WithEvents panelSide As Panel
-    Friend WithEvents btnReservations As Button
+    Friend WithEvents btnTransac As Button
     Friend WithEvents btnOverview As Button
     Friend WithEvents btnNotif As Button
     Friend WithEvents btnCustomers As Button
@@ -454,5 +455,6 @@ Partial Class rmsDashboard
     Friend WithEvents Timer1 As Timer
     Private WithEvents panelTop As Panel
     Private WithEvents btnMinimize As Button
-    Private WithEvents btnClose As Button
+    Public WithEvents btnClose As Button
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
 End Class

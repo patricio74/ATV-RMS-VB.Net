@@ -3,7 +3,7 @@ Imports MongoDB.Driver
 
 Public Class ctrlCustomers
 
-    Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("Customer")
+    Dim collection As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("Customer")
     Private customers As List(Of Customer)
 
     Public Class Customer
@@ -28,10 +28,10 @@ Public Class ctrlCustomers
     End Class
 
     Private Sub ctrlCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connectToMongo()
         refreshList()
     End Sub
 
+    'palitan ng timer to
     Private Sub ctrlCustomers_Enter(sender As Object, e As EventArgs) Handles Me.Enter
         refreshList()
     End Sub
@@ -96,6 +96,7 @@ Public Class ctrlCustomers
         Next
         populateCustInfo(customers)
     End Sub
+
     Private Sub populateCustInfo(customers As List(Of Customer))
         DataGridView1.Rows.Clear()
         For Each cust As Customer In customers
@@ -103,8 +104,7 @@ Public Class ctrlCustomers
             row.CreateCells(
             DataGridView1, cust.custID,
             $"{cust.firstName} {cust.middleName} {cust.surname}", cust.phone,
-            $"{cust.address.Street}, {cust.address.Barangay}, {cust.address.MuniCity},
-            {cust.address.Province}, {cust.address.Country}", cust.email
+            $"{cust.address.Street}, {cust.address.Barangay}, {cust.address.MuniCity}, {cust.address.Province}, {cust.address.Country}", cust.email
             )
             DataGridView1.Rows.Add(row)
         Next
@@ -144,7 +144,7 @@ Public Class ctrlCustomers
                 Dim document = collection.Find(filter).FirstOrDefault()
 
                 If document IsNot Nothing Then
-                    Dim archiveCollection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("archiveCustomerInfo")
+                    Dim archiveCollection As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("archiveCustomerInfo")
                     archiveCollection.InsertOne(document)
                     collection.DeleteOne(filter)
                     MessageBox.Show("Data archived successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -210,5 +210,9 @@ Public Class ctrlCustomers
         refreshList()
     End Sub
 
-
+    Private Sub ctrlCustomers_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        If Me.Visible = False Then
+            closeMongoConn()
+        End If
+    End Sub
 End Class

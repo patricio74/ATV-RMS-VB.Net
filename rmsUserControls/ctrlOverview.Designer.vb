@@ -32,31 +32,34 @@ Partial Class ctrlOverview
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.btnViewReserv = New System.Windows.Forms.Button()
+        Me.btnResetDate = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btnRefreshReviews = New System.Windows.Forms.Button()
         Me.dgvReviews = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rtbxReview = New System.Windows.Forms.RichTextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.dgvActivities = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cbxYear = New System.Windows.Forms.ComboBox()
-        Me.cbxMonth = New System.Windows.Forms.ComboBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.dgvReservations = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.panelReserv = New System.Windows.Forms.Panel()
         Me.lblReservPending = New System.Windows.Forms.Label()
         Me.lblReservCanceled = New System.Windows.Forms.Label()
         Me.lblReserv = New System.Windows.Forms.Label()
         Me.panelATV = New System.Windows.Forms.Panel()
         Me.lblAtv = New System.Windows.Forms.Label()
-        Me.lblAtvMainten = New System.Windows.Forms.Label()
         Me.lblAtvInUse = New System.Windows.Forms.Label()
         Me.lblAtvAvail = New System.Windows.Forms.Label()
+        Me.lblAtvMainten = New System.Windows.Forms.Label()
         Me.panelCustomer = New System.Windows.Forms.Panel()
         Me.lblCustYest = New System.Windows.Forms.Label()
         Me.lblCust = New System.Windows.Forms.Label()
@@ -66,8 +69,6 @@ Partial Class ctrlOverview
         Me.lblRev = New System.Windows.Forms.Label()
         Me.lblRevMonth = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.rtbxReview = New System.Windows.Forms.RichTextBox()
-        Me.btnRefreshReviews = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgvReviews, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
@@ -80,36 +81,51 @@ Partial Class ctrlOverview
         Me.panelRevenue.SuspendLayout()
         Me.SuspendLayout()
         '
-        'btnViewReserv
+        'btnResetDate
         '
-        Me.btnViewReserv.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnViewReserv.BackColor = System.Drawing.Color.Gainsboro
-        Me.btnViewReserv.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnViewReserv.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnViewReserv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnViewReserv.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViewReserv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnViewReserv.Location = New System.Drawing.Point(338, 22)
-        Me.btnViewReserv.Name = "btnViewReserv"
-        Me.btnViewReserv.Size = New System.Drawing.Size(57, 26)
-        Me.btnViewReserv.TabIndex = 23
-        Me.btnViewReserv.Text = "View"
-        Me.btnViewReserv.UseVisualStyleBackColor = False
+        Me.btnResetDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnResetDate.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnResetDate.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnResetDate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnResetDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnResetDate.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnResetDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnResetDate.Location = New System.Drawing.Point(397, 19)
+        Me.btnResetDate.Name = "btnResetDate"
+        Me.btnResetDate.Size = New System.Drawing.Size(57, 26)
+        Me.btnResetDate.TabIndex = 23
+        Me.btnResetDate.Text = "Reset"
+        Me.btnResetDate.UseVisualStyleBackColor = False
         '
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.GroupBox3.Controls.Add(Me.rtbxReview)
         Me.GroupBox3.Controls.Add(Me.btnRefreshReviews)
         Me.GroupBox3.Controls.Add(Me.dgvReviews)
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.GroupBox3.Location = New System.Drawing.Point(43, 172)
+        Me.GroupBox3.Location = New System.Drawing.Point(43, 181)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.GroupBox3.Size = New System.Drawing.Size(630, 438)
+        Me.GroupBox3.Size = New System.Drawing.Size(579, 398)
         Me.GroupBox3.TabIndex = 27
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Customer Reviews"
+        '
+        'btnRefreshReviews
+        '
+        Me.btnRefreshReviews.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRefreshReviews.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnRefreshReviews.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRefreshReviews.FlatAppearance.BorderSize = 0
+        Me.btnRefreshReviews.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRefreshReviews.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRefreshReviews.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnRefreshReviews.Location = New System.Drawing.Point(505, 26)
+        Me.btnRefreshReviews.Name = "btnRefreshReviews"
+        Me.btnRefreshReviews.Size = New System.Drawing.Size(61, 28)
+        Me.btnRefreshReviews.TabIndex = 44
+        Me.btnRefreshReviews.Text = "refresh"
+        Me.btnRefreshReviews.UseVisualStyleBackColor = False
         '
         'dgvReviews
         '
@@ -129,11 +145,11 @@ Partial Class ctrlOverview
         Me.dgvReviews.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReviews.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
-        Me.dgvReviews.Dock = System.Windows.Forms.DockStyle.Top
+        Me.dgvReviews.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvReviews.EnableHeadersVisualStyles = False
         Me.dgvReviews.GridColor = System.Drawing.Color.DarkGray
         Me.dgvReviews.Location = New System.Drawing.Point(0, 23)
-        Me.dgvReviews.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Me.dgvReviews.Margin = New System.Windows.Forms.Padding(0)
         Me.dgvReviews.MultiSelect = False
         Me.dgvReviews.Name = "dgvReviews"
         Me.dgvReviews.ReadOnly = True
@@ -155,7 +171,7 @@ Partial Class ctrlOverview
         Me.dgvReviews.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvReviews.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReviews.ShowEditingIcon = False
-        Me.dgvReviews.Size = New System.Drawing.Size(630, 344)
+        Me.dgvReviews.Size = New System.Drawing.Size(579, 375)
         Me.dgvReviews.TabIndex = 35
         '
         'DataGridViewTextBoxColumn1
@@ -170,7 +186,7 @@ Partial Class ctrlOverview
         Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 145
+        Me.DataGridViewTextBoxColumn2.Width = 200
         '
         'DataGridViewTextBoxColumn3
         '
@@ -179,16 +195,31 @@ Partial Class ctrlOverview
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
+        'rtbxReview
+        '
+        Me.rtbxReview.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.rtbxReview.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rtbxReview.Cursor = System.Windows.Forms.Cursors.No
+        Me.rtbxReview.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rtbxReview.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.rtbxReview.Location = New System.Drawing.Point(43, 601)
+        Me.rtbxReview.Margin = New System.Windows.Forms.Padding(0)
+        Me.rtbxReview.Name = "rtbxReview"
+        Me.rtbxReview.ReadOnly = True
+        Me.rtbxReview.Size = New System.Drawing.Size(579, 78)
+        Me.rtbxReview.TabIndex = 43
+        Me.rtbxReview.Text = "Reviews from selected row will be shown here."
+        '
         'GroupBox6
         '
         Me.GroupBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.GroupBox6.Controls.Add(Me.dgvActivities)
         Me.GroupBox6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.GroupBox6.Location = New System.Drawing.Point(43, 628)
+        Me.GroupBox6.Location = New System.Drawing.Point(43, 682)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.GroupBox6.Size = New System.Drawing.Size(630, 73)
+        Me.GroupBox6.Size = New System.Drawing.Size(579, 35)
         Me.GroupBox6.TabIndex = 28
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Recent Activities"
@@ -237,7 +268,7 @@ Partial Class ctrlOverview
         Me.dgvActivities.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvActivities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvActivities.ShowEditingIcon = False
-        Me.dgvActivities.Size = New System.Drawing.Size(630, 50)
+        Me.dgvActivities.Size = New System.Drawing.Size(579, 12)
         Me.dgvActivities.TabIndex = 36
         '
         'DataGridViewTextBoxColumn4
@@ -257,42 +288,25 @@ Partial Class ctrlOverview
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.cbxYear)
-        Me.GroupBox1.Controls.Add(Me.cbxMonth)
-        Me.GroupBox1.Controls.Add(Me.btnViewReserv)
+        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.btnResetDate)
         Me.GroupBox1.Controls.Add(Me.dgvReservations)
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(697, 172)
+        Me.GroupBox1.Location = New System.Drawing.Point(640, 181)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.GroupBox1.Size = New System.Drawing.Size(417, 529)
+        Me.GroupBox1.Size = New System.Drawing.Size(474, 498)
         Me.GroupBox1.TabIndex = 36
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Reservations Calendar"
         '
-        'cbxYear
+        'DateTimePicker1
         '
-        Me.cbxYear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cbxYear.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.cbxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxYear.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxYear.FormattingEnabled = True
-        Me.cbxYear.Location = New System.Drawing.Point(265, 22)
-        Me.cbxYear.Name = "cbxYear"
-        Me.cbxYear.Size = New System.Drawing.Size(67, 26)
-        Me.cbxYear.TabIndex = 37
-        '
-        'cbxMonth
-        '
-        Me.cbxMonth.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cbxMonth.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.cbxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxMonth.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxMonth.FormattingEnabled = True
-        Me.cbxMonth.Location = New System.Drawing.Point(146, 22)
-        Me.cbxMonth.Name = "cbxMonth"
-        Me.cbxMonth.Size = New System.Drawing.Size(113, 26)
-        Me.cbxMonth.TabIndex = 36
+        Me.DateTimePicker1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(140, 20)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(251, 25)
+        Me.DateTimePicker1.TabIndex = 38
         '
         'dgvReservations
         '
@@ -311,11 +325,11 @@ Partial Class ctrlOverview
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvReservations.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvReservations.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
+        Me.dgvReservations.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
         Me.dgvReservations.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.dgvReservations.EnableHeadersVisualStyles = False
         Me.dgvReservations.GridColor = System.Drawing.Color.DarkGray
-        Me.dgvReservations.Location = New System.Drawing.Point(0, 55)
+        Me.dgvReservations.Location = New System.Drawing.Point(0, 54)
         Me.dgvReservations.MultiSelect = False
         Me.dgvReservations.Name = "dgvReservations"
         Me.dgvReservations.ReadOnly = True
@@ -337,22 +351,36 @@ Partial Class ctrlOverview
         Me.dgvReservations.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReservations.ShowEditingIcon = False
-        Me.dgvReservations.Size = New System.Drawing.Size(417, 474)
+        Me.dgvReservations.Size = New System.Drawing.Size(474, 444)
         Me.dgvReservations.TabIndex = 35
         '
-        'DataGridViewTextBoxColumn7
+        'Column1
         '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Day"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Width = 75
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "Customer Name"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn8
+        'Column2
         '
-        Me.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Reservations"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "Tour Name"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Time Slot"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 95
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "No. of Person"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 75
         '
         'panelReserv
         '
@@ -361,7 +389,7 @@ Partial Class ctrlOverview
         Me.panelReserv.Controls.Add(Me.lblReservCanceled)
         Me.panelReserv.Controls.Add(Me.lblReserv)
         Me.panelReserv.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelReserv.Location = New System.Drawing.Point(30, 28)
+        Me.panelReserv.Location = New System.Drawing.Point(30, 32)
         Me.panelReserv.Name = "panelReserv"
         Me.panelReserv.Size = New System.Drawing.Size(252, 124)
         Me.panelReserv.TabIndex = 38
@@ -412,11 +440,10 @@ Partial Class ctrlOverview
         '
         Me.panelATV.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.panelATV.Controls.Add(Me.lblAtv)
-        Me.panelATV.Controls.Add(Me.lblAtvMainten)
         Me.panelATV.Controls.Add(Me.lblAtvInUse)
         Me.panelATV.Controls.Add(Me.lblAtvAvail)
         Me.panelATV.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelATV.Location = New System.Drawing.Point(296, 28)
+        Me.panelATV.Location = New System.Drawing.Point(296, 32)
         Me.panelATV.Name = "panelATV"
         Me.panelATV.Size = New System.Drawing.Size(266, 124)
         Me.panelATV.TabIndex = 39
@@ -435,21 +462,6 @@ Partial Class ctrlOverview
         Me.lblAtv.Text = "Available ATV"
         Me.lblAtv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblAtvMainten
-        '
-        Me.lblAtvMainten.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAtvMainten.BackColor = System.Drawing.Color.Transparent
-        Me.lblAtvMainten.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAtvMainten.ForeColor = System.Drawing.Color.LightGray
-        Me.lblAtvMainten.Location = New System.Drawing.Point(0, 102)
-        Me.lblAtvMainten.Name = "lblAtvMainten"
-        Me.lblAtvMainten.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.lblAtvMainten.Size = New System.Drawing.Size(266, 18)
-        Me.lblAtvMainten.TabIndex = 40
-        Me.lblAtvMainten.Text = "Under maintenance:  0"
-        Me.lblAtvMainten.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'lblAtvInUse
         '
         Me.lblAtvInUse.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -457,7 +469,7 @@ Partial Class ctrlOverview
         Me.lblAtvInUse.BackColor = System.Drawing.Color.Transparent
         Me.lblAtvInUse.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAtvInUse.ForeColor = System.Drawing.Color.LightGray
-        Me.lblAtvInUse.Location = New System.Drawing.Point(0, 76)
+        Me.lblAtvInUse.Location = New System.Drawing.Point(0, 91)
         Me.lblAtvInUse.Name = "lblAtvInUse"
         Me.lblAtvInUse.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.lblAtvInUse.Size = New System.Drawing.Size(266, 23)
@@ -478,6 +490,22 @@ Partial Class ctrlOverview
         Me.lblAtvAvail.Text = "0"
         Me.lblAtvAvail.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
+        'lblAtvMainten
+        '
+        Me.lblAtvMainten.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblAtvMainten.BackColor = System.Drawing.Color.Transparent
+        Me.lblAtvMainten.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAtvMainten.ForeColor = System.Drawing.Color.LightGray
+        Me.lblAtvMainten.Location = New System.Drawing.Point(296, 159)
+        Me.lblAtvMainten.Name = "lblAtvMainten"
+        Me.lblAtvMainten.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.lblAtvMainten.Size = New System.Drawing.Size(266, 18)
+        Me.lblAtvMainten.TabIndex = 40
+        Me.lblAtvMainten.Text = "Under maintenance:  0"
+        Me.lblAtvMainten.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblAtvMainten.Visible = False
+        '
         'panelCustomer
         '
         Me.panelCustomer.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -485,7 +513,7 @@ Partial Class ctrlOverview
         Me.panelCustomer.Controls.Add(Me.lblCust)
         Me.panelCustomer.Controls.Add(Me.lblCustMonth)
         Me.panelCustomer.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelCustomer.Location = New System.Drawing.Point(576, 28)
+        Me.panelCustomer.Location = New System.Drawing.Point(576, 32)
         Me.panelCustomer.Name = "panelCustomer"
         Me.panelCustomer.Size = New System.Drawing.Size(264, 124)
         Me.panelCustomer.TabIndex = 41
@@ -537,7 +565,7 @@ Partial Class ctrlOverview
         Me.panelRevenue.Controls.Add(Me.lblRev)
         Me.panelRevenue.Controls.Add(Me.lblRevMonth)
         Me.panelRevenue.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelRevenue.Location = New System.Drawing.Point(854, 28)
+        Me.panelRevenue.Location = New System.Drawing.Point(854, 32)
         Me.panelRevenue.Name = "panelRevenue"
         Me.panelRevenue.Size = New System.Drawing.Size(274, 124)
         Me.panelRevenue.TabIndex = 42
@@ -587,43 +615,13 @@ Partial Class ctrlOverview
         'Timer1
         '
         '
-        'rtbxReview
-        '
-        Me.rtbxReview.BackColor = System.Drawing.Color.LightGray
-        Me.rtbxReview.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.rtbxReview.Cursor = System.Windows.Forms.Cursors.No
-        Me.rtbxReview.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtbxReview.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rtbxReview.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.rtbxReview.Location = New System.Drawing.Point(0, 367)
-        Me.rtbxReview.Margin = New System.Windows.Forms.Padding(0)
-        Me.rtbxReview.Name = "rtbxReview"
-        Me.rtbxReview.ReadOnly = True
-        Me.rtbxReview.Size = New System.Drawing.Size(630, 71)
-        Me.rtbxReview.TabIndex = 43
-        Me.rtbxReview.Text = "Reviews from selected row will be shown here."
-        '
-        'btnRefreshReviews
-        '
-        Me.btnRefreshReviews.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRefreshReviews.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnRefreshReviews.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRefreshReviews.FlatAppearance.BorderSize = 0
-        Me.btnRefreshReviews.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRefreshReviews.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefreshReviews.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnRefreshReviews.Location = New System.Drawing.Point(556, 26)
-        Me.btnRefreshReviews.Name = "btnRefreshReviews"
-        Me.btnRefreshReviews.Size = New System.Drawing.Size(61, 28)
-        Me.btnRefreshReviews.TabIndex = 44
-        Me.btnRefreshReviews.Text = "refresh"
-        Me.btnRefreshReviews.UseVisualStyleBackColor = False
-        '
         'ctrlOverview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Controls.Add(Me.rtbxReview)
+        Me.Controls.Add(Me.lblAtvMainten)
         Me.Controls.Add(Me.panelRevenue)
         Me.Controls.Add(Me.panelCustomer)
         Me.Controls.Add(Me.panelATV)
@@ -649,14 +647,12 @@ Partial Class ctrlOverview
 
     End Sub
 
-    Friend WithEvents btnViewReserv As Button
+    Friend WithEvents btnResetDate As Button
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents dgvReviews As DataGridView
     Friend WithEvents dgvActivities As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents cbxYear As ComboBox
-    Friend WithEvents cbxMonth As ComboBox
     Friend WithEvents panelReserv As Panel
     Friend WithEvents lblReserv As Label
     Friend WithEvents panelATV As Panel
@@ -678,11 +674,14 @@ Partial Class ctrlOverview
     Public WithEvents lblRevMonth As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents dgvReservations As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents rtbxReview As RichTextBox
+    Friend WithEvents btnRefreshReviews As Button
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents rtbxReview As RichTextBox
-    Friend WithEvents btnRefreshReviews As Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class

@@ -1,16 +1,42 @@
-﻿Public Class rmsDashboard
-    Public Property labelName As String
+﻿Imports MongoDB.Driver
 
+Public Class rmsDashboard
     'user control reference
-    Dim reserv As New ctrlTransactions
+    Dim overview As New ctrlOverview
+    Dim transac As New ctrlTransactions
+    Dim trails As New ctrlTrails
+    Dim customer As New ctrlCustomers
+    Dim notifs As New ctrlNotif
     Dim inve As New ctrlInventory
     Dim guide As New ctrlTourGuides
-    Dim customer As New ctrlCustomers
-    Dim overview As New ctrlOverview
     Dim rules As New ctrlRules
-    Dim notifs As New ctrlNotif
-    Dim transac As New ctrlTrails
     Dim settings As New ctrlAdminSettings
+
+    Private Sub resetButtonColor()
+        Dim defaultForeColor As Color = ColorTranslator.FromHtml("#f5f5f5")
+        Dim defaultBackColor As Color = ColorTranslator.FromHtml("#1e272e")
+        Dim buttons As Button() = {
+            btnOverview,
+            btnTransac,
+            btnTrails,
+            btnCustomers,
+            btnNotif,
+            btnInventory,
+            btnTGuides,
+            btnRules
+        }
+        'rmsDashboard.btnAdminSettings
+        For Each btn In buttons
+            btn.ForeColor = defaultForeColor
+            btn.BackColor = defaultBackColor
+        Next
+    End Sub
+
+    Private Sub activeButtonColor(sender As Object, e As EventArgs)
+        Dim activeBtn As Button = CType(sender, Button)
+        activeBtn.ForeColor = ColorTranslator.FromHtml("#151515")
+        activeBtn.BackColor = ColorTranslator.FromHtml("#ffc048")
+    End Sub
 
     Private Sub centerLoc()
         Dim screenWidth As Integer = Screen.PrimaryScreen.WorkingArea.Width
@@ -24,31 +50,36 @@
 
     Private Sub rmsDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
         centerLoc()
-        connectToMongo()
         initializeDraggablePanel(panelTop)
-        btnAdminSettings.Text = labelName
+        btnAdminSettings.Text = rmsSharedVar.labelName
         'load panelz
-        admPanel.Controls.Add(reserv)
+        admPanel.Controls.Add(overview)
+        admPanel.Controls.Add(transac)
+        admPanel.Controls.Add(trails)
+        admPanel.Controls.Add(customer)
+        admPanel.Controls.Add(notifs)
         admPanel.Controls.Add(inve)
         admPanel.Controls.Add(guide)
-        admPanel.Controls.Add(customer)
-        admPanel.Controls.Add(overview)
         admPanel.Controls.Add(rules)
-        admPanel.Controls.Add(notifs)
-        admPanel.Controls.Add(transac)
         admPanel.Controls.Add(settings)
 
         resetButtonColor()
         btnOverview.PerformClick()
-        overview.BringToFront()
+        hidePanels()
+        overview.Visible = True
 
         Timer1.Interval = 1000
         Timer1.Start()
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Me.Close()
-        rmsLogin.Close()
+        Dim response As DialogResult = MessageBox.Show(" Are you sure you want to close ATV-RMS app?", "Confirmation", MessageBoxButtons.YesNo)
+        If response = DialogResult.Yes Then
+            rmsSharedVar.admnID = Nothing
+            rmsSharedVar.labelName = Nothing
+            Me.Close()
+            rmsLogin.Close()
+        End If
     End Sub
 
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
@@ -59,61 +90,83 @@
         lblDateTime.Text = DateTime.Now.ToString("MMM d, yyyy h:mm:ss tt")
     End Sub
 
-    Private Sub btnReservations_Click(sender As Object, e As EventArgs) Handles btnReservations.Click
-        resetButtonColor()
-        activeButtonColor(sender, e)
-        reserv.BringToFront()
+    Private Sub hidePanels()
+        overview.Visible = False
+        transac.Visible = False
+        trails.Visible = False
+        customer.Visible = False
+        notifs.Visible = False
+        inve.Visible = False
+        guide.Visible = False
+        rules.Visible = False
     End Sub
 
-    Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
-        resetButtonColor()
-        activeButtonColor(sender, e)
-        inve.BringToFront()
+    Private Sub btnClick(sender As Object, e As EventArgs) Handles btnOverview.Click, btnTransac.Click, btnTrails.Click,
+        btnCustomers.Click, btnNotif.Click, btnInventory.Click, btnTGuides.Click, btnRules.Click, btnAdminSettings.Click, btnLogout.Click
+        If sender Is btnOverview Then
+            resetButtonColor()
+            activeButtonColor(sender, e)
+            hidePanels()
+            overview.Visible = True
+        ElseIf sender Is btnTransac Then
+            resetButtonColor()
+            activeButtonColor(sender, e)
+            hidePanels()
+            transac.Visible = True
+        End If
     End Sub
 
-    Private Sub btnTGuides_Click(sender As Object, e As EventArgs) Handles btnTGuides.Click
+    Private Sub btnTrails_Click(sender As Object, e As EventArgs) Handles btnTrails.Click
         resetButtonColor()
         activeButtonColor(sender, e)
-        guide.BringToFront()
+        hidePanels()
+        trails.Visible = True
     End Sub
 
     Private Sub btnCustomers_Click(sender As Object, e As EventArgs) Handles btnCustomers.Click
         resetButtonColor()
         activeButtonColor(sender, e)
-        customer.BringToFront()
+        hidePanels()
+        customer.Visible = True
     End Sub
 
     Private Sub btnNotif_Click(sender As Object, e As EventArgs) Handles btnNotif.Click
         resetButtonColor()
         activeButtonColor(sender, e)
-        notifs.BringToFront()
+        hidePanels()
+        notifs.Visible = True
     End Sub
 
-    Private Sub btnTransacHist_Click(sender As Object, e As EventArgs) Handles btnOverview.Click
+    Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
         resetButtonColor()
         activeButtonColor(sender, e)
-        overview.BringToFront()
+        hidePanels()
+        inve.Visible = True
+    End Sub
+
+    Private Sub btnTGuides_Click(sender As Object, e As EventArgs) Handles btnTGuides.Click
+        resetButtonColor()
+        activeButtonColor(sender, e)
+        hidePanels()
+        guide.Visible = True
     End Sub
 
     Private Sub btnRules_Click(sender As Object, e As EventArgs) Handles btnRules.Click
         resetButtonColor()
         activeButtonColor(sender, e)
-        rules.BringToFront()
-    End Sub
-
-    Private Sub btnTransaction_Click(sender As Object, e As EventArgs) Handles btnTrails.Click
-        resetButtonColor()
-        activeButtonColor(sender, e)
-        transac.BringToFront()
+        hidePanels()
+        rules.Visible = True
     End Sub
 
     Private Sub btnAdminSettings_Click(sender As Object, e As EventArgs) Handles btnAdminSettings.Click
         resetButtonColor()
-        'activeButtonColor(sender, e)
-        settings.BringToFront()
+        hidePanels()
+        settings.Visible = True
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        rmsSharedVar.admnID = Nothing
+        rmsSharedVar.labelName = Nothing
         Me.Close()
         resetButtonColor()
         loadRMSLogin()
@@ -121,5 +174,9 @@
         rmsLogin.tboxUsername.Focus()
     End Sub
 
-
+    Private Sub rmsDashboard_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        rmsSharedVar.admnID = Nothing
+        rmsSharedVar.labelName = Nothing
+        closeMongoConn()
+    End Sub
 End Class

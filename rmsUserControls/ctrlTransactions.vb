@@ -1,5 +1,4 @@
-﻿Imports System.ComponentModel
-Imports System.Globalization
+﻿Imports System.Globalization
 Imports ATV_RMS.ctrlCustomers
 Imports MongoDB.Bson
 Imports MongoDB.Driver
@@ -9,8 +8,13 @@ Public Class ctrlTransactions
     Dim numberOfPerson As Double = 0
     Dim totalPrice As Double = 0
 
-    Dim collection As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("Reservation")
+    Dim colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("custReservations")
     Private reserv As List(Of Reservations)
+    Dim colTransac As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("logTransactions")
+    Private transac As List(Of Transactions)
+
+    Dim pendingReserv As Long
+    Dim canceledReserv As Long
 
     Public Class Reservations
         Public Property resID As String
@@ -25,60 +29,121 @@ Public Class ctrlTransactions
         Public Property resStatus As String
     End Class
 
-    Private Sub ctrlReservations_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connectToMongo()
+    Public Class Transactions
+        Public Property custID As String
+        Public Property FName As String
+        Public Property MName As String
+        Public Property Sname As String
+        Public Property tourName As String
+        Public Property tourPrice As String
+        Public Property reservDate As String
+        Public Property timeSlot As String
+        Public Property status As String
+        Public Property totalPerson As String
+        Public Property totalPrice As String
+        Public Property transacDate As String
+    End Class
+
+    Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'refresh content every 3secs
+        Timer1.Interval = 3000
+        Timer1.Start()
+
+        reloadTrailList()
+    End Sub
+
+    Private Function cbxToursList()
+        Dim col As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("rmsAtvTours")
+        Dim filter As New BsonDocument()
+        Dim tourData As List(Of BsonDocument) = col.Find(filter).ToList()
+        Return tourData
+    End Function
+
+    'call mo rin to kada mag add/update sa form
+    Private Sub reloadTrailList()
+        'clear combobox then repopulate list
+        cbxReservTour.Items.Clear()
+        cbxReservTour.SelectedIndex = -1
+        cbxAddTour.Items.Clear()
+        cbxAddTour.SelectedIndex = -1
+        Dim tourData As List(Of BsonDocument) = cbxToursList()
+        For Each tourDocument As BsonDocument In tourData
+            cbxReservTour.Items.Add(tourDocument("nameOfTour").ToString())
+            cbxAddTour.Items.Add(tourDocument("nameOfTour").ToString())
+        Next
+    End Sub
+
+    Private Sub ctrlTransactions_Enter(sender As Object, e As EventArgs) Handles Me.Enter
+        reloadTrailList()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         refreshRes()
     End Sub
 
-    Private Sub ctrlReservations_Enter(sender As Object, e As EventArgs) Handles Me.Enter
-        refreshRes() 'delete, palitan ng timer
-    End Sub
-
     Private Sub refreshRes()
-        populateList()
-        clearTransactionForm()
-        'reserevation label count
-        Dim colReserv As IMongoCollection(Of BsonDocument) = connectToMongo.GetCollection(Of BsonDocument)("custReservations")
+        'pang update ng label count
         Dim pendingResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Pending")
         Dim canceledResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Canceled")
-        Dim pendingReserv As Long = colReserv.CountDocuments(pendingResFilter)
-        Dim canceledReserv As Long = colReserv.CountDocuments(canceledResFilter)
-        lblResCount.Text = "Reservation count: " + pendingReserv.ToString + " Pending, " + canceledReserv.ToString + " Canceled"
+        pendingReserv = colReserv.CountDocuments(pendingResFilter)
+        canceledReserv = colReserv.CountDocuments(canceledResFilter)
 
-        'combobox list
-        Dim tourData As List(Of BsonDocument) = cbxToursList()
-        For Each tourDocument As BsonDocument In tourData
-            cboxReservTour.Items.Add(tourDocument("nameOfTour").ToString())
-        Next
+        'gawan ng counter para sa transactions today
+        'count docs where transacDate=date.now
+
+        'update counter
+        lblReservCounter.Text = "Reservation count: " + pendingReserv.ToString + " Pending, " + canceledReserv.ToString + " Canceled"
+
     End Sub
 
     'suppress enter key sound sa mga textboxes
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxReservID.KeyPress, tbxReservFName.KeyPress, tbxReservMName.KeyPress,
-        tbxReservSName.KeyPress, tbxReservPerson.KeyPress, tbxReservTotal.KeyPress
+        tbxReservSName.KeyPress, tbxReservPerson.KeyPress, tbxReservTotal.KeyPress, tbxAddFName.KeyPress, tbxAddMName.KeyPress, tbxAddSname.KeyPress, tbxAddPerson.KeyPress, tbxAddTotal.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub clearTransactionForm()
-        cboxReservFilter.SelectedIndex = -1
+    Private Sub clearReservTab()
+        cbxReservFilter.SelectedIndex = -1
         DataGridView1.ClearSelection()
-
-        tbxAddTotal.Clear()
-
         tbxReservID.Clear()
         tbxReservFName.Clear()
         tbxReservMName.Clear()
         tbxReservSName.Clear()
-        cboxReservTour.SelectedIndex = -1
+        cbxReservTour.SelectedIndex = -1
         tbxReservPerson.Clear()
         dateTimeReserv.Value = DateTime.Now
-        cboxReservStatus.SelectedIndex = -1
-        cboxReservTimeSlot.SelectedIndex = -1
+        cbxReservStatus.SelectedIndex = -1
+        cbxReservTimeSlot.SelectedIndex = -1
         tbxReservTotal.Clear()
         tourPrice = 0
         numberOfPerson = 0
         totalPrice = 0
+    End Sub
+
+    Private Sub clearTransacTab()
+        cbxReservFilter.SelectedIndex = -1
+        DataGridView1.ClearSelection()
+        tbxAddFName.Clear()
+        tbxAddMName.Clear()
+        tbxAddSname.Clear()
+        cbxAddTour.SelectedIndex = -1
+        tbxAddPerson.Clear()
+        dateTimeAdd.Value = DateTime.Now
+        cbxAddTimeSlot.SelectedIndex = -1
+        tbxAddTotal.Clear()
+        tourPrice = 0
+        numberOfPerson = 0
+        totalPrice = 0
+    End Sub
+
+    Private Sub clearForm(sender As Object, e As EventArgs) Handles lblClearAdd.Click, lblClearRes.Click
+        If sender Is lblClearAdd Then
+            clearTransacTab()
+        ElseIf sender Is lblClearRes Then
+            clearReservTab()
+        End If
     End Sub
 
     Private Sub populateResInfo(reserv As List(Of Reservations))
@@ -94,19 +159,19 @@ Public Class ctrlTransactions
         Next
     End Sub
 
-    Private Sub populateList()
-        Dim documents As List(Of BsonDocument) = collection.Find(New BsonDocument()).ToList()
+    Private Sub populateReservList()
+        Dim documents As List(Of BsonDocument) = colReserv.Find(New BsonDocument()).ToList()
         reserv = New List(Of Reservations)()
 
         For Each document As BsonDocument In documents
+            '.resID = document("resID").ToString,
             Dim res As New Reservations() With {
-            .resID = document("resID").ToString,
             .FName = document("FName").ToString,
             .MName = document("MName").ToString,
             .SName = document("Sname").ToString,
             .tour = document("tourName").ToString,
             .resPrice = document("tourPrice").ToString,
-            .resDate = document("date").ToString,
+            .resDate = document("reservDate").ToString,
             .totPerson = document("totalPerson").ToString,
             .resTime = document("timeSlot").ToString,
             .resStatus = document("status").ToString
@@ -127,10 +192,10 @@ Public Class ctrlTransactions
                     tbxReservFName.Text = selectedReserv.FName
                     tbxReservMName.Text = selectedReserv.MName
                     tbxReservSName.Text = selectedReserv.SName
-                    cboxReservTour.Text = selectedReserv.tour
+                    cbxReservTour.Text = selectedReserv.tour
                     tbxReservPerson.Text = selectedReserv.totPerson
-                    cboxReservTimeSlot.Text = selectedReserv.resTime
-                    cboxReservStatus.Text = selectedReserv.resStatus
+                    cbxReservTimeSlot.Text = selectedReserv.resTime
+                    cbxReservStatus.Text = selectedReserv.resStatus
                     tbxReservTotal.Text = "₱" + selectedReserv.resPrice
                 End If
             End If
@@ -140,19 +205,47 @@ Public Class ctrlTransactions
     Private Sub btnAddRes_Click(sender As Object, e As EventArgs) Handles btnAddRes.Click
         'TODO:
         'add message box for confirmation before proceeding
+        'add code pangstop sa pag-insert ng blank form
+        Try
+            Dim document As New BsonDocument From {
+                {"FName", tbxAddFName.Text},
+                {"MName", tbxAddMName.Text},
+                {"Sname", tbxAddSname.Text},
+                {"tourName", cbxAddTour.SelectedItem.ToString()},
+                {"tourPrice", tbxAddTotal.Text},
+                {"totalPerson", tbxAddPerson.Text},
+                {"totalPrice", tbxAddTotal.Text},
+                {"reservDate", dateTimeAdd.Value.ToString("yyyy-MM-ddTHH:mm:ssZ")},
+                {"transacDate", dateTimeAdd.Value.ToString("yyyy-MM-ddTHH:mm:ssZ")},
+                {"timeSlot", cbxAddTimeSlot.SelectedItem.ToString}
+            }
+
+            colTransac.InsertOne(document)
+            'replace msgbox with label
+            MessageBox.Show("Transaction successful.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            refreshRes()
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnUpdRes_Click(sender As Object, e As EventArgs) Handles btnUpdRes.Click
+        'TODO:
+        'add message box for confirmation before proceeding
+        'update reserv where id = selectedrow id
         Try
             Dim document As New BsonDocument From {
                 {"FName", tbxReservFName.Text},
                 {"MName", tbxReservMName.Text},
                 {"Sname", tbxReservSName.Text},
-                {"tourName", cboxReservTour.SelectedItem.ToString()},
+                {"tourName", cbxReservTour.SelectedItem.ToString()},
                 {"tourPrice", tbxReservTotal.Text},
-                {"date", dateTimeReserv.Value.ToString},
-                {"timeSlot", cboxReservTimeSlot.SelectedItem.ToString},
-                {"status", cboxReservStatus.SelectedItem.ToString}
+                {"reservDate", dateTimeReserv.Value.ToString("yyyy-MM-ddTHH:mm:ssZ")},
+                {"timeSlot", cbxReservTimeSlot.SelectedItem.ToString},
+                {"status", cbxReservStatus.SelectedItem.ToString}
             }
 
-            collection.InsertOne(document)
+            colReserv.InsertOne(document)
             'replace msgbox with label
             MessageBox.Show("Reservation added successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             refreshRes()
@@ -161,17 +254,36 @@ Public Class ctrlTransactions
         End Try
     End Sub
 
-    Private Sub btnUpdRes_Click(sender As Object, e As EventArgs) Handles btnUpdRes.Click
-
+    Private Sub cbxAddTour_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxAddTour.SelectedIndexChanged
+        If cbxAddTour.SelectedItem IsNot Nothing Then
+            Dim selectedTourName As String = cbxAddTour.SelectedItem.ToString()
+            Dim tourData As List(Of BsonDocument) = cbxToursList()
+            If tourData IsNot Nothing Then
+                Dim selectedTour = tourData.FirstOrDefault(Function(t) t("nameOfTour").ToString() = selectedTourName)
+                If selectedTour IsNot Nothing Then
+                    Dim tourPriceString As String = selectedTour("price").ToString()
+                    If Double.TryParse(tourPriceString, tourPrice) Then
+                        If tbxAddPerson IsNot Nothing AndAlso Not String.IsNullOrEmpty(tbxAddPerson.Text) Then
+                            If Double.TryParse(tbxAddPerson.Text, numberOfPerson) Then
+                                totalPrice = tourPrice * numberOfPerson
+                                tbxAddTotal.Text = totalPrice.ToString()
+                            Else
+                                tbxAddTotal.Clear()
+                            End If
+                        Else
+                            tbxAddTotal.Clear()
+                        End If
+                    End If
+                Else
+                End If
+            Else
+            End If
+        End If
     End Sub
 
-    Private Sub clearForm(sender As Object, e As EventArgs) Handles lblClearAdd.Click, lblClearRes.Click
-        clearTransactionForm()
-    End Sub
-
-    Private Sub cboxTour_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboxReservTour.SelectedIndexChanged
-        If cboxReservTour.SelectedItem IsNot Nothing Then
-            Dim selectedTourName As String = cboxReservTour.SelectedItem.ToString()
+    Private Sub cbxReservTour_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxReservTour.SelectedIndexChanged
+        If cbxReservTour.SelectedItem IsNot Nothing Then
+            Dim selectedTourName As String = cbxReservTour.SelectedItem.ToString()
             Dim tourData As List(Of BsonDocument) = cbxToursList()
             If tourData IsNot Nothing Then
                 Dim selectedTour = tourData.FirstOrDefault(Function(t) t("nameOfTour").ToString() = selectedTourName)
@@ -196,8 +308,17 @@ Public Class ctrlTransactions
         End If
     End Sub
 
+    Private Sub tbxAddPerson_TextChanged(sender As Object, e As EventArgs) Handles tbxAddPerson.TextChanged
+        If tbxAddPerson.Text = "" Then
+            tbxAddTotal.Clear()
+        ElseIf tbxAddPerson.Text IsNot "" Then
+            Double.TryParse(tbxAddPerson.Text, numberOfPerson)
+            totalPrice = tourPrice * numberOfPerson
+            tbxAddTotal.Text = totalPrice
+        End If
+    End Sub
 
-    Private Sub tbxPerson_TextChanged(sender As Object, e As EventArgs) Handles tbxReservPerson.TextChanged
+    Private Sub tbxReservPerson_TextChanged(sender As Object, e As EventArgs) Handles tbxReservPerson.TextChanged
         If tbxReservPerson.Text = "" Then
             tbxReservTotal.Clear()
         ElseIf tbxReservPerson.Text IsNot "" Then
@@ -207,4 +328,36 @@ Public Class ctrlTransactions
         End If
     End Sub
 
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        If TabControl1.SelectedIndex = 0 Then
+            'transac tab
+            cbxReservFilter.Visible = False
+            btnViewRes.Visible = False
+            lblReservCounter.Visible = False
+            lblTransacCounter.Visible = True
+        ElseIf TabControl1.SelectedIndex = 1 Then
+            'upd reserv tab
+            cbxReservFilter.Visible = True
+            btnViewRes.Visible = True
+            lblReservCounter.Visible = True
+            lblTransacCounter.Visible = False
+        Else
+        End If
+
+        'isama na lang to sa code sa taas
+        Select Case TabControl1.SelectedIndex
+            Case 0 'transaction tab
+                'add code here to display transactions.datenow sa dgv
+            Case 1 'update reserv tab
+                'add code to display reservations sa dgv
+            Case Else 'other tab pages
+                'do nothing
+        End Select
+    End Sub
+
+    Private Sub ctrlTransactions_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        If Me.Visible = False Then
+            closeMongoConn()
+        End If
+    End Sub
 End Class

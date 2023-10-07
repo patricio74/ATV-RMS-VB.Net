@@ -67,7 +67,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>rms.ico</ApplicationIcon>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>FD14BE32B91678713EF832717192970FB2D7D023</ManifestCertificateThumbprint>
@@ -86,10 +86,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>packages\AWSSDK.Core.3.7.202.3\lib\net45\AWSSDK.Core.dll</HintPath>
+      <HintPath>packages\AWSSDK.Core.3.7.202.17\lib\net45\AWSSDK.Core.dll</HintPath>
     </Reference>
     <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>packages\AWSSDK.SecurityToken.3.7.201.30\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
+      <HintPath>packages\AWSSDK.SecurityToken.3.7.201.44\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
     </Reference>
     <Reference Include="DnsClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
       <HintPath>packages\DnsClient.1.7.0\lib\net471\DnsClient.dll</HintPath>
@@ -117,8 +117,8 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="SharpCompress, Version=0.33.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
-      <HintPath>packages\SharpCompress.0.33.0\lib\net462\SharpCompress.dll</HintPath>
+    <Reference Include="SharpCompress, Version=0.34.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SharpCompress.0.34.0\lib\net462\SharpCompress.dll</HintPath>
     </Reference>
     <Reference Include="Snappier, Version=1.1.1.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
       <HintPath>packages\Snappier.1.1.1\lib\netstandard2.0\Snappier.dll</HintPath>
@@ -224,6 +224,7 @@
     <Compile Include="rmsModules\moduleDatabase.vb" />
     <Compile Include="rmsModules\moduleLogin.vb" />
     <Compile Include="rmsModules\modulePanelTop.vb" />
+    <Compile Include="rmsSharedVar.vb" />
     <Compile Include="rmsUserControls\ctrlCustomers.Designer.vb">
       <DependentUpon>ctrlCustomers.vb</DependentUpon>
     </Compile>
@@ -295,7 +296,6 @@
     <Compile Include="rmsForms\rmsLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rmsModules\moduleDashboard.vb" />
     <Compile Include="rmsForms\rmsRegistration.Designer.vb">
       <DependentUpon>rmsRegistration.vb</DependentUpon>
     </Compile>
@@ -847,6 +847,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\logo.png" />
+    <Content Include="logo.ico" />
     <Content Include="mongocrypt.dll" />
     <Content Include="rms.ico" />
   </ItemGroup>

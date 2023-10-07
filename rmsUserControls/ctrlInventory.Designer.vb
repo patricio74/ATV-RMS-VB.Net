@@ -36,7 +36,6 @@ Partial Class ctrlInventory
         Me.rtbxDescrip = New System.Windows.Forms.RichTextBox()
         Me.tbxModel = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnDel = New System.Windows.Forms.Button()
         Me.btnUpd = New System.Windows.Forms.Button()
@@ -47,7 +46,6 @@ Partial Class ctrlInventory
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -74,9 +72,9 @@ Partial Class ctrlInventory
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Label8.Location = New System.Drawing.Point(270, 425)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(58, 18)
+        Me.Label8.Size = New System.Drawing.Size(53, 18)
         Me.Label8.TabIndex = 60
-        Me.Label8.Text = "STATUS:"
+        Me.Label8.Text = "STATUS"
         '
         'tbxEmpNo
         '
@@ -98,9 +96,9 @@ Partial Class ctrlInventory
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Label7.Location = New System.Drawing.Point(91, 425)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(64, 18)
+        Me.Label7.Size = New System.Drawing.Size(20, 18)
         Me.Label7.TabIndex = 54
-        Me.Label7.Text = "HAHAHA:"
+        Me.Label7.Text = "ID"
         '
         'Label3
         '
@@ -108,7 +106,7 @@ Partial Class ctrlInventory
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(740, 425)
+        Me.Label3.Location = New System.Drawing.Point(536, 425)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 18)
         Me.Label3.TabIndex = 50
@@ -135,16 +133,16 @@ Partial Class ctrlInventory
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Label2.Location = New System.Drawing.Point(92, 498)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 18)
+        Me.Label2.Size = New System.Drawing.Size(49, 18)
         Me.Label2.TabIndex = 48
-        Me.Label2.Text = "BRAND:"
+        Me.Label2.Text = "BRAND"
         '
         'rtbxDescrip
         '
         Me.rtbxDescrip.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.rtbxDescrip.Location = New System.Drawing.Point(743, 446)
+        Me.rtbxDescrip.Location = New System.Drawing.Point(539, 446)
         Me.rtbxDescrip.Name = "rtbxDescrip"
-        Me.rtbxDescrip.Size = New System.Drawing.Size(320, 187)
+        Me.rtbxDescrip.Size = New System.Drawing.Size(552, 187)
         Me.rtbxDescrip.TabIndex = 62
         Me.rtbxDescrip.Text = resources.GetString("rtbxDescrip.Text")
         '
@@ -169,19 +167,9 @@ Partial Class ctrlInventory
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Label4.Location = New System.Drawing.Point(92, 577)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 18)
+        Me.Label4.Size = New System.Drawing.Size(49, 18)
         Me.Label4.TabIndex = 63
-        Me.Label4.Text = "MODEL:"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(469, 446)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(246, 187)
-        Me.PictureBox1.TabIndex = 65
-        Me.PictureBox1.TabStop = False
+        Me.Label4.Text = "MODEL"
         '
         'btnClear
         '
@@ -332,7 +320,6 @@ Partial Class ctrlInventory
         Me.Controls.Add(Me.btnDel)
         Me.Controls.Add(Me.btnUpd)
         Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.tbxModel)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.rtbxDescrip)
@@ -349,7 +336,6 @@ Partial Class ctrlInventory
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "ctrlInventory"
         Me.Size = New System.Drawing.Size(1161, 738)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -365,7 +351,6 @@ Partial Class ctrlInventory
     Friend WithEvents rtbxDescrip As RichTextBox
     Friend WithEvents tbxModel As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnClear As Button
     Friend WithEvents btnDel As Button
     Friend WithEvents btnUpd As Button
