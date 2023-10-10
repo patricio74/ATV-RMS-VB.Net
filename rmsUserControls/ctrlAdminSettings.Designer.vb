@@ -53,13 +53,15 @@ Partial Class ctrlAdminSettings
         'btnUpdate
         '
         Me.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUpdate.Enabled = False
         Me.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnUpdate.FlatAppearance.BorderSize = 0
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdate.Location = New System.Drawing.Point(866, 571)
+        Me.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnUpdate.Location = New System.Drawing.Point(847, 571)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(161, 44)
         Me.btnUpdate.TabIndex = 116
@@ -82,6 +84,7 @@ Partial Class ctrlAdminSettings
         '
         Me.tbxSName.BackColor = System.Drawing.Color.White
         Me.tbxSName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxSName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxSName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxSName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxSName.Location = New System.Drawing.Point(622, 64)
@@ -106,6 +109,7 @@ Partial Class ctrlAdminSettings
         '
         Me.tbxMName.BackColor = System.Drawing.Color.White
         Me.tbxMName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxMName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxMName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxMName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxMName.Location = New System.Drawing.Point(330, 64)
@@ -130,6 +134,7 @@ Partial Class ctrlAdminSettings
         '
         Me.tbxFName.BackColor = System.Drawing.Color.White
         Me.tbxFName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxFName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxFName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxFName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxFName.Location = New System.Drawing.Point(38, 64)
@@ -147,12 +152,13 @@ Partial Class ctrlAdminSettings
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnCancel.Location = New System.Drawing.Point(689, 571)
+        Me.btnCancel.Location = New System.Drawing.Point(670, 571)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(161, 44)
         Me.btnCancel.TabIndex = 123
         Me.btnCancel.Text = "Undo Changes"
         Me.btnCancel.UseVisualStyleBackColor = False
+        Me.btnCancel.Visible = False
         '
         'tbxPword
         '
@@ -304,7 +310,7 @@ Partial Class ctrlAdminSettings
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.tbxFName)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.tbxMName)
@@ -321,7 +327,7 @@ Partial Class ctrlAdminSettings
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.tbxPhone)
@@ -338,7 +344,7 @@ Partial Class ctrlAdminSettings
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.GroupBox3.Controls.Add(Me.tbxUsername)
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.tbxPword2)

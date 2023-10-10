@@ -236,11 +236,8 @@ Public Class ctrlOverview
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         Dim selectedDate As Date = DateTimePicker1.Value
-        'If MongoDB IsNot Nothing Then
         loadReservationz(selectedDate)
-        'Else
         'MessageBox.Show("Unable to fetch data from the database.", "Connection error!", MessageBoxButtons.OK, MessageBoxIcon.None)
-        'End If
     End Sub
 
     Private Sub btnResetDate_Click(sender As Object, e As EventArgs) Handles btnResetDate.Click

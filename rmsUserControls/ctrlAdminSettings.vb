@@ -7,4 +7,10 @@
             e.Handled = True
         End If
     End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        'white forecolor
+        'enable btnUpdate and btnCancel if tbox data <> userdoc
+        'set btnUpdate bgcolor to 255, 192, 72 on textcahge
+    End Sub
 End Class

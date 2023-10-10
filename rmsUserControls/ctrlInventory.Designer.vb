@@ -23,9 +23,9 @@ Partial Class ctrlInventory
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ctrlInventory))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.combGender = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbxEmpNo = New System.Windows.Forms.TextBox()
@@ -36,7 +36,6 @@ Partial Class ctrlInventory
         Me.rtbxDescrip = New System.Windows.Forms.RichTextBox()
         Me.tbxModel = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnClear = New System.Windows.Forms.Button()
         Me.btnDel = New System.Windows.Forms.Button()
         Me.btnUpd = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -46,6 +45,7 @@ Partial Class ctrlInventory
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblClearAdd = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -59,7 +59,7 @@ Partial Class ctrlInventory
         Me.combGender.FormattingEnabled = True
         Me.combGender.ItemHeight = 22
         Me.combGender.Items.AddRange(New Object() {"AVAILABLE", "NOT AVAILABLE"})
-        Me.combGender.Location = New System.Drawing.Point(273, 446)
+        Me.combGender.Location = New System.Drawing.Point(283, 446)
         Me.combGender.Name = "combGender"
         Me.combGender.Size = New System.Drawing.Size(158, 30)
         Me.combGender.TabIndex = 61
@@ -70,7 +70,7 @@ Partial Class ctrlInventory
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(270, 425)
+        Me.Label8.Location = New System.Drawing.Point(280, 425)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(53, 18)
         Me.Label8.TabIndex = 60
@@ -82,7 +82,7 @@ Partial Class ctrlInventory
         Me.tbxEmpNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxEmpNo.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxEmpNo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxEmpNo.Location = New System.Drawing.Point(95, 446)
+        Me.tbxEmpNo.Location = New System.Drawing.Point(105, 446)
         Me.tbxEmpNo.Name = "tbxEmpNo"
         Me.tbxEmpNo.Size = New System.Drawing.Size(172, 30)
         Me.tbxEmpNo.TabIndex = 55
@@ -94,7 +94,7 @@ Partial Class ctrlInventory
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(91, 425)
+        Me.Label7.Location = New System.Drawing.Point(101, 425)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(20, 18)
         Me.Label7.TabIndex = 54
@@ -106,7 +106,7 @@ Partial Class ctrlInventory
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(536, 425)
+        Me.Label3.Location = New System.Drawing.Point(507, 425)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 18)
         Me.Label3.TabIndex = 50
@@ -119,7 +119,7 @@ Partial Class ctrlInventory
         Me.tbxBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxBrand.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxBrand.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxBrand.Location = New System.Drawing.Point(95, 519)
+        Me.tbxBrand.Location = New System.Drawing.Point(105, 519)
         Me.tbxBrand.Name = "tbxBrand"
         Me.tbxBrand.Size = New System.Drawing.Size(336, 30)
         Me.tbxBrand.TabIndex = 49
@@ -131,7 +131,7 @@ Partial Class ctrlInventory
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(92, 498)
+        Me.Label2.Location = New System.Drawing.Point(102, 498)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 18)
         Me.Label2.TabIndex = 48
@@ -140,7 +140,7 @@ Partial Class ctrlInventory
         'rtbxDescrip
         '
         Me.rtbxDescrip.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.rtbxDescrip.Location = New System.Drawing.Point(539, 446)
+        Me.rtbxDescrip.Location = New System.Drawing.Point(510, 446)
         Me.rtbxDescrip.Name = "rtbxDescrip"
         Me.rtbxDescrip.Size = New System.Drawing.Size(552, 187)
         Me.rtbxDescrip.TabIndex = 62
@@ -153,7 +153,7 @@ Partial Class ctrlInventory
         Me.tbxModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxModel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxModel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxModel.Location = New System.Drawing.Point(94, 598)
+        Me.tbxModel.Location = New System.Drawing.Point(104, 598)
         Me.tbxModel.Name = "tbxModel"
         Me.tbxModel.Size = New System.Drawing.Size(336, 30)
         Me.tbxModel.TabIndex = 64
@@ -165,26 +165,11 @@ Partial Class ctrlInventory
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(92, 577)
+        Me.Label4.Location = New System.Drawing.Point(102, 577)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 18)
         Me.Label4.TabIndex = 63
         Me.Label4.Text = "MODEL"
-        '
-        'btnClear
-        '
-        Me.btnClear.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClear.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnClear.Location = New System.Drawing.Point(970, 655)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(121, 44)
-        Me.btnClear.TabIndex = 94
-        Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = False
         '
         'btnDel
         '
@@ -194,7 +179,7 @@ Partial Class ctrlInventory
         Me.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDel.ForeColor = System.Drawing.Color.Red
-        Me.btnDel.Location = New System.Drawing.Point(843, 655)
+        Me.btnDel.Location = New System.Drawing.Point(835, 655)
         Me.btnDel.Name = "btnDel"
         Me.btnDel.Size = New System.Drawing.Size(121, 44)
         Me.btnDel.TabIndex = 93
@@ -209,7 +194,7 @@ Partial Class ctrlInventory
         Me.btnUpd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpd.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpd.Location = New System.Drawing.Point(716, 655)
+        Me.btnUpd.Location = New System.Drawing.Point(693, 655)
         Me.btnUpd.Name = "btnUpd"
         Me.btnUpd.Size = New System.Drawing.Size(121, 44)
         Me.btnUpd.TabIndex = 92
@@ -224,7 +209,7 @@ Partial Class ctrlInventory
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAdd.Location = New System.Drawing.Point(589, 655)
+        Me.btnAdd.Location = New System.Drawing.Point(550, 655)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(121, 44)
         Me.btnAdd.TabIndex = 91
@@ -238,15 +223,15 @@ Partial Class ctrlInventory
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
         Me.DataGridView1.EnableHeadersVisualStyles = False
@@ -255,21 +240,21 @@ Partial Class ctrlInventory
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.ShowEditingIcon = False
         Me.DataGridView1.Size = New System.Drawing.Size(1095, 364)
@@ -310,13 +295,26 @@ Partial Class ctrlInventory
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
         '
+        'lblClearAdd
+        '
+        Me.lblClearAdd.AutoSize = True
+        Me.lblClearAdd.BackColor = System.Drawing.Color.Transparent
+        Me.lblClearAdd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblClearAdd.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClearAdd.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblClearAdd.Location = New System.Drawing.Point(977, 668)
+        Me.lblClearAdd.Name = "lblClearAdd"
+        Me.lblClearAdd.Size = New System.Drawing.Size(85, 20)
+        Me.lblClearAdd.TabIndex = 126
+        Me.lblClearAdd.Text = "Clear Form"
+        '
         'ctrlInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.lblClearAdd)
         Me.Controls.Add(Me.btnDel)
         Me.Controls.Add(Me.btnUpd)
         Me.Controls.Add(Me.btnAdd)
@@ -351,7 +349,6 @@ Partial Class ctrlInventory
     Friend WithEvents rtbxDescrip As RichTextBox
     Friend WithEvents tbxModel As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnClear As Button
     Friend WithEvents btnDel As Button
     Friend WithEvents btnUpd As Button
     Friend WithEvents btnAdd As Button
@@ -361,4 +358,5 @@ Partial Class ctrlInventory
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents lblClearAdd As Label
 End Class
