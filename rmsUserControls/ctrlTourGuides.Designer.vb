@@ -61,14 +61,14 @@ Partial Class ctrlTourGuides
         Me.combGender.BackColor = System.Drawing.Color.White
         Me.combGender.Cursor = System.Windows.Forms.Cursors.Hand
         Me.combGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.combGender.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.combGender.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.combGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.combGender.FormattingEnabled = True
-        Me.combGender.ItemHeight = 20
+        Me.combGender.ItemHeight = 22
         Me.combGender.Items.AddRange(New Object() {"MALE", "FEMALE"})
         Me.combGender.Location = New System.Drawing.Point(723, 507)
         Me.combGender.Name = "combGender"
-        Me.combGender.Size = New System.Drawing.Size(83, 28)
+        Me.combGender.Size = New System.Drawing.Size(83, 30)
         Me.combGender.TabIndex = 44
         '
         'Label8
@@ -77,7 +77,7 @@ Partial Class ctrlTourGuides
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(720, 485)
+        Me.Label8.Location = New System.Drawing.Point(720, 489)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(61, 18)
         Me.Label8.TabIndex = 43
@@ -88,11 +88,11 @@ Partial Class ctrlTourGuides
         Me.tbxEmail.BackColor = System.Drawing.Color.White
         Me.tbxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
-        Me.tbxEmail.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxEmail.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxEmail.Location = New System.Drawing.Point(515, 640)
         Me.tbxEmail.Name = "tbxEmail"
-        Me.tbxEmail.Size = New System.Drawing.Size(291, 26)
+        Me.tbxEmail.Size = New System.Drawing.Size(291, 30)
         Me.tbxEmail.TabIndex = 42
         Me.tbxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -112,12 +112,12 @@ Partial Class ctrlTourGuides
         '
         Me.tbxContNum.BackColor = System.Drawing.Color.White
         Me.tbxContNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxContNum.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxContNum.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxContNum.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxContNum.Location = New System.Drawing.Point(515, 574)
         Me.tbxContNum.MaxLength = 11
         Me.tbxContNum.Name = "tbxContNum"
-        Me.tbxContNum.Size = New System.Drawing.Size(291, 26)
+        Me.tbxContNum.Size = New System.Drawing.Size(291, 30)
         Me.tbxContNum.TabIndex = 40
         Me.tbxContNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -137,11 +137,11 @@ Partial Class ctrlTourGuides
         '
         Me.tbxEmpNo.BackColor = System.Drawing.Color.White
         Me.tbxEmpNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxEmpNo.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxEmpNo.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxEmpNo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxEmpNo.Location = New System.Drawing.Point(515, 508)
         Me.tbxEmpNo.Name = "tbxEmpNo"
-        Me.tbxEmpNo.Size = New System.Drawing.Size(202, 26)
+        Me.tbxEmpNo.Size = New System.Drawing.Size(202, 30)
         Me.tbxEmpNo.TabIndex = 38
         Me.tbxEmpNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -162,11 +162,11 @@ Partial Class ctrlTourGuides
         Me.tbxSurname.BackColor = System.Drawing.Color.White
         Me.tbxSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxSurname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxSurname.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxSurname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxSurname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxSurname.Location = New System.Drawing.Point(116, 640)
         Me.tbxSurname.Name = "tbxSurname"
-        Me.tbxSurname.Size = New System.Drawing.Size(311, 26)
+        Me.tbxSurname.Size = New System.Drawing.Size(311, 30)
         Me.tbxSurname.TabIndex = 36
         Me.tbxSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -187,11 +187,11 @@ Partial Class ctrlTourGuides
         Me.tbxMidname.BackColor = System.Drawing.Color.White
         Me.tbxMidname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxMidname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxMidname.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxMidname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxMidname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxMidname.Location = New System.Drawing.Point(116, 574)
         Me.tbxMidname.Name = "tbxMidname"
-        Me.tbxMidname.Size = New System.Drawing.Size(311, 26)
+        Me.tbxMidname.Size = New System.Drawing.Size(311, 30)
         Me.tbxMidname.TabIndex = 34
         Me.tbxMidname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -212,11 +212,11 @@ Partial Class ctrlTourGuides
         Me.tbxFrstname.BackColor = System.Drawing.Color.White
         Me.tbxFrstname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxFrstname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxFrstname.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxFrstname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxFrstname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxFrstname.Location = New System.Drawing.Point(116, 508)
         Me.tbxFrstname.Name = "tbxFrstname"
-        Me.tbxFrstname.Size = New System.Drawing.Size(311, 26)
+        Me.tbxFrstname.Size = New System.Drawing.Size(311, 30)
         Me.tbxFrstname.TabIndex = 32
         Me.tbxFrstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -371,7 +371,7 @@ Partial Class ctrlTourGuides
         '
         'tbxSearch
         '
-        Me.tbxSearch.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxSearch.BackColor = System.Drawing.Color.White
         Me.tbxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxSearch.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))

@@ -162,7 +162,7 @@ Partial Class ctrlAdminSettings
         '
         'tbxPword
         '
-        Me.tbxPword.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxPword.BackColor = System.Drawing.Color.White
         Me.tbxPword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxPword.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxPword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -186,7 +186,7 @@ Partial Class ctrlAdminSettings
         '
         'tbxRFID
         '
-        Me.tbxRFID.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxRFID.BackColor = System.Drawing.Color.White
         Me.tbxRFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxRFID.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxRFID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -211,7 +211,7 @@ Partial Class ctrlAdminSettings
         '
         'tbxEmail
         '
-        Me.tbxEmail.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxEmail.BackColor = System.Drawing.Color.White
         Me.tbxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxEmail.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -236,7 +236,7 @@ Partial Class ctrlAdminSettings
         '
         'tbxPhone
         '
-        Me.tbxPhone.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxPhone.BackColor = System.Drawing.Color.White
         Me.tbxPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxPhone.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -261,8 +261,9 @@ Partial Class ctrlAdminSettings
         '
         'tbxUsername
         '
-        Me.tbxUsername.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUsername.BackColor = System.Drawing.Color.White
         Me.tbxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxUsername.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxUsername.Location = New System.Drawing.Point(64, 67)
@@ -286,7 +287,7 @@ Partial Class ctrlAdminSettings
         '
         'tbxPword2
         '
-        Me.tbxPword2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxPword2.BackColor = System.Drawing.Color.White
         Me.tbxPword2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxPword2.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxPword2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))

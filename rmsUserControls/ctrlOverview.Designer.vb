@@ -68,7 +68,7 @@ Partial Class ctrlOverview
         Me.lblRevYest = New System.Windows.Forms.Label()
         Me.lblRev = New System.Windows.Forms.Label()
         Me.lblRevMonth = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.overviewTimer = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgvReviews, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
@@ -201,7 +201,7 @@ Partial Class ctrlOverview
         Me.rtbxReview.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtbxReview.Cursor = System.Windows.Forms.Cursors.No
         Me.rtbxReview.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rtbxReview.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.rtbxReview.ForeColor = System.Drawing.Color.White
         Me.rtbxReview.Location = New System.Drawing.Point(43, 601)
         Me.rtbxReview.Margin = New System.Windows.Forms.Padding(0)
         Me.rtbxReview.Name = "rtbxReview"
@@ -216,10 +216,10 @@ Partial Class ctrlOverview
         Me.GroupBox6.Controls.Add(Me.dgvActivities)
         Me.GroupBox6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.GroupBox6.Location = New System.Drawing.Point(43, 682)
+        Me.GroupBox6.Location = New System.Drawing.Point(43, 695)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.GroupBox6.Size = New System.Drawing.Size(579, 35)
+        Me.GroupBox6.Size = New System.Drawing.Size(579, 11)
         Me.GroupBox6.TabIndex = 28
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Recent Activities"
@@ -268,7 +268,7 @@ Partial Class ctrlOverview
         Me.dgvActivities.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvActivities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvActivities.ShowEditingIcon = False
-        Me.dgvActivities.Size = New System.Drawing.Size(579, 12)
+        Me.dgvActivities.Size = New System.Drawing.Size(579, 0)
         Me.dgvActivities.TabIndex = 36
         '
         'DataGridViewTextBoxColumn4
@@ -303,9 +303,10 @@ Partial Class ctrlOverview
         'DateTimePicker1
         '
         Me.DateTimePicker1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Location = New System.Drawing.Point(140, 20)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(251, 25)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(251, 26)
         Me.DateTimePicker1.TabIndex = 38
         '
         'dgvReservations
@@ -612,7 +613,7 @@ Partial Class ctrlOverview
         Me.lblRevMonth.Text = "₱0"
         Me.lblRevMonth.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Timer1
+        'overviewTimer
         '
         '
         'ctrlOverview
@@ -672,7 +673,7 @@ Partial Class ctrlOverview
     Public WithEvents lblCustMonth As Label
     Public WithEvents lblRevYest As Label
     Public WithEvents lblRevMonth As Label
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents overviewTimer As Timer
     Friend WithEvents dgvReservations As DataGridView
     Friend WithEvents rtbxReview As RichTextBox
     Friend WithEvents btnRefreshReviews As Button

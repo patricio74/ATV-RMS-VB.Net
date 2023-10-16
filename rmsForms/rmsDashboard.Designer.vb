@@ -40,7 +40,7 @@ Partial Class rmsDashboard
         Me.btnTransac = New System.Windows.Forms.Button()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.admPanel = New System.Windows.Forms.Panel()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.dashboardTimer = New System.Windows.Forms.Timer(Me.components)
         Me.panelTop = New System.Windows.Forms.Panel()
         Me.btnMinimize = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
@@ -113,10 +113,10 @@ Partial Class rmsDashboard
         Me.btnAdminSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnAdminSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnAdminSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdminSettings.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdminSettings.Font = New System.Drawing.Font("Verdana", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdminSettings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnAdminSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAdminSettings.Location = New System.Drawing.Point(0, 659)
+        Me.btnAdminSettings.Location = New System.Drawing.Point(0, 655)
         Me.btnAdminSettings.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAdminSettings.Name = "btnAdminSettings"
         Me.btnAdminSettings.Size = New System.Drawing.Size(205, 43)
@@ -279,13 +279,13 @@ Partial Class rmsDashboard
         Me.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogout.FlatAppearance.BorderSize = 0
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogout.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.Location = New System.Drawing.Point(73, 705)
+        Me.btnLogout.Location = New System.Drawing.Point(71, 703)
         Me.btnLogout.Margin = New System.Windows.Forms.Padding(0)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(61, 28)
+        Me.btnLogout.Size = New System.Drawing.Size(61, 24)
         Me.btnLogout.TabIndex = 13
         Me.btnLogout.Text = "Logout"
         Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -357,7 +357,7 @@ Partial Class rmsDashboard
         Me.admPanel.Size = New System.Drawing.Size(1161, 738)
         Me.admPanel.TabIndex = 1
         '
-        'Timer1
+        'dashboardTimer
         '
         '
         'panelTop
@@ -452,7 +452,7 @@ Partial Class rmsDashboard
     Friend WithEvents btnAdminSettings As Button
     Friend WithEvents btnTrails As Button
     Private WithEvents lblDateTime As Label
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents dashboardTimer As Timer
     Private WithEvents panelTop As Panel
     Private WithEvents btnMinimize As Button
     Public WithEvents btnClose As Button

@@ -1,6 +1,5 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
-
 Module moduleLogin
     Public Sub loadRMSLogin()
         rmsLogin.panelRFIDLogin.Hide()
@@ -8,20 +7,18 @@ Module moduleLogin
         rmsLogin.clearLoginForm()
         rmsLogin.tboxUsername.Focus()
     End Sub
-
     Public Sub hideErrorLabel()
         rmsLogin.lblLoginError.Visible = False
         rmsLogin.lblUserError.Visible = False
         rmsLogin.lblPassError.Visible = False
         rmsLogin.lblRFIDErr.Visible = False
     End Sub
-
     Public Sub adminPassLogin()
         hideErrorLabel()
         Try
             Dim username As String = rmsLogin.tboxUsername.Text
             Dim password As String = rmsLogin.tboxPassword.Text
-            Dim loginCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("rmsAdmin")
+            Dim loginCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
             Dim filter = Builders(Of BsonDocument).Filter.Or(
                 Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
                 Builders(Of BsonDocument).Filter.Eq(Of String)("Email", username)
@@ -52,11 +49,10 @@ Module moduleLogin
             Return
         End Try
     End Sub
-
     Public Sub adminRFIDLogin()
         Try
             Dim RFID As String = rmsLogin.tboxRFID.Text
-            Dim rfidCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("rmsAdmin")
+            Dim rfidCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
             Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", RFID)
             Dim rfidDocument As BsonDocument = rfidCol.Find(filter).FirstOrDefault()
             If rfidDocument Is Nothing Then

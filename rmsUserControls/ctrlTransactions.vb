@@ -1,11 +1,12 @@
 ﻿Imports System.Globalization
+Imports System.IO
 Imports ATV_RMS.ctrlCustomers
 Imports MongoDB.Bson
 Imports MongoDB.Driver
 
 Public Class ctrlTransactions
-    Dim colTransac As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("logTransactions")
-    Dim colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("custReservations")
+    Dim colTransac As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("logTransactions")
+    Dim colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReservations")
     Dim tourPrice As Double = 0
     Dim numberOfPerson As Double = 0
     Dim totalPrice As Double = 0
@@ -48,6 +49,7 @@ Public Class ctrlTransactions
             btnViewRes.Visible = False
             lblReservCounter.Visible = False
             lblTransacCounter.Visible = True
+            reloadTrailList()
             clearReservTab()
             'add code to display data to dgv
         ElseIf TabControl1.SelectedIndex = 1 Then
@@ -56,21 +58,13 @@ Public Class ctrlTransactions
             btnViewRes.Visible = True
             lblReservCounter.Visible = True
             lblTransacCounter.Visible = False
+            reloadTrailList()
             clearTransacTab()
         Else
         End If
     End Sub
-    Private Sub ctrlTransactions_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        If Me.Visible = False Then
-            closeMongoConn()
-            clearTransacTab()
-            clearReservTab()
-            reloadTrailList()
-            TabControl1.SelectedIndex = 0
-        End If
-    End Sub
     Private Function cbxToursList()
-        Dim col As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("rmsAtvTours")
+        Dim col As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAtvTours")
         Dim filter As New BsonDocument()
         Dim tourData As List(Of BsonDocument) = col.Find(filter).ToList()
         Return tourData
@@ -112,17 +106,11 @@ Public Class ctrlTransactions
     End Sub
     Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'refresh content every 3secs
-        Timer1.Interval = 3000
-        Timer1.Start()
+        transacTimer.Interval = 3000
+        transacTimer.Start()
         reloadTrailList()
     End Sub
-    'Private Sub ctrlTransactions_Enter(sender As Object, e As EventArgs) Handles Me.Enter
-
-    '    reloadTrailList()
-    'call mo to sa click event ng mismong combobox, clear form, add/update res, add transac
-
-    'End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles transacTimer.Tick
         refreshLabel()
     End Sub
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxReservID.KeyPress, tbxReservFName.KeyPress, tbxReservMName.KeyPress,
@@ -142,6 +130,9 @@ Public Class ctrlTransactions
 
 
 
+
+    '    reloadTrailList()
+    'call mo to sa click event ng clear form, add/update reserv, add transac
 
 
     Private transac As List(Of Transactions)
@@ -359,5 +350,20 @@ Public Class ctrlTransactions
 
     Private Sub btnViewRes_Click(sender As Object, e As EventArgs) Handles btnViewRes.Click
 
+    End Sub
+    Private Sub ctrlTransactions_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        If Me.Visible = False Then
+            closeMongoConn()
+            clearTransacTab()
+            clearReservTab()
+            reloadTrailList()
+            TabControl1.SelectedIndex = 0
+        End If
+    End Sub
+    Private Sub tbxPerson(sender As Object, e As KeyPressEventArgs) Handles tbxAddPerson.KeyPress, tbxReservPerson.KeyPress
+        'check if the inputted char is a number,backspace
+        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
+            e.Handled = True
+        End If
     End Sub
 End Class

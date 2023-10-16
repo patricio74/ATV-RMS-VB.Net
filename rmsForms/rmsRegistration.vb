@@ -2,11 +2,9 @@
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 Imports MongoDB.Bson
 Imports MongoDB.Driver
-
 Public Class rmsRegistration
-    Dim adminCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("rmsAdmin")
+    Dim adminCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
     Dim tiempoAhora As String = DateTime.Now.ToString("MMM d, yyyy hh:mm tt")
-
     Private Sub hideRegPanelz()
         Panel1.Hide()
         Panel2.Hide()
@@ -25,6 +23,11 @@ Public Class rmsRegistration
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
+    End Sub
+    Private Sub regTextbox_Leave(sender As Object, e As EventArgs) Handles regFName.Leave, regMName.Leave, regSname.Leave
+        regFName.Text = regFName.Text.Trim
+        regMName.Text = regMName.Text.Trim
+        regSname.Text = regSname.Text.Trim
     End Sub
     Private Sub regBtnClick(sender As Object, e As EventArgs) Handles btnMinimize.Click, btnClose.Click, btnNext1.Click, btnNext2.Click, btnNext3.Click,
         btnReg.Click, btnRegOk.Click, btnRet1.Click, btnRet2.Click
@@ -58,12 +61,13 @@ Public Class rmsRegistration
             lblPassError.Visible = False
             hideRegPanelz()
             Panel2.Show()
-            lblHello.Text = "Hi, " + regFName.Text + "!"
-            regEmail.Focus()
+            'lblHello.Text = "Hi, " + regFName.Text + "!"
+            'regEmail.Focus()
 
         ElseIf sender Is btnNext1 Then 'panel1
-            regFName.Text.Trim()
-            regSname.Text.Trim()
+            regFName.Text = regFName.Text.Trim()
+            regMName.Text = regMName.Text.Trim()
+            regSname.Text = regSname.Text.Trim()
             If String.IsNullOrWhiteSpace(regFName.Text) Then
                 lblPanel1Note.Visible = True
                 regFName.Focus()
@@ -74,7 +78,19 @@ Public Class rmsRegistration
                 lblPanel1Note.Visible = False
                 hideRegPanelz()
                 Panel2.Show()
-                lblHello.Text = "Hi, " + regFName.Text + "!"
+                Dim firstWord As String = regFName.Text.Trim()
+                'split the input text by space
+                Dim words As String() = firstWord.Split(New Char() {" "c}, StringSplitOptions.RemoveEmptyEntries)
+                If words.Length > 0 Then
+                    'copy first word
+                    Dim firstName As String = words(0)
+                    lblHello.Text = "Hi, " & firstName & "!"
+                Else
+
+                    'dahekkkkkkkkk
+
+                    MessageBox.Show("Hello!")
+                End If
                 regEmail.Focus()
             End If
 
@@ -83,12 +99,15 @@ Public Class rmsRegistration
             lblEmailUsed.Visible = False
             lblPhoneInvalid.Visible = False
             lblRFIDUsed.Visible = False
+            regEmail.Text.Trim()
+            regPhone.Text.Trim()
+            regRFID.Text.Trim()
             If String.IsNullOrWhiteSpace(regEmail.Text) Or String.IsNullOrWhiteSpace(regPhone.Text) Or String.IsNullOrWhiteSpace(regRFID.Text) Then
                 lblPanel2Note.Visible = True
             Else 'check if rfid, phone, email is already in use
-                Dim userEmail As String = regEmail.Text.Trim()
+                Dim userEmail As String = regEmail.Text
                 'Dim userPhone As String = regPhone.Text.Trim()
-                Dim userRFID As String = regRFID.Text.Trim()
+                Dim userRFID As String = regRFID.Text
                 Dim filterEmail As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("Email", userEmail))
                 'Dim filterPhone As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("Phone", userPhone))
                 Dim filterRFID As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", userRFID))
@@ -143,18 +162,17 @@ Public Class rmsRegistration
             lblUsernameShort.Visible = False
             lblPassShort.Visible = False
             lblPassError.Visible = False
+            regUsername.Text.Trim()
+            regPassw.Text.Trim()
+            regPassw2.Text.Trim()
             If String.IsNullOrWhiteSpace(regUsername.Text) Or String.IsNullOrWhiteSpace(regPassw.Text) Or String.IsNullOrWhiteSpace(regPassw2.Text) Then
                 lblPanel3Note.Visible = True
             Else
                 'add code to module
-                Dim pendingUsername As String = regUsername.Text.Trim()
+                Dim pendingUsername As String = regUsername.Text
                 Dim checkUsername As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("Username", pendingUsername))
                 Dim usernameAvailability As Long = adminCol.CountDocuments(checkUsername)
                 Dim panel3ErrCheck As Boolean = False
-                'check username for duplicate
-                'username length >4
-                'check pw for both textboxes, show label if pw didn't match
-                'enable next button if username does not exist in db, password match
                 Try
                     If usernameAvailability > 0 Then
                         panel3ErrCheck = True
@@ -196,6 +214,7 @@ Public Class rmsRegistration
                     MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End If
+
         ElseIf sender Is btnReg Then 'REGISTER PANEL
             'insert to pendingAdminCollection
             If regFName.Text = "" Or regSname.Text = "" Or regEmail.Text = "" Or regPhone.Text = "" Or regRFID.Text = "" Or regUsername.Text = "" Or regPassw2.Text = "" Then
@@ -204,38 +223,37 @@ Public Class rmsRegistration
                 Dim result As DialogResult = MessageBox.Show("Do you want to submit your registration?", "Confirmation", MessageBoxButtons.YesNo)
                 If result = DialogResult.Yes Then
                     Try
-                        Dim firstName As String = regFName.Text()
-                        Dim midName As String = regMName.Text()
-                        Dim surname As String = regSname.Text()
-                        Dim email As String = regEmail.Text.Trim()
-                        Dim phone As String = regPhone.Text.Trim()
-                        Dim username As String = regUsername.Text.Trim()
-                        Dim password As String = regPassw.Text.Trim()
-                        Dim rfid As String = regRFID.Text.Trim()
+                        Dim firstName As String = regFName.Text
+                        Dim midName As String = regMName.Text
+                        Dim surname As String = regSname.Text
+                        Dim email As String = regEmail.Text
+                        Dim phone As String = regPhone.Text
+                        Dim username As String = regUsername.Text
+                        Dim password As String = regPassw.Text
+                        Dim rfid As String = regRFID.Text
                         Dim role As String = "admin"
-
                         Dim newAdmin As New BsonDocument From {
-                    {"First Name", firstName},
-                    {"Middle Name", midName},
-                    {"Surname", surname},
-                    {"Email", email},
-                    {"Phone", phone},
-                    {"Username", username},
-                    {"Password", password},
-                    {"RFID", rfid},
-                    {"role", role}
-                }
+                            {"First Name", firstName},
+                            {"Middle Name", midName},
+                            {"Surname", surname},
+                            {"Email", email},
+                            {"Phone", phone},
+                            {"Username", username},
+                            {"Password", password},
+                            {"RFID", rfid},
+                            {"role", role}
+                        }
                         Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(
-                    Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", rfid),
-                    Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
-                    Builders(Of BsonDocument).Filter.Eq(Of String)("Email", email)
-                )
+                            Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", rfid),
+                            Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
+                            Builders(Of BsonDocument).Filter.Eq(Of String)("Email", email)
+                        )
                         'pang double check kung merong same rfid, username, email sa db
                         Dim count As Long = adminCol.CountDocuments(filter)
                         If count > 0 Then
                             MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else
-                            Dim pendingCollection As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("rmsAdminPendingAcc")
+                            Dim pendingCollection As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdminPendingAcc")
                             Try
                                 pendingCollection.InsertOne(newAdmin)
                                 hideRegPanelz()
@@ -256,7 +274,6 @@ Public Class rmsRegistration
             Me.Close()
         End If
     End Sub
-
     Private Sub Label_Click(sender As Object, e As EventArgs) Handles panelSname.Click, panelFName.Click, panelMName.Click, panelEmail.Click,
         panelPhone.Click, panelRFID.Click, panelUsernam.Click, panelPasswor.Click, lblReg1.Click, lblReg2.Click, lblReg3.Click, lblReg4.Click,
         lblReg5.Click, lblReg6.Click, lblReg7.Click, lblReg8.Click, labelLogin.Click
@@ -302,8 +319,7 @@ Public Class rmsRegistration
             e.Handled = True
         End If
     End Sub
-    Private Sub regFormTextChanged(sender As Object, e As EventArgs) Handles regEmail.TextChanged, regRFID.TextChanged,
-       regUsername.TextChanged, regPassw.TextChanged, regPassw2.TextChanged
+    Private Sub regFormTextChanged(sender As Object, e As EventArgs) Handles regEmail.TextChanged, regRFID.TextChanged, regUsername.TextChanged, regPassw.TextChanged, regPassw2.TextChanged
         If sender Is regEmail Then
             Dim cursorPos As Integer = regEmail.SelectionStart
             'para walang space na ma-input

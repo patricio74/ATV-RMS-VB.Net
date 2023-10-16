@@ -261,7 +261,6 @@ Partial Class rmsRegistration
         Me.regRFID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regRFID.BackColor = System.Drawing.Color.White
-        Me.regRFID.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.regRFID.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regRFID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regRFID.Location = New System.Drawing.Point(58, 334)
@@ -330,7 +329,6 @@ Partial Class rmsRegistration
         Me.regPhone.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.regPhone.BackColor = System.Drawing.Color.White
-        Me.regPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.regPhone.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.regPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.regPhone.Location = New System.Drawing.Point(58, 261)
@@ -514,9 +512,9 @@ Partial Class rmsRegistration
         '
         Me.lblPanel1Note.BackColor = System.Drawing.Color.Firebrick
         Me.lblPanel1Note.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblPanel1Note.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPanel1Note.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPanel1Note.ForeColor = System.Drawing.Color.White
-        Me.lblPanel1Note.Location = New System.Drawing.Point(0, 493)
+        Me.lblPanel1Note.Location = New System.Drawing.Point(0, 503)
         Me.lblPanel1Note.Margin = New System.Windows.Forms.Padding(0)
         Me.lblPanel1Note.Name = "lblPanel1Note"
         Me.lblPanel1Note.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
@@ -539,8 +537,8 @@ Partial Class rmsRegistration
         Me.btnNext1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnNext1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNext1.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNext1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnNext1.Location = New System.Drawing.Point(188, 401)
+        Me.btnNext1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnNext1.Location = New System.Drawing.Point(188, 411)
         Me.btnNext1.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNext1.Name = "btnNext1"
         Me.btnNext1.Size = New System.Drawing.Size(85, 85)
@@ -589,9 +587,9 @@ Partial Class rmsRegistration
         '
         Me.lblPanel2Note.BackColor = System.Drawing.Color.Firebrick
         Me.lblPanel2Note.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblPanel2Note.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPanel2Note.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPanel2Note.ForeColor = System.Drawing.Color.White
-        Me.lblPanel2Note.Location = New System.Drawing.Point(0, 493)
+        Me.lblPanel2Note.Location = New System.Drawing.Point(0, 503)
         Me.lblPanel2Note.Margin = New System.Windows.Forms.Padding(0)
         Me.lblPanel2Note.Name = "lblPanel2Note"
         Me.lblPanel2Note.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
@@ -685,7 +683,7 @@ Partial Class rmsRegistration
         Me.btnNext2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNext2.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNext2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnNext2.Location = New System.Drawing.Point(188, 401)
+        Me.btnNext2.Location = New System.Drawing.Point(188, 411)
         Me.btnNext2.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNext2.Name = "btnNext2"
         Me.btnNext2.Size = New System.Drawing.Size(85, 85)
@@ -748,9 +746,9 @@ Partial Class rmsRegistration
         '
         Me.lblPanel3Note.BackColor = System.Drawing.Color.Firebrick
         Me.lblPanel3Note.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblPanel3Note.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPanel3Note.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPanel3Note.ForeColor = System.Drawing.Color.White
-        Me.lblPanel3Note.Location = New System.Drawing.Point(0, 493)
+        Me.lblPanel3Note.Location = New System.Drawing.Point(0, 503)
         Me.lblPanel3Note.Margin = New System.Windows.Forms.Padding(0)
         Me.lblPanel3Note.Name = "lblPanel3Note"
         Me.lblPanel3Note.Padding = New System.Windows.Forms.Padding(0, 1, 0, 1)
@@ -847,7 +845,7 @@ Partial Class rmsRegistration
         Me.btnNext3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNext3.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNext3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnNext3.Location = New System.Drawing.Point(188, 401)
+        Me.btnNext3.Location = New System.Drawing.Point(188, 411)
         Me.btnNext3.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNext3.Name = "btnNext3"
         Me.btnNext3.Size = New System.Drawing.Size(85, 85)
@@ -919,9 +917,9 @@ Partial Class rmsRegistration
         Me.btnReg.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnReg.FlatAppearance.BorderSize = 0
         Me.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReg.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReg.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReg.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnReg.Location = New System.Drawing.Point(156, 446)
+        Me.btnReg.Location = New System.Drawing.Point(156, 459)
         Me.btnReg.Margin = New System.Windows.Forms.Padding(0)
         Me.btnReg.Name = "btnReg"
         Me.btnReg.Size = New System.Drawing.Size(146, 45)
@@ -1221,7 +1219,7 @@ Partial Class rmsRegistration
         Me.btnRegOk.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRegOk.FlatAppearance.BorderSize = 0
         Me.btnRegOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegOk.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegOk.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegOk.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.btnRegOk.Location = New System.Drawing.Point(179, 450)
         Me.btnRegOk.Margin = New System.Windows.Forms.Padding(0)
@@ -1237,10 +1235,10 @@ Partial Class rmsRegistration
         Me.lblPendingUserMessage.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPendingUserMessage.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPendingUserMessage.ForeColor = System.Drawing.Color.White
-        Me.lblPendingUserMessage.Location = New System.Drawing.Point(37, 134)
+        Me.lblPendingUserMessage.Location = New System.Drawing.Point(37, 184)
         Me.lblPendingUserMessage.Margin = New System.Windows.Forms.Padding(0)
         Me.lblPendingUserMessage.Name = "lblPendingUserMessage"
-        Me.lblPendingUserMessage.Size = New System.Drawing.Size(388, 307)
+        Me.lblPendingUserMessage.Size = New System.Drawing.Size(388, 246)
         Me.lblPendingUserMessage.TabIndex = 38
         Me.lblPendingUserMessage.Text = resources.GetString("lblPendingUserMessage.Text")
         '
@@ -1251,7 +1249,7 @@ Partial Class rmsRegistration
         Me.lblDateTime.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblDateTime.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDateTime.ForeColor = System.Drawing.Color.White
-        Me.lblDateTime.Location = New System.Drawing.Point(35, 92)
+        Me.lblDateTime.Location = New System.Drawing.Point(34, 141)
         Me.lblDateTime.Margin = New System.Windows.Forms.Padding(0)
         Me.lblDateTime.Name = "lblDateTime"
         Me.lblDateTime.Size = New System.Drawing.Size(96, 18)
@@ -1266,11 +1264,11 @@ Partial Class rmsRegistration
         Me.Label21.BackColor = System.Drawing.Color.Transparent
         Me.Label21.Font = New System.Drawing.Font("Trebuchet MS", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label21.Location = New System.Drawing.Point(32, 26)
+        Me.Label21.Location = New System.Drawing.Point(32, 39)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(383, 43)
         Me.Label21.TabIndex = 0
-        Me.Label21.Text = "Registration Reminder"
+        Me.Label21.Text = "Registration Notice"
         Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'rmsRegistration

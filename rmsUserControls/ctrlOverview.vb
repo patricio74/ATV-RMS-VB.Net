@@ -1,7 +1,6 @@
 ﻿Imports System.Globalization
 Imports MongoDB.Bson
 Imports MongoDB.Driver
-
 Public Class ctrlOverview
     Dim currentDate As DateTime = DateTime.UtcNow
     Dim firstDayOfMonth As DateTime = New DateTime(currentDate.Year, currentDate.Month, 1, 0, 0, 0, DateTimeKind.Utc)
@@ -13,30 +12,25 @@ Public Class ctrlOverview
     Dim tomorrowDate As DateTime = New DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, 0, 0, 0, DateTimeKind.Utc)
     Dim startOfYesterday As DateTime = New DateTime(yesterday.Year, yesterday.Month, yesterday.Day, 0, 0, 0, DateTimeKind.Utc)
     Dim endOfYesterday As DateTime = startOfYesterday.AddHours(23).AddMinutes(59).AddSeconds(59)
-
     Private Sub ctrlOverview_Load(sender As Object, e As EventArgs) Handles Me.Load
         'refresh content kada 3secs
-        Timer1.Interval = 3000
-        Timer1.Start()
-
+        overviewTimer.Interval = 3000
+        overviewTimer.Start()
         DateTimePicker1.Value = DateTime.Now.Date
-
         loadStats()
         loadReviews()
         loadReservationz(DateTime.Now)
     End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles overviewTimer.Tick
         If Me.Visible = True Then
             loadStats()
         Else
         End If
     End Sub
-
     Private Sub loadStats()
         If Me.Visible = True Then
             'pangcount sa reservations
-            Dim colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("custReservations")
+            Dim colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReservations")
             Dim pendingResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Pending")
             Dim canceledResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Canceled")
             Dim pendingReserv As Long = colReserv.CountDocuments(pendingResFilter)
@@ -45,7 +39,7 @@ Public Class ctrlOverview
             lblReservCanceled.Text = "Canceled Reservations: " + canceledReserv.ToString
 
             'count all ATVs sa inventory, currently in-use
-            Dim colInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("rmsInventory")
+            Dim colInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsInventory")
             Dim totalAtv As Long = colInventory.EstimatedDocumentCount()
             lblAtvAvail.Text = totalAtv.ToString()
             Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.And(
@@ -56,7 +50,7 @@ Public Class ctrlOverview
             lblAtvInUse.Text = "Currently in-use: " & totalAtv.ToString()
 
             'count customers this month, yesterday
-            Dim colCustCount As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("logTransactions")
+            Dim colCustCount As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("logTransactions")
             Dim custDocs As List(Of BsonDocument) = colCustCount.Find(New BsonDocument()).ToList()
             Dim customersThisMonth As Long = 0
             For Each doc As BsonDocument In custDocs
@@ -82,7 +76,7 @@ Public Class ctrlOverview
             lblCustYest.Text = "Total number yesterday: " & customersYesterday.ToString()
 
             'count revenue for this month, yesterday
-            Dim colRevenue As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("logTransactions")
+            Dim colRevenue As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("logTransactions")
             Dim totalRevenueThisMonth As Decimal = 0
             For Each doc As BsonDocument In colRevenue.Find(New BsonDocument()).ToList()
                 Dim transacDate As DateTime = DateTime.ParseExact(doc("transacDate").ToString(), "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
@@ -102,11 +96,10 @@ Public Class ctrlOverview
         Else
         End If
     End Sub
-
     Private Sub loadReviews()
         If Me.Visible = True Then
             'display reviews sa dgvReviews
-            Dim colReviews As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("custReviews")
+            Dim colReviews As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReviews")
             'Load the data from MongoDB and sort by reviewDate in descending order
             Dim sort = Builders(Of BsonDocument).Sort.Descending("reviewDate")
             Dim documents = colReviews.Find(New BsonDocument()).Sort(sort).ToList()
@@ -119,11 +112,10 @@ Public Class ctrlOverview
         Else
         End If
     End Sub
-
     Private Sub loadReservationz(selectedDate As Date)
         If Me.Visible = True Then
             'Display reservations sa dgvReserv
-            Dim colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("custReservations")
+            Dim colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReservations")
 
             Dim dtpSelectedDate As Date = selectedDate
             'selected date range; 12am-1159pm
@@ -148,11 +140,12 @@ Public Class ctrlOverview
             'sa date format yung mali
 
 
+
+
+
         Else
         End If
     End Sub
-
-
     Private Sub MouseEnterHandler(sender As Object, e As EventArgs) Handles panelReserv.MouseEnter,
         lblReserv.MouseEnter, lblReservCanceled.MouseEnter, lblReservPending.MouseEnter,
         panelATV.MouseEnter, lblAtvAvail.MouseEnter, lblAtv.MouseEnter, lblAtvInUse.MouseEnter, lblAtvMainten.MouseEnter,
@@ -185,7 +178,6 @@ Public Class ctrlOverview
             lblRevYest.ForeColor = ColorTranslator.FromHtml("#1e272e")
         End If
     End Sub
-
     Private Sub MouseLeaveHandler(sender As Object, e As EventArgs) Handles panelReserv.MouseLeave,
         lblReserv.MouseLeave, lblReservCanceled.MouseLeave, lblReservPending.MouseLeave,
         panelATV.MouseLeave, lblAtvAvail.MouseLeave, lblAtv.MouseLeave, lblAtvInUse.MouseLeave, lblAtvMainten.MouseLeave,
@@ -218,7 +210,6 @@ Public Class ctrlOverview
             lblRevYest.ForeColor = ColorTranslator.FromHtml("#d3d3d3")
         End If
     End Sub
-
     Private Sub dgvReviews_SelectionChanged(sender As Object, e As EventArgs) Handles dgvReviews.SelectionChanged
         'Check if a row is selected
         If dgvReviews.SelectedRows.Count > 0 Then
@@ -229,23 +220,19 @@ Public Class ctrlOverview
             rtbxReview.Clear()
         End If
     End Sub
-
     Private Sub btnRefreshReviews_Click(sender As Object, e As EventArgs) Handles btnRefreshReviews.Click
         loadReviews()
     End Sub
-
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         Dim selectedDate As Date = DateTimePicker1.Value
         loadReservationz(selectedDate)
         'MessageBox.Show("Unable to fetch data from the database.", "Connection error!", MessageBoxButtons.OK, MessageBoxIcon.None)
     End Sub
-
     Private Sub btnResetDate_Click(sender As Object, e As EventArgs) Handles btnResetDate.Click
         DateTimePicker1.Value = DateTime.Now
         Dim selectedDate As Date = DateTimePicker1.Value
         loadReservationz(selectedDate)
     End Sub
-
     Private Sub ctrlOverview_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
             closeMongoConn()

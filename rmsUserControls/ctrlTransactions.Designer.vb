@@ -27,7 +27,7 @@ Partial Class ctrlTransactions
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.cbxReservFilter = New System.Windows.Forms.ComboBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.transacTimer = New System.Windows.Forms.Timer(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -107,7 +107,7 @@ Partial Class ctrlTransactions
         Me.cbxReservFilter.TabIndex = 65
         Me.cbxReservFilter.Visible = False
         '
-        'Timer1
+        'transacTimer
         '
         '
         'DataGridView1
@@ -767,7 +767,7 @@ Partial Class ctrlTransactions
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(1066, 280)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = " Add Transaction"
+        Me.TabPage1.Text = "  Add Transaction   "
         '
         'lblTransacPesoSign
         '
@@ -825,7 +825,7 @@ Partial Class ctrlTransactions
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(1066, 280)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = " Update Reservation"
+        Me.TabPage2.Text = "  Update Reservation   "
         '
         'Label14
         '
@@ -860,9 +860,9 @@ Partial Class ctrlTransactions
         Me.lblTransacCounter.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.lblTransacCounter.Location = New System.Drawing.Point(27, 31)
         Me.lblTransacCounter.Name = "lblTransacCounter"
-        Me.lblTransacCounter.Size = New System.Drawing.Size(224, 14)
+        Me.lblTransacCounter.Size = New System.Drawing.Size(233, 14)
         Me.lblTransacCounter.TabIndex = 128
-        Me.lblTransacCounter.Text = "Total transactions made today: 0"
+        Me.lblTransacCounter.Text = "Total transactions made today: 00"
         '
         'ctrlTransactions
         '
@@ -892,7 +892,7 @@ Partial Class ctrlTransactions
 
     End Sub
     Friend WithEvents cbxReservFilter As ComboBox
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents transacTimer As Timer
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnViewRes As Button
     Friend WithEvents btnUpdRes As Button

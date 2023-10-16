@@ -99,7 +99,7 @@ Partial Class ctrlCustomers
         '
         'cbxUpdGender
         '
-        Me.cbxUpdGender.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.cbxUpdGender.BackColor = System.Drawing.Color.White
         Me.cbxUpdGender.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbxUpdGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxUpdGender.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -126,7 +126,7 @@ Partial Class ctrlCustomers
         '
         'tbxUpdEmail
         '
-        Me.tbxUpdEmail.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdEmail.BackColor = System.Drawing.Color.White
         Me.tbxUpdEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxUpdEmail.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -151,7 +151,7 @@ Partial Class ctrlCustomers
         '
         'tbxUpdPhone
         '
-        Me.tbxUpdPhone.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdPhone.BackColor = System.Drawing.Color.White
         Me.tbxUpdPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdPhone.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxUpdPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -176,22 +176,21 @@ Partial Class ctrlCustomers
         '
         'tbxCustID
         '
-        Me.tbxCustID.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.tbxCustID.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.tbxCustID.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tbxCustID.Cursor = System.Windows.Forms.Cursors.Default
         Me.tbxCustID.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxCustID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.tbxCustID.Location = New System.Drawing.Point(138, 370)
+        Me.tbxCustID.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxCustID.Location = New System.Drawing.Point(886, 326)
         Me.tbxCustID.Margin = New System.Windows.Forms.Padding(0)
         Me.tbxCustID.Name = "tbxCustID"
         Me.tbxCustID.ReadOnly = True
         Me.tbxCustID.Size = New System.Drawing.Size(180, 13)
         Me.tbxCustID.TabIndex = 0
-        Me.tbxCustID.Visible = False
         '
         'tbxUpdSurname
         '
-        Me.tbxUpdSurname.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdSurname.BackColor = System.Drawing.Color.White
         Me.tbxUpdSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdSurname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxUpdSurname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -216,7 +215,7 @@ Partial Class ctrlCustomers
         '
         'tbxUpdMidname
         '
-        Me.tbxUpdMidname.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdMidname.BackColor = System.Drawing.Color.White
         Me.tbxUpdMidname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdMidname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxUpdMidname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -241,7 +240,7 @@ Partial Class ctrlCustomers
         '
         'tbxUpdFirname
         '
-        Me.tbxUpdFirname.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdFirname.BackColor = System.Drawing.Color.White
         Me.tbxUpdFirname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdFirname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxUpdFirname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -316,6 +315,8 @@ Partial Class ctrlCustomers
         Me.btnClrCust.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClrCust.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.btnClrCust.FlatAppearance.BorderSize = 0
+        Me.btnClrCust.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnClrCust.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.btnClrCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClrCust.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClrCust.ForeColor = System.Drawing.Color.LightGray
@@ -407,7 +408,7 @@ Partial Class ctrlCustomers
         '
         'tbxUpdStreet
         '
-        Me.tbxUpdStreet.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdStreet.BackColor = System.Drawing.Color.White
         Me.tbxUpdStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdStreet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxUpdStreet.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -432,7 +433,7 @@ Partial Class ctrlCustomers
         '
         'tbxUpdBarangay
         '
-        Me.tbxUpdBarangay.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdBarangay.BackColor = System.Drawing.Color.White
         Me.tbxUpdBarangay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdBarangay.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxUpdBarangay.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -457,7 +458,7 @@ Partial Class ctrlCustomers
         '
         'tbxUpdMuniCity
         '
-        Me.tbxUpdMuniCity.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdMuniCity.BackColor = System.Drawing.Color.White
         Me.tbxUpdMuniCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdMuniCity.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxUpdMuniCity.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -506,7 +507,7 @@ Partial Class ctrlCustomers
         '
         'cbxUpdCountry
         '
-        Me.cbxUpdCountry.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.cbxUpdCountry.BackColor = System.Drawing.Color.White
         Me.cbxUpdCountry.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbxUpdCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxUpdCountry.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -522,7 +523,7 @@ Partial Class ctrlCustomers
         '
         'tbxUpdProvince
         '
-        Me.tbxUpdProvince.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdProvince.BackColor = System.Drawing.Color.White
         Me.tbxUpdProvince.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdProvince.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxUpdProvince.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -535,7 +536,7 @@ Partial Class ctrlCustomers
         '
         'tbxUpdPassword
         '
-        Me.tbxUpdPassword.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdPassword.BackColor = System.Drawing.Color.White
         Me.tbxUpdPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdPassword.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxUpdPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -559,8 +560,9 @@ Partial Class ctrlCustomers
         '
         'tbxUpdUsername
         '
-        Me.tbxUpdUsername.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxUpdUsername.BackColor = System.Drawing.Color.White
         Me.tbxUpdUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxUpdUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxUpdUsername.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxUpdUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxUpdUsername.Location = New System.Drawing.Point(721, 105)
@@ -586,16 +588,17 @@ Partial Class ctrlCustomers
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(44, 337)
+        Me.TabControl1.Location = New System.Drawing.Point(44, 342)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1077, 380)
+        Me.TabControl1.Size = New System.Drawing.Size(1077, 375)
         Me.TabControl1.TabIndex = 32
         '
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.TabPage1.Controls.Add(Me.tbxUpdFirname)
+        Me.TabPage1.Controls.Add(Me.tbxCustID)
         Me.TabPage1.Controls.Add(Me.tbxUpdPassword)
         Me.TabPage1.Controls.Add(Me.btnUpdCust)
         Me.TabPage1.Controls.Add(Me.Label12)
@@ -626,9 +629,9 @@ Partial Class ctrlCustomers
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1069, 347)
+        Me.TabPage1.Size = New System.Drawing.Size(1069, 342)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = " Update user info "
+        Me.TabPage1.Text = "  Update user info   "
         '
         'TabPage2
         '
@@ -664,13 +667,13 @@ Partial Class ctrlCustomers
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1069, 347)
+        Me.TabPage2.Size = New System.Drawing.Size(1069, 342)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = " Add new account "
+        Me.TabPage2.Text = "  Add new account   "
         '
         'tbxAddStreet
         '
-        Me.tbxAddStreet.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddStreet.BackColor = System.Drawing.Color.White
         Me.tbxAddStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddStreet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddStreet.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -683,7 +686,7 @@ Partial Class ctrlCustomers
         '
         'tbxAddFirname
         '
-        Me.tbxAddFirname.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddFirname.BackColor = System.Drawing.Color.White
         Me.tbxAddFirname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddFirname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddFirname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -696,7 +699,7 @@ Partial Class ctrlCustomers
         '
         'tbxAddPassword
         '
-        Me.tbxAddPassword.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddPassword.BackColor = System.Drawing.Color.White
         Me.tbxAddPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddPassword.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -720,8 +723,9 @@ Partial Class ctrlCustomers
         '
         'tbxAddUsername
         '
-        Me.tbxAddUsername.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddUsername.BackColor = System.Drawing.Color.White
         Me.tbxAddUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxAddUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxAddUsername.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxAddUsername.Location = New System.Drawing.Point(721, 105)
@@ -757,7 +761,7 @@ Partial Class ctrlCustomers
         '
         'cbxAddGender
         '
-        Me.cbxAddGender.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.cbxAddGender.BackColor = System.Drawing.Color.White
         Me.cbxAddGender.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbxAddGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxAddGender.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -808,7 +812,7 @@ Partial Class ctrlCustomers
         '
         'tbxAddProvince
         '
-        Me.tbxAddProvince.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddProvince.BackColor = System.Drawing.Color.White
         Me.tbxAddProvince.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddProvince.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddProvince.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -833,7 +837,7 @@ Partial Class ctrlCustomers
         '
         'tbxAddMidname
         '
-        Me.tbxAddMidname.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddMidname.BackColor = System.Drawing.Color.White
         Me.tbxAddMidname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddMidname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddMidname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -846,7 +850,7 @@ Partial Class ctrlCustomers
         '
         'tbxAddEmail
         '
-        Me.tbxAddEmail.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddEmail.BackColor = System.Drawing.Color.White
         Me.tbxAddEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxAddEmail.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -859,7 +863,7 @@ Partial Class ctrlCustomers
         '
         'cbxAddCountry
         '
-        Me.cbxAddCountry.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.cbxAddCountry.BackColor = System.Drawing.Color.White
         Me.cbxAddCountry.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbxAddCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxAddCountry.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -875,7 +879,7 @@ Partial Class ctrlCustomers
         '
         'tbxAddBarangay
         '
-        Me.tbxAddBarangay.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddBarangay.BackColor = System.Drawing.Color.White
         Me.tbxAddBarangay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddBarangay.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddBarangay.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -936,7 +940,7 @@ Partial Class ctrlCustomers
         '
         'tbxAddSurname
         '
-        Me.tbxAddSurname.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddSurname.BackColor = System.Drawing.Color.White
         Me.tbxAddSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddSurname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddSurname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -949,7 +953,7 @@ Partial Class ctrlCustomers
         '
         'tbxAddPhone
         '
-        Me.tbxAddPhone.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddPhone.BackColor = System.Drawing.Color.White
         Me.tbxAddPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddPhone.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -974,7 +978,7 @@ Partial Class ctrlCustomers
         '
         'tbxAddMuniCity
         '
-        Me.tbxAddMuniCity.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxAddMuniCity.BackColor = System.Drawing.Color.White
         Me.tbxAddMuniCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddMuniCity.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddMuniCity.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1003,7 +1007,6 @@ Partial Class ctrlCustomers
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.tbxCustID)
         Me.Controls.Add(Me.DataGridView1)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -1017,7 +1020,6 @@ Partial Class ctrlCustomers
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents cbxUpdGender As ComboBox

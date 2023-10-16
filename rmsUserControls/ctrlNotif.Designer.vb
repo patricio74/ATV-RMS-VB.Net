@@ -52,12 +52,12 @@ Partial Class ctrlNotif
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -124,7 +124,7 @@ Partial Class ctrlNotif
         '
         'tbxName
         '
-        Me.tbxName.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxName.BackColor = System.Drawing.Color.White
         Me.tbxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -149,7 +149,7 @@ Partial Class ctrlNotif
         '
         'tbxDate
         '
-        Me.tbxDate.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tbxDate.BackColor = System.Drawing.Color.White
         Me.tbxDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxDate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxDate.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -180,7 +180,7 @@ Partial Class ctrlNotif
         Me.btnUpdCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdCust.Location = New System.Drawing.Point(243, 417)
+        Me.btnUpdCust.Location = New System.Drawing.Point(244, 472)
         Me.btnUpdCust.Name = "btnUpdCust"
         Me.btnUpdCust.Size = New System.Drawing.Size(121, 44)
         Me.btnUpdCust.TabIndex = 45
@@ -195,7 +195,7 @@ Partial Class ctrlNotif
         Me.btnAddCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAddCust.Location = New System.Drawing.Point(116, 417)
+        Me.btnAddCust.Location = New System.Drawing.Point(117, 472)
         Me.btnAddCust.Name = "btnAddCust"
         Me.btnAddCust.Size = New System.Drawing.Size(121, 44)
         Me.btnAddCust.TabIndex = 44
@@ -204,10 +204,12 @@ Partial Class ctrlNotif
         '
         'rtbxMsg
         '
+        Me.rtbxMsg.BackColor = System.Drawing.Color.White
+        Me.rtbxMsg.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtbxMsg.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.rtbxMsg.Location = New System.Drawing.Point(41, 202)
         Me.rtbxMsg.Name = "rtbxMsg"
-        Me.rtbxMsg.Size = New System.Drawing.Size(323, 190)
+        Me.rtbxMsg.Size = New System.Drawing.Size(323, 254)
         Me.rtbxMsg.TabIndex = 63
         Me.rtbxMsg.Text = resources.GetString("rtbxMsg.Text")
         '

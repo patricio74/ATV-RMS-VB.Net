@@ -1,7 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports MongoDB.Bson
 Imports MongoDB.Driver
-
 Public Class rmsLogin
     Dim loginToolTip As New ToolTip
     Public Sub clearLoginForm()
@@ -12,7 +11,7 @@ Public Class rmsLogin
         hideErrorLabel()
     End Sub
     Private Sub rmsLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        rmsSharedVar.mongoDbBase.GetCollection(Of BsonDocument)("rmsAdmin")
+        rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
         initializeDraggablePanel(panelTop)
         loadRMSLogin()
     End Sub
