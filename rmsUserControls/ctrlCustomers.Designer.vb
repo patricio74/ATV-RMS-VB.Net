@@ -42,7 +42,7 @@ Partial Class ctrlCustomers
         Me.btnUpdCust = New System.Windows.Forms.Button()
         Me.btnAddCust = New System.Windows.Forms.Button()
         Me.btnClrCust = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvCustomers = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,7 +62,7 @@ Partial Class ctrlCustomers
         Me.Label12 = New System.Windows.Forms.Label()
         Me.tbxUpdUsername = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.tabCustomer = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.tbxAddStreet = New System.Windows.Forms.TextBox()
@@ -91,8 +91,8 @@ Partial Class ctrlCustomers
         Me.Label20 = New System.Windows.Forms.Label()
         Me.tbxAddMuniCity = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabControl1.SuspendLayout()
+        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabCustomer.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
@@ -179,6 +179,7 @@ Partial Class ctrlCustomers
         Me.tbxCustID.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.tbxCustID.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tbxCustID.Cursor = System.Windows.Forms.Cursors.Default
+        Me.tbxCustID.Enabled = False
         Me.tbxCustID.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxCustID.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.tbxCustID.Location = New System.Drawing.Point(886, 326)
@@ -186,7 +187,7 @@ Partial Class ctrlCustomers
         Me.tbxCustID.Name = "tbxCustID"
         Me.tbxCustID.ReadOnly = True
         Me.tbxCustID.Size = New System.Drawing.Size(180, 13)
-        Me.tbxCustID.TabIndex = 0
+        Me.tbxCustID.TabIndex = 9999
         '
         'tbxUpdSurname
         '
@@ -327,13 +328,13 @@ Partial Class ctrlCustomers
         Me.btnClrCust.Text = "Clear form"
         Me.btnClrCust.UseVisualStyleBackColor = False
         '
-        'DataGridView1
+        'dgvCustomers
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dgvCustomers.AllowUserToAddRows = False
+        Me.dgvCustomers.AllowUserToOrderColumns = True
+        Me.dgvCustomers.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.dgvCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvCustomers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -342,16 +343,16 @@ Partial Class ctrlCustomers
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column6})
-        Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.GridColor = System.Drawing.Color.DarkGray
-        Me.DataGridView1.Location = New System.Drawing.Point(44, 24)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dgvCustomers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCustomers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column6})
+        Me.dgvCustomers.EnableHeadersVisualStyles = False
+        Me.dgvCustomers.GridColor = System.Drawing.Color.DarkGray
+        Me.dgvCustomers.Location = New System.Drawing.Point(44, 24)
+        Me.dgvCustomers.MultiSelect = False
+        Me.dgvCustomers.Name = "dgvCustomers"
+        Me.dgvCustomers.ReadOnly = True
+        Me.dgvCustomers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -359,24 +360,25 @@ Partial Class ctrlCustomers
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.RowHeadersVisible = False
+        Me.dgvCustomers.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvCustomers.RowHeadersVisible = False
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.ShowEditingIcon = False
-        Me.DataGridView1.Size = New System.Drawing.Size(1077, 300)
-        Me.DataGridView1.TabIndex = 31
+        Me.dgvCustomers.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCustomers.ShowEditingIcon = False
+        Me.dgvCustomers.Size = New System.Drawing.Size(1077, 300)
+        Me.dgvCustomers.TabIndex = 31
         '
         'Column1
         '
         Me.Column1.HeaderText = "ID"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
+        Me.Column1.Width = 50
         '
         'Column2
         '
@@ -584,15 +586,15 @@ Partial Class ctrlCustomers
         Me.Label13.TabIndex = 1
         Me.Label13.Text = "USERNAME:"
         '
-        'TabControl1
+        'tabCustomer
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(44, 342)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1077, 375)
-        Me.TabControl1.TabIndex = 32
+        Me.tabCustomer.Controls.Add(Me.TabPage1)
+        Me.tabCustomer.Controls.Add(Me.TabPage2)
+        Me.tabCustomer.Location = New System.Drawing.Point(44, 342)
+        Me.tabCustomer.Name = "tabCustomer"
+        Me.tabCustomer.SelectedIndex = 0
+        Me.tabCustomer.Size = New System.Drawing.Size(1077, 375)
+        Me.tabCustomer.TabIndex = 32
         '
         'TabPage1
         '
@@ -1006,15 +1008,15 @@ Partial Class ctrlCustomers
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.tabCustomer)
+        Me.Controls.Add(Me.dgvCustomers)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "ctrlCustomers"
         Me.Size = New System.Drawing.Size(1161, 738)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabControl1.ResumeLayout(False)
+        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabCustomer.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
@@ -1039,7 +1041,7 @@ Partial Class ctrlCustomers
     Friend WithEvents btnUpdCust As Button
     Friend WithEvents btnAddCust As Button
     Friend WithEvents btnClrCust As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvCustomers As DataGridView
     Friend WithEvents tbxUpdStreet As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents tbxUpdBarangay As TextBox
@@ -1054,12 +1056,7 @@ Partial Class ctrlCustomers
     Friend WithEvents Label12 As Label
     Friend WithEvents tbxUpdUsername As TextBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents tabCustomer As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents tbxAddStreet As TextBox
@@ -1088,4 +1085,9 @@ Partial Class ctrlCustomers
     Friend WithEvents Label20 As Label
     Friend WithEvents tbxAddMuniCity As TextBox
     Friend WithEvents Label21 As Label
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
 End Class

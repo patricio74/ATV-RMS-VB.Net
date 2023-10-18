@@ -531,7 +531,7 @@ Partial Class ctrlOverview
         Me.lblCustYest.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.lblCustYest.Size = New System.Drawing.Size(264, 23)
         Me.lblCustYest.TabIndex = 40
-        Me.lblCustYest.Text = "Total number yesterday:  0"
+        Me.lblCustYest.Text = "Total yesterday:  0"
         Me.lblCustYest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblCust

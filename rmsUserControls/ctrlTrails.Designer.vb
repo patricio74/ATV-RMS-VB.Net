@@ -44,7 +44,7 @@ Partial Class ctrlTrails
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.tabTrails = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.addDescription = New System.Windows.Forms.RichTextBox()
         Me.addMinPerson = New System.Windows.Forms.TextBox()
@@ -67,7 +67,7 @@ Partial Class ctrlTrails
         Me.Label13 = New System.Windows.Forms.Label()
         Me.updDuration = New System.Windows.Forms.TextBox()
         CType(Me.dgvTrails, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabControl1.SuspendLayout()
+        Me.tabTrails.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
@@ -284,15 +284,15 @@ Partial Class ctrlTrails
         Me.Column6.Name = "Column6"
         Me.Column6.Width = 95
         '
-        'TabControl1
+        'tabTrails
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(843, 48)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(286, 642)
-        Me.TabControl1.TabIndex = 131
+        Me.tabTrails.Controls.Add(Me.TabPage1)
+        Me.tabTrails.Controls.Add(Me.TabPage2)
+        Me.tabTrails.Location = New System.Drawing.Point(843, 48)
+        Me.tabTrails.Name = "tabTrails"
+        Me.tabTrails.SelectedIndex = 0
+        Me.tabTrails.Size = New System.Drawing.Size(286, 642)
+        Me.tabTrails.TabIndex = 131
         '
         'TabPage1
         '
@@ -582,7 +582,7 @@ Partial Class ctrlTrails
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.tabTrails)
         Me.Controls.Add(Me.dgvTrails)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -590,7 +590,7 @@ Partial Class ctrlTrails
         Me.Name = "ctrlTrails"
         Me.Size = New System.Drawing.Size(1161, 738)
         CType(Me.dgvTrails, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabControl1.ResumeLayout(False)
+        Me.tabTrails.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
@@ -610,7 +610,7 @@ Partial Class ctrlTrails
     Friend WithEvents dgvTrails As DataGridView
     Friend WithEvents btnAddTrail As Button
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents tabTrails As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents lblClearAdd As Label
     Friend WithEvents TabPage2 As TabPage

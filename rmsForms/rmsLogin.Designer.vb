@@ -323,7 +323,7 @@ Partial Class rmsLogin
         Me.lblLoginError.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblLoginError.BackColor = System.Drawing.Color.Firebrick
-        Me.lblLoginError.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblLoginError.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblLoginError.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLoginError.ForeColor = System.Drawing.Color.White
         Me.lblLoginError.Location = New System.Drawing.Point(0, 156)
@@ -356,6 +356,7 @@ Partial Class rmsLogin
         'lblUserError
         '
         Me.lblUserError.BackColor = System.Drawing.Color.Transparent
+        Me.lblUserError.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblUserError.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUserError.ForeColor = System.Drawing.Color.Red
         Me.lblUserError.Location = New System.Drawing.Point(181, 13)
@@ -369,6 +370,7 @@ Partial Class rmsLogin
         'lblPassError
         '
         Me.lblPassError.BackColor = System.Drawing.Color.Transparent
+        Me.lblPassError.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPassError.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPassError.ForeColor = System.Drawing.Color.Red
         Me.lblPassError.Location = New System.Drawing.Point(181, 80)
@@ -470,7 +472,7 @@ Partial Class rmsLogin
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(0, 51)
+        Me.Label2.Location = New System.Drawing.Point(0, 50)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(460, 10)
         Me.Label2.TabIndex = 20

@@ -102,7 +102,7 @@ Partial Class rmsSplashScreen
         '
         Me.ApplicationTitle.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ApplicationTitle.BackColor = System.Drawing.Color.Transparent
-        Me.ApplicationTitle.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ApplicationTitle.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ApplicationTitle.Location = New System.Drawing.Point(3, 0)
         Me.ApplicationTitle.Name = "ApplicationTitle"
         Me.ApplicationTitle.Size = New System.Drawing.Size(490, 49)

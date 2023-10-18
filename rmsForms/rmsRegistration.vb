@@ -1,6 +1,4 @@
-﻿Imports System.Globalization
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
-Imports MongoDB.Bson
+﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class rmsRegistration
     Dim adminCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")

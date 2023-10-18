@@ -27,125 +27,6 @@ Public Class ctrlOverview
         Else
         End If
     End Sub
-    Private Sub loadStats()
-        If Me.Visible = True Then
-            'pangcount sa reservations
-            Dim colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReservations")
-            Dim pendingResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Pending")
-            Dim canceledResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Canceled")
-            Dim pendingReserv As Long = colReserv.CountDocuments(pendingResFilter)
-            Dim canceledReserv As Long = colReserv.CountDocuments(canceledResFilter)
-            lblReservPending.Text = pendingReserv
-            lblReservCanceled.Text = "Canceled Reservations: " + canceledReserv.ToString
-
-            'count all ATVs sa inventory, currently in-use
-            Dim colInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsInventory")
-            Dim totalAtv As Long = colInventory.EstimatedDocumentCount()
-            lblAtvAvail.Text = totalAtv.ToString()
-            Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.And(
-            Builders(Of BsonDocument).Filter.Eq(Of String)("status", "in-use"),
-            Builders(Of BsonDocument).Filter.Gte(Of String)("date", todayDate),
-            Builders(Of BsonDocument).Filter.Lt(Of String)("date", tomorrowDate)
-            )
-            lblAtvInUse.Text = "Currently in-use: " & totalAtv.ToString()
-
-            'count customers this month, yesterday
-            Dim colCustCount As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("logTransactions")
-            Dim custDocs As List(Of BsonDocument) = colCustCount.Find(New BsonDocument()).ToList()
-            Dim customersThisMonth As Long = 0
-            For Each doc As BsonDocument In custDocs
-                Dim dateString As String = doc("transacDate").ToString()
-                Dim transacDate As DateTime
-                If DateTime.TryParseExact(dateString, "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, transacDate) Then
-                    If transacDate >= firstDayOfMonth AndAlso transacDate <= lastDayOfMonth Then
-                        customersThisMonth += 1
-                    End If
-                End If
-            Next
-            Dim customersYesterday As Long = 0
-            For Each doc As BsonDocument In custDocs
-                Dim dateString As String = doc("transacDate").ToString()
-                Dim transacDate As DateTime
-                If DateTime.TryParseExact(dateString, "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, transacDate) Then
-                    If transacDate >= startOfYesterday AndAlso transacDate <= endOfYesterday Then
-                        customersYesterday += 1
-                    End If
-                End If
-            Next
-            lblCustMonth.Text = customersThisMonth.ToString()
-            lblCustYest.Text = "Total number yesterday: " & customersYesterday.ToString()
-
-            'count revenue for this month, yesterday
-            Dim colRevenue As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("logTransactions")
-            Dim totalRevenueThisMonth As Decimal = 0
-            For Each doc As BsonDocument In colRevenue.Find(New BsonDocument()).ToList()
-                Dim transacDate As DateTime = DateTime.ParseExact(doc("transacDate").ToString(), "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
-                If transacDate >= firstDayOfMonth AndAlso transacDate <= lastDayOfMonth Then
-                    totalRevenueThisMonth += Convert.ToDecimal(doc("totalPrice").ToString())
-                End If
-            Next
-            Dim totalRevenueYesterday As Decimal = 0
-            For Each doc As BsonDocument In colRevenue.Find(New BsonDocument()).ToList()
-                Dim transacDate As DateTime = DateTime.ParseExact(doc("transacDate").ToString(), "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
-                If transacDate >= startOfYesterday AndAlso transacDate <= endOfYesterday Then
-                    totalRevenueYesterday += Convert.ToDecimal(doc("totalPrice").ToString())
-                End If
-            Next
-            lblRevMonth.Text = "₱" & totalRevenueThisMonth.ToString("#,##0")
-            lblRevYest.Text = "Total yesterday: ₱" & totalRevenueYesterday.ToString("#,##0")
-        Else
-        End If
-    End Sub
-    Private Sub loadReviews()
-        If Me.Visible = True Then
-            'display reviews sa dgvReviews
-            Dim colReviews As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReviews")
-            'Load the data from MongoDB and sort by reviewDate in descending order
-            Dim sort = Builders(Of BsonDocument).Sort.Descending("reviewDate")
-            Dim documents = colReviews.Find(New BsonDocument()).Sort(sort).ToList()
-
-            dgvReviews.Rows.Clear()
-            For Each doc In documents
-                dgvReviews.Rows.Add(doc("Rating").ToString(), doc("Name").ToString(), doc("Review").ToString())
-                dgvReviews.ClearSelection()
-            Next
-        Else
-        End If
-    End Sub
-    Private Sub loadReservationz(selectedDate As Date)
-        If Me.Visible = True Then
-            'Display reservations sa dgvReserv
-            Dim colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReservations")
-
-            Dim dtpSelectedDate As Date = selectedDate
-            'selected date range; 12am-1159pm
-            Dim dtpCalStart As Date = New DateTime(dtpSelectedDate.Year, dtpSelectedDate.Month, dtpSelectedDate.Day, 0, 0, 0, DateTimeKind.Utc)
-            Dim dtpCalEnd As Date = dtpCalStart.AddDays(+1)
-
-            Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.And(
-        Builders(Of BsonDocument).Filter.Gte(Of DateTime)("reservDate", dtpCalStart),
-        Builders(Of BsonDocument).Filter.Lt(Of DateTime)("reservDate", dtpCalEnd))
-
-            Dim reservations = colReserv.Find(filter).ToList()
-
-            dgvReservations.Rows.Clear()
-            For Each reservDoc As BsonDocument In reservations
-                Dim fullName As String = String.Join(" ", reservDoc("FName"), reservDoc("MName"), reservDoc("Sname"))
-                dgvReservations.Rows.Add(fullName, reservDoc("tourName").ToString(), reservDoc("timeSlot").ToString(), reservDoc("totalPerson").ToString())
-                dgvReservations.ClearSelection()
-            Next
-
-
-            'may mali pa sa logic, di navview reservation sa selected dtp date
-            'sa date format yung mali
-
-
-
-
-
-        Else
-        End If
-    End Sub
     Private Sub MouseEnterHandler(sender As Object, e As EventArgs) Handles panelReserv.MouseEnter,
         lblReserv.MouseEnter, lblReservCanceled.MouseEnter, lblReservPending.MouseEnter,
         panelATV.MouseEnter, lblAtvAvail.MouseEnter, lblAtv.MouseEnter, lblAtvInUse.MouseEnter, lblAtvMainten.MouseEnter,
@@ -210,6 +91,86 @@ Public Class ctrlOverview
             lblRevYest.ForeColor = ColorTranslator.FromHtml("#d3d3d3")
         End If
     End Sub
+    Private Sub loadStats()
+        If Me.Visible = True Then
+            'pangcount sa reservations
+            Dim pendingResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Pending")
+            Dim canceledResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Canceled")
+            Dim pendingReserv As Long = rmsSharedVar.colReserv.CountDocuments(pendingResFilter)
+            Dim canceledReserv As Long = rmsSharedVar.colReserv.CountDocuments(canceledResFilter)
+            lblReservPending.Text = pendingReserv
+            lblReservCanceled.Text = "Canceled Reservations: " + canceledReserv.ToString
+
+            'count all ATVs sa inventory, currently in-use
+            Dim totalAtv As Long = rmsSharedVar.colInventory.EstimatedDocumentCount()
+            lblAtvAvail.Text = totalAtv.ToString()
+            Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.And(
+            Builders(Of BsonDocument).Filter.Eq(Of String)("status", "in-use"),
+            Builders(Of BsonDocument).Filter.Gte(Of String)("date", todayDate),
+            Builders(Of BsonDocument).Filter.Lt(Of String)("date", tomorrowDate)
+            )
+            lblAtvInUse.Text = "Currently in-use: " & totalAtv.ToString()
+
+            'count customers this month, yesterday
+            Dim custDocs As List(Of BsonDocument) = rmsSharedVar.colTransac.Find(New BsonDocument()).ToList()
+            Dim customersThisMonth As Long = 0
+            For Each doc As BsonDocument In custDocs
+                Dim dateString As String = doc("transacStart").ToString()
+                Dim transacDate As DateTime
+                If DateTime.TryParseExact(dateString, "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, transacDate) Then
+                    If transacDate >= firstDayOfMonth AndAlso transacDate <= lastDayOfMonth Then
+                        customersThisMonth += 1
+                    End If
+                End If
+            Next
+            Dim customersYesterday As Long = 0
+            For Each doc As BsonDocument In custDocs
+                Dim dateString As String = doc("transacStart").ToString()
+                Dim transacDate As DateTime
+                If DateTime.TryParseExact(dateString, "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, transacDate) Then
+                    If transacDate >= startOfYesterday AndAlso transacDate <= endOfYesterday Then
+                        customersYesterday += 1
+                    End If
+                End If
+            Next
+            lblCustMonth.Text = customersThisMonth.ToString()
+            lblCustYest.Text = "Total yesterday: " & customersYesterday.ToString()
+
+            'count revenue for this month, yesterday
+            Dim totalRevenueThisMonth As Decimal = 0
+            For Each doc As BsonDocument In rmsSharedVar.colTransac.Find(New BsonDocument()).ToList()
+                Dim transacDate As DateTime = DateTime.ParseExact(doc("transacStart").ToString(), "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
+                If transacDate >= firstDayOfMonth AndAlso transacDate <= lastDayOfMonth Then
+                    totalRevenueThisMonth += Convert.ToDecimal(doc("totalPrice").ToString())
+                End If
+            Next
+            Dim totalRevenueYesterday As Decimal = 0
+            For Each doc As BsonDocument In rmsSharedVar.colTransac.Find(New BsonDocument()).ToList()
+                Dim transacDate As DateTime = DateTime.ParseExact(doc("transacStart").ToString(), "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
+                If transacDate >= startOfYesterday AndAlso transacDate <= endOfYesterday Then
+                    totalRevenueYesterday += Convert.ToDecimal(doc("totalPrice").ToString())
+                End If
+            Next
+            lblRevMonth.Text = "₱" & totalRevenueThisMonth.ToString("#,##0")
+            lblRevYest.Text = "Total yesterday: ₱" & totalRevenueYesterday.ToString("#,##0")
+        Else
+        End If
+    End Sub
+    Private Sub loadReviews()
+        If Me.Visible = True Then
+            'display reviews sa dgvReviews
+            'Load the data from MongoDB and sort by reviewDate in descending order
+            Dim sort = Builders(Of BsonDocument).Sort.Descending("reviewDate")
+            Dim documents = rmsSharedVar.colReviews.Find(New BsonDocument()).Sort(sort).ToList()
+
+            dgvReviews.Rows.Clear()
+            For Each doc In documents
+                dgvReviews.Rows.Add(doc("Rating").ToString(), doc("Name").ToString(), doc("Review").ToString())
+                dgvReviews.ClearSelection()
+            Next
+        Else
+        End If
+    End Sub
     Private Sub dgvReviews_SelectionChanged(sender As Object, e As EventArgs) Handles dgvReviews.SelectionChanged
         'Check if a row is selected
         If dgvReviews.SelectedRows.Count > 0 Then
@@ -223,6 +184,37 @@ Public Class ctrlOverview
     Private Sub btnRefreshReviews_Click(sender As Object, e As EventArgs) Handles btnRefreshReviews.Click
         loadReviews()
     End Sub
+
+
+
+
+
+    Private Sub loadReservationz(selectedDate As Date)
+        If Me.Visible = True Then
+            'Display reservations sa dgvReserv
+            Dim dtpSelectedDate As Date = selectedDate
+            'selected date range; 12am-1159pm
+            Dim dtpCalStart As Date = New DateTime(dtpSelectedDate.Year, dtpSelectedDate.Month, dtpSelectedDate.Day, 0, 0, 0, DateTimeKind.Utc)
+            Dim dtpCalEnd As Date = dtpCalStart.AddDays(+1)
+            Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.And(
+                Builders(Of BsonDocument).Filter.Gte(Of DateTime)("reservDate", dtpCalStart),
+                Builders(Of BsonDocument).Filter.Lt(Of DateTime)("reservDate", dtpCalEnd))
+            Dim reservations = rmsSharedVar.colReserv.Find(filter).ToList()
+            dgvReservations.Rows.Clear()
+            For Each reservDoc As BsonDocument In reservations
+                Dim fullName As String = String.Join(" ", reservDoc("FName"), reservDoc("MName"), reservDoc("Sname"))
+                dgvReservations.Rows.Add(fullName, reservDoc("tourName").ToString(), reservDoc("timeSlot").ToString(), reservDoc("totalPerson").ToString())
+                dgvReservations.ClearSelection()
+            Next
+
+
+            'may mali pa sa logic, di navview reservation sa selected dtp date
+            'sa date format yung mali
+
+
+        Else
+        End If
+    End Sub
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         Dim selectedDate As Date = DateTimePicker1.Value
         loadReservationz(selectedDate)
@@ -233,6 +225,9 @@ Public Class ctrlOverview
         Dim selectedDate As Date = DateTimePicker1.Value
         loadReservationz(selectedDate)
     End Sub
+
+
+
     Private Sub ctrlOverview_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
             closeMongoConn()

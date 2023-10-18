@@ -511,7 +511,7 @@ Partial Class rmsRegistration
         'lblPanel1Note
         '
         Me.lblPanel1Note.BackColor = System.Drawing.Color.Firebrick
-        Me.lblPanel1Note.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblPanel1Note.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPanel1Note.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPanel1Note.ForeColor = System.Drawing.Color.White
         Me.lblPanel1Note.Location = New System.Drawing.Point(0, 503)
@@ -573,6 +573,7 @@ Partial Class rmsRegistration
         'lblPhoneInvalid
         '
         Me.lblPhoneInvalid.BackColor = System.Drawing.Color.Transparent
+        Me.lblPhoneInvalid.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPhoneInvalid.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPhoneInvalid.ForeColor = System.Drawing.Color.Red
         Me.lblPhoneInvalid.Location = New System.Drawing.Point(173, 242)
@@ -586,7 +587,7 @@ Partial Class rmsRegistration
         'lblPanel2Note
         '
         Me.lblPanel2Note.BackColor = System.Drawing.Color.Firebrick
-        Me.lblPanel2Note.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblPanel2Note.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPanel2Note.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPanel2Note.ForeColor = System.Drawing.Color.White
         Me.lblPanel2Note.Location = New System.Drawing.Point(0, 503)
@@ -602,6 +603,7 @@ Partial Class rmsRegistration
         'lblRFIDUsed
         '
         Me.lblRFIDUsed.BackColor = System.Drawing.Color.Transparent
+        Me.lblRFIDUsed.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblRFIDUsed.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRFIDUsed.ForeColor = System.Drawing.Color.Red
         Me.lblRFIDUsed.Location = New System.Drawing.Point(173, 315)
@@ -615,6 +617,7 @@ Partial Class rmsRegistration
         'lblEmailUsed
         '
         Me.lblEmailUsed.BackColor = System.Drawing.Color.Transparent
+        Me.lblEmailUsed.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblEmailUsed.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmailUsed.ForeColor = System.Drawing.Color.Red
         Me.lblEmailUsed.Location = New System.Drawing.Point(173, 171)
@@ -719,6 +722,7 @@ Partial Class rmsRegistration
         'lblUsernameShort
         '
         Me.lblUsernameShort.BackColor = System.Drawing.Color.Transparent
+        Me.lblUsernameShort.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblUsernameShort.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsernameShort.ForeColor = System.Drawing.Color.Red
         Me.lblUsernameShort.Location = New System.Drawing.Point(173, 171)
@@ -732,6 +736,7 @@ Partial Class rmsRegistration
         'lblPassShort
         '
         Me.lblPassShort.BackColor = System.Drawing.Color.Transparent
+        Me.lblPassShort.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPassShort.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPassShort.ForeColor = System.Drawing.Color.Red
         Me.lblPassShort.Location = New System.Drawing.Point(173, 242)
@@ -745,7 +750,7 @@ Partial Class rmsRegistration
         'lblPanel3Note
         '
         Me.lblPanel3Note.BackColor = System.Drawing.Color.Firebrick
-        Me.lblPanel3Note.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblPanel3Note.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPanel3Note.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPanel3Note.ForeColor = System.Drawing.Color.White
         Me.lblPanel3Note.Location = New System.Drawing.Point(0, 503)
@@ -855,6 +860,7 @@ Partial Class rmsRegistration
         'lblPassError
         '
         Me.lblPassError.BackColor = System.Drawing.Color.Transparent
+        Me.lblPassError.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPassError.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPassError.ForeColor = System.Drawing.Color.Red
         Me.lblPassError.Location = New System.Drawing.Point(173, 315)
