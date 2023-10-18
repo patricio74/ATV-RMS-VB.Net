@@ -29,14 +29,6 @@ Partial Class ctrlTransactions
         Me.cbxReservFilter = New System.Windows.Forms.ComboBox()
         Me.transacTimer = New System.Windows.Forms.Timer(Me.components)
         Me.dgvTransactions = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnViewRes = New System.Windows.Forms.Button()
         Me.btnUpdRes = New System.Windows.Forms.Button()
         Me.btnAddTransac = New System.Windows.Forms.Button()
@@ -80,6 +72,7 @@ Partial Class ctrlTransactions
         Me.lblTransacPesoSign = New System.Windows.Forms.Label()
         Me.lblClearAdd = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.lblClearNew = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbxNewPerson = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -102,6 +95,8 @@ Partial Class ctrlTransactions
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblClearUpd = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.lblClearTransac = New System.Windows.Forms.Label()
+        Me.btnUpdTransac = New System.Windows.Forms.Button()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.tbxOnGPerson = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -120,9 +115,14 @@ Partial Class ctrlTransactions
         Me.lblTodayMor = New System.Windows.Forms.Label()
         Me.lblTodayAft = New System.Windows.Forms.Label()
         Me.lblTodayEve = New System.Windows.Forms.Label()
-        Me.lblClearNew = New System.Windows.Forms.Label()
-        Me.lblClearTransac = New System.Windows.Forms.Label()
-        Me.btnUpdTransac = New System.Windows.Forms.Button()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvTransactions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTransactions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -167,7 +167,7 @@ Partial Class ctrlTransactions
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvTransactions.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTransactions.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column6, Me.Column3, Me.Column7, Me.Column8})
+        Me.dgvTransactions.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
         Me.dgvTransactions.EnableHeadersVisualStyles = False
         Me.dgvTransactions.GridColor = System.Drawing.Color.DarkGray
         Me.dgvTransactions.Location = New System.Drawing.Point(30, 59)
@@ -193,57 +193,6 @@ Partial Class ctrlTransactions
         Me.dgvTransactions.ShowEditingIcon = False
         Me.dgvTransactions.Size = New System.Drawing.Size(1103, 297)
         Me.dgvTransactions.TabIndex = 95
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 25
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "FIRST NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "MIDDLE NAME"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.HeaderText = "SURNAME"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column6.HeaderText = "TOUR NAME"
-        Me.Column6.Name = "Column6"
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "DATE"
-        Me.Column3.Name = "Column3"
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "TIME SLOT"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Width = 110
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "STATUS"
-        Me.Column8.Name = "Column8"
         '
         'btnViewRes
         '
@@ -834,6 +783,19 @@ Partial Class ctrlTransactions
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "  Add Reservation   "
         '
+        'lblClearNew
+        '
+        Me.lblClearNew.AutoSize = True
+        Me.lblClearNew.BackColor = System.Drawing.Color.Transparent
+        Me.lblClearNew.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblClearNew.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClearNew.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblClearNew.Location = New System.Drawing.Point(850, 204)
+        Me.lblClearNew.Name = "lblClearNew"
+        Me.lblClearNew.Size = New System.Drawing.Size(75, 18)
+        Me.lblClearNew.TabIndex = 148
+        Me.lblClearNew.Text = "Clear Form"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -1149,6 +1111,35 @@ Partial Class ctrlTransactions
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "  Ongoing Transactions   "
         '
+        'lblClearTransac
+        '
+        Me.lblClearTransac.AutoSize = True
+        Me.lblClearTransac.BackColor = System.Drawing.Color.Transparent
+        Me.lblClearTransac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblClearTransac.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClearTransac.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblClearTransac.Location = New System.Drawing.Point(878, 193)
+        Me.lblClearTransac.Name = "lblClearTransac"
+        Me.lblClearTransac.Size = New System.Drawing.Size(75, 18)
+        Me.lblClearTransac.TabIndex = 168
+        Me.lblClearTransac.Text = "Clear Form"
+        '
+        'btnUpdTransac
+        '
+        Me.btnUpdTransac.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnUpdTransac.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnUpdTransac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUpdTransac.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnUpdTransac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdTransac.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdTransac.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnUpdTransac.Location = New System.Drawing.Point(854, 136)
+        Me.btnUpdTransac.Name = "btnUpdTransac"
+        Me.btnUpdTransac.Size = New System.Drawing.Size(121, 44)
+        Me.btnUpdTransac.TabIndex = 167
+        Me.btnUpdTransac.Text = "Update"
+        Me.btnUpdTransac.UseVisualStyleBackColor = False
+        '
         'Label28
         '
         Me.Label28.AutoSize = True
@@ -1382,47 +1373,56 @@ Partial Class ctrlTransactions
         Me.lblTodayEve.TabIndex = 132
         Me.lblTodayEve.Text = "Evening: 0"
         '
-        'lblClearNew
+        'Column1
         '
-        Me.lblClearNew.AutoSize = True
-        Me.lblClearNew.BackColor = System.Drawing.Color.Transparent
-        Me.lblClearNew.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblClearNew.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblClearNew.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblClearNew.Location = New System.Drawing.Point(850, 204)
-        Me.lblClearNew.Name = "lblClearNew"
-        Me.lblClearNew.Size = New System.Drawing.Size(75, 18)
-        Me.lblClearNew.TabIndex = 148
-        Me.lblClearNew.Text = "Clear Form"
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 25
         '
-        'lblClearTransac
+        'Column2
         '
-        Me.lblClearTransac.AutoSize = True
-        Me.lblClearTransac.BackColor = System.Drawing.Color.Transparent
-        Me.lblClearTransac.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblClearTransac.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblClearTransac.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblClearTransac.Location = New System.Drawing.Point(878, 193)
-        Me.lblClearTransac.Name = "lblClearTransac"
-        Me.lblClearTransac.Size = New System.Drawing.Size(75, 18)
-        Me.lblClearTransac.TabIndex = 168
-        Me.lblClearTransac.Text = "Clear Form"
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "FIRST NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
         '
-        'btnUpdTransac
+        'Column3
         '
-        Me.btnUpdTransac.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnUpdTransac.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnUpdTransac.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdTransac.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdTransac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdTransac.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdTransac.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdTransac.Location = New System.Drawing.Point(854, 136)
-        Me.btnUpdTransac.Name = "btnUpdTransac"
-        Me.btnUpdTransac.Size = New System.Drawing.Size(121, 44)
-        Me.btnUpdTransac.TabIndex = 167
-        Me.btnUpdTransac.Text = "Update"
-        Me.btnUpdTransac.UseVisualStyleBackColor = False
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "MIDDLE NAME"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.HeaderText = "SURNAME"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column5.HeaderText = "TOUR NAME"
+        Me.Column5.Name = "Column5"
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column6.HeaderText = "DATE"
+        Me.Column6.Name = "Column6"
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "TIME SLOT"
+        Me.Column7.Name = "Column7"
+        Me.Column7.Width = 110
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "STATUS"
+        Me.Column8.Name = "Column8"
         '
         'ctrlTransactions
         '
@@ -1503,14 +1503,6 @@ Partial Class ctrlTransactions
     Friend WithEvents tbxAddMName As TextBox
     Friend WithEvents dateTimeNew As DateTimePicker
     Friend WithEvents tbxAddFName As TextBox
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents lblTransacPesoSign As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents TabPage3 As TabPage
@@ -1554,4 +1546,12 @@ Partial Class ctrlTransactions
     Friend WithEvents lblClearNew As Label
     Friend WithEvents lblClearTransac As Label
     Friend WithEvents btnUpdTransac As Button
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
 End Class

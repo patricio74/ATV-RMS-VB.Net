@@ -36,6 +36,11 @@ Public Class ctrlTransactions
         numberOfPerson = 0
         totalPrice = 0
     End Sub
+    Private Function cbxToursList()
+        Dim filter As New BsonDocument()
+        Dim tourData As List(Of BsonDocument) = rmsSharedVar.colAtvTrails.Find(filter).ToList()
+        Return tourData
+    End Function
     Private Sub reloadTrailList()
         'clear combobox then repopulate list
         cbxReservTour.Items.Clear()
@@ -44,18 +49,17 @@ Public Class ctrlTransactions
         cbxAddTour.SelectedIndex = -1
         Dim tourData As List(Of BsonDocument) = cbxToursList()
         For Each tourDocument As BsonDocument In tourData
-            cbxReservTour.Items.Add(tourDocument("nameOfTour").ToString())
             cbxAddTour.Items.Add(tourDocument("nameOfTour").ToString())
+            cbxNewTour.Items.Add(tourDocument("nameOfTour").ToString())
+            cbxReservTour.Items.Add(tourDocument("nameOfTour").ToString())
         Next
     End Sub
-
-
-
     Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'refresh content every 3secs
         transacTimer.Interval = 3000
         transacTimer.Start()
         reloadTrailList()
+        populateTransac()
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles transacTimer.Tick
         'ADD CODE PARA IREFRESH DGV PAG NASA ADD TRANSAC,ADD RES TAB
@@ -83,6 +87,7 @@ Public Class ctrlTransactions
             btnViewRes.Visible = False
             reloadTrailList()
             clearUpdResTab()
+            populateTransac()
             'add code to display transacdb to dgv
 
         ElseIf tabTransactions.SelectedIndex = 1 Then 'add reserv tab
@@ -90,6 +95,7 @@ Public Class ctrlTransactions
             btnViewRes.Visible = False
             reloadTrailList()
             clearAddTransacTab()
+            populateTransac()
             'add code to display reservations to dgv
 
         ElseIf tabTransactions.SelectedIndex = 2 Then 'upd reserv tab
@@ -97,6 +103,7 @@ Public Class ctrlTransactions
             btnViewRes.Visible = True
             reloadTrailList()
             clearAddTransacTab()
+            populateTransac()
             'add code to display reservations to dgv
 
         ElseIf tabTransactions.SelectedIndex = 3 Then 'ongoing tab
@@ -104,17 +111,63 @@ Public Class ctrlTransactions
             btnViewRes.Visible = False
             reloadTrailList()
             clearUpdResTab()
+
             'add code to display transacdb to dgv
 
         End If
     End Sub
-    Private Function cbxToursList()
-        Dim filter As New BsonDocument()
-        Dim tourData As List(Of BsonDocument) = rmsSharedVar.colAtvTrails.Find(filter).ToList()
-        Return tourData
-    End Function
 
 
+
+
+    '!!!!!gawan mo ng list kagaya sa customerz
+    Private Sub populateTransac()
+        If Me.Visible = True Then
+            Dim filter = Builders(Of BsonDocument).Filter.Empty
+            Dim transacList = rmsSharedVar.colTransac.Find(filter).ToList()
+            dgvTransactions.Rows.Clear()
+            For Each doc As BsonDocument In transacList
+                Dim transacID As String = doc("_id").AsObjectId.ToString
+                Dim transacFName As String = doc("FName").AsString
+                Dim transacMName As String = doc("MName").AsString
+                Dim transacSName As String = doc("Sname").AsString
+                Dim transacTour As String = doc("tourName").AsString
+                Dim transacDate As String = doc("transacStart").AsString
+                Dim transacTime As String = doc("timeSlot").AsString
+                Dim transacStatus As String = doc("status").AsString
+                dgvTransactions.Rows.Add(transacID, transacFName, transacMName, transacSName, transacTour, transacDate, transacTime, transacStatus)
+                dgvTransactions.ClearSelection()
+            Next
+        End If
+    End Sub
+    Private Sub dgvTransac_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTransactions.CellClick
+        Try
+            Dim selectedRow As DataGridViewRow = dgvTransactions.SelectedRows(0)
+            If dgvTransactions.SelectedRows(0).Cells.Count > 0 Then
+                tabTransactions.SelectedIndex = 2 'update reservation tab
+                Dim selectedId As String = selectedRow.Cells("Column1").Value.ToString()
+                Dim selectedFName As String = selectedRow.Cells("Column2").Value.ToString()
+                Dim selectedMName As String = selectedRow.Cells("Column3").Value.ToString()
+                Dim selectedSName As String = selectedRow.Cells("Column4").Value.ToString()
+                Dim selectedTour As String = selectedRow.Cells("Column5").Value.ToString()
+                Dim selectedDate As String = selectedRow.Cells("Column6").Value.ToString()
+                Dim selectedTime As String = selectedRow.Cells("Column7").Value.ToString()
+                Dim selectedStatus As String = selectedRow.Cells("Column8").Value.ToString()
+                tbxReservID.Text = selectedId
+                tbxReservFName.Text = selectedFName
+                tbxReservMName.Text = selectedMName
+                tbxReservSName.Text = selectedSName
+                cbxReservTour.Text = selectedTour
+                dateTimeReserv.Value = selectedDate
+                cbxReservTimeSlot.Text = selectedTime
+                cbxReservStatus.Text = selectedStatus
+                'number of person
+                'price
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
 
 
 
