@@ -1,5 +1,4 @@
-﻿Imports MongoDB.Bson
-Imports MongoDB.Driver
+﻿Imports MongoDB.Driver
 Module moduleDatabase
     Private client As MongoClient
     Private database As IMongoDatabase

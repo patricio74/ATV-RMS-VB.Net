@@ -1,7 +1,7 @@
-﻿Imports MongoDB.Driver
-Public Class rmsDashboard
+﻿Public Class rmsDashboard
     'user control reference
     Dim overview As New ctrlOverview
+    Dim reservv As New ctrlReservations
     Dim transac As New ctrlTransactions
     Dim trails As New ctrlTrails
     Dim customer As New ctrlCustomers
@@ -21,6 +21,7 @@ Public Class rmsDashboard
     End Sub
     Private Sub hidePanels()
         overview.Visible = False
+        reservv.Visible = False
         transac.Visible = False
         trails.Visible = False
         customer.Visible = False
@@ -28,6 +29,7 @@ Public Class rmsDashboard
         inve.Visible = False
         guide.Visible = False
         rules.Visible = False
+        settings.Visible = False
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles dashboardTimer.Tick
         lblDateTime.Text = DateTime.Now.ToString("MMM d, yyyy h:mm:ss tt")
@@ -37,6 +39,7 @@ Public Class rmsDashboard
         Dim defaultBackColor As Color = ColorTranslator.FromHtml("#1e272e")
         Dim buttons As Button() = {
             btnOverview,
+            btnReserv,
             btnTransac,
             btnTrails,
             btnCustomers,
@@ -61,6 +64,7 @@ Public Class rmsDashboard
         btnAdminSettings.Text = rmsSharedVar.labelName
         'load panelz
         admPanel.Controls.Add(overview)
+        admPanel.Controls.Add(reservv)
         admPanel.Controls.Add(transac)
         admPanel.Controls.Add(trails)
         admPanel.Controls.Add(customer)
@@ -88,13 +92,18 @@ Public Class rmsDashboard
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-    Private Sub btnClick(sender As Object, e As EventArgs) Handles btnOverview.Click, btnTransac.Click, btnTrails.Click,
+    Private Sub btnClick(sender As Object, e As EventArgs) Handles btnOverview.Click, btnReserv.Click, btnTransac.Click, btnTrails.Click,
         btnCustomers.Click, btnNotif.Click, btnInventory.Click, btnTGuides.Click, btnRules.Click, btnAdminSettings.Click, btnLogout.Click
         If sender Is btnOverview Then
             resetButtonColor()
             activeButtonColor(sender, e)
             hidePanels()
             overview.Visible = True
+        ElseIf sender Is btnReserv Then
+            resetButtonColor()
+            activeButtonColor(sender, e)
+            hidePanels()
+            reservv.Visible = True
         ElseIf sender Is btnTransac Then
             resetButtonColor()
             activeButtonColor(sender, e)

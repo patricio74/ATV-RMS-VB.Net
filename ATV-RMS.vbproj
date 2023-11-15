@@ -243,6 +243,12 @@
     <Compile Include="rmsUserControls\ctrlNotif.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="rmsUserControls\ctrlReservations.Designer.vb">
+      <DependentUpon>ctrlReservations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rmsUserControls\ctrlReservations.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="rmsUserControls\ctrlTransactions.Designer.vb">
       <DependentUpon>ctrlTransactions.vb</DependentUpon>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rmsUserControls\ctrlNotif.resx">
       <DependentUpon>ctrlNotif.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rmsUserControls\ctrlReservations.resx">
+      <DependentUpon>ctrlReservations.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rmsUserControls\ctrlTransactions.resx">
       <DependentUpon>ctrlTransactions.vb</DependentUpon>

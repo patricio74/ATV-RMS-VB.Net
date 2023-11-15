@@ -57,9 +57,8 @@ Partial Class ctrlTrails
         Me.lblClearUpdate = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.updPrice = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblUpdTrailID = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.updTrailID = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.updTrailName = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -78,7 +77,7 @@ Partial Class ctrlTrails
         Me.addPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.addPrice.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addPrice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.addPrice.Location = New System.Drawing.Point(14, 227)
+        Me.addPrice.Location = New System.Drawing.Point(14, 177)
         Me.addPrice.MaxLength = 6
         Me.addPrice.Name = "addPrice"
         Me.addPrice.Size = New System.Drawing.Size(252, 32)
@@ -107,7 +106,7 @@ Partial Class ctrlTrails
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(11, 209)
+        Me.Label4.Location = New System.Drawing.Point(11, 159)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 18)
         Me.Label4.TabIndex = 116
@@ -119,7 +118,7 @@ Partial Class ctrlTrails
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(11, 73)
+        Me.Label1.Location = New System.Drawing.Point(11, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(67, 18)
         Me.Label1.TabIndex = 110
@@ -131,7 +130,7 @@ Partial Class ctrlTrails
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(11, 275)
+        Me.Label6.Location = New System.Drawing.Point(11, 229)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(73, 18)
         Me.Label6.TabIndex = 99
@@ -159,7 +158,7 @@ Partial Class ctrlTrails
         Me.addDuration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.addDuration.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addDuration.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.addDuration.Location = New System.Drawing.Point(14, 158)
+        Me.addDuration.Location = New System.Drawing.Point(14, 108)
         Me.addDuration.MaxLength = 20
         Me.addDuration.Name = "addDuration"
         Me.addDuration.Size = New System.Drawing.Size(118, 30)
@@ -171,7 +170,7 @@ Partial Class ctrlTrails
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(145, 137)
+        Me.Label3.Location = New System.Drawing.Point(145, 87)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(75, 18)
         Me.Label3.TabIndex = 114
@@ -183,7 +182,7 @@ Partial Class ctrlTrails
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(11, 137)
+        Me.Label2.Location = New System.Drawing.Point(11, 87)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 18)
         Me.Label2.TabIndex = 112
@@ -195,7 +194,7 @@ Partial Class ctrlTrails
         Me.addTrailName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.addTrailName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addTrailName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.addTrailName.Location = New System.Drawing.Point(14, 92)
+        Me.addTrailName.Location = New System.Drawing.Point(14, 42)
         Me.addTrailName.Name = "addTrailName"
         Me.addTrailName.Size = New System.Drawing.Size(252, 30)
         Me.addTrailName.TabIndex = 111
@@ -204,7 +203,7 @@ Partial Class ctrlTrails
         '
         Me.dgvTrails.AllowUserToAddRows = False
         Me.dgvTrails.AllowUserToOrderColumns = True
-        Me.dgvTrails.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.dgvTrails.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvTrails.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvTrails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -219,25 +218,25 @@ Partial Class ctrlTrails
         Me.dgvTrails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTrails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
         Me.dgvTrails.EnableHeadersVisualStyles = False
-        Me.dgvTrails.GridColor = System.Drawing.Color.DarkGray
+        Me.dgvTrails.GridColor = System.Drawing.Color.DimGray
         Me.dgvTrails.Location = New System.Drawing.Point(32, 48)
         Me.dgvTrails.MultiSelect = False
         Me.dgvTrails.Name = "dgvTrails"
         Me.dgvTrails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvTrails.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvTrails.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgvTrails.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvTrails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvTrails.ShowEditingIcon = False
@@ -321,9 +320,9 @@ Partial Class ctrlTrails
         '
         Me.addDescription.BackColor = System.Drawing.Color.White
         Me.addDescription.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.addDescription.Location = New System.Drawing.Point(14, 296)
+        Me.addDescription.Location = New System.Drawing.Point(14, 250)
         Me.addDescription.Name = "addDescription"
-        Me.addDescription.Size = New System.Drawing.Size(252, 153)
+        Me.addDescription.Size = New System.Drawing.Size(252, 205)
         Me.addDescription.TabIndex = 132
         Me.addDescription.Text = ""
         '
@@ -333,7 +332,7 @@ Partial Class ctrlTrails
         Me.addMinPerson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.addMinPerson.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addMinPerson.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.addMinPerson.Location = New System.Drawing.Point(148, 158)
+        Me.addMinPerson.Location = New System.Drawing.Point(148, 108)
         Me.addMinPerson.MaxLength = 2
         Me.addMinPerson.Name = "addMinPerson"
         Me.addMinPerson.Size = New System.Drawing.Size(118, 30)
@@ -345,7 +344,7 @@ Partial Class ctrlTrails
         Me.lblTransacPesoSign.BackColor = System.Drawing.Color.White
         Me.lblTransacPesoSign.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTransacPesoSign.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.lblTransacPesoSign.Location = New System.Drawing.Point(19, 230)
+        Me.lblTransacPesoSign.Location = New System.Drawing.Point(19, 180)
         Me.lblTransacPesoSign.Name = "lblTransacPesoSign"
         Me.lblTransacPesoSign.Size = New System.Drawing.Size(27, 27)
         Me.lblTransacPesoSign.TabIndex = 130
@@ -374,9 +373,8 @@ Partial Class ctrlTrails
         Me.TabPage2.Controls.Add(Me.Label5)
         Me.TabPage2.Controls.Add(Me.btnUpdTrail)
         Me.TabPage2.Controls.Add(Me.updPrice)
-        Me.TabPage2.Controls.Add(Me.Label8)
+        Me.TabPage2.Controls.Add(Me.lblUpdTrailID)
         Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Controls.Add(Me.updTrailID)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.updTrailName)
         Me.TabPage2.Controls.Add(Me.Label12)
@@ -410,9 +408,9 @@ Partial Class ctrlTrails
         '
         Me.updDescription.BackColor = System.Drawing.Color.White
         Me.updDescription.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.updDescription.Location = New System.Drawing.Point(13, 306)
+        Me.updDescription.Location = New System.Drawing.Point(13, 250)
         Me.updDescription.Name = "updDescription"
-        Me.updDescription.Size = New System.Drawing.Size(252, 153)
+        Me.updDescription.Size = New System.Drawing.Size(252, 205)
         Me.updDescription.TabIndex = 141
         Me.updDescription.Text = ""
         '
@@ -422,7 +420,7 @@ Partial Class ctrlTrails
         Me.updMinPerson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.updMinPerson.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updMinPerson.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.updMinPerson.Location = New System.Drawing.Point(147, 168)
+        Me.updMinPerson.Location = New System.Drawing.Point(147, 109)
         Me.updMinPerson.MaxLength = 2
         Me.updMinPerson.Name = "updMinPerson"
         Me.updMinPerson.Size = New System.Drawing.Size(118, 30)
@@ -447,7 +445,7 @@ Partial Class ctrlTrails
         Me.Label5.BackColor = System.Drawing.Color.White
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(18, 240)
+        Me.Label5.Location = New System.Drawing.Point(18, 181)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(27, 27)
         Me.Label5.TabIndex = 139
@@ -459,25 +457,24 @@ Partial Class ctrlTrails
         Me.updPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.updPrice.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updPrice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.updPrice.Location = New System.Drawing.Point(13, 237)
+        Me.updPrice.Location = New System.Drawing.Point(13, 178)
         Me.updPrice.MaxLength = 6
         Me.updPrice.Name = "updPrice"
         Me.updPrice.Size = New System.Drawing.Size(252, 32)
         Me.updPrice.TabIndex = 138
         Me.updPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label8
+        'lblUpdTrailID
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(10, 38)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(23, 18)
-        Me.Label8.TabIndex = 136
-        Me.Label8.Text = "ID:"
+        Me.lblUpdTrailID.BackColor = System.Drawing.Color.Transparent
+        Me.lblUpdTrailID.Font = New System.Drawing.Font("Courier New", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUpdTrailID.ForeColor = System.Drawing.Color.LightGray
+        Me.lblUpdTrailID.Location = New System.Drawing.Point(3, 588)
+        Me.lblUpdTrailID.Margin = New System.Windows.Forms.Padding(0)
+        Me.lblUpdTrailID.Name = "lblUpdTrailID"
+        Me.lblUpdTrailID.Size = New System.Drawing.Size(272, 18)
+        Me.lblUpdTrailID.TabIndex = 136
+        Me.lblUpdTrailID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label9
         '
@@ -485,25 +482,11 @@ Partial Class ctrlTrails
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label9.Location = New System.Drawing.Point(10, 147)
+        Me.Label9.Location = New System.Drawing.Point(10, 88)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(57, 18)
         Me.Label9.TabIndex = 134
         Me.Label9.Text = "Duration"
-        '
-        'updTrailID
-        '
-        Me.updTrailID.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.updTrailID.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.updTrailID.Cursor = System.Windows.Forms.Cursors.Default
-        Me.updTrailID.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.updTrailID.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.updTrailID.Location = New System.Drawing.Point(33, 39)
-        Me.updTrailID.Margin = New System.Windows.Forms.Padding(0)
-        Me.updTrailID.Name = "updTrailID"
-        Me.updTrailID.ReadOnly = True
-        Me.updTrailID.Size = New System.Drawing.Size(232, 14)
-        Me.updTrailID.TabIndex = 137
         '
         'Label10
         '
@@ -511,7 +494,7 @@ Partial Class ctrlTrails
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label10.Location = New System.Drawing.Point(10, 219)
+        Me.Label10.Location = New System.Drawing.Point(10, 160)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(37, 18)
         Me.Label10.TabIndex = 137
@@ -524,7 +507,7 @@ Partial Class ctrlTrails
         Me.updTrailName.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.updTrailName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updTrailName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.updTrailName.Location = New System.Drawing.Point(13, 99)
+        Me.updTrailName.Location = New System.Drawing.Point(13, 40)
         Me.updTrailName.Name = "updTrailName"
         Me.updTrailName.Size = New System.Drawing.Size(252, 30)
         Me.updTrailName.TabIndex = 130
@@ -535,7 +518,7 @@ Partial Class ctrlTrails
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label12.Location = New System.Drawing.Point(144, 147)
+        Me.Label12.Location = New System.Drawing.Point(144, 88)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(75, 18)
         Me.Label12.TabIndex = 135
@@ -547,7 +530,7 @@ Partial Class ctrlTrails
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label11.Location = New System.Drawing.Point(10, 80)
+        Me.Label11.Location = New System.Drawing.Point(10, 21)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(67, 18)
         Me.Label11.TabIndex = 129
@@ -559,7 +542,7 @@ Partial Class ctrlTrails
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label13.Location = New System.Drawing.Point(10, 285)
+        Me.Label13.Location = New System.Drawing.Point(10, 229)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(73, 18)
         Me.Label13.TabIndex = 133
@@ -571,7 +554,7 @@ Partial Class ctrlTrails
         Me.updDuration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.updDuration.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updDuration.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.updDuration.Location = New System.Drawing.Point(13, 168)
+        Me.updDuration.Location = New System.Drawing.Point(13, 109)
         Me.updDuration.MaxLength = 20
         Me.updDuration.Name = "updDuration"
         Me.updDuration.Size = New System.Drawing.Size(118, 30)
@@ -615,8 +598,7 @@ Partial Class ctrlTrails
     Friend WithEvents lblClearAdd As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents lblClearUpdate As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents updTrailID As TextBox
+    Friend WithEvents lblUpdTrailID As Label
     Friend WithEvents updTrailName As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents lblTransacPesoSign As Label

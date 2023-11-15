@@ -26,14 +26,15 @@ Public Class ctrlCustomers
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxUpdFirname.KeyPress, tbxUpdMidname.KeyPress, tbxUpdSurname.KeyPress, tbxUpdPhone.KeyPress,
         tbxUpdStreet.KeyPress, tbxUpdBarangay.KeyPress, tbxUpdMuniCity.KeyPress, tbxUpdProvince.KeyPress, tbxUpdEmail.KeyPress, tbxUpdUsername.KeyPress, tbxUpdPassword.KeyPress,
         tbxAddFirname.KeyPress, tbxAddMidname.KeyPress, tbxAddSurname.KeyPress, tbxAddPhone.KeyPress, tbxAddStreet.KeyPress, tbxAddBarangay.KeyPress, tbxAddMuniCity.KeyPress,
-        tbxAddProvince.KeyPress, tbxAddEmail.KeyPress, tbxAddUsername.KeyPress, tbxAddPassword.KeyPress
+        tbxAddProvince.KeyPress, tbxAddEmail.KeyPress, tbxAddUsername.KeyPress, tbxAddPassword.KeyPress, tbxSearchFir.KeyPress, tbxSearchMid.KeyPress, tbxSearchSur.KeyPress,
+        tbxSearchUsername.KeyPress, tbxSearchEmail.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
     End Sub
     Private Sub clearUpdForm()
-        dgvCustomers.ClearSelection()
-        tbxCustID.Clear()
+        dgvCustInfo.ClearSelection()
+        lblUpdCustID.Text = ""
         tbxUpdUsername.Clear()
         tbxUpdPassword.Clear()
         tbxUpdFirname.Clear()
@@ -49,7 +50,7 @@ Public Class ctrlCustomers
         cbxUpdCountry.SelectedIndex = -1
     End Sub
     Private Sub clearAddForm()
-        dgvCustomers.ClearSelection()
+        dgvCustInfo.ClearSelection()
         tbxAddFirname.Clear()
         tbxAddMidname.Clear()
         tbxAddSurname.Clear()
@@ -66,6 +67,7 @@ Public Class ctrlCustomers
     End Sub
     Private Sub ctrlCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         refreshList()
+        tabCustomerz.SelectedIndex = 0
     End Sub
     Private Sub refreshList()
         Dim colCustomer = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("Customer")
@@ -97,24 +99,24 @@ Public Class ctrlCustomers
         populateCustInfo(customerz)
     End Sub
     Private Sub populateCustInfo(customers As List(Of customerDocs))
-        dgvCustomers.Rows.Clear()
+        dgvCustInfo.Rows.Clear()
         For Each cust As customerDocs In customers
             Dim row As New DataGridViewRow()
             row.CreateCells(
-            dgvCustomers, cust.custID,
+            dgvCustInfo, cust.custID,
             $"{cust.firstName} {cust.middleName} {cust.surname}", cust.phone,
             $"{cust.address.Street}, {cust.address.Barangay}, {cust.address.MuniCity}, {cust.address.Province}, {cust.address.Country}", cust.email
             )
-            dgvCustomers.Rows.Add(row)
-            dgvCustomers.ClearSelection()
+            dgvCustInfo.Rows.Add(row)
+            dgvCustInfo.ClearSelection()
         Next
     End Sub
-    Private Sub dgvCustomers_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustomers.CellClick
-        tabCustomer.SelectedIndex = 0
+    Private Sub dgvCustomers_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustInfo.CellClick
+        tabCustInfo.SelectedIndex = 0
         If e.RowIndex >= 0 Then
             If customerz IsNot Nothing AndAlso e.RowIndex < customerz.Count Then
                 Dim selectedCustomer = customerz(e.RowIndex)
-                tbxCustID.Text = selectedCustomer.custID
+                lblUpdCustID.Text = selectedCustomer.custID
                 tbxUpdFirname.Text = selectedCustomer.firstName
                 tbxUpdMidname.Text = selectedCustomer.middleName
                 tbxUpdSurname.Text = selectedCustomer.surname
@@ -131,19 +133,10 @@ Public Class ctrlCustomers
             End If
         End If
     End Sub
-    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabCustomer.SelectedIndexChanged
-        If tabCustomer.SelectedIndex = 0 Then 'update tab
-            refreshList()
-            'clearAddForm()
-        ElseIf tabCustomer.SelectedIndex = 1 Then 'add tab
-            clearUpdForm()
-            refreshList()
-        End If
-    End Sub
     Private Sub customerButton_Click(sender As Object, e As EventArgs) Handles btnUpdCust.Click, btnDelCust.Click, btnAddCust.Click, btnClrCust.Click
         If sender Is btnUpdCust Then
-            If dgvCustomers.SelectedRows.Count > 0 Then
-                Dim selectedRow = dgvCustomers.SelectedRows(0)
+            If dgvCustInfo.SelectedRows.Count > 0 Then
+                Dim selectedRow = dgvCustInfo.SelectedRows(0)
                 Dim selectedCustomer = customerz(selectedRow.Index)
                 Dim custID As String = selectedCustomer.custID
                 If String.IsNullOrEmpty(tbxUpdFirname.Text) OrElse String.IsNullOrEmpty(tbxUpdSurname.Text) OrElse cbxUpdGender.SelectedIndex = -1 OrElse String.IsNullOrEmpty(tbxUpdStreet.Text) OrElse String.IsNullOrEmpty(tbxUpdBarangay.Text) OrElse String.IsNullOrEmpty(tbxUpdProvince.Text) OrElse cbxUpdCountry.SelectedIndex = -1 OrElse String.IsNullOrEmpty(tbxUpdMuniCity.Text) OrElse String.IsNullOrEmpty(tbxUpdPhone.Text) OrElse String.IsNullOrEmpty(tbxUpdEmail.Text) OrElse String.IsNullOrEmpty(tbxUpdUsername.Text) OrElse String.IsNullOrEmpty(tbxUpdPassword.Text) Then
@@ -185,10 +178,10 @@ Public Class ctrlCustomers
             End If
 
         ElseIf sender Is btnDelCust Then
-            If dgvCustomers.SelectedRows.Count > 0 Then
-                Dim selectedCustomer = customerz(dgvCustomers.SelectedRows(0).Index)
+            If dgvCustInfo.SelectedRows.Count > 0 Then
+                Dim selectedCustomer = customerz(dgvCustInfo.SelectedRows(0).Index)
                 Dim custID As String = selectedCustomer.custID
-                Dim result = MessageBox.Show("Are you sure you want to archive this data?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim result = MessageBox.Show("Are you sure you want to archive this user?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 'move customer data to archive collection
                 If result = DialogResult.Yes Then
                     MoveToArchive(custID)
@@ -262,18 +255,77 @@ Public Class ctrlCustomers
             refreshList()
         End Try
     End Sub
+    Private Sub tbxPhone_TextChanged(sender As Object, e As KeyPressEventArgs) Handles tbxUpdPhone.KeyPress, tbxAddPhone.KeyPress
+        'check if the inputted char is a number,backspace
+        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub tabCustomerz_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabCustomerz.SelectedIndexChanged
+        If tabCustomerz.SelectedIndex = 0 Then 'customer info tab
+            tabCustInfo.Visible = True
+            lblCustHistory.Visible = False
+            dgvCustHistory.Visible = False
+        ElseIf tabCustomerz.SelectedIndex = 1 Then 'customer history tab
+            tabCustInfo.Visible = False
+            lblCustHistory.Visible = True
+            dgvCustHistory.Visible = True
+        Else 'default
+            tabCustInfo.Visible = True
+            lblCustHistory.Visible = False
+            dgvCustHistory.Visible = False
+        End If
+    End Sub
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabCustInfo.SelectedIndexChanged
+        If tabCustInfo.SelectedIndex = 0 Then 'update tab
+            refreshList()
+            'clearAddForm()
+        ElseIf tabCustInfo.SelectedIndex = 1 Then 'add tab
+            clearUpdForm()
+            refreshList()
+        End If
+    End Sub
+    Private Sub cbxSearchFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxSearchFilter.SelectedIndexChanged
+        If cbxSearchFilter.SelectedIndex = 0 Then 'search using username
+            tbxSearchUsername.Visible = True
+            tbxSearchFir.Visible = False
+            tbxSearchMid.Visible = False
+            tbxSearchSur.Visible = False
+            tbxSearchEmail.Visible = False
+        ElseIf cbxSearchFilter.SelectedIndex = 1 Then 'search customer name
+            tbxSearchUsername.Visible = False
+            tbxSearchFir.Visible = True
+            tbxSearchMid.Visible = True
+            tbxSearchSur.Visible = True
+            tbxSearchEmail.Visible = False
+        ElseIf cbxSearchFilter.SelectedIndex = 2 Then 'search email
+            tbxSearchUsername.Visible = False
+            tbxSearchFir.Visible = False
+            tbxSearchMid.Visible = False
+            tbxSearchSur.Visible = False
+            tbxSearchEmail.Visible = True
+        Else 'default
+            tbxSearchUsername.Visible = True
+            tbxSearchFir.Visible = False
+            tbxSearchMid.Visible = False
+            tbxSearchSur.Visible = False
+            tbxSearchEmail.Visible = False
+        End If
+    End Sub
     Private Sub ctrlCustomers_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
             closeMongoConn()
             clearAddForm()
             clearUpdForm()
-            tabCustomer.SelectedIndex = 0
+            tabCustomerz.SelectedIndex = 0
         End If
     End Sub
-    Private Sub tbxPhone_TextChanged(sender As Object, e As KeyPressEventArgs) Handles tbxUpdPhone.KeyPress, tbxAddPhone.KeyPress
-        'check if the inputted char is a number,backspace
-        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
-            e.Handled = True
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        If tabCustomerz.SelectedIndex = 0 Then 'search customer acc
+
+        ElseIf tabCustomerz.SelectedIndex = 1 Then 'search customer history
+
         End If
     End Sub
 End Class

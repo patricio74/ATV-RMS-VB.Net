@@ -13,7 +13,7 @@ Public Class ctrlTrails
     Private Sub clearUpdateForm()
         populateTrails()
         dgvTrails.ClearSelection()
-        updTrailID.Clear()
+        lblUpdTrailID.Text = ""
         updTrailName.Clear()
         updDescription.Clear()
         updMinPerson.Clear()
@@ -25,7 +25,7 @@ Public Class ctrlTrails
     End Sub
     'suppress enter key sound sa mga textboxes
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles addTrailName.KeyPress, addDuration.KeyPress, addMinPerson.KeyPress,
-        addPrice.KeyPress, addDescription.KeyPress, updTrailID.KeyPress, updTrailName.KeyPress, updDuration.KeyPress, updMinPerson.KeyPress, updPrice.KeyPress
+        addPrice.KeyPress, addDescription.KeyPress, updTrailName.KeyPress, updDuration.KeyPress, updMinPerson.KeyPress, updPrice.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
@@ -73,7 +73,7 @@ Public Class ctrlTrails
             Dim selectedPerson As String = selectedRow.Cells("Column4").Value.ToString()
             Dim selectedDuration As String = selectedRow.Cells("Column5").Value.ToString()
             Dim selectedPrice As String = selectedRow.Cells("Column6").Value.ToString()
-            updTrailID.Text = selectedId
+            lblUpdTrailID.Text = selectedId
             updTrailName.Text = selectedName
             updDescription.Text = selectedDesc
             updMinPerson.Text = selectedPerson

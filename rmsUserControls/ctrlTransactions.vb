@@ -4,10 +4,22 @@ Public Class ctrlTransactions
     Dim tourPrice As Double = 0
     Dim numberOfPerson As Double = 0
     Dim totalPrice As Double = 0
+    Private Sub clearAddResTab()
+        cbxTransacFilter.SelectedIndex = -1
+        tbxNewFName.Clear()
+        tbxNewMName.Clear()
+        tbxNewSName.Clear()
+        cbxNewTour.SelectedIndex = -1
+        dateTimeNew.Value = DateTime.Now
+        tbxNewPerson.Clear()
+        cbxNewTimeSlot.SelectedIndex = -1
+        cbxNewStatus.SelectedIndex = -1
+        tbxNewTotal.Clear()
+    End Sub
     Private Sub clearUpdResTab()
-        cbxReservFilter.SelectedIndex = -1
+        cbxTransacFilter.SelectedIndex = -1
         dgvTransactions.ClearSelection()
-        tbxReservID.Clear()
+        lblUpdReservID.Text = ""
         tbxReservFName.Clear()
         tbxReservMName.Clear()
         tbxReservSName.Clear()
@@ -22,19 +34,33 @@ Public Class ctrlTransactions
         totalPrice = 0
     End Sub
     Private Sub clearAddTransacTab()
-        cbxReservFilter.SelectedIndex = -1
+        cbxTransacFilter.SelectedIndex = -1
         dgvTransactions.ClearSelection()
         tbxAddFName.Clear()
         tbxAddMName.Clear()
         tbxAddSname.Clear()
         cbxAddTour.SelectedIndex = -1
-        tbxAddPerson.Clear()
         dateTimeNew.Value = DateTime.Now
+        cbxAddTour.SelectedIndex = -1
         cbxAddTimeSlot.SelectedIndex = -1
+        tbxAddPerson.Clear()
         tbxAddTotal.Clear()
+        cbxAddAtv.SelectedIndex = -1
+        cbxAddTourGuide.SelectedIndex = -1
         tourPrice = 0
         numberOfPerson = 0
         totalPrice = 0
+    End Sub
+    Private Sub clearOngoingTab()
+        cbxTransacFilter.SelectedIndex = -1
+        tbxOnGName.Clear()
+        tbxOnGTour.Clear()
+        tbxOnGTime.Clear()
+        tbxOnGPerson.Clear()
+        cbxOnGAtv.SelectedIndex = -1
+        cbxOnGTourGuide.SelectedIndex = -1
+        tbxOnGTotal.Clear()
+        cbxOnGStatus.SelectedIndex = -1
     End Sub
     Private Function cbxToursList()
         Dim filter As New BsonDocument()
@@ -55,16 +81,10 @@ Public Class ctrlTransactions
         Next
     End Sub
     Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'refresh content every 3secs
-        transacTimer.Interval = 3000
-        transacTimer.Start()
         reloadTrailList()
         populateTransac()
     End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles transacTimer.Tick
-        'ADD CODE PARA IREFRESH DGV PAG NASA ADD TRANSAC,ADD RES TAB
-    End Sub
-    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxReservID.KeyPress, tbxReservFName.KeyPress, tbxReservMName.KeyPress,
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxReservFName.KeyPress, tbxReservMName.KeyPress,
         tbxReservSName.KeyPress, tbxReservPerson.KeyPress, tbxReservTotal.KeyPress, tbxAddFName.KeyPress, tbxAddMName.KeyPress, tbxAddSname.KeyPress,
         tbxAddPerson.KeyPress, tbxAddTotal.KeyPress, tbxNewFName.KeyPress, tbxNewMName.KeyPress, tbxNewSName.KeyPress, tbxNewPerson.KeyPress, tbxNewTotal.KeyPress,
         tbxOnGName.KeyPress, tbxOnGTour.KeyPress, tbxOnGTime.KeyPress, tbxOnGPerson.KeyPress, tbxOnGTour.KeyPress
@@ -73,45 +93,48 @@ Public Class ctrlTransactions
             e.Handled = True
         End If
     End Sub
-    Private Sub clearForm(sender As Object, e As EventArgs) Handles lblClearAdd.Click, lblClearUpd.Click
+    Private Sub clearForm(sender As Object, e As EventArgs) Handles lblClearAdd.Click, lblClearUpd.Click, lblClearNew.Click
         If sender Is lblClearAdd Then
             clearAddTransacTab()
+        ElseIf sender Is lblClearNew Then
+            clearAddResTab()
         ElseIf sender Is lblClearUpd Then
             clearUpdResTab()
+        ElseIf sender Is lblClearTransac Then
+            clearOngoingTab()
         End If
     End Sub
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabTransactions.SelectedIndexChanged
         If tabTransactions.SelectedIndex = 0 Then 'walk-in transac tab
-            cbxReservFilter.Visible = False
-            btnViewRes.Visible = False
+            cbxTransacFilter.Visible = False
+            btnViewTransac.Visible = False
             reloadTrailList()
             clearUpdResTab()
             populateTransac()
             'add code to display transacdb to dgv
 
         ElseIf tabTransactions.SelectedIndex = 1 Then 'add reserv tab
-            cbxReservFilter.Visible = False
-            btnViewRes.Visible = False
+            cbxTransacFilter.Visible = False
+            btnViewTransac.Visible = False
             reloadTrailList()
             clearAddTransacTab()
+            clearUpdResTab()
             populateTransac()
             'add code to display reservations to dgv
 
         ElseIf tabTransactions.SelectedIndex = 2 Then 'upd reserv tab
-            cbxReservFilter.Visible = True
-            btnViewRes.Visible = True
+            cbxTransacFilter.Visible = True
+            btnViewTransac.Visible = True
             reloadTrailList()
-            clearAddTransacTab()
-            populateTransac()
             'add code to display reservations to dgv
 
         ElseIf tabTransactions.SelectedIndex = 3 Then 'ongoing tab
-            cbxReservFilter.Visible = False
-            btnViewRes.Visible = False
+            cbxTransacFilter.Visible = False
+            btnViewTransac.Visible = False
             reloadTrailList()
+            clearAddTransacTab()
             clearUpdResTab()
-
             'add code to display transacdb to dgv
 
         End If
@@ -153,7 +176,7 @@ Public Class ctrlTransactions
                 Dim selectedDate As String = selectedRow.Cells("Column6").Value.ToString()
                 Dim selectedTime As String = selectedRow.Cells("Column7").Value.ToString()
                 Dim selectedStatus As String = selectedRow.Cells("Column8").Value.ToString()
-                tbxReservID.Text = selectedId
+                lblUpdReservID.Text = selectedId
                 tbxReservFName.Text = selectedFName
                 tbxReservMName.Text = selectedMName
                 tbxReservSName.Text = selectedSName
@@ -165,7 +188,7 @@ Public Class ctrlTransactions
                 'price
             End If
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            'MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
 
@@ -222,7 +245,7 @@ Public Class ctrlTransactions
                 }
                     rmsSharedVar.colTransac.InsertOne(transacDoc)
                     MessageBox.Show("Transaction saved.")
-                    'REFRESH DGV CODE DITO!!!!!
+                    populateTransac()
                     clearAddTransacTab()
                 Catch ex As Exception
                     MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -246,12 +269,12 @@ Public Class ctrlTransactions
             Dim reservConfirmation As DialogResult = MessageBox.Show("Save changes to reservation?", "Confirmation", MessageBoxButtons.YesNo)
             If reservConfirmation = DialogResult.Yes Then
                 Try
-                    Dim filterID = Builders(Of BsonDocument).Filter.Eq(Of String)("_id", tbxReservID.Text)
+                    Dim filterID = Builders(Of BsonDocument).Filter.Eq(Of String)("_id", lblUpdReservID.Text)
                     Dim resUpdate = Builders(Of BsonDocument).Update.Set(Of String)("FName", tbxReservFName.Text).Set(Of String)("MName", tbxReservMName.Text).Set(Of String)("Sname", tbxReservSName.Text).Set(Of String)("tourName", cbxReservTour.SelectedItem.ToString).Set(Of String)("tourPrice", tbxReservTotal.Text).Set(Of String)("reservDate", dateTimeReserv.Value.ToString("yyyy-MM-ddTHH:mm:ssZ")).Set(Of String)("timeSlot", cbxReservTimeSlot.SelectedItem.ToString).Set(Of String)("status", cbxReservStatus.SelectedItem.ToString)
                     Dim updateResult = rmsSharedVar.colReserv.UpdateOne(filterID, resUpdate)
                     If updateResult.ModifiedCount > 0 Then
                         MessageBox.Show("Reservation updated successfully.")
-                        'REFRESH DGV!!!!()
+                        populateTransac()
                         clearUpdResTab()
                     Else
                         MessageBox.Show("Reservation not found or no update occurred.")
