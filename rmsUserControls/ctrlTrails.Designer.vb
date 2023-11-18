@@ -149,7 +149,7 @@ Partial Class ctrlTrails
         Me.btnAddTrail.Name = "btnAddTrail"
         Me.btnAddTrail.Size = New System.Drawing.Size(121, 44)
         Me.btnAddTrail.TabIndex = 129
-        Me.btnAddTrail.Text = "Add"
+        Me.btnAddTrail.Text = "Add Trail"
         Me.btnAddTrail.UseVisualStyleBackColor = False
         '
         'addDuration

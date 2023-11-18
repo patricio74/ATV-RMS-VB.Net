@@ -84,10 +84,9 @@ Public Class ctrlTransactions
         reloadTrailList()
         populateTransac()
     End Sub
-    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxReservFName.KeyPress, tbxReservMName.KeyPress,
-        tbxReservSName.KeyPress, tbxReservPerson.KeyPress, tbxReservTotal.KeyPress, tbxAddFName.KeyPress, tbxAddMName.KeyPress, tbxAddSname.KeyPress,
-        tbxAddPerson.KeyPress, tbxAddTotal.KeyPress, tbxNewFName.KeyPress, tbxNewMName.KeyPress, tbxNewSName.KeyPress, tbxNewPerson.KeyPress, tbxNewTotal.KeyPress,
-        tbxOnGName.KeyPress, tbxOnGTour.KeyPress, tbxOnGTime.KeyPress, tbxOnGPerson.KeyPress, tbxOnGTour.KeyPress
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxAddFName.KeyPress, tbxAddMName.KeyPress, tbxAddSname.KeyPress,
+        tbxAddPerson.KeyPress, tbxAddTotal.KeyPress,
+        tbxOnGName.KeyPress, tbxOnGTour.KeyPress, tbxOnGTime.KeyPress, tbxOnGPerson.KeyPress, tbxOnGTour.KeyPress, tbxReservTotal.KeyPress, tbxReservSName.KeyPress, tbxReservPerson.KeyPress, tbxReservMName.KeyPress, tbxReservFName.KeyPress, tbxNewTotal.KeyPress, tbxNewSName.KeyPress, tbxNewPerson.KeyPress, tbxNewMName.KeyPress, tbxNewFName.KeyPress
         'suppress enter key sound sa mga textboxes
         If e.KeyChar = Chr(13) Then
             e.Handled = True
