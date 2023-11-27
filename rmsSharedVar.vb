@@ -1,17 +1,30 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class rmsSharedVar
-    'DB shared instance 
+    'DB shared instance
     Public Shared mongoDBase As IMongoDatabase = connectToMongo()
 
-    Public Shared colTransac As IMongoCollection(Of BsonDocument) = mongoDBase.GetCollection(Of BsonDocument)("logTransactions")
-    Public Shared colReserv As IMongoCollection(Of BsonDocument) = mongoDBase.GetCollection(Of BsonDocument)("custReservations")
-    Public Shared colInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsInventory")
-    Public Shared colAtvTrails As IMongoCollection(Of BsonDocument) = mongoDBase.GetCollection(Of BsonDocument)("rmsAtvTours")
+    Public Shared archiveCust As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveCustomerInfo")
+    Public Shared archiveTrail As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveAtvTours")
+    Public Shared archiveInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveInventory")
+    Public Shared archiveRejectedResume As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveRejectedResume")
+    Public Shared archiveTourGuide As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveTourGuide")
+
+    Public Shared colCustomer As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("Customer")
+    Public Shared colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReservations")
     Public Shared colReviews As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReviews")
+    Public Shared colResume As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("empResume")
+    Public Shared colTourGuide As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("empTourGuide")
+
+    Public Shared colTransac As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("logTransactions")
+    Public Shared colNotif As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("notifSMS")
+
+    Public Shared colAdmin As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
+    Public Shared colPendingAdmin As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdminPendingAcc")
+    Public Shared colTrails As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAtvTours")
+    Public Shared colInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsInventory")
 
     Public Shared labelName As String   'store current user's username
     Public Shared admnID As String  'store userid
     Public Shared role As String 'store account type
-
 End Class

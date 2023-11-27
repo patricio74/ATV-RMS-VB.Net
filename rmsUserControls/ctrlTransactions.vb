@@ -64,7 +64,7 @@ Public Class ctrlTransactions
     End Sub
     Private Function cbxToursList()
         Dim filter As New BsonDocument()
-        Dim tourData As List(Of BsonDocument) = rmsSharedVar.colAtvTrails.Find(filter).ToList()
+        Dim tourData As List(Of BsonDocument) = rmsSharedVar.colTrails.Find(filter).ToList()
         Return tourData
     End Function
     Private Sub reloadTrailList()

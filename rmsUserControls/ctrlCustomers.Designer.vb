@@ -22,12 +22,12 @@ Partial Class ctrlCustomers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.cbxUpdGender = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tbxUpdEmail = New System.Windows.Forms.TextBox()
@@ -76,7 +76,6 @@ Partial Class ctrlCustomers
         Me.tabCustomerz = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.btnClearFilter = New System.Windows.Forms.Button()
-        Me.tbxSearchMid = New System.Windows.Forms.TextBox()
         Me.tbxSearchFir = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.cbxSearchFilter = New System.Windows.Forms.ComboBox()
@@ -314,15 +313,15 @@ Partial Class ctrlCustomers
         Me.dgvCustInfo.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvCustInfo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvCustInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle7.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCustInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCustInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCustInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCustInfo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column6})
         Me.dgvCustInfo.Dock = System.Windows.Forms.DockStyle.Fill
@@ -333,21 +332,21 @@ Partial Class ctrlCustomers
         Me.dgvCustInfo.Name = "dgvCustInfo"
         Me.dgvCustInfo.ReadOnly = True
         Me.dgvCustInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCustInfo.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCustInfo.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCustInfo.RowHeadersVisible = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvCustInfo.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvCustInfo.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCustInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCustInfo.ShowEditingIcon = False
         Me.dgvCustInfo.Size = New System.Drawing.Size(1100, 278)
@@ -635,7 +634,7 @@ Partial Class ctrlCustomers
         Me.TabPage4.Location = New System.Drawing.Point(4, 29)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1106, 304)
+        Me.TabPage4.Size = New System.Drawing.Size(1106, 316)
         Me.TabPage4.TabIndex = 1
         Me.TabPage4.Text = "  Account transaction history   "
         '
@@ -646,15 +645,15 @@ Partial Class ctrlCustomers
         Me.dgvCustHistory.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvCustHistory.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvCustHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle10.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCustHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCustHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvCustHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCustHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.Column3, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10})
         Me.dgvCustHistory.Dock = System.Windows.Forms.DockStyle.Fill
@@ -665,24 +664,24 @@ Partial Class ctrlCustomers
         Me.dgvCustHistory.Name = "dgvCustHistory"
         Me.dgvCustHistory.ReadOnly = True
         Me.dgvCustHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCustHistory.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCustHistory.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvCustHistory.RowHeadersVisible = False
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvCustHistory.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvCustHistory.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvCustHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCustHistory.ShowEditingIcon = False
-        Me.dgvCustHistory.Size = New System.Drawing.Size(1100, 298)
+        Me.dgvCustHistory.Size = New System.Drawing.Size(1100, 310)
         Me.dgvCustHistory.TabIndex = 42
         '
         'DataGridViewTextBoxColumn7
@@ -726,7 +725,7 @@ Partial Class ctrlCustomers
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1106, 305)
+        Me.TabPage2.Size = New System.Drawing.Size(1106, 284)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "  Add new account   "
         '
@@ -758,31 +757,19 @@ Partial Class ctrlCustomers
         Me.btnClearFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearFilter.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearFilter.ForeColor = System.Drawing.Color.White
-        Me.btnClearFilter.Location = New System.Drawing.Point(1002, 5)
+        Me.btnClearFilter.Location = New System.Drawing.Point(695, 5)
         Me.btnClearFilter.Name = "btnClearFilter"
         Me.btnClearFilter.Size = New System.Drawing.Size(27, 27)
         Me.btnClearFilter.TabIndex = 43
         Me.btnClearFilter.Text = "X"
         Me.btnClearFilter.UseVisualStyleBackColor = False
         '
-        'tbxSearchMid
-        '
-        Me.tbxSearchMid.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbxSearchMid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxSearchMid.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchMid.Location = New System.Drawing.Point(322, 6)
-        Me.tbxSearchMid.Name = "tbxSearchMid"
-        Me.tbxSearchMid.Size = New System.Drawing.Size(233, 25)
-        Me.tbxSearchMid.TabIndex = 39
-        Me.tbxSearchMid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.tbxSearchMid.Visible = False
-        '
         'tbxSearchFir
         '
         Me.tbxSearchFir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxSearchFir.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxSearchFir.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchFir.Location = New System.Drawing.Point(81, 6)
+        Me.tbxSearchFir.Location = New System.Drawing.Point(16, 6)
         Me.tbxSearchFir.Name = "tbxSearchFir"
         Me.tbxSearchFir.Size = New System.Drawing.Size(233, 25)
         Me.tbxSearchFir.TabIndex = 38
@@ -796,7 +783,7 @@ Partial Class ctrlCustomers
         Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearch.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnSearch.Location = New System.Drawing.Point(929, 5)
+        Me.btnSearch.Location = New System.Drawing.Point(622, 5)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(65, 28)
         Me.btnSearch.TabIndex = 36
@@ -810,7 +797,7 @@ Partial Class ctrlCustomers
         Me.cbxSearchFilter.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxSearchFilter.FormattingEnabled = True
         Me.cbxSearchFilter.Items.AddRange(New Object() {"username", "customer name", "email"})
-        Me.cbxSearchFilter.Location = New System.Drawing.Point(801, 6)
+        Me.cbxSearchFilter.Location = New System.Drawing.Point(494, 6)
         Me.cbxSearchFilter.Name = "cbxSearchFilter"
         Me.cbxSearchFilter.Size = New System.Drawing.Size(121, 26)
         Me.cbxSearchFilter.TabIndex = 35
@@ -820,7 +807,7 @@ Partial Class ctrlCustomers
         Me.tbxSearchUsername.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxSearchUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxSearchUsername.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchUsername.Location = New System.Drawing.Point(562, 6)
+        Me.tbxSearchUsername.Location = New System.Drawing.Point(255, 6)
         Me.tbxSearchUsername.Name = "tbxSearchUsername"
         Me.tbxSearchUsername.Size = New System.Drawing.Size(233, 25)
         Me.tbxSearchUsername.TabIndex = 37
@@ -831,7 +818,7 @@ Partial Class ctrlCustomers
         Me.tbxSearchEmail.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxSearchEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxSearchEmail.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchEmail.Location = New System.Drawing.Point(562, 6)
+        Me.tbxSearchEmail.Location = New System.Drawing.Point(255, 6)
         Me.tbxSearchEmail.Name = "tbxSearchEmail"
         Me.tbxSearchEmail.Size = New System.Drawing.Size(233, 25)
         Me.tbxSearchEmail.TabIndex = 41
@@ -843,7 +830,7 @@ Partial Class ctrlCustomers
         Me.tbxSearchSur.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxSearchSur.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxSearchSur.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchSur.Location = New System.Drawing.Point(562, 6)
+        Me.tbxSearchSur.Location = New System.Drawing.Point(255, 6)
         Me.tbxSearchSur.Name = "tbxSearchSur"
         Me.tbxSearchSur.Size = New System.Drawing.Size(233, 25)
         Me.tbxSearchSur.TabIndex = 40
@@ -854,17 +841,16 @@ Partial Class ctrlCustomers
         '
         Me.panelFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelFilter.BackColor = System.Drawing.Color.Transparent
-        Me.panelFilter.Controls.Add(Me.btnSearch)
-        Me.panelFilter.Controls.Add(Me.tbxSearchEmail)
         Me.panelFilter.Controls.Add(Me.btnClearFilter)
-        Me.panelFilter.Controls.Add(Me.tbxSearchUsername)
-        Me.panelFilter.Controls.Add(Me.tbxSearchMid)
-        Me.panelFilter.Controls.Add(Me.tbxSearchSur)
+        Me.panelFilter.Controls.Add(Me.btnSearch)
         Me.panelFilter.Controls.Add(Me.cbxSearchFilter)
         Me.panelFilter.Controls.Add(Me.tbxSearchFir)
-        Me.panelFilter.Location = New System.Drawing.Point(102, 4)
+        Me.panelFilter.Controls.Add(Me.tbxSearchEmail)
+        Me.panelFilter.Controls.Add(Me.tbxSearchUsername)
+        Me.panelFilter.Controls.Add(Me.tbxSearchSur)
+        Me.panelFilter.Location = New System.Drawing.Point(409, 12)
         Me.panelFilter.Name = "panelFilter"
-        Me.panelFilter.Size = New System.Drawing.Size(1035, 34)
+        Me.panelFilter.Size = New System.Drawing.Size(728, 34)
         Me.panelFilter.TabIndex = 44
         '
         'panelAddAcc
@@ -1272,8 +1258,8 @@ Partial Class ctrlCustomers
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Controls.Add(Me.tabCustomerz)
         Me.Controls.Add(Me.panelFilter)
+        Me.Controls.Add(Me.tabCustomerz)
         Me.Controls.Add(Me.tabCustInfo)
         Me.Controls.Add(Me.panelAddAcc)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1335,7 +1321,6 @@ Partial Class ctrlCustomers
     Friend WithEvents btnSearch As Button
     Friend WithEvents cbxSearchFilter As ComboBox
     Friend WithEvents tbxSearchSur As TextBox
-    Friend WithEvents tbxSearchMid As TextBox
     Friend WithEvents tbxSearchFir As TextBox
     Friend WithEvents tbxSearchUsername As TextBox
     Friend WithEvents dgvCustHistory As DataGridView

@@ -1,6 +1,16 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class ctrlTrails
+    Private trailz As List(Of trailDoc)
+    Public Class trailDoc
+        Public Property trailID As String
+        Public Property trailName As String
+        Public Property duration As String
+        Public Property minimumPax As String
+        Public Property description As String
+        Public Property price As String
+        Public Property dateAdded As String
+    End Class
     Private Sub clearAddForm()
         populateTrails()
         dgvTrails.ClearSelection()
@@ -30,7 +40,7 @@ Public Class ctrlTrails
             e.Handled = True
         End If
     End Sub
-    Private Sub textbx_Leave(sender As Object, e As EventArgs) Handles addTrailName.Leave, addDuration.Leave, addDescription.Leave
+    Private Sub textbx_Leave(sender As Object, e As EventArgs) Handles addTrailName.Leave, addDuration.Leave, addDescription.Leave, updTrailName.Leave, updDuration.Leave, updDescription.Leave
         'trim multiple space ng mga textboxes
         addTrailName.Text = System.Text.RegularExpressions.Regex.Replace(addTrailName.Text, "\s+", " ")
         addDuration.Text = System.Text.RegularExpressions.Regex.Replace(addDuration.Text, "\s+", " ")
@@ -39,46 +49,49 @@ Public Class ctrlTrails
         addDuration.Text = addDuration.Text.Trim
         addDescription.Text = addDescription.Text.Trim
         updTrailName.Text = System.Text.RegularExpressions.Regex.Replace(updTrailName.Text, "\s+", " ")
-        updDuration.Text = System.Text.RegularExpressions.Regex.Replace(updTrailName.Text, "\s+", " ")
-        updDescription.Text = System.Text.RegularExpressions.Regex.Replace(updTrailName.Text, "\s+", " ")
+        updDuration.Text = System.Text.RegularExpressions.Regex.Replace(updDuration.Text, "\s+", " ")
+        updDescription.Text = System.Text.RegularExpressions.Regex.Replace(updDescription.Text, "\s+", " ")
         updTrailName.Text = updTrailName.Text.Trim
-        updDuration.Text = updTrailName.Text.Trim
-        updDescription.Text = updTrailName.Text.Trim
+        updDuration.Text = updDuration.Text.Trim
+        updDescription.Text = updDescription.Text.Trim
     End Sub
     Private Sub populateTrails()
         If Me.Visible = True Then
-            Dim colTrails = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAtvTours")
-            Dim filter = Builders(Of BsonDocument).Filter.Empty
-            Dim trailzList = colTrails.Find(filter).ToList()
             dgvTrails.Rows.Clear()
-            For Each doc As BsonDocument In trailzList
-                Dim trailID As String = doc("_id").AsObjectId.ToString
-                Dim trailName As String = doc("nameOfTour").AsString
-                Dim trailDesc As String = doc("description").AsString
-                Dim trailMinPerson As String = doc("minimumPax").AsString
-                Dim trailDuration As String = doc("duration").AsString
-                Dim trailPrice As String = doc("price").AsString
-                dgvTrails.Rows.Add(trailID, trailName, trailDesc, trailMinPerson, trailDuration, trailPrice)
-                dgvTrails.ClearSelection()
+            Dim trailDocList As List(Of BsonDocument) = rmsSharedVar.colTrails.Find(New BsonDocument()).ToList()
+            trailz = New List(Of trailDoc)()
+            For Each document As BsonDocument In trailDocList
+                Dim idElement = document.GetElement("_id")
+                Dim traillist As New trailDoc() With {
+                    .trailID = idElement.Value.AsObjectId.ToString,
+                    .trailName = document("nameOfTour").ToString,
+                    .description = document("description").ToString,
+                    .minimumPax = document("minimumPax").ToString,
+                    .duration = document("duration").ToString,
+                    .price = document("price").ToString,
+                    .dateAdded = document("dateAdded").ToString
+                }
+                trailz.Add(traillist)
             Next
+            dgvTrails.Rows.Clear()
+            For Each trail In trailz
+                dgvTrails.Rows.Add(trail.trailID, trail.trailName, trail.description, trail.minimumPax, trail.duration, trail.price)
+            Next
+            dgvTrails.ClearSelection()
         End If
     End Sub
     Private Sub dgvTrails_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTrails.CellClick
-        If dgvTrails.SelectedRows.Count > 0 Then
+        If e.RowIndex >= 0 Then
             tabTrails.SelectedIndex = 1 'update trails tab
-            Dim selectedRow As DataGridViewRow = dgvTrails.SelectedRows(0)
-            Dim selectedId As String = selectedRow.Cells("Column1").Value.ToString()
-            Dim selectedName As String = selectedRow.Cells("Column2").Value.ToString()
-            Dim selectedDesc As String = selectedRow.Cells("Column3").Value.ToString()
-            Dim selectedPerson As String = selectedRow.Cells("Column4").Value.ToString()
-            Dim selectedDuration As String = selectedRow.Cells("Column5").Value.ToString()
-            Dim selectedPrice As String = selectedRow.Cells("Column6").Value.ToString()
-            lblUpdTrailID.Text = selectedId
-            updTrailName.Text = selectedName
-            updDescription.Text = selectedDesc
-            updMinPerson.Text = selectedPerson
-            updDuration.Text = selectedDuration
-            updPrice.Text = selectedPrice
+            If trailz IsNot Nothing AndAlso e.RowIndex < trailz.Count Then
+                Dim selectedTrail = trailz(e.RowIndex)
+                lblUpdTrailID.Text = selectedTrail.trailID
+                updTrailName.Text = selectedTrail.trailName
+                updDescription.Text = selectedTrail.description
+                updMinPerson.Text = selectedTrail.minimumPax
+                updDuration.Text = selectedTrail.duration
+                updPrice.Text = selectedTrail.price
+            End If
         End If
     End Sub
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabTrails.SelectedIndexChanged
@@ -90,19 +103,18 @@ Public Class ctrlTrails
     End Sub
     Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnAddTrail.Click, btnUpdTrail.Click, btnDelTrail.Click
         If sender Is btnAddTrail Then
-            'check muna kung nafill out lahat ng form bago mag-update
+            'check muna kung may blangko sa form bago mag-update
             If String.IsNullOrEmpty(addTrailName.Text) OrElse String.IsNullOrEmpty(addDuration.Text) OrElse String.IsNullOrEmpty(addMinPerson.Text) OrElse String.IsNullOrEmpty(addPrice.Text) OrElse String.IsNullOrEmpty(addDescription.Text) Then
                 MessageBox.Show("Please fill in all fields to continue.")
             Else
                 Dim addConfirmation As DialogResult = MessageBox.Show("Do you want to add this trail to the database?", "Confirmation", MessageBoxButtons.YesNo)
                 If addConfirmation = DialogResult.Yes Then
-                    Dim colTrails = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAtvTours")
                     Dim newTrail As String = addTrailName.Text
                     Dim newDuration As String = addDuration.Text
                     Dim newPerson As String = addMinPerson.Text
                     Dim newPrice As String = addPrice.Text
                     Dim newDescr As String = addDescription.Text
-                    Dim newDate As String = DateTime.UtcNow.ToString("o")
+                    Dim newDate As String = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")
                     Dim docNewTrail As New BsonDocument() From {
                         {"nameOfTour", newTrail},
                         {"duration", newDuration},
@@ -112,7 +124,7 @@ Public Class ctrlTrails
                         {"dateAdded", newDate}
                     }
                     Try
-                        colTrails.InsertOne(docNewTrail)
+                        rmsSharedVar.colTrails.InsertOne(docNewTrail)
                         MessageBox.Show("New trail added to the database")
                         clearAddForm()
                     Catch ex As Exception
@@ -122,46 +134,79 @@ Public Class ctrlTrails
             End If
 
         ElseIf sender Is btnUpdTrail Then
-            'check muna kung nafill out lahat ng form bago mag-update
-            If String.IsNullOrEmpty(updTrailName.Text) OrElse String.IsNullOrEmpty(updDuration.Text) OrElse String.IsNullOrEmpty(updMinPerson.Text) OrElse String.IsNullOrEmpty(updPrice.Text) OrElse String.IsNullOrEmpty(updDescription.Text) Then
-                MessageBox.Show("Please fill in all fields to continue.")
-            Else
-                Dim updConfirmation As DialogResult = MessageBox.Show("Do you want to update this trail?", "Confirmation", MessageBoxButtons.YesNo)
-                If updConfirmation = DialogResult.Yes Then
-
-
-
-                    'update doc where id=updTrailID.text
-
-
-
-                    clearUpdateForm()
+            If dgvTrails.SelectedRows.Count > 0 Then
+                Dim selectedRow = dgvTrails.SelectedRows(0)
+                Dim selectedTrail = trailz(selectedRow.Index)
+                Dim trailID As String = selectedTrail.trailID
+                If String.IsNullOrEmpty(updTrailName.Text) OrElse String.IsNullOrEmpty(updDuration.Text) OrElse String.IsNullOrEmpty(updMinPerson.Text) OrElse String.IsNullOrEmpty(updPrice.Text) OrElse String.IsNullOrEmpty(updDescription.Text) Then
+                    MessageBox.Show("Please fill in all fields to continue.")
+                Else
+                    Dim updConfirmation As DialogResult = MessageBox.Show("Do you want to update this trail?", "Confirmation", MessageBoxButtons.YesNo)
+                    If updConfirmation = DialogResult.Yes Then
+                        Try
+                            Dim objectId As ObjectId
+                            If ObjectId.TryParse(trailID, objectId) Then
+                                Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objectId)
+                                Dim update = Builders(Of BsonDocument).Update.Set(Of String)("nameOfTour", updTrailName.Text).
+                                Set(Of String)("duration", updDuration.Text).
+                                Set(Of String)("minimumPax", updMinPerson.Text).
+                                Set(Of String)("price", updPrice.Text).
+                                Set(Of String)("description", updDescription.Text)
+                                rmsSharedVar.colTrails.UpdateOne(filter, update)
+                                MessageBox.Show("ATV Trail updated successfully.")
+                                populateTrails()
+                                clearUpdateForm()
+                            End If
+                        Catch ex As Exception
+                            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
+                    End If
                 End If
+            Else
+                MessageBox.Show("Please select an ATV trail to update.")
+                populateTrails()
             End If
 
         ElseIf sender Is btnDelTrail Then
-            Dim addConfirmation As DialogResult = MessageBox.Show("Are you sure you want to delete this trail?", "Confirmation", MessageBoxButtons.YesNo)
-            If addConfirmation = DialogResult.Yes Then
-                If dgvTrails.SelectedRows.Count > 0 Then
-                    Dim selectedTrail As String = dgvTrails.SelectedRows(0).Cells("Column1").Value.ToString()
-                    Dim objectId As ObjectId
-                    If ObjectId.TryParse(selectedTrail, objectId) Then
-                        Dim delFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", objectId)
-                        Dim colTrails = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAtvTours")
-                        colTrails.DeleteOne(delFilter)
-
-
-                        'insert copy to archive coll
-
-                        clearUpdateForm()
-                    Else
-                        MessageBox.Show("Unable to delete ATV Trail.")
-                    End If
-                Else
-                    MessageBox.Show("No row selected for deletion.")
+            If dgvTrails.SelectedRows.Count > 0 Then
+                Dim selectedTrail = trailz(dgvTrails.SelectedRows(0).Index)
+                Dim trailID As String = selectedTrail.trailID
+                Dim delConfirmation = MessageBox.Show("Are you sure you want to archive this trail?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                'move customer data to archive collection
+                If delConfirmation = DialogResult.Yes Then
+                    moveToArchive(trailID)
+                ElseIf delConfirmation = DialogResult.No Then
+                    populateTrails()
                 End If
+            Else
+                MessageBox.Show("No trail selected for deletion.")
+                populateTrails()
             End If
         End If
+    End Sub
+    Private Sub moveToArchive(trailID As String)
+        Try
+            Dim objectId As ObjectId
+            If ObjectId.TryParse(trailID, objectId) Then
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objectId)
+                Dim document = rmsSharedVar.colTrails.Find(filter).FirstOrDefault()
+                If document IsNot Nothing Then
+                    'Add date to accountDeletionDate bago iarchive
+                    document.Add("accountDeletionDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                    rmsSharedVar.archiveTrail.InsertOne(document)
+                    rmsSharedVar.colTrails.DeleteOne(filter)
+                    MessageBox.Show("ATV trail archived successfully.")
+                    populateTrails()
+                    clearUpdateForm()
+                Else
+                    MessageBox.Show("ATV trail not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    populateTrails()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            populateTrails()
+        End Try
     End Sub
     Private Sub lblClear_Click(sender As Object, e As EventArgs) Handles lblClearAdd.Click, lblClearUpdate.Click
         If sender Is lblClearAdd Then
@@ -170,18 +215,18 @@ Public Class ctrlTrails
             clearUpdateForm()
         End If
     End Sub
+    Private Sub numberz_TextChanged(sender As Object, e As KeyPressEventArgs) Handles addMinPerson.KeyPress, addPrice.KeyPress, updMinPerson.KeyPress, updPrice.KeyPress
+        'check if the inputted char is a number,backspace
+        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
+            e.Handled = True
+        End If
+    End Sub
     Private Sub ctrlTrails_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
             closeMongoConn()
             clearAddForm()
             clearUpdateForm()
             tabTrails.SelectedIndex = 0
-        End If
-    End Sub
-    Private Sub numberz_TextChanged(sender As Object, e As KeyPressEventArgs) Handles addMinPerson.KeyPress, addPrice.KeyPress, updMinPerson.KeyPress, updPrice.KeyPress
-        'check if the inputted char is a number,backspace
-        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
-            e.Handled = True
         End If
     End Sub
 End Class
