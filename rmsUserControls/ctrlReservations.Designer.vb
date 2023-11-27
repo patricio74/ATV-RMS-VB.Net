@@ -26,6 +26,7 @@ Partial Class ctrlReservations
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btnDelRes = New System.Windows.Forms.Button()
         Me.lblUpdReservID = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblClearUpd = New System.Windows.Forms.Label()
@@ -82,7 +83,6 @@ Partial Class ctrlReservations
         Me.btnAddRes = New System.Windows.Forms.Button()
         Me.dateTimeNew = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.btnDelRes = New System.Windows.Forms.Button()
         Me.lblTodayCanceled = New System.Windows.Forms.Label()
         Me.lblTodayPending = New System.Windows.Forms.Label()
         Me.lblTodayRes = New System.Windows.Forms.Label()
@@ -124,6 +124,22 @@ Partial Class ctrlReservations
         Me.TabPage2.Size = New System.Drawing.Size(1066, 280)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "  Update Reservation   "
+        '
+        'btnDelRes
+        '
+        Me.btnDelRes.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnDelRes.BackColor = System.Drawing.Color.Firebrick
+        Me.btnDelRes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelRes.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDelRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelRes.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelRes.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDelRes.Location = New System.Drawing.Point(831, 153)
+        Me.btnDelRes.Name = "btnDelRes"
+        Me.btnDelRes.Size = New System.Drawing.Size(178, 44)
+        Me.btnDelRes.TabIndex = 1000
+        Me.btnDelRes.Text = "Cancel Reservation"
+        Me.btnDelRes.UseVisualStyleBackColor = False
         '
         'lblUpdReservID
         '
@@ -509,7 +525,7 @@ Partial Class ctrlReservations
         Me.dgvTransactions.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvTransactions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvTransactions.ShowEditingIcon = False
-        Me.dgvTransactions.Size = New System.Drawing.Size(1103, 297)
+        Me.dgvTransactions.Size = New System.Drawing.Size(1103, 303)
         Me.dgvTransactions.TabIndex = 134
         '
         'Column5
@@ -538,7 +554,7 @@ Partial Class ctrlReservations
         '
         Me.tabTransactions.Controls.Add(Me.TabPage1)
         Me.tabTransactions.Controls.Add(Me.TabPage2)
-        Me.tabTransactions.Location = New System.Drawing.Point(45, 375)
+        Me.tabTransactions.Location = New System.Drawing.Point(45, 385)
         Me.tabTransactions.Name = "tabTransactions"
         Me.tabTransactions.SelectedIndex = 0
         Me.tabTransactions.Size = New System.Drawing.Size(1074, 313)
@@ -844,22 +860,6 @@ Partial Class ctrlReservations
         Me.Label12.Size = New System.Drawing.Size(119, 18)
         Me.Label12.TabIndex = 122
         Me.Label12.Text = "RESERVATION DATE:"
-        '
-        'btnDelRes
-        '
-        Me.btnDelRes.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnDelRes.BackColor = System.Drawing.Color.Firebrick
-        Me.btnDelRes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelRes.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
-        Me.btnDelRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelRes.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelRes.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnDelRes.Location = New System.Drawing.Point(831, 153)
-        Me.btnDelRes.Name = "btnDelRes"
-        Me.btnDelRes.Size = New System.Drawing.Size(178, 44)
-        Me.btnDelRes.TabIndex = 1000
-        Me.btnDelRes.Text = "Cancel Reservation"
-        Me.btnDelRes.UseVisualStyleBackColor = False
         '
         'lblTodayCanceled
         '

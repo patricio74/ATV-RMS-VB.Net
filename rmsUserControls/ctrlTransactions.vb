@@ -5,7 +5,7 @@ Public Class ctrlTransactions
     Dim numberOfPerson As Double = 0
     Dim totalPrice As Double = 0
     Private Sub clearAddResTab()
-        cbxTransacFilter.SelectedIndex = -1
+        cbxTransacFilter.SelectedIndex = 0
         tbxNewFName.Clear()
         tbxNewMName.Clear()
         tbxNewSName.Clear()
@@ -17,7 +17,7 @@ Public Class ctrlTransactions
         tbxNewTotal.Clear()
     End Sub
     Private Sub clearUpdResTab()
-        cbxTransacFilter.SelectedIndex = -1
+        cbxTransacFilter.SelectedIndex = 0
         dgvTransactions.ClearSelection()
         lblUpdReservID.Text = ""
         tbxReservFName.Clear()
@@ -34,7 +34,7 @@ Public Class ctrlTransactions
         totalPrice = 0
     End Sub
     Private Sub clearAddTransacTab()
-        cbxTransacFilter.SelectedIndex = -1
+        cbxTransacFilter.SelectedIndex = 0
         dgvTransactions.ClearSelection()
         tbxAddFName.Clear()
         tbxAddMName.Clear()
@@ -52,7 +52,7 @@ Public Class ctrlTransactions
         totalPrice = 0
     End Sub
     Private Sub clearOngoingTab()
-        cbxTransacFilter.SelectedIndex = -1
+        cbxTransacFilter.SelectedIndex = 0
         tbxOnGName.Clear()
         tbxOnGTour.Clear()
         tbxOnGTime.Clear()
@@ -106,16 +106,12 @@ Public Class ctrlTransactions
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabTransactions.SelectedIndexChanged
         If tabTransactions.SelectedIndex = 0 Then 'walk-in transac tab
-            cbxTransacFilter.Visible = False
-            btnViewTransac.Visible = False
             reloadTrailList()
             clearUpdResTab()
             populateTransac()
             'add code to display transacdb to dgv
 
         ElseIf tabTransactions.SelectedIndex = 1 Then 'add reserv tab
-            cbxTransacFilter.Visible = False
-            btnViewTransac.Visible = False
             reloadTrailList()
             clearAddTransacTab()
             clearUpdResTab()
@@ -123,14 +119,13 @@ Public Class ctrlTransactions
             'add code to display reservations to dgv
 
         ElseIf tabTransactions.SelectedIndex = 2 Then 'upd reserv tab
-            cbxTransacFilter.Visible = True
-            btnViewTransac.Visible = True
             reloadTrailList()
             'add code to display reservations to dgv
 
-        ElseIf tabTransactions.SelectedIndex = 3 Then 'ongoing tab
-            cbxTransacFilter.Visible = False
-            btnViewTransac.Visible = False
+        ElseIf tabTransactions.SelectedIndex = 3 Then 'waiting list tab
+            populateTransac()
+
+        ElseIf tabTransactions.SelectedIndex = 4 Then 'ongoing tab
             reloadTrailList()
             clearAddTransacTab()
             clearUpdResTab()
@@ -352,5 +347,9 @@ Public Class ctrlTransactions
             reloadTrailList()
             tabTransactions.SelectedIndex = 0
         End If
+    End Sub
+
+    Private Sub btnViewTransac_Click(sender As Object, e As EventArgs) Handles btnViewTransac.Click
+        'view dgv w/ filter
     End Sub
 End Class
