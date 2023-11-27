@@ -164,6 +164,7 @@
     Private Sub rmsDashboard_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         rmsSharedVar.admnID = Nothing
         rmsSharedVar.labelName = Nothing
+        rmsSharedVar.role = Nothing
         closeMongoConn()
     End Sub
 End Class

@@ -137,7 +137,7 @@ Partial Class ctrlReservations
         Me.btnDelRes.Location = New System.Drawing.Point(831, 153)
         Me.btnDelRes.Name = "btnDelRes"
         Me.btnDelRes.Size = New System.Drawing.Size(178, 44)
-        Me.btnDelRes.TabIndex = 1000
+        Me.btnDelRes.TabIndex = 10
         Me.btnDelRes.Text = "Cancel Reservation"
         Me.btnDelRes.UseVisualStyleBackColor = False
         '
@@ -175,7 +175,7 @@ Partial Class ctrlReservations
         Me.lblClearUpd.Location = New System.Drawing.Point(825, 212)
         Me.lblClearUpd.Name = "lblClearUpd"
         Me.lblClearUpd.Size = New System.Drawing.Size(75, 18)
-        Me.lblClearUpd.TabIndex = 126
+        Me.lblClearUpd.TabIndex = 11
         Me.lblClearUpd.Text = "Clear Form"
         '
         'tbxReservPerson
@@ -188,7 +188,7 @@ Partial Class ctrlReservations
         Me.tbxReservPerson.MaxLength = 1
         Me.tbxReservPerson.Name = "tbxReservPerson"
         Me.tbxReservPerson.Size = New System.Drawing.Size(82, 30)
-        Me.tbxReservPerson.TabIndex = 124
+        Me.tbxReservPerson.TabIndex = 5
         Me.tbxReservPerson.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label10
@@ -213,7 +213,7 @@ Partial Class ctrlReservations
         Me.tbxReservFName.Location = New System.Drawing.Point(56, 59)
         Me.tbxReservFName.Name = "tbxReservFName"
         Me.tbxReservFName.Size = New System.Drawing.Size(311, 30)
-        Me.tbxReservFName.TabIndex = 111
+        Me.tbxReservFName.TabIndex = 0
         '
         'Label9
         '
@@ -238,7 +238,7 @@ Partial Class ctrlReservations
         Me.dateTimeReserv.Location = New System.Drawing.Point(418, 124)
         Me.dateTimeReserv.Name = "dateTimeReserv"
         Me.dateTimeReserv.Size = New System.Drawing.Size(163, 26)
-        Me.dateTimeReserv.TabIndex = 109
+        Me.dateTimeReserv.TabIndex = 4
         '
         'Label7
         '
@@ -277,7 +277,7 @@ Partial Class ctrlReservations
         Me.cbxReservTimeSlot.Location = New System.Drawing.Point(418, 188)
         Me.cbxReservTimeSlot.Name = "cbxReservTimeSlot"
         Me.cbxReservTimeSlot.Size = New System.Drawing.Size(121, 30)
-        Me.cbxReservTimeSlot.TabIndex = 121
+        Me.cbxReservTimeSlot.TabIndex = 6
         '
         'cbxReservStatus
         '
@@ -292,7 +292,7 @@ Partial Class ctrlReservations
         Me.cbxReservStatus.Location = New System.Drawing.Point(549, 188)
         Me.cbxReservStatus.Name = "cbxReservStatus"
         Me.cbxReservStatus.Size = New System.Drawing.Size(121, 30)
-        Me.cbxReservStatus.TabIndex = 104
+        Me.cbxReservStatus.TabIndex = 7
         '
         'tbxReservMName
         '
@@ -304,7 +304,7 @@ Partial Class ctrlReservations
         Me.tbxReservMName.Location = New System.Drawing.Point(56, 124)
         Me.tbxReservMName.Name = "tbxReservMName"
         Me.tbxReservMName.Size = New System.Drawing.Size(311, 30)
-        Me.tbxReservMName.TabIndex = 113
+        Me.tbxReservMName.TabIndex = 1
         '
         'btnUpdRes
         '
@@ -318,7 +318,7 @@ Partial Class ctrlReservations
         Me.btnUpdRes.Location = New System.Drawing.Point(723, 153)
         Me.btnUpdRes.Name = "btnUpdRes"
         Me.btnUpdRes.Size = New System.Drawing.Size(102, 44)
-        Me.btnUpdRes.TabIndex = 106
+        Me.btnUpdRes.TabIndex = 9
         Me.btnUpdRes.Text = "Update"
         Me.btnUpdRes.UseVisualStyleBackColor = False
         '
@@ -370,7 +370,7 @@ Partial Class ctrlReservations
         Me.tbxReservTotal.Name = "tbxReservTotal"
         Me.tbxReservTotal.ReadOnly = True
         Me.tbxReservTotal.Size = New System.Drawing.Size(286, 41)
-        Me.tbxReservTotal.TabIndex = 999
+        Me.tbxReservTotal.TabIndex = 8
         Me.tbxReservTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cbxReservTour
@@ -385,7 +385,7 @@ Partial Class ctrlReservations
         Me.cbxReservTour.Location = New System.Drawing.Point(418, 59)
         Me.cbxReservTour.Name = "cbxReservTour"
         Me.cbxReservTour.Size = New System.Drawing.Size(252, 30)
-        Me.cbxReservTour.TabIndex = 117
+        Me.cbxReservTour.TabIndex = 3
         '
         'tbxReservSName
         '
@@ -397,7 +397,7 @@ Partial Class ctrlReservations
         Me.tbxReservSName.Location = New System.Drawing.Point(56, 188)
         Me.tbxReservSName.Name = "tbxReservSName"
         Me.tbxReservSName.Size = New System.Drawing.Size(311, 30)
-        Me.tbxReservSName.TabIndex = 115
+        Me.tbxReservSName.TabIndex = 2
         '
         'Label1
         '
@@ -601,7 +601,7 @@ Partial Class ctrlReservations
         Me.lblClearNew.Location = New System.Drawing.Point(850, 208)
         Me.lblClearNew.Name = "lblClearNew"
         Me.lblClearNew.Size = New System.Drawing.Size(75, 18)
-        Me.lblClearNew.TabIndex = 148
+        Me.lblClearNew.TabIndex = 10
         Me.lblClearNew.Text = "Clear Form"
         '
         'Label5
@@ -626,7 +626,7 @@ Partial Class ctrlReservations
         Me.tbxNewPerson.MaxLength = 1
         Me.tbxNewPerson.Name = "tbxNewPerson"
         Me.tbxNewPerson.Size = New System.Drawing.Size(82, 30)
-        Me.tbxNewPerson.TabIndex = 146
+        Me.tbxNewPerson.TabIndex = 5
         Me.tbxNewPerson.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label19
@@ -651,7 +651,7 @@ Partial Class ctrlReservations
         Me.tbxNewFName.Location = New System.Drawing.Point(63, 58)
         Me.tbxNewFName.Name = "tbxNewFName"
         Me.tbxNewFName.Size = New System.Drawing.Size(311, 30)
-        Me.tbxNewFName.TabIndex = 136
+        Me.tbxNewFName.TabIndex = 0
         '
         'Label21
         '
@@ -690,7 +690,7 @@ Partial Class ctrlReservations
         Me.cbxNewTimeSlot.Location = New System.Drawing.Point(421, 187)
         Me.cbxNewTimeSlot.Name = "cbxNewTimeSlot"
         Me.cbxNewTimeSlot.Size = New System.Drawing.Size(116, 30)
-        Me.cbxNewTimeSlot.TabIndex = 144
+        Me.cbxNewTimeSlot.TabIndex = 6
         '
         'cbxNewStatus
         '
@@ -705,7 +705,7 @@ Partial Class ctrlReservations
         Me.cbxNewStatus.Location = New System.Drawing.Point(557, 187)
         Me.cbxNewStatus.Name = "cbxNewStatus"
         Me.cbxNewStatus.Size = New System.Drawing.Size(109, 30)
-        Me.cbxNewStatus.TabIndex = 134
+        Me.cbxNewStatus.TabIndex = 7
         '
         'tbxNewMName
         '
@@ -717,7 +717,7 @@ Partial Class ctrlReservations
         Me.tbxNewMName.Location = New System.Drawing.Point(63, 123)
         Me.tbxNewMName.Name = "tbxNewMName"
         Me.tbxNewMName.Size = New System.Drawing.Size(311, 30)
-        Me.tbxNewMName.TabIndex = 138
+        Me.tbxNewMName.TabIndex = 1
         '
         'Label23
         '
@@ -767,7 +767,7 @@ Partial Class ctrlReservations
         Me.tbxNewTotal.Name = "tbxNewTotal"
         Me.tbxNewTotal.ReadOnly = True
         Me.tbxNewTotal.Size = New System.Drawing.Size(272, 41)
-        Me.tbxNewTotal.TabIndex = 132
+        Me.tbxNewTotal.TabIndex = 8
         Me.tbxNewTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cbxNewTour
@@ -782,7 +782,7 @@ Partial Class ctrlReservations
         Me.cbxNewTour.Location = New System.Drawing.Point(421, 58)
         Me.cbxNewTour.Name = "cbxNewTour"
         Me.cbxNewTour.Size = New System.Drawing.Size(256, 30)
-        Me.cbxNewTour.TabIndex = 142
+        Me.cbxNewTour.TabIndex = 3
         '
         'tbxNewSName
         '
@@ -794,7 +794,7 @@ Partial Class ctrlReservations
         Me.tbxNewSName.Location = New System.Drawing.Point(63, 187)
         Me.tbxNewSName.Name = "tbxNewSName"
         Me.tbxNewSName.Size = New System.Drawing.Size(311, 30)
-        Me.tbxNewSName.TabIndex = 140
+        Me.tbxNewSName.TabIndex = 2
         '
         'Label26
         '
@@ -832,7 +832,7 @@ Partial Class ctrlReservations
         Me.btnAddRes.Location = New System.Drawing.Point(788, 156)
         Me.btnAddRes.Name = "btnAddRes"
         Me.btnAddRes.Size = New System.Drawing.Size(194, 44)
-        Me.btnAddRes.TabIndex = 130
+        Me.btnAddRes.TabIndex = 9
         Me.btnAddRes.Text = "Save Reservation"
         Me.btnAddRes.UseVisualStyleBackColor = False
         '
@@ -847,7 +847,7 @@ Partial Class ctrlReservations
         Me.dateTimeNew.Location = New System.Drawing.Point(421, 124)
         Me.dateTimeNew.Name = "dateTimeNew"
         Me.dateTimeNew.Size = New System.Drawing.Size(141, 26)
-        Me.dateTimeNew.TabIndex = 109
+        Me.dateTimeNew.TabIndex = 4
         '
         'Label12
         '

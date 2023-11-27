@@ -91,7 +91,7 @@ Partial Class ctrlTourGuides
         Me.combGender.Location = New System.Drawing.Point(707, 52)
         Me.combGender.Name = "combGender"
         Me.combGender.Size = New System.Drawing.Size(83, 30)
-        Me.combGender.TabIndex = 44
+        Me.combGender.TabIndex = 4
         '
         'Label8
         '
@@ -115,7 +115,7 @@ Partial Class ctrlTourGuides
         Me.tbxEmail.Location = New System.Drawing.Point(499, 185)
         Me.tbxEmail.Name = "tbxEmail"
         Me.tbxEmail.Size = New System.Drawing.Size(291, 30)
-        Me.tbxEmail.TabIndex = 42
+        Me.tbxEmail.TabIndex = 6
         Me.tbxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label5
@@ -140,7 +140,7 @@ Partial Class ctrlTourGuides
         Me.tbxContNum.MaxLength = 11
         Me.tbxContNum.Name = "tbxContNum"
         Me.tbxContNum.Size = New System.Drawing.Size(291, 30)
-        Me.tbxContNum.TabIndex = 40
+        Me.tbxContNum.TabIndex = 5
         Me.tbxContNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
@@ -164,7 +164,7 @@ Partial Class ctrlTourGuides
         Me.tbxEmpNo.Location = New System.Drawing.Point(499, 53)
         Me.tbxEmpNo.Name = "tbxEmpNo"
         Me.tbxEmpNo.Size = New System.Drawing.Size(202, 30)
-        Me.tbxEmpNo.TabIndex = 38
+        Me.tbxEmpNo.TabIndex = 3
         Me.tbxEmpNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
@@ -189,7 +189,7 @@ Partial Class ctrlTourGuides
         Me.tbxSurname.Location = New System.Drawing.Point(100, 185)
         Me.tbxSurname.Name = "tbxSurname"
         Me.tbxSurname.Size = New System.Drawing.Size(311, 30)
-        Me.tbxSurname.TabIndex = 36
+        Me.tbxSurname.TabIndex = 2
         Me.tbxSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
@@ -214,7 +214,7 @@ Partial Class ctrlTourGuides
         Me.tbxMidname.Location = New System.Drawing.Point(100, 119)
         Me.tbxMidname.Name = "tbxMidname"
         Me.tbxMidname.Size = New System.Drawing.Size(311, 30)
-        Me.tbxMidname.TabIndex = 34
+        Me.tbxMidname.TabIndex = 1
         Me.tbxMidname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
@@ -239,7 +239,7 @@ Partial Class ctrlTourGuides
         Me.tbxFrstname.Location = New System.Drawing.Point(100, 53)
         Me.tbxFrstname.Name = "tbxFrstname"
         Me.tbxFrstname.Size = New System.Drawing.Size(311, 30)
-        Me.tbxFrstname.TabIndex = 32
+        Me.tbxFrstname.TabIndex = 0
         Me.tbxFrstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
@@ -491,7 +491,7 @@ Partial Class ctrlTourGuides
         Me.btnDelAtv.Location = New System.Drawing.Point(909, 230)
         Me.btnDelAtv.Name = "btnDelAtv"
         Me.btnDelAtv.Size = New System.Drawing.Size(103, 30)
-        Me.btnDelAtv.TabIndex = 29
+        Me.btnDelAtv.TabIndex = 8
         Me.btnDelAtv.Text = "Delete user"
         Me.btnDelAtv.UseVisualStyleBackColor = False
         '
@@ -506,7 +506,7 @@ Partial Class ctrlTourGuides
         Me.btnUpdAtv.Location = New System.Drawing.Point(752, 222)
         Me.btnUpdAtv.Name = "btnUpdAtv"
         Me.btnUpdAtv.Size = New System.Drawing.Size(136, 44)
-        Me.btnUpdAtv.TabIndex = 92
+        Me.btnUpdAtv.TabIndex = 7
         Me.btnUpdAtv.Text = "Update ATV"
         Me.btnUpdAtv.UseVisualStyleBackColor = False
         '
@@ -545,7 +545,7 @@ Partial Class ctrlTourGuides
         Me.ComboBox1.Location = New System.Drawing.Point(253, 45)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(139, 30)
-        Me.ComboBox1.TabIndex = 133
+        Me.ComboBox1.TabIndex = 1
         '
         'Label13
         '
@@ -569,7 +569,7 @@ Partial Class ctrlTourGuides
         Me.TextBox1.Location = New System.Drawing.Point(57, 118)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(336, 30)
-        Me.TextBox1.TabIndex = 128
+        Me.TextBox1.TabIndex = 2
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label14
@@ -594,7 +594,7 @@ Partial Class ctrlTourGuides
         Me.TextBox2.Location = New System.Drawing.Point(56, 197)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(336, 30)
-        Me.TextBox2.TabIndex = 136
+        Me.TextBox2.TabIndex = 3
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label15
@@ -632,7 +632,7 @@ Partial Class ctrlTourGuides
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(191, 30)
-        Me.TextBox3.TabIndex = 131
+        Me.TextBox3.TabIndex = 0
         Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RichTextBox1
@@ -643,7 +643,7 @@ Partial Class ctrlTourGuides
         Me.RichTextBox1.Location = New System.Drawing.Point(462, 45)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(552, 187)
-        Me.RichTextBox1.TabIndex = 134
+        Me.RichTextBox1.TabIndex = 4
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         '
         'Label17
@@ -667,7 +667,7 @@ Partial Class ctrlTourGuides
         Me.lblClearAtv.Location = New System.Drawing.Point(877, 258)
         Me.lblClearAtv.Name = "lblClearAtv"
         Me.lblClearAtv.Size = New System.Drawing.Size(101, 29)
-        Me.lblClearAtv.TabIndex = 126
+        Me.lblClearAtv.TabIndex = 6
         Me.lblClearAtv.Text = "Clear Form"
         '
         'btnAddAtv
@@ -681,7 +681,7 @@ Partial Class ctrlTourGuides
         Me.btnAddAtv.Location = New System.Drawing.Point(719, 246)
         Me.btnAddAtv.Name = "btnAddAtv"
         Me.btnAddAtv.Size = New System.Drawing.Size(136, 44)
-        Me.btnAddAtv.TabIndex = 91
+        Me.btnAddAtv.TabIndex = 5
         Me.btnAddAtv.Text = "Add ATV"
         Me.btnAddAtv.UseVisualStyleBackColor = False
         '

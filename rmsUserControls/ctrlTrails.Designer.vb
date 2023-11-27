@@ -81,7 +81,7 @@ Partial Class ctrlTrails
         Me.addPrice.MaxLength = 6
         Me.addPrice.Name = "addPrice"
         Me.addPrice.Size = New System.Drawing.Size(252, 32)
-        Me.addPrice.TabIndex = 124
+        Me.addPrice.TabIndex = 3
         Me.addPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnUpdTrail
@@ -96,7 +96,7 @@ Partial Class ctrlTrails
         Me.btnUpdTrail.Location = New System.Drawing.Point(13, 479)
         Me.btnUpdTrail.Name = "btnUpdTrail"
         Me.btnUpdTrail.Size = New System.Drawing.Size(121, 44)
-        Me.btnUpdTrail.TabIndex = 106
+        Me.btnUpdTrail.TabIndex = 5
         Me.btnUpdTrail.Text = "Update"
         Me.btnUpdTrail.UseVisualStyleBackColor = False
         '
@@ -148,7 +148,7 @@ Partial Class ctrlTrails
         Me.btnAddTrail.Location = New System.Drawing.Point(79, 480)
         Me.btnAddTrail.Name = "btnAddTrail"
         Me.btnAddTrail.Size = New System.Drawing.Size(121, 44)
-        Me.btnAddTrail.TabIndex = 129
+        Me.btnAddTrail.TabIndex = 5
         Me.btnAddTrail.Text = "Add Trail"
         Me.btnAddTrail.UseVisualStyleBackColor = False
         '
@@ -162,7 +162,7 @@ Partial Class ctrlTrails
         Me.addDuration.MaxLength = 20
         Me.addDuration.Name = "addDuration"
         Me.addDuration.Size = New System.Drawing.Size(118, 30)
-        Me.addDuration.TabIndex = 115
+        Me.addDuration.TabIndex = 1
         '
         'Label3
         '
@@ -197,7 +197,7 @@ Partial Class ctrlTrails
         Me.addTrailName.Location = New System.Drawing.Point(14, 42)
         Me.addTrailName.Name = "addTrailName"
         Me.addTrailName.Size = New System.Drawing.Size(252, 30)
-        Me.addTrailName.TabIndex = 111
+        Me.addTrailName.TabIndex = 0
         '
         'dgvTrails
         '
@@ -323,7 +323,7 @@ Partial Class ctrlTrails
         Me.addDescription.Location = New System.Drawing.Point(14, 250)
         Me.addDescription.Name = "addDescription"
         Me.addDescription.Size = New System.Drawing.Size(252, 205)
-        Me.addDescription.TabIndex = 132
+        Me.addDescription.TabIndex = 4
         Me.addDescription.Text = ""
         '
         'addMinPerson
@@ -336,7 +336,7 @@ Partial Class ctrlTrails
         Me.addMinPerson.MaxLength = 2
         Me.addMinPerson.Name = "addMinPerson"
         Me.addMinPerson.Size = New System.Drawing.Size(118, 30)
-        Me.addMinPerson.TabIndex = 131
+        Me.addMinPerson.TabIndex = 2
         '
         'lblTransacPesoSign
         '
@@ -360,7 +360,7 @@ Partial Class ctrlTrails
         Me.lblClearAdd.Location = New System.Drawing.Point(102, 536)
         Me.lblClearAdd.Name = "lblClearAdd"
         Me.lblClearAdd.Size = New System.Drawing.Size(75, 18)
-        Me.lblClearAdd.TabIndex = 125
+        Me.lblClearAdd.TabIndex = 6
         Me.lblClearAdd.Text = "Clear Form"
         '
         'TabPage2
@@ -400,7 +400,7 @@ Partial Class ctrlTrails
         Me.btnDelTrail.Location = New System.Drawing.Point(144, 479)
         Me.btnDelTrail.Name = "btnDelTrail"
         Me.btnDelTrail.Size = New System.Drawing.Size(121, 44)
-        Me.btnDelTrail.TabIndex = 142
+        Me.btnDelTrail.TabIndex = 6
         Me.btnDelTrail.Text = "Delete"
         Me.btnDelTrail.UseVisualStyleBackColor = False
         '
@@ -411,7 +411,7 @@ Partial Class ctrlTrails
         Me.updDescription.Location = New System.Drawing.Point(13, 250)
         Me.updDescription.Name = "updDescription"
         Me.updDescription.Size = New System.Drawing.Size(252, 205)
-        Me.updDescription.TabIndex = 141
+        Me.updDescription.TabIndex = 4
         Me.updDescription.Text = ""
         '
         'updMinPerson
@@ -424,7 +424,7 @@ Partial Class ctrlTrails
         Me.updMinPerson.MaxLength = 2
         Me.updMinPerson.Name = "updMinPerson"
         Me.updMinPerson.Size = New System.Drawing.Size(118, 30)
-        Me.updMinPerson.TabIndex = 140
+        Me.updMinPerson.TabIndex = 2
         '
         'lblClearUpdate
         '
@@ -436,7 +436,7 @@ Partial Class ctrlTrails
         Me.lblClearUpdate.Location = New System.Drawing.Point(102, 536)
         Me.lblClearUpdate.Name = "lblClearUpdate"
         Me.lblClearUpdate.Size = New System.Drawing.Size(75, 18)
-        Me.lblClearUpdate.TabIndex = 139
+        Me.lblClearUpdate.TabIndex = 7
         Me.lblClearUpdate.Text = "Clear Form"
         '
         'Label5
@@ -461,7 +461,7 @@ Partial Class ctrlTrails
         Me.updPrice.MaxLength = 6
         Me.updPrice.Name = "updPrice"
         Me.updPrice.Size = New System.Drawing.Size(252, 32)
-        Me.updPrice.TabIndex = 138
+        Me.updPrice.TabIndex = 3
         Me.updPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblUpdTrailID
@@ -510,7 +510,7 @@ Partial Class ctrlTrails
         Me.updTrailName.Location = New System.Drawing.Point(13, 40)
         Me.updTrailName.Name = "updTrailName"
         Me.updTrailName.Size = New System.Drawing.Size(252, 30)
-        Me.updTrailName.TabIndex = 130
+        Me.updTrailName.TabIndex = 0
         '
         'Label12
         '
@@ -558,7 +558,7 @@ Partial Class ctrlTrails
         Me.updDuration.MaxLength = 20
         Me.updDuration.Name = "updDuration"
         Me.updDuration.Size = New System.Drawing.Size(118, 30)
-        Me.updDuration.TabIndex = 136
+        Me.updDuration.TabIndex = 1
         '
         'ctrlTrails
         '

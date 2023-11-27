@@ -85,7 +85,7 @@ Public Class rmsRegistration
                     lblHello.Text = "Hi, " & firstName & "!"
                 Else
 
-                    'dahekkkkkkkkk
+                    '??????????
 
                     MessageBox.Show("Hello!")
                 End If
@@ -229,6 +229,7 @@ Public Class rmsRegistration
                         Dim username As String = regUsername.Text
                         Dim password As String = regPassw.Text
                         Dim rfid As String = regRFID.Text
+                        Dim creationDate As String = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")
                         Dim accType As String = "admin"
                         Dim newAdmin As New BsonDocument From {
                             {"First Name", firstName},
@@ -239,6 +240,7 @@ Public Class rmsRegistration
                             {"Username", username},
                             {"Password", password},
                             {"RFID", rfid},
+                            {"accountCreationDate", creationDate},
                             {"role", accType}
                         }
                         Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(

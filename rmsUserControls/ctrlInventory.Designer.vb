@@ -78,7 +78,7 @@ Partial Class ctrlInventory
         Me.cbxUpdStatus.Location = New System.Drawing.Point(259, 44)
         Me.cbxUpdStatus.Name = "cbxUpdStatus"
         Me.cbxUpdStatus.Size = New System.Drawing.Size(139, 30)
-        Me.cbxUpdStatus.TabIndex = 61
+        Me.cbxUpdStatus.TabIndex = 1
         '
         'Label8
         '
@@ -103,7 +103,7 @@ Partial Class ctrlInventory
         Me.tbxInvNum.Name = "tbxInvNum"
         Me.tbxInvNum.ReadOnly = True
         Me.tbxInvNum.Size = New System.Drawing.Size(191, 30)
-        Me.tbxInvNum.TabIndex = 55
+        Me.tbxInvNum.TabIndex = 0
         Me.tbxInvNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
@@ -140,7 +140,7 @@ Partial Class ctrlInventory
         Me.tbxUpdBrand.Location = New System.Drawing.Point(63, 117)
         Me.tbxUpdBrand.Name = "tbxUpdBrand"
         Me.tbxUpdBrand.Size = New System.Drawing.Size(336, 30)
-        Me.tbxUpdBrand.TabIndex = 49
+        Me.tbxUpdBrand.TabIndex = 2
         Me.tbxUpdBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
@@ -163,7 +163,7 @@ Partial Class ctrlInventory
         Me.rtbxUpdDesc.Location = New System.Drawing.Point(468, 44)
         Me.rtbxUpdDesc.Name = "rtbxUpdDesc"
         Me.rtbxUpdDesc.Size = New System.Drawing.Size(552, 187)
-        Me.rtbxUpdDesc.TabIndex = 62
+        Me.rtbxUpdDesc.TabIndex = 4
         Me.rtbxUpdDesc.Text = resources.GetString("rtbxUpdDesc.Text")
         '
         'tbxUpdModel
@@ -176,7 +176,7 @@ Partial Class ctrlInventory
         Me.tbxUpdModel.Location = New System.Drawing.Point(62, 196)
         Me.tbxUpdModel.Name = "tbxUpdModel"
         Me.tbxUpdModel.Size = New System.Drawing.Size(336, 30)
-        Me.tbxUpdModel.TabIndex = 64
+        Me.tbxUpdModel.TabIndex = 3
         Me.tbxUpdModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
@@ -202,7 +202,7 @@ Partial Class ctrlInventory
         Me.btnUpdAtv.Location = New System.Drawing.Point(714, 251)
         Me.btnUpdAtv.Name = "btnUpdAtv"
         Me.btnUpdAtv.Size = New System.Drawing.Size(136, 44)
-        Me.btnUpdAtv.TabIndex = 92
+        Me.btnUpdAtv.TabIndex = 5
         Me.btnUpdAtv.Text = "Update ATV"
         Me.btnUpdAtv.UseVisualStyleBackColor = False
         '
@@ -329,7 +329,7 @@ Partial Class ctrlInventory
         Me.btnDelAtv.Location = New System.Drawing.Point(871, 259)
         Me.btnDelAtv.Name = "btnDelAtv"
         Me.btnDelAtv.Size = New System.Drawing.Size(103, 30)
-        Me.btnDelAtv.TabIndex = 29
+        Me.btnDelAtv.TabIndex = 6
         Me.btnDelAtv.Text = "Delete user"
         Me.btnDelAtv.UseVisualStyleBackColor = False
         '
@@ -368,7 +368,7 @@ Partial Class ctrlInventory
         Me.cbxAddStatus.Location = New System.Drawing.Point(253, 45)
         Me.cbxAddStatus.Name = "cbxAddStatus"
         Me.cbxAddStatus.Size = New System.Drawing.Size(139, 30)
-        Me.cbxAddStatus.TabIndex = 133
+        Me.cbxAddStatus.TabIndex = 1
         '
         'Label1
         '
@@ -392,7 +392,7 @@ Partial Class ctrlInventory
         Me.tbxAddBrand.Location = New System.Drawing.Point(57, 118)
         Me.tbxAddBrand.Name = "tbxAddBrand"
         Me.tbxAddBrand.Size = New System.Drawing.Size(336, 30)
-        Me.tbxAddBrand.TabIndex = 128
+        Me.tbxAddBrand.TabIndex = 2
         Me.tbxAddBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label5
@@ -417,7 +417,7 @@ Partial Class ctrlInventory
         Me.tbxAddModel.Location = New System.Drawing.Point(56, 197)
         Me.tbxAddModel.Name = "tbxAddModel"
         Me.tbxAddModel.Size = New System.Drawing.Size(336, 30)
-        Me.tbxAddModel.TabIndex = 136
+        Me.tbxAddModel.TabIndex = 3
         Me.tbxAddModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
@@ -455,7 +455,7 @@ Partial Class ctrlInventory
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(191, 30)
-        Me.TextBox3.TabIndex = 131
+        Me.TextBox3.TabIndex = 0
         Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'rtbxAddDesc
@@ -466,7 +466,7 @@ Partial Class ctrlInventory
         Me.rtbxAddDesc.Location = New System.Drawing.Point(462, 45)
         Me.rtbxAddDesc.Name = "rtbxAddDesc"
         Me.rtbxAddDesc.Size = New System.Drawing.Size(552, 187)
-        Me.rtbxAddDesc.TabIndex = 134
+        Me.rtbxAddDesc.TabIndex = 4
         Me.rtbxAddDesc.Text = resources.GetString("rtbxAddDesc.Text")
         '
         'Label10
@@ -490,7 +490,7 @@ Partial Class ctrlInventory
         Me.lblClearAtv.Location = New System.Drawing.Point(877, 258)
         Me.lblClearAtv.Name = "lblClearAtv"
         Me.lblClearAtv.Size = New System.Drawing.Size(101, 29)
-        Me.lblClearAtv.TabIndex = 126
+        Me.lblClearAtv.TabIndex = 6
         Me.lblClearAtv.Text = "Clear Form"
         '
         'btnAddAtv
@@ -504,7 +504,7 @@ Partial Class ctrlInventory
         Me.btnAddAtv.Location = New System.Drawing.Point(719, 246)
         Me.btnAddAtv.Name = "btnAddAtv"
         Me.btnAddAtv.Size = New System.Drawing.Size(136, 44)
-        Me.btnAddAtv.TabIndex = 91
+        Me.btnAddAtv.TabIndex = 5
         Me.btnAddAtv.Text = "Add ATV"
         Me.btnAddAtv.UseVisualStyleBackColor = False
         '

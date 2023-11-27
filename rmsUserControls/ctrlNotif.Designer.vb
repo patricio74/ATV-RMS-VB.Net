@@ -129,7 +129,7 @@ Partial Class ctrlNotif
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.ShowEditingIcon = False
         Me.DataGridView1.Size = New System.Drawing.Size(668, 239)
-        Me.DataGridView1.TabIndex = 37
+        Me.DataGridView1.TabIndex = 0
         '
         'DataGridViewTextBoxColumn4
         '
@@ -176,7 +176,7 @@ Partial Class ctrlNotif
         Me.btnSmsClear.Location = New System.Drawing.Point(511, 365)
         Me.btnSmsClear.Name = "btnSmsClear"
         Me.btnSmsClear.Size = New System.Drawing.Size(121, 44)
-        Me.btnSmsClear.TabIndex = 45
+        Me.btnSmsClear.TabIndex = 4
         Me.btnSmsClear.Text = "clear"
         Me.btnSmsClear.UseVisualStyleBackColor = False
         '
@@ -192,7 +192,7 @@ Partial Class ctrlNotif
         Me.btnSmsSend.Location = New System.Drawing.Point(365, 365)
         Me.btnSmsSend.Name = "btnSmsSend"
         Me.btnSmsSend.Size = New System.Drawing.Size(121, 44)
-        Me.btnSmsSend.TabIndex = 44
+        Me.btnSmsSend.TabIndex = 3
         Me.btnSmsSend.Text = "Send reply"
         Me.btnSmsSend.UseVisualStyleBackColor = False
         '
@@ -204,7 +204,7 @@ Partial Class ctrlNotif
         Me.rtbxMsg.Location = New System.Drawing.Point(17, 61)
         Me.rtbxMsg.Name = "rtbxMsg"
         Me.rtbxMsg.Size = New System.Drawing.Size(308, 348)
-        Me.rtbxMsg.TabIndex = 63
+        Me.rtbxMsg.TabIndex = 0
         Me.rtbxMsg.Text = resources.GetString("rtbxMsg.Text")
         '
         'gboxReply
@@ -235,7 +235,7 @@ Partial Class ctrlNotif
         Me.rtbxReply.Location = New System.Drawing.Point(343, 61)
         Me.rtbxReply.Name = "rtbxReply"
         Me.rtbxReply.Size = New System.Drawing.Size(308, 286)
-        Me.rtbxReply.TabIndex = 65
+        Me.rtbxReply.TabIndex = 1
         Me.rtbxReply.Text = "'" & Global.Microsoft.VisualBasic.ChrW(10) & "'" & Global.Microsoft.VisualBasic.ChrW(10) & "'insert your reply here..." & Global.Microsoft.VisualBasic.ChrW(10) & "'" & Global.Microsoft.VisualBasic.ChrW(10) & "'" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "Should you have any further questions, don't " &
     "hesitate to contact us at rmssupport@email.com or visit our website: https://www" &
     ".website.com"
@@ -251,7 +251,7 @@ Partial Class ctrlNotif
         Me.lblSend.Location = New System.Drawing.Point(515, 16)
         Me.lblSend.Name = "lblSend"
         Me.lblSend.Size = New System.Drawing.Size(133, 18)
-        Me.lblSend.TabIndex = 64
+        Me.lblSend.TabIndex = 2
         Me.lblSend.Text = "Send announcement"
         Me.lblSend.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -293,7 +293,7 @@ Partial Class ctrlNotif
         Me.RichTextBox1.Location = New System.Drawing.Point(34, 61)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(353, 286)
-        Me.RichTextBox1.TabIndex = 65
+        Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         '
         'lblReply
@@ -307,7 +307,7 @@ Partial Class ctrlNotif
         Me.lblReply.Location = New System.Drawing.Point(300, 16)
         Me.lblReply.Name = "lblReply"
         Me.lblReply.Size = New System.Drawing.Size(119, 18)
-        Me.lblReply.TabIndex = 64
+        Me.lblReply.TabIndex = 3
         Me.lblReply.Text = "Reply to messages"
         '
         'Button1
@@ -321,7 +321,7 @@ Partial Class ctrlNotif
         Me.Button1.Location = New System.Drawing.Point(218, 365)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(121, 44)
-        Me.Button1.TabIndex = 45
+        Me.Button1.TabIndex = 2
         Me.Button1.Text = "clear"
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -336,7 +336,7 @@ Partial Class ctrlNotif
         Me.Button2.Location = New System.Drawing.Point(78, 365)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(121, 44)
-        Me.Button2.TabIndex = 44
+        Me.Button2.TabIndex = 1
         Me.Button2.Text = "Send to all"
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -377,7 +377,7 @@ Partial Class ctrlNotif
         Me.tbxDate.Name = "tbxDate"
         Me.tbxDate.ReadOnly = True
         Me.tbxDate.Size = New System.Drawing.Size(362, 30)
-        Me.tbxDate.TabIndex = 39
+        Me.tbxDate.TabIndex = 0
         '
         'tbxName
         '
@@ -392,7 +392,7 @@ Partial Class ctrlNotif
         Me.tbxName.Name = "tbxName"
         Me.tbxName.ReadOnly = True
         Me.tbxName.Size = New System.Drawing.Size(362, 30)
-        Me.tbxName.TabIndex = 41
+        Me.tbxName.TabIndex = 1
         '
         'lblPendingAdmin
         '
@@ -405,7 +405,7 @@ Partial Class ctrlNotif
         Me.lblPendingAdmin.Location = New System.Drawing.Point(284, 17)
         Me.lblPendingAdmin.Name = "lblPendingAdmin"
         Me.lblPendingAdmin.Size = New System.Drawing.Size(133, 18)
-        Me.lblPendingAdmin.TabIndex = 66
+        Me.lblPendingAdmin.TabIndex = 6
         Me.lblPendingAdmin.Text = "View pending admin"
         Me.lblPendingAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lblPendingAdmin.Visible = False
@@ -444,7 +444,7 @@ Partial Class ctrlNotif
         Me.Button5.Location = New System.Drawing.Point(62, 608)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(162, 44)
-        Me.Button5.TabIndex = 66
+        Me.Button5.TabIndex = 4
         Me.Button5.Text = "Accept resume"
         Me.Button5.UseVisualStyleBackColor = False
         '
@@ -461,7 +461,7 @@ Partial Class ctrlNotif
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(362, 30)
-        Me.TextBox1.TabIndex = 68
+        Me.TextBox1.TabIndex = 2
         '
         'Label4
         '
@@ -552,7 +552,7 @@ Partial Class ctrlNotif
         Me.Button3.Location = New System.Drawing.Point(230, 609)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(121, 44)
-        Me.Button3.TabIndex = 45
+        Me.Button3.TabIndex = 5
         Me.Button3.Text = "clear"
         Me.Button3.UseVisualStyleBackColor = False
         '
@@ -567,7 +567,7 @@ Partial Class ctrlNotif
         Me.Button4.Location = New System.Drawing.Point(111, 531)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(176, 43)
-        Me.Button4.TabIndex = 44
+        Me.Button4.TabIndex = 3
         Me.Button4.Text = "Download resume"
         Me.Button4.UseVisualStyleBackColor = False
         '
@@ -603,7 +603,7 @@ Partial Class ctrlNotif
         Me.cbxRole.Location = New System.Drawing.Point(28, 507)
         Me.cbxRole.Name = "cbxRole"
         Me.cbxRole.Size = New System.Drawing.Size(127, 28)
-        Me.cbxRole.TabIndex = 68
+        Me.cbxRole.TabIndex = 2
         '
         'Label5
         '
@@ -687,7 +687,7 @@ Partial Class ctrlNotif
         Me.lblPendingResume.Location = New System.Drawing.Point(277, 17)
         Me.lblPendingResume.Name = "lblPendingResume"
         Me.lblPendingResume.Size = New System.Drawing.Size(140, 18)
-        Me.lblPendingResume.TabIndex = 66
+        Me.lblPendingResume.TabIndex = 5
         Me.lblPendingResume.Text = "View pending resume"
         Me.lblPendingResume.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -704,7 +704,7 @@ Partial Class ctrlNotif
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(362, 30)
-        Me.TextBox3.TabIndex = 41
+        Me.TextBox3.TabIndex = 1
         '
         'Button7
         '
@@ -717,7 +717,7 @@ Partial Class ctrlNotif
         Me.Button7.Location = New System.Drawing.Point(230, 578)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(121, 44)
-        Me.Button7.TabIndex = 45
+        Me.Button7.TabIndex = 4
         Me.Button7.Text = "clear"
         Me.Button7.UseVisualStyleBackColor = False
         '
@@ -732,7 +732,7 @@ Partial Class ctrlNotif
         Me.Button8.Location = New System.Drawing.Point(48, 578)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(168, 44)
-        Me.Button8.TabIndex = 44
+        Me.Button8.TabIndex = 3
         Me.Button8.Text = "Approve admin"
         Me.Button8.UseVisualStyleBackColor = False
         '
@@ -749,7 +749,7 @@ Partial Class ctrlNotif
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(362, 30)
-        Me.TextBox4.TabIndex = 39
+        Me.TextBox4.TabIndex = 0
         '
         'Label8
         '

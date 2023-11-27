@@ -136,7 +136,7 @@ Partial Class ctrlCustomers
         Me.cbxUpdGender.Location = New System.Drawing.Point(58, 203)
         Me.cbxUpdGender.Name = "cbxUpdGender"
         Me.cbxUpdGender.Size = New System.Drawing.Size(122, 32)
-        Me.cbxUpdGender.TabIndex = 6
+        Me.cbxUpdGender.TabIndex = 3
         '
         'Label8
         '
@@ -186,7 +186,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdPhone.MaxLength = 11
         Me.tbxUpdPhone.Name = "tbxUpdPhone"
         Me.tbxUpdPhone.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdPhone.TabIndex = 8
+        Me.tbxUpdPhone.TabIndex = 4
         '
         'Label6
         '
@@ -211,7 +211,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdSurname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxUpdSurname.Name = "tbxUpdSurname"
         Me.tbxUpdSurname.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdSurname.TabIndex = 16
+        Me.tbxUpdSurname.TabIndex = 2
         '
         'Label4
         '
@@ -236,7 +236,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdMidname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxUpdMidname.Name = "tbxUpdMidname"
         Me.tbxUpdMidname.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdMidname.TabIndex = 14
+        Me.tbxUpdMidname.TabIndex = 1
         '
         'Label3
         '
@@ -261,7 +261,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdFirname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxUpdFirname.Name = "tbxUpdFirname"
         Me.tbxUpdFirname.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdFirname.TabIndex = 12
+        Me.tbxUpdFirname.TabIndex = 0
         '
         'Label1
         '
@@ -287,7 +287,7 @@ Partial Class ctrlCustomers
         Me.btnDelCust.Location = New System.Drawing.Point(830, 248)
         Me.btnDelCust.Name = "btnDelCust"
         Me.btnDelCust.Size = New System.Drawing.Size(103, 30)
-        Me.btnDelCust.TabIndex = 29
+        Me.btnDelCust.TabIndex = 14
         Me.btnDelCust.Text = "Delete user"
         Me.btnDelCust.UseVisualStyleBackColor = False
         '
@@ -302,7 +302,7 @@ Partial Class ctrlCustomers
         Me.btnUpdCust.Location = New System.Drawing.Point(806, 199)
         Me.btnUpdCust.Name = "btnUpdCust"
         Me.btnUpdCust.Size = New System.Drawing.Size(149, 44)
-        Me.btnUpdCust.TabIndex = 28
+        Me.btnUpdCust.TabIndex = 13
         Me.btnUpdCust.Text = "Update info"
         Me.btnUpdCust.UseVisualStyleBackColor = False
         '
@@ -398,7 +398,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdStreet.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxUpdStreet.Name = "tbxUpdStreet"
         Me.tbxUpdStreet.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdStreet.TabIndex = 18
+        Me.tbxUpdStreet.TabIndex = 5
         '
         'Label2
         '
@@ -423,7 +423,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdBarangay.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxUpdBarangay.Name = "tbxUpdBarangay"
         Me.tbxUpdBarangay.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdBarangay.TabIndex = 20
+        Me.tbxUpdBarangay.TabIndex = 6
         '
         'Label7
         '
@@ -448,7 +448,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdMuniCity.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxUpdMuniCity.Name = "tbxUpdMuniCity"
         Me.tbxUpdMuniCity.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdMuniCity.TabIndex = 22
+        Me.tbxUpdMuniCity.TabIndex = 7
         '
         'Label9
         '
@@ -500,7 +500,7 @@ Partial Class ctrlCustomers
         Me.cbxUpdCountry.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.cbxUpdCountry.Name = "cbxUpdCountry"
         Me.cbxUpdCountry.Size = New System.Drawing.Size(283, 32)
-        Me.cbxUpdCountry.TabIndex = 26
+        Me.cbxUpdCountry.TabIndex = 9
         '
         'tbxUpdProvince
         '
@@ -513,7 +513,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdProvince.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxUpdProvince.Name = "tbxUpdProvince"
         Me.tbxUpdProvince.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdProvince.TabIndex = 24
+        Me.tbxUpdProvince.TabIndex = 8
         '
         'tbxUpdPassword
         '
@@ -525,7 +525,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdPassword.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxUpdPassword.Name = "tbxUpdPassword"
         Me.tbxUpdPassword.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdPassword.TabIndex = 4
+        Me.tbxUpdPassword.TabIndex = 12
         '
         'Label12
         '
@@ -551,7 +551,7 @@ Partial Class ctrlCustomers
         Me.tbxUpdUsername.MaxLength = 11
         Me.tbxUpdUsername.Name = "tbxUpdUsername"
         Me.tbxUpdUsername.Size = New System.Drawing.Size(282, 30)
-        Me.tbxUpdUsername.TabIndex = 2
+        Me.tbxUpdUsername.TabIndex = 11
         '
         'Label13
         '
@@ -901,7 +901,7 @@ Partial Class ctrlCustomers
         Me.tbxAddStreet.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddStreet.Name = "tbxAddStreet"
         Me.tbxAddStreet.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddStreet.TabIndex = 78
+        Me.tbxAddStreet.TabIndex = 5
         '
         'tbxAddFirname
         '
@@ -914,7 +914,7 @@ Partial Class ctrlCustomers
         Me.tbxAddFirname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddFirname.Name = "tbxAddFirname"
         Me.tbxAddFirname.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddFirname.TabIndex = 72
+        Me.tbxAddFirname.TabIndex = 0
         '
         'tbxAddPassword
         '
@@ -926,7 +926,7 @@ Partial Class ctrlCustomers
         Me.tbxAddPassword.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddPassword.Name = "tbxAddPassword"
         Me.tbxAddPassword.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddPassword.TabIndex = 64
+        Me.tbxAddPassword.TabIndex = 12
         '
         'btnAddCust
         '
@@ -939,7 +939,7 @@ Partial Class ctrlCustomers
         Me.btnAddCust.Location = New System.Drawing.Point(830, 289)
         Me.btnAddCust.Name = "btnAddCust"
         Me.btnAddCust.Size = New System.Drawing.Size(149, 41)
-        Me.btnAddCust.TabIndex = 59
+        Me.btnAddCust.TabIndex = 13
         Me.btnAddCust.Text = "Add account"
         Me.btnAddCust.UseVisualStyleBackColor = False
         '
@@ -969,7 +969,7 @@ Partial Class ctrlCustomers
         Me.btnClrCust.Location = New System.Drawing.Point(858, 340)
         Me.btnClrCust.Name = "btnClrCust"
         Me.btnClrCust.Size = New System.Drawing.Size(101, 26)
-        Me.btnClrCust.TabIndex = 60
+        Me.btnClrCust.TabIndex = 14
         Me.btnClrCust.Text = "Clear form"
         Me.btnClrCust.UseVisualStyleBackColor = False
         '
@@ -985,7 +985,7 @@ Partial Class ctrlCustomers
         Me.tbxAddUsername.MaxLength = 11
         Me.tbxAddUsername.Name = "tbxAddUsername"
         Me.tbxAddUsername.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddUsername.TabIndex = 62
+        Me.tbxAddUsername.TabIndex = 11
         '
         'Label26
         '
@@ -1024,7 +1024,7 @@ Partial Class ctrlCustomers
         Me.cbxAddGender.Location = New System.Drawing.Point(81, 296)
         Me.cbxAddGender.Name = "cbxAddGender"
         Me.cbxAddGender.Size = New System.Drawing.Size(122, 32)
-        Me.cbxAddGender.TabIndex = 66
+        Me.cbxAddGender.TabIndex = 3
         '
         'Label16
         '
@@ -1073,7 +1073,7 @@ Partial Class ctrlCustomers
         Me.tbxAddProvince.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddProvince.Name = "tbxAddProvince"
         Me.tbxAddProvince.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddProvince.TabIndex = 84
+        Me.tbxAddProvince.TabIndex = 8
         '
         'Label24
         '
@@ -1098,7 +1098,7 @@ Partial Class ctrlCustomers
         Me.tbxAddMidname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddMidname.Name = "tbxAddMidname"
         Me.tbxAddMidname.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddMidname.TabIndex = 74
+        Me.tbxAddMidname.TabIndex = 1
         '
         'tbxAddEmail
         '
@@ -1111,7 +1111,7 @@ Partial Class ctrlCustomers
         Me.tbxAddEmail.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddEmail.Name = "tbxAddEmail"
         Me.tbxAddEmail.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddEmail.TabIndex = 70
+        Me.tbxAddEmail.TabIndex = 10
         '
         'cbxAddCountry
         '
@@ -1127,7 +1127,7 @@ Partial Class ctrlCustomers
         Me.cbxAddCountry.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.cbxAddCountry.Name = "cbxAddCountry"
         Me.cbxAddCountry.Size = New System.Drawing.Size(283, 32)
-        Me.cbxAddCountry.TabIndex = 86
+        Me.cbxAddCountry.TabIndex = 9
         '
         'tbxAddBarangay
         '
@@ -1140,7 +1140,7 @@ Partial Class ctrlCustomers
         Me.tbxAddBarangay.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddBarangay.Name = "tbxAddBarangay"
         Me.tbxAddBarangay.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddBarangay.TabIndex = 80
+        Me.tbxAddBarangay.TabIndex = 6
         '
         'Label18
         '
@@ -1201,7 +1201,7 @@ Partial Class ctrlCustomers
         Me.tbxAddSurname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddSurname.Name = "tbxAddSurname"
         Me.tbxAddSurname.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddSurname.TabIndex = 76
+        Me.tbxAddSurname.TabIndex = 2
         '
         'tbxAddPhone
         '
@@ -1214,7 +1214,7 @@ Partial Class ctrlCustomers
         Me.tbxAddPhone.MaxLength = 11
         Me.tbxAddPhone.Name = "tbxAddPhone"
         Me.tbxAddPhone.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddPhone.TabIndex = 68
+        Me.tbxAddPhone.TabIndex = 4
         '
         'Label20
         '
@@ -1239,7 +1239,7 @@ Partial Class ctrlCustomers
         Me.tbxAddMuniCity.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddMuniCity.Name = "tbxAddMuniCity"
         Me.tbxAddMuniCity.Size = New System.Drawing.Size(282, 30)
-        Me.tbxAddMuniCity.TabIndex = 82
+        Me.tbxAddMuniCity.TabIndex = 7
         '
         'Label21
         '

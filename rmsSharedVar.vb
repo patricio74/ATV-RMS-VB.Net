@@ -4,6 +4,7 @@ Public Class rmsSharedVar
     'DB shared instance
     Public Shared mongoDBase As IMongoDatabase = connectToMongo()
 
+    Public Shared archiveAdmin As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveAdmin")
     Public Shared archiveCust As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveCustomerInfo")
     Public Shared archiveTrail As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveAtvTours")
     Public Shared archiveInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveInventory")
@@ -25,6 +26,6 @@ Public Class rmsSharedVar
     Public Shared colInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsInventory")
 
     Public Shared labelName As String   'store current user's username
-    Public Shared admnID As String  'store userid
+    Public Shared admnID  'store userid
     Public Shared role As String 'store account type
 End Class
