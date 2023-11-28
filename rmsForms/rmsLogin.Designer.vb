@@ -447,7 +447,7 @@ Partial Class rmsLogin
         Me.labelTItle.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.labelTItle.Font = New System.Drawing.Font("Trebuchet MS", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelTItle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.labelTItle.Location = New System.Drawing.Point(0, 66)
+        Me.labelTItle.Location = New System.Drawing.Point(0, 50)
         Me.labelTItle.Name = "labelTItle"
         Me.labelTItle.Size = New System.Drawing.Size(460, 51)
         Me.labelTItle.TabIndex = 19
@@ -459,7 +459,7 @@ Partial Class rmsLogin
         Me.picboxLogo.BackColor = System.Drawing.Color.Transparent
         Me.picboxLogo.BackgroundImage = Global.ATV_RMS.My.Resources.Resources.logo
         Me.picboxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.picboxLogo.Location = New System.Drawing.Point(102, 118)
+        Me.picboxLogo.Location = New System.Drawing.Point(102, 102)
         Me.picboxLogo.Name = "picboxLogo"
         Me.picboxLogo.Size = New System.Drawing.Size(303, 159)
         Me.picboxLogo.TabIndex = 4
@@ -472,7 +472,7 @@ Partial Class rmsLogin
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(0, 50)
+        Me.Label2.Location = New System.Drawing.Point(0, 34)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(460, 10)
         Me.Label2.TabIndex = 20

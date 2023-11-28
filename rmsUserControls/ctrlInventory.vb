@@ -53,7 +53,7 @@ Public Class ctrlInventory
         For Each atv As inventoryDoc In inventoryy
             Dim row As New DataGridViewRow()
             row.CreateCells(
-            dgvInventory, atv.invID, atv.atvBrand, atv.atvModel, atv.description, atv.status, atv.description
+            dgvInventory, atv.invID, atv.atvBrand, atv.atvModel, atv.status, atv.description
             )
             dgvInventory.Rows.Add(row)
             dgvInventory.ClearSelection()

@@ -78,11 +78,11 @@ Partial Class ctrlAdminSettings
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(87, 55)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 18)
+        Me.Label1.Size = New System.Drawing.Size(86, 18)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "FIRST NAME:"
         '
@@ -90,11 +90,11 @@ Partial Class ctrlAdminSettings
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(87, 228)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(66, 18)
+        Me.Label3.Size = New System.Drawing.Size(71, 18)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "SURNAME:"
         '
@@ -102,11 +102,11 @@ Partial Class ctrlAdminSettings
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(87, 142)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(92, 18)
+        Me.Label2.Size = New System.Drawing.Size(95, 18)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "MIDDLE NAME:"
         '
@@ -143,7 +143,7 @@ Partial Class ctrlAdminSettings
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label12.Location = New System.Drawing.Point(87, 143)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(111, 18)
@@ -168,7 +168,7 @@ Partial Class ctrlAdminSettings
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(87, 55)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(66, 18)
@@ -193,7 +193,7 @@ Partial Class ctrlAdminSettings
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(87, 143)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(105, 18)
@@ -218,7 +218,7 @@ Partial Class ctrlAdminSettings
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(87, 229)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(110, 18)
@@ -230,7 +230,7 @@ Partial Class ctrlAdminSettings
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(87, 309)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 18)
@@ -254,7 +254,7 @@ Partial Class ctrlAdminSettings
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(87, 229)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(174, 18)
@@ -266,7 +266,7 @@ Partial Class ctrlAdminSettings
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(87, 333)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(149, 18)
@@ -277,7 +277,7 @@ Partial Class ctrlAdminSettings
         '
         Me.lblCreationDate.BackColor = System.Drawing.Color.Transparent
         Me.lblCreationDate.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCreationDate.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblCreationDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.lblCreationDate.Location = New System.Drawing.Point(242, 333)
         Me.lblCreationDate.Name = "lblCreationDate"
         Me.lblCreationDate.Size = New System.Drawing.Size(204, 18)
@@ -290,7 +290,7 @@ Partial Class ctrlAdminSettings
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(87, 56)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(140, 18)
@@ -339,7 +339,7 @@ Partial Class ctrlAdminSettings
         '
         'TabPage1
         '
-        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.TabPage1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TabPage1.Controls.Add(Me.usrFName)
         Me.TabPage1.Controls.Add(Me.usrUsername)
         Me.TabPage1.Controls.Add(Me.Label4)
@@ -348,6 +348,7 @@ Partial Class ctrlAdminSettings
         Me.TabPage1.Controls.Add(Me.usrSName)
         Me.TabPage1.Controls.Add(Me.usrMName)
         Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -410,7 +411,7 @@ Partial Class ctrlAdminSettings
         '
         'TabPage2
         '
-        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.TabPage2.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TabPage2.Controls.Add(Me.Label8)
         Me.TabPage2.Controls.Add(Me.lblCreationDate)
         Me.TabPage2.Controls.Add(Me.usrRFID)
@@ -419,6 +420,7 @@ Partial Class ctrlAdminSettings
         Me.TabPage2.Controls.Add(Me.usrEmail)
         Me.TabPage2.Controls.Add(Me.Label5)
         Me.TabPage2.Controls.Add(Me.Label13)
+        Me.TabPage2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -428,7 +430,7 @@ Partial Class ctrlAdminSettings
         '
         'TabPage3
         '
-        Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.TabPage3.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TabPage3.Controls.Add(Me.Label9)
         Me.TabPage3.Controls.Add(Me.usrOldPword)
         Me.TabPage3.Controls.Add(Me.Label7)
