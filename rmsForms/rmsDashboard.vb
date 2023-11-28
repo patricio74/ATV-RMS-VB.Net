@@ -80,21 +80,19 @@
         dashboardTimer.Interval = 1000
         dashboardTimer.Start()
     End Sub
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Dim response As DialogResult = MessageBox.Show(" Are you sure you want to close ATV-RMS app?", "Confirmation", MessageBoxButtons.YesNo)
-        If response = DialogResult.Yes Then
-            rmsSharedVar.admnID = Nothing
-            rmsSharedVar.labelName = Nothing
-            Me.Close()
-            rmsLogin.Close()
-        End If
-    End Sub
-    Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
     Private Sub btnClick(sender As Object, e As EventArgs) Handles btnOverview.Click, btnReserv.Click, btnTransac.Click, btnTrails.Click,
-        btnCustomers.Click, btnNotif.Click, btnInventory.Click, btnTGuides.Click, btnRules.Click, btnAdminSettings.Click, btnLogout.Click
-        If sender Is btnOverview Then
+        btnCustomers.Click, btnNotif.Click, btnInventory.Click, btnTGuides.Click, btnRules.Click, btnAdminSettings.Click, btnLogout.Click, btnClose.Click, btnMinimize.Click
+        If sender Is btnClose Then
+            Dim response As DialogResult = MessageBox.Show(" Are you sure you want to close ATV-RMS app?", "Confirmation", MessageBoxButtons.YesNo)
+            If response = DialogResult.Yes Then
+                rmsSharedVar.admnID = Nothing
+                rmsSharedVar.labelName = Nothing
+                Me.Close()
+                rmsLogin.Close()
+            End If
+        ElseIf sender Is btnMinimize Then
+            Me.WindowState = FormWindowState.Minimized
+        ElseIf sender Is btnOverview Then
             resetButtonColor()
             activeButtonColor(sender, e)
             hidePanels()
@@ -109,57 +107,49 @@
             activeButtonColor(sender, e)
             hidePanels()
             transac.Visible = True
+        ElseIf sender Is btnTrails Then
+            resetButtonColor()
+            activeButtonColor(sender, e)
+            hidePanels()
+            trails.Visible = True
+        ElseIf sender Is btnCustomers Then
+            resetButtonColor()
+            activeButtonColor(sender, e)
+            hidePanels()
+            customer.Visible = True
+        ElseIf sender Is btnNotif Then
+            resetButtonColor()
+            activeButtonColor(sender, e)
+            hidePanels()
+            notifs.Visible = True
+        ElseIf sender Is btnInventory Then
+            resetButtonColor()
+            activeButtonColor(sender, e)
+            hidePanels()
+            inve.Visible = True
+        ElseIf sender Is btnTGuides Then
+            resetButtonColor()
+            activeButtonColor(sender, e)
+            hidePanels()
+            guide.Visible = True
+        ElseIf sender Is btnRules Then
+            resetButtonColor()
+            activeButtonColor(sender, e)
+            hidePanels()
+            rules.Visible = True
+        ElseIf sender Is btnAdminSettings Then
+            resetButtonColor()
+            hidePanels()
+            settings.Visible = True
+        ElseIf sender Is btnLogout Then
+            rmsSharedVar.admnID = Nothing
+            rmsSharedVar.labelName = Nothing
+            Me.Close()
+            resetButtonColor()
+            loadRMSLogin()
+            rmsLogin.Show()
+            rmsLogin.tboxUsername.Focus()
         End If
-    End Sub
-    Private Sub btnTrails_Click(sender As Object, e As EventArgs) Handles btnTrails.Click
-        resetButtonColor()
-        activeButtonColor(sender, e)
-        hidePanels()
-        trails.Visible = True
-    End Sub
-    Private Sub btnCustomers_Click(sender As Object, e As EventArgs) Handles btnCustomers.Click
-        resetButtonColor()
-        activeButtonColor(sender, e)
-        hidePanels()
-        customer.Visible = True
-    End Sub
-    Private Sub btnNotif_Click(sender As Object, e As EventArgs) Handles btnNotif.Click
-        resetButtonColor()
-        activeButtonColor(sender, e)
-        hidePanels()
-        notifs.Visible = True
-    End Sub
-    Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
-        resetButtonColor()
-        activeButtonColor(sender, e)
-        hidePanels()
-        inve.Visible = True
-    End Sub
-    Private Sub btnTGuides_Click(sender As Object, e As EventArgs) Handles btnTGuides.Click
-        resetButtonColor()
-        activeButtonColor(sender, e)
-        hidePanels()
-        guide.Visible = True
-    End Sub
-    Private Sub btnRules_Click(sender As Object, e As EventArgs) Handles btnRules.Click
-        resetButtonColor()
-        activeButtonColor(sender, e)
-        hidePanels()
-        rules.Visible = True
-    End Sub
-    Private Sub btnAdminSettings_Click(sender As Object, e As EventArgs) Handles btnAdminSettings.Click
-        resetButtonColor()
-        hidePanels()
-        settings.Visible = True
-    End Sub
-    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        rmsSharedVar.admnID = Nothing
-        rmsSharedVar.labelName = Nothing
-        Me.Close()
-        resetButtonColor()
-        loadRMSLogin()
-        rmsLogin.Show()
-        rmsLogin.tboxUsername.Focus()
     End Sub
     Private Sub rmsDashboard_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         rmsSharedVar.admnID = Nothing

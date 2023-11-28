@@ -46,7 +46,6 @@
             gboxPendingAdmin.SendToBack()
         End If
     End Sub
-
     Private Sub ctrlNotif_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
             closeMongoConn()

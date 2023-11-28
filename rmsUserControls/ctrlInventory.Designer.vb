@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ctrlInventory
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,21 +20,20 @@ Partial Class ctrlInventory
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ctrlInventory))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.cbxUpdStatus = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.tbxInvNum = New System.Windows.Forms.TextBox()
+        Me.updID = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.tbxUpdBrand = New System.Windows.Forms.TextBox()
+        Me.updBrand = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.rtbxUpdDesc = New System.Windows.Forms.RichTextBox()
-        Me.tbxUpdModel = New System.Windows.Forms.TextBox()
+        Me.updModel = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnUpdAtv = New System.Windows.Forms.Button()
         Me.dgvInventory = New System.Windows.Forms.DataGridView()
@@ -49,12 +48,10 @@ Partial Class ctrlInventory
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.cbxAddStatus = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.tbxAddBrand = New System.Windows.Forms.TextBox()
+        Me.addBrand = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.tbxAddModel = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.addModel = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.rtbxAddDesc = New System.Windows.Forms.RichTextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblClearAtv = New System.Windows.Forms.Label()
@@ -75,7 +72,7 @@ Partial Class ctrlInventory
         Me.cbxUpdStatus.FormattingEnabled = True
         Me.cbxUpdStatus.ItemHeight = 22
         Me.cbxUpdStatus.Items.AddRange(New Object() {"AVAILABLE", "NOT AVAILABLE"})
-        Me.cbxUpdStatus.Location = New System.Drawing.Point(259, 44)
+        Me.cbxUpdStatus.Location = New System.Drawing.Point(253, 46)
         Me.cbxUpdStatus.Name = "cbxUpdStatus"
         Me.cbxUpdStatus.Size = New System.Drawing.Size(139, 30)
         Me.cbxUpdStatus.TabIndex = 1
@@ -86,25 +83,25 @@ Partial Class ctrlInventory
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(256, 23)
+        Me.Label8.Location = New System.Drawing.Point(250, 25)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(53, 18)
         Me.Label8.TabIndex = 60
         Me.Label8.Text = "STATUS"
         '
-        'tbxInvNum
+        'updID
         '
-        Me.tbxInvNum.BackColor = System.Drawing.Color.White
-        Me.tbxInvNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxInvNum.Cursor = System.Windows.Forms.Cursors.No
-        Me.tbxInvNum.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxInvNum.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxInvNum.Location = New System.Drawing.Point(62, 44)
-        Me.tbxInvNum.Name = "tbxInvNum"
-        Me.tbxInvNum.ReadOnly = True
-        Me.tbxInvNum.Size = New System.Drawing.Size(191, 30)
-        Me.tbxInvNum.TabIndex = 0
-        Me.tbxInvNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.updID.BackColor = System.Drawing.Color.White
+        Me.updID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.updID.Cursor = System.Windows.Forms.Cursors.No
+        Me.updID.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.updID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.updID.Location = New System.Drawing.Point(56, 45)
+        Me.updID.Name = "updID"
+        Me.updID.ReadOnly = True
+        Me.updID.Size = New System.Drawing.Size(191, 30)
+        Me.updID.TabIndex = 0
+        Me.updID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
@@ -112,7 +109,7 @@ Partial Class ctrlInventory
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(59, 23)
+        Me.Label7.Location = New System.Drawing.Point(53, 24)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(20, 18)
         Me.Label7.TabIndex = 54
@@ -124,24 +121,24 @@ Partial Class ctrlInventory
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(465, 23)
+        Me.Label3.Location = New System.Drawing.Point(459, 25)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 18)
         Me.Label3.TabIndex = 50
         Me.Label3.Text = "DESCRIPTION:"
         '
-        'tbxUpdBrand
+        'updBrand
         '
-        Me.tbxUpdBrand.BackColor = System.Drawing.Color.White
-        Me.tbxUpdBrand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxUpdBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxUpdBrand.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxUpdBrand.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxUpdBrand.Location = New System.Drawing.Point(63, 117)
-        Me.tbxUpdBrand.Name = "tbxUpdBrand"
-        Me.tbxUpdBrand.Size = New System.Drawing.Size(336, 30)
-        Me.tbxUpdBrand.TabIndex = 2
-        Me.tbxUpdBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.updBrand.BackColor = System.Drawing.Color.White
+        Me.updBrand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.updBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.updBrand.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.updBrand.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.updBrand.Location = New System.Drawing.Point(56, 118)
+        Me.updBrand.Name = "updBrand"
+        Me.updBrand.Size = New System.Drawing.Size(336, 30)
+        Me.updBrand.TabIndex = 2
+        Me.updBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -149,7 +146,7 @@ Partial Class ctrlInventory
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(60, 96)
+        Me.Label2.Location = New System.Drawing.Point(53, 97)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 18)
         Me.Label2.TabIndex = 48
@@ -160,24 +157,24 @@ Partial Class ctrlInventory
         Me.rtbxUpdDesc.BackColor = System.Drawing.Color.White
         Me.rtbxUpdDesc.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtbxUpdDesc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.rtbxUpdDesc.Location = New System.Drawing.Point(468, 44)
+        Me.rtbxUpdDesc.Location = New System.Drawing.Point(462, 46)
         Me.rtbxUpdDesc.Name = "rtbxUpdDesc"
         Me.rtbxUpdDesc.Size = New System.Drawing.Size(552, 187)
         Me.rtbxUpdDesc.TabIndex = 4
-        Me.rtbxUpdDesc.Text = resources.GetString("rtbxUpdDesc.Text")
+        Me.rtbxUpdDesc.Text = ""
         '
-        'tbxUpdModel
+        'updModel
         '
-        Me.tbxUpdModel.BackColor = System.Drawing.Color.White
-        Me.tbxUpdModel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxUpdModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxUpdModel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxUpdModel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxUpdModel.Location = New System.Drawing.Point(62, 196)
-        Me.tbxUpdModel.Name = "tbxUpdModel"
-        Me.tbxUpdModel.Size = New System.Drawing.Size(336, 30)
-        Me.tbxUpdModel.TabIndex = 3
-        Me.tbxUpdModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.updModel.BackColor = System.Drawing.Color.White
+        Me.updModel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.updModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.updModel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.updModel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.updModel.Location = New System.Drawing.Point(56, 197)
+        Me.updModel.Name = "updModel"
+        Me.updModel.Size = New System.Drawing.Size(336, 30)
+        Me.updModel.TabIndex = 3
+        Me.updModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
         '
@@ -185,7 +182,7 @@ Partial Class ctrlInventory
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(60, 175)
+        Me.Label4.Location = New System.Drawing.Point(54, 176)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 18)
         Me.Label4.TabIndex = 63
@@ -199,7 +196,7 @@ Partial Class ctrlInventory
         Me.btnUpdAtv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdAtv.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdAtv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdAtv.Location = New System.Drawing.Point(714, 251)
+        Me.btnUpdAtv.Location = New System.Drawing.Point(719, 246)
         Me.btnUpdAtv.Name = "btnUpdAtv"
         Me.btnUpdAtv.Size = New System.Drawing.Size(136, 44)
         Me.btnUpdAtv.TabIndex = 5
@@ -252,10 +249,10 @@ Partial Class ctrlInventory
         '
         'Column1
         '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column1.HeaderText = "ID"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
+        Me.Column1.Width = 55
         '
         'Column2
         '
@@ -273,10 +270,10 @@ Partial Class ctrlInventory
         '
         'Column4
         '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column4.HeaderText = "STATUS"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
+        Me.Column4.Width = 125
         '
         'Column5
         '
@@ -302,12 +299,12 @@ Partial Class ctrlInventory
         Me.TabPage1.Controls.Add(Me.cbxUpdStatus)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.btnUpdAtv)
-        Me.TabPage1.Controls.Add(Me.tbxUpdBrand)
+        Me.TabPage1.Controls.Add(Me.updBrand)
         Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.tbxUpdModel)
+        Me.TabPage1.Controls.Add(Me.updModel)
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Controls.Add(Me.tbxInvNum)
+        Me.TabPage1.Controls.Add(Me.updID)
         Me.TabPage1.Controls.Add(Me.rtbxUpdDesc)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
@@ -326,11 +323,11 @@ Partial Class ctrlInventory
         Me.btnDelAtv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelAtv.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelAtv.ForeColor = System.Drawing.Color.Red
-        Me.btnDelAtv.Location = New System.Drawing.Point(871, 259)
+        Me.btnDelAtv.Location = New System.Drawing.Point(881, 254)
         Me.btnDelAtv.Name = "btnDelAtv"
-        Me.btnDelAtv.Size = New System.Drawing.Size(103, 30)
+        Me.btnDelAtv.Size = New System.Drawing.Size(112, 30)
         Me.btnDelAtv.TabIndex = 6
-        Me.btnDelAtv.Text = "Delete user"
+        Me.btnDelAtv.Text = "Delete ATV"
         Me.btnDelAtv.UseVisualStyleBackColor = False
         '
         'TabPage2
@@ -338,12 +335,10 @@ Partial Class ctrlInventory
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.TabPage2.Controls.Add(Me.cbxAddStatus)
         Me.TabPage2.Controls.Add(Me.Label1)
-        Me.TabPage2.Controls.Add(Me.tbxAddBrand)
+        Me.TabPage2.Controls.Add(Me.addBrand)
         Me.TabPage2.Controls.Add(Me.Label5)
-        Me.TabPage2.Controls.Add(Me.tbxAddModel)
-        Me.TabPage2.Controls.Add(Me.Label6)
+        Me.TabPage2.Controls.Add(Me.addModel)
         Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Controls.Add(Me.TextBox3)
         Me.TabPage2.Controls.Add(Me.rtbxAddDesc)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.lblClearAtv)
@@ -365,10 +360,10 @@ Partial Class ctrlInventory
         Me.cbxAddStatus.FormattingEnabled = True
         Me.cbxAddStatus.ItemHeight = 22
         Me.cbxAddStatus.Items.AddRange(New Object() {"AVAILABLE", "NOT AVAILABLE"})
-        Me.cbxAddStatus.Location = New System.Drawing.Point(253, 45)
+        Me.cbxAddStatus.Location = New System.Drawing.Point(56, 202)
         Me.cbxAddStatus.Name = "cbxAddStatus"
         Me.cbxAddStatus.Size = New System.Drawing.Size(139, 30)
-        Me.cbxAddStatus.TabIndex = 1
+        Me.cbxAddStatus.TabIndex = 2
         '
         'Label1
         '
@@ -376,24 +371,24 @@ Partial Class ctrlInventory
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(54, 97)
+        Me.Label1.Location = New System.Drawing.Point(54, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 18)
         Me.Label1.TabIndex = 127
         Me.Label1.Text = "BRAND"
         '
-        'tbxAddBrand
+        'addBrand
         '
-        Me.tbxAddBrand.BackColor = System.Drawing.Color.White
-        Me.tbxAddBrand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxAddBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxAddBrand.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxAddBrand.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddBrand.Location = New System.Drawing.Point(57, 118)
-        Me.tbxAddBrand.Name = "tbxAddBrand"
-        Me.tbxAddBrand.Size = New System.Drawing.Size(336, 30)
-        Me.tbxAddBrand.TabIndex = 2
-        Me.tbxAddBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.addBrand.BackColor = System.Drawing.Color.White
+        Me.addBrand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.addBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.addBrand.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addBrand.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.addBrand.Location = New System.Drawing.Point(57, 45)
+        Me.addBrand.Name = "addBrand"
+        Me.addBrand.Size = New System.Drawing.Size(336, 30)
+        Me.addBrand.TabIndex = 0
+        Me.addBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label5
         '
@@ -407,30 +402,18 @@ Partial Class ctrlInventory
         Me.Label5.TabIndex = 129
         Me.Label5.Text = "DESCRIPTION:"
         '
-        'tbxAddModel
+        'addModel
         '
-        Me.tbxAddModel.BackColor = System.Drawing.Color.White
-        Me.tbxAddModel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxAddModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxAddModel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxAddModel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddModel.Location = New System.Drawing.Point(56, 197)
-        Me.tbxAddModel.Name = "tbxAddModel"
-        Me.tbxAddModel.Size = New System.Drawing.Size(336, 30)
-        Me.tbxAddModel.TabIndex = 3
-        Me.tbxAddModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(53, 24)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(20, 18)
-        Me.Label6.TabIndex = 130
-        Me.Label6.Text = "ID"
+        Me.addModel.BackColor = System.Drawing.Color.White
+        Me.addModel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.addModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.addModel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.addModel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.addModel.Location = New System.Drawing.Point(56, 124)
+        Me.addModel.Name = "addModel"
+        Me.addModel.Size = New System.Drawing.Size(336, 30)
+        Me.addModel.TabIndex = 1
+        Me.addModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
         '
@@ -438,25 +421,11 @@ Partial Class ctrlInventory
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label9.Location = New System.Drawing.Point(54, 176)
+        Me.Label9.Location = New System.Drawing.Point(54, 103)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(49, 18)
         Me.Label9.TabIndex = 135
         Me.Label9.Text = "MODEL"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.BackColor = System.Drawing.Color.White
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Cursor = System.Windows.Forms.Cursors.No
-        Me.TextBox3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.TextBox3.Location = New System.Drawing.Point(56, 45)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(191, 30)
-        Me.TextBox3.TabIndex = 0
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'rtbxAddDesc
         '
@@ -466,8 +435,8 @@ Partial Class ctrlInventory
         Me.rtbxAddDesc.Location = New System.Drawing.Point(462, 45)
         Me.rtbxAddDesc.Name = "rtbxAddDesc"
         Me.rtbxAddDesc.Size = New System.Drawing.Size(552, 187)
-        Me.rtbxAddDesc.TabIndex = 4
-        Me.rtbxAddDesc.Text = resources.GetString("rtbxAddDesc.Text")
+        Me.rtbxAddDesc.TabIndex = 3
+        Me.rtbxAddDesc.Text = ""
         '
         'Label10
         '
@@ -475,7 +444,7 @@ Partial Class ctrlInventory
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label10.Location = New System.Drawing.Point(250, 24)
+        Me.Label10.Location = New System.Drawing.Point(53, 181)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(53, 18)
         Me.Label10.TabIndex = 132
@@ -532,21 +501,16 @@ Partial Class ctrlInventory
     End Sub
     Friend WithEvents cbxUpdStatus As ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents tbxInvNum As TextBox
+    Friend WithEvents updID As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents tbxUpdBrand As TextBox
+    Friend WithEvents updBrand As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents rtbxUpdDesc As RichTextBox
-    Friend WithEvents tbxUpdModel As TextBox
+    Friend WithEvents updModel As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents btnUpdAtv As Button
     Friend WithEvents dgvInventory As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents tabInventory As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents btnDelAtv As Button
@@ -555,12 +519,15 @@ Partial Class ctrlInventory
     Friend WithEvents btnAddAtv As Button
     Friend WithEvents cbxAddStatus As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents tbxAddBrand As TextBox
+    Friend WithEvents addBrand As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents tbxAddModel As TextBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents addModel As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents rtbxAddDesc As RichTextBox
     Friend WithEvents Label10 As Label
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class

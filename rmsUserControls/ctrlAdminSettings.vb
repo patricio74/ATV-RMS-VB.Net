@@ -25,27 +25,29 @@ Public Class ctrlAdminSettings
         End If
     End Sub
     Private Sub loadUsrDoc()
-        'find the user by _id
-        Dim objctId As ObjectId
-        If ObjectId.TryParse(usrID, objctId) Then
-            Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objctId)
-            'find usr docu
-            Dim userDocument = rmsSharedVar.colAdmin.Find(filter).FirstOrDefault()
-            If userDocument IsNot Nothing Then
-                'save the original doc for later comparison
-                originalUserData = userDocument
-                'populate form
-                usrFName.Text = userDocument("First Name").AsString
-                usrMName.Text = userDocument("Middle Name").AsString
-                usrSName.Text = userDocument("Surname").AsString
-                usrRFID.Text = userDocument("RFID").AsString
-                usrEmail.Text = userDocument("Email").AsString
-                usrPhone.Text = userDocument("Phone").AsString
-                usrUsername.Text = userDocument("Username").AsString
-                lblCreationDate.Text = userDocument("accountCreationDate").AsString
-                usrPass = userDocument("Password")
-            Else
-                MessageBox.Show("User not found.")
+        If Me.Visible = True Then
+            'find the user by _id
+            Dim objctId As ObjectId
+            If ObjectId.TryParse(usrID, objctId) Then
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objctId)
+                'find usr docu
+                Dim userDocument = rmsSharedVar.colAdmin.Find(filter).FirstOrDefault()
+                If userDocument IsNot Nothing Then
+                    'save the original doc for later comparison
+                    originalUserData = userDocument
+                    'populate form
+                    usrFName.Text = userDocument("First Name").AsString
+                    usrMName.Text = userDocument("Middle Name").AsString
+                    usrSName.Text = userDocument("Surname").AsString
+                    usrRFID.Text = userDocument("RFID").AsString
+                    usrEmail.Text = userDocument("Email").AsString
+                    usrPhone.Text = userDocument("Phone").AsString
+                    usrUsername.Text = userDocument("Username").AsString
+                    lblCreationDate.Text = userDocument("accountCreationDate").AsString
+                    usrPass = userDocument("Password")
+                Else
+                    MessageBox.Show("User not found.")
+                End If
             End If
         End If
     End Sub

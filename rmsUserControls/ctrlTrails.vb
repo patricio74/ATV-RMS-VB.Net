@@ -171,7 +171,7 @@ Public Class ctrlTrails
             If dgvTrails.SelectedRows.Count > 0 Then
                 Dim selectedTrail = trailz(dgvTrails.SelectedRows(0).Index)
                 Dim trailID As String = selectedTrail.trailID
-                Dim delConfirmation = MessageBox.Show("Are you sure you want to archive this trail?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim delConfirmation = MessageBox.Show("Are you sure you want to remove this trail?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 'move customer data to archive collection
                 If delConfirmation = DialogResult.Yes Then
                     moveToArchive(trailID)
@@ -195,7 +195,7 @@ Public Class ctrlTrails
                     document.Add("accountDeletionDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                     rmsSharedVar.archiveTrail.InsertOne(document)
                     rmsSharedVar.colTrails.DeleteOne(filter)
-                    MessageBox.Show("ATV trail archived successfully.")
+                    MessageBox.Show("ATV trail deleted successfully.")
                     populateTrails()
                     clearUpdateForm()
                 Else

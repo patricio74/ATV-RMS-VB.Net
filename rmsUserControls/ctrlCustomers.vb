@@ -217,7 +217,7 @@ Public Class ctrlCustomers
             If dgvCustInfo.SelectedRows.Count > 0 Then
                 Dim selectedCustomer = customerz(dgvCustInfo.SelectedRows(0).Index)
                 Dim custID As String = selectedCustomer.custID
-                Dim result = MessageBox.Show("Are you sure you want to archive this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim result = MessageBox.Show("Are you sure you want to remove this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 'move customer data to archive collection
                 If result = DialogResult.Yes Then
                     MoveToArchive(custID)
@@ -281,7 +281,7 @@ Public Class ctrlCustomers
                     document.Add("accountDeletionDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                     rmsSharedVar.archiveCust.InsertOne(document)
                     rmsSharedVar.colCustomer.DeleteOne(filter)
-                    MessageBox.Show("Customer account archived successfully.")
+                    MessageBox.Show("Customer account deleted successfully.")
                     refreshList()
                     clearUpdForm()
                 Else
