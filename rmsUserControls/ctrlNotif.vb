@@ -1,15 +1,14 @@
 ﻿Public Class ctrlNotif
     Private Sub ctrlNotif_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbxRole.SelectedIndex = 0 'default yung admi nsa selection
-        If rmsSharedVar.role = "admin" Then
-            lblPendingAdmin.Visible = False
-            gboxPendingAdmin.Visible = False
-        ElseIf rmsSharedVar.role = "root" Then
-            lblPendingAdmin.Visible = True
+        If rmsSharedVar.role = "admin" OrElse rmsSharedVar.role = "root" Then
+            gboxPendingResume.Visible = True
             gboxPendingAdmin.Visible = True
+            gboxUnauthorized.Visible = False
         Else
-            lblPendingAdmin.Visible = False
+            gboxPendingResume.Visible = False
             gboxPendingAdmin.Visible = False
+            gboxUnauthorized.Visible = True
         End If
     End Sub
     'suppress enter key sound sa mga textboxes

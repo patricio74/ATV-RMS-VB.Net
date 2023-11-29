@@ -10,6 +10,7 @@
     Dim guide As New ctrlTourGuides
     Dim rules As New ctrlRules
     Dim settings As New ctrlAdminSettings
+    Dim unauthorizz As New userNotAllowed
     Private Sub centerLoc()
         Dim screenWidth As Integer = Screen.PrimaryScreen.WorkingArea.Width
         Dim screenHeight As Integer = Screen.PrimaryScreen.WorkingArea.Height
@@ -30,6 +31,7 @@
         guide.Visible = False
         rules.Visible = False
         settings.Visible = False
+        unauthorizz.Visible = False
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles dashboardTimer.Tick
         lblDateTime.Text = DateTime.Now.ToString("MMM d, yyyy h:mm:ss tt")
@@ -73,6 +75,7 @@
         admPanel.Controls.Add(guide)
         admPanel.Controls.Add(rules)
         admPanel.Controls.Add(settings)
+        admPanel.Controls.Add(unauthorizz)
         resetButtonColor()
         btnOverview.PerformClick()
         hidePanels()
@@ -113,36 +116,57 @@
             hidePanels()
             trails.Visible = True
         ElseIf sender Is btnCustomers Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            customer.Visible = True
+            If rmsSharedVar.role = "admin" OrElse rmsSharedVar.role = "root" Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                customer.Visible = True
+            Else 'if user role is not =admin,root
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                unauthorizz.Visible = True
+            End If
         ElseIf sender Is btnNotif Then
             resetButtonColor()
             activeButtonColor(sender, e)
             hidePanels()
             notifs.Visible = True
         ElseIf sender Is btnInventory Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            inve.Visible = True
+            If rmsSharedVar.role = "admin" OrElse rmsSharedVar.role = "root" Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                inve.Visible = True
+            Else 'if user role is not =admin,root
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                unauthorizz.Visible = True
+            End If
         ElseIf sender Is btnTGuides Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            guide.Visible = True
+            If rmsSharedVar.role = "admin" OrElse rmsSharedVar.role = "root" Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                guide.Visible = True
+            Else 'if user role is not =admin,root
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                unauthorizz.Visible = True
+            End If
         ElseIf sender Is btnRules Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            rules.Visible = True
-        ElseIf sender Is btnAdminSettings Then
-            resetButtonColor()
-            hidePanels()
-            settings.Visible = True
-        ElseIf sender Is btnLogout Then
-            rmsSharedVar.admnID = Nothing
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                rules.Visible = True
+            ElseIf sender Is btnAdminSettings Then
+                resetButtonColor()
+                hidePanels()
+                settings.Visible = True
+            ElseIf sender Is btnLogout Then
+                rmsSharedVar.admnID = Nothing
             rmsSharedVar.currentUser = Nothing
             Me.Close()
             resetButtonColor()

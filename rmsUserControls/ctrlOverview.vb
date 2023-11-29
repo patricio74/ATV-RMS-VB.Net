@@ -35,13 +35,13 @@ Public Class ctrlOverview
         If sender Is panelReserv OrElse sender Is lblReserv OrElse sender Is lblReservCanceled OrElse sender Is lblReservPending Then
             panelReserv.BackColor = ColorTranslator.FromHtml("#f5f5f5")
             lblReservPending.ForeColor = ColorTranslator.FromHtml("#1e272e")
-            lblReserv.BackColor = ColorTranslator.FromHtml("#151515")
+            lblReserv.BackColor = ColorTranslator.FromHtml("#1e272e")
             lblReserv.ForeColor = ColorTranslator.FromHtml("#f5f5f5")
             lblReservCanceled.ForeColor = ColorTranslator.FromHtml("#1e272e")
         ElseIf sender Is panelATV OrElse sender Is lblAtv OrElse sender Is lblAtvAvail OrElse sender Is lblAtvInUse OrElse sender Is lblAtvMainten Then
             panelATV.BackColor = ColorTranslator.FromHtml("#f5f5f5")
             lblAtvAvail.ForeColor = ColorTranslator.FromHtml("#1e272e")
-            lblAtv.BackColor = ColorTranslator.FromHtml("#151515")
+            lblAtv.BackColor = ColorTranslator.FromHtml("#1e272e")
             lblAtv.ForeColor = ColorTranslator.FromHtml("#f5f5f5")
             lblAtvInUse.ForeColor = ColorTranslator.FromHtml("#1e272e")
             lblAtvMainten.ForeColor = ColorTranslator.FromHtml("#1e272e")
@@ -49,13 +49,13 @@ Public Class ctrlOverview
             panelCustomer.BackColor = ColorTranslator.FromHtml("#f5f5f5")
             lblCustMonth.ForeColor = ColorTranslator.FromHtml("#1e272e")
             lblCust.ForeColor = ColorTranslator.FromHtml("#f5f5f5")
-            lblCust.BackColor = ColorTranslator.FromHtml("#151515")
+            lblCust.BackColor = ColorTranslator.FromHtml("#1e272e")
             lblCustYest.ForeColor = ColorTranslator.FromHtml("#1e272e")
         ElseIf sender Is panelRevenue OrElse sender Is lblRev OrElse sender Is lblRevMonth OrElse sender Is lblRevYest Then
             panelRevenue.BackColor = ColorTranslator.FromHtml("#f5f5f5")
             lblRevMonth.ForeColor = ColorTranslator.FromHtml("#1e272e")
             lblRev.ForeColor = ColorTranslator.FromHtml("#f5f5f5")
-            lblRev.BackColor = ColorTranslator.FromHtml("#151515")
+            lblRev.BackColor = ColorTranslator.FromHtml("#1e272e")
             lblRevYest.ForeColor = ColorTranslator.FromHtml("#1e272e")
         End If
     End Sub

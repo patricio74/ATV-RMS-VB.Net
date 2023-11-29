@@ -443,11 +443,13 @@ Partial Class ctrlReservations
         '
         Me.Column8.HeaderText = "STATUS"
         Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
         '
         'Column7
         '
         Me.Column7.HeaderText = "TIME SLOT"
         Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
         Me.Column7.Width = 110
         '
         'Column6
@@ -455,6 +457,7 @@ Partial Class ctrlReservations
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column6.HeaderText = "DATE"
         Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
         '
         'Column4
         '
@@ -507,6 +510,7 @@ Partial Class ctrlReservations
         Me.dgvTransactions.Location = New System.Drawing.Point(30, 59)
         Me.dgvTransactions.MultiSelect = False
         Me.dgvTransactions.Name = "dgvTransactions"
+        Me.dgvTransactions.ReadOnly = True
         Me.dgvTransactions.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
@@ -533,6 +537,7 @@ Partial Class ctrlReservations
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column5.HeaderText = "TOUR NAME"
         Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
         '
         'cbxReservFilter
         '

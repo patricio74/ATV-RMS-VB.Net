@@ -43,11 +43,6 @@ Partial Class ctrlCustomers
         Me.btnDelCust = New System.Windows.Forms.Button()
         Me.btnUpdCust = New System.Windows.Forms.Button()
         Me.dgvCustInfo = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tbxUpdStreet = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tbxUpdBarangay = New System.Windows.Forms.TextBox()
@@ -112,6 +107,11 @@ Partial Class ctrlCustomers
         Me.Label20 = New System.Windows.Forms.Label()
         Me.tbxAddMuniCity = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvCustInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabCustInfo.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -351,41 +351,6 @@ Partial Class ctrlCustomers
         Me.dgvCustInfo.ShowEditingIcon = False
         Me.dgvCustInfo.Size = New System.Drawing.Size(1100, 278)
         Me.dgvCustInfo.TabIndex = 31
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 50
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "FULL NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 245
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "PHONE NUMBER"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 140
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.HeaderText = "ADDRESS"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "EMAIL"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 245
         '
         'tbxUpdStreet
         '
@@ -1253,6 +1218,41 @@ Partial Class ctrlCustomers
         Me.Label21.TabIndex = 67
         Me.Label21.Text = "CONTACT NUMBER:"
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 25
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "FULL NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 245
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "PHONE NUMBER"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 140
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column5.HeaderText = "ADDRESS"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "EMAIL"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 245
+        '
         'ctrlCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -1331,11 +1331,6 @@ Partial Class ctrlCustomers
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents panelFilter As Panel
     Friend WithEvents panelAddAcc As Panel
     Friend WithEvents tbxAddStreet As TextBox
@@ -1366,4 +1361,9 @@ Partial Class ctrlCustomers
     Friend WithEvents Label20 As Label
     Friend WithEvents tbxAddMuniCity As TextBox
     Friend WithEvents Label21 As Label
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
 End Class
