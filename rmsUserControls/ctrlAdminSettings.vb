@@ -16,6 +16,7 @@ Public Class ctrlAdminSettings
         usrPword.Clear()
         usrPword2.Clear()
         lblCreationDate.Text = "----------"
+        lblUsrRole.Text = "----------"
     End Sub
     'suppress enter key sound sa mga textboxes
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles usrFName.KeyPress, usrMName.KeyPress, usrSName.KeyPress,
@@ -36,15 +37,16 @@ Public Class ctrlAdminSettings
                     'save the original doc for later comparison
                     originalUserData = userDocument
                     'populate form
-                    usrFName.Text = userDocument("First Name").AsString
-                    usrMName.Text = userDocument("Middle Name").AsString
-                    usrSName.Text = userDocument("Surname").AsString
+                    usrFName.Text = userDocument("FName").AsString
+                    usrMName.Text = userDocument("MName").AsString
+                    usrSName.Text = userDocument("Sname").AsString
                     usrRFID.Text = userDocument("RFID").AsString
-                    usrEmail.Text = userDocument("Email").AsString
-                    usrPhone.Text = userDocument("Phone").AsString
-                    usrUsername.Text = userDocument("Username").AsString
+                    usrEmail.Text = userDocument("email").AsString
+                    usrPhone.Text = userDocument("phone").AsString
+                    usrUsername.Text = userDocument("username").AsString
                     lblCreationDate.Text = userDocument("accountCreationDate").AsString
-                    usrPass = userDocument("Password")
+                    lblUsrRole.Text = userDocument("role").AsString
+                    usrPass = userDocument("password")
                 Else
                     MessageBox.Show("User not found.")
                 End If
@@ -56,7 +58,7 @@ Public Class ctrlAdminSettings
         loadUsrDoc()
     End Sub
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        If admnTab.SelectedIndex = 0 Then 'user info
+        If tabAdmn.SelectedIndex = 0 Then 'user info
             If String.IsNullOrEmpty(usrFName.Text) OrElse String.IsNullOrEmpty(usrSName.Text) OrElse String.IsNullOrEmpty(usrUsername.Text) Then
                 MessageBox.Show("Please fill in all fields to continue.")
             Else
@@ -66,21 +68,26 @@ Public Class ctrlAdminSettings
                         Dim objctId As ObjectId
                         If ObjectId.TryParse(usrID, objctId) Then
                             Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objctId)
-                            Dim update = Builders(Of BsonDocument).Update.Set(Of String)("First Name", usrFName.Text).
-                                                                Set(Of String)("Middle Name", usrMName.Text).
-                                                                Set(Of String)("Surname", usrSName.Text).
-                                                                Set(Of String)("Username", usrUsername.Text)
+                            Dim update = Builders(Of BsonDocument).Update.Set(Of String)("FName", usrFName.Text).
+                                                                Set(Of String)("MName", usrMName.Text).
+                                                                Set(Of String)("Sname", usrSName.Text).
+                                                                Set(Of String)("username", usrUsername.Text)
                             rmsSharedVar.colAdmin.UpdateOne(filter, update)
                             MessageBox.Show("Account updated successfully!")
+                            rmsSharedVar.currentUser = usrFName.Text + " " + usrMName.Text + " " + usrSName.Text
+                            rmsDashboard.btnAdminSettings.Text = rmsSharedVar.currentUser
                             clearUsrInfo()
                             loadUsrDoc()
                         End If
                     Catch ex As Exception
                         MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End Try
+                ElseIf updConfirmation = DialogResult.No Then
+                    clearUsrInfo()
+                    loadUsrDoc()
                 End If
             End If
-        ElseIf admnTab.SelectedIndex = 1 Then 'contacts
+        ElseIf tabAdmn.SelectedIndex = 1 Then 'contacts
             If String.IsNullOrEmpty(usrRFID.Text) OrElse String.IsNullOrEmpty(usrEmail.Text) OrElse String.IsNullOrEmpty(usrPhone.Text) Then
                 MessageBox.Show("Please fill in all fields to continue.")
             Else
@@ -91,19 +98,22 @@ Public Class ctrlAdminSettings
                         If ObjectId.TryParse(usrID, objctId) Then
                             Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objctId)
                             Dim update = Builders(Of BsonDocument).Update.Set(Of String)("RFID", usrRFID.Text).
-                                                                Set(Of String)("Email", usrEmail.Text).
-                                                                Set(Of String)("Phone", usrPhone.Text)
+                                                                Set(Of String)("email", usrEmail.Text).
+                                                                Set(Of String)("phone", usrPhone.Text)
                             rmsSharedVar.colAdmin.UpdateOne(filter, update)
-                            MessageBox.Show("Account updated successfully!")
+                            MessageBox.Show("Contact details updated successfully!")
                             clearUsrInfo()
                             loadUsrDoc()
                         End If
                     Catch ex As Exception
                         MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End Try
+                ElseIf updConfirmation = DialogResult.No Then
+                    clearUsrInfo()
+                    loadUsrDoc()
                 End If
             End If
-        ElseIf admnTab.SelectedIndex = 2 Then 'acc security
+        ElseIf tabAdmn.SelectedIndex = 2 Then 'acc security
             If String.IsNullOrEmpty(usrOldPword.Text) OrElse String.IsNullOrEmpty(usrPword.Text) OrElse String.IsNullOrEmpty(usrPword2.Text) OrElse usrPword2.Text = usrPass Then
                 MessageBox.Show("Please make sure to fill in all fields/new password is not the same with your current password.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 clearUsrInfo()
@@ -121,9 +131,9 @@ Public Class ctrlAdminSettings
                                 Dim objectId As ObjectId
                                 If ObjectId.TryParse(usrID, objectId) Then
                                     Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objectId)
-                                    Dim update = Builders(Of BsonDocument).Update.Set(Of String)("Password", usrPword2.Text)
+                                    Dim update = Builders(Of BsonDocument).Update.Set(Of String)("password", usrPword2.Text)
                                     rmsSharedVar.colAdmin.UpdateOne(filter, update)
-                                    MessageBox.Show("Account updated successfully!")
+                                    MessageBox.Show("Password updated successfully!")
                                     clearUsrInfo()
                                     loadUsrDoc()
                                 End If
@@ -132,6 +142,9 @@ Public Class ctrlAdminSettings
                             End Try
                         End If
                     End If
+                ElseIf updConfirmation = DialogResult.No Then
+                    clearUsrInfo()
+                    loadUsrDoc()
                 End If
             End If
         End If
@@ -156,7 +169,7 @@ Public Class ctrlAdminSettings
                     document.Add("accountDeletionDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                     rmsSharedVar.archiveAdmin.InsertOne(document)
                     rmsSharedVar.colAdmin.DeleteOne(filter)
-                    MessageBox.Show("Account deleted successfully.")
+                    MessageBox.Show("Account deleted successfully!")
                     clearUsrInfo()
                     rmsDashboard.Close()
                     loadRMSLogin()
@@ -178,6 +191,7 @@ Public Class ctrlAdminSettings
         If Me.Visible = False Then
             closeMongoConn()
             clearUsrInfo()
+            tabAdmn.SelectedIndex = 0
         ElseIf Me.Visible = True Then
             loadUsrDoc()
         End If

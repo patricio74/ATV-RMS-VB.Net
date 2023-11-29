@@ -1,7 +1,6 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class rmsRegistration
-    Dim adminCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
     Dim tiempoAhora As String = DateTime.Now.ToString("MMM d, yyyy hh:mm tt")
     Private Sub hideRegPanelz()
         Panel1.Hide()
@@ -106,12 +105,12 @@ Public Class rmsRegistration
                 Dim userEmail As String = regEmail.Text
                 'Dim userPhone As String = regPhone.Text.Trim()
                 Dim userRFID As String = regRFID.Text
-                Dim filterEmail As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("Email", userEmail))
-                'Dim filterPhone As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("Phone", userPhone))
+                Dim filterEmail As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("email", userEmail))
+                'Dim filterPhone As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("phone", userPhone))
                 Dim filterRFID As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", userRFID))
-                Dim emailAvailability As Long = adminCol.CountDocuments(filterEmail)
+                Dim emailAvailability As Long = rmsSharedVar.colAdmin.CountDocuments(filterEmail)
                 'Dim phoneAvailability As Long = adminCol.CountDocuments(filterPhone)
-                Dim rfidAvailability As Long = adminCol.CountDocuments(filterRFID)
+                Dim rfidAvailability As Long = rmsSharedVar.colAdmin.CountDocuments(filterRFID)
                 Dim panel2ErrCheck As Boolean = False
                 Try
                     If emailAvailability > 0 Then
@@ -169,7 +168,7 @@ Public Class rmsRegistration
                 'add code to module
                 Dim pendingUsername As String = regUsername.Text
                 Dim checkUsername As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("Username", pendingUsername))
-                Dim usernameAvailability As Long = adminCol.CountDocuments(checkUsername)
+                Dim usernameAvailability As Long = rmsSharedVar.colAdmin.CountDocuments(checkUsername)
                 Dim panel3ErrCheck As Boolean = False
                 Try
                     If usernameAvailability > 0 Then
@@ -231,25 +230,27 @@ Public Class rmsRegistration
                         Dim rfid As String = regRFID.Text
                         Dim creationDate As String = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")
                         Dim accType As String = "admin"
+                        Dim address As String = ""
                         Dim newAdmin As New BsonDocument From {
-                            {"First Name", firstName},
-                            {"Middle Name", midName},
-                            {"Surname", surname},
-                            {"Email", email},
-                            {"Phone", phone},
-                            {"Username", username},
-                            {"Password", password},
+                            {"FName", firstName},
+                            {"MName", midName},
+                            {"Sname", surname},
+                            {"email", email},
+                            {"phone", phone},
+                            {"username", username},
+                            {"password", password},
                             {"RFID", rfid},
                             {"accountCreationDate", creationDate},
-                            {"role", accType}
+                            {"role", accType},
+                            {"address", address}
                         }
                         Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(
                             Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", rfid),
-                            Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
-                            Builders(Of BsonDocument).Filter.Eq(Of String)("Email", email)
+                            Builders(Of BsonDocument).Filter.Eq(Of String)("username", username),
+                            Builders(Of BsonDocument).Filter.Eq(Of String)("email", email)
                         )
                         'pang double check kung merong same rfid, username, email sa db
-                        Dim count As Long = adminCol.CountDocuments(filter)
+                        Dim count As Long = rmsSharedVar.colAdmin.CountDocuments(filter)
                         If count > 0 Then
                             MessageBox.Show("The email, username, or RFID is already in use by another admin.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Else

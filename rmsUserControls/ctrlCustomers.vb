@@ -72,8 +72,8 @@ Public Class ctrlCustomers
         cbxSearchFilter.SelectedIndex = 0
     End Sub
     Private Sub ctrlCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        refreshList()
         resetFilter()
+        refreshList()
         tabCustomerz.SelectedIndex = 0
         'tabCustInfo.SelectedIndex = 0
     End Sub
@@ -118,10 +118,10 @@ Public Class ctrlCustomers
             $"{cust.address.Street}, {cust.address.Barangay}, {cust.address.MuniCity}, {cust.address.Province}, {cust.address.Country}", cust.email
             )
             dgvCustInfo.Rows.Add(row)
-            dgvCustInfo.ClearSelection()
-            dgvCustHistory.ClearSelection()
-            clearUpdForm()
         Next
+        dgvCustInfo.ClearSelection()
+        dgvCustHistory.ClearSelection()
+        clearUpdForm()
     End Sub
     Private Function getLogTransactionsByCustID(custID As String) As List(Of BsonDocument)
         Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("custID", custID)
@@ -217,11 +217,11 @@ Public Class ctrlCustomers
             If dgvCustInfo.SelectedRows.Count > 0 Then
                 Dim selectedCustomer = customerz(dgvCustInfo.SelectedRows(0).Index)
                 Dim custID As String = selectedCustomer.custID
-                Dim result = MessageBox.Show("Are you sure you want to remove this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim delConfirmation = MessageBox.Show("Are you sure you want to remove this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 'move customer data to archive collection
-                If result = DialogResult.Yes Then
-                    MoveToArchive(custID)
-                ElseIf result = DialogResult.No Then
+                If delConfirmation = DialogResult.Yes Then
+                    moveToArchive(custID)
+                ElseIf delConfirmation = DialogResult.No Then
                     refreshList()
                 End If
             Else
@@ -262,6 +262,8 @@ Public Class ctrlCustomers
                     Catch ex As Exception
                         MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End Try
+                ElseIf msgConfirmation = DialogResult.no Then
+                    refreshList()
                 End If
             End If
         ElseIf sender Is btnClrCust Then
@@ -349,6 +351,14 @@ Public Class ctrlCustomers
         End If
     End Sub
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        dgvCustInfo.Rows.Clear()
+        'check if all search textboxes are empty
+        If String.IsNullOrEmpty(tbxSearchUsername.Text) AndAlso
+        (String.IsNullOrEmpty(tbxSearchFir.Text) AndAlso String.IsNullOrEmpty(tbxSearchSur.Text)) AndAlso
+        String.IsNullOrEmpty(tbxSearchEmail.Text) Then
+            'do not perform the search and exit the method if empty
+            Return
+        End If
         Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Empty
         If cbxSearchFilter.SelectedIndex = 0 Then 'search username
             If Not String.IsNullOrEmpty(tbxSearchUsername.Text) Then
@@ -411,6 +421,8 @@ Public Class ctrlCustomers
             resetFilter()
             tabCustomerz.SelectedIndex = 0
             tabCustInfo.SelectedIndex = 0
+        ElseIf Me.Visible Then
+            refreshList()
         End If
     End Sub
 End Class

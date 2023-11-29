@@ -61,7 +61,7 @@
     Private Sub rmsDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
         centerLoc()
         initializeDraggablePanel(panelTop)
-        btnAdminSettings.Text = rmsSharedVar.labelName
+        btnAdminSettings.Text = rmsSharedVar.currentUser
         'load panelz
         admPanel.Controls.Add(overview)
         admPanel.Controls.Add(reservv)
@@ -86,7 +86,7 @@
             Dim response As DialogResult = MessageBox.Show(" Are you sure you want to close ATV-RMS app?", "Confirmation", MessageBoxButtons.YesNo)
             If response = DialogResult.Yes Then
                 rmsSharedVar.admnID = Nothing
-                rmsSharedVar.labelName = Nothing
+                rmsSharedVar.currentUser = Nothing
                 Me.Close()
                 rmsLogin.Close()
             End If
@@ -143,7 +143,7 @@
             settings.Visible = True
         ElseIf sender Is btnLogout Then
             rmsSharedVar.admnID = Nothing
-            rmsSharedVar.labelName = Nothing
+            rmsSharedVar.currentUser = Nothing
             Me.Close()
             resetButtonColor()
             loadRMSLogin()
@@ -153,7 +153,7 @@
     End Sub
     Private Sub rmsDashboard_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         rmsSharedVar.admnID = Nothing
-        rmsSharedVar.labelName = Nothing
+        rmsSharedVar.currentUser = Nothing
         rmsSharedVar.role = Nothing
         closeMongoConn()
     End Sub

@@ -130,7 +130,6 @@ Partial Class rmsDashboard
         '
         Me.btnAdminSettings.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAdminSettings.AutoSize = True
         Me.btnAdminSettings.BackColor = System.Drawing.Color.Transparent
         Me.btnAdminSettings.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAdminSettings.FlatAppearance.BorderSize = 0
@@ -140,10 +139,11 @@ Partial Class rmsDashboard
         Me.btnAdminSettings.Font = New System.Drawing.Font("Verdana", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdminSettings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnAdminSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAdminSettings.Location = New System.Drawing.Point(0, 655)
+        Me.btnAdminSettings.Location = New System.Drawing.Point(0, 638)
         Me.btnAdminSettings.Margin = New System.Windows.Forms.Padding(0)
         Me.btnAdminSettings.Name = "btnAdminSettings"
-        Me.btnAdminSettings.Size = New System.Drawing.Size(205, 43)
+        Me.btnAdminSettings.Padding = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.btnAdminSettings.Size = New System.Drawing.Size(205, 60)
         Me.btnAdminSettings.TabIndex = 12
         Me.btnAdminSettings.Text = "User's full name"
         Me.btnAdminSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter

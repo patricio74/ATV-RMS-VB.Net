@@ -15,7 +15,6 @@ Public Class rmsSharedVar
     Public Shared colReserv As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReservations")
     Public Shared colReviews As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("custReviews")
     Public Shared colResume As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("empResume")
-    Public Shared colTourGuide As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("empTourGuide")
 
     Public Shared colTransac As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("logTransactions")
     Public Shared colNotif As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("notifSMS")
@@ -25,7 +24,7 @@ Public Class rmsSharedVar
     Public Shared colTrails As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAtvTours")
     Public Shared colInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsInventory")
 
-    Public Shared labelName As String   'store current user's username
+    Public Shared currentUser As String   'store current user's username
     Public Shared admnID  'store userid
     Public Shared role As String 'store account type
 End Class

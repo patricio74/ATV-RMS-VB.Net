@@ -18,18 +18,17 @@ Module moduleLogin
         Try
             Dim username As String = rmsLogin.tboxUsername.Text
             Dim password As String = rmsLogin.tboxPassword.Text
-            Dim loginCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
             Dim filter = Builders(Of BsonDocument).Filter.Or(
-                Builders(Of BsonDocument).Filter.Eq(Of String)("Username", username),
-                Builders(Of BsonDocument).Filter.Eq(Of String)("Email", username)
+                Builders(Of BsonDocument).Filter.Eq(Of String)("username", username),
+                Builders(Of BsonDocument).Filter.Eq(Of String)("email", username)
             )
-            Dim loginDocument = loginCol.Find(filter).FirstOrDefault()
+            Dim loginDocument = rmsSharedVar.colAdmin.Find(filter).FirstOrDefault()
             If loginDocument IsNot Nothing Then
-                Dim storedPassw As String = loginDocument("Password").ToString()
+                Dim storedPassw As String = loginDocument("password").ToString()
                 If password = storedPassw Then
                     hideErrorLabel()
-                    Dim admnFullName As String = $"{loginDocument("First Name")} {loginDocument("Middle Name")} {loginDocument("Surname")}"
-                    rmsSharedVar.labelName = admnFullName
+                    Dim admnFullName As String = $"{loginDocument("FName")} {loginDocument("MName")} {loginDocument("Sname")}"
+                    rmsSharedVar.currentUser = admnFullName
                     Dim adminID As String = loginDocument("_id").ToString()
                     rmsSharedVar.admnID = adminID
                     Dim accType As String = loginDocument("role").ToString
@@ -54,17 +53,16 @@ Module moduleLogin
     Public Sub adminRFIDLogin()
         Try
             Dim RFID As String = rmsLogin.tboxRFID.Text
-            Dim rfidCol As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
             Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", RFID)
-            Dim rfidDocument As BsonDocument = rfidCol.Find(filter).FirstOrDefault()
+            Dim rfidDocument As BsonDocument = rmsSharedVar.colAdmin.Find(filter).FirstOrDefault()
             If rfidDocument Is Nothing Then
                 rmsLogin.lblRFIDErr.Text = "Error: RFID not registered."
                 rmsLogin.lblRFIDErr.Visible = True
                 rmsLogin.tboxRFID.Focus()
             ElseIf rfidDocument IsNot Nothing Then
                 hideErrorLabel()
-                Dim admnFullName As String = $"{rfidDocument("First Name")} {rfidDocument("Middle Name")} {rfidDocument("Surname")}"
-                rmsSharedVar.labelName = admnFullName
+                Dim admnFullName As String = $"{rfidDocument("FName")} {rfidDocument("MName")} {rfidDocument("Sname")}"
+                rmsSharedVar.currentUser = admnFullName
                 Dim adminID As String = $"{rfidDocument("_id")}"
                 rmsSharedVar.admnID = adminID
                 Dim accType As String = rfidDocument("role").ToString
@@ -72,10 +70,10 @@ Module moduleLogin
                 rmsDashboard.Show()
                 rmsLogin.Hide()
             Else
-                MessageBox.Show("An error occured: ", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("An error occurred: ", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch ex As Exception
-            MessageBox.Show("An error has occured: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("An error has occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
     End Sub

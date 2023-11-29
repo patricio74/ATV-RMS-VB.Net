@@ -109,6 +109,7 @@ Public Class ctrlOverview
             Builders(Of BsonDocument).Filter.Gte(Of String)("date", todayDate),
             Builders(Of BsonDocument).Filter.Lt(Of String)("date", tomorrowDate)
             )
+            'palitan mo to; count doc where status=in-use
             lblAtvInUse.Text = "Currently in-use: " & totalAtv.ToString()
 
             'count customers this month, yesterday
