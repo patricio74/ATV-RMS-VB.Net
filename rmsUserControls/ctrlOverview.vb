@@ -12,21 +12,6 @@ Public Class ctrlOverview
     Dim tomorrowDate As DateTime = New DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, 0, 0, 0, DateTimeKind.Utc)
     Dim startOfYesterday As DateTime = New DateTime(yesterday.Year, yesterday.Month, yesterday.Day, 0, 0, 0, DateTimeKind.Utc)
     Dim endOfYesterday As DateTime = startOfYesterday.AddHours(23).AddMinutes(59).AddSeconds(59)
-    Private Sub ctrlOverview_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'refresh content kada 3secs
-        overviewTimer.Interval = 3000
-        overviewTimer.Start()
-        DateTimePicker1.Value = DateTime.Now.Date
-        loadStats()
-        loadReviews()
-        loadReservationz(DateTime.Now)
-    End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles overviewTimer.Tick
-        If Me.Visible = True Then
-            loadStats()
-        Else
-        End If
-    End Sub
     Private Sub MouseEnterHandler(sender As Object, e As EventArgs) Handles panelReserv.MouseEnter,
         lblReserv.MouseEnter, lblReservCanceled.MouseEnter, lblReservPending.MouseEnter,
         panelATV.MouseEnter, lblAtvAvail.MouseEnter, lblAtv.MouseEnter, lblAtvInUse.MouseEnter, lblAtvMainten.MouseEnter,
@@ -89,6 +74,12 @@ Public Class ctrlOverview
             lblRev.ForeColor = ColorTranslator.FromHtml("#151515")
             lblRev.BackColor = ColorTranslator.FromHtml("#f5f5f5")
             lblRevYest.ForeColor = ColorTranslator.FromHtml("#d3d3d3")
+        End If
+    End Sub
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles overviewTimer.Tick
+        If Me.Visible = True Then
+            loadStats()
+        Else
         End If
     End Sub
     Private Sub loadStats()
@@ -163,7 +154,6 @@ Public Class ctrlOverview
             'Load the data from MongoDB and sort by reviewDate in descending order
             Dim sort = Builders(Of BsonDocument).Sort.Descending("reviewDate")
             Dim documents = rmsSharedVar.colReviews.Find(New BsonDocument()).Sort(sort).ToList()
-
             dgvReviews.Rows.Clear()
             For Each doc In documents
                 dgvReviews.Rows.Add(doc("Rating").ToString(), doc("Name").ToString(), doc("Review").ToString())
@@ -185,21 +175,16 @@ Public Class ctrlOverview
     Private Sub btnRefreshReviews_Click(sender As Object, e As EventArgs) Handles btnRefreshReviews.Click
         loadReviews()
     End Sub
-
-
-
-
-
     Private Sub loadReservationz(selectedDate As Date)
         If Me.Visible = True Then
-            'Display reservations sa dgvReserv
-            Dim dtpSelectedDate As Date = selectedDate
-            'selected date range; 12am-1159pm
-            Dim dtpCalStart As Date = New DateTime(dtpSelectedDate.Year, dtpSelectedDate.Month, dtpSelectedDate.Day, 0, 0, 0, DateTimeKind.Utc)
-            Dim dtpCalEnd As Date = dtpCalStart.AddDays(+1)
-            Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.And(
-                Builders(Of BsonDocument).Filter.Gte(Of DateTime)("reservDate", dtpCalStart),
-                Builders(Of BsonDocument).Filter.Lt(Of DateTime)("reservDate", dtpCalEnd))
+            'convert to iso 8601 format
+            Dim isoDateString As String = selectedDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+            'display reservs sa dgvReserv
+            Dim filter As FilterDefinition(Of BsonDocument) =
+            Builders(Of BsonDocument).Filter.And(
+                Builders(Of BsonDocument).Filter.Gte(Of String)("reservDate", isoDateString),
+                Builders(Of BsonDocument).Filter.Lt(Of String)("reservDate", selectedDate.AddDays(1).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ"))
+            )
             Dim reservations = rmsSharedVar.colReserv.Find(filter).ToList()
             dgvReservations.Rows.Clear()
             For Each reservDoc As BsonDocument In reservations
@@ -207,12 +192,6 @@ Public Class ctrlOverview
                 dgvReservations.Rows.Add(fullName, reservDoc("tourName").ToString(), reservDoc("timeSlot").ToString(), reservDoc("totalPerson").ToString())
                 dgvReservations.ClearSelection()
             Next
-
-
-            'may mali pa sa logic, di navview reservation sa selected dtp date
-            'sa date format yung mali
-
-
         Else
         End If
     End Sub
@@ -226,12 +205,19 @@ Public Class ctrlOverview
         Dim selectedDate As Date = DateTimePicker1.Value
         loadReservationz(selectedDate)
     End Sub
-
-
-
+    Private Sub ctrlOverview_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'refresh content kada 3secs
+        overviewTimer.Interval = 3000
+        overviewTimer.Start()
+        DateTimePicker1.Value = DateTime.Now.Date
+        'loadStats()
+        'loadReviews()
+        'loadReservationz(DateTime.Now)
+    End Sub
     Private Sub ctrlOverview_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
             closeMongoConn()
+            'add code to clear form on exit
         End If
     End Sub
 End Class
