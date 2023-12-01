@@ -101,16 +101,16 @@ Public Class ctrlOverview
             lblReservPending.Text = pendingReserv
             lblReservCanceled.Text = "Canceled Reservations: " + canceledReserv.ToString
 
-            'count all ATVs sa inventory, currently in-use
-            Dim totalAtv As Long = rmsSharedVar.colInventory.EstimatedDocumentCount()
-            lblAtvAvail.Text = totalAtv.ToString()
-            Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.And(
-            Builders(Of BsonDocument).Filter.Eq(Of String)("status", "in-use"),
-            Builders(Of BsonDocument).Filter.Gte(Of String)("date", todayDate),
-            Builders(Of BsonDocument).Filter.Lt(Of String)("date", tomorrowDate)
-            )
-            'palitan mo to; count doc where status=in-use
-            lblAtvInUse.Text = "Currently in-use: " & totalAtv.ToString()
+            'pangcount sa ATVs
+            Dim atvAvailable = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "AVAILABLE")
+            Dim atvInUse = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "NOT AVAILABLE")
+            Dim atvMaintenance = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "MAINTENANCE")
+            Dim atvAva As Long = rmsSharedVar.colInventory.CountDocuments(atvAvailable)
+            Dim atvUse As Long = rmsSharedVar.colInventory.CountDocuments(atvInUse)
+            Dim atvMai As Long = rmsSharedVar.colInventory.CountDocuments(atvMaintenance)
+            lblAtvAvail.Text = atvAva.ToString
+            lblAtvInUse.Text = "Currently in-use: " + atvUse.ToString
+            lblAtvMainten.Text = "Under maintenance: " + atvMai.ToString
 
             'count customers this month, yesterday
             Dim custDocs As List(Of BsonDocument) = rmsSharedVar.colTransac.Find(New BsonDocument()).ToList()

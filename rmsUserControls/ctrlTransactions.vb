@@ -73,6 +73,8 @@ Public Class ctrlTransactions
         cbxReservTour.SelectedIndex = -1
         cbxAddTour.Items.Clear()
         cbxAddTour.SelectedIndex = -1
+        cbxNewTour.Items.Clear()
+        cbxNewTour.SelectedIndex = -1
         Dim tourData As List(Of BsonDocument) = cbxToursList()
         For Each tourDocument As BsonDocument In tourData
             cbxAddTour.Items.Add(tourDocument("nameOfTour").ToString())

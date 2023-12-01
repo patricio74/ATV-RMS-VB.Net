@@ -38,30 +38,30 @@ Partial Class ctrlOverview
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rtbxReview = New System.Windows.Forms.RichTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.dgvReservations = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.panelReserv = New System.Windows.Forms.Panel()
         Me.lblReservPending = New System.Windows.Forms.Label()
         Me.lblReservCanceled = New System.Windows.Forms.Label()
         Me.lblReserv = New System.Windows.Forms.Label()
         Me.panelATV = New System.Windows.Forms.Panel()
-        Me.lblAtv = New System.Windows.Forms.Label()
-        Me.lblAtvInUse = New System.Windows.Forms.Label()
         Me.lblAtvAvail = New System.Windows.Forms.Label()
+        Me.lblAtv = New System.Windows.Forms.Label()
         Me.lblAtvMainten = New System.Windows.Forms.Label()
+        Me.lblAtvInUse = New System.Windows.Forms.Label()
         Me.panelCustomer = New System.Windows.Forms.Panel()
-        Me.lblCustYest = New System.Windows.Forms.Label()
-        Me.lblCust = New System.Windows.Forms.Label()
         Me.lblCustMonth = New System.Windows.Forms.Label()
+        Me.lblCust = New System.Windows.Forms.Label()
+        Me.lblCustYest = New System.Windows.Forms.Label()
         Me.panelRevenue = New System.Windows.Forms.Panel()
+        Me.lblRevMonth = New System.Windows.Forms.Label()
         Me.lblRevYest = New System.Windows.Forms.Label()
         Me.lblRev = New System.Windows.Forms.Label()
-        Me.lblRevMonth = New System.Windows.Forms.Label()
         Me.overviewTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgvReviews, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -218,19 +218,11 @@ Partial Class ctrlOverview
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Reservations Calendar"
         '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(723, 21)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(293, 26)
-        Me.DateTimePicker1.TabIndex = 38
-        '
         'dgvReservations
         '
         Me.dgvReservations.AllowUserToAddRows = False
         Me.dgvReservations.AllowUserToOrderColumns = True
+        Me.dgvReservations.AllowUserToResizeColumns = False
         Me.dgvReservations.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -274,6 +266,42 @@ Partial Class ctrlOverview
         Me.dgvReservations.ShowEditingIcon = False
         Me.dgvReservations.Size = New System.Drawing.Size(1104, 399)
         Me.dgvReservations.TabIndex = 35
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "Customer Name"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "Tour Name"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Time Slot"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 125
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "No. of Person"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(723, 21)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(293, 26)
+        Me.DateTimePicker1.TabIndex = 38
         '
         'panelReserv
         '
@@ -341,34 +369,6 @@ Partial Class ctrlOverview
         Me.panelATV.Size = New System.Drawing.Size(264, 176)
         Me.panelATV.TabIndex = 39
         '
-        'lblAtv
-        '
-        Me.lblAtv.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.lblAtv.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblAtv.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAtv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.lblAtv.Location = New System.Drawing.Point(0, 0)
-        Me.lblAtv.Name = "lblAtv"
-        Me.lblAtv.Size = New System.Drawing.Size(264, 44)
-        Me.lblAtv.TabIndex = 38
-        Me.lblAtv.Text = "Available ATV"
-        Me.lblAtv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblAtvInUse
-        '
-        Me.lblAtvInUse.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAtvInUse.BackColor = System.Drawing.Color.Transparent
-        Me.lblAtvInUse.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAtvInUse.ForeColor = System.Drawing.Color.LightGray
-        Me.lblAtvInUse.Location = New System.Drawing.Point(0, 124)
-        Me.lblAtvInUse.Name = "lblAtvInUse"
-        Me.lblAtvInUse.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.lblAtvInUse.Size = New System.Drawing.Size(264, 23)
-        Me.lblAtvInUse.TabIndex = 39
-        Me.lblAtvInUse.Text = "Currently in-use: 0"
-        Me.lblAtvInUse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'lblAtvAvail
         '
         Me.lblAtvAvail.BackColor = System.Drawing.Color.Transparent
@@ -381,6 +381,19 @@ Partial Class ctrlOverview
         Me.lblAtvAvail.TabIndex = 37
         Me.lblAtvAvail.Text = "99999"
         Me.lblAtvAvail.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'lblAtv
+        '
+        Me.lblAtv.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lblAtv.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblAtv.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAtv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.lblAtv.Location = New System.Drawing.Point(0, 0)
+        Me.lblAtv.Name = "lblAtv"
+        Me.lblAtv.Size = New System.Drawing.Size(264, 44)
+        Me.lblAtv.TabIndex = 38
+        Me.lblAtv.Text = "Available ATV"
+        Me.lblAtv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblAtvMainten
         '
@@ -397,6 +410,21 @@ Partial Class ctrlOverview
         Me.lblAtvMainten.Text = "Under maintenance:  0"
         Me.lblAtvMainten.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'lblAtvInUse
+        '
+        Me.lblAtvInUse.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblAtvInUse.BackColor = System.Drawing.Color.Transparent
+        Me.lblAtvInUse.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAtvInUse.ForeColor = System.Drawing.Color.LightGray
+        Me.lblAtvInUse.Location = New System.Drawing.Point(0, 124)
+        Me.lblAtvInUse.Name = "lblAtvInUse"
+        Me.lblAtvInUse.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.lblAtvInUse.Size = New System.Drawing.Size(264, 23)
+        Me.lblAtvInUse.TabIndex = 39
+        Me.lblAtvInUse.Text = "Currently in-use: 0"
+        Me.lblAtvInUse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'panelCustomer
         '
         Me.panelCustomer.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -408,6 +436,32 @@ Partial Class ctrlOverview
         Me.panelCustomer.Name = "panelCustomer"
         Me.panelCustomer.Size = New System.Drawing.Size(264, 176)
         Me.panelCustomer.TabIndex = 41
+        '
+        'lblCustMonth
+        '
+        Me.lblCustMonth.BackColor = System.Drawing.Color.Transparent
+        Me.lblCustMonth.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblCustMonth.Font = New System.Drawing.Font("Trebuchet MS", 32.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCustMonth.ForeColor = System.Drawing.Color.White
+        Me.lblCustMonth.Location = New System.Drawing.Point(0, 44)
+        Me.lblCustMonth.Name = "lblCustMonth"
+        Me.lblCustMonth.Size = New System.Drawing.Size(264, 77)
+        Me.lblCustMonth.TabIndex = 38
+        Me.lblCustMonth.Text = "9999"
+        Me.lblCustMonth.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'lblCust
+        '
+        Me.lblCust.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lblCust.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblCust.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.lblCust.Location = New System.Drawing.Point(0, 0)
+        Me.lblCust.Name = "lblCust"
+        Me.lblCust.Size = New System.Drawing.Size(264, 44)
+        Me.lblCust.TabIndex = 37
+        Me.lblCust.Text = "Customers This Month"
+        Me.lblCust.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblCustYest
         '
@@ -424,32 +478,6 @@ Partial Class ctrlOverview
         Me.lblCustYest.Text = "Total yesterday:  0"
         Me.lblCustYest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'lblCust
-        '
-        Me.lblCust.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.lblCust.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblCust.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.lblCust.Location = New System.Drawing.Point(0, 0)
-        Me.lblCust.Name = "lblCust"
-        Me.lblCust.Size = New System.Drawing.Size(264, 44)
-        Me.lblCust.TabIndex = 37
-        Me.lblCust.Text = "Customers This Month"
-        Me.lblCust.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblCustMonth
-        '
-        Me.lblCustMonth.BackColor = System.Drawing.Color.Transparent
-        Me.lblCustMonth.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblCustMonth.Font = New System.Drawing.Font("Trebuchet MS", 32.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCustMonth.ForeColor = System.Drawing.Color.White
-        Me.lblCustMonth.Location = New System.Drawing.Point(0, 44)
-        Me.lblCustMonth.Name = "lblCustMonth"
-        Me.lblCustMonth.Size = New System.Drawing.Size(264, 77)
-        Me.lblCustMonth.TabIndex = 38
-        Me.lblCustMonth.Text = "9999"
-        Me.lblCustMonth.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
         'panelRevenue
         '
         Me.panelRevenue.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
@@ -461,6 +489,19 @@ Partial Class ctrlOverview
         Me.panelRevenue.Name = "panelRevenue"
         Me.panelRevenue.Size = New System.Drawing.Size(264, 178)
         Me.panelRevenue.TabIndex = 42
+        '
+        'lblRevMonth
+        '
+        Me.lblRevMonth.BackColor = System.Drawing.Color.Transparent
+        Me.lblRevMonth.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblRevMonth.Font = New System.Drawing.Font("Trebuchet MS", 32.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRevMonth.ForeColor = System.Drawing.Color.White
+        Me.lblRevMonth.Location = New System.Drawing.Point(0, 44)
+        Me.lblRevMonth.Name = "lblRevMonth"
+        Me.lblRevMonth.Size = New System.Drawing.Size(264, 77)
+        Me.lblRevMonth.TabIndex = 37
+        Me.lblRevMonth.Text = "₱9999999"
+        Me.lblRevMonth.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'lblRevYest
         '
@@ -490,48 +531,8 @@ Partial Class ctrlOverview
         Me.lblRev.Text = "Revenue This Month"
         Me.lblRev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblRevMonth
-        '
-        Me.lblRevMonth.BackColor = System.Drawing.Color.Transparent
-        Me.lblRevMonth.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblRevMonth.Font = New System.Drawing.Font("Trebuchet MS", 32.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRevMonth.ForeColor = System.Drawing.Color.White
-        Me.lblRevMonth.Location = New System.Drawing.Point(0, 44)
-        Me.lblRevMonth.Name = "lblRevMonth"
-        Me.lblRevMonth.Size = New System.Drawing.Size(264, 77)
-        Me.lblRevMonth.TabIndex = 37
-        Me.lblRevMonth.Text = "₱9999999"
-        Me.lblRevMonth.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
         'overviewTimer
         '
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "Customer Name"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "Tour Name"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Time Slot"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 125
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "No. of Person"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
         '
         'ctrlOverview
         '

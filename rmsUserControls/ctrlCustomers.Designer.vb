@@ -43,6 +43,11 @@ Partial Class ctrlCustomers
         Me.btnDelCust = New System.Windows.Forms.Button()
         Me.btnUpdCust = New System.Windows.Forms.Button()
         Me.dgvCustInfo = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tbxUpdStreet = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tbxUpdBarangay = New System.Windows.Forms.TextBox()
@@ -107,11 +112,6 @@ Partial Class ctrlCustomers
         Me.Label20 = New System.Windows.Forms.Label()
         Me.tbxAddMuniCity = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvCustInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabCustInfo.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -351,6 +351,41 @@ Partial Class ctrlCustomers
         Me.dgvCustInfo.ShowEditingIcon = False
         Me.dgvCustInfo.Size = New System.Drawing.Size(1100, 278)
         Me.dgvCustInfo.TabIndex = 31
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 25
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "FULL NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 245
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "PHONE NUMBER"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 140
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column5.HeaderText = "ADDRESS"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "EMAIL"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 245
         '
         'tbxUpdStreet
         '
@@ -725,7 +760,7 @@ Partial Class ctrlCustomers
         Me.btnClearFilter.Location = New System.Drawing.Point(695, 5)
         Me.btnClearFilter.Name = "btnClearFilter"
         Me.btnClearFilter.Size = New System.Drawing.Size(27, 27)
-        Me.btnClearFilter.TabIndex = 43
+        Me.btnClearFilter.TabIndex = 4
         Me.btnClearFilter.Text = "X"
         Me.btnClearFilter.UseVisualStyleBackColor = False
         '
@@ -737,7 +772,7 @@ Partial Class ctrlCustomers
         Me.tbxSearchFir.Location = New System.Drawing.Point(16, 6)
         Me.tbxSearchFir.Name = "tbxSearchFir"
         Me.tbxSearchFir.Size = New System.Drawing.Size(233, 25)
-        Me.tbxSearchFir.TabIndex = 38
+        Me.tbxSearchFir.TabIndex = 0
         Me.tbxSearchFir.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tbxSearchFir.Visible = False
         '
@@ -751,7 +786,7 @@ Partial Class ctrlCustomers
         Me.btnSearch.Location = New System.Drawing.Point(622, 5)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(65, 28)
-        Me.btnSearch.TabIndex = 36
+        Me.btnSearch.TabIndex = 3
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = False
         '
@@ -765,7 +800,7 @@ Partial Class ctrlCustomers
         Me.cbxSearchFilter.Location = New System.Drawing.Point(494, 6)
         Me.cbxSearchFilter.Name = "cbxSearchFilter"
         Me.cbxSearchFilter.Size = New System.Drawing.Size(121, 26)
-        Me.cbxSearchFilter.TabIndex = 35
+        Me.cbxSearchFilter.TabIndex = 2
         '
         'tbxSearchUsername
         '
@@ -786,7 +821,7 @@ Partial Class ctrlCustomers
         Me.tbxSearchEmail.Location = New System.Drawing.Point(255, 6)
         Me.tbxSearchEmail.Name = "tbxSearchEmail"
         Me.tbxSearchEmail.Size = New System.Drawing.Size(233, 25)
-        Me.tbxSearchEmail.TabIndex = 41
+        Me.tbxSearchEmail.TabIndex = 1
         Me.tbxSearchEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tbxSearchEmail.Visible = False
         '
@@ -1217,41 +1252,6 @@ Partial Class ctrlCustomers
         Me.Label21.Size = New System.Drawing.Size(125, 18)
         Me.Label21.TabIndex = 67
         Me.Label21.Text = "CONTACT NUMBER:"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 25
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "FULL NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 245
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "PHONE NUMBER"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 140
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.HeaderText = "ADDRESS"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "EMAIL"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 245
         '
         'ctrlCustomers
         '

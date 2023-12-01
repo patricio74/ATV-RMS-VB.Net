@@ -75,9 +75,11 @@ Public Class rmsLogin
             End If
 
         ElseIf sender Is labelForgotPass Then
-            MessageBox.Show("Relax and try to remember your password.", "Forgot Password?", MessageBoxButtons.OK, MessageBoxIcon.None)
-            'gawa mg bagong form
-            'add code para ireset yung pass. send sms code gamit gsm module pag may match na username sa db
+            'MessageBox.Show("Relax and try to remember your password.", "Forgot Password?", MessageBoxButtons.OK, MessageBoxIcon.None)
+            rmsPassReset.Show()
+            rmsPassReset.tbxResetUsername.Focus()
+            Me.Hide()
+            clearLoginForm()
 
         ElseIf sender Is labelRegister Then
             rmsRegistration.Show()
