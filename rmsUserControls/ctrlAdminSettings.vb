@@ -196,4 +196,39 @@ Public Class ctrlAdminSettings
             loadUsrDoc()
         End If
     End Sub
+
+    Private Sub settings_TextChanged(sender As Object, e As EventArgs) Handles usrUsername.TextChanged, usrPhone.TextChanged, usrRFID.TextChanged, usrEmail.TextChanged,
+        usrPword2.TextChanged, usrPword.TextChanged, usrOldPword.TextChanged
+        'para walang space na ma-input
+        If sender Is usrUsername Then
+            Dim cursorPos As Integer = usrUsername.SelectionStart
+            usrUsername.Text = usrUsername.Text.Replace(" ", "")
+            usrUsername.SelectionStart = cursorPos
+        ElseIf sender Is usrPhone Then
+            Dim cursorPos As Integer = usrPhone.SelectionStart
+            usrPhone.Text = usrPhone.Text.Replace(" ", "")
+            usrPhone.SelectionStart = cursorPos
+        ElseIf sender Is usrRFID Then
+            Dim cursorPos As Integer = usrRFID.SelectionStart
+            usrRFID.Text = usrRFID.Text.Replace(" ", "")
+            usrRFID.SelectionStart = cursorPos
+        ElseIf sender Is usrEmail Then
+            Dim cursorPos As Integer = usrEmail.SelectionStart
+            usrEmail.Text = usrEmail.Text.Replace(" ", "")
+            usrEmail.SelectionStart = cursorPos
+        ElseIf sender Is usrOldPword Then
+            Dim cursorPos As Integer = usrOldPword.SelectionStart
+            usrOldPword.Text = usrOldPword.Text.Replace(" ", "")
+            usrOldPword.SelectionStart = cursorPos
+        ElseIf sender Is usrPword Then
+            Dim cursorPos As Integer = usrPword.SelectionStart
+            usrPword.Text = usrPword.Text.Replace(" ", "")
+            usrPword.SelectionStart = cursorPos
+        ElseIf sender Is usrPword2 Then
+            Dim cursorPos As Integer = usrPword2.SelectionStart
+            usrPword2.Text = usrPword2.Text.Replace(" ", "")
+            usrPword2.SelectionStart = cursorPos
+        End If
+    End Sub
+
 End Class

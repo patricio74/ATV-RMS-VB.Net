@@ -887,7 +887,7 @@ Partial Class ctrlCustomers
         Me.panelAddAcc.Location = New System.Drawing.Point(17, 70)
         Me.panelAddAcc.Name = "panelAddAcc"
         Me.panelAddAcc.Size = New System.Drawing.Size(1114, 471)
-        Me.panelAddAcc.TabIndex = 45
+        Me.panelAddAcc.TabIndex = 0
         Me.panelAddAcc.Visible = False
         '
         'tbxAddStreet
@@ -897,7 +897,7 @@ Partial Class ctrlCustomers
         Me.tbxAddStreet.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddStreet.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddStreet.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddStreet.Location = New System.Drawing.Point(422, 126)
+        Me.tbxAddStreet.Location = New System.Drawing.Point(422, 72)
         Me.tbxAddStreet.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddStreet.Name = "tbxAddStreet"
         Me.tbxAddStreet.Size = New System.Drawing.Size(282, 30)
@@ -910,7 +910,7 @@ Partial Class ctrlCustomers
         Me.tbxAddFirname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddFirname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddFirname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddFirname.Location = New System.Drawing.Point(81, 126)
+        Me.tbxAddFirname.Location = New System.Drawing.Point(81, 72)
         Me.tbxAddFirname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddFirname.Name = "tbxAddFirname"
         Me.tbxAddFirname.Size = New System.Drawing.Size(282, 30)
@@ -922,7 +922,7 @@ Partial Class ctrlCustomers
         Me.tbxAddPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddPassword.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddPassword.Location = New System.Drawing.Point(753, 239)
+        Me.tbxAddPassword.Location = New System.Drawing.Point(753, 226)
         Me.tbxAddPassword.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddPassword.Name = "tbxAddPassword"
         Me.tbxAddPassword.Size = New System.Drawing.Size(282, 30)
@@ -936,9 +936,9 @@ Partial Class ctrlCustomers
         Me.btnAddCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnAddCust.Location = New System.Drawing.Point(830, 289)
+        Me.btnAddCust.Location = New System.Drawing.Point(827, 299)
         Me.btnAddCust.Name = "btnAddCust"
-        Me.btnAddCust.Size = New System.Drawing.Size(149, 41)
+        Me.btnAddCust.Size = New System.Drawing.Size(149, 51)
         Me.btnAddCust.TabIndex = 13
         Me.btnAddCust.Text = "Add account"
         Me.btnAddCust.UseVisualStyleBackColor = False
@@ -949,7 +949,7 @@ Partial Class ctrlCustomers
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label14.Location = New System.Drawing.Point(750, 221)
+        Me.Label14.Location = New System.Drawing.Point(750, 208)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(79, 18)
         Me.Label14.TabIndex = 63
@@ -966,7 +966,7 @@ Partial Class ctrlCustomers
         Me.btnClrCust.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClrCust.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClrCust.ForeColor = System.Drawing.Color.LightGray
-        Me.btnClrCust.Location = New System.Drawing.Point(858, 340)
+        Me.btnClrCust.Location = New System.Drawing.Point(855, 357)
         Me.btnClrCust.Name = "btnClrCust"
         Me.btnClrCust.Size = New System.Drawing.Size(101, 26)
         Me.btnClrCust.TabIndex = 14
@@ -980,7 +980,7 @@ Partial Class ctrlCustomers
         Me.tbxAddUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxAddUsername.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddUsername.Location = New System.Drawing.Point(754, 183)
+        Me.tbxAddUsername.Location = New System.Drawing.Point(754, 146)
         Me.tbxAddUsername.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddUsername.MaxLength = 11
         Me.tbxAddUsername.Name = "tbxAddUsername"
@@ -993,7 +993,7 @@ Partial Class ctrlCustomers
         Me.Label26.BackColor = System.Drawing.Color.Transparent
         Me.Label26.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label26.Location = New System.Drawing.Point(419, 107)
+        Me.Label26.Location = New System.Drawing.Point(419, 53)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(57, 18)
         Me.Label26.TabIndex = 77
@@ -1005,7 +1005,7 @@ Partial Class ctrlCustomers
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label15.Location = New System.Drawing.Point(77, 107)
+        Me.Label15.Location = New System.Drawing.Point(77, 53)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(86, 18)
         Me.Label15.TabIndex = 71
@@ -1021,7 +1021,7 @@ Partial Class ctrlCustomers
         Me.cbxAddGender.FormattingEnabled = True
         Me.cbxAddGender.ItemHeight = 24
         Me.cbxAddGender.Items.AddRange(New Object() {"MALE", "FEMALE"})
-        Me.cbxAddGender.Location = New System.Drawing.Point(81, 296)
+        Me.cbxAddGender.Location = New System.Drawing.Point(81, 305)
         Me.cbxAddGender.Name = "cbxAddGender"
         Me.cbxAddGender.Size = New System.Drawing.Size(122, 32)
         Me.cbxAddGender.TabIndex = 3
@@ -1032,7 +1032,7 @@ Partial Class ctrlCustomers
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label16.Location = New System.Drawing.Point(751, 168)
+        Me.Label16.Location = New System.Drawing.Point(751, 131)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(78, 18)
         Me.Label16.TabIndex = 61
@@ -1044,7 +1044,7 @@ Partial Class ctrlCustomers
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label17.Location = New System.Drawing.Point(77, 164)
+        Me.Label17.Location = New System.Drawing.Point(77, 127)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(95, 18)
         Me.Label17.TabIndex = 73
@@ -1056,7 +1056,7 @@ Partial Class ctrlCustomers
         Me.Label25.BackColor = System.Drawing.Color.Transparent
         Me.Label25.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label25.Location = New System.Drawing.Point(78, 278)
+        Me.Label25.Location = New System.Drawing.Point(78, 287)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(61, 18)
         Me.Label25.TabIndex = 65
@@ -1069,7 +1069,7 @@ Partial Class ctrlCustomers
         Me.tbxAddProvince.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddProvince.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddProvince.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddProvince.Location = New System.Drawing.Point(422, 296)
+        Me.tbxAddProvince.Location = New System.Drawing.Point(422, 305)
         Me.tbxAddProvince.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddProvince.Name = "tbxAddProvince"
         Me.tbxAddProvince.Size = New System.Drawing.Size(282, 30)
@@ -1081,7 +1081,7 @@ Partial Class ctrlCustomers
         Me.Label24.BackColor = System.Drawing.Color.Transparent
         Me.Label24.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label24.Location = New System.Drawing.Point(419, 164)
+        Me.Label24.Location = New System.Drawing.Point(419, 127)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(78, 18)
         Me.Label24.TabIndex = 79
@@ -1094,7 +1094,7 @@ Partial Class ctrlCustomers
         Me.tbxAddMidname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddMidname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddMidname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddMidname.Location = New System.Drawing.Point(81, 183)
+        Me.tbxAddMidname.Location = New System.Drawing.Point(81, 146)
         Me.tbxAddMidname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddMidname.Name = "tbxAddMidname"
         Me.tbxAddMidname.Size = New System.Drawing.Size(282, 30)
@@ -1107,7 +1107,7 @@ Partial Class ctrlCustomers
         Me.tbxAddEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxAddEmail.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddEmail.Location = New System.Drawing.Point(753, 126)
+        Me.tbxAddEmail.Location = New System.Drawing.Point(753, 72)
         Me.tbxAddEmail.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddEmail.Name = "tbxAddEmail"
         Me.tbxAddEmail.Size = New System.Drawing.Size(282, 30)
@@ -1123,7 +1123,7 @@ Partial Class ctrlCustomers
         Me.cbxAddCountry.FormattingEnabled = True
         Me.cbxAddCountry.ItemHeight = 24
         Me.cbxAddCountry.Items.AddRange(New Object() {"PHILIPPINES", "CAVITE"})
-        Me.cbxAddCountry.Location = New System.Drawing.Point(422, 351)
+        Me.cbxAddCountry.Location = New System.Drawing.Point(422, 383)
         Me.cbxAddCountry.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.cbxAddCountry.Name = "cbxAddCountry"
         Me.cbxAddCountry.Size = New System.Drawing.Size(283, 32)
@@ -1136,7 +1136,7 @@ Partial Class ctrlCustomers
         Me.tbxAddBarangay.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddBarangay.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddBarangay.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddBarangay.Location = New System.Drawing.Point(422, 183)
+        Me.tbxAddBarangay.Location = New System.Drawing.Point(422, 146)
         Me.tbxAddBarangay.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddBarangay.Name = "tbxAddBarangay"
         Me.tbxAddBarangay.Size = New System.Drawing.Size(282, 30)
@@ -1148,7 +1148,7 @@ Partial Class ctrlCustomers
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label18.Location = New System.Drawing.Point(77, 220)
+        Me.Label18.Location = New System.Drawing.Point(77, 207)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(71, 18)
         Me.Label18.TabIndex = 75
@@ -1160,7 +1160,7 @@ Partial Class ctrlCustomers
         Me.Label23.BackColor = System.Drawing.Color.Transparent
         Me.Label23.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label23.Location = New System.Drawing.Point(750, 107)
+        Me.Label23.Location = New System.Drawing.Point(750, 53)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(105, 18)
         Me.Label23.TabIndex = 69
@@ -1172,7 +1172,7 @@ Partial Class ctrlCustomers
         Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label19.Location = New System.Drawing.Point(420, 333)
+        Me.Label19.Location = New System.Drawing.Point(420, 365)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(71, 18)
         Me.Label19.TabIndex = 85
@@ -1184,7 +1184,7 @@ Partial Class ctrlCustomers
         Me.Label22.BackColor = System.Drawing.Color.Transparent
         Me.Label22.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label22.Location = New System.Drawing.Point(421, 221)
+        Me.Label22.Location = New System.Drawing.Point(421, 208)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(133, 18)
         Me.Label22.TabIndex = 81
@@ -1197,7 +1197,7 @@ Partial Class ctrlCustomers
         Me.tbxAddSurname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddSurname.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddSurname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddSurname.Location = New System.Drawing.Point(81, 239)
+        Me.tbxAddSurname.Location = New System.Drawing.Point(81, 226)
         Me.tbxAddSurname.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddSurname.Name = "tbxAddSurname"
         Me.tbxAddSurname.Size = New System.Drawing.Size(282, 30)
@@ -1209,7 +1209,7 @@ Partial Class ctrlCustomers
         Me.tbxAddPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddPhone.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddPhone.Location = New System.Drawing.Point(80, 353)
+        Me.tbxAddPhone.Location = New System.Drawing.Point(80, 385)
         Me.tbxAddPhone.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddPhone.MaxLength = 11
         Me.tbxAddPhone.Name = "tbxAddPhone"
@@ -1222,7 +1222,7 @@ Partial Class ctrlCustomers
         Me.Label20.BackColor = System.Drawing.Color.Transparent
         Me.Label20.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label20.Location = New System.Drawing.Point(420, 278)
+        Me.Label20.Location = New System.Drawing.Point(420, 287)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(74, 18)
         Me.Label20.TabIndex = 83
@@ -1235,7 +1235,7 @@ Partial Class ctrlCustomers
         Me.tbxAddMuniCity.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxAddMuniCity.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddMuniCity.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddMuniCity.Location = New System.Drawing.Point(423, 239)
+        Me.tbxAddMuniCity.Location = New System.Drawing.Point(423, 226)
         Me.tbxAddMuniCity.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAddMuniCity.Name = "tbxAddMuniCity"
         Me.tbxAddMuniCity.Size = New System.Drawing.Size(282, 30)
@@ -1247,7 +1247,7 @@ Partial Class ctrlCustomers
         Me.Label21.BackColor = System.Drawing.Color.Transparent
         Me.Label21.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label21.Location = New System.Drawing.Point(78, 334)
+        Me.Label21.Location = New System.Drawing.Point(78, 366)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(125, 18)
         Me.Label21.TabIndex = 67
