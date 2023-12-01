@@ -82,11 +82,11 @@ Partial Class rmsDashboard
         'panelSide
         '
         Me.panelSide.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.panelSide.Controls.Add(Me.btnTGuides)
         Me.panelSide.Controls.Add(Me.btnReserv)
+        Me.panelSide.Controls.Add(Me.btnInventory)
         Me.panelSide.Controls.Add(Me.btnAdminSettings)
         Me.panelSide.Controls.Add(Me.btnRules)
-        Me.panelSide.Controls.Add(Me.btnTGuides)
-        Me.panelSide.Controls.Add(Me.btnInventory)
         Me.panelSide.Controls.Add(Me.btnTrails)
         Me.panelSide.Controls.Add(Me.lblDateTime)
         Me.panelSide.Controls.Add(Me.btnNotif)
@@ -183,12 +183,12 @@ Partial Class rmsDashboard
         Me.btnTGuides.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTGuides.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnTGuides.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTGuides.Location = New System.Drawing.Point(0, 532)
+        Me.btnTGuides.Location = New System.Drawing.Point(0, 446)
         Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
         Me.btnTGuides.Name = "btnTGuides"
         Me.btnTGuides.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnTGuides.Size = New System.Drawing.Size(205, 43)
-        Me.btnTGuides.TabIndex = 10
+        Me.btnTGuides.TabIndex = 8
         Me.btnTGuides.Text = "Tour Guides"
         Me.btnTGuides.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTGuides.UseVisualStyleBackColor = True
@@ -205,12 +205,12 @@ Partial Class rmsDashboard
         Me.btnInventory.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInventory.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInventory.Location = New System.Drawing.Point(0, 489)
+        Me.btnInventory.Location = New System.Drawing.Point(0, 403)
         Me.btnInventory.Margin = New System.Windows.Forms.Padding(0)
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnInventory.Size = New System.Drawing.Size(205, 43)
-        Me.btnInventory.TabIndex = 9
+        Me.btnInventory.TabIndex = 7
         Me.btnInventory.Text = "Inventory"
         Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnInventory.UseVisualStyleBackColor = True
@@ -263,13 +263,13 @@ Partial Class rmsDashboard
         Me.btnNotif.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNotif.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnNotif.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNotif.Location = New System.Drawing.Point(0, 446)
+        Me.btnNotif.Location = New System.Drawing.Point(0, 532)
         Me.btnNotif.Margin = New System.Windows.Forms.Padding(0)
         Me.btnNotif.Name = "btnNotif"
         Me.btnNotif.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnNotif.Size = New System.Drawing.Size(205, 43)
-        Me.btnNotif.TabIndex = 8
-        Me.btnNotif.Text = "Notifications"
+        Me.btnNotif.TabIndex = 10
+        Me.btnNotif.Text = "Pending Accounts"
         Me.btnNotif.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNotif.UseVisualStyleBackColor = True
         '
@@ -285,12 +285,12 @@ Partial Class rmsDashboard
         Me.btnCustomers.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCustomers.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCustomers.Location = New System.Drawing.Point(0, 403)
+        Me.btnCustomers.Location = New System.Drawing.Point(0, 489)
         Me.btnCustomers.Margin = New System.Windows.Forms.Padding(0)
         Me.btnCustomers.Name = "btnCustomers"
         Me.btnCustomers.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnCustomers.Size = New System.Drawing.Size(205, 43)
-        Me.btnCustomers.TabIndex = 7
+        Me.btnCustomers.TabIndex = 9
         Me.btnCustomers.Text = "Manage Customers"
         Me.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCustomers.UseVisualStyleBackColor = True

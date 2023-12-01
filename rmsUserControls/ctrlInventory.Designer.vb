@@ -72,7 +72,7 @@ Partial Class ctrlInventory
         Me.cbxUpdStatus.FormattingEnabled = True
         Me.cbxUpdStatus.ItemHeight = 22
         Me.cbxUpdStatus.Items.AddRange(New Object() {"AVAILABLE", "NOT AVAILABLE", "MAINTENANCE"})
-        Me.cbxUpdStatus.Location = New System.Drawing.Point(253, 46)
+        Me.cbxUpdStatus.Location = New System.Drawing.Point(253, 64)
         Me.cbxUpdStatus.Name = "cbxUpdStatus"
         Me.cbxUpdStatus.Size = New System.Drawing.Size(139, 30)
         Me.cbxUpdStatus.TabIndex = 1
@@ -83,7 +83,7 @@ Partial Class ctrlInventory
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(250, 25)
+        Me.Label8.Location = New System.Drawing.Point(250, 43)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(53, 18)
         Me.Label8.TabIndex = 60
@@ -96,7 +96,7 @@ Partial Class ctrlInventory
         Me.updID.Cursor = System.Windows.Forms.Cursors.No
         Me.updID.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.updID.Location = New System.Drawing.Point(56, 45)
+        Me.updID.Location = New System.Drawing.Point(56, 63)
         Me.updID.Name = "updID"
         Me.updID.ReadOnly = True
         Me.updID.Size = New System.Drawing.Size(191, 30)
@@ -109,7 +109,7 @@ Partial Class ctrlInventory
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(53, 24)
+        Me.Label7.Location = New System.Drawing.Point(53, 42)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(20, 18)
         Me.Label7.TabIndex = 54
@@ -134,7 +134,7 @@ Partial Class ctrlInventory
         Me.updBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.updBrand.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updBrand.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.updBrand.Location = New System.Drawing.Point(56, 118)
+        Me.updBrand.Location = New System.Drawing.Point(56, 136)
         Me.updBrand.Name = "updBrand"
         Me.updBrand.Size = New System.Drawing.Size(336, 30)
         Me.updBrand.TabIndex = 2
@@ -146,7 +146,7 @@ Partial Class ctrlInventory
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(53, 97)
+        Me.Label2.Location = New System.Drawing.Point(53, 115)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 18)
         Me.Label2.TabIndex = 48
@@ -170,7 +170,7 @@ Partial Class ctrlInventory
         Me.updModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.updModel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.updModel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.updModel.Location = New System.Drawing.Point(56, 197)
+        Me.updModel.Location = New System.Drawing.Point(56, 214)
         Me.updModel.Name = "updModel"
         Me.updModel.Size = New System.Drawing.Size(336, 30)
         Me.updModel.TabIndex = 3
@@ -182,7 +182,7 @@ Partial Class ctrlInventory
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(54, 176)
+        Me.Label4.Location = New System.Drawing.Point(54, 193)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 18)
         Me.Label4.TabIndex = 63
@@ -361,7 +361,7 @@ Partial Class ctrlInventory
         Me.cbxAddStatus.FormattingEnabled = True
         Me.cbxAddStatus.ItemHeight = 22
         Me.cbxAddStatus.Items.AddRange(New Object() {"AVAILABLE", "NOT AVAILABLE"})
-        Me.cbxAddStatus.Location = New System.Drawing.Point(56, 202)
+        Me.cbxAddStatus.Location = New System.Drawing.Point(56, 218)
         Me.cbxAddStatus.Name = "cbxAddStatus"
         Me.cbxAddStatus.Size = New System.Drawing.Size(139, 30)
         Me.cbxAddStatus.TabIndex = 2
@@ -372,7 +372,7 @@ Partial Class ctrlInventory
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(54, 24)
+        Me.Label1.Location = New System.Drawing.Point(54, 40)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 18)
         Me.Label1.TabIndex = 127
@@ -385,7 +385,7 @@ Partial Class ctrlInventory
         Me.addBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.addBrand.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addBrand.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.addBrand.Location = New System.Drawing.Point(57, 45)
+        Me.addBrand.Location = New System.Drawing.Point(57, 61)
         Me.addBrand.Name = "addBrand"
         Me.addBrand.Size = New System.Drawing.Size(336, 30)
         Me.addBrand.TabIndex = 0
@@ -410,7 +410,7 @@ Partial Class ctrlInventory
         Me.addModel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.addModel.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addModel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.addModel.Location = New System.Drawing.Point(56, 124)
+        Me.addModel.Location = New System.Drawing.Point(56, 140)
         Me.addModel.Name = "addModel"
         Me.addModel.Size = New System.Drawing.Size(336, 30)
         Me.addModel.TabIndex = 1
@@ -422,7 +422,7 @@ Partial Class ctrlInventory
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label9.Location = New System.Drawing.Point(54, 103)
+        Me.Label9.Location = New System.Drawing.Point(54, 119)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(49, 18)
         Me.Label9.TabIndex = 135
@@ -445,7 +445,7 @@ Partial Class ctrlInventory
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label10.Location = New System.Drawing.Point(53, 181)
+        Me.Label10.Location = New System.Drawing.Point(53, 197)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(53, 18)
         Me.Label10.TabIndex = 132

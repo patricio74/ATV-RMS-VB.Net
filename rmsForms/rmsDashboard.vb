@@ -128,35 +128,42 @@
                 unauthorizz.Visible = True
             End If
         ElseIf sender Is btnNotif Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            notifs.Visible = True
+            If rmsSharedVar.role = "admin" OrElse rmsSharedVar.role = "root" Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                notifs.Visible = True
+            Else 'if user role is not =admin,root
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                unauthorizz.Visible = True
+            End If
         ElseIf sender Is btnInventory Then
-            If rmsSharedVar.role = "admin" OrElse rmsSharedVar.role = "root" Then
-                resetButtonColor()
-                activeButtonColor(sender, e)
-                hidePanels()
-                inve.Visible = True
-            Else 'if user role is not =admin,root
-                resetButtonColor()
-                activeButtonColor(sender, e)
-                hidePanels()
-                unauthorizz.Visible = True
-            End If
-        ElseIf sender Is btnTGuides Then
-            If rmsSharedVar.role = "admin" OrElse rmsSharedVar.role = "root" Then
-                resetButtonColor()
-                activeButtonColor(sender, e)
-                hidePanels()
-                guide.Visible = True
-            Else 'if user role is not =admin,root
-                resetButtonColor()
-                activeButtonColor(sender, e)
-                hidePanels()
-                unauthorizz.Visible = True
-            End If
-        ElseIf sender Is btnRules Then
+                If rmsSharedVar.role = "admin" OrElse rmsSharedVar.role = "root" Then
+                    resetButtonColor()
+                    activeButtonColor(sender, e)
+                    hidePanels()
+                    inve.Visible = True
+                Else 'if user role is not =admin,root
+                    resetButtonColor()
+                    activeButtonColor(sender, e)
+                    hidePanels()
+                    unauthorizz.Visible = True
+                End If
+            ElseIf sender Is btnTGuides Then
+                If rmsSharedVar.role = "admin" OrElse rmsSharedVar.role = "root" Then
+                    resetButtonColor()
+                    activeButtonColor(sender, e)
+                    hidePanels()
+                    guide.Visible = True
+                Else 'if user role is not =admin,root
+                    resetButtonColor()
+                    activeButtonColor(sender, e)
+                    hidePanels()
+                    unauthorizz.Visible = True
+                End If
+            ElseIf sender Is btnRules Then
                 resetButtonColor()
                 activeButtonColor(sender, e)
                 hidePanels()
