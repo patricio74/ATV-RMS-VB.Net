@@ -77,13 +77,13 @@ Public Class ctrlOverview
         End If
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles overviewTimer.Tick
-        If Me.Visible = True Then
+        If rmsDashboard.switchOverview = True Then
             loadStats()
         Else
         End If
     End Sub
     Private Sub loadStats()
-        If Me.Visible = True Then
+        If rmsDashboard.switchOverview = True Then
             'pangcount sa reservations
             Dim pendingResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Pending")
             Dim canceledResFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Canceled")
@@ -149,12 +149,12 @@ Public Class ctrlOverview
         End If
     End Sub
     Private Sub loadReservationz(selectedDate As Date)
-        If Me.Visible = True Then
+        If rmsDashboard.switchOverview = True Then
             'convert to iso 8601 format
             Dim isoDateString As String = selectedDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
             'display reservs sa dgvReserv
             Dim filter As FilterDefinition(Of BsonDocument) =
-            Builders(Of BsonDocument).Filter.And(
+                Builders(Of BsonDocument).Filter.And(
                 Builders(Of BsonDocument).Filter.Gte(Of String)("reservDate", isoDateString),
                 Builders(Of BsonDocument).Filter.Lt(Of String)("reservDate", selectedDate.AddDays(1).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ"))
             )
@@ -183,13 +183,15 @@ Public Class ctrlOverview
         overviewTimer.Interval = 3000
         overviewTimer.Start()
         DateTimePicker1.Value = DateTime.Now.Date
-        'loadStats()
-        'loadReservationz(DateTime.Now)
     End Sub
     Private Sub ctrlOverview_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        If Me.Visible = False Then
+        If Me.Visible = True Then
+            'refresh content kada 3secs
+            overviewTimer.Interval = 3000
+            overviewTimer.Start()
+        ElseIf Me.Visible = False Then
             closeMongoConn()
-            'add code to clear form on exit
+            overviewTimer.Stop()
         End If
     End Sub
 End Class

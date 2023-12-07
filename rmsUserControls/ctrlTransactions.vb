@@ -105,7 +105,6 @@ Public Class ctrlTransactions
             clearOngoingTab()
         End If
     End Sub
-
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabTransactions.SelectedIndexChanged
         If tabTransactions.SelectedIndex = 0 Then 'walk-in transac tab
             reloadTrailList()
@@ -141,7 +140,7 @@ Public Class ctrlTransactions
 
     '!!!!!gawan mo ng list kagaya sa customerz
     Private Sub populateTransac()
-        If Me.Visible = True Then
+        If rmsDashboard.switchTransac = True Then
             Dim filter = Builders(Of BsonDocument).Filter.Empty
             Dim transacList = rmsSharedVar.colTransac.Find(filter).ToList()
             dgvTransactions.Rows.Clear()

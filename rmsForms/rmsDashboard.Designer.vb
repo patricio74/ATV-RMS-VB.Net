@@ -27,14 +27,14 @@ Partial Class rmsDashboard
         Me.labelTitle2 = New System.Windows.Forms.Label()
         Me.labelTItle = New System.Windows.Forms.Label()
         Me.panelSide = New System.Windows.Forms.Panel()
+        Me.btnTGuides = New System.Windows.Forms.Button()
         Me.btnReserv = New System.Windows.Forms.Button()
+        Me.btnInventory = New System.Windows.Forms.Button()
         Me.btnAdminSettings = New System.Windows.Forms.Button()
         Me.btnRules = New System.Windows.Forms.Button()
-        Me.btnTGuides = New System.Windows.Forms.Button()
-        Me.btnInventory = New System.Windows.Forms.Button()
         Me.btnTrails = New System.Windows.Forms.Button()
         Me.lblDateTime = New System.Windows.Forms.Label()
-        Me.btnNotif = New System.Windows.Forms.Button()
+        Me.btnPending = New System.Windows.Forms.Button()
         Me.btnCustomers = New System.Windows.Forms.Button()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnOverview = New System.Windows.Forms.Button()
@@ -89,7 +89,7 @@ Partial Class rmsDashboard
         Me.panelSide.Controls.Add(Me.btnRules)
         Me.panelSide.Controls.Add(Me.btnTrails)
         Me.panelSide.Controls.Add(Me.lblDateTime)
-        Me.panelSide.Controls.Add(Me.btnNotif)
+        Me.panelSide.Controls.Add(Me.btnPending)
         Me.panelSide.Controls.Add(Me.btnCustomers)
         Me.panelSide.Controls.Add(Me.btnLogout)
         Me.panelSide.Controls.Add(Me.btnOverview)
@@ -103,6 +103,28 @@ Partial Class rmsDashboard
         Me.panelSide.Name = "panelSide"
         Me.panelSide.Size = New System.Drawing.Size(205, 738)
         Me.panelSide.TabIndex = 0
+        '
+        'btnTGuides
+        '
+        Me.btnTGuides.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTGuides.BackColor = System.Drawing.Color.Transparent
+        Me.btnTGuides.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTGuides.FlatAppearance.BorderSize = 0
+        Me.btnTGuides.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnTGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTGuides.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTGuides.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnTGuides.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTGuides.Location = New System.Drawing.Point(0, 446)
+        Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnTGuides.Name = "btnTGuides"
+        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnTGuides.Size = New System.Drawing.Size(205, 43)
+        Me.btnTGuides.TabIndex = 8
+        Me.btnTGuides.Text = "Tour Guides"
+        Me.btnTGuides.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTGuides.UseVisualStyleBackColor = True
         '
         'btnReserv
         '
@@ -125,6 +147,28 @@ Partial Class rmsDashboard
         Me.btnReserv.Text = "Reservations"
         Me.btnReserv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReserv.UseVisualStyleBackColor = True
+        '
+        'btnInventory
+        '
+        Me.btnInventory.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnInventory.BackColor = System.Drawing.Color.Transparent
+        Me.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnInventory.FlatAppearance.BorderSize = 0
+        Me.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInventory.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventory.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnInventory.Location = New System.Drawing.Point(0, 403)
+        Me.btnInventory.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnInventory.Name = "btnInventory"
+        Me.btnInventory.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnInventory.Size = New System.Drawing.Size(205, 43)
+        Me.btnInventory.TabIndex = 7
+        Me.btnInventory.Text = "Inventory"
+        Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnInventory.UseVisualStyleBackColor = True
         '
         'btnAdminSettings
         '
@@ -171,50 +215,6 @@ Partial Class rmsDashboard
         Me.btnRules.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnRules.UseVisualStyleBackColor = True
         '
-        'btnTGuides
-        '
-        Me.btnTGuides.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTGuides.BackColor = System.Drawing.Color.Transparent
-        Me.btnTGuides.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTGuides.FlatAppearance.BorderSize = 0
-        Me.btnTGuides.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
-        Me.btnTGuides.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTGuides.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTGuides.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnTGuides.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTGuides.Location = New System.Drawing.Point(0, 446)
-        Me.btnTGuides.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnTGuides.Name = "btnTGuides"
-        Me.btnTGuides.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnTGuides.Size = New System.Drawing.Size(205, 43)
-        Me.btnTGuides.TabIndex = 8
-        Me.btnTGuides.Text = "Tour Guides"
-        Me.btnTGuides.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTGuides.UseVisualStyleBackColor = True
-        '
-        'btnInventory
-        '
-        Me.btnInventory.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnInventory.BackColor = System.Drawing.Color.Transparent
-        Me.btnInventory.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnInventory.FlatAppearance.BorderSize = 0
-        Me.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
-        Me.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInventory.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInventory.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInventory.Location = New System.Drawing.Point(0, 403)
-        Me.btnInventory.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnInventory.Name = "btnInventory"
-        Me.btnInventory.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnInventory.Size = New System.Drawing.Size(205, 43)
-        Me.btnInventory.TabIndex = 7
-        Me.btnInventory.Text = "Inventory"
-        Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnInventory.UseVisualStyleBackColor = True
-        '
         'btnTrails
         '
         Me.btnTrails.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -251,27 +251,27 @@ Partial Class rmsDashboard
         Me.lblDateTime.Text = "MMM d, yyyy hh:mm:ss tt"
         Me.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btnNotif
+        'btnPending
         '
-        Me.btnNotif.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.btnPending.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnNotif.BackColor = System.Drawing.Color.Transparent
-        Me.btnNotif.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNotif.FlatAppearance.BorderSize = 0
-        Me.btnNotif.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
-        Me.btnNotif.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNotif.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNotif.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnNotif.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNotif.Location = New System.Drawing.Point(0, 532)
-        Me.btnNotif.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnNotif.Name = "btnNotif"
-        Me.btnNotif.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnNotif.Size = New System.Drawing.Size(205, 43)
-        Me.btnNotif.TabIndex = 10
-        Me.btnNotif.Text = "Pending Accounts"
-        Me.btnNotif.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNotif.UseVisualStyleBackColor = True
+        Me.btnPending.BackColor = System.Drawing.Color.Transparent
+        Me.btnPending.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPending.FlatAppearance.BorderSize = 0
+        Me.btnPending.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(156, Byte), Integer))
+        Me.btnPending.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPending.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPending.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnPending.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPending.Location = New System.Drawing.Point(0, 532)
+        Me.btnPending.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnPending.Name = "btnPending"
+        Me.btnPending.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnPending.Size = New System.Drawing.Size(205, 43)
+        Me.btnPending.TabIndex = 10
+        Me.btnPending.Text = "Pending Accounts"
+        Me.btnPending.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPending.UseVisualStyleBackColor = True
         '
         'btnCustomers
         '
@@ -466,7 +466,7 @@ Partial Class rmsDashboard
     Friend WithEvents panelSide As Panel
     Friend WithEvents btnTransac As Button
     Friend WithEvents btnOverview As Button
-    Friend WithEvents btnNotif As Button
+    Friend WithEvents btnPending As Button
     Friend WithEvents btnCustomers As Button
     Friend WithEvents btnTGuides As Button
     Friend WithEvents btnInventory As Button

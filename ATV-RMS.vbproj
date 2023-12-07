@@ -335,12 +335,6 @@
     <Compile Include="rmsUserControls\ctrlAdminSettings.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="rmsUserControls\userNotAllowed.Designer.vb">
-      <DependentUpon>userNotAllowed.vb</DependentUpon>
-    </Compile>
-    <Compile Include="rmsUserControls\userNotAllowed.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="rmsForms\rmsPassReset.resx">
@@ -393,9 +387,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rmsUserControls\ctrlAdminSettings.resx">
       <DependentUpon>ctrlAdminSettings.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rmsUserControls\userNotAllowed.resx">
-      <DependentUpon>userNotAllowed.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

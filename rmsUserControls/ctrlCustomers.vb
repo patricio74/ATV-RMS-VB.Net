@@ -78,7 +78,7 @@ Public Class ctrlCustomers
         'tabCustInfo.SelectedIndex = 0
     End Sub
     Private Sub refreshList()
-        If Me.Visible = True Then
+        If rmsDashboard.switchCust = True Then
             dgvCustHistory.Rows.Clear()
             Dim custDocsList As List(Of BsonDocument) = rmsSharedVar.colCustomer.Find(New BsonDocument()).ToList()
             customerz = New List(Of customerDocs)()
@@ -124,7 +124,7 @@ Public Class ctrlCustomers
         clearUpdForm()
     End Sub
     Private Function getLogTransactionsByCustID(custID As String) As List(Of BsonDocument)
-        Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("custID", custID)
+        Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("customer", custID)
         Return rmsSharedVar.colTransac.Find(filter).ToList()
     End Function
     Private Sub populateCustHistoryDGV(logTransactions As List(Of BsonDocument))
@@ -421,7 +421,7 @@ Public Class ctrlCustomers
             resetFilter()
             tabCustomerz.SelectedIndex = 0
             tabCustInfo.SelectedIndex = 0
-        ElseIf Me.Visible Then
+        ElseIf Me.Visible = True Then
             refreshList()
         End If
     End Sub

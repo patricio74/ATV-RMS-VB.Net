@@ -26,7 +26,7 @@ Public Class ctrlAdminSettings
         End If
     End Sub
     Private Sub loadUsrDoc()
-        If Me.Visible = True Then
+        If rmsDashboard.switchSett = True Then
             'find the user by _id
             Dim objctId As ObjectId
             If ObjectId.TryParse(usrID, objctId) Then
@@ -185,7 +185,7 @@ Public Class ctrlAdminSettings
         End Try
     End Sub
     Private Sub ctrlAdminSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        loadUsrDoc
+        loadUsrDoc()
     End Sub
     Private Sub ctrlAdminSettings_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
@@ -196,7 +196,6 @@ Public Class ctrlAdminSettings
             loadUsrDoc()
         End If
     End Sub
-
     Private Sub settings_TextChanged(sender As Object, e As EventArgs) Handles usrUsername.TextChanged, usrPhone.TextChanged, usrRFID.TextChanged, usrEmail.TextChanged,
         usrPword2.TextChanged, usrPword.TextChanged, usrOldPword.TextChanged
         'para walang space na ma-input
@@ -230,5 +229,4 @@ Public Class ctrlAdminSettings
             usrPword2.SelectionStart = cursorPos
         End If
     End Sub
-
 End Class

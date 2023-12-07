@@ -12,9 +12,9 @@ Public Class ctrlTourGuides
         Public Property empPhone As String
         Public Property empAddress As String
         Public Property empRFID As String
-        Public Property empUsername As String
-        Public Property empPassword As String
-        Public Property empRole As String
+        Public Property empStatus As String
+        'Public Property empUsername As String
+        'Public Property empPassword As String
         Public Property empCreationDate As String
     End Class
     Private Sub clearUpdEmpTab()
@@ -25,7 +25,7 @@ Public Class ctrlTourGuides
         tbxUpdEmpPhone.Clear()
         tbxUpdEmpEmail.Clear()
         tbxUpdEmpAddress.Clear()
-        cbxUpdEmpRole.SelectedIndex = -1
+        cbxStatus.SelectedIndex = -1
         lblUpdEmpDate.Text = "Account creation date: ---------"
         populateEmpDGV()
         dgvTourGuide.ClearSelection()
@@ -113,26 +113,26 @@ Public Class ctrlTourGuides
         '
         '
     End Sub
-    Private Sub populateFilteredList(tGuidez As List(Of empDoc))
-        dgvTourGuide.Rows.Clear()
-        For Each tg As empDoc In tGuidez
-            Dim row As New DataGridViewRow()
-            row.CreateCells(dgvTourGuide, tg.empRFID, tg.empFname, tg.empMname, tg.empSname, tg.empPhone, tg.empEmail)
-            dgvTourGuide.Rows.Add(row)
-        Next
-        dgvTourGuide.ClearSelection()
-        clearUpdEmpTab()
-    End Sub
+    'Private Sub populateFilteredList(tGuidez As List(Of empDoc))
+    '    dgvTourGuide.Rows.Clear()
+    '    For Each tg As empDoc In tGuidez
+    '        Dim row As New DataGridViewRow()
+    '        row.CreateCells(dgvTourGuide, tg.empRFID, tg.empFname, tg.empMname, tg.empSname, tg.empPhone, tg.empEmail)
+    '        dgvTourGuide.Rows.Add(row)
+    '    Next
+    '    dgvTourGuide.ClearSelection()
+    '    clearUpdEmpTab()
+    'End Sub
     Private Sub populateEmpDGV()
-        If Me.Visible = True Then
+        If rmsDashboard.switchTgui = True Then
             dgvTourGuide.Rows.Clear()
-            Dim empDocList As List(Of BsonDocument) = rmsSharedVar.colAdmin.Find(New BsonDocument()).ToList()
+            Dim empDocList As List(Of BsonDocument) = rmsSharedVar.colTourGuide.Find(New BsonDocument()).ToList()
             tGuidez = New List(Of empDoc)()
             For Each document As BsonDocument In empDocList
                 'display * docs to dgv where role=tourguide
-                If document("role").ToString = "tourguide" Then
-                    Dim idElement = document.GetElement("_id")
-                    Dim emplist As New empDoc() With {
+                'If document("role").ToString = "tourguide" Then
+                Dim idElement = document.GetElement("_id")
+                Dim emplist As New empDoc() With {
                     .empID = idElement.Value.AsObjectId.ToString,
                     .empFname = document("FName").ToString,
                     .empMname = document("MName").ToString,
@@ -140,14 +140,12 @@ Public Class ctrlTourGuides
                     .empPhone = document("phone").ToString,
                     .empEmail = document("email").ToString,
                     .empRFID = document("RFID").ToString,
-                    .empUsername = document("username").ToString,
-                    .empPassword = document("password").ToString,
                     .empAddress = document("address").ToString,
-                    .empCreationDate = document("accountCreationDate").ToString,
-                    .empRole = document("role").ToString
+                    .empStatus = document("status").ToString,
+                    .empCreationDate = document("accountCreationDate").ToString
                 }
-                    tGuidez.Add(emplist)
-                End If
+                tGuidez.Add(emplist)
+                'End If
             Next
             dgvTourGuide.Rows.Clear()
             For Each doc In tGuidez
@@ -156,7 +154,7 @@ Public Class ctrlTourGuides
             dgvTourGuide.ClearSelection()
         End If
     End Sub
-    Private Sub dgvTrails_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTourGuide.CellClick
+    Private Sub dgvTourGuide_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTourGuide.CellClick
         If e.RowIndex >= 0 Then
             tabTourGuide.SelectedIndex = 0 'update trails tab
             If tGuidez IsNot Nothing AndAlso e.RowIndex < tGuidez.Count Then
@@ -164,11 +162,11 @@ Public Class ctrlTourGuides
                 tbxUpdEmpFname.Text = selectedEmp.empFname
                 tbxUpdEmpMname.Text = selectedEmp.empMname
                 tbxUpdEmpSname.Text = selectedEmp.empSname
-                cbxUpdEmpRole.Text = selectedEmp.empRole
                 tbxUpdEmpRFID.Text = selectedEmp.empRFID
                 tbxUpdEmpPhone.Text = selectedEmp.empPhone
                 tbxUpdEmpEmail.Text = selectedEmp.empEmail
                 tbxUpdEmpAddress.Text = selectedEmp.empAddress
+                cbxStatus.Text = selectedEmp.empStatus
                 lblUpdEmpDate.Text = "Account creation date: " + selectedEmp.empCreationDate
             End If
         End If
@@ -178,6 +176,7 @@ Public Class ctrlTourGuides
 
         ElseIf tabTourGuide.SelectedIndex = 1 Then 'add new emp tab
             clearUpdEmpTab()
+            tbxAddEmpFname.Focus()
         End If
     End Sub
     Private Sub btnUpd_Click(sender As Object, e As EventArgs) Handles btnUpdEmp.Click, btnDelEmp.Click, btnUpdDownloadResume.Click,
@@ -187,7 +186,7 @@ Public Class ctrlTourGuides
                 Dim selectedRow = dgvTourGuide.SelectedRows(0)
                 Dim selectedEmp = tGuidez(selectedRow.Index)
                 Dim empID As String = selectedEmp.empID
-                If String.IsNullOrEmpty(tbxUpdEmpFname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpMname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpSname.Text) OrElse cbxUpdEmpRole.SelectedIndex = -1 OrElse String.IsNullOrEmpty(tbxUpdEmpPhone.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpEmail.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpAddress.Text) Then
+                If String.IsNullOrEmpty(tbxUpdEmpFname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpMname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpSname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpPhone.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpEmail.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpAddress.Text) Then
                     MessageBox.Show("Please fill in all fields to continue.")
                 Else
                     Dim updConfirmation As DialogResult = MessageBox.Show("Do you want to update this info?", "Confirmation", MessageBoxButtons.YesNo)
@@ -199,12 +198,12 @@ Public Class ctrlTourGuides
                                 Dim update = Builders(Of BsonDocument).Update.Set(Of String)("FName", tbxUpdEmpFname.Text).
                                 Set(Of String)("MName", tbxUpdEmpMname.Text).
                                 Set(Of String)("Sname", tbxUpdEmpSname.Text).
-                                Set(Of String)("role", cbxUpdEmpRole.SelectedItem.ToString()).
                                 Set(Of String)("phone", tbxUpdEmpPhone.Text).
                                 Set(Of String)("email", tbxUpdEmpEmail.Text).
                                 Set(Of String)("RFID", tbxUpdEmpRFID.Text).
-                                Set(Of String)("address", tbxUpdEmpAddress.Text)
-                                rmsSharedVar.colAdmin.UpdateOne(filter, update)
+                                Set(Of String)("address", tbxUpdEmpAddress.Text).
+                                Set(Of String)("status", cbxStatus.Text)
+                                rmsSharedVar.colTourGuide.UpdateOne(filter, update)
                                 MessageBox.Show("Tour guide information updated successfully.")
                                 populateEmpDGV()
                                 clearUpdEmpTab()
@@ -245,7 +244,6 @@ Public Class ctrlTourGuides
                 Dim addConfirmation As DialogResult = MessageBox.Show("Do you want to save this tour guide account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If addConfirmation = DialogResult.Yes Then
                     Try
-                        'set username same as email, default poassword;admin1234, role=tourguide, blank rfid
                         Dim newEmpDoc As New BsonDocument From {
                         {"FName", tbxAddEmpFname.Text},
                         {"MName", tbxAddEmpMname.Text},
@@ -253,13 +251,11 @@ Public Class ctrlTourGuides
                         {"phone", tbxAddEmpPhone.Text},
                         {"email", tbxAddEmpEmail.Text},
                         {"address", tbxAddEmpAddress.Text},
-                        {"username", tbxAddEmpEmail.Text},
-                        {"password", "admin1234"},
-                        {"RFID", ""},
-                        {"role", "tourguide"},
+                        {"RFID", tbxAddEmpRFID.Text},
+                        {"status", cbxStatus.Text},
                         {"accountCreationDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")}
                     }
-                        rmsSharedVar.colAdmin.InsertOne(newEmpDoc)
+                        rmsSharedVar.colTourGuide.InsertOne(newEmpDoc)
                         MessageBox.Show("New tour guide account added successfully.")
                         populateEmpDGV()
                         clearAddEmpTab()
@@ -281,12 +277,12 @@ Public Class ctrlTourGuides
             Dim objectId As ObjectId
             If ObjectId.TryParse(tgID, objectId) Then
                 Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objectId)
-                Dim document = rmsSharedVar.colAdmin.Find(filter).FirstOrDefault()
+                Dim document = rmsSharedVar.colTourGuide.Find(filter).FirstOrDefault()
                 If document IsNot Nothing Then
                     'Add date to accountDeletionDate bago iarchive
                     document.Add("accountDeletionDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                    rmsSharedVar.archiveAdmin.InsertOne(document)
-                    rmsSharedVar.colAdmin.DeleteOne(filter)
+                    rmsSharedVar.archiveTourGuide.InsertOne(document)
+                    rmsSharedVar.colTourGuide.DeleteOne(filter)
                     MessageBox.Show("Tour guide account deleted successfully.")
                     populateEmpDGV()
                     clearUpdEmpTab()

@@ -38,21 +38,13 @@ Partial Class ctrlTourGuides
         Me.tbxUpdEmpFname = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvTourGuide = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabTourGuide = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbxStatus = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.tbxUpdEmpAddress = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnUpdDownloadResume = New System.Windows.Forms.Button()
-        Me.cbxUpdEmpRole = New System.Windows.Forms.ComboBox()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.lblUpdEmpDate = New System.Windows.Forms.Label()
         Me.btnDelEmp = New System.Windows.Forms.Button()
         Me.btnUpdEmp = New System.Windows.Forms.Button()
@@ -82,6 +74,12 @@ Partial Class ctrlTourGuides
         Me.tbxSearchEmail = New System.Windows.Forms.TextBox()
         Me.tbxSearchPhone = New System.Windows.Forms.TextBox()
         Me.tbxSearchSur = New System.Windows.Forms.TextBox()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvTourGuide, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTourGuide.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -283,48 +281,6 @@ Partial Class ctrlTourGuides
         Me.dgvTourGuide.Size = New System.Drawing.Size(1092, 287)
         Me.dgvTourGuide.TabIndex = 47
         '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "RFID NO."
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "FIRST NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "MIDDLE NAME"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "SURNAME"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column6.HeaderText = "PHONE NUMBER"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.HeaderText = "EMAIL ADDRESS"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
         'tabTourGuide
         '
         Me.tabTourGuide.Controls.Add(Me.TabPage1)
@@ -338,13 +294,11 @@ Partial Class ctrlTourGuides
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.TabPage1.Controls.Add(Me.ComboBox1)
+        Me.TabPage1.Controls.Add(Me.cbxStatus)
         Me.TabPage1.Controls.Add(Me.Label16)
         Me.TabPage1.Controls.Add(Me.tbxUpdEmpAddress)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Controls.Add(Me.btnUpdDownloadResume)
-        Me.TabPage1.Controls.Add(Me.cbxUpdEmpRole)
-        Me.TabPage1.Controls.Add(Me.Label15)
         Me.TabPage1.Controls.Add(Me.lblUpdEmpDate)
         Me.TabPage1.Controls.Add(Me.btnDelEmp)
         Me.TabPage1.Controls.Add(Me.btnUpdEmp)
@@ -367,20 +321,20 @@ Partial Class ctrlTourGuides
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "  Update tour guide   "
         '
-        'ComboBox1
+        'cbxStatus
         '
-        Me.ComboBox1.BackColor = System.Drawing.Color.White
-        Me.ComboBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.ItemHeight = 22
-        Me.ComboBox1.Items.AddRange(New Object() {"available", "not available"})
-        Me.ComboBox1.Location = New System.Drawing.Point(263, 250)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(148, 30)
-        Me.ComboBox1.TabIndex = 4
+        Me.cbxStatus.BackColor = System.Drawing.Color.White
+        Me.cbxStatus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.cbxStatus.FormattingEnabled = True
+        Me.cbxStatus.ItemHeight = 22
+        Me.cbxStatus.Items.AddRange(New Object() {"available", "not available"})
+        Me.cbxStatus.Location = New System.Drawing.Point(100, 250)
+        Me.cbxStatus.Name = "cbxStatus"
+        Me.cbxStatus.Size = New System.Drawing.Size(148, 30)
+        Me.cbxStatus.TabIndex = 4
         '
         'Label16
         '
@@ -388,7 +342,7 @@ Partial Class ctrlTourGuides
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label16.Location = New System.Drawing.Point(260, 232)
+        Me.Label16.Location = New System.Drawing.Point(97, 232)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(58, 18)
         Me.Label16.TabIndex = 10008
@@ -398,12 +352,11 @@ Partial Class ctrlTourGuides
         '
         Me.tbxUpdEmpAddress.BackColor = System.Drawing.Color.White
         Me.tbxUpdEmpAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxUpdEmpAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxUpdEmpAddress.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxUpdEmpAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxUpdEmpAddress.Location = New System.Drawing.Point(476, 248)
+        Me.tbxUpdEmpAddress.Location = New System.Drawing.Point(303, 248)
         Me.tbxUpdEmpAddress.Name = "tbxUpdEmpAddress"
-        Me.tbxUpdEmpAddress.Size = New System.Drawing.Size(311, 30)
+        Me.tbxUpdEmpAddress.Size = New System.Drawing.Size(484, 30)
         Me.tbxUpdEmpAddress.TabIndex = 8
         Me.tbxUpdEmpAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -413,7 +366,7 @@ Partial Class ctrlTourGuides
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(473, 229)
+        Me.Label8.Location = New System.Drawing.Point(300, 229)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(66, 18)
         Me.Label8.TabIndex = 10006
@@ -434,33 +387,6 @@ Partial Class ctrlTourGuides
         Me.btnUpdDownloadResume.TabIndex = 11
         Me.btnUpdDownloadResume.Text = "view resume"
         Me.btnUpdDownloadResume.UseVisualStyleBackColor = False
-        '
-        'cbxUpdEmpRole
-        '
-        Me.cbxUpdEmpRole.BackColor = System.Drawing.Color.White
-        Me.cbxUpdEmpRole.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cbxUpdEmpRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxUpdEmpRole.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxUpdEmpRole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.cbxUpdEmpRole.FormattingEnabled = True
-        Me.cbxUpdEmpRole.ItemHeight = 22
-        Me.cbxUpdEmpRole.Items.AddRange(New Object() {"tourguide", "admin"})
-        Me.cbxUpdEmpRole.Location = New System.Drawing.Point(100, 250)
-        Me.cbxUpdEmpRole.Name = "cbxUpdEmpRole"
-        Me.cbxUpdEmpRole.Size = New System.Drawing.Size(132, 30)
-        Me.cbxUpdEmpRole.TabIndex = 3
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.Color.Transparent
-        Me.Label15.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label15.Location = New System.Drawing.Point(97, 232)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(44, 18)
-        Me.Label15.TabIndex = 10003
-        Me.Label15.Text = "ROLE:"
         '
         'lblUpdEmpDate
         '
@@ -538,7 +464,6 @@ Partial Class ctrlTourGuides
         '
         Me.tbxAddEmpAddress.BackColor = System.Drawing.Color.White
         Me.tbxAddEmpAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxAddEmpAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxAddEmpAddress.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddEmpAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxAddEmpAddress.Location = New System.Drawing.Point(99, 258)
@@ -856,6 +781,48 @@ Partial Class ctrlTourGuides
         Me.tbxSearchSur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tbxSearchSur.Visible = False
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "RFID NO."
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 130
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "FIRST NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "MIDDLE NAME"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.HeaderText = "SURNAME"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column6.HeaderText = "PHONE NUMBER"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.HeaderText = "EMAIL ADDRESS"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        '
         'ctrlTourGuides
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -907,8 +874,6 @@ Partial Class ctrlTourGuides
     Friend WithEvents tbxSearchEmail As TextBox
     Friend WithEvents tbxSearchPhone As TextBox
     Friend WithEvents tbxSearchSur As TextBox
-    Friend WithEvents cbxUpdEmpRole As ComboBox
-    Friend WithEvents Label15 As Label
     Friend WithEvents btnUpdDownloadResume As Button
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btnClearForm As Button
@@ -925,17 +890,17 @@ Partial Class ctrlTourGuides
     Friend WithEvents tbxAddEmpRFID As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents btnAddEmp As Button
+    Friend WithEvents tbxUpdEmpAddress As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents tbxAddEmpAddress As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents tbxSearchRFID As TextBox
+    Friend WithEvents cbxStatus As ComboBox
+    Friend WithEvents Label16 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents tbxUpdEmpAddress As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents tbxAddEmpAddress As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents tbxSearchRFID As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label16 As Label
 End Class

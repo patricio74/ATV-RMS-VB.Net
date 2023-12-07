@@ -56,7 +56,7 @@ Public Class ctrlTrails
         updDescription.Text = updDescription.Text.Trim
     End Sub
     Private Sub populateTrails()
-        If Me.Visible = True Then
+        If rmsDashboard.switchTrail = True Then
             dgvTrails.Rows.Clear()
             Dim trailDocList As List(Of BsonDocument) = rmsSharedVar.colTrails.Find(New BsonDocument()).ToList()
             trailz = New List(Of trailDoc)()

@@ -29,7 +29,7 @@ Public Class ctrlInventory
         End If
     End Sub
     Private Sub refreshInv()
-        If Me.Visible = True Then
+        If rmsDashboard.switchInven = True Then
             dgvInventory.Rows.Clear()
             Dim invList As List(Of BsonDocument) = rmsSharedVar.colInventory.Find(New BsonDocument()).ToList()
             inventoryy = New List(Of inventoryDoc)()
@@ -62,10 +62,11 @@ Public Class ctrlInventory
     End Sub
     Private Sub tabInventory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabInventory.SelectedIndexChanged
         If tabInventory.SelectedIndex = 0 Then 'update ATV tab
-
+            updBrand.Focus()
         ElseIf tabInventory.SelectedIndex = 1 Then 'add new ATV tab
             refreshInv()
             clearAtvForm()
+            addBrand.Focus()
         End If
     End Sub
     Private Sub dgvInventory_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvInventory.CellClick
@@ -78,6 +79,7 @@ Public Class ctrlInventory
                 updModel.Text = selectedAtv.atvModel
                 rtbxUpdDesc.Text = selectedAtv.description
                 cbxUpdStatus.Text = selectedAtv.status
+                updBrand.Focus()
             End If
         End If
     End Sub
