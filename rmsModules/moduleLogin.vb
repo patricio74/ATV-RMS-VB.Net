@@ -31,8 +31,6 @@ Module moduleLogin
                     rmsSharedVar.currentUser = admnFullName
                     Dim adminID As String = loginDocument("_id").ToString()
                     rmsSharedVar.admnID = adminID
-                    Dim accType As String = loginDocument("role").ToString
-                    rmsSharedVar.role = accType
                     rmsDashboard.Show()
                     rmsLogin.Hide()
                 Else
@@ -65,8 +63,6 @@ Module moduleLogin
                 rmsSharedVar.currentUser = admnFullName
                 Dim adminID As String = $"{rfidDocument("_id")}"
                 rmsSharedVar.admnID = adminID
-                Dim accType As String = rfidDocument("role").ToString
-                rmsSharedVar.role = accType
                 rmsDashboard.Show()
                 rmsLogin.Hide()
             Else

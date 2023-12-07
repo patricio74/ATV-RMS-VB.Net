@@ -26,5 +26,4 @@ Public Class rmsSharedVar
 
     Public Shared currentUser As String   'store current user's username
     Public Shared admnID  'store userid
-    Public Shared role As String 'store account type
 End Class
