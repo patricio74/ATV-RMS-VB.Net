@@ -26,17 +26,7 @@ Partial Class ctrlOverview
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnResetDate = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.btnRefreshReviews = New System.Windows.Forms.Button()
-        Me.dgvReviews = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rtbxReview = New System.Windows.Forms.RichTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgvReservations = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,8 +52,6 @@ Partial Class ctrlOverview
         Me.lblRevYest = New System.Windows.Forms.Label()
         Me.lblRev = New System.Windows.Forms.Label()
         Me.overviewTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.dgvReviews, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvReservations, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelReserv.SuspendLayout()
@@ -87,121 +75,6 @@ Partial Class ctrlOverview
         Me.btnResetDate.TabIndex = 23
         Me.btnResetDate.Text = "Reset"
         Me.btnResetDate.UseVisualStyleBackColor = False
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.GroupBox3.Controls.Add(Me.btnRefreshReviews)
-        Me.GroupBox3.Controls.Add(Me.dgvReviews)
-        Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.GroupBox3.Location = New System.Drawing.Point(572, 661)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.GroupBox3.Size = New System.Drawing.Size(579, 43)
-        Me.GroupBox3.TabIndex = 27
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Customer Reviews"
-        Me.GroupBox3.Visible = False
-        '
-        'btnRefreshReviews
-        '
-        Me.btnRefreshReviews.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRefreshReviews.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnRefreshReviews.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRefreshReviews.FlatAppearance.BorderSize = 0
-        Me.btnRefreshReviews.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRefreshReviews.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefreshReviews.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnRefreshReviews.Location = New System.Drawing.Point(505, 26)
-        Me.btnRefreshReviews.Name = "btnRefreshReviews"
-        Me.btnRefreshReviews.Size = New System.Drawing.Size(61, 28)
-        Me.btnRefreshReviews.TabIndex = 44
-        Me.btnRefreshReviews.Text = "refresh"
-        Me.btnRefreshReviews.UseVisualStyleBackColor = False
-        '
-        'dgvReviews
-        '
-        Me.dgvReviews.AllowUserToAddRows = False
-        Me.dgvReviews.AllowUserToOrderColumns = True
-        Me.dgvReviews.BackgroundColor = System.Drawing.Color.DarkGray
-        Me.dgvReviews.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvReviews.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReviews.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvReviews.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
-        Me.dgvReviews.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvReviews.EnableHeadersVisualStyles = False
-        Me.dgvReviews.GridColor = System.Drawing.Color.DarkGray
-        Me.dgvReviews.Location = New System.Drawing.Point(0, 23)
-        Me.dgvReviews.Margin = New System.Windows.Forms.Padding(0)
-        Me.dgvReviews.MultiSelect = False
-        Me.dgvReviews.Name = "dgvReviews"
-        Me.dgvReviews.ReadOnly = True
-        Me.dgvReviews.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReviews.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvReviews.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.dgvReviews.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvReviews.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvReviews.ShowEditingIcon = False
-        Me.dgvReviews.Size = New System.Drawing.Size(579, 20)
-        Me.dgvReviews.TabIndex = 35
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Ratings"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 60
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 200
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Review"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'rtbxReview
-        '
-        Me.rtbxReview.BackColor = System.Drawing.Color.DarkGray
-        Me.rtbxReview.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.rtbxReview.Cursor = System.Windows.Forms.Cursors.No
-        Me.rtbxReview.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rtbxReview.ForeColor = System.Drawing.Color.White
-        Me.rtbxReview.Location = New System.Drawing.Point(572, 716)
-        Me.rtbxReview.Margin = New System.Windows.Forms.Padding(0)
-        Me.rtbxReview.Name = "rtbxReview"
-        Me.rtbxReview.ReadOnly = True
-        Me.rtbxReview.Size = New System.Drawing.Size(579, 12)
-        Me.rtbxReview.TabIndex = 43
-        Me.rtbxReview.Text = "Reviews from selected row will be shown here."
-        Me.rtbxReview.Visible = False
         '
         'GroupBox1
         '
@@ -229,15 +102,15 @@ Partial Class ctrlOverview
         Me.dgvReservations.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.dgvReservations.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvReservations.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReservations.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReservations.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReservations.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
         Me.dgvReservations.EnableHeadersVisualStyles = False
@@ -247,21 +120,21 @@ Partial Class ctrlOverview
         Me.dgvReservations.Name = "dgvReservations"
         Me.dgvReservations.ReadOnly = True
         Me.dgvReservations.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReservations.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReservations.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvReservations.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.dgvReservations.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.dgvReservations.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReservations.ShowEditingIcon = False
         Me.dgvReservations.Size = New System.Drawing.Size(1104, 399)
@@ -544,14 +417,10 @@ Partial Class ctrlOverview
         Me.Controls.Add(Me.panelReserv)
         Me.Controls.Add(Me.panelCustomer)
         Me.Controls.Add(Me.panelRevenue)
-        Me.Controls.Add(Me.rtbxReview)
-        Me.Controls.Add(Me.GroupBox3)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "ctrlOverview"
         Me.Size = New System.Drawing.Size(1161, 738)
-        Me.GroupBox3.ResumeLayout(False)
-        CType(Me.dgvReviews, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvReservations, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelReserv.ResumeLayout(False)
@@ -563,8 +432,6 @@ Partial Class ctrlOverview
     End Sub
 
     Friend WithEvents btnResetDate As Button
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents dgvReviews As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents panelReserv As Panel
     Friend WithEvents lblReserv As Label
@@ -585,11 +452,6 @@ Partial Class ctrlOverview
     Public WithEvents lblRevMonth As Label
     Friend WithEvents overviewTimer As Timer
     Friend WithEvents dgvReservations As DataGridView
-    Friend WithEvents rtbxReview As RichTextBox
-    Friend WithEvents btnRefreshReviews As Button
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn

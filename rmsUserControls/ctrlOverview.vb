@@ -148,33 +148,6 @@ Public Class ctrlOverview
         Else
         End If
     End Sub
-    Private Sub loadReviews()
-        If Me.Visible = True Then
-            'display reviews sa dgvReviews
-            'Load the data from MongoDB and sort by reviewDate in descending order
-            Dim sort = Builders(Of BsonDocument).Sort.Descending("reviewDate")
-            Dim documents = rmsSharedVar.colReviews.Find(New BsonDocument()).Sort(sort).ToList()
-            dgvReviews.Rows.Clear()
-            For Each doc In documents
-                dgvReviews.Rows.Add(doc("Rating").ToString(), doc("Name").ToString(), doc("Review").ToString())
-                dgvReviews.ClearSelection()
-            Next
-        Else
-        End If
-    End Sub
-    Private Sub dgvReviews_SelectionChanged(sender As Object, e As EventArgs) Handles dgvReviews.SelectionChanged
-        'Check if a row is selected
-        If dgvReviews.SelectedRows.Count > 0 Then
-            Dim selectedRow As DataGridViewRow = dgvReviews.SelectedRows(0)
-            Dim reviewContent As String = selectedRow.Cells(2).Value.ToString()
-            rtbxReview.Text = reviewContent
-        Else
-            rtbxReview.Clear()
-        End If
-    End Sub
-    Private Sub btnRefreshReviews_Click(sender As Object, e As EventArgs) Handles btnRefreshReviews.Click
-        loadReviews()
-    End Sub
     Private Sub loadReservationz(selectedDate As Date)
         If Me.Visible = True Then
             'convert to iso 8601 format
@@ -211,7 +184,6 @@ Public Class ctrlOverview
         overviewTimer.Start()
         DateTimePicker1.Value = DateTime.Now.Date
         'loadStats()
-        'loadReviews()
         'loadReservationz(DateTime.Now)
     End Sub
     Private Sub ctrlOverview_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
