@@ -230,7 +230,6 @@ Public Class rmsRegistration
                         Dim rfid As String = regRFID.Text
                         Dim creationDate As String = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")
                         Dim accType As String = "admin"
-                        Dim address As String = ""
                         Dim newAdmin As New BsonDocument From {
                             {"FName", firstName},
                             {"MName", midName},
@@ -241,8 +240,7 @@ Public Class rmsRegistration
                             {"password", password},
                             {"RFID", rfid},
                             {"accountCreationDate", creationDate},
-                            {"role", accType},
-                            {"address", address}
+                            {"role", accType}
                         }
                         Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(
                             Builders(Of BsonDocument).Filter.Eq(Of String)("RFID", rfid),

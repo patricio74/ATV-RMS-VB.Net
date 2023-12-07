@@ -29,8 +29,6 @@ Partial Class ctrlTourGuides
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbxUpdEmpPhone = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.tbxUpdEmpRFID = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.tbxUpdEmpSname = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tbxUpdEmpMname = New System.Windows.Forms.TextBox()
@@ -60,9 +58,7 @@ Partial Class ctrlTourGuides
         Me.tbxAddEmpEmail = New System.Windows.Forms.TextBox()
         Me.tbxAddEmpSname = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.tbxAddEmpPhone = New System.Windows.Forms.TextBox()
-        Me.tbxAddEmpRFID = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnAddEmp = New System.Windows.Forms.Button()
         Me.panelFilter = New System.Windows.Forms.Panel()
@@ -74,7 +70,6 @@ Partial Class ctrlTourGuides
         Me.tbxSearchEmail = New System.Windows.Forms.TextBox()
         Me.tbxSearchPhone = New System.Windows.Forms.TextBox()
         Me.tbxSearchSur = New System.Windows.Forms.TextBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -136,30 +131,6 @@ Partial Class ctrlTourGuides
         Me.Label6.Size = New System.Drawing.Size(110, 18)
         Me.Label6.TabIndex = 39
         Me.Label6.Text = "PHONE NUMBER:"
-        '
-        'tbxUpdEmpRFID
-        '
-        Me.tbxUpdEmpRFID.BackColor = System.Drawing.Color.White
-        Me.tbxUpdEmpRFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxUpdEmpRFID.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxUpdEmpRFID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxUpdEmpRFID.Location = New System.Drawing.Point(476, 53)
-        Me.tbxUpdEmpRFID.Name = "tbxUpdEmpRFID"
-        Me.tbxUpdEmpRFID.Size = New System.Drawing.Size(311, 30)
-        Me.tbxUpdEmpRFID.TabIndex = 5
-        Me.tbxUpdEmpRFID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(473, 34)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(63, 18)
-        Me.Label7.TabIndex = 37
-        Me.Label7.Text = "RFID NO."
         '
         'tbxUpdEmpSname
         '
@@ -253,7 +224,7 @@ Partial Class ctrlTourGuides
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvTourGuide.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvTourGuide.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTourGuide.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column6, Me.Column7})
+        Me.dgvTourGuide.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4, Me.Column6, Me.Column7})
         Me.dgvTourGuide.EnableHeadersVisualStyles = False
         Me.dgvTourGuide.GridColor = System.Drawing.Color.DimGray
         Me.dgvTourGuide.Location = New System.Drawing.Point(35, 58)
@@ -310,9 +281,7 @@ Partial Class ctrlTourGuides
         Me.TabPage1.Controls.Add(Me.tbxUpdEmpEmail)
         Me.TabPage1.Controls.Add(Me.tbxUpdEmpSname)
         Me.TabPage1.Controls.Add(Me.Label5)
-        Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.tbxUpdEmpPhone)
-        Me.TabPage1.Controls.Add(Me.tbxUpdEmpRFID)
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
@@ -331,7 +300,7 @@ Partial Class ctrlTourGuides
         Me.cbxStatus.FormattingEnabled = True
         Me.cbxStatus.ItemHeight = 22
         Me.cbxStatus.Items.AddRange(New Object() {"available", "not available"})
-        Me.cbxStatus.Location = New System.Drawing.Point(100, 250)
+        Me.cbxStatus.Location = New System.Drawing.Point(476, 54)
         Me.cbxStatus.Name = "cbxStatus"
         Me.cbxStatus.Size = New System.Drawing.Size(148, 30)
         Me.cbxStatus.TabIndex = 4
@@ -342,7 +311,7 @@ Partial Class ctrlTourGuides
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label16.Location = New System.Drawing.Point(97, 232)
+        Me.Label16.Location = New System.Drawing.Point(473, 36)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(58, 18)
         Me.Label16.TabIndex = 10008
@@ -354,9 +323,9 @@ Partial Class ctrlTourGuides
         Me.tbxUpdEmpAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxUpdEmpAddress.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxUpdEmpAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxUpdEmpAddress.Location = New System.Drawing.Point(303, 248)
+        Me.tbxUpdEmpAddress.Location = New System.Drawing.Point(100, 248)
         Me.tbxUpdEmpAddress.Name = "tbxUpdEmpAddress"
-        Me.tbxUpdEmpAddress.Size = New System.Drawing.Size(484, 30)
+        Me.tbxUpdEmpAddress.Size = New System.Drawing.Size(687, 30)
         Me.tbxUpdEmpAddress.TabIndex = 8
         Me.tbxUpdEmpAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -366,7 +335,7 @@ Partial Class ctrlTourGuides
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(300, 229)
+        Me.Label8.Location = New System.Drawing.Point(97, 229)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(66, 18)
         Me.Label8.TabIndex = 10006
@@ -448,9 +417,7 @@ Partial Class ctrlTourGuides
         Me.TabPage2.Controls.Add(Me.tbxAddEmpEmail)
         Me.TabPage2.Controls.Add(Me.tbxAddEmpSname)
         Me.TabPage2.Controls.Add(Me.Label12)
-        Me.TabPage2.Controls.Add(Me.Label13)
         Me.TabPage2.Controls.Add(Me.tbxAddEmpPhone)
-        Me.TabPage2.Controls.Add(Me.tbxAddEmpRFID)
         Me.TabPage2.Controls.Add(Me.Label14)
         Me.TabPage2.Controls.Add(Me.btnAddEmp)
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
@@ -569,7 +536,7 @@ Partial Class ctrlTourGuides
         Me.tbxAddEmpEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.tbxAddEmpEmail.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddEmpEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddEmpEmail.Location = New System.Drawing.Point(479, 192)
+        Me.tbxAddEmpEmail.Location = New System.Drawing.Point(479, 126)
         Me.tbxAddEmpEmail.Name = "tbxAddEmpEmail"
         Me.tbxAddEmpEmail.Size = New System.Drawing.Size(311, 30)
         Me.tbxAddEmpEmail.TabIndex = 6
@@ -594,23 +561,11 @@ Partial Class ctrlTourGuides
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label12.Location = New System.Drawing.Point(476, 173)
+        Me.Label12.Location = New System.Drawing.Point(476, 107)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(49, 18)
         Me.Label12.TabIndex = 56
         Me.Label12.Text = "EMAIL:"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label13.Location = New System.Drawing.Point(476, 41)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(63, 18)
-        Me.Label13.TabIndex = 54
-        Me.Label13.Text = "RFID NO."
         '
         'tbxAddEmpPhone
         '
@@ -618,24 +573,12 @@ Partial Class ctrlTourGuides
         Me.tbxAddEmpPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAddEmpPhone.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddEmpPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddEmpPhone.Location = New System.Drawing.Point(479, 126)
+        Me.tbxAddEmpPhone.Location = New System.Drawing.Point(479, 60)
         Me.tbxAddEmpPhone.MaxLength = 11
         Me.tbxAddEmpPhone.Name = "tbxAddEmpPhone"
         Me.tbxAddEmpPhone.Size = New System.Drawing.Size(311, 30)
         Me.tbxAddEmpPhone.TabIndex = 5
         Me.tbxAddEmpPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'tbxAddEmpRFID
-        '
-        Me.tbxAddEmpRFID.BackColor = System.Drawing.Color.White
-        Me.tbxAddEmpRFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxAddEmpRFID.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxAddEmpRFID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAddEmpRFID.Location = New System.Drawing.Point(479, 60)
-        Me.tbxAddEmpRFID.Name = "tbxAddEmpRFID"
-        Me.tbxAddEmpRFID.Size = New System.Drawing.Size(311, 30)
-        Me.tbxAddEmpRFID.TabIndex = 4
-        Me.tbxAddEmpRFID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label14
         '
@@ -643,7 +586,7 @@ Partial Class ctrlTourGuides
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label14.Location = New System.Drawing.Point(476, 107)
+        Me.Label14.Location = New System.Drawing.Point(476, 41)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(110, 18)
         Me.Label14.TabIndex = 55
@@ -781,13 +724,6 @@ Partial Class ctrlTourGuides
         Me.tbxSearchSur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.tbxSearchSur.Visible = False
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "RFID NO."
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 130
-        '
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -852,8 +788,6 @@ Partial Class ctrlTourGuides
     Friend WithEvents Label5 As Label
     Friend WithEvents tbxUpdEmpPhone As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents tbxUpdEmpRFID As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents tbxUpdEmpSname As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents tbxUpdEmpMname As TextBox
@@ -885,9 +819,7 @@ Partial Class ctrlTourGuides
     Friend WithEvents tbxAddEmpEmail As TextBox
     Friend WithEvents tbxAddEmpSname As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
     Friend WithEvents tbxAddEmpPhone As TextBox
-    Friend WithEvents tbxAddEmpRFID As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents btnAddEmp As Button
     Friend WithEvents tbxUpdEmpAddress As TextBox
@@ -897,7 +829,6 @@ Partial Class ctrlTourGuides
     Friend WithEvents tbxSearchRFID As TextBox
     Friend WithEvents cbxStatus As ComboBox
     Friend WithEvents Label16 As Label
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn

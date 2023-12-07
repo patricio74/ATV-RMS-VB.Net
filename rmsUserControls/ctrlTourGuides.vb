@@ -21,7 +21,7 @@ Public Class ctrlTourGuides
         tbxUpdEmpFname.Clear()
         tbxUpdEmpMname.Clear()
         tbxUpdEmpSname.Clear()
-        tbxUpdEmpRFID.Clear()
+        'tbxUpdEmpRFID.Clear()
         tbxUpdEmpPhone.Clear()
         tbxUpdEmpEmail.Clear()
         tbxUpdEmpAddress.Clear()
@@ -34,7 +34,7 @@ Public Class ctrlTourGuides
         tbxAddEmpFname.Clear()
         tbxAddEmpMname.Clear()
         tbxAddEmpSname.Clear()
-        tbxAddEmpRFID.Clear()
+        'tbxAddEmpRFID.Clear()
         tbxAddEmpPhone.Clear()
         tbxAddEmpEmail.Clear()
         tbxAddEmpAddress.Clear
@@ -56,9 +56,7 @@ Public Class ctrlTourGuides
         End If
     End Sub
     'suppress enter key sound sa mga textboxes
-    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxUpdEmpFname.KeyPress, tbxUpdEmpMname.KeyPress, tbxUpdEmpSname.KeyPress,
-    tbxUpdEmpRFID.KeyPress, tbxUpdEmpPhone.KeyPress, tbxUpdEmpEmail.KeyPress, tbxAddEmpFname.KeyPress, tbxAddEmpMname.KeyPress, tbxAddEmpSname.KeyPress,
-    tbxAddEmpRFID.KeyPress, tbxAddEmpPhone.KeyPress, tbxAddEmpEmail.KeyPress, tbxSearchRFID.KeyPress, tbxSearchEmail.KeyPress, tbxSearchFir.KeyPress, tbxSearchSur.KeyPress,
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxUpdEmpFname.KeyPress, tbxUpdEmpMname.KeyPress, tbxUpdEmpSname.KeyPress, tbxUpdEmpPhone.KeyPress, tbxUpdEmpEmail.KeyPress, tbxAddEmpFname.KeyPress, tbxAddEmpMname.KeyPress, tbxAddEmpSname.KeyPress, tbxAddEmpPhone.KeyPress, tbxAddEmpEmail.KeyPress, tbxSearchRFID.KeyPress, tbxSearchEmail.KeyPress, tbxSearchFir.KeyPress, tbxSearchSur.KeyPress,
     tbxSearchPhone.KeyPress, tbxUpdEmpAddress.KeyPress, tbxAddEmpAddress.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
@@ -139,17 +137,17 @@ Public Class ctrlTourGuides
                     .empSname = document("Sname").ToString,
                     .empPhone = document("phone").ToString,
                     .empEmail = document("email").ToString,
-                    .empRFID = document("RFID").ToString,
                     .empAddress = document("address").ToString,
                     .empStatus = document("status").ToString,
                     .empCreationDate = document("accountCreationDate").ToString
                 }
+                '.empRFID = document("RFID").ToString,
                 tGuidez.Add(emplist)
                 'End If
             Next
             dgvTourGuide.Rows.Clear()
             For Each doc In tGuidez
-                dgvTourGuide.Rows.Add(doc.empRFID, doc.empFname, doc.empMname, doc.empSname, doc.empPhone, doc.empEmail)
+                dgvTourGuide.Rows.Add(doc.empFname, doc.empMname, doc.empSname, doc.empPhone, doc.empEmail)
             Next
             dgvTourGuide.ClearSelection()
         End If
@@ -162,7 +160,7 @@ Public Class ctrlTourGuides
                 tbxUpdEmpFname.Text = selectedEmp.empFname
                 tbxUpdEmpMname.Text = selectedEmp.empMname
                 tbxUpdEmpSname.Text = selectedEmp.empSname
-                tbxUpdEmpRFID.Text = selectedEmp.empRFID
+                'tbxUpdEmpRFID.Text = selectedEmp.empRFID
                 tbxUpdEmpPhone.Text = selectedEmp.empPhone
                 tbxUpdEmpEmail.Text = selectedEmp.empEmail
                 tbxUpdEmpAddress.Text = selectedEmp.empAddress
@@ -200,7 +198,6 @@ Public Class ctrlTourGuides
                                 Set(Of String)("Sname", tbxUpdEmpSname.Text).
                                 Set(Of String)("phone", tbxUpdEmpPhone.Text).
                                 Set(Of String)("email", tbxUpdEmpEmail.Text).
-                                Set(Of String)("RFID", tbxUpdEmpRFID.Text).
                                 Set(Of String)("address", tbxUpdEmpAddress.Text).
                                 Set(Of String)("status", cbxStatus.Text)
                                 rmsSharedVar.colTourGuide.UpdateOne(filter, update)
@@ -208,6 +205,7 @@ Public Class ctrlTourGuides
                                 populateEmpDGV()
                                 clearUpdEmpTab()
                             End If
+                            'Set(Of String)("RFID", tbxUpdEmpRFID.Text).
                         Catch ex As Exception
                             MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End Try
@@ -251,10 +249,10 @@ Public Class ctrlTourGuides
                         {"phone", tbxAddEmpPhone.Text},
                         {"email", tbxAddEmpEmail.Text},
                         {"address", tbxAddEmpAddress.Text},
-                        {"RFID", tbxAddEmpRFID.Text},
-                        {"status", cbxStatus.Text},
+                        {"status", "not available"},
                         {"accountCreationDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")}
                     }
+                        '{"RFID", tbxAddEmpRFID.Text},
                         rmsSharedVar.colTourGuide.InsertOne(newEmpDoc)
                         MessageBox.Show("New tour guide account added successfully.")
                         populateEmpDGV()
@@ -302,7 +300,7 @@ Public Class ctrlTourGuides
     End Sub
     Private Sub ctrlTourGuides_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
-            closeMongoConn()
+            'closeMongoConn()
             resetFilter()
             clearAddEmpTab()
             clearUpdEmpTab()

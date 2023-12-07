@@ -63,6 +63,7 @@ Public Class ctrlInventory
     Private Sub tabInventory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabInventory.SelectedIndexChanged
         If tabInventory.SelectedIndex = 0 Then 'update ATV tab
             updBrand.Focus()
+            refreshInv()
         ElseIf tabInventory.SelectedIndex = 1 Then 'add new ATV tab
             refreshInv()
             clearAtvForm()
@@ -196,8 +197,10 @@ Public Class ctrlInventory
         refreshInv()
     End Sub
     Private Sub ctrlInventory_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        If Me.Visible = False Then
-            closeMongoConn()
+        If Me.Visible = True Then
+            refreshInv()
+        ElseIf Me.Visible = False Then
+            'closeMongoConn()
             clearAtvForm()
             tabInventory.SelectedIndex = 0
         End If

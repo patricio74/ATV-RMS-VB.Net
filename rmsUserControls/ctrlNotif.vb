@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports MongoDB.Bson
 Imports MongoDB.Driver
-
+Imports MongoDB.Libmongocrypt
 Public Class ctrlNotif
     Private pendingTGuide As List(Of tgDoc)
     Private pendingAdmin As List(Of admDoc)
@@ -23,7 +23,6 @@ Public Class ctrlNotif
         Public Property admpSname As String
         Public Property admpEmail As String
         Public Property admpPhone As String
-        Public Property admpAddress As String
         Public Property admpRFID As String
         Public Property admpUsername As String
         Public Property admpPassword As String
@@ -39,21 +38,15 @@ Public Class ctrlNotif
     Private Sub clearAdmin()
         tbxAdminName.Clear()
         tbxAdminEmail.Clear()
-        cbxRole.SelectedIndex = 0
+        tbxAdminPhone.Clear()
+        tbxAdminRFID.Clear()
+        tbxAdminRole.Clear()
     End Sub
     'suppress enter key sound sa mga textboxes
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxApplicantName.KeyPress, tbxApplicantAddress.KeyPress, tbxApplicantEmail.KeyPress,
-            tbxAdminName.KeyPress, tbxAdminEmail.KeyPress
+            tbxAdminName.KeyPress, tbxAdminEmail.KeyPress, tbxAdminPhone.KeyPress, tbxAdminRFID.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
-        End If
-    End Sub
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClearApplicant.Click, btnClearAdmin.Click
-        If sender Is btnClearApplicant Then
-            clearApplicantForm()
-            populateApplicantDGV()
-        ElseIf sender Is btnClearAdmin Then
-            clearAdmin()
         End If
     End Sub
     Private Sub populateApplicantDGV()
@@ -96,9 +89,57 @@ Public Class ctrlNotif
             End If
         End If
     End Sub
-    Private Sub ctrlNotif_Load(sender As Object, e As EventArgs) Handles Me.Load
-        cbxRole.SelectedIndex = 0
-        populateApplicantDGV()
+    Private Sub populatePendingAdminDGV()
+        If rmsDashboard.switchPendi = True Then
+            dgvPendingAdminAcc.Rows.Clear()
+            Dim admDocList As List(Of BsonDocument) = rmsSharedVar.colPendingAdmin.Find(New BsonDocument()).ToList()
+            pendingAdmin = New List(Of admDoc)()
+            For Each document As BsonDocument In admDocList
+                Dim idElement = document.GetElement("_id")
+                Dim admp As New admDoc() With {
+                .admpID = idElement.Value.AsObjectId.ToString,
+                .admpFname = document("FName").ToString,
+                .admpMname = document("MName").ToString,
+                .admpSname = document("Sname").ToString,
+                .admpPhone = document("phone").ToString,
+                .admpEmail = document("email").ToString,
+                .admpUsername = document("username").ToString,
+                .admpPassword = document("password"),
+                .admpRFID = document("RFID").ToString,
+                .admpCreationDate = document("accountCreationDate").ToString,
+                .admpRole = document("role").ToString
+                }
+                pendingAdmin.Add(admp)
+            Next
+            dgvPendingAdminAcc.Rows.Clear()
+            For Each doc In pendingAdmin
+                Dim admin As String = $"{doc.admpFname} {doc.admpMname} {doc.admpSname}".Trim()
+                dgvPendingAdminAcc.Rows.Add(doc.admpID, admin, doc.admpEmail)
+            Next
+            dgvPendingAdminAcc.ClearSelection()
+        End If
+    End Sub
+    Private Sub dgvPendingAdminAcc_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPendingAdminAcc.CellClick
+        If e.RowIndex >= 0 Then
+            If pendingAdmin IsNot Nothing AndAlso e.RowIndex < pendingAdmin.Count Then
+                Dim selectedAdmnp = pendingAdmin(e.RowIndex)
+                Dim applicantName As String = $"{selectedAdmnp.admpFname} {selectedAdmnp.admpMname} {selectedAdmnp.admpSname}".Trim()
+                tbxAdminName.Text = applicantName
+                tbxAdminEmail.Text = selectedAdmnp.admpEmail
+                tbxAdminPhone.Text = selectedAdmnp.admpPhone
+                tbxAdminRFID.Text = selectedAdmnp.admpRFID
+                tbxAdminRole.Text = selectedAdmnp.admpRole
+            End If
+        End If
+    End Sub
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClearApplicant.Click, btnClearAdmin.Click
+        If sender Is btnClearApplicant Then
+            clearApplicantForm()
+            populateApplicantDGV()
+        ElseIf sender Is btnClearAdmin Then
+            clearAdmin()
+            populatePendingAdminDGV()
+        End If
     End Sub
     Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnDownloadResume.Click, btnAcceptApplicant.Click, btnApproveAdmin.Click
         If sender Is btnDownloadResume Then
@@ -122,7 +163,7 @@ Public Class ctrlNotif
                         If Not String.IsNullOrEmpty(resumeContent) Then
                             ' Save the content to a file
                             File.WriteAllText(savePath, resumeContent)
-                            MessageBox.Show($"Resume downloaded to Desktop: {fileName}")
+                            MessageBox.Show($"Resume downloaded to Desktop as: {fileName}")
                         Else
                             MessageBox.Show($"No resume file found in the database!")
                         End If
@@ -131,15 +172,97 @@ Public Class ctrlNotif
                     End If
                 End If
             End If
-            ElseIf sender Is btnAcceptApplicant Then
+        ElseIf sender Is btnAcceptApplicant Then
+            'moveDocToTouGuideCollection
+            If dgvPendingTourGuides.SelectedRows.Count > 0 Then
+                Dim selectedGuide = pendingTGuide(dgvPendingTourGuides.SelectedRows(0).Index)
+                Dim guideID As String = selectedGuide.tgID
+                Dim delConfirmation = MessageBox.Show("Are you sure you want to accept this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                'move selected applicant doc to tour guide collection
+                If delConfirmation = DialogResult.Yes Then
+                    moveToTourGuideCol(guideID)
+                ElseIf delConfirmation = DialogResult.No Then
+                    populateApplicantDGV()
+                End If
+            Else
+                MessageBox.Show("Please select an account first.")
+                populateApplicantDGV()
+            End If
 
         ElseIf sender Is btnApproveAdmin Then
-
+            If dgvPendingAdminAcc.SelectedRows.Count > 0 Then
+                Dim selectedEmp = pendingAdmin(dgvPendingAdminAcc.SelectedRows(0).Index)
+                Dim pendingID As String = selectedEmp.admpID
+                Dim delConfirmation = MessageBox.Show("Are you sure you want to accept this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                'move selected admin acc to rmsAdmin collection
+                If delConfirmation = DialogResult.Yes Then
+                    moveToAdminCol(pendingID)
+                ElseIf delConfirmation = DialogResult.No Then
+                    populatePendingAdminDGV()
+                End If
+            Else
+                MessageBox.Show("Please select an account first.")
+                populatePendingAdminDGV()
+            End If
         End If
     End Sub
+    Private Sub moveToTourGuideCol(guideID As String)
+        Try
+            Dim objectId As ObjectId
+            If ObjectId.TryParse(guideID, objectId) Then
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objectId)
+                Dim document = rmsSharedVar.colResume.Find(filter).FirstOrDefault()
+                If document IsNot Nothing Then
+                    'Add account creation date, set status bago imove
+                    document.Add("accountCreationDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                    document.Add("status", "not available")
+                    rmsSharedVar.colTourGuide.InsertOne(document)
+                    rmsSharedVar.colResume.DeleteOne(filter)
+                    MessageBox.Show("New tour guide account successfully added!")
+                    populateApplicantDGV()
+                    clearApplicantForm()
+                Else
+                    MessageBox.Show("Account not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    populateApplicantDGV()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            populateApplicantDGV()
+        End Try
+    End Sub
+    Private Sub moveToAdminCol(pendingID As String)
+        Try
+            Dim objectId As ObjectId
+            If ObjectId.TryParse(pendingID, objectId) Then
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objectId)
+                Dim document = rmsSharedVar.colPendingAdmin.Find(filter).FirstOrDefault()
+                If document IsNot Nothing Then
+                    rmsSharedVar.colAdmin.InsertOne(document)
+                    rmsSharedVar.colPendingAdmin.DeleteOne(filter)
+                    MessageBox.Show("New admin account successfully added!")
+                    populatePendingAdminDGV()
+                    clearAdmin()
+                Else
+                    MessageBox.Show("Account not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    populatePendingAdminDGV()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            populatePendingAdminDGV()
+        End Try
+    End Sub
+    Private Sub ctrlNotif_Load(sender As Object, e As EventArgs) Handles Me.Load
+        populateApplicantDGV()
+        populatePendingAdminDGV()
+    End Sub
     Private Sub ctrlNotif_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        If Me.Visible = False Then
-            closeMongoConn()
+        If Me.Visible = True Then
+            populateApplicantDGV()
+            populatePendingAdminDGV()
+        ElseIf Me.Visible = False Then
+            'closeMongoConn()
             clearApplicantForm()
             clearAdmin()
         End If

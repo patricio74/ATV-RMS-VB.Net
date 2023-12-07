@@ -415,7 +415,7 @@ Public Class ctrlCustomers
     End Sub
     Private Sub ctrlCustomers_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
-            closeMongoConn()
+            'closeMongoConn()
             clearAddForm()
             clearUpdForm()
             resetFilter()

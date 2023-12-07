@@ -30,9 +30,6 @@ Public Class ctrlTrails
         updDuration.Clear()
         updPrice.Clear()
     End Sub
-    Private Sub ctrlTrails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        populateTrails()
-    End Sub
     'suppress enter key sound sa mga textboxes
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles addTrailName.KeyPress, addDuration.KeyPress, addMinPerson.KeyPress,
         addPrice.KeyPress, addDescription.KeyPress, updTrailName.KeyPress, updDuration.KeyPress, updMinPerson.KeyPress, updPrice.KeyPress
@@ -221,9 +218,14 @@ Public Class ctrlTrails
             e.Handled = True
         End If
     End Sub
+    Private Sub ctrlTrails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        populateTrails()
+    End Sub
     Private Sub ctrlTrails_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        If Me.Visible = False Then
-            closeMongoConn()
+        If Me.Visible = True Then
+            populateTrails()
+        ElseIf Me.Visible = False Then
+            'closeMongoConn()
             clearAddForm()
             clearUpdateForm()
             tabTrails.SelectedIndex = 0

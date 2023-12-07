@@ -9,7 +9,7 @@ Public Class rmsLogin
         hideErrorLabel()
     End Sub
     Private Sub rmsLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
+        connectToMongo()
         initializeDraggablePanel(panelTop)
         loadRMSLogin()
     End Sub

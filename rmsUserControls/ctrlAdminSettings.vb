@@ -189,7 +189,7 @@ Public Class ctrlAdminSettings
     End Sub
     Private Sub ctrlAdminSettings_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
-            closeMongoConn()
+            'closeMongoConn()
             clearUsrInfo()
             tabAdmn.SelectedIndex = 0
         ElseIf Me.Visible = True Then

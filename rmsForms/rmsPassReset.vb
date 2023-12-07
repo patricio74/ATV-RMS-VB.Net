@@ -132,7 +132,7 @@ Public Class rmsPassReset
     End Sub
     Private Sub rmsPassReset_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
-            closeMongoConn()
+            'closeMongoConn()
             searchUsername = Nothing
             searchEmail = Nothing
         ElseIf Me.Visible = True Then

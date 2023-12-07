@@ -82,10 +82,6 @@ Public Class ctrlTransactions
             cbxReservTour.Items.Add(tourDocument("nameOfTour").ToString())
         Next
     End Sub
-    Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        reloadTrailList()
-        populateTransac()
-    End Sub
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxAddFName.KeyPress, tbxAddMName.KeyPress, tbxAddSname.KeyPress,
         tbxAddPerson.KeyPress, tbxAddTotal.KeyPress,
         tbxOnGName.KeyPress, tbxOnGTour.KeyPress, tbxOnGTime.KeyPress, tbxOnGPerson.KeyPress, tbxOnGTour.KeyPress, tbxReservTotal.KeyPress, tbxReservSName.KeyPress, tbxReservPerson.KeyPress, tbxReservMName.KeyPress, tbxReservFName.KeyPress, tbxNewTotal.KeyPress, tbxNewSName.KeyPress, tbxNewPerson.KeyPress, tbxNewMName.KeyPress, tbxNewFName.KeyPress
@@ -340,9 +336,16 @@ Public Class ctrlTransactions
             e.Handled = True
         End If
     End Sub
+    Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        reloadTrailList()
+        populateTransac()
+    End Sub
     Private Sub ctrlTransactions_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
-        If Me.Visible = False Then
-            closeMongoConn()
+        If Me.Visible = True Then
+            reloadTrailList()
+            populateTransac()
+        ElseIf Me.Visible = False Then
+            'closeMongoConn()
             clearAddTransacTab()
             clearUpdResTab()
             reloadTrailList()

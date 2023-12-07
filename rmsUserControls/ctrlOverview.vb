@@ -150,22 +150,26 @@ Public Class ctrlOverview
     End Sub
     Private Sub loadReservationz(selectedDate As Date)
         If rmsDashboard.switchOverview = True Then
-            'convert to iso 8601 format
-            Dim isoDateString As String = selectedDate.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-            'display reservs sa dgvReserv
+            ' Set the time component of selectedDate to midnight
+            Dim startOfDay As Date = selectedDate.Date
+            ' Set the end time to the next day at midnight
+            Dim endOfDay As Date = selectedDate.AddDays(1).Date
+            ' Convert to ISO 8601 format
+            Dim isoStartDateString As String = startOfDay.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+            Dim isoEndDateString As String = endOfDay.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
+            ' Display reservations in dgvReserv for the selected day
             Dim filter As FilterDefinition(Of BsonDocument) =
                 Builders(Of BsonDocument).Filter.And(
-                Builders(Of BsonDocument).Filter.Gte(Of String)("reservDate", isoDateString),
-                Builders(Of BsonDocument).Filter.Lt(Of String)("reservDate", selectedDate.AddDays(1).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                Builders(Of BsonDocument).Filter.Gte(Of String)("reservDate", isoStartDateString),
+                Builders(Of BsonDocument).Filter.Lt(Of String)("reservDate", isoEndDateString)
             )
             Dim reservations = rmsSharedVar.colReserv.Find(filter).ToList()
             dgvReservations.Rows.Clear()
             For Each reservDoc As BsonDocument In reservations
-                Dim fullName As String = String.Join(" ", reservDoc("FName"), reservDoc("MName"), reservDoc("Sname"))
+                Dim fullName As String = $"{reservDoc("FName")} {reservDoc("MName")} {reservDoc("Sname")}"
                 dgvReservations.Rows.Add(fullName, reservDoc("tourName").ToString(), reservDoc("timeSlot").ToString(), reservDoc("totalPerson").ToString())
-                dgvReservations.ClearSelection()
             Next
-        Else
+            dgvReservations.ClearSelection()
         End If
     End Sub
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
@@ -189,8 +193,9 @@ Public Class ctrlOverview
             'refresh content kada 3secs
             overviewTimer.Interval = 3000
             overviewTimer.Start()
+            loadReservationz(selectedDate:=DateTime.Now)
         ElseIf Me.Visible = False Then
-            closeMongoConn()
+            'closeMongoConn()
             overviewTimer.Stop()
         End If
     End Sub
