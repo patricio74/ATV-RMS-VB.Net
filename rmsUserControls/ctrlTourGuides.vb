@@ -41,14 +41,14 @@ Public Class ctrlTourGuides
         populateEmpDGV()
         dgvTourGuide.ClearSelection()
     End Sub
-    Public Sub resetFilter()
-        tbxSearchFir.Clear()
-        tbxSearchSur.Clear()
-        tbxSearchPhone.Clear()
-        tbxSearchEmail.Clear()
-        tbxSearchRFID.Clear()
-        cbxSearchFilter.SelectedIndex = 0
-    End Sub
+    'Public Sub resetFilter()
+    'tbxSearchFir.Clear()
+    'tbxSearchSur.Clear()
+    'tbxSearchPhone.Clear()
+    'tbxSearchEmail.Clear()
+    'tbxSearchRFID.Clear()
+    ' cbxSearchFilter.SelectedIndex = 0
+    'End Sub
     Private Sub tbxContNum_TextChanged(sender As Object, e As KeyPressEventArgs) Handles tbxUpdEmpPhone.KeyPress, tbxAddEmpPhone.KeyPress
         'check if the inputted char is a number,backspace
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
@@ -56,51 +56,50 @@ Public Class ctrlTourGuides
         End If
     End Sub
     'suppress enter key sound sa mga textboxes
-    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxUpdEmpFname.KeyPress, tbxUpdEmpMname.KeyPress, tbxUpdEmpSname.KeyPress, tbxUpdEmpPhone.KeyPress, tbxUpdEmpEmail.KeyPress, tbxAddEmpFname.KeyPress, tbxAddEmpMname.KeyPress, tbxAddEmpSname.KeyPress, tbxAddEmpPhone.KeyPress, tbxAddEmpEmail.KeyPress, tbxSearchRFID.KeyPress, tbxSearchEmail.KeyPress, tbxSearchFir.KeyPress, tbxSearchSur.KeyPress,
-    tbxSearchPhone.KeyPress, tbxUpdEmpAddress.KeyPress, tbxAddEmpAddress.KeyPress
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxUpdEmpFname.KeyPress, tbxUpdEmpMname.KeyPress, tbxUpdEmpSname.KeyPress, tbxUpdEmpPhone.KeyPress, tbxUpdEmpEmail.KeyPress, tbxAddEmpFname.KeyPress, tbxAddEmpMname.KeyPress, tbxAddEmpSname.KeyPress, tbxAddEmpPhone.KeyPress, tbxAddEmpEmail.KeyPress, tbxUpdEmpAddress.KeyPress, tbxAddEmpAddress.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
     End Sub
-    Private Sub cbxSearchFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxSearchFilter.SelectedIndexChanged
-        If cbxSearchFilter.SelectedIndex = 0 Then 'search using rfid
-            tbxSearchRFID.Visible = True
-            tbxSearchFir.Visible = False
-            tbxSearchSur.Visible = False
-            tbxSearchEmail.Visible = False
-            tbxSearchPhone.Visible = False
-        ElseIf cbxSearchFilter.SelectedIndex = 1 Then 'search emp name
-            tbxSearchRFID.Visible = False
-            tbxSearchFir.Visible = True
-            tbxSearchSur.Visible = True
-            tbxSearchEmail.Visible = False
-            tbxSearchPhone.Visible = False
-        ElseIf cbxSearchFilter.SelectedIndex = 2 Then 'search phone
-            tbxSearchRFID.Visible = False
-            tbxSearchFir.Visible = False
-            tbxSearchSur.Visible = False
-            tbxSearchEmail.Visible = False
-            tbxSearchPhone.Visible = True
-        ElseIf cbxSearchFilter.SelectedIndex = 3 Then 'search email
-            tbxSearchRFID.Visible = False
-            tbxSearchFir.Visible = False
-            tbxSearchSur.Visible = False
-            tbxSearchEmail.Visible = True
-            tbxSearchPhone.Visible = False
-        Else 'default
-            tbxSearchRFID.Visible = True
-            tbxSearchFir.Visible = False
-            tbxSearchSur.Visible = False
-            tbxSearchEmail.Visible = False
-            tbxSearchPhone.Visible = False
-        End If
-    End Sub
-    Private Sub btnClearFilter_Click(sender As Object, e As EventArgs) Handles btnClearFilter.Click
+    ' Private Sub cbxSearchFilter_SelectedIndexChanged(sender As Object, e As EventArgs)
+    ' If cbxSearchFilter.SelectedIndex = 0 Then 'search using rfid
+    '     tbxSearchRFID.Visible = True
+    '     tbxSearchFir.Visible = False
+    '     tbxSearchSur.Visible = False
+    '     tbxSearchEmail.Visible = False
+    '     tbxSearchPhone.Visible = False
+    ' ElseIf cbxSearchFilter.SelectedIndex = 1 Then 'search emp name
+    '     tbxSearchRFID.Visible = False
+    '     tbxSearchFir.Visible = True
+    '      tbxSearchSur.Visible = True
+    '      tbxSearchEmail.Visible = False
+    '     tbxSearchPhone.Visible = False
+    ' ElseIf cbxSearchFilter.SelectedIndex = 2 Then 'search phone
+    '     tbxSearchRFID.Visible = False
+    '    tbxSearchFir.Visible = False
+    '    tbxSearchSur.Visible = False
+    '    tbxSearchEmail.Visible = False
+    '     tbxSearchPhone.Visible = True
+    ' ElseIf cbxSearchFilter.SelectedIndex = 3 Then 'search email
+    '    tbxSearchRFID.Visible = False
+    '    tbxSearchFir.Visible = False
+    '    tbxSearchSur.Visible = False
+    '    tbxSearchEmail.Visible = True
+    '    tbxSearchPhone.Visible = False
+    ' Else 'default
+    '    tbxSearchRFID.Visible = True
+    '    tbxSearchFir.Visible = False
+    '    tbxSearchSur.Visible = False
+    '    tbxSearchEmail.Visible = False
+    '    tbxSearchPhone.Visible = False
+    '  End If
+    'End Sub
+    Private Sub btnClearFilter_Click(sender As Object, e As EventArgs)
         clearUpdEmpTab()
-        resetFilter()
+        'resetFilter()
         populateEmpDGV()
     End Sub
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearchEmp.Click
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs)
         '
         '
         '
@@ -295,13 +294,13 @@ Public Class ctrlTourGuides
         End Try
     End Sub
     Private Sub ctrlTourGuides_Load(sender As Object, e As EventArgs) Handles Me.Load
-        resetFilter()
+        'resetFilter()
         populateEmpDGV()
     End Sub
     Private Sub ctrlTourGuides_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
             'closeMongoConn()
-            resetFilter()
+            'resetFilter()
             clearAddEmpTab()
             clearUpdEmpTab()
             tabTourGuide.SelectedIndex = 0

@@ -36,6 +36,11 @@ Partial Class ctrlTourGuides
         Me.tbxUpdEmpFname = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvTourGuide = New System.Windows.Forms.DataGridView()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabTourGuide = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.cbxStatus = New System.Windows.Forms.ComboBox()
@@ -61,25 +66,10 @@ Partial Class ctrlTourGuides
         Me.tbxAddEmpPhone = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnAddEmp = New System.Windows.Forms.Button()
-        Me.panelFilter = New System.Windows.Forms.Panel()
-        Me.btnClearFilter = New System.Windows.Forms.Button()
-        Me.btnSearchEmp = New System.Windows.Forms.Button()
-        Me.cbxSearchFilter = New System.Windows.Forms.ComboBox()
-        Me.tbxSearchFir = New System.Windows.Forms.TextBox()
-        Me.tbxSearchRFID = New System.Windows.Forms.TextBox()
-        Me.tbxSearchEmail = New System.Windows.Forms.TextBox()
-        Me.tbxSearchPhone = New System.Windows.Forms.TextBox()
-        Me.tbxSearchSur = New System.Windows.Forms.TextBox()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvTourGuide, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTourGuide.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.panelFilter.SuspendLayout()
         Me.SuspendLayout()
         '
         'tbxUpdEmpEmail
@@ -227,7 +217,7 @@ Partial Class ctrlTourGuides
         Me.dgvTourGuide.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4, Me.Column6, Me.Column7})
         Me.dgvTourGuide.EnableHeadersVisualStyles = False
         Me.dgvTourGuide.GridColor = System.Drawing.Color.DimGray
-        Me.dgvTourGuide.Location = New System.Drawing.Point(35, 58)
+        Me.dgvTourGuide.Location = New System.Drawing.Point(35, 30)
         Me.dgvTourGuide.MultiSelect = False
         Me.dgvTourGuide.Name = "dgvTourGuide"
         Me.dgvTourGuide.ReadOnly = True
@@ -249,8 +239,43 @@ Partial Class ctrlTourGuides
         Me.dgvTourGuide.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvTourGuide.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvTourGuide.ShowEditingIcon = False
-        Me.dgvTourGuide.Size = New System.Drawing.Size(1092, 287)
+        Me.dgvTourGuide.Size = New System.Drawing.Size(1092, 315)
         Me.dgvTourGuide.TabIndex = 47
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "FIRST NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "MIDDLE NAME"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.HeaderText = "SURNAME"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column6.HeaderText = "PHONE NUMBER"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.HeaderText = "EMAIL ADDRESS"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
         '
         'tabTourGuide
         '
@@ -608,164 +633,12 @@ Partial Class ctrlTourGuides
         Me.btnAddEmp.Text = "Add Tour Guide"
         Me.btnAddEmp.UseVisualStyleBackColor = False
         '
-        'panelFilter
-        '
-        Me.panelFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panelFilter.BackColor = System.Drawing.Color.Transparent
-        Me.panelFilter.Controls.Add(Me.btnClearFilter)
-        Me.panelFilter.Controls.Add(Me.btnSearchEmp)
-        Me.panelFilter.Controls.Add(Me.cbxSearchFilter)
-        Me.panelFilter.Controls.Add(Me.tbxSearchFir)
-        Me.panelFilter.Controls.Add(Me.tbxSearchRFID)
-        Me.panelFilter.Controls.Add(Me.tbxSearchEmail)
-        Me.panelFilter.Controls.Add(Me.tbxSearchPhone)
-        Me.panelFilter.Controls.Add(Me.tbxSearchSur)
-        Me.panelFilter.Location = New System.Drawing.Point(399, 11)
-        Me.panelFilter.Name = "panelFilter"
-        Me.panelFilter.Size = New System.Drawing.Size(728, 34)
-        Me.panelFilter.TabIndex = 130
-        '
-        'btnClearFilter
-        '
-        Me.btnClearFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnClearFilter.BackColor = System.Drawing.Color.Firebrick
-        Me.btnClearFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClearFilter.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearFilter.ForeColor = System.Drawing.Color.White
-        Me.btnClearFilter.Location = New System.Drawing.Point(695, 5)
-        Me.btnClearFilter.Name = "btnClearFilter"
-        Me.btnClearFilter.Size = New System.Drawing.Size(27, 27)
-        Me.btnClearFilter.TabIndex = 4
-        Me.btnClearFilter.Text = "X"
-        Me.btnClearFilter.UseVisualStyleBackColor = False
-        '
-        'btnSearchEmp
-        '
-        Me.btnSearchEmp.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSearchEmp.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnSearchEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearchEmp.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearchEmp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnSearchEmp.Location = New System.Drawing.Point(622, 5)
-        Me.btnSearchEmp.Name = "btnSearchEmp"
-        Me.btnSearchEmp.Size = New System.Drawing.Size(65, 28)
-        Me.btnSearchEmp.TabIndex = 3
-        Me.btnSearchEmp.Text = "Search"
-        Me.btnSearchEmp.UseVisualStyleBackColor = False
-        '
-        'cbxSearchFilter
-        '
-        Me.cbxSearchFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cbxSearchFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxSearchFilter.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxSearchFilter.FormattingEnabled = True
-        Me.cbxSearchFilter.Items.AddRange(New Object() {"rfid", "tour guide name", "phone", "email"})
-        Me.cbxSearchFilter.Location = New System.Drawing.Point(494, 6)
-        Me.cbxSearchFilter.Name = "cbxSearchFilter"
-        Me.cbxSearchFilter.Size = New System.Drawing.Size(121, 26)
-        Me.cbxSearchFilter.TabIndex = 2
-        '
-        'tbxSearchFir
-        '
-        Me.tbxSearchFir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbxSearchFir.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxSearchFir.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchFir.Location = New System.Drawing.Point(16, 6)
-        Me.tbxSearchFir.Name = "tbxSearchFir"
-        Me.tbxSearchFir.Size = New System.Drawing.Size(233, 25)
-        Me.tbxSearchFir.TabIndex = 0
-        Me.tbxSearchFir.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.tbxSearchFir.Visible = False
-        '
-        'tbxSearchRFID
-        '
-        Me.tbxSearchRFID.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbxSearchRFID.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
-        Me.tbxSearchRFID.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchRFID.Location = New System.Drawing.Point(255, 6)
-        Me.tbxSearchRFID.Name = "tbxSearchRFID"
-        Me.tbxSearchRFID.Size = New System.Drawing.Size(233, 25)
-        Me.tbxSearchRFID.TabIndex = 1
-        Me.tbxSearchRFID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'tbxSearchEmail
-        '
-        Me.tbxSearchEmail.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbxSearchEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
-        Me.tbxSearchEmail.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchEmail.Location = New System.Drawing.Point(255, 6)
-        Me.tbxSearchEmail.Name = "tbxSearchEmail"
-        Me.tbxSearchEmail.Size = New System.Drawing.Size(233, 25)
-        Me.tbxSearchEmail.TabIndex = 41
-        Me.tbxSearchEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.tbxSearchEmail.Visible = False
-        '
-        'tbxSearchPhone
-        '
-        Me.tbxSearchPhone.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbxSearchPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
-        Me.tbxSearchPhone.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchPhone.Location = New System.Drawing.Point(255, 6)
-        Me.tbxSearchPhone.Name = "tbxSearchPhone"
-        Me.tbxSearchPhone.Size = New System.Drawing.Size(233, 25)
-        Me.tbxSearchPhone.TabIndex = 37
-        Me.tbxSearchPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.tbxSearchPhone.Visible = False
-        '
-        'tbxSearchSur
-        '
-        Me.tbxSearchSur.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbxSearchSur.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxSearchSur.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxSearchSur.Location = New System.Drawing.Point(255, 6)
-        Me.tbxSearchSur.Name = "tbxSearchSur"
-        Me.tbxSearchSur.Size = New System.Drawing.Size(233, 25)
-        Me.tbxSearchSur.TabIndex = 40
-        Me.tbxSearchSur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.tbxSearchSur.Visible = False
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "FIRST NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "MIDDLE NAME"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "SURNAME"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column6.HeaderText = "PHONE NUMBER"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.HeaderText = "EMAIL ADDRESS"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
         'ctrlTourGuides
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Controls.Add(Me.panelFilter)
         Me.Controls.Add(Me.tabTourGuide)
         Me.Controls.Add(Me.dgvTourGuide)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -779,8 +652,6 @@ Partial Class ctrlTourGuides
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        Me.panelFilter.ResumeLayout(False)
-        Me.panelFilter.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -800,14 +671,6 @@ Partial Class ctrlTourGuides
     Friend WithEvents btnDelEmp As Button
     Friend WithEvents btnUpdEmp As Button
     Friend WithEvents lblUpdEmpDate As Label
-    Friend WithEvents panelFilter As Panel
-    Friend WithEvents btnClearFilter As Button
-    Friend WithEvents btnSearchEmp As Button
-    Friend WithEvents cbxSearchFilter As ComboBox
-    Friend WithEvents tbxSearchFir As TextBox
-    Friend WithEvents tbxSearchEmail As TextBox
-    Friend WithEvents tbxSearchPhone As TextBox
-    Friend WithEvents tbxSearchSur As TextBox
     Friend WithEvents btnUpdDownloadResume As Button
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents btnClearForm As Button
@@ -826,7 +689,6 @@ Partial Class ctrlTourGuides
     Friend WithEvents Label8 As Label
     Friend WithEvents tbxAddEmpAddress As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents tbxSearchRFID As TextBox
     Friend WithEvents cbxStatus As ComboBox
     Friend WithEvents Label16 As Label
     Friend WithEvents Column2 As DataGridViewTextBoxColumn

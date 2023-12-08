@@ -1,7 +1,6 @@
 ﻿Imports System.IO
 Imports MongoDB.Bson
 Imports MongoDB.Driver
-Imports MongoDB.Libmongocrypt
 Public Class ctrlNotif
     Private pendingTGuide As List(Of tgDoc)
     Private pendingAdmin As List(Of admDoc)

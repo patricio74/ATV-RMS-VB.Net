@@ -529,7 +529,7 @@ Partial Class ctrlReservations
         Me.dgvTransactions.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvTransactions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvTransactions.ShowEditingIcon = False
-        Me.dgvTransactions.Size = New System.Drawing.Size(1103, 303)
+        Me.dgvTransactions.Size = New System.Drawing.Size(1103, 320)
         Me.dgvTransactions.TabIndex = 134
         '
         'Column5
@@ -559,7 +559,7 @@ Partial Class ctrlReservations
         '
         Me.tabTransactions.Controls.Add(Me.TabPage1)
         Me.tabTransactions.Controls.Add(Me.TabPage2)
-        Me.tabTransactions.Location = New System.Drawing.Point(45, 385)
+        Me.tabTransactions.Location = New System.Drawing.Point(45, 399)
         Me.tabTransactions.Name = "tabTransactions"
         Me.tabTransactions.SelectedIndex = 0
         Me.tabTransactions.Size = New System.Drawing.Size(1074, 313)
@@ -872,7 +872,7 @@ Partial Class ctrlReservations
         Me.lblTodayCanceled.BackColor = System.Drawing.Color.Transparent
         Me.lblTodayCanceled.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTodayCanceled.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblTodayCanceled.Location = New System.Drawing.Point(584, 31)
+        Me.lblTodayCanceled.Location = New System.Drawing.Point(342, 20)
         Me.lblTodayCanceled.Name = "lblTodayCanceled"
         Me.lblTodayCanceled.Size = New System.Drawing.Size(81, 18)
         Me.lblTodayCanceled.TabIndex = 139
@@ -884,7 +884,7 @@ Partial Class ctrlReservations
         Me.lblTodayPending.BackColor = System.Drawing.Color.Transparent
         Me.lblTodayPending.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTodayPending.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblTodayPending.Location = New System.Drawing.Point(466, 31)
+        Me.lblTodayPending.Location = New System.Drawing.Point(230, 20)
         Me.lblTodayPending.Name = "lblTodayPending"
         Me.lblTodayPending.Size = New System.Drawing.Size(74, 18)
         Me.lblTodayPending.TabIndex = 138
@@ -895,9 +895,9 @@ Partial Class ctrlReservations
         Me.lblTodayRes.BackColor = System.Drawing.Color.Transparent
         Me.lblTodayRes.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTodayRes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.lblTodayRes.Location = New System.Drawing.Point(456, 9)
+        Me.lblTodayRes.Location = New System.Drawing.Point(26, 18)
         Me.lblTodayRes.Name = "lblTodayRes"
-        Me.lblTodayRes.Size = New System.Drawing.Size(229, 20)
+        Me.lblTodayRes.Size = New System.Drawing.Size(198, 20)
         Me.lblTodayRes.TabIndex = 137
         Me.lblTodayRes.Text = "TOTAL RESERVATIONS "
         Me.lblTodayRes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
