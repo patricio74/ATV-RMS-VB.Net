@@ -107,6 +107,7 @@ Partial Class rmsPassReset
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(30, 30)
         Me.btnClose.TabIndex = 0
+        Me.btnClose.TabStop = False
         Me.btnClose.Text = "x"
         Me.btnClose.UseVisualStyleBackColor = False
         '

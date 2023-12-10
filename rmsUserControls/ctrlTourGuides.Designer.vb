@@ -320,6 +320,7 @@ Partial Class ctrlTourGuides
         Me.cbxStatus.BackColor = System.Drawing.Color.White
         Me.cbxStatus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.cbxStatus.FormattingEnabled = True

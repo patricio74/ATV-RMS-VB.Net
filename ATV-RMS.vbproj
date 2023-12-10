@@ -335,6 +335,12 @@
     <Compile Include="rmsUserControls\ctrlAdminSettings.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="rmsForms\selectATV.Designer.vb">
+      <DependentUpon>selectATV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rmsForms\selectATV.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="rmsForms\rmsPassReset.resx">
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rmsUserControls\ctrlAdminSettings.resx">
       <DependentUpon>ctrlAdminSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rmsForms\selectATV.resx">
+      <DependentUpon>selectATV.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

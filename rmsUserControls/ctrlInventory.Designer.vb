@@ -67,6 +67,7 @@ Partial Class ctrlInventory
         Me.cbxUpdStatus.BackColor = System.Drawing.Color.White
         Me.cbxUpdStatus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbxUpdStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxUpdStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxUpdStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxUpdStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxUpdStatus.FormattingEnabled = True
@@ -356,6 +357,7 @@ Partial Class ctrlInventory
         Me.cbxAddStatus.BackColor = System.Drawing.Color.White
         Me.cbxAddStatus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbxAddStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxAddStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxAddStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxAddStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxAddStatus.FormattingEnabled = True

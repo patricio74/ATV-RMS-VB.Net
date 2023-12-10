@@ -1,11 +1,21 @@
-﻿Imports ATV_RMS.ctrlNotif
-Imports MongoDB.Bson
+﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class ctrlTransactions
-    Dim tourPrice As Double = 0
-    Dim numberOfPerson As Double = 0
-    Dim totalPrice As Double = 0
+    'para macompute total price
+    Dim tourPrice As Double = 0.00
+    Dim numberOfPerson As Double = 0.00
+    Dim totalPrice As Double = 0.00
+    'compute change,balance
+    Dim initPayment As Double = 0.00
+    Dim totChange As Double = 0.00
+    Dim remBalance As Double = 0.00
     Private Sub clearAddTransacTab()
+        tourPrice = 0.00
+        numberOfPerson = 0.00
+        totalPrice = 0.00
+        initPayment = 0.00
+        totChange = 0.00
+        remBalance = 0.00
         dgvTransactions.ClearSelection()
         tbxAddFName.Clear()
         tbxAddMName.Clear()
@@ -13,27 +23,34 @@ Public Class ctrlTransactions
         cbxAddTour.SelectedIndex = -1
         'dateTimeNew.Value = DateTime.Now
         cbxAddTour.SelectedIndex = -1
-        cbxAddTimeSlot.SelectedIndex = -1
-        tbxAddPerson.Clear()
-        tbxAddTotal.Clear()
+        cbxAddPerson.SelectedIndex = -1
+        tbxAddTotal.Text = "0.00"
+        tbxAddInitPayment.Clear()
+        tbxAddChange.Text = totChange.ToString("C2")
+        tbxAddBalance.Text = remBalance.ToString("C2")
         cbxAddTourGuide.SelectedIndex = -1
-        tourPrice = 0
-        numberOfPerson = 0
-        totalPrice = 0
     End Sub
     Private Sub clearWaitList()
-        tbxWaitCustName.Clear()
+        tourPrice = 0.00
+        numberOfPerson = 0.00
+        totalPrice = 0.00
+        initPayment = 0.00
+        totChange = 0.00
+        remBalance = 0.00
+        tbxWaitFName.Clear()
         tbxWaitPerson.Clear()
-        tbxWaitTimeSlot.Clear()
         tbxWaitTotPrice.Clear()
         cbxWaitTour.SelectedIndex = -1
         cbxWaitStatus.SelectedIndex = -1
         cbxWaitTourGuide.SelectedIndex = -1
-        tourPrice = 0
-        numberOfPerson = 0
-        totalPrice = 0
     End Sub
     Private Sub clearOngoingTab()
+        tourPrice = 0.00
+        numberOfPerson = 0.00
+        totalPrice = 0.00
+        initPayment = 0.00
+        totChange = 0.00
+        remBalance = 0.00
         tbxOnGName.Clear()
         tbxOnGTour.Clear()
         tbxOnGTime.Clear()
@@ -41,9 +58,6 @@ Public Class ctrlTransactions
         tbxOnGTotal.Clear()
         cbxOnGTourGuide.SelectedIndex = -1
         cbxOnGStatus.SelectedIndex = -1
-        tourPrice = 0
-        numberOfPerson = 0
-        totalPrice = 0
     End Sub
     Private Function cbxToursList()
         Dim filter As New BsonDocument()
@@ -60,38 +74,53 @@ Public Class ctrlTransactions
         Next
     End Sub
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxOnGName.KeyPress, tbxOnGTour.KeyPress, tbxOnGTime.KeyPress, tbxOnGPerson.KeyPress,
-        tbxOnGTour.KeyPress, tbxAddTotal.KeyPress, tbxAddSname.KeyPress, tbxAddPerson.KeyPress, tbxAddMName.KeyPress, tbxAddFName.KeyPress, tbxWaitCustName.KeyPress,
-        tbxWaitPerson.KeyPress, tbxWaitTimeSlot.KeyPress, tbxWaitTotPrice.KeyPress
+        tbxOnGTour.KeyPress, tbxAddSname.KeyPress, tbxAddMName.KeyPress, tbxAddFName.KeyPress, tbxAddBalance.KeyPress,
+        tbxWaitFName.KeyPress, tbxWaitPerson.KeyPress, tbxWaitTotPrice.KeyPress, tbxAddInitPayment.KeyPress, tbxAddChange.KeyPress
         'suppress enter key sound sa mga textboxes
         If e.KeyChar = Chr(13) Then
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub tbxPerson(sender As Object, e As KeyPressEventArgs) Handles tbxAddInitPayment.KeyPress, tbxAddTotal.KeyPress, tbxAddChange.KeyPress,
+        tbxAddBalance.KeyPress, tbxWaitTotPrice.KeyPress, tbxWaitPerson.KeyPress
+        'check if the inputted char is a number,backspace
+        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
             e.Handled = True
         End If
     End Sub
     Private Sub clearForm(sender As Object, e As EventArgs) Handles lblOnGClear.Click, lblClearAdd.Click, lblWaitClear.Click
         If sender Is lblClearAdd Then
             clearAddTransacTab()
+            populateTransac()
         ElseIf sender Is lblWaitClear Then
             clearWaitList()
+            populateTransac()
         ElseIf sender Is lblOnGClear Then
             clearOngoingTab()
+            populateTransac()
         End If
+    End Sub
+    Private Sub transacCounter()
+        'count docs
+        Dim ongoingCount = rmsSharedVar.colTransac.CountDocuments(Builders(Of BsonDocument).Filter.Eq(Of String)("status", "ongoing"))
+        Dim waitingCount = rmsSharedVar.colTransac.CountDocuments(Builders(Of BsonDocument).Filter.Eq(Of String)("status", "waiting"))
+        'display total count
+        lblOngoing.Text = $"Ongoing: {ongoingCount}"
+        lblWaiting.Text = $"Waiting: {waitingCount}"
     End Sub
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabTransactions.SelectedIndexChanged
         If tabTransactions.SelectedIndex = 0 Then 'walk-in transac tab
             reloadTrailList()
+            transacCounter()
             populateTransac()
             clearWaitList()
             clearOngoingTab()
         ElseIf tabTransactions.SelectedIndex = 1 Then 'waiting list tab
             reloadTrailList()
-            populateTransac()
-            clearAddTransacTab()
-            clearOngoingTab()
+            transacCounter()
         ElseIf tabTransactions.SelectedIndex = 2 Then 'ongoing tab
             reloadTrailList()
-            populateTransac()
-            clearAddTransacTab()
-            clearWaitList()
+            transacCounter()
         End If
     End Sub
     Private tranzac As List(Of trDoc)
@@ -142,15 +171,91 @@ Public Class ctrlTransactions
                 dgvTransactions.Rows.Add(doc.trID, applicant, doc.trTourName, doc.trTransacStart, doc.trTimeSlot, doc.trStatus)
             Next
             dgvTransactions.ClearSelection()
+            transacCounter()
         End If
     End Sub
     Private Sub dgvTransactions_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTransactions.CellClick
         If e.RowIndex >= 0 Then
             If tranzac IsNot Nothing AndAlso e.RowIndex < tranzac.Count Then
                 Dim selTransac = tranzac(e.RowIndex)
-                Dim applicantName As String = $"{selTransac.trFname} {selTransac.trMname} {selTransac.trSname}".Trim()
-                tbxAddFName.Text = selTransac.trFname
-                tbxAddMName.Text = selTransac.trMname
+                'check status field ng selected row
+                If selTransac.trStatus = "waiting" Then
+                    'populate wait list tab
+                    tabTransactions.SelectedIndex = 1
+                    popuWaitListTab(selTransac)
+                ElseIf selTransac.trStatus = "ongoing" Then
+                    'populate on going
+                    tabTransactions.SelectedIndex = 2
+                    popuOngoingTab(selTransac)
+                End If
+            End If
+        End If
+    End Sub
+    Private Sub popuWaitListTab(selTransac As trDoc)
+        tbxWaitFName.Text = selTransac.trFname
+        tbxWaitPerson.Text = selTransac.trTotalPerson
+    End Sub
+    Private Sub popuOngoingTab(selTransac As trDoc)
+        tbxOnGName.Text = selTransac.trFname
+        tbxOnGPerson.Text = selTransac.trTotalPerson
+    End Sub
+
+
+
+    Private Sub cbxIndexChanged(sender As Object, e As EventArgs) Handles cbxAddTour.SelectedIndexChanged, cbxAddPerson.SelectedIndexChanged
+        'set tour price
+        If cbxAddTour.SelectedItem IsNot Nothing Then
+            Dim selectedTourName As String = cbxAddTour.SelectedItem.ToString()
+            Dim tourData As List(Of BsonDocument) = cbxToursList()
+            If tourData IsNot Nothing Then
+                Dim selectedTour = tourData.FirstOrDefault(Function(t) t("nameOfTour").ToString() = selectedTourName)
+                If selectedTour IsNot Nothing Then
+                    Dim tourPriceString As String = selectedTour("price").ToString()
+                    If Double.TryParse(tourPriceString, tourPrice) Then
+                        If cbxAddPerson IsNot Nothing AndAlso Not String.IsNullOrEmpty(cbxAddPerson.Text) Then
+                            If Double.TryParse(cbxAddPerson.Text, numberOfPerson) Then
+                                totalPrice = tourPrice * numberOfPerson
+                                tbxAddTotal.Text = totalPrice.ToString("C2")
+                            Else
+                                tbxAddTotal.Text = "0.00"
+                            End If
+                        Else
+                            tbxAddTotal.Text = "0.00"
+                        End If
+                    End If
+                Else
+                End If
+            Else
+            End If
+        End If
+    End Sub
+    'compute total change, balance
+    Private Sub tbx_TextChanged(sender As Object, e As EventArgs) Handles tbxAddInitPayment.TextChanged, tbxAddTotal.TextChanged
+        Dim inputtedPayment As String = tbxAddInitPayment.Text
+        If tbxAddTotal.Text = "" Then
+        Else
+            If Not String.IsNullOrEmpty(inputtedPayment) AndAlso Double.TryParse(inputtedPayment, initPayment) Then
+                If initPayment < totalPrice Then 'display remaining balance
+                    totChange = 0.00
+                    remBalance = totalPrice - initPayment
+                    tbxAddChange.Text = totChange.ToString("C2")
+                    tbxAddBalance.Text = remBalance.ToString("C2")
+                ElseIf initPayment = totalPrice Then 'reset value ng balance&change pag eksakto binayad
+                    totChange = 0.00
+                    remBalance = 0.00
+                    tbxAddChange.Text = totChange.ToString("C2")
+                    tbxAddBalance.Text = remBalance.ToString("C2")
+                Else 'display sukli kapag sobra binayad
+                    totChange = initPayment - totalPrice
+                    remBalance = 0.00
+                    tbxAddChange.Text = totChange.ToString("C2")
+                    tbxAddBalance.Text = remBalance.ToString("C2")
+                End If
+            Else
+                remBalance = 0.00
+                totChange = 0.00
+                tbxAddChange.Text = totChange.ToString("C2")
+                tbxAddBalance.Text = remBalance.ToString("C2")
             End If
         End If
     End Sub
@@ -159,32 +264,24 @@ Public Class ctrlTransactions
 
 
 
-
     'compute total price
-    Private Sub tbxAddPerson_TextChanged(sender As Object, e As EventArgs) Handles tbxAddPerson.TextChanged
-        If tbxAddPerson.Text = "" Then
-            tbxAddTotal.Clear()
-        ElseIf tbxAddPerson.Text IsNot "" Then
-            Double.TryParse(tbxAddPerson.Text, numberOfPerson)
+    Private Sub tbxAddPerson_TextChanged(sender As Object, e As EventArgs)
+        If cbxAddPerson.SelectedIndex = -1 Then
+            tbxAddTotal.Text = "0"
+        ElseIf cbxAddPerson.Text IsNot "" Then
+            Double.TryParse(cbxAddPerson.Text, numberOfPerson)
             totalPrice = tourPrice * numberOfPerson
-            tbxAddTotal.Text = totalPrice
+            tbxAddTotal.Text = totalPrice.ToString("C2")
         End If
     End Sub
     'compute total price
-    Private Sub tbxReservPerson_TextChanged(sender As Object, e As EventArgs)
+    Private Sub tbxWaitPerson_TextChanged(sender As Object, e As EventArgs) Handles tbxWaitPerson.TextChanged
         If tbxWaitPerson.Text = "" Then
             tbxWaitTotPrice.Clear()
         ElseIf tbxWaitPerson.Text IsNot "" Then
             Double.TryParse(tbxWaitPerson.Text, numberOfPerson)
             totalPrice = tourPrice * numberOfPerson
             tbxWaitTotPrice.Text = totalPrice
-        End If
-    End Sub
-    Private Sub tbxPerson(sender As Object, e As KeyPressEventArgs) Handles tbxAddFName.KeyPress, tbxAddMName.KeyPress, tbxAddSname.KeyPress, tbxAddPerson.KeyPress,
-            tbxWaitCustName.KeyPress, tbxWaitTotPrice.KeyPress, tbxWaitPerson.KeyPress, tbxWaitTimeSlot.KeyPress
-        'check if the inputted char is a number,backspace
-        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
-            e.Handled = True
         End If
     End Sub
     Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -198,8 +295,29 @@ Public Class ctrlTransactions
         ElseIf Me.Visible = False Then
             'closeMongoConn()
             clearAddTransacTab()
+            clearWaitList()
+            clearOngoingTab()
             reloadTrailList()
             tabTransactions.SelectedIndex = 0
+            tranzac = Nothing
         End If
+    End Sub
+
+
+
+
+
+
+
+    Private Sub btnAddConfirm_Click(sender As Object, e As EventArgs) Handles btnAddConfirm.Click
+        'insert doc to logTransac
+        'ongoing stat
+        'print invoice
+        '
+
+    End Sub
+
+    Private Sub btnAddAtv_Click(sender As Object, e As EventArgs) Handles btnAddAtv.Click
+        selectATV.ShowDialog()
     End Sub
 End Class

@@ -152,6 +152,7 @@ Partial Class rmsRegistration
         Me.btnMinimize.Name = "btnMinimize"
         Me.btnMinimize.Size = New System.Drawing.Size(30, 30)
         Me.btnMinimize.TabIndex = 0
+        Me.btnMinimize.TabStop = False
         Me.btnMinimize.Text = "—"
         Me.btnMinimize.UseVisualStyleBackColor = False
         '
@@ -197,6 +198,7 @@ Partial Class rmsRegistration
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(30, 30)
         Me.btnClose.TabIndex = 1
+        Me.btnClose.TabStop = False
         Me.btnClose.Text = "x"
         Me.btnClose.UseVisualStyleBackColor = False
         '

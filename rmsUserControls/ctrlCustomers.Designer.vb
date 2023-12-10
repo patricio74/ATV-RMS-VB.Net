@@ -128,6 +128,7 @@ Partial Class ctrlCustomers
         Me.cbxUpdGender.BackColor = System.Drawing.Color.White
         Me.cbxUpdGender.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbxUpdGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxUpdGender.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxUpdGender.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxUpdGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxUpdGender.FormattingEnabled = True
@@ -1016,6 +1017,7 @@ Partial Class ctrlCustomers
         Me.cbxAddGender.BackColor = System.Drawing.Color.White
         Me.cbxAddGender.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbxAddGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxAddGender.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxAddGender.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxAddGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxAddGender.FormattingEnabled = True
@@ -1258,8 +1260,8 @@ Partial Class ctrlCustomers
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Controls.Add(Me.panelFilter)
         Me.Controls.Add(Me.tabCustomerz)
+        Me.Controls.Add(Me.panelFilter)
         Me.Controls.Add(Me.tabCustInfo)
         Me.Controls.Add(Me.panelAddAcc)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

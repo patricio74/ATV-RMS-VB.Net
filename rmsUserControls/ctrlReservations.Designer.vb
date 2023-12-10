@@ -269,6 +269,7 @@ Partial Class ctrlReservations
         Me.cbxReservTimeSlot.BackColor = System.Drawing.Color.White
         Me.cbxReservTimeSlot.Cursor = System.Windows.Forms.Cursors.Default
         Me.cbxReservTimeSlot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxReservTimeSlot.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxReservTimeSlot.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxReservTimeSlot.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxReservTimeSlot.FormattingEnabled = True
@@ -284,6 +285,7 @@ Partial Class ctrlReservations
         Me.cbxReservStatus.BackColor = System.Drawing.Color.White
         Me.cbxReservStatus.Cursor = System.Windows.Forms.Cursors.Default
         Me.cbxReservStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxReservStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxReservStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxReservStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxReservStatus.FormattingEnabled = True
@@ -378,6 +380,7 @@ Partial Class ctrlReservations
         Me.cbxReservTour.BackColor = System.Drawing.Color.White
         Me.cbxReservTour.Cursor = System.Windows.Forms.Cursors.Default
         Me.cbxReservTour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxReservTour.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxReservTour.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxReservTour.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxReservTour.FormattingEnabled = True
@@ -687,6 +690,7 @@ Partial Class ctrlReservations
         Me.cbxNewTimeSlot.BackColor = System.Drawing.Color.White
         Me.cbxNewTimeSlot.Cursor = System.Windows.Forms.Cursors.Default
         Me.cbxNewTimeSlot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxNewTimeSlot.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxNewTimeSlot.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxNewTimeSlot.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxNewTimeSlot.FormattingEnabled = True
@@ -702,6 +706,7 @@ Partial Class ctrlReservations
         Me.cbxNewStatus.BackColor = System.Drawing.Color.White
         Me.cbxNewStatus.Cursor = System.Windows.Forms.Cursors.Default
         Me.cbxNewStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxNewStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxNewStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxNewStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxNewStatus.FormattingEnabled = True
@@ -780,6 +785,7 @@ Partial Class ctrlReservations
         Me.cbxNewTour.BackColor = System.Drawing.Color.White
         Me.cbxNewTour.Cursor = System.Windows.Forms.Cursors.Default
         Me.cbxNewTour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxNewTour.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxNewTour.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxNewTour.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxNewTour.FormattingEnabled = True
