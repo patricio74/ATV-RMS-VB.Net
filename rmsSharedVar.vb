@@ -1,4 +1,5 @@
-﻿Imports MongoDB.Bson
+﻿Imports ATV_RMS.selectATV
+Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class rmsSharedVar
     'DB shared instance
@@ -27,4 +28,11 @@ Public Class rmsSharedVar
 
     Public Shared currentUser As String   'store current user's username
     Public Shared admnID  'store userid
+
+    'add transaction var
+    Public Shared atvTotNum As Integer 'var para sa dami ng ATV
+    Public Shared selectedATVs As New List(Of atvItem) 'store selected ATVs as array
+    'waiting tab
+    Public Shared atvWaitTotNum As Integer 'var para sa dami ng ATV
+
 End Class

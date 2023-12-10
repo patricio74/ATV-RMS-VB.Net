@@ -133,14 +133,14 @@ Public Class ctrlOverview
             For Each doc As BsonDocument In rmsSharedVar.colTransac.Find(New BsonDocument()).ToList()
                 Dim transacDate As DateTime = DateTime.ParseExact(doc("transacStart").ToString(), "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
                 If transacDate >= firstDayOfMonth AndAlso transacDate <= lastDayOfMonth Then
-                    totalRevenueThisMonth += Convert.ToDecimal(doc("totalPrice").ToString())
+                    totalRevenueThisMonth += Convert.ToDecimal(doc("TotalPayment").ToString())
                 End If
             Next
             Dim totalRevenueYesterday As Decimal = 0
             For Each doc As BsonDocument In rmsSharedVar.colTransac.Find(New BsonDocument()).ToList()
                 Dim transacDate As DateTime = DateTime.ParseExact(doc("transacStart").ToString(), "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)
                 If transacDate >= startOfYesterday AndAlso transacDate <= endOfYesterday Then
-                    totalRevenueYesterday += Convert.ToDecimal(doc("totalPrice").ToString())
+                    totalRevenueYesterday += Convert.ToDecimal(doc("TotalPayment").ToString())
                 End If
             Next
             lblRevMonth.Text = "₱" & totalRevenueThisMonth.ToString("#,##0")

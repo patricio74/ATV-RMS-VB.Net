@@ -136,7 +136,7 @@ Public Class ctrlCustomers
                 transaction("tourName").ToString(),
                 transaction("totalPerson").ToString(),
                 transaction("transacStart").ToString(),
-                transaction("totalPrice").ToString()
+                transaction("TotalPayment").ToString()
                 )
             dgvCustHistory.Rows.Add(row)
         Next
