@@ -32,7 +32,10 @@ Public Class rmsSharedVar
     'add transaction var
     Public Shared atvTotNum As Integer 'var para sa dami ng ATV
     Public Shared selectedATVs As New List(Of atvItem) 'store selected ATVs as array
+    'gawan mo rin var para sa tguide array
+
     'waiting tab
     Public Shared atvWaitTotNum As Integer 'var para sa dami ng ATV
+    'gawan mo rin var para sa tguide array
 
 End Class
