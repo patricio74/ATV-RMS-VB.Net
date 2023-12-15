@@ -26,9 +26,13 @@ Partial Class ctrlTransactions
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvTransactions = New System.Windows.Forms.DataGridView()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabTransactions = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.lblGuide = New System.Windows.Forms.Label()
         Me.cbxAddTimeSlot = New System.Windows.Forms.ComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.lblTourPrice = New System.Windows.Forms.Label()
@@ -113,11 +117,6 @@ Partial Class ctrlTransactions
         Me.lblTodayTransac = New System.Windows.Forms.Label()
         Me.lblWaiting = New System.Windows.Forms.Label()
         Me.lblOngoing = New System.Windows.Forms.Label()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvTransactions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTransactions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -171,6 +170,40 @@ Partial Class ctrlTransactions
         Me.dgvTransactions.Size = New System.Drawing.Size(1103, 280)
         Me.dgvTransactions.TabIndex = 95
         '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "CUSTOMER NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column5.HeaderText = "TOUR NAME"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "DATE"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 200
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "TIME SLOT"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 110
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "STATUS"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
         'tabTransactions
         '
         Me.tabTransactions.Controls.Add(Me.TabPage1)
@@ -185,7 +218,6 @@ Partial Class ctrlTransactions
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.TabPage1.Controls.Add(Me.lblGuide)
         Me.TabPage1.Controls.Add(Me.cbxAddTimeSlot)
         Me.TabPage1.Controls.Add(Me.Label24)
         Me.TabPage1.Controls.Add(Me.lblTourPrice)
@@ -223,18 +255,6 @@ Partial Class ctrlTransactions
         Me.TabPage1.Size = New System.Drawing.Size(1095, 343)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "  Walk-in Transaction   "
-        '
-        'lblGuide
-        '
-        Me.lblGuide.AutoSize = True
-        Me.lblGuide.BackColor = System.Drawing.Color.Transparent
-        Me.lblGuide.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblGuide.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblGuide.Location = New System.Drawing.Point(544, 99)
-        Me.lblGuide.Name = "lblGuide"
-        Me.lblGuide.Size = New System.Drawing.Size(79, 18)
-        Me.lblGuide.TabIndex = 1037
-        Me.lblGuide.Text = "TOUR GUIDE:"
         '
         'cbxAddTimeSlot
         '
@@ -1413,40 +1433,6 @@ Partial Class ctrlTransactions
         Me.lblOngoing.TabIndex = 131
         Me.lblOngoing.Text = "Ongoing: 0"
         '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "CUSTOMER NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.HeaderText = "TOUR NAME"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "DATE"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 200
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "TIME SLOT"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 110
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "STATUS"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
         'ctrlTransactions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -1561,7 +1547,6 @@ Partial Class ctrlTransactions
     Friend WithEvents tbxOnGChange As TextBox
     Friend WithEvents Label37 As Label
     Friend WithEvents tbxOnGNewPayment As TextBox
-    Friend WithEvents lblGuide As Label
     Friend WithEvents Label39 As Label
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn

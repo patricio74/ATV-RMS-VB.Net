@@ -127,8 +127,6 @@ Public Class ctrlTransactions
         lblOngoing.Text = $"Ongoing: {ongoingCount}"
         lblWaiting.Text = $"Waiting: {waitingCount}"
     End Sub
-
-
     '!!!!!!!!!!! ADD TRANSAC TAB!!!!!!!!!!!!
     Private Function cbxToursList()
         Dim filter As New BsonDocument()
@@ -174,27 +172,6 @@ Public Class ctrlTransactions
             End If
         End If
     End Sub
-    ' Private Sub reloadTGuideList()
-    '     Try
-    '         'clear and repopulate tour guide comboboxes
-    '         cbxAddTourGuide.Items.Clear()
-    '         cbxWaitTourGuide.Items.Clear()
-    '         Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "available")
-    '         Dim projection = Builders(Of BsonDocument).Projection.Include("FName").Include("MName").Include("Sname")
-    '         Dim cursor = rmsSharedVar.colTourGuide.Find(filter).Project(projection).ToCursor()
-    '         While cursor.MoveNext()
-    '             For Each document In cursor.Current
-    '                 Dim fullName As String = $"{document("FName").AsString} {document("MName").AsString} {document("Sname").AsString}"
-    '                 'add tour ugide names to cboxes
-    '                 cbxAddTourGuide.Items.Add(fullName)
-    '                 cbxWaitTourGuide.Items.Add(fullName)
-    '             Next
-    '         End While
-    '     Catch ex As Exception
-    '         ' Handle exception
-    '         MessageBox.Show("Error: " & ex.Message)
-    '     End Try
-    ' End Sub
     Private Sub reloadTGuideList()
         Try
             'clear and repopulate tour guide comboboxes
@@ -294,12 +271,6 @@ Public Class ctrlTransactions
     End Sub
 
 
-
-
-
-
-
-
     Private Sub btnAddConfirm_Click(sender As Object, e As EventArgs) Handles btnAddConfirm.Click
         If String.IsNullOrEmpty(tbxAddFName.Text) OrElse String.IsNullOrEmpty(tbxAddMName.Text) OrElse String.IsNullOrEmpty(tbxAddSname.Text) OrElse String.IsNullOrEmpty(tbxAddInitPayment.Text) OrElse cbxAddTimeSlot.SelectedIndex <= -1 OrElse cbxAddPerson.SelectedIndex <= -1 OrElse cbxAddTour.SelectedIndex <= -1 OrElse cbxAddTourGuide.SelectedIndex <= -1 OrElse rmsSharedVar.selectedATVs Is Nothing OrElse rmsSharedVar.selectedATVs.Count = 0 Then
             MessageBox.Show("Please fill in the required fields to continue.")
@@ -316,14 +287,19 @@ Public Class ctrlTransactions
                             {"Id", item.Id}
                         }
                         atvArray.Add(atvItemDoc)
+
+                        'get _id
+                        Dim selectedAtvId As ObjectId = item.Id
+                        'set status to "not available"
+                        Dim updateAtvFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", selectedAtvId)
+                        Dim updateAtv = Builders(Of BsonDocument).Update.Set(Of String)("status", "not available")
+                        rmsSharedVar.colInventory.UpdateOne(updateAtvFilter, updateAtv)
                     Next
 
                     'get selected tour guide's name
                     Dim selectedTourGuideName As String = cbxAddTourGuide.SelectedItem.ToString()
                     'find the corresponding tuple in the array based on the selected name
-                    'reset mo rin selected tourg kada tapos
                     Dim selectedTourGuideTuple As Tuple(Of String, String) = Nothing
-
                     For Each tourGuideTuple As Tuple(Of String, String) In rmsSharedVar.atvGuide
                         If tourGuideTuple.Item1 = selectedTourGuideName Then
                             selectedTourGuideTuple = tourGuideTuple
@@ -331,18 +307,13 @@ Public Class ctrlTransactions
                         End If
                     Next
 
-
                     If selectedTourGuideTuple IsNot Nothing Then
                         ' Retrieve the _id of the selected tour guide
                         Dim selectedTourGuideId As String = selectedTourGuideTuple.Item2
-                        lblGuide.Text = selectedTourGuideId
                         ' Update the selected tour guide's status to "not available"
                         Dim updateTourGuideFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTourGuideId))
-                        Dim updateTourGuide = Builders(Of BsonDocument).Update.Set(Of String)("status", "not available")
+                        Dim updateTourGuide = Builders(Of BsonDocument).Update.Set(Of String)("status", "NOT AVAILABLE")
                         rmsSharedVar.colTourGuide.UpdateOne(updateTourGuideFilter, updateTourGuide)
-
-
-
 
                         'save transaction sa db
                         Dim newTransacDoc As New BsonDocument From {
@@ -372,11 +343,9 @@ Public Class ctrlTransactions
                         '
                         '
                         '
-                        'add code dito para magprint ng invoice
                         '            
-                        'update set selected atvs status to not available
-                        '
-                        '
+                        'reset atv array saka tourguide pagtapos ng transaction
+                        'add code dito para magprint ng invoice
                         '
                         '
                         '

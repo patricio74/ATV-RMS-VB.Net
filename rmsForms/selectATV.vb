@@ -64,11 +64,10 @@ Public Class selectATV
     End Sub
     Private Sub atvCheckList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles atvCheckList.SelectedIndexChanged
         If atvCheckList.SelectedIndex <> -1 Then
-            'atvCheckList.ClearSelected() 'para hindi naghihighlight yung last selection
             'count checked items
             If atvCheckList.CheckedItems.Count > maxATV Then
                 MessageBox.Show("Oops! You have reached a limit of " & maxATV & " ATVs.")
-                ' Uncheck the last checked item
+                'uncheck the last checked item
                 atvCheckList.SetItemChecked(atvCheckList.SelectedIndex, False)
             End If
         End If
