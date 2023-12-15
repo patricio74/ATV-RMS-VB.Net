@@ -39,7 +39,6 @@ Public Class ctrlNotif
         tbxAdminEmail.Clear()
         tbxAdminPhone.Clear()
         tbxAdminRFID.Clear()
-        tbxAdminRole.Clear()
     End Sub
     'suppress enter key sound sa mga textboxes
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxApplicantName.KeyPress, tbxApplicantAddress.KeyPress, tbxApplicantEmail.KeyPress,
@@ -71,7 +70,7 @@ Public Class ctrlNotif
             dgvPendingTourGuides.Rows.Clear()
             For Each doc In pendingTGuide
                 Dim applicant As String = $"{doc.tgFname} {doc.tgMname} {doc.tgSname}".Trim()
-                dgvPendingTourGuides.Rows.Add(doc.tgID, applicant, doc.tgPhone, doc.tgEmail)
+                dgvPendingTourGuides.Rows.Add(applicant, doc.tgPhone, doc.tgEmail)
             Next
             dgvPendingTourGuides.ClearSelection()
         End If
@@ -113,7 +112,7 @@ Public Class ctrlNotif
             dgvPendingAdminAcc.Rows.Clear()
             For Each doc In pendingAdmin
                 Dim admin As String = $"{doc.admpFname} {doc.admpMname} {doc.admpSname}".Trim()
-                dgvPendingAdminAcc.Rows.Add(doc.admpID, admin, doc.admpEmail)
+                dgvPendingAdminAcc.Rows.Add(admin, doc.admpEmail)
             Next
             dgvPendingAdminAcc.ClearSelection()
         End If
@@ -127,7 +126,6 @@ Public Class ctrlNotif
                 tbxAdminEmail.Text = selectedAdmnp.admpEmail
                 tbxAdminPhone.Text = selectedAdmnp.admpPhone
                 tbxAdminRFID.Text = selectedAdmnp.admpRFID
-                tbxAdminRole.Text = selectedAdmnp.admpRole
             End If
         End If
     End Sub
@@ -176,15 +174,15 @@ Public Class ctrlNotif
             If dgvPendingTourGuides.SelectedRows.Count > 0 Then
                 Dim selectedGuide = pendingTGuide(dgvPendingTourGuides.SelectedRows(0).Index)
                 Dim guideID As String = selectedGuide.tgID
-                Dim delConfirmation = MessageBox.Show("Are you sure you want to accept this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim empConfirmation = MessageBox.Show("Are you sure you want to accept this applicant?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 'move selected applicant doc to tour guide collection
-                If delConfirmation = DialogResult.Yes Then
+                If empConfirmation = DialogResult.Yes Then
                     moveToTourGuideCol(guideID)
-                ElseIf delConfirmation = DialogResult.No Then
+                ElseIf empConfirmation = DialogResult.No Then
                     populateApplicantDGV()
                 End If
             Else
-                MessageBox.Show("Please select an account first.")
+                MessageBox.Show("Please select an applicant first.")
                 populateApplicantDGV()
             End If
 
@@ -192,11 +190,11 @@ Public Class ctrlNotif
             If dgvPendingAdminAcc.SelectedRows.Count > 0 Then
                 Dim selectedEmp = pendingAdmin(dgvPendingAdminAcc.SelectedRows(0).Index)
                 Dim pendingID As String = selectedEmp.admpID
-                Dim delConfirmation = MessageBox.Show("Are you sure you want to accept this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim admConfirmation = MessageBox.Show("Are you sure you want to accept this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 'move selected admin acc to rmsAdmin collection
-                If delConfirmation = DialogResult.Yes Then
+                If admConfirmation = DialogResult.Yes Then
                     moveToAdminCol(pendingID)
-                ElseIf delConfirmation = DialogResult.No Then
+                ElseIf admConfirmation = DialogResult.No Then
                     populatePendingAdminDGV()
                 End If
             Else
@@ -214,7 +212,7 @@ Public Class ctrlNotif
                 If document IsNot Nothing Then
                     'Add account creation date, set status bago imove
                     document.Add("accountCreationDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
-                    document.Add("status", "not available")
+                    document.Add("status", "available")
                     rmsSharedVar.colTourGuide.InsertOne(document)
                     rmsSharedVar.colResume.DeleteOne(filter)
                     MessageBox.Show("New tour guide account successfully added!")

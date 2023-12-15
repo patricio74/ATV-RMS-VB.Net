@@ -59,7 +59,6 @@ Partial Class ctrlTrails
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.updDuration = New System.Windows.Forms.TextBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -216,7 +215,7 @@ Partial Class ctrlTrails
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvTrails.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvTrails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTrails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
+        Me.dgvTrails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
         Me.dgvTrails.EnableHeadersVisualStyles = False
         Me.dgvTrails.GridColor = System.Drawing.Color.DimGray
         Me.dgvTrails.Location = New System.Drawing.Point(32, 48)
@@ -521,13 +520,6 @@ Partial Class ctrlTrails
         Me.updDuration.Size = New System.Drawing.Size(118, 30)
         Me.updDuration.TabIndex = 1
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 25
-        '
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -617,7 +609,6 @@ Partial Class ctrlTrails
     Friend WithEvents Label13 As Label
     Friend WithEvents updDuration As TextBox
     Friend WithEvents btnDelTrail As Button
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn

@@ -26,11 +26,13 @@ Public Class ctrlTransactions
         cbxAddTour.SelectedIndex = -1
         cbxAddPerson.SelectedIndex = -1
         tbxAddTotal.Text = totalPrice.ToString("N2")
-        tbxAddInitPayment.Text = initPayment.ToString("N2")
+        tbxAddInitPayment.Clear()
         tbxAddChange.Text = totChange.ToString("N2")
         tbxAddBalance.Text = remBalance.ToString("N2")
+        lblTourPrice.Text = 0.00
         cbxAddTourGuide.SelectedIndex = -1
         cbxAddTimeSlot.SelectedIndex = -1
+        transacCounter()
     End Sub
     Private Sub clearWaitList()
         tourPrice = 0.00
@@ -48,6 +50,7 @@ Public Class ctrlTransactions
         cbxWaitStatus.SelectedIndex = -1
         tbxWaitTotPrice.Text = totalPrice.ToString("N2")
         tbxWaitBalance.Text = remBalance.ToString("N2")
+        transacCounter()
         'clear selected atv array
     End Sub
     Private Sub clearOngoingTab()
@@ -65,9 +68,9 @@ Public Class ctrlTransactions
         tbxOnGPerson.Clear()
         tbxOnGTotal.Text = totalPrice.ToString("N2")
         tbxOnGRemBalance.Text = remBalance.ToString("N2")
-        tbxOnGNewPayment.Text = finPayment.ToString("N2")
+        tbxOnGNewPayment.Clear()
         tbxOnGChange.Text = totChange.ToString("N2")
-        cbxOnGStatus.SelectedIndex = -1
+        transacCounter()
         'add code to clear selected atv array
     End Sub
     Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -85,8 +88,6 @@ Public Class ctrlTransactions
             clearAddTransacTab()
             clearWaitList()
             clearOngoingTab()
-            reloadTrailList()
-            reloadTGuideList()
             tabTransactions.SelectedIndex = 0
             tranzac = Nothing
         End If
@@ -173,24 +174,51 @@ Public Class ctrlTransactions
             End If
         End If
     End Sub
+    ' Private Sub reloadTGuideList()
+    '     Try
+    '         'clear and repopulate tour guide comboboxes
+    '         cbxAddTourGuide.Items.Clear()
+    '         cbxWaitTourGuide.Items.Clear()
+    '         Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "available")
+    '         Dim projection = Builders(Of BsonDocument).Projection.Include("FName").Include("MName").Include("Sname")
+    '         Dim cursor = rmsSharedVar.colTourGuide.Find(filter).Project(projection).ToCursor()
+    '         While cursor.MoveNext()
+    '             For Each document In cursor.Current
+    '                 Dim fullName As String = $"{document("FName").AsString} {document("MName").AsString} {document("Sname").AsString}"
+    '                 'add tour ugide names to cboxes
+    '                 cbxAddTourGuide.Items.Add(fullName)
+    '                 cbxWaitTourGuide.Items.Add(fullName)
+    '             Next
+    '         End While
+    '     Catch ex As Exception
+    '         ' Handle exception
+    '         MessageBox.Show("Error: " & ex.Message)
+    '     End Try
+    ' End Sub
     Private Sub reloadTGuideList()
         Try
             'clear and repopulate tour guide comboboxes
             cbxAddTourGuide.Items.Clear()
             cbxWaitTourGuide.Items.Clear()
+            'create an array to store the full name and _id of each tour guide
+            Dim tourGuides As New List(Of Tuple(Of String, String))
             Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "available")
-            Dim projection = Builders(Of BsonDocument).Projection.Include("FName").Include("MName").Include("Sname")
+            Dim projection = Builders(Of BsonDocument).Projection.Include("FName").Include("MName").Include("Sname").Include("_id")
             Dim cursor = rmsSharedVar.colTourGuide.Find(filter).Project(projection).ToCursor()
             While cursor.MoveNext()
                 For Each document In cursor.Current
                     Dim fullName As String = $"{document("FName").AsString} {document("MName").AsString} {document("Sname").AsString}"
-                    'add tour ugide names to cboxes
+                    Dim tourGuideId As String = document("_id").ToString()
+                    ' Add a tuple with the full name and _id to the array
+                    tourGuides.Add(New Tuple(Of String, String)(fullName, tourGuideId))
+                    ' Add tour guide names to cboxes
                     cbxAddTourGuide.Items.Add(fullName)
                     cbxWaitTourGuide.Items.Add(fullName)
                 Next
             End While
+            'store the tour guide array in a shared variable for later use
+            rmsSharedVar.atvGuide = tourGuides
         Catch ex As Exception
-            ' Handle exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
@@ -264,6 +292,14 @@ Public Class ctrlTransactions
             rmsSharedVar.atvTotNum = numberOfPerson
         End If
     End Sub
+
+
+
+
+
+
+
+
     Private Sub btnAddConfirm_Click(sender As Object, e As EventArgs) Handles btnAddConfirm.Click
         If String.IsNullOrEmpty(tbxAddFName.Text) OrElse String.IsNullOrEmpty(tbxAddMName.Text) OrElse String.IsNullOrEmpty(tbxAddSname.Text) OrElse String.IsNullOrEmpty(tbxAddInitPayment.Text) OrElse cbxAddTimeSlot.SelectedIndex <= -1 OrElse cbxAddPerson.SelectedIndex <= -1 OrElse cbxAddTour.SelectedIndex <= -1 OrElse cbxAddTourGuide.SelectedIndex <= -1 OrElse rmsSharedVar.selectedATVs Is Nothing OrElse rmsSharedVar.selectedATVs.Count = 0 Then
             MessageBox.Show("Please fill in the required fields to continue.")
@@ -281,11 +317,40 @@ Public Class ctrlTransactions
                         }
                         atvArray.Add(atvItemDoc)
                     Next
-                    Dim newTransacDoc As New BsonDocument From {
+
+                    'get selected tour guide's name
+                    Dim selectedTourGuideName As String = cbxAddTourGuide.SelectedItem.ToString()
+                    'find the corresponding tuple in the array based on the selected name
+                    'reset mo rin selected tourg kada tapos
+                    Dim selectedTourGuideTuple As Tuple(Of String, String) = Nothing
+
+                    For Each tourGuideTuple As Tuple(Of String, String) In rmsSharedVar.atvGuide
+                        If tourGuideTuple.Item1 = selectedTourGuideName Then
+                            selectedTourGuideTuple = tourGuideTuple
+                            Exit For
+                        End If
+                    Next
+
+
+                    If selectedTourGuideTuple IsNot Nothing Then
+                        ' Retrieve the _id of the selected tour guide
+                        Dim selectedTourGuideId As String = selectedTourGuideTuple.Item2
+                        lblGuide.Text = selectedTourGuideId
+                        ' Update the selected tour guide's status to "not available"
+                        Dim updateTourGuideFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTourGuideId))
+                        Dim updateTourGuide = Builders(Of BsonDocument).Update.Set(Of String)("status", "not available")
+                        rmsSharedVar.colTourGuide.UpdateOne(updateTourGuideFilter, updateTourGuide)
+
+
+
+
+                        'save transaction sa db
+                        Dim newTransacDoc As New BsonDocument From {
                         {"FName", tbxAddFName.Text},
                         {"MName", tbxAddMName.Text},
                         {"Sname", tbxAddSname.Text},
                         {"tourName", cbxAddTour.SelectedItem.ToString},
+                        {"tourGuide", cbxAddTourGuide.SelectedItem.ToString},
                         {"tourPrice", lblTourPrice.Text},
                         {"totalPerson", cbxAddPerson.SelectedItem.ToString},
                         {"timeSlot", cbxAddTimeSlot.SelectedItem.ToString},
@@ -299,58 +364,31 @@ Public Class ctrlTransactions
                         {"duration", ""},
                         {"customer", ""},
                         {"reservDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")},
-                        {"tourGuide", cbxAddTourGuide.SelectedItem.ToString},
                         {"transacStart", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")}
-                    }
-                    ' {"guideID", cbxAddTourGuide.SelectedItem.ToString}, palitan code para makuha _id ng selected item
+                        }
 
-                    rmsSharedVar.colTransac.InsertOne(newTransacDoc)
-                    ' Generate the receipt string
-                    Dim receiptString As String = GenerateReceiptString(newTransacDoc)
-                    ' Send the receipt string to the receipt printer (replace this with your actual code to print)
-                    PrintReceipt(receiptString)
-
-                    MessageBox.Show("New transaction added successfully!")
-                    clearAddTransacTab()
-                    populateTransac()
+                        rmsSharedVar.colTransac.InsertOne(newTransacDoc)
+                        '
+                        '
+                        '
+                        '
+                        'add code dito para magprint ng invoice
+                        '            
+                        'update set selected atvs status to not available
+                        '
+                        '
+                        '
+                        '
+                        '
+                        MessageBox.Show("New transaction added successfully!")
+                        clearAddTransacTab()
+                        populateTransac()
+                    End If
                 Catch ex As Exception
                     MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End If
-            '
-            '
-            'update set selected atvs, tourguide status to not available
-            '
-            'print invoice
-            '
-            '
-            '
-            '
         End If
-    End Sub
-    Private Function GenerateReceiptString(transaction As BsonDocument) As String
-        ' Create a formatted string based on the transaction data
-        ' Modify this according to your receipt format
-        Dim receiptString As String = $"ATV-RMS Transaction Invoice" & vbCrLf & vbCrLf &
-                                 $"Customer: {transaction("FName")} {transaction("MName")} {transaction("Sname")}" & vbCrLf &
-                                 $"Total Persons: {transaction("totalPerson")}" & vbCrLf &
-                                 $"Time Slot: {transaction("timeSlot")}" & vbCrLf &
-                                 $"Tour Name: {transaction("tourName")}" & vbCrLf &
-                                 $"Tour Guide: {transaction("tourGuide")}" & vbCrLf &
-                                 $"Tour Price: {transaction("tourPrice")}" & vbCrLf &
-                                 $"Initial Payment: {transaction("InitialPayment")}" & vbCrLf &
-                                 $"Total Payment: {transaction("TotalPayment")}" & vbCrLf &
-                                 $"Balance: {transaction("Balance")}" & vbCrLf &
-                                 $"Change: {transaction("change")}" & vbCrLf &
-                                 $"Transaction Start: {transaction("transacStart")}" & vbCrLf &
-                                 $"Status: {transaction("status")}"
-        Return receiptString
-    End Function
-    Private Sub PrintReceipt(receiptString As String)
-        ' Implement the logic to print the receipt string on your receipt printer
-        ' Replace this with your actual code to send the receipt to the printer
-        Console.WriteLine(receiptString)
-        ' Your printing logic here...
     End Sub
 
 
@@ -413,7 +451,7 @@ Public Class ctrlTransactions
             dgvTransactions.Rows.Clear()
             For Each doc In tranzac
                 Dim applicant As String = $"{doc.trFname} {doc.trMname} {doc.trSname}".Trim()
-                dgvTransactions.Rows.Add(doc.trID, applicant, doc.trTourName, doc.trTransacStart, doc.trTimeSlot, doc.trStatus)
+                dgvTransactions.Rows.Add(applicant, doc.trTourName, doc.trTransacStart, doc.trTimeSlot, doc.trStatus)
             Next
             dgvTransactions.ClearSelection()
             transacCounter()
@@ -463,7 +501,6 @@ Public Class ctrlTransactions
         tbxOnGPerson.Text = selTransac.trTotalPerson
         tbxOnGTotal.Text = selTransac.trTotalPayment
         tbxOnGRemBalance.Text = selTransac.trBalance
-        cbxOnGStatus.Text = selTransac.trChange
         '
         'cocomputin pa lang to; payment, change
         '
@@ -495,6 +532,19 @@ Public Class ctrlTransactions
             rmsSharedVar.atvWaitTotNum = numberOfWaitPerson
         End If
     End Sub
+
+
+
+    Private Sub btnOnGAtv_Click(sender As Object, e As EventArgs) Handles btnOnGAtv.Click
+        'show form dialog with list of atvs used by selected row 
+    End Sub
+
+
+
+
+
+
+
     Private Sub btnStartTrail_Click(sender As Object, e As EventArgs) Handles btnStartTrail.Click
         'add time
         'update doc; dagdag tguide, atv array sa docu
@@ -507,7 +557,4 @@ Public Class ctrlTransactions
         'print resibo
     End Sub
 
-    Private Sub btnOnGAtv_Click(sender As Object, e As EventArgs) Handles btnOnGAtv.Click
-        'show form dialog with list of atvs used by selected row 
-    End Sub
 End Class

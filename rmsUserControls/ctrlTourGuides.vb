@@ -1,6 +1,6 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
-
+Imports System.IO
 Public Class ctrlTourGuides
     Private tGuidez As List(Of empDoc)
     Public Class empDoc
@@ -13,15 +13,12 @@ Public Class ctrlTourGuides
         Public Property empAddress As String
         Public Property empRFID As String
         Public Property empStatus As String
-        'Public Property empUsername As String
-        'Public Property empPassword As String
         Public Property empCreationDate As String
     End Class
     Private Sub clearUpdEmpTab()
         tbxUpdEmpFname.Clear()
         tbxUpdEmpMname.Clear()
         tbxUpdEmpSname.Clear()
-        'tbxUpdEmpRFID.Clear()
         tbxUpdEmpPhone.Clear()
         tbxUpdEmpEmail.Clear()
         tbxUpdEmpAddress.Clear()
@@ -34,21 +31,13 @@ Public Class ctrlTourGuides
         tbxAddEmpFname.Clear()
         tbxAddEmpMname.Clear()
         tbxAddEmpSname.Clear()
-        'tbxAddEmpRFID.Clear()
         tbxAddEmpPhone.Clear()
         tbxAddEmpEmail.Clear()
-        tbxAddEmpAddress.Clear
+        tbxAddEmpAddress.Clear()
+        cbxAddEmpStatus.SelectedIndex = -1
         populateEmpDGV()
         dgvTourGuide.ClearSelection()
     End Sub
-    'Public Sub resetFilter()
-    'tbxSearchFir.Clear()
-    'tbxSearchSur.Clear()
-    'tbxSearchPhone.Clear()
-    'tbxSearchEmail.Clear()
-    'tbxSearchRFID.Clear()
-    ' cbxSearchFilter.SelectedIndex = 0
-    'End Sub
     Private Sub tbxContNum_TextChanged(sender As Object, e As KeyPressEventArgs) Handles tbxUpdEmpPhone.KeyPress, tbxAddEmpPhone.KeyPress
         'check if the inputted char is a number,backspace
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
@@ -61,6 +50,14 @@ Public Class ctrlTourGuides
             e.Handled = True
         End If
     End Sub
+    'Public Sub resetFilter()
+    'tbxSearchFir.Clear()
+    'tbxSearchSur.Clear()
+    'tbxSearchPhone.Clear()
+    'tbxSearchEmail.Clear()
+    'tbxSearchRFID.Clear()
+    ' cbxSearchFilter.SelectedIndex = 0
+    'End Sub
     ' Private Sub cbxSearchFilter_SelectedIndexChanged(sender As Object, e As EventArgs)
     ' If cbxSearchFilter.SelectedIndex = 0 Then 'search using rfid
     '     tbxSearchRFID.Visible = True
@@ -94,22 +91,22 @@ Public Class ctrlTourGuides
     '    tbxSearchPhone.Visible = False
     '  End If
     'End Sub
-    Private Sub btnClearFilter_Click(sender As Object, e As EventArgs)
-        clearUpdEmpTab()
-        'resetFilter()
-        populateEmpDGV()
-    End Sub
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs)
-        '
-        '
-        '
-        'may mali pa sa search, ayaw magsearch ng email, phone, name
-        'search sa name dagdag ka code para pwede magsearch kahit yung surname/fname lang isearch
-        'search col where fname&sname contain tbxfnma.text&sname.text
-        '
-        '
-        '
-    End Sub
+    'Private Sub btnClearFilter_Click(sender As Object, e As EventArgs)
+    '    clearUpdEmpTab()
+    '    resetFilter()
+    '    populateEmpDGV()
+    'End Sub
+    'Private Sub btnSearch_Click(sender As Object, e As EventArgs)
+    '
+    '
+    '
+    'may mali pa sa search, ayaw magsearch ng email, phone, name
+    'search sa name dagdag ka code para pwede magsearch kahit yung surname/fname lang isearch
+    'search col where fname&sname contain tbxfnma.text&sname.text
+    '
+    '
+    '
+    'End Sub
     'Private Sub populateFilteredList(tGuidez As List(Of empDoc))
     '    dgvTourGuide.Rows.Clear()
     '    For Each tg As empDoc In tGuidez
@@ -126,8 +123,6 @@ Public Class ctrlTourGuides
             Dim empDocList As List(Of BsonDocument) = rmsSharedVar.colTourGuide.Find(New BsonDocument()).ToList()
             tGuidez = New List(Of empDoc)()
             For Each document As BsonDocument In empDocList
-                'display * docs to dgv where role=tourguide
-                'If document("role").ToString = "tourguide" Then
                 Dim idElement = document.GetElement("_id")
                 Dim emplist As New empDoc() With {
                     .empID = idElement.Value.AsObjectId.ToString,
@@ -140,9 +135,7 @@ Public Class ctrlTourGuides
                     .empStatus = document("status").ToString,
                     .empCreationDate = document("accountCreationDate").ToString
                 }
-                '.empRFID = document("RFID").ToString,
                 tGuidez.Add(emplist)
-                'End If
             Next
             dgvTourGuide.Rows.Clear()
             For Each doc In tGuidez
@@ -159,7 +152,6 @@ Public Class ctrlTourGuides
                 tbxUpdEmpFname.Text = selectedEmp.empFname
                 tbxUpdEmpMname.Text = selectedEmp.empMname
                 tbxUpdEmpSname.Text = selectedEmp.empSname
-                'tbxUpdEmpRFID.Text = selectedEmp.empRFID
                 tbxUpdEmpPhone.Text = selectedEmp.empPhone
                 tbxUpdEmpEmail.Text = selectedEmp.empEmail
                 tbxUpdEmpAddress.Text = selectedEmp.empAddress
@@ -183,7 +175,7 @@ Public Class ctrlTourGuides
                 Dim selectedRow = dgvTourGuide.SelectedRows(0)
                 Dim selectedEmp = tGuidez(selectedRow.Index)
                 Dim empID As String = selectedEmp.empID
-                If String.IsNullOrEmpty(tbxUpdEmpFname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpMname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpSname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpPhone.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpEmail.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpAddress.Text) Then
+                If String.IsNullOrEmpty(tbxUpdEmpFname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpSname.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpPhone.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpEmail.Text) OrElse String.IsNullOrEmpty(tbxUpdEmpAddress.Text) Then
                     MessageBox.Show("Please fill in all fields to continue.")
                 Else
                     Dim updConfirmation As DialogResult = MessageBox.Show("Do you want to update this info?", "Confirmation", MessageBoxButtons.YesNo)
@@ -204,14 +196,13 @@ Public Class ctrlTourGuides
                                 populateEmpDGV()
                                 clearUpdEmpTab()
                             End If
-                            'Set(Of String)("RFID", tbxUpdEmpRFID.Text).
                         Catch ex As Exception
                             MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End Try
                     End If
                 End If
             Else
-                MessageBox.Show("Please select an account to update.")
+                MessageBox.Show("Please select a Tour Guide to update.")
                 populateEmpDGV()
             End If
 
@@ -219,7 +210,7 @@ Public Class ctrlTourGuides
             If dgvTourGuide.SelectedRows.Count > 0 Then
                 Dim selectedEmp = tGuidez(dgvTourGuide.SelectedRows(0).Index)
                 Dim tgID As String = selectedEmp.empID
-                Dim delConfirmation = MessageBox.Show("Are you sure you want to remove this account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim delConfirmation = MessageBox.Show("Are you sure you want to remove this Tour Guide?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 'move selected tour guide doc to archive collection
                 If delConfirmation = DialogResult.Yes Then
                     moveToArchive(tgID)
@@ -227,18 +218,45 @@ Public Class ctrlTourGuides
                     populateEmpDGV()
                 End If
             Else
-                MessageBox.Show("Please select an account to delete.")
+                MessageBox.Show("Please select Tour Guide to delete.")
                 populateEmpDGV()
             End If
 
         ElseIf sender Is btnUpdDownloadResume Then
-            'add code to download resume file
-
+            'download resume file
+            If dgvTourGuide.SelectedRows.Count > 0 Then
+                Dim downloadConfirmation As DialogResult = MessageBox.Show("Do you want to download resume?", "Confirmation", MessageBoxButtons.YesNo)
+                If downloadConfirmation = DialogResult.Yes Then
+                    'ID is in the first column (index 0)
+                    Dim selectedEmp = tGuidez(dgvTourGuide.SelectedRows(0).Index)
+                    Dim tgID As String = selectedEmp.empID
+                    Dim filter = Builders(Of BsonDocument).Filter.Eq(Of Object)("_id", ObjectId.Parse(tgID))
+                    Dim document As BsonDocument = rmsSharedVar.colTourGuide.Find(filter).FirstOrDefault()
+                    If document IsNot Nothing Then
+                        ' Get the filename
+                        Dim fileName As String = document("resume").AsString
+                        ' Specify the path where you want to save the downloaded resume
+                        Dim savePath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), fileName)
+                        ' Retrieve the resume content from MongoDB
+                        Dim resumeContent As String = document("resume").AsString
+                        ' Check if the content is not empty
+                        If Not String.IsNullOrEmpty(resumeContent) Then
+                            ' Save the content to a file
+                            File.WriteAllText(savePath, resumeContent)
+                            MessageBox.Show($"Resume downloaded to Desktop as: {fileName}")
+                        Else
+                            MessageBox.Show($"No resume file found in the database!")
+                        End If
+                    Else
+                        MessageBox.Show("No resume document found in the database!")
+                    End If
+                End If
+            End If
         ElseIf sender Is btnAddEmp Then
-            If String.IsNullOrEmpty(tbxAddEmpFname.Text) OrElse String.IsNullOrEmpty(tbxAddEmpMname.Text) OrElse String.IsNullOrEmpty(tbxAddEmpSname.Text) OrElse String.IsNullOrEmpty(tbxAddEmpAddress.Text) OrElse String.IsNullOrEmpty(tbxAddEmpPhone.Text) OrElse String.IsNullOrEmpty(tbxAddEmpEmail.Text) Then
+            If String.IsNullOrEmpty(tbxAddEmpFname.Text) OrElse String.IsNullOrEmpty(tbxAddEmpSname.Text) OrElse String.IsNullOrEmpty(tbxAddEmpAddress.Text) OrElse String.IsNullOrEmpty(tbxAddEmpPhone.Text) OrElse String.IsNullOrEmpty(tbxAddEmpEmail.Text) OrElse cbxAddEmpStatus.SelectedIndex = -1 Then
                 MessageBox.Show("Please fill in all fields to continue.")
             Else
-                Dim addConfirmation As DialogResult = MessageBox.Show("Do you want to save this tour guide account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Dim addConfirmation As DialogResult = MessageBox.Show("Do you want to save this new tour guide?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If addConfirmation = DialogResult.Yes Then
                     Try
                         Dim newEmpDoc As New BsonDocument From {
@@ -248,15 +266,14 @@ Public Class ctrlTourGuides
                         {"phone", tbxAddEmpPhone.Text},
                         {"email", tbxAddEmpEmail.Text},
                         {"address", tbxAddEmpAddress.Text},
-                        {"status", "not available"},
+                        {"status", cbxAddEmpStatus.Text},
+                        {"resume", ""},
                         {"accountCreationDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")}
                     }
-                        '{"RFID", tbxAddEmpRFID.Text},
                         rmsSharedVar.colTourGuide.InsertOne(newEmpDoc)
-                        MessageBox.Show("New tour guide account added successfully.")
+                        MessageBox.Show("New tour guide added successfully.")
                         populateEmpDGV()
                         clearAddEmpTab()
-                        'tabTourGuide.SelectedIndex = 0
                     Catch ex As Exception
                         MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End Try
@@ -280,7 +297,7 @@ Public Class ctrlTourGuides
                     document.Add("accountDeletionDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                     rmsSharedVar.archiveTourGuide.InsertOne(document)
                     rmsSharedVar.colTourGuide.DeleteOne(filter)
-                    MessageBox.Show("Tour guide account deleted successfully.")
+                    MessageBox.Show("Tour guide deleted successfully.")
                     populateEmpDGV()
                     clearUpdEmpTab()
                 Else

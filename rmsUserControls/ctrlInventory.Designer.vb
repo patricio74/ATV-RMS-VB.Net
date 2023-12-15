@@ -37,11 +37,6 @@ Partial Class ctrlInventory
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnUpdAtv = New System.Windows.Forms.Button()
         Me.dgvInventory = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabInventory = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnDelAtv = New System.Windows.Forms.Button()
@@ -56,6 +51,10 @@ Partial Class ctrlInventory
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblClearAtv = New System.Windows.Forms.Label()
         Me.btnAddAtv = New System.Windows.Forms.Button()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabInventory.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -221,7 +220,7 @@ Partial Class ctrlInventory
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvInventory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvInventory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        Me.dgvInventory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4, Me.Column5})
         Me.dgvInventory.EnableHeadersVisualStyles = False
         Me.dgvInventory.GridColor = System.Drawing.Color.DimGray
         Me.dgvInventory.Location = New System.Drawing.Point(33, 27)
@@ -248,41 +247,6 @@ Partial Class ctrlInventory
         Me.dgvInventory.ShowEditingIcon = False
         Me.dgvInventory.Size = New System.Drawing.Size(1095, 317)
         Me.dgvInventory.TabIndex = 95
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 25
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "BRAND"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "MODEL"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "STATUS"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 125
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.HeaderText = "DESCRIPTION"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
         '
         'tabInventory
         '
@@ -480,6 +444,34 @@ Partial Class ctrlInventory
         Me.btnAddAtv.Text = "Add ATV"
         Me.btnAddAtv.UseVisualStyleBackColor = False
         '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "BRAND"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "MODEL"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "STATUS"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 125
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column5.HeaderText = "DESCRIPTION"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
         'ctrlInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -528,7 +520,6 @@ Partial Class ctrlInventory
     Friend WithEvents Label9 As Label
     Friend WithEvents rtbxAddDesc As RichTextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn

@@ -53,7 +53,7 @@ Public Class ctrlInventory
         For Each atv As inventoryDoc In inventoryy
             Dim row As New DataGridViewRow()
             row.CreateCells(
-            dgvInventory, atv.invID, atv.atvBrand, atv.atvModel, atv.status, atv.description
+            dgvInventory, atv.atvBrand, atv.atvModel, atv.status, atv.description
             )
             dgvInventory.Rows.Add(row)
             dgvInventory.ClearSelection()
@@ -63,7 +63,6 @@ Public Class ctrlInventory
     Private Sub tabInventory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabInventory.SelectedIndexChanged
         If tabInventory.SelectedIndex = 0 Then 'update ATV tab
             updBrand.Focus()
-            refreshInv()
         ElseIf tabInventory.SelectedIndex = 1 Then 'add new ATV tab
             refreshInv()
             clearAtvForm()

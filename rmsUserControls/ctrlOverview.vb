@@ -175,7 +175,6 @@ Public Class ctrlOverview
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         Dim selectedDate As Date = DateTimePicker1.Value
         loadReservationz(selectedDate)
-        'MessageBox.Show("Unable to fetch data from the database.", "Connection error!", MessageBoxButtons.OK, MessageBoxIcon.None)
     End Sub
     Private Sub btnResetDate_Click(sender As Object, e As EventArgs) Handles btnResetDate.Click
         DateTimePicker1.Value = DateTime.Now

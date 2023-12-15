@@ -72,7 +72,7 @@ Public Class ctrlTrails
             Next
             dgvTrails.Rows.Clear()
             For Each trail In trailz
-                dgvTrails.Rows.Add(trail.trailID, trail.trailName, trail.description, trail.minimumPax, trail.duration, trail.price)
+                dgvTrails.Rows.Add(trail.trailName, trail.description, trail.minimumPax, trail.duration, trail.price)
             Next
             dgvTrails.ClearSelection()
         End If

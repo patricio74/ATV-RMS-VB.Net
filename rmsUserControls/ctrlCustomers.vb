@@ -113,9 +113,11 @@ Public Class ctrlCustomers
         For Each cust As customerDocs In customers
             Dim row As New DataGridViewRow()
             row.CreateCells(
-            dgvCustInfo, cust.custID,
-            $"{cust.firstName} {cust.middleName} {cust.surname}", cust.phone,
-            $"{cust.address.Street}, {cust.address.Barangay}, {cust.address.MuniCity}, {cust.address.Province}, {cust.address.Country}", cust.email
+            dgvCustInfo,
+            $"{cust.firstName} {cust.middleName} {cust.surname}",
+            cust.phone,
+            $"{cust.address.Street}, {cust.address.Barangay}, {cust.address.MuniCity}, {cust.address.Province}, {cust.address.Country}",
+            cust.email
             )
             dgvCustInfo.Rows.Add(row)
         Next
@@ -136,13 +138,12 @@ Public Class ctrlCustomers
                 transaction("tourName").ToString(),
                 transaction("totalPerson").ToString(),
                 transaction("transacStart").ToString(),
-                transaction("TotalPayment").ToString()
+                transaction("TotalPayment").ToString(),
+                transaction("tourGuide").ToString()
                 )
             dgvCustHistory.Rows.Add(row)
         Next
     End Sub
-    'dagdag to pag may tourguide na
-    'transaction("tourGuide").ToString()
     Private Sub dgvCustomers_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustInfo.CellClick
         'tabCustInfo.SelectedIndex = 1
         If e.RowIndex >= 0 Then
@@ -333,16 +334,16 @@ Public Class ctrlCustomers
             tbxSearchFir.Visible = False
             tbxSearchSur.Visible = False
             tbxSearchEmail.Visible = False
-        ElseIf cbxSearchFilter.SelectedIndex = 1 Then 'search customer name
-            tbxSearchUsername.Visible = False
-            tbxSearchFir.Visible = True
-            tbxSearchSur.Visible = True
-            tbxSearchEmail.Visible = False
-        ElseIf cbxSearchFilter.SelectedIndex = 2 Then 'search email
+        ElseIf cbxSearchFilter.SelectedIndex = 1 Then 'search email
             tbxSearchUsername.Visible = False
             tbxSearchFir.Visible = False
             tbxSearchSur.Visible = False
             tbxSearchEmail.Visible = True
+        ElseIf cbxSearchFilter.SelectedIndex = 2 Then 'search customer name (binura ko muna sa combobox)
+            tbxSearchUsername.Visible = False
+            tbxSearchFir.Visible = True
+            tbxSearchSur.Visible = True
+            tbxSearchEmail.Visible = False
         Else 'default
             tbxSearchUsername.Visible = True
             tbxSearchFir.Visible = False
@@ -364,7 +365,11 @@ Public Class ctrlCustomers
             If Not String.IsNullOrEmpty(tbxSearchUsername.Text) Then
                 filter = Builders(Of BsonDocument).Filter.Eq(Of String)("Username", tbxSearchUsername.Text)
             End If
-        ElseIf cbxSearchFilter.SelectedIndex = 1 Then 'search customer name
+        ElseIf cbxSearchFilter.SelectedIndex = 1 Then 'search email
+            If Not String.IsNullOrEmpty(tbxSearchEmail.Text) Then
+                filter = Builders(Of BsonDocument).Filter.Eq(Of String)("Email", tbxSearchEmail.Text)
+            End If
+        ElseIf cbxSearchFilter.SelectedIndex = 2 Then 'search customer name
             If String.IsNullOrEmpty(tbxSearchFir.Text) AndAlso String.IsNullOrEmpty(tbxSearchSur.Text) Then
                 dgvCustInfo.Rows.Clear()
             Else
@@ -372,10 +377,6 @@ Public Class ctrlCustomers
                 Builders(Of BsonDocument).Filter.Eq(Of String)("FName", tbxSearchFir.Text),
                 Builders(Of BsonDocument).Filter.Eq(Of String)("Sname", tbxSearchSur.Text)
             )
-            End If
-        ElseIf cbxSearchFilter.SelectedIndex = 2 Then 'search email
-            If Not String.IsNullOrEmpty(tbxSearchEmail.Text) Then
-                filter = Builders(Of BsonDocument).Filter.Eq(Of String)("Email", tbxSearchEmail.Text)
             End If
         End If
         'get docs based on the selected filter

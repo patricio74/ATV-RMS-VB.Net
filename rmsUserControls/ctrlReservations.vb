@@ -35,7 +35,6 @@ Public Class ctrlReservations
         numberOfPerson = 0
         totalPrice = 0
     End Sub
-
     Private reservz As List(Of resDoc)
     Public Class resDoc
         Public Property resID As String
@@ -55,6 +54,12 @@ Public Class ctrlReservations
         Public Property resGcashNum As String
         Public Property resCustomerID As String
     End Class
+    Private Sub reservCounter()
+        'count reservation  docs
+        Dim resCount = rmsSharedVar.colReserv.CountDocuments(Builders(Of BsonDocument).Filter.Eq(Of String)("status", "Pending"))
+        'display total count
+        lblPendingRes.Text = $"Pending: {resCount}"
+    End Sub
     Private Sub populateReserv()
         If rmsDashboard.switchReserv = True Then
             'dgvReservs.Rows.Clear()
@@ -79,12 +84,13 @@ Public Class ctrlReservations
                 .resTotalPayment = document("TotalPayment").ToString,
                 .resCustomerID = document("customer").ToString
                 }
+                '.resGcashNum = document("gCashNum").ToString,
                 reservz.Add(tr)
             Next
             dgvReservs.Rows.Clear()
             For Each doc In reservz
                 Dim resName As String = $"{doc.resFname} {doc.resMname} {doc.resSname}".Trim()
-                dgvReservs.Rows.Add(doc.resID, resName, doc.resTourName, doc.resReservDate, doc.resTimeSlot, doc.resStatus)
+                dgvReservs.Rows.Add(resName, doc.resTourName, doc.resReservDate, doc.resTimeSlot, doc.resStatus)
             Next
             dgvReservs.ClearSelection()
         End If
@@ -102,11 +108,16 @@ Public Class ctrlReservations
 
     'wag iclear yung reservform pag lumipat sa ibang form
     Private Sub ctrlReservations_Load(sender As Object, e As EventArgs) Handles Me.Load
+        reservCounter()
         populateReserv()
     End Sub
     Private Sub ctrlReservations_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = True Then
+            reservCounter()
             populateReserv()
+        ElseIf Me.Visible = False Then
+            'clear tabs
+            'reset textboxes
         End If
     End Sub
 

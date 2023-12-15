@@ -30,9 +30,11 @@ Public Class rmsSharedVar
     Public Shared admnID  'store userid
 
     'add transaction var
+    Public Shared atvGuide 'store selected tour guide
     Public Shared atvTotNum As Integer 'var para sa dami ng ATV
     Public Shared selectedATVs As New List(Of atvItem) 'store selected ATVs as array
     'gawan mo rin var para sa tguide array
+
 
     'waiting tab
     Public Shared atvWaitTotNum As Integer 'var para sa dami ng ATV

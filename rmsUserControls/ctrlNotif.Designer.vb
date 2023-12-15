@@ -22,12 +22,12 @@ Partial Class ctrlNotif
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tbxApplicantName = New System.Windows.Forms.TextBox()
@@ -39,10 +39,6 @@ Partial Class ctrlNotif
         Me.tbxApplicantEmail = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvPendingTourGuides = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnClearApplicant = New System.Windows.Forms.Button()
         Me.btnDownloadResume = New System.Windows.Forms.Button()
         Me.gboxPendingAdmin = New System.Windows.Forms.GroupBox()
@@ -51,17 +47,17 @@ Partial Class ctrlNotif
         Me.tbxAdminPhone = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvPendingAdminAcc = New System.Windows.Forms.DataGridView()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tbxAdminEmail = New System.Windows.Forms.TextBox()
         Me.btnClearAdmin = New System.Windows.Forms.Button()
         Me.btnApproveAdmin = New System.Windows.Forms.Button()
         Me.tbxAdminName = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.tbxAdminRole = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gboxPendingResume.SuspendLayout()
         CType(Me.dgvPendingTourGuides, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gboxPendingAdmin.SuspendLayout()
@@ -94,6 +90,8 @@ Partial Class ctrlNotif
         '
         'tbxApplicantName
         '
+        Me.tbxApplicantName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxApplicantName.BackColor = System.Drawing.Color.White
         Me.tbxApplicantName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxApplicantName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -104,11 +102,13 @@ Partial Class ctrlNotif
         Me.tbxApplicantName.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxApplicantName.Name = "tbxApplicantName"
         Me.tbxApplicantName.ReadOnly = True
-        Me.tbxApplicantName.Size = New System.Drawing.Size(457, 32)
+        Me.tbxApplicantName.Size = New System.Drawing.Size(474, 32)
         Me.tbxApplicantName.TabIndex = 0
         '
         'tbxApplicantAddress
         '
+        Me.tbxApplicantAddress.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxApplicantAddress.BackColor = System.Drawing.Color.White
         Me.tbxApplicantAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxApplicantAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -119,7 +119,7 @@ Partial Class ctrlNotif
         Me.tbxApplicantAddress.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxApplicantAddress.Name = "tbxApplicantAddress"
         Me.tbxApplicantAddress.ReadOnly = True
-        Me.tbxApplicantAddress.Size = New System.Drawing.Size(457, 32)
+        Me.tbxApplicantAddress.Size = New System.Drawing.Size(474, 32)
         Me.tbxApplicantAddress.TabIndex = 1
         '
         'gboxPendingResume
@@ -139,15 +139,17 @@ Partial Class ctrlNotif
         Me.gboxPendingResume.Controls.Add(Me.Label7)
         Me.gboxPendingResume.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gboxPendingResume.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.gboxPendingResume.Location = New System.Drawing.Point(46, 26)
+        Me.gboxPendingResume.Location = New System.Drawing.Point(36, 26)
         Me.gboxPendingResume.Name = "gboxPendingResume"
-        Me.gboxPendingResume.Size = New System.Drawing.Size(517, 680)
+        Me.gboxPendingResume.Size = New System.Drawing.Size(534, 680)
         Me.gboxPendingResume.TabIndex = 67
         Me.gboxPendingResume.TabStop = False
         Me.gboxPendingResume.Text = "PENDING TOUR GUIDE APPLICANTS"
         '
         'tbxApplicantPhone
         '
+        Me.tbxApplicantPhone.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxApplicantPhone.BackColor = System.Drawing.Color.White
         Me.tbxApplicantPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxApplicantPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
@@ -158,7 +160,7 @@ Partial Class ctrlNotif
         Me.tbxApplicantPhone.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxApplicantPhone.Name = "tbxApplicantPhone"
         Me.tbxApplicantPhone.ReadOnly = True
-        Me.tbxApplicantPhone.Size = New System.Drawing.Size(457, 32)
+        Me.tbxApplicantPhone.Size = New System.Drawing.Size(474, 32)
         Me.tbxApplicantPhone.TabIndex = 68
         '
         'Label2
@@ -175,13 +177,14 @@ Partial Class ctrlNotif
         '
         'btnAcceptApplicant
         '
+        Me.btnAcceptApplicant.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnAcceptApplicant.BackColor = System.Drawing.Color.WhiteSmoke
         Me.btnAcceptApplicant.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAcceptApplicant.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.btnAcceptApplicant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAcceptApplicant.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAcceptApplicant.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAcceptApplicant.Location = New System.Drawing.Point(72, 621)
+        Me.btnAcceptApplicant.Location = New System.Drawing.Point(75, 621)
         Me.btnAcceptApplicant.Name = "btnAcceptApplicant"
         Me.btnAcceptApplicant.Size = New System.Drawing.Size(200, 41)
         Me.btnAcceptApplicant.TabIndex = 4
@@ -190,6 +193,8 @@ Partial Class ctrlNotif
         '
         'tbxApplicantEmail
         '
+        Me.tbxApplicantEmail.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxApplicantEmail.BackColor = System.Drawing.Color.White
         Me.tbxApplicantEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxApplicantEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
@@ -200,7 +205,7 @@ Partial Class ctrlNotif
         Me.tbxApplicantEmail.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxApplicantEmail.Name = "tbxApplicantEmail"
         Me.tbxApplicantEmail.ReadOnly = True
-        Me.tbxApplicantEmail.Size = New System.Drawing.Size(457, 32)
+        Me.tbxApplicantEmail.Size = New System.Drawing.Size(474, 32)
         Me.tbxApplicantEmail.TabIndex = 2
         '
         'Label4
@@ -219,20 +224,22 @@ Partial Class ctrlNotif
         '
         Me.dgvPendingTourGuides.AllowUserToAddRows = False
         Me.dgvPendingTourGuides.AllowUserToOrderColumns = True
+        Me.dgvPendingTourGuides.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvPendingTourGuides.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPendingTourGuides.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvPendingTourGuides.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle7.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPendingTourGuides.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPendingTourGuides.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvPendingTourGuides.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPendingTourGuides.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
+        Me.dgvPendingTourGuides.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4})
         Me.dgvPendingTourGuides.EnableHeadersVisualStyles = False
         Me.dgvPendingTourGuides.GridColor = System.Drawing.Color.DimGray
         Me.dgvPendingTourGuides.Location = New System.Drawing.Point(0, 37)
@@ -240,62 +247,36 @@ Partial Class ctrlNotif
         Me.dgvPendingTourGuides.Name = "dgvPendingTourGuides"
         Me.dgvPendingTourGuides.ReadOnly = True
         Me.dgvPendingTourGuides.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPendingTourGuides.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPendingTourGuides.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvPendingTourGuides.RowHeadersVisible = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvPendingTourGuides.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvPendingTourGuides.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvPendingTourGuides.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPendingTourGuides.ShowEditingIcon = False
-        Me.dgvPendingTourGuides.Size = New System.Drawing.Size(517, 293)
+        Me.dgvPendingTourGuides.Size = New System.Drawing.Size(534, 293)
         Me.dgvPendingTourGuides.TabIndex = 65
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 25
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "PHONE"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 125
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "EMAIL"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
         '
         'btnClearApplicant
         '
+        Me.btnClearApplicant.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnClearApplicant.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.btnClearApplicant.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClearApplicant.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
         Me.btnClearApplicant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearApplicant.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearApplicant.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnClearApplicant.Location = New System.Drawing.Point(284, 621)
+        Me.btnClearApplicant.Location = New System.Drawing.Point(287, 621)
         Me.btnClearApplicant.Name = "btnClearApplicant"
         Me.btnClearApplicant.Size = New System.Drawing.Size(148, 41)
         Me.btnClearApplicant.TabIndex = 5
@@ -304,13 +285,14 @@ Partial Class ctrlNotif
         '
         'btnDownloadResume
         '
+        Me.btnDownloadResume.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDownloadResume.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnDownloadResume.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnDownloadResume.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.btnDownloadResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDownloadResume.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDownloadResume.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnDownloadResume.Location = New System.Drawing.Point(358, 339)
+        Me.btnDownloadResume.Location = New System.Drawing.Point(375, 339)
         Me.btnDownloadResume.Name = "btnDownloadResume"
         Me.btnDownloadResume.Size = New System.Drawing.Size(127, 28)
         Me.btnDownloadResume.TabIndex = 3
@@ -320,8 +302,6 @@ Partial Class ctrlNotif
         'gboxPendingAdmin
         '
         Me.gboxPendingAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.gboxPendingAdmin.Controls.Add(Me.tbxAdminRole)
-        Me.gboxPendingAdmin.Controls.Add(Me.Label5)
         Me.gboxPendingAdmin.Controls.Add(Me.tbxAdminRFID)
         Me.gboxPendingAdmin.Controls.Add(Me.Label6)
         Me.gboxPendingAdmin.Controls.Add(Me.tbxAdminPhone)
@@ -335,15 +315,17 @@ Partial Class ctrlNotif
         Me.gboxPendingAdmin.Controls.Add(Me.Label10)
         Me.gboxPendingAdmin.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gboxPendingAdmin.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.gboxPendingAdmin.Location = New System.Drawing.Point(597, 26)
+        Me.gboxPendingAdmin.Location = New System.Drawing.Point(591, 26)
         Me.gboxPendingAdmin.Name = "gboxPendingAdmin"
-        Me.gboxPendingAdmin.Size = New System.Drawing.Size(517, 680)
+        Me.gboxPendingAdmin.Size = New System.Drawing.Size(534, 680)
         Me.gboxPendingAdmin.TabIndex = 69
         Me.gboxPendingAdmin.TabStop = False
         Me.gboxPendingAdmin.Text = "PENDING ADMIN ACCOUNT"
         '
         'tbxAdminRFID
         '
+        Me.tbxAdminRFID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxAdminRFID.BackColor = System.Drawing.Color.White
         Me.tbxAdminRFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAdminRFID.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
@@ -354,7 +336,7 @@ Partial Class ctrlNotif
         Me.tbxAdminRFID.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAdminRFID.Name = "tbxAdminRFID"
         Me.tbxAdminRFID.ReadOnly = True
-        Me.tbxAdminRFID.Size = New System.Drawing.Size(309, 32)
+        Me.tbxAdminRFID.Size = New System.Drawing.Size(474, 32)
         Me.tbxAdminRFID.TabIndex = 3
         '
         'Label6
@@ -371,6 +353,8 @@ Partial Class ctrlNotif
         '
         'tbxAdminPhone
         '
+        Me.tbxAdminPhone.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxAdminPhone.BackColor = System.Drawing.Color.White
         Me.tbxAdminPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAdminPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
@@ -381,7 +365,7 @@ Partial Class ctrlNotif
         Me.tbxAdminPhone.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAdminPhone.Name = "tbxAdminPhone"
         Me.tbxAdminPhone.ReadOnly = True
-        Me.tbxAdminPhone.Size = New System.Drawing.Size(457, 32)
+        Me.tbxAdminPhone.Size = New System.Drawing.Size(474, 32)
         Me.tbxAdminPhone.TabIndex = 2
         '
         'Label3
@@ -400,20 +384,22 @@ Partial Class ctrlNotif
         '
         Me.dgvPendingAdminAcc.AllowUserToAddRows = False
         Me.dgvPendingAdminAcc.AllowUserToOrderColumns = True
+        Me.dgvPendingAdminAcc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvPendingAdminAcc.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPendingAdminAcc.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvPendingAdminAcc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle10.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPendingAdminAcc.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPendingAdminAcc.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvPendingAdminAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPendingAdminAcc.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column6, Me.Column7, Me.Column8})
+        Me.dgvPendingAdminAcc.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column8})
         Me.dgvPendingAdminAcc.EnableHeadersVisualStyles = False
         Me.dgvPendingAdminAcc.GridColor = System.Drawing.Color.DimGray
         Me.dgvPendingAdminAcc.Location = New System.Drawing.Point(0, 37)
@@ -421,49 +407,30 @@ Partial Class ctrlNotif
         Me.dgvPendingAdminAcc.Name = "dgvPendingAdminAcc"
         Me.dgvPendingAdminAcc.ReadOnly = True
         Me.dgvPendingAdminAcc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPendingAdminAcc.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPendingAdminAcc.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvPendingAdminAcc.RowHeadersVisible = False
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvPendingAdminAcc.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvPendingAdminAcc.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvPendingAdminAcc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPendingAdminAcc.ShowEditingIcon = False
-        Me.dgvPendingAdminAcc.Size = New System.Drawing.Size(517, 293)
+        Me.dgvPendingAdminAcc.Size = New System.Drawing.Size(534, 293)
         Me.dgvPendingAdminAcc.TabIndex = 65
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "ID"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 25
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.HeaderText = "NAME"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column8.HeaderText = "EMAIL"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
         '
         'tbxAdminEmail
         '
+        Me.tbxAdminEmail.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxAdminEmail.BackColor = System.Drawing.Color.White
         Me.tbxAdminEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAdminEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
@@ -474,18 +441,19 @@ Partial Class ctrlNotif
         Me.tbxAdminEmail.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAdminEmail.Name = "tbxAdminEmail"
         Me.tbxAdminEmail.ReadOnly = True
-        Me.tbxAdminEmail.Size = New System.Drawing.Size(457, 32)
+        Me.tbxAdminEmail.Size = New System.Drawing.Size(474, 32)
         Me.tbxAdminEmail.TabIndex = 1
         '
         'btnClearAdmin
         '
+        Me.btnClearAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnClearAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.btnClearAdmin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClearAdmin.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
         Me.btnClearAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearAdmin.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearAdmin.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnClearAdmin.Location = New System.Drawing.Point(294, 621)
+        Me.btnClearAdmin.Location = New System.Drawing.Point(296, 621)
         Me.btnClearAdmin.Name = "btnClearAdmin"
         Me.btnClearAdmin.Size = New System.Drawing.Size(148, 41)
         Me.btnClearAdmin.TabIndex = 6
@@ -494,13 +462,14 @@ Partial Class ctrlNotif
         '
         'btnApproveAdmin
         '
+        Me.btnApproveAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnApproveAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnApproveAdmin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnApproveAdmin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.btnApproveAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnApproveAdmin.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnApproveAdmin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnApproveAdmin.Location = New System.Drawing.Point(82, 621)
+        Me.btnApproveAdmin.Location = New System.Drawing.Point(84, 621)
         Me.btnApproveAdmin.Name = "btnApproveAdmin"
         Me.btnApproveAdmin.Size = New System.Drawing.Size(200, 41)
         Me.btnApproveAdmin.TabIndex = 5
@@ -509,6 +478,8 @@ Partial Class ctrlNotif
         '
         'tbxAdminName
         '
+        Me.tbxAdminName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbxAdminName.BackColor = System.Drawing.Color.White
         Me.tbxAdminName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxAdminName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
@@ -519,7 +490,7 @@ Partial Class ctrlNotif
         Me.tbxAdminName.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.tbxAdminName.Name = "tbxAdminName"
         Me.tbxAdminName.ReadOnly = True
-        Me.tbxAdminName.Size = New System.Drawing.Size(457, 32)
+        Me.tbxAdminName.Size = New System.Drawing.Size(474, 32)
         Me.tbxAdminName.TabIndex = 0
         '
         'Label8
@@ -546,32 +517,40 @@ Partial Class ctrlNotif
         Me.Label10.TabIndex = 40
         Me.Label10.Text = "email:"
         '
-        'tbxAdminRole
+        'Column7
         '
-        Me.tbxAdminRole.BackColor = System.Drawing.Color.White
-        Me.tbxAdminRole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxAdminRole.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
-        Me.tbxAdminRole.Cursor = System.Windows.Forms.Cursors.Default
-        Me.tbxAdminRole.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxAdminRole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxAdminRole.Location = New System.Drawing.Point(343, 568)
-        Me.tbxAdminRole.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
-        Me.tbxAdminRole.Name = "tbxAdminRole"
-        Me.tbxAdminRole.ReadOnly = True
-        Me.tbxAdminRole.Size = New System.Drawing.Size(142, 32)
-        Me.tbxAdminRole.TabIndex = 4
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.HeaderText = "NAME"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
         '
-        'Label5
+        'Column8
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label5.Location = New System.Drawing.Point(340, 550)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(37, 18)
-        Me.Label5.TabIndex = 73
-        Me.Label5.Text = "role:"
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column8.HeaderText = "EMAIL"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "PHONE"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 150
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "EMAIL"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 150
         '
         'ctrlNotif
         '
@@ -613,19 +592,15 @@ Partial Class ctrlNotif
     Friend WithEvents tbxAdminName As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents tbxApplicantPhone As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents tbxAdminRFID As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents tbxAdminPhone As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents tbxAdminRole As TextBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
 End Class

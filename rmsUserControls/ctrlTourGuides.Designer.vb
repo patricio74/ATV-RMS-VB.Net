@@ -66,6 +66,8 @@ Partial Class ctrlTourGuides
         Me.tbxAddEmpPhone = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnAddEmp = New System.Windows.Forms.Button()
+        Me.cbxAddEmpStatus = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.dgvTourGuide, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTourGuide.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -432,6 +434,8 @@ Partial Class ctrlTourGuides
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.TabPage2.Controls.Add(Me.cbxAddEmpStatus)
+        Me.TabPage2.Controls.Add(Me.Label7)
         Me.TabPage2.Controls.Add(Me.tbxAddEmpAddress)
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.btnClearForm)
@@ -634,6 +638,34 @@ Partial Class ctrlTourGuides
         Me.btnAddEmp.Text = "Add Tour Guide"
         Me.btnAddEmp.UseVisualStyleBackColor = False
         '
+        'cbxAddEmpStatus
+        '
+        Me.cbxAddEmpStatus.BackColor = System.Drawing.Color.White
+        Me.cbxAddEmpStatus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cbxAddEmpStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxAddEmpStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cbxAddEmpStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxAddEmpStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.cbxAddEmpStatus.FormattingEnabled = True
+        Me.cbxAddEmpStatus.ItemHeight = 22
+        Me.cbxAddEmpStatus.Items.AddRange(New Object() {"available", "not available"})
+        Me.cbxAddEmpStatus.Location = New System.Drawing.Point(479, 193)
+        Me.cbxAddEmpStatus.Name = "cbxAddEmpStatus"
+        Me.cbxAddEmpStatus.Size = New System.Drawing.Size(148, 30)
+        Me.cbxAddEmpStatus.TabIndex = 10009
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label7.Location = New System.Drawing.Point(476, 175)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 18)
+        Me.Label7.TabIndex = 10010
+        Me.Label7.Text = "STATUS:"
+        '
         'ctrlTourGuides
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -697,4 +729,6 @@ Partial Class ctrlTourGuides
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents cbxAddEmpStatus As ComboBox
+    Friend WithEvents Label7 As Label
 End Class
