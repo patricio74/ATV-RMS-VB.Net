@@ -264,9 +264,9 @@ Partial Class rmsLogin
         Me.labelFormTitle.Location = New System.Drawing.Point(33, 5)
         Me.labelFormTitle.Margin = New System.Windows.Forms.Padding(0)
         Me.labelFormTitle.Name = "labelFormTitle"
-        Me.labelFormTitle.Size = New System.Drawing.Size(112, 20)
+        Me.labelFormTitle.Size = New System.Drawing.Size(107, 20)
         Me.labelFormTitle.TabIndex = 20
-        Me.labelFormTitle.Text = "ATV-RMS Login"
+        Me.labelFormTitle.Text = "ATVRMS Login"
         '
         'PictureBox1
         '
@@ -478,7 +478,7 @@ Partial Class rmsLogin
         Me.labelTItle.Name = "labelTItle"
         Me.labelTItle.Size = New System.Drawing.Size(460, 42)
         Me.labelTItle.TabIndex = 19
-        Me.labelTItle.Text = "ATV-RMS"
+        Me.labelTItle.Text = "ATVRMS"
         Me.labelTItle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'rmsLogin

@@ -76,7 +76,7 @@ Partial Class rmsDashboard
         Me.labelTItle.Name = "labelTItle"
         Me.labelTItle.Size = New System.Drawing.Size(205, 29)
         Me.labelTItle.TabIndex = 0
-        Me.labelTItle.Text = "ATV-RMS"
+        Me.labelTItle.Text = "ATVRMS"
         Me.labelTItle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'panelSide

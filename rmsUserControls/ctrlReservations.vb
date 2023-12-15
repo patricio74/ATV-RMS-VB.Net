@@ -77,7 +77,6 @@ Public Class ctrlReservations
                 .resBalance = document("Balance").ToString,
                 .resInitPayment = document("InitialPayment").ToString,
                 .resTotalPayment = document("TotalPayment").ToString,
-                .resGcashNum = document("gCashNum").ToString,
                 .resCustomerID = document("customer").ToString
                 }
                 reservz.Add(tr)

@@ -116,9 +116,9 @@ Partial Class rmsRegistration
         Me.labelFormTitle.Location = New System.Drawing.Point(33, 5)
         Me.labelFormTitle.Margin = New System.Windows.Forms.Padding(0)
         Me.labelFormTitle.Name = "labelFormTitle"
-        Me.labelFormTitle.Size = New System.Drawing.Size(70, 20)
+        Me.labelFormTitle.Size = New System.Drawing.Size(65, 20)
         Me.labelFormTitle.TabIndex = 0
-        Me.labelFormTitle.Text = "ATV-RMS"
+        Me.labelFormTitle.Text = "ATVRMS"
         '
         'regFName
         '

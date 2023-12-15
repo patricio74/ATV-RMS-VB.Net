@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("ATV-RMS")>
 <Assembly: AssemblyDescription("ATV Rental Management System")>
 <Assembly: AssemblyCompany("Perez")>
-<Assembly: AssemblyProduct("ATV-RMS")>
+<Assembly: AssemblyProduct("ATVRMS")>
 <Assembly: AssemblyCopyright("Copyright ©  2023")>
 <Assembly: AssemblyTrademark("")>
 
