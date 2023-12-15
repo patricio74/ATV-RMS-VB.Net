@@ -39,6 +39,9 @@ Partial Class ctrlNotif
         Me.tbxApplicantEmail = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvPendingTourGuides = New System.Windows.Forms.DataGridView()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnClearApplicant = New System.Windows.Forms.Button()
         Me.btnDownloadResume = New System.Windows.Forms.Button()
         Me.gboxPendingAdmin = New System.Windows.Forms.GroupBox()
@@ -47,17 +50,14 @@ Partial Class ctrlNotif
         Me.tbxAdminPhone = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvPendingAdminAcc = New System.Windows.Forms.DataGridView()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tbxAdminEmail = New System.Windows.Forms.TextBox()
         Me.btnClearAdmin = New System.Windows.Forms.Button()
         Me.btnApproveAdmin = New System.Windows.Forms.Button()
         Me.tbxAdminName = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gboxPendingResume.SuspendLayout()
         CType(Me.dgvPendingTourGuides, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gboxPendingAdmin.SuspendLayout()
@@ -224,6 +224,7 @@ Partial Class ctrlNotif
         '
         Me.dgvPendingTourGuides.AllowUserToAddRows = False
         Me.dgvPendingTourGuides.AllowUserToOrderColumns = True
+        Me.dgvPendingTourGuides.AllowUserToResizeColumns = False
         Me.dgvPendingTourGuides.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvPendingTourGuides.BackgroundColor = System.Drawing.Color.WhiteSmoke
@@ -266,6 +267,27 @@ Partial Class ctrlNotif
         Me.dgvPendingTourGuides.ShowEditingIcon = False
         Me.dgvPendingTourGuides.Size = New System.Drawing.Size(534, 293)
         Me.dgvPendingTourGuides.TabIndex = 65
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "PHONE"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 150
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "EMAIL"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 150
         '
         'btnClearApplicant
         '
@@ -384,6 +406,7 @@ Partial Class ctrlNotif
         '
         Me.dgvPendingAdminAcc.AllowUserToAddRows = False
         Me.dgvPendingAdminAcc.AllowUserToOrderColumns = True
+        Me.dgvPendingAdminAcc.AllowUserToResizeColumns = False
         Me.dgvPendingAdminAcc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvPendingAdminAcc.BackgroundColor = System.Drawing.Color.WhiteSmoke
@@ -426,6 +449,20 @@ Partial Class ctrlNotif
         Me.dgvPendingAdminAcc.ShowEditingIcon = False
         Me.dgvPendingAdminAcc.Size = New System.Drawing.Size(534, 293)
         Me.dgvPendingAdminAcc.TabIndex = 65
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.HeaderText = "NAME"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column8.HeaderText = "EMAIL"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
         '
         'tbxAdminEmail
         '
@@ -516,41 +553,6 @@ Partial Class ctrlNotif
         Me.Label10.Size = New System.Drawing.Size(46, 18)
         Me.Label10.TabIndex = 40
         Me.Label10.Text = "email:"
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.HeaderText = "NAME"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column8.HeaderText = "EMAIL"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "PHONE"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 150
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "EMAIL"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 150
         '
         'ctrlNotif
         '

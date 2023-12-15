@@ -202,6 +202,7 @@ Partial Class ctrlTrails
         '
         Me.dgvTrails.AllowUserToAddRows = False
         Me.dgvTrails.AllowUserToOrderColumns = True
+        Me.dgvTrails.AllowUserToResizeColumns = False
         Me.dgvTrails.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvTrails.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvTrails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -539,21 +540,20 @@ Partial Class ctrlTrails
         Me.Column4.HeaderText = "Min. person"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 55
+        Me.Column4.Width = 60
         '
         'Column5
         '
         Me.Column5.HeaderText = "Duration"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
-        Me.Column5.Width = 75
         '
         'Column6
         '
         Me.Column6.HeaderText = "Price"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
-        Me.Column6.Width = 95
+        Me.Column6.Width = 90
         '
         'ctrlTrails
         '

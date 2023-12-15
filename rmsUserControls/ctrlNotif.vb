@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports MongoDB.Bson
 Imports MongoDB.Driver
+Imports MongoDB.Libmongocrypt
 Public Class ctrlNotif
     Private pendingTGuide As List(Of tgDoc)
     Private pendingAdmin As List(Of admDoc)
@@ -12,12 +13,12 @@ Public Class ctrlNotif
         Public Property tgPhone As String
         Public Property tgEmail As String
         Public Property tgAddress As String
-        Public Property tgResume As String
+        Public Property tgResume As BsonBinaryData
         Public Property tgSubmissionDate As String
     End Class
     Public Class admDoc
         Public Property admpID As String
-        Public Property admpFname As String '
+        Public Property admpFname As String
         Public Property admpMname As String
         Public Property admpSname As String
         Public Property admpEmail As String
@@ -62,7 +63,7 @@ Public Class ctrlNotif
                 .tgPhone = document("phone").ToString,
                 .tgEmail = document("email").ToString,
                 .tgAddress = document("address").ToString,
-                .tgResume = document("resume"),
+                .tgResume = document("resume").AsBsonBinaryData,
                 .tgSubmissionDate = document("submissionDate").ToString
                 }
                 pendingTGuide.Add(tg)
@@ -141,34 +142,44 @@ Public Class ctrlNotif
     Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnDownloadResume.Click, btnAcceptApplicant.Click, btnApproveAdmin.Click
         If sender Is btnDownloadResume Then
             If dgvPendingTourGuides.SelectedRows.Count > 0 Then
-                Dim downloadConfirmation As DialogResult = MessageBox.Show("Do you want to download resume?", "Confirmation", MessageBoxButtons.YesNo)
-                If downloadConfirmation = DialogResult.Yes Then
-                    'ID is in the first column (index 0)
-                    Dim selectedRow = dgvPendingTourGuides.SelectedRows(0)
-                    Dim selID As String = selectedRow.Cells(0).Value.ToString()
-                    'use ObjectId.Parse to convert the string ID to ObjectId
-                    Dim filter = Builders(Of BsonDocument).Filter.Eq(Of Object)("_id", ObjectId.Parse(selID))
-                    Dim document As BsonDocument = rmsSharedVar.colResume.Find(filter).FirstOrDefault()
-                    If document IsNot Nothing Then
-                        ' Get the filename
-                        Dim fileName As String = document("resume").AsString
-                        ' Specify the path where you want to save the downloaded resume
-                        Dim savePath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), fileName)
-                        ' Retrieve the resume content from MongoDB
-                        Dim resumeContent As String = document("resume").AsString
-                        ' Check if the content is not empty
-                        If Not String.IsNullOrEmpty(resumeContent) Then
-                            ' Save the content to a file
-                            File.WriteAllText(savePath, resumeContent)
-                            MessageBox.Show($"Resume downloaded to Desktop as: {fileName}")
-                        Else
-                            MessageBox.Show($"No resume file found in the database!")
+                Dim selectedGuide = pendingTGuide(dgvPendingTourGuides.SelectedRows(0).Index)
+                Dim selID As String = selectedGuide.tgID
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Of Object)("_id", ObjectId.Parse(selID))
+                Dim document As BsonDocument = rmsSharedVar.colResume.Find(filter).FirstOrDefault()
+
+                If document IsNot Nothing Then
+                    ' Check if resume is not empty
+                    If document.Contains("resume") AndAlso document("resume").AsByteArray IsNot Nothing AndAlso document("resume").AsByteArray.Length > 0 Then
+                        Dim downloadConfirmation As DialogResult = MessageBox.Show("Do you want to download the resume?", "Confirmation", MessageBoxButtons.YesNo)
+                        If downloadConfirmation = DialogResult.Yes Then
+                            'alt code para direkta save sa desktop
+                            'Dim savePath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), fileName)
+
+                            'save as resume_Surname_FName+pdf file extension
+                            Dim fileName As String = "resume_" + document("Sname").AsString + "_" + document("FName").AsString + ".pdf"
+
+                            'choose download loc
+                            Dim saveFileDialog As New SaveFileDialog()
+                            saveFileDialog.FileName = fileName
+                            saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*"
+
+                            If saveFileDialog.ShowDialog() = DialogResult.OK Then
+                                ' Download the resume file
+                                Dim resumeContent As Byte() = document("resume").AsByteArray
+                                File.WriteAllBytes(saveFileDialog.FileName, resumeContent)
+                                MessageBox.Show($"Resume downloaded to: {saveFileDialog.FileName}")
+                            Else
+                                MessageBox.Show("Download canceled by the user.")
+                            End If
                         End If
                     Else
-                        MessageBox.Show("No resume document found in the database!")
+                        MessageBox.Show($"No resume file found for {document("Sname").AsString} {document("FName").AsString} in the database!")
                     End If
+                Else
+                    MessageBox.Show("No resume document found in the database!")
                 End If
             End If
+
         ElseIf sender Is btnAcceptApplicant Then
             'moveDocToTouGuideCollection
             If dgvPendingTourGuides.SelectedRows.Count > 0 Then

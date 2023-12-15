@@ -26,11 +26,6 @@ Partial Class ctrlTransactions
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvTransactions = New System.Windows.Forms.DataGridView()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabTransactions = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.cbxAddTimeSlot = New System.Windows.Forms.ComboBox()
@@ -83,8 +78,6 @@ Partial Class ctrlTransactions
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tbxWaitFName = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.cbxWaitStatus = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.tbxWaitTotPrice = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -117,6 +110,13 @@ Partial Class ctrlTransactions
         Me.lblTodayTransac = New System.Windows.Forms.Label()
         Me.lblWaiting = New System.Windows.Forms.Label()
         Me.lblOngoing = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cbxWaitStatus = New System.Windows.Forms.ComboBox()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvTransactions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTransactions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -128,6 +128,7 @@ Partial Class ctrlTransactions
         '
         Me.dgvTransactions.AllowUserToAddRows = False
         Me.dgvTransactions.AllowUserToOrderColumns = True
+        Me.dgvTransactions.AllowUserToResizeColumns = False
         Me.dgvTransactions.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvTransactions.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvTransactions.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -169,40 +170,6 @@ Partial Class ctrlTransactions
         Me.dgvTransactions.ShowEditingIcon = False
         Me.dgvTransactions.Size = New System.Drawing.Size(1103, 280)
         Me.dgvTransactions.TabIndex = 95
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "CUSTOMER NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.HeaderText = "TOUR NAME"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "DATE"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 200
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "TIME SLOT"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 110
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "STATUS"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
         '
         'tabTransactions
         '
@@ -949,33 +916,6 @@ Partial Class ctrlTransactions
         Me.Label5.TabIndex = 1026
         Me.Label5.Text = "TOUR NAME:"
         '
-        'cbxWaitStatus
-        '
-        Me.cbxWaitStatus.BackColor = System.Drawing.Color.White
-        Me.cbxWaitStatus.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cbxWaitStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxWaitStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxWaitStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.cbxWaitStatus.FormattingEnabled = True
-        Me.cbxWaitStatus.ItemHeight = 22
-        Me.cbxWaitStatus.Items.AddRange(New Object() {"waiting", "canceled"})
-        Me.cbxWaitStatus.Location = New System.Drawing.Point(502, 237)
-        Me.cbxWaitStatus.Name = "cbxWaitStatus"
-        Me.cbxWaitStatus.Size = New System.Drawing.Size(101, 30)
-        Me.cbxWaitStatus.TabIndex = 7
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(499, 216)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 18)
-        Me.Label6.TabIndex = 1024
-        Me.Label6.Text = "STATUS:"
-        '
         'tbxWaitTotPrice
         '
         Me.tbxWaitTotPrice.BackColor = System.Drawing.Color.WhiteSmoke
@@ -1433,6 +1373,67 @@ Partial Class ctrlTransactions
         Me.lblOngoing.TabIndex = 131
         Me.lblOngoing.Text = "Ongoing: 0"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label6.Location = New System.Drawing.Point(499, 216)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(52, 18)
+        Me.Label6.TabIndex = 1024
+        Me.Label6.Text = "STATUS:"
+        '
+        'cbxWaitStatus
+        '
+        Me.cbxWaitStatus.BackColor = System.Drawing.Color.White
+        Me.cbxWaitStatus.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cbxWaitStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxWaitStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxWaitStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.cbxWaitStatus.FormattingEnabled = True
+        Me.cbxWaitStatus.ItemHeight = 22
+        Me.cbxWaitStatus.Items.AddRange(New Object() {"waiting", "canceled"})
+        Me.cbxWaitStatus.Location = New System.Drawing.Point(502, 237)
+        Me.cbxWaitStatus.Name = "cbxWaitStatus"
+        Me.cbxWaitStatus.Size = New System.Drawing.Size(101, 30)
+        Me.cbxWaitStatus.TabIndex = 7
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "CUSTOMER NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "TOUR NAME"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 300
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "DATE"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 200
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "TIME SLOT"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 110
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "STATUS"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
         'ctrlTransactions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -1493,8 +1494,6 @@ Partial Class ctrlTransactions
     Friend WithEvents Label4 As Label
     Friend WithEvents tbxWaitFName As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents cbxWaitStatus As ComboBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents tbxWaitTotPrice As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
@@ -1548,6 +1547,8 @@ Partial Class ctrlTransactions
     Friend WithEvents Label37 As Label
     Friend WithEvents tbxOnGNewPayment As TextBox
     Friend WithEvents Label39 As Label
+    Friend WithEvents cbxWaitStatus As ComboBox
+    Friend WithEvents Label6 As Label
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn

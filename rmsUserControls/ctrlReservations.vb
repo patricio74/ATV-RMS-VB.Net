@@ -90,7 +90,11 @@ Public Class ctrlReservations
             dgvReservs.Rows.Clear()
             For Each doc In reservz
                 Dim resName As String = $"{doc.resFname} {doc.resMname} {doc.resSname}".Trim()
-                dgvReservs.Rows.Add(resName, doc.resTourName, doc.resReservDate, doc.resTimeSlot, doc.resStatus)
+                'convert to datetime object
+                Dim reservDate As DateTime = DateTime.Parse(doc.resReservDate)
+                'change format para mas readable
+                Dim formattedDate As String = reservDate.ToString("MMMM dd, yyyy")
+                dgvReservs.Rows.Add(resName, doc.resTourName, formattedDate, doc.resTimeSlot, doc.resStatus)
             Next
             dgvReservs.ClearSelection()
         End If

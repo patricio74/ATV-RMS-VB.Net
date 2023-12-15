@@ -139,7 +139,8 @@ Public Class ctrlTourGuides
             Next
             dgvTourGuide.Rows.Clear()
             For Each doc In tGuidez
-                dgvTourGuide.Rows.Add(doc.empFname, doc.empMname, doc.empSname, doc.empPhone, doc.empEmail)
+                Dim guideName As String = $"{doc.empFname} {doc.empMname} {doc.empSname}".Trim()
+                dgvTourGuide.Rows.Add(guideName, doc.empPhone, doc.empAddress, doc.empEmail, doc.empStatus)
             Next
             dgvTourGuide.ClearSelection()
         End If
@@ -225,33 +226,38 @@ Public Class ctrlTourGuides
         ElseIf sender Is btnUpdDownloadResume Then
             'download resume file
             If dgvTourGuide.SelectedRows.Count > 0 Then
-                Dim downloadConfirmation As DialogResult = MessageBox.Show("Do you want to download resume?", "Confirmation", MessageBoxButtons.YesNo)
-                If downloadConfirmation = DialogResult.Yes Then
-                    'ID is in the first column (index 0)
-                    Dim selectedEmp = tGuidez(dgvTourGuide.SelectedRows(0).Index)
-                    Dim tgID As String = selectedEmp.empID
-                    Dim filter = Builders(Of BsonDocument).Filter.Eq(Of Object)("_id", ObjectId.Parse(tgID))
-                    Dim document As BsonDocument = rmsSharedVar.colTourGuide.Find(filter).FirstOrDefault()
-                    If document IsNot Nothing Then
-                        ' Get the filename
-                        Dim fileName As String = document("resume").AsString
-                        ' Specify the path where you want to save the downloaded resume
-                        Dim savePath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), fileName)
-                        ' Retrieve the resume content from MongoDB
-                        Dim resumeContent As String = document("resume").AsString
-                        ' Check if the content is not empty
-                        If Not String.IsNullOrEmpty(resumeContent) Then
-                            ' Save the content to a file
-                            File.WriteAllText(savePath, resumeContent)
-                            MessageBox.Show($"Resume downloaded to Desktop as: {fileName}")
-                        Else
-                            MessageBox.Show($"No resume file found in the database!")
+                Dim selectedEmp = tGuidez(dgvTourGuide.SelectedRows(0).Index)
+                Dim tgID As String = selectedEmp.empID
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Of Object)("_id", ObjectId.Parse(tgID))
+                Dim document As BsonDocument = rmsSharedVar.colTourGuide.Find(filter).FirstOrDefault()
+
+                If document IsNot Nothing Then
+                    ' Check if resume is not empty
+                    If document.Contains("resume") AndAlso document("resume").AsByteArray IsNot Nothing AndAlso document("resume").AsByteArray.Length > 0 Then
+                        Dim downloadConfirmation As DialogResult = MessageBox.Show("Do you want to download the resume?", "Confirmation", MessageBoxButtons.YesNo)
+                        If downloadConfirmation = DialogResult.Yes Then
+                            'save as resume_Surname_FName+pdf extension
+                            Dim fileName As String = "resume_" + document("Sname").AsString + "_" + document("FName").AsString + ".pdf"
+                            'choose download loc
+                            Dim saveFileDialog As New SaveFileDialog()
+                            saveFileDialog.FileName = fileName
+                            saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*"
+                            If saveFileDialog.ShowDialog() = DialogResult.OK Then
+                                Dim resumeContent As Byte() = document("resume").AsByteArray
+                                File.WriteAllBytes(saveFileDialog.FileName, resumeContent)
+                                MessageBox.Show($"Resume downloaded to: {saveFileDialog.FileName}")
+                            Else
+                                MessageBox.Show("Download canceled by the user.")
+                            End If
                         End If
                     Else
-                        MessageBox.Show("No resume document found in the database!")
+                        MessageBox.Show($"No resume file found for {document("Sname").AsString} {document("FName").AsString} in the database!")
                     End If
+                Else
+                    MessageBox.Show("No tour guide document found in the database!")
                 End If
             End If
+
         ElseIf sender Is btnAddEmp Then
             If String.IsNullOrEmpty(tbxAddEmpFname.Text) OrElse String.IsNullOrEmpty(tbxAddEmpSname.Text) OrElse String.IsNullOrEmpty(tbxAddEmpAddress.Text) OrElse String.IsNullOrEmpty(tbxAddEmpPhone.Text) OrElse String.IsNullOrEmpty(tbxAddEmpEmail.Text) OrElse cbxAddEmpStatus.SelectedIndex = -1 Then
                 MessageBox.Show("Please fill in all fields to continue.")
@@ -259,6 +265,9 @@ Public Class ctrlTourGuides
                 Dim addConfirmation As DialogResult = MessageBox.Show("Do you want to save this new tour guide?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If addConfirmation = DialogResult.Yes Then
                     Try
+                        ' Create an empty byte array for a blank resume field
+                        Dim blankResume As Byte() = New Byte() {}
+
                         Dim newEmpDoc As New BsonDocument From {
                         {"FName", tbxAddEmpFname.Text},
                         {"MName", tbxAddEmpMname.Text},
@@ -267,7 +276,7 @@ Public Class ctrlTourGuides
                         {"email", tbxAddEmpEmail.Text},
                         {"address", tbxAddEmpAddress.Text},
                         {"status", cbxAddEmpStatus.Text},
-                        {"resume", ""},
+                        {"resume", blankResume},
                         {"accountCreationDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")}
                     }
                         rmsSharedVar.colTourGuide.InsertOne(newEmpDoc)

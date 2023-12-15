@@ -5,26 +5,28 @@ Public Class selectATV
     Public Class atvItem
         Public Property Name As String
         Public Property Id As ObjectId
-        Public Overrides Function ToString() As String ' Override ToString method to display the desired text in the checklist
+        Public Overrides Function ToString() As String
             Return Name
         End Function
     End Class
     Private Sub loadATVCheckList()
         Dim atvFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "AVAILABLE")
-        Dim atvField = Builders(Of BsonDocument).Projection.Include("atvModel").Include("_id")
+        Dim atvField = Builders(Of BsonDocument).Projection.Include("atvBrand").Include("atvModel").Include("_id")
         Dim cursor = rmsSharedVar.colInventory.Find(atvFilter).Project(atvField).ToCursor()
         'list available ATVs
         While cursor.MoveNext()
             For Each document In cursor.Current
+                Dim brandName As String = document("atvBrand").AsString
                 Dim modelName As String = document("atvModel").AsString
                 Dim atvId As ObjectId = document("_id").AsObjectId
-                Dim atvItem As New atvItem With {.Name = modelName, .Id = atvId}
+                'combine brand and model sa bawat checklist
+                Dim atvItem As New atvItem With {.Name = $"{brandName} {modelName}", .Id = atvId}
                 atvCheckList.Items.Add(atvItem)
             Next
         End While
     End Sub
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Dim response As DialogResult = MessageBox.Show(" Are you sure you want to clear selection and exit?", "Confirmation", MessageBoxButtons.YesNo)
+        Dim response As DialogResult = MessageBox.Show("Are you sure you want to clear the selection and exit?", "Confirmation", MessageBoxButtons.YesNo)
         If response = DialogResult.Yes Then
             atvCheckList.Items.Clear()
             atvCheckList.ClearSelected()
@@ -46,13 +48,14 @@ Public Class selectATV
         Else
             'save selected list to an array
             For Each item As atvItem In atvCheckList.CheckedItems
+                'save only the model and _id to the array
                 rmsSharedVar.selectedATVs.Add(item)
             Next
             Me.Hide()
         End If
     End Sub
     Private Sub lblClearList_Click(sender As Object, e As EventArgs) Handles lblClearList.Click
-        'unseletc all items
+        ' Unselect all items
         For i As Integer = 0 To atvCheckList.Items.Count - 1
             atvCheckList.SetItemChecked(i, False)
         Next
@@ -72,5 +75,4 @@ Public Class selectATV
             End If
         End If
     End Sub
-
 End Class

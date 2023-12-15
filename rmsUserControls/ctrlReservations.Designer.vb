@@ -424,6 +424,7 @@ Partial Class ctrlReservations
         '
         Me.dgvReservs.AllowUserToAddRows = False
         Me.dgvReservs.AllowUserToOrderColumns = True
+        Me.dgvReservs.AllowUserToResizeColumns = False
         Me.dgvReservs.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvReservs.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvReservs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -799,10 +800,10 @@ Partial Class ctrlReservations
         '
         'Column5
         '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column5.HeaderText = "TOUR NAME"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
+        Me.Column5.Width = 300
         '
         'Column6
         '

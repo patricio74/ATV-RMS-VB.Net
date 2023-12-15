@@ -44,7 +44,11 @@ Public Class ctrlAdminSettings
                     usrEmail.Text = userDocument("email").AsString
                     usrPhone.Text = userDocument("phone").AsString
                     usrUsername.Text = userDocument("username").AsString
-                    lblCreationDate.Text = userDocument("accountCreationDate").AsString
+                    'convert to datetime object
+                    Dim creationDate As DateTime = DateTime.Parse(userDocument("accountCreationDate").ToString())
+                    'change format para mas readable
+                    lblCreationDate.Text = creationDate.ToString("MMMM dd, yyyy")
+                    'lblCreationDate.Text = userDocument("accountCreationDate").AsString
                     lblUsrRole.Text = userDocument("role").AsString
                     usrPass = userDocument("password")
                 Else

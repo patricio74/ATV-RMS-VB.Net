@@ -133,16 +133,21 @@ Public Class ctrlCustomers
         dgvCustHistory.Rows.Clear()
         For Each transaction As BsonDocument In logTransactions
             Dim row As New DataGridViewRow()
+            'convert to datetime object
+            Dim transacStartDate As DateTime = DateTime.Parse(transaction("transacStart").ToString())
+            'change format para mas readable
+            Dim formattedDate As String = transacStartDate.ToString("MMM. dd, yyyy hh:mmtt")
             row.CreateCells(
-                dgvCustHistory,
-                transaction("tourName").ToString(),
-                transaction("totalPerson").ToString(),
-                transaction("transacStart").ToString(),
-                transaction("TotalPayment").ToString(),
-                transaction("tourGuide").ToString()
-                )
+            dgvCustHistory,
+            transaction("tourName").ToString(),
+            transaction("totalPerson").ToString(),
+            formattedDate,
+            transaction("TotalPayment").ToString(),
+            transaction("tourGuide").ToString()
+            )
             dgvCustHistory.Rows.Add(row)
         Next
+        dgvCustHistory.ClearSelection()
     End Sub
     Private Sub dgvCustomers_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCustInfo.CellClick
         'tabCustInfo.SelectedIndex = 1
@@ -320,12 +325,13 @@ Public Class ctrlCustomers
         End If
     End Sub
     Private Sub tabCustInfo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabCustInfo.SelectedIndexChanged
-        If tabCustInfo.SelectedIndex = 0 Then 'update tab
+        If tabCustInfo.SelectedIndex = 0 Then 'update user info tab
             'refreshList()
             'clearAddForm()
-        ElseIf tabCustInfo.SelectedIndex = 1 Then 'add tab
+        ElseIf tabCustInfo.SelectedIndex = 1 Then 'transac history tab
             'clearUpdForm()
             'refreshList()
+            dgvCustHistory.ClearSelection()
         End If
     End Sub
     Private Sub cbxSearchFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxSearchFilter.SelectedIndexChanged

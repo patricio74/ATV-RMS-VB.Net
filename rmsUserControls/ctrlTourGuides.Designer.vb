@@ -52,6 +52,8 @@ Partial Class ctrlTourGuides
         Me.btnDelEmp = New System.Windows.Forms.Button()
         Me.btnUpdEmp = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.cbxAddEmpStatus = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.tbxAddEmpAddress = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnClearForm = New System.Windows.Forms.Button()
@@ -66,8 +68,6 @@ Partial Class ctrlTourGuides
         Me.tbxAddEmpPhone = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnAddEmp = New System.Windows.Forms.Button()
-        Me.cbxAddEmpStatus = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.dgvTourGuide, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTourGuide.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -203,6 +203,7 @@ Partial Class ctrlTourGuides
         '
         Me.dgvTourGuide.AllowUserToAddRows = False
         Me.dgvTourGuide.AllowUserToOrderColumns = True
+        Me.dgvTourGuide.AllowUserToResizeColumns = False
         Me.dgvTourGuide.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvTourGuide.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvTourGuide.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -246,38 +247,38 @@ Partial Class ctrlTourGuides
         '
         'Column2
         '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "FIRST NAME"
+        Me.Column2.HeaderText = "TOUR GUIDE NAME"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
+        Me.Column2.Width = 245
         '
         'Column3
         '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "MIDDLE NAME"
+        Me.Column3.HeaderText = "PHONE NUMBER"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
+        Me.Column3.Width = 145
         '
         'Column4
         '
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "SURNAME"
+        Me.Column4.HeaderText = "ADDRESS"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
         '
         'Column6
         '
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column6.HeaderText = "PHONE NUMBER"
+        Me.Column6.HeaderText = "EMAIL ADDRESS"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
         '
         'Column7
         '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.HeaderText = "EMAIL ADDRESS"
+        Me.Column7.HeaderText = "STATUS"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
+        Me.Column7.Width = 115
         '
         'tabTourGuide
         '
@@ -378,9 +379,9 @@ Partial Class ctrlTourGuides
         Me.btnUpdDownloadResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdDownloadResume.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdDownloadResume.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdDownloadResume.Location = New System.Drawing.Point(854, 246)
+        Me.btnUpdDownloadResume.Location = New System.Drawing.Point(654, 53)
         Me.btnUpdDownloadResume.Name = "btnUpdDownloadResume"
-        Me.btnUpdDownloadResume.Size = New System.Drawing.Size(166, 32)
+        Me.btnUpdDownloadResume.Size = New System.Drawing.Size(133, 32)
         Me.btnUpdDownloadResume.TabIndex = 11
         Me.btnUpdDownloadResume.Text = "view resume"
         Me.btnUpdDownloadResume.UseVisualStyleBackColor = False
@@ -408,9 +409,9 @@ Partial Class ctrlTourGuides
         Me.btnDelEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelEmp.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelEmp.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnDelEmp.Location = New System.Drawing.Point(854, 192)
+        Me.btnDelEmp.Location = New System.Drawing.Point(854, 200)
         Me.btnDelEmp.Name = "btnDelEmp"
-        Me.btnDelEmp.Size = New System.Drawing.Size(166, 36)
+        Me.btnDelEmp.Size = New System.Drawing.Size(166, 47)
         Me.btnDelEmp.TabIndex = 10
         Me.btnDelEmp.Text = "remove tour guide"
         Me.btnDelEmp.UseVisualStyleBackColor = False
@@ -424,9 +425,9 @@ Partial Class ctrlTourGuides
         Me.btnUpdEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdEmp.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdEmp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnUpdEmp.Location = New System.Drawing.Point(854, 118)
+        Me.btnUpdEmp.Location = New System.Drawing.Point(854, 114)
         Me.btnUpdEmp.Name = "btnUpdEmp"
-        Me.btnUpdEmp.Size = New System.Drawing.Size(166, 58)
+        Me.btnUpdEmp.Size = New System.Drawing.Size(166, 65)
         Me.btnUpdEmp.TabIndex = 9
         Me.btnUpdEmp.Text = "Update Info"
         Me.btnUpdEmp.UseVisualStyleBackColor = False
@@ -456,6 +457,34 @@ Partial Class ctrlTourGuides
         Me.TabPage2.Size = New System.Drawing.Size(1084, 321)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "  Add new tour guide   "
+        '
+        'cbxAddEmpStatus
+        '
+        Me.cbxAddEmpStatus.BackColor = System.Drawing.Color.White
+        Me.cbxAddEmpStatus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cbxAddEmpStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxAddEmpStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cbxAddEmpStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxAddEmpStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.cbxAddEmpStatus.FormattingEnabled = True
+        Me.cbxAddEmpStatus.ItemHeight = 22
+        Me.cbxAddEmpStatus.Items.AddRange(New Object() {"available", "not available"})
+        Me.cbxAddEmpStatus.Location = New System.Drawing.Point(479, 193)
+        Me.cbxAddEmpStatus.Name = "cbxAddEmpStatus"
+        Me.cbxAddEmpStatus.Size = New System.Drawing.Size(148, 30)
+        Me.cbxAddEmpStatus.TabIndex = 10009
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label7.Location = New System.Drawing.Point(476, 175)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 18)
+        Me.Label7.TabIndex = 10010
+        Me.Label7.Text = "STATUS:"
         '
         'tbxAddEmpAddress
         '
@@ -638,34 +667,6 @@ Partial Class ctrlTourGuides
         Me.btnAddEmp.Text = "Add Tour Guide"
         Me.btnAddEmp.UseVisualStyleBackColor = False
         '
-        'cbxAddEmpStatus
-        '
-        Me.cbxAddEmpStatus.BackColor = System.Drawing.Color.White
-        Me.cbxAddEmpStatus.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cbxAddEmpStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxAddEmpStatus.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cbxAddEmpStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxAddEmpStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.cbxAddEmpStatus.FormattingEnabled = True
-        Me.cbxAddEmpStatus.ItemHeight = 22
-        Me.cbxAddEmpStatus.Items.AddRange(New Object() {"available", "not available"})
-        Me.cbxAddEmpStatus.Location = New System.Drawing.Point(479, 193)
-        Me.cbxAddEmpStatus.Name = "cbxAddEmpStatus"
-        Me.cbxAddEmpStatus.Size = New System.Drawing.Size(148, 30)
-        Me.cbxAddEmpStatus.TabIndex = 10009
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(476, 175)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(58, 18)
-        Me.Label7.TabIndex = 10010
-        Me.Label7.Text = "STATUS:"
-        '
         'ctrlTourGuides
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -724,11 +725,11 @@ Partial Class ctrlTourGuides
     Friend WithEvents Label10 As Label
     Friend WithEvents cbxStatus As ComboBox
     Friend WithEvents Label16 As Label
+    Friend WithEvents cbxAddEmpStatus As ComboBox
+    Friend WithEvents Label7 As Label
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents cbxAddEmpStatus As ComboBox
-    Friend WithEvents Label7 As Label
 End Class

@@ -322,7 +322,7 @@ Partial Class ctrlAdminSettings
         Me.btnDeleteAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDeleteAcc.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDeleteAcc.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnDeleteAcc.Location = New System.Drawing.Point(124, 316)
+        Me.btnDeleteAcc.Location = New System.Drawing.Point(124, 337)
         Me.btnDeleteAcc.Name = "btnDeleteAcc"
         Me.btnDeleteAcc.Size = New System.Drawing.Size(139, 30)
         Me.btnDeleteAcc.TabIndex = 6
@@ -334,10 +334,10 @@ Partial Class ctrlAdminSettings
         Me.tabAdmn.Controls.Add(Me.TabPage1)
         Me.tabAdmn.Controls.Add(Me.TabPage2)
         Me.tabAdmn.Controls.Add(Me.TabPage3)
-        Me.tabAdmn.Location = New System.Drawing.Point(293, 76)
+        Me.tabAdmn.Location = New System.Drawing.Point(293, 55)
         Me.tabAdmn.Name = "tabAdmn"
         Me.tabAdmn.SelectedIndex = 0
-        Me.tabAdmn.Size = New System.Drawing.Size(596, 447)
+        Me.tabAdmn.Size = New System.Drawing.Size(596, 468)
         Me.tabAdmn.TabIndex = 0
         '
         'TabPage1
@@ -355,7 +355,7 @@ Partial Class ctrlAdminSettings
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(588, 414)
+        Me.TabPage1.Size = New System.Drawing.Size(588, 435)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "   User Information   "
         '
@@ -429,7 +429,7 @@ Partial Class ctrlAdminSettings
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(588, 414)
+        Me.TabPage2.Size = New System.Drawing.Size(588, 435)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "   Contact Details   "
         '
@@ -472,7 +472,7 @@ Partial Class ctrlAdminSettings
         Me.TabPage3.Location = New System.Drawing.Point(4, 29)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(588, 414)
+        Me.TabPage3.Size = New System.Drawing.Size(588, 435)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "   Account Security   "
         '
