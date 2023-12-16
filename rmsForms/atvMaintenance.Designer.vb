@@ -58,14 +58,14 @@ Partial Class atvMaintenance
         Me.Panel1.Location = New System.Drawing.Point(4, 34)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(419, 406)
+        Me.Panel1.Size = New System.Drawing.Size(419, 390)
         Me.Panel1.TabIndex = 0
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(28, 216)
+        Me.Label4.Location = New System.Drawing.Point(28, 229)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(84, 22)
         Me.Label4.TabIndex = 5
@@ -78,9 +78,9 @@ Partial Class atvMaintenance
         Me.tbxCost.BackColor = System.Drawing.Color.White
         Me.tbxCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxCost.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxCost.Location = New System.Drawing.Point(32, 241)
+        Me.tbxCost.Location = New System.Drawing.Point(118, 225)
         Me.tbxCost.Name = "tbxCost"
-        Me.tbxCost.Size = New System.Drawing.Size(357, 31)
+        Me.tbxCost.Size = New System.Drawing.Size(271, 31)
         Me.tbxCost.TabIndex = 6
         Me.tbxCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -110,7 +110,7 @@ Partial Class atvMaintenance
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(28, 140)
+        Me.Label1.Location = New System.Drawing.Point(28, 136)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(241, 22)
         Me.Label1.TabIndex = 3
@@ -123,7 +123,7 @@ Partial Class atvMaintenance
         Me.tbxOtherInfo.BackColor = System.Drawing.Color.White
         Me.tbxOtherInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.tbxOtherInfo.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxOtherInfo.Location = New System.Drawing.Point(32, 165)
+        Me.tbxOtherInfo.Location = New System.Drawing.Point(32, 161)
         Me.tbxOtherInfo.Name = "tbxOtherInfo"
         Me.tbxOtherInfo.Size = New System.Drawing.Size(357, 31)
         Me.tbxOtherInfo.TabIndex = 4
@@ -148,7 +148,7 @@ Partial Class atvMaintenance
         Me.lblClearForm.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblClearForm.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblClearForm.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.lblClearForm.Location = New System.Drawing.Point(166, 370)
+        Me.lblClearForm.Location = New System.Drawing.Point(166, 354)
         Me.lblClearForm.Name = "lblClearForm"
         Me.lblClearForm.Size = New System.Drawing.Size(84, 22)
         Me.lblClearForm.TabIndex = 8
@@ -163,7 +163,7 @@ Partial Class atvMaintenance
         Me.btnSaveMaintenanceInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSaveMaintenanceInfo.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveMaintenanceInfo.ForeColor = System.Drawing.Color.White
-        Me.btnSaveMaintenanceInfo.Location = New System.Drawing.Point(113, 310)
+        Me.btnSaveMaintenanceInfo.Location = New System.Drawing.Point(113, 294)
         Me.btnSaveMaintenanceInfo.Name = "btnSaveMaintenanceInfo"
         Me.btnSaveMaintenanceInfo.Size = New System.Drawing.Size(194, 48)
         Me.btnSaveMaintenanceInfo.TabIndex = 7
@@ -208,7 +208,7 @@ Partial Class atvMaintenance
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Red
-        Me.ClientSize = New System.Drawing.Size(428, 446)
+        Me.ClientSize = New System.Drawing.Size(428, 430)
         Me.Controls.Add(Me.panelTop)
         Me.Controls.Add(Me.Panel1)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))

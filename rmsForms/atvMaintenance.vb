@@ -1,15 +1,13 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
-Imports MS.Internal
-
 Public Class atvMaintenance
-    Private Sub lblClearForm_Click(sender As Object, e As EventArgs) Handles lblClearForm.Click
+    Private Sub clearForm()
         cbxType.SelectedIndex = -1
         tbxOtherInfo.Clear()
         tbxCost.Clear()
     End Sub
-    Private Sub atvMaintenance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        initializeDraggablePanel(panelTop)
+    Private Sub lblClearForm_Click(sender As Object, e As EventArgs) Handles lblClearForm.Click
+        clearForm()
     End Sub
     'suppress enter key sound sa mga textboxes
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxOtherInfo.KeyPress
@@ -21,13 +19,6 @@ Public Class atvMaintenance
         'check if the inputted char is a number,backspace
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ChrW(Keys.Back) Then
             e.Handled = True ' Suppress the key press
-        End If
-    End Sub
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Dim response As DialogResult = MessageBox.Show("Are you sure you want to clear the selection and exit?", "Confirmation", MessageBoxButtons.YesNo)
-        If response = DialogResult.Yes Then
-            rmsSharedVar.maintenanceID = Nothing
-            Me.Close()
         End If
     End Sub
     Private Sub btnSaveMaintenanceInfo_Click(sender As Object, e As EventArgs) Handles btnSaveMaintenanceInfo.Click
@@ -64,7 +55,21 @@ Public Class atvMaintenance
             End If
         End If
     End Sub
+    Private Sub atvMaintenance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        initializeDraggablePanel(panelTop)
+    End Sub
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Dim response As DialogResult = MessageBox.Show("Are you sure you want to clear the selection and exit?", "Confirmation", MessageBoxButtons.YesNo)
+        If response = DialogResult.Yes Then
+            rmsSharedVar.maintenanceID = Nothing
+            rmsSharedVar.openMaintenanceForm = False
+            clearForm()
+            Me.Close()
+        End If
+    End Sub
     Private Sub atvMaintenance_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        rmsSharedVar.maintenanceID = Nothing
         rmsSharedVar.openMaintenanceForm = False
+        clearForm()
     End Sub
 End Class

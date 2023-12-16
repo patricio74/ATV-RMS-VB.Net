@@ -10,20 +10,22 @@ Public Class atvSelect
         End Function
     End Class
     Private Sub loadATVCheckList()
-        Dim atvFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "AVAILABLE")
-        Dim atvField = Builders(Of BsonDocument).Projection.Include("atvBrand").Include("atvModel").Include("_id")
-        Dim cursor = rmsSharedVar.colInventory.Find(atvFilter).Project(atvField).ToCursor()
-        'list available ATVs
-        While cursor.MoveNext()
-            For Each document In cursor.Current
-                Dim brandName As String = document("atvBrand").AsString
-                Dim modelName As String = document("atvModel").AsString
-                Dim atvId As ObjectId = document("_id").AsObjectId
-                'combine brand and model sa bawat checklist
-                Dim atvItem As New atvItem With {.Name = $"{brandName} {modelName}", .Id = atvId}
-                atvCheckList.Items.Add(atvItem)
-            Next
-        End While
+        If Me.Visible = True Then
+            Dim atvFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "AVAILABLE")
+            Dim atvField = Builders(Of BsonDocument).Projection.Include("atvBrand").Include("atvModel").Include("_id")
+            Dim cursor = rmsSharedVar.colInventory.Find(atvFilter).Project(atvField).ToCursor()
+            'list available ATVs
+            While cursor.MoveNext()
+                For Each document In cursor.Current
+                    Dim brandName As String = document("atvBrand").AsString
+                    Dim modelName As String = document("atvModel").AsString
+                    Dim atvId As ObjectId = document("_id").AsObjectId
+                    'combine brand and model sa bawat checklist
+                    Dim atvItem As New atvItem With {.Name = $"{brandName} {modelName}", .Id = atvId}
+                    atvCheckList.Items.Add(atvItem)
+                Next
+            End While
+        End If
     End Sub
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Dim response As DialogResult = MessageBox.Show("Are you sure you want to clear the selection and exit?", "Confirmation", MessageBoxButtons.YesNo)
