@@ -1,4 +1,4 @@
-﻿Imports ATV_RMS.selectATV
+﻿Imports ATV_RMS.atvSelect
 Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class rmsSharedVar
@@ -20,7 +20,7 @@ Public Class rmsSharedVar
     Public Shared colTourGuide As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("empTourGuide")
 
     Public Shared colTransac As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("logTransactions")
-    Public Shared colNotif As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("notifSMS")
+    Public Shared colAtvMaintenance As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("logAtvMaintenance")
 
     Public Shared colAdmin As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdmin")
     Public Shared colPendingAdmin As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("rmsAdminPendingAcc")
@@ -29,6 +29,10 @@ Public Class rmsSharedVar
 
     Public Shared currentUser As String   'store current user's username
     Public Shared admnID  'store userid
+
+    'inventory maintenance
+    Public Shared maintenanceID
+    Public Shared openMaintenanceForm As Boolean 'refresh inventory pag false
 
     'add transaction var
     Public Shared atvGuide 'store selected tour guide

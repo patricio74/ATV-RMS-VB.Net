@@ -1,6 +1,6 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
-Public Class selectATV
+Public Class atvSelect
     Dim maxATV As Integer
     Public Class atvItem
         Public Property Name As String

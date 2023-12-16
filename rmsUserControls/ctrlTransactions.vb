@@ -1,4 +1,4 @@
-﻿Imports ATV_RMS.selectATV
+﻿Imports ATV_RMS.atvSelect
 Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class ctrlTransactions
@@ -375,7 +375,7 @@ Public Class ctrlTransactions
         If cbxAddPerson.SelectedIndex <> -1 Then
             numberOfPerson = cbxAddPerson.Text
             rmsSharedVar.atvTotNum = numberOfPerson
-            selectATV.ShowDialog()
+            atvSelect.ShowDialog()
         Else
             numberOfPerson = 0
             rmsSharedVar.atvTotNum = numberOfPerson
@@ -482,7 +482,7 @@ Public Class ctrlTransactions
         If Not String.IsNullOrEmpty(tbxWaitPerson.Text) Then
             numberOfWaitPerson = tbxWaitPerson.Text
             rmsSharedVar.atvWaitTotNum = numberOfWaitPerson
-            selectATV.ShowDialog()
+            atvSelect.ShowDialog()
         Else
             numberOfWaitPerson = 0
             rmsSharedVar.atvWaitTotNum = numberOfWaitPerson

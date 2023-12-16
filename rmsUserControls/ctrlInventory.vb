@@ -1,4 +1,5 @@
-﻿Imports MongoDB.Bson
+﻿Imports System.Windows.Controls
+Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class ctrlInventory
     Private inventoryy As List(Of inventoryDoc)
@@ -12,7 +13,8 @@ Public Class ctrlInventory
     End Class
     Private Sub clearAtvForm()
         dgvInventory.ClearSelection()
-        updID.Clear()
+        dgvAtvMaintenance.Rows.Clear()
+        dgvAtvMaintenance.ClearSelection()
         updBrand.Clear()
         updModel.Clear()
         rtbxUpdDesc.Clear()
@@ -23,7 +25,7 @@ Public Class ctrlInventory
         cbxAddStatus.SelectedIndex = -1
     End Sub
     'suppress enter key sound sa mga textboxes
-    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles updID.KeyPress, updBrand.KeyPress, updModel.KeyPress, addBrand.KeyPress, addModel.KeyPress
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles updBrand.KeyPress, updModel.KeyPress, addBrand.KeyPress, addModel.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
@@ -74,16 +76,42 @@ Public Class ctrlInventory
             tabInventory.SelectedIndex = 0 'update atv tab
             If inventoryy IsNot Nothing AndAlso e.RowIndex < inventoryy.Count Then
                 Dim selectedAtv = inventoryy(e.RowIndex)
-                updID.Text = selectedAtv.invID
                 updBrand.Text = selectedAtv.atvBrand
                 updModel.Text = selectedAtv.atvModel
                 rtbxUpdDesc.Text = selectedAtv.description
                 cbxUpdStatus.Text = selectedAtv.status
-                updBrand.Focus()
+                'updBrand.Focus()
+
+                'populate maintenance dgv
+                Dim atvID As String = selectedAtv.invID
+                'get atv maintenance history based sa ID
+                Dim logMaintenance = getMaintenanceHist(atvID)
+                'populate dgvMaintenance with the fetched logMaintenance doc
+                populateMaintHistory(logMaintenance)
             End If
         End If
     End Sub
-    Private Sub btnInv_Click(sender As Object, e As EventArgs) Handles btnAddAtv.Click, btnUpdAtv.Click, btnDelAtv.Click, lblClearAtv.Click
+    Private Function getMaintenanceHist(atvID As String) As List(Of BsonDocument)
+        Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("atvID", atvID)
+        Return rmsSharedVar.colAtvMaintenance.Find(filter).ToList()
+    End Function
+    Private Sub populateMaintHistory(logMaintenance As List(Of BsonDocument))
+        dgvAtvMaintenance.Rows.Clear()
+        For Each maintt As BsonDocument In logMaintenance
+            Dim row As New DataGridViewRow()
+            'convert to datetime object
+            Dim maintenDate As DateTime = DateTime.Parse(maintt("maintenanceDate").ToString())
+            'change format para mas readable
+            Dim formattedDate As String = maintenDate.ToString("MMM. dd, yyyy hh:mmtt")
+            'format as currency
+            Dim formattedCost As String = FormatCurrency(CDec(maintt("maintenanceCost").ToString()))
+            row.CreateCells(dgvAtvMaintenance, formattedDate, formattedCost, maintt("maintenanceType").ToString(), maintt("otherType").ToString()
+            )
+            dgvAtvMaintenance.Rows.Add(row)
+        Next
+        dgvAtvMaintenance.ClearSelection()
+    End Sub
+    Private Sub btnInv_Click(sender As Object, e As EventArgs) Handles btnAddAtv.Click, btnUpdAtv.Click, btnMaintenance.Click, btnDelAtv.Click, lblClearAtv.Click
         If sender Is btnAddAtv Then
             'check muna kung may blangko sa form bago mag-update
             If String.IsNullOrEmpty(addBrand.Text) OrElse String.IsNullOrEmpty(addModel.Text) OrElse String.IsNullOrEmpty(cbxAddStatus.Text) Then
@@ -120,7 +148,7 @@ Public Class ctrlInventory
                 Dim selectedAtv = inventoryy(selectedRow.Index)
                 Dim atvID As String = selectedAtv.invID
                 'check muna kung may blangko sa form bago mag-update
-                If String.IsNullOrEmpty(updBrand.Text) OrElse String.IsNullOrEmpty(updModel.Text) OrElse String.IsNullOrEmpty(cbxUpdStatus.Text) OrElse String.IsNullOrEmpty(updID.Text) Then
+                If String.IsNullOrEmpty(updBrand.Text) OrElse String.IsNullOrEmpty(updModel.Text) OrElse String.IsNullOrEmpty(cbxUpdStatus.Text) Then
                     MessageBox.Show("Please fill in all fields to continue.")
                 Else
                     Dim updConfirmation As DialogResult = MessageBox.Show("Do you want to update this ATV?", "Confirmation", MessageBoxButtons.YesNo)
@@ -142,6 +170,33 @@ Public Class ctrlInventory
                             MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End Try
                     End If
+                End If
+            Else
+                MessageBox.Show("Please select an ATV to update.")
+                refreshInv()
+            End If
+
+        ElseIf sender Is btnMaintenance Then
+            If dgvInventory.SelectedRows.Count > 0 Then
+                Dim selectedRow = dgvInventory.SelectedRows(0)
+                Dim selectedAtv = inventoryy(selectedRow.Index)
+                Dim atvID As String = selectedAtv.invID
+                rmsSharedVar.maintenanceID = atvID
+                Dim updConfirmation As DialogResult = MessageBox.Show("Add maintenance information to this ATV?", "Confirmation", MessageBoxButtons.YesNo)
+                If updConfirmation = DialogResult.Yes Then
+                    'show maintenance form
+                    rmsSharedVar.openMaintenanceForm = True
+                    atvMaintenance.ShowDialog()
+                    If rmsSharedVar.openMaintenanceForm = False Then
+                        'repopulate maintenance dgv
+                        'get atv maintenance history based sa ID
+                        Dim logMaintenance = getMaintenanceHist(atvID)
+                        'populate dgvMaintenance with the fetched logMaintenance doc
+                        populateMaintHistory(logMaintenance)
+                    End If
+                Else
+                    refreshInv()
+                    clearAtvForm()
                 End If
             Else
                 MessageBox.Show("Please select an ATV to update.")
