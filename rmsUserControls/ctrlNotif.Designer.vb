@@ -22,17 +22,18 @@ Partial Class ctrlNotif
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tbxApplicantName = New System.Windows.Forms.TextBox()
         Me.tbxApplicantAddress = New System.Windows.Forms.TextBox()
         Me.gboxPendingResume = New System.Windows.Forms.GroupBox()
+        Me.btnDeleteApplicant = New System.Windows.Forms.Button()
         Me.tbxApplicantPhone = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAcceptApplicant = New System.Windows.Forms.Button()
@@ -45,6 +46,7 @@ Partial Class ctrlNotif
         Me.btnClearApplicant = New System.Windows.Forms.Button()
         Me.btnDownloadResume = New System.Windows.Forms.Button()
         Me.gboxPendingAdmin = New System.Windows.Forms.GroupBox()
+        Me.btnDeletePendingAdm = New System.Windows.Forms.Button()
         Me.tbxAdminRFID = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.tbxAdminPhone = New System.Windows.Forms.TextBox()
@@ -125,6 +127,7 @@ Partial Class ctrlNotif
         'gboxPendingResume
         '
         Me.gboxPendingResume.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.gboxPendingResume.Controls.Add(Me.btnDeleteApplicant)
         Me.gboxPendingResume.Controls.Add(Me.tbxApplicantPhone)
         Me.gboxPendingResume.Controls.Add(Me.Label2)
         Me.gboxPendingResume.Controls.Add(Me.btnAcceptApplicant)
@@ -145,6 +148,22 @@ Partial Class ctrlNotif
         Me.gboxPendingResume.TabIndex = 67
         Me.gboxPendingResume.TabStop = False
         Me.gboxPendingResume.Text = "PENDING TOUR GUIDE APPLICANTS"
+        '
+        'btnDeleteApplicant
+        '
+        Me.btnDeleteApplicant.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnDeleteApplicant.BackColor = System.Drawing.Color.Firebrick
+        Me.btnDeleteApplicant.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDeleteApplicant.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDeleteApplicant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDeleteApplicant.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteApplicant.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDeleteApplicant.Location = New System.Drawing.Point(227, 621)
+        Me.btnDeleteApplicant.Name = "btnDeleteApplicant"
+        Me.btnDeleteApplicant.Size = New System.Drawing.Size(140, 41)
+        Me.btnDeleteApplicant.TabIndex = 70
+        Me.btnDeleteApplicant.Text = "Delete"
+        Me.btnDeleteApplicant.UseVisualStyleBackColor = False
         '
         'tbxApplicantPhone
         '
@@ -178,15 +197,15 @@ Partial Class ctrlNotif
         'btnAcceptApplicant
         '
         Me.btnAcceptApplicant.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnAcceptApplicant.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAcceptApplicant.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnAcceptApplicant.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAcceptApplicant.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnAcceptApplicant.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnAcceptApplicant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAcceptApplicant.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAcceptApplicant.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAcceptApplicant.Location = New System.Drawing.Point(75, 621)
+        Me.btnAcceptApplicant.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnAcceptApplicant.Location = New System.Drawing.Point(28, 621)
         Me.btnAcceptApplicant.Name = "btnAcceptApplicant"
-        Me.btnAcceptApplicant.Size = New System.Drawing.Size(200, 41)
+        Me.btnAcceptApplicant.Size = New System.Drawing.Size(185, 41)
         Me.btnAcceptApplicant.TabIndex = 4
         Me.btnAcceptApplicant.Text = "Accept Applicant"
         Me.btnAcceptApplicant.UseVisualStyleBackColor = False
@@ -230,15 +249,15 @@ Partial Class ctrlNotif
         Me.dgvPendingTourGuides.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPendingTourGuides.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvPendingTourGuides.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPendingTourGuides.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle7.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPendingTourGuides.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvPendingTourGuides.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPendingTourGuides.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4})
         Me.dgvPendingTourGuides.EnableHeadersVisualStyles = False
@@ -248,21 +267,21 @@ Partial Class ctrlNotif
         Me.dgvPendingTourGuides.Name = "dgvPendingTourGuides"
         Me.dgvPendingTourGuides.ReadOnly = True
         Me.dgvPendingTourGuides.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPendingTourGuides.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPendingTourGuides.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvPendingTourGuides.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvPendingTourGuides.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvPendingTourGuides.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvPendingTourGuides.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPendingTourGuides.ShowEditingIcon = False
         Me.dgvPendingTourGuides.Size = New System.Drawing.Size(534, 293)
@@ -298,9 +317,9 @@ Partial Class ctrlNotif
         Me.btnClearApplicant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearApplicant.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearApplicant.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnClearApplicant.Location = New System.Drawing.Point(287, 621)
+        Me.btnClearApplicant.Location = New System.Drawing.Point(380, 621)
         Me.btnClearApplicant.Name = "btnClearApplicant"
-        Me.btnClearApplicant.Size = New System.Drawing.Size(148, 41)
+        Me.btnClearApplicant.Size = New System.Drawing.Size(122, 41)
         Me.btnClearApplicant.TabIndex = 5
         Me.btnClearApplicant.Text = "Clear Form"
         Me.btnClearApplicant.UseVisualStyleBackColor = False
@@ -308,9 +327,9 @@ Partial Class ctrlNotif
         'btnDownloadResume
         '
         Me.btnDownloadResume.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDownloadResume.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnDownloadResume.BackColor = System.Drawing.Color.WhiteSmoke
         Me.btnDownloadResume.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDownloadResume.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnDownloadResume.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnDownloadResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDownloadResume.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDownloadResume.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -324,6 +343,7 @@ Partial Class ctrlNotif
         'gboxPendingAdmin
         '
         Me.gboxPendingAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.gboxPendingAdmin.Controls.Add(Me.btnDeletePendingAdm)
         Me.gboxPendingAdmin.Controls.Add(Me.tbxAdminRFID)
         Me.gboxPendingAdmin.Controls.Add(Me.Label6)
         Me.gboxPendingAdmin.Controls.Add(Me.tbxAdminPhone)
@@ -343,6 +363,22 @@ Partial Class ctrlNotif
         Me.gboxPendingAdmin.TabIndex = 69
         Me.gboxPendingAdmin.TabStop = False
         Me.gboxPendingAdmin.Text = "PENDING ADMIN ACCOUNT"
+        '
+        'btnDeletePendingAdm
+        '
+        Me.btnDeletePendingAdm.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnDeletePendingAdm.BackColor = System.Drawing.Color.Firebrick
+        Me.btnDeletePendingAdm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDeletePendingAdm.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDeletePendingAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDeletePendingAdm.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeletePendingAdm.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnDeletePendingAdm.Location = New System.Drawing.Point(218, 621)
+        Me.btnDeletePendingAdm.Name = "btnDeletePendingAdm"
+        Me.btnDeletePendingAdm.Size = New System.Drawing.Size(140, 41)
+        Me.btnDeletePendingAdm.TabIndex = 71
+        Me.btnDeletePendingAdm.Text = "Delete"
+        Me.btnDeletePendingAdm.UseVisualStyleBackColor = False
         '
         'tbxAdminRFID
         '
@@ -412,15 +448,15 @@ Partial Class ctrlNotif
         Me.dgvPendingAdminAcc.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPendingAdminAcc.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvPendingAdminAcc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPendingAdminAcc.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle10.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPendingAdminAcc.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvPendingAdminAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPendingAdminAcc.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column8})
         Me.dgvPendingAdminAcc.EnableHeadersVisualStyles = False
@@ -430,21 +466,21 @@ Partial Class ctrlNotif
         Me.dgvPendingAdminAcc.Name = "dgvPendingAdminAcc"
         Me.dgvPendingAdminAcc.ReadOnly = True
         Me.dgvPendingAdminAcc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPendingAdminAcc.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPendingAdminAcc.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.dgvPendingAdminAcc.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvPendingAdminAcc.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvPendingAdminAcc.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.dgvPendingAdminAcc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPendingAdminAcc.ShowEditingIcon = False
         Me.dgvPendingAdminAcc.Size = New System.Drawing.Size(534, 293)
@@ -490,9 +526,9 @@ Partial Class ctrlNotif
         Me.btnClearAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearAdmin.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearAdmin.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnClearAdmin.Location = New System.Drawing.Point(296, 621)
+        Me.btnClearAdmin.Location = New System.Drawing.Point(372, 621)
         Me.btnClearAdmin.Name = "btnClearAdmin"
-        Me.btnClearAdmin.Size = New System.Drawing.Size(148, 41)
+        Me.btnClearAdmin.Size = New System.Drawing.Size(130, 41)
         Me.btnClearAdmin.TabIndex = 6
         Me.btnClearAdmin.Text = "Clear Form"
         Me.btnClearAdmin.UseVisualStyleBackColor = False
@@ -500,15 +536,15 @@ Partial Class ctrlNotif
         'btnApproveAdmin
         '
         Me.btnApproveAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnApproveAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnApproveAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnApproveAdmin.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnApproveAdmin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnApproveAdmin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnApproveAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnApproveAdmin.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnApproveAdmin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnApproveAdmin.Location = New System.Drawing.Point(84, 621)
+        Me.btnApproveAdmin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnApproveAdmin.Location = New System.Drawing.Point(28, 621)
         Me.btnApproveAdmin.Name = "btnApproveAdmin"
-        Me.btnApproveAdmin.Size = New System.Drawing.Size(200, 41)
+        Me.btnApproveAdmin.Size = New System.Drawing.Size(174, 41)
         Me.btnApproveAdmin.TabIndex = 5
         Me.btnApproveAdmin.Text = "Approve admin"
         Me.btnApproveAdmin.UseVisualStyleBackColor = False
@@ -605,4 +641,6 @@ Partial Class ctrlNotif
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents btnDeleteApplicant As Button
+    Friend WithEvents btnDeletePendingAdm As Button
 End Class

@@ -139,7 +139,7 @@ Public Class ctrlNotif
             populatePendingAdminDGV()
         End If
     End Sub
-    Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnDownloadResume.Click, btnAcceptApplicant.Click, btnApproveAdmin.Click
+    Private Sub btn_Click(sender As Object, e As EventArgs) Handles btnDownloadResume.Click, btnAcceptApplicant.Click, btnApproveAdmin.Click, btnDeleteApplicant.Click, btnDeletePendingAdm.Click
         If sender Is btnDownloadResume Then
             If dgvPendingTourGuides.SelectedRows.Count > 0 Then
                 Dim selectedGuide = pendingTGuide(dgvPendingTourGuides.SelectedRows(0).Index)
@@ -212,6 +212,40 @@ Public Class ctrlNotif
                 MessageBox.Show("Please select an account first.")
                 populatePendingAdminDGV()
             End If
+
+        ElseIf sender Is btnDeleteApplicant Then
+            'reject applicant
+            If dgvPendingTourGuides.SelectedRows.Count > 0 Then
+                Dim selectedGuide = pendingTGuide(dgvPendingTourGuides.SelectedRows(0).Index)
+                Dim guideID As String = selectedGuide.tgID
+                Dim empConfirmation = MessageBox.Show("Are you sure you want to reject this applicant?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                'move to rejected applicant archive col
+                If empConfirmation = DialogResult.Yes Then
+                    rejectTourGuide(guideID)
+                ElseIf empConfirmation = DialogResult.No Then
+                    populateApplicantDGV()
+                End If
+            Else
+                MessageBox.Show("Please select an applicant first.")
+                populateApplicantDGV()
+            End If
+
+        ElseIf sender Is btnDeletePendingAdm Then
+            'reject pending admin acc
+            If dgvPendingAdminAcc.SelectedRows.Count > 0 Then
+                Dim selectedEmp = pendingAdmin(dgvPendingAdminAcc.SelectedRows(0).Index)
+                Dim pendingID As String = selectedEmp.admpID
+                Dim admConfirmation = MessageBox.Show("Are you sure you want to reject this pending account?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                'move to archive col
+                If admConfirmation = DialogResult.Yes Then
+                    rejectAdmin(pendingID)
+                ElseIf admConfirmation = DialogResult.No Then
+                    populatePendingAdminDGV()
+                End If
+            Else
+                MessageBox.Show("Please select an account first.")
+                populatePendingAdminDGV()
+            End If
         End If
     End Sub
     Private Sub moveToTourGuideCol(guideID As String)
@@ -249,6 +283,50 @@ Public Class ctrlNotif
                     rmsSharedVar.colAdmin.InsertOne(document)
                     rmsSharedVar.colPendingAdmin.DeleteOne(filter)
                     MessageBox.Show("New admin account successfully added!")
+                    populatePendingAdminDGV()
+                    clearAdmin()
+                Else
+                    MessageBox.Show("Account not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    populatePendingAdminDGV()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            populatePendingAdminDGV()
+        End Try
+    End Sub
+    Private Sub rejectTourGuide(guideID As String)
+        Try
+            Dim objectId As ObjectId
+            If ObjectId.TryParse(guideID, objectId) Then
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objectId)
+                Dim document = rmsSharedVar.colResume.Find(filter).FirstOrDefault()
+                If document IsNot Nothing Then
+                    rmsSharedVar.archiveRejectedGuide.InsertOne(document)
+                    rmsSharedVar.colResume.DeleteOne(filter)
+                    MessageBox.Show("Applicant file successfully deleted!")
+                    populateApplicantDGV()
+                    clearApplicantForm()
+                Else
+                    MessageBox.Show("Account not found.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    populateApplicantDGV()
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            populateApplicantDGV()
+        End Try
+    End Sub
+    Private Sub rejectAdmin(pendingID As String)
+        Try
+            Dim objectId As ObjectId
+            If ObjectId.TryParse(pendingID, objectId) Then
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Function(doc) doc("_id"), objectId)
+                Dim document = rmsSharedVar.colPendingAdmin.Find(filter).FirstOrDefault()
+                If document IsNot Nothing Then
+                    rmsSharedVar.archiveRejectedAdmin.InsertOne(document)
+                    rmsSharedVar.colPendingAdmin.DeleteOne(filter)
+                    MessageBox.Show("Pending admin account successfully deleted!")
                     populatePendingAdminDGV()
                     clearAdmin()
                 Else

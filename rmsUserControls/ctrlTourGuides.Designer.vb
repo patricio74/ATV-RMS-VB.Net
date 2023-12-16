@@ -383,7 +383,7 @@ Partial Class ctrlTourGuides
         Me.btnUpdDownloadResume.Name = "btnUpdDownloadResume"
         Me.btnUpdDownloadResume.Size = New System.Drawing.Size(133, 32)
         Me.btnUpdDownloadResume.TabIndex = 11
-        Me.btnUpdDownloadResume.Text = "view resume"
+        Me.btnUpdDownloadResume.Text = "Download Resume"
         Me.btnUpdDownloadResume.UseVisualStyleBackColor = False
         '
         'lblUpdEmpDate
@@ -413,7 +413,7 @@ Partial Class ctrlTourGuides
         Me.btnDelEmp.Name = "btnDelEmp"
         Me.btnDelEmp.Size = New System.Drawing.Size(166, 47)
         Me.btnDelEmp.TabIndex = 10
-        Me.btnDelEmp.Text = "remove tour guide"
+        Me.btnDelEmp.Text = "Remove Tour Guide"
         Me.btnDelEmp.UseVisualStyleBackColor = False
         '
         'btnUpdEmp

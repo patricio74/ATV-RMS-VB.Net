@@ -9,7 +9,8 @@ Public Class rmsSharedVar
     Public Shared archiveCust As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveCustomerInfo")
     Public Shared archiveTrail As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveAtvTours")
     Public Shared archiveInventory As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveInventory")
-    Public Shared archiveRejectedResume As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveRejectedResume")
+    Public Shared archiveRejectedGuide As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveRejectedResume")
+    Public Shared archiveRejectedAdmin As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveRejectedAdmin")
     Public Shared archiveTourGuide As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("archiveTourGuide")
 
     Public Shared colCustomer As IMongoCollection(Of BsonDocument) = rmsSharedVar.mongoDBase.GetCollection(Of BsonDocument)("Customer")
@@ -33,11 +34,8 @@ Public Class rmsSharedVar
     Public Shared atvGuide 'store selected tour guide
     Public Shared atvTotNum As Integer 'var para sa dami ng ATV
     Public Shared selectedATVs As New List(Of atvItem) 'store selected ATVs as array
-    'gawan mo rin var para sa tguide array
-
 
     'waiting tab
     Public Shared atvWaitTotNum As Integer 'var para sa dami ng ATV
-    'gawan mo rin var para sa tguide array
 
 End Class
