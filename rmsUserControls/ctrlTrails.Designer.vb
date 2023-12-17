@@ -37,6 +37,11 @@ Partial Class ctrlTrails
         Me.Label2 = New System.Windows.Forms.Label()
         Me.addTrailName = New System.Windows.Forms.TextBox()
         Me.dgvTrails = New System.Windows.Forms.DataGridView()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.tabTrails = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -59,11 +64,6 @@ Partial Class ctrlTrails
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.updDuration = New System.Windows.Forms.TextBox()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvTrails, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTrails.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -144,7 +144,7 @@ Partial Class ctrlTrails
         Me.btnAddTrail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddTrail.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddTrail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnAddTrail.Location = New System.Drawing.Point(79, 480)
+        Me.btnAddTrail.Location = New System.Drawing.Point(79, 491)
         Me.btnAddTrail.Name = "btnAddTrail"
         Me.btnAddTrail.Size = New System.Drawing.Size(121, 44)
         Me.btnAddTrail.TabIndex = 5
@@ -244,6 +244,40 @@ Partial Class ctrlTrails
         Me.dgvTrails.Size = New System.Drawing.Size(791, 642)
         Me.dgvTrails.TabIndex = 127
         '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "Trail name"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "Description"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Min. person"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 60
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Duration"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Price"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 90
+        '
         'tabTrails
         '
         Me.tabTrails.Controls.Add(Me.TabPage1)
@@ -283,7 +317,7 @@ Partial Class ctrlTrails
         Me.addDescription.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.addDescription.Location = New System.Drawing.Point(14, 250)
         Me.addDescription.Name = "addDescription"
-        Me.addDescription.Size = New System.Drawing.Size(252, 205)
+        Me.addDescription.Size = New System.Drawing.Size(252, 215)
         Me.addDescription.TabIndex = 4
         Me.addDescription.Text = ""
         '
@@ -318,7 +352,7 @@ Partial Class ctrlTrails
         Me.lblClearAdd.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblClearAdd.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblClearAdd.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblClearAdd.Location = New System.Drawing.Point(102, 536)
+        Me.lblClearAdd.Location = New System.Drawing.Point(102, 547)
         Me.lblClearAdd.Name = "lblClearAdd"
         Me.lblClearAdd.Size = New System.Drawing.Size(75, 18)
         Me.lblClearAdd.TabIndex = 6
@@ -520,40 +554,6 @@ Partial Class ctrlTrails
         Me.updDuration.Name = "updDuration"
         Me.updDuration.Size = New System.Drawing.Size(118, 30)
         Me.updDuration.TabIndex = 1
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "Trail name"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "Description"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Min. person"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 60
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Duration"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Price"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 90
         '
         'ctrlTrails
         '

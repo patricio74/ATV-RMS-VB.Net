@@ -72,6 +72,13 @@ Public Class ctrlCustomers
         cbxSearchFilter.SelectedIndex = 0
     End Sub
     Private Sub ctrlCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'disable dgv sorting on column header clikc
+        For Each column As DataGridViewColumn In dgvCustInfo.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In dgvCustHistory.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         resetFilter()
         refreshList()
         tabCustomerz.SelectedIndex = 0
@@ -130,6 +137,8 @@ Public Class ctrlCustomers
         Return rmsSharedVar.colTransac.Find(filter).ToList()
     End Function
     Private Sub populateCustHistoryDGV(logTransactions As List(Of BsonDocument))
+        ' Sort the logMaintenance list based on maintenance date in ascending order
+        logTransactions.Sort(Function(x, y) DateTime.Compare(DateTime.Parse(x("transacStart").ToString()), DateTime.Parse(y("transacStart").ToString())))
         dgvCustHistory.Rows.Clear()
         For Each transaction As BsonDocument In logTransactions
             Dim row As New DataGridViewRow()

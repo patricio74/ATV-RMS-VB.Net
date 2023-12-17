@@ -47,7 +47,7 @@ Public Class ctrlTransactions
         tbxWaitTour.Clear()
         cbxWaitTourGuide.SelectedIndex = -1
         tbxWaitPerson.Clear()
-        cbxWaitStatus.SelectedIndex = -1
+        'cbxWaitStatus.SelectedIndex = -1
         tbxWaitTotPrice.Text = totalPrice.ToString("N2")
         tbxWaitBalance.Text = remBalance.ToString("N2")
         transacCounter()
@@ -165,7 +165,7 @@ Public Class ctrlTransactions
         tbxWaitSname.Text = selTransac.trSname
         tbxWaitTour.Text = selTransac.trTourName
         tbxWaitPerson.Text = selTransac.trTotalPerson
-        cbxWaitStatus.Text = selTransac.trStatus
+        'cbxWaitStatus.Text = selTransac.trStatus
         tbxWaitTotPrice.Text = selTransac.trTotalPayment
         tbxWaitBalance.Text = selTransac.trBalance
         '!!!!!!!!!!
@@ -184,6 +184,10 @@ Public Class ctrlTransactions
         'cocomputin pa lang to; payment, change
     End Sub
     Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'disable dgv sorting on column header clikc
+        For Each column As DataGridViewColumn In dgvTransactions.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         reloadTrailList()
         reloadTGuideList()
         populateTransac()

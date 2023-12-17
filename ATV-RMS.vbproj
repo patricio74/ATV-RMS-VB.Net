@@ -252,10 +252,10 @@
     <Compile Include="rmsUserControls\ctrlInventory.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="rmsUserControls\ctrlNotif.Designer.vb">
-      <DependentUpon>ctrlNotif.vb</DependentUpon>
+    <Compile Include="rmsUserControls\ctrlPendingAcc.Designer.vb">
+      <DependentUpon>ctrlPendingAcc.vb</DependentUpon>
     </Compile>
-    <Compile Include="rmsUserControls\ctrlNotif.vb">
+    <Compile Include="rmsUserControls\ctrlPendingAcc.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="rmsUserControls\ctrlReservations.Designer.vb">
@@ -361,8 +361,8 @@
     <EmbeddedResource Include="rmsUserControls\ctrlInventory.resx">
       <DependentUpon>ctrlInventory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rmsUserControls\ctrlNotif.resx">
-      <DependentUpon>ctrlNotif.vb</DependentUpon>
+    <EmbeddedResource Include="rmsUserControls\ctrlPendingAcc.resx">
+      <DependentUpon>ctrlPendingAcc.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rmsUserControls\ctrlReservations.resx">
       <DependentUpon>ctrlReservations.vb</DependentUpon>

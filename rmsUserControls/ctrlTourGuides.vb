@@ -320,6 +320,10 @@ Public Class ctrlTourGuides
         End Try
     End Sub
     Private Sub ctrlTourGuides_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'disable dgv sorting on column header clikc
+        For Each column As DataGridViewColumn In dgvTourGuide.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         'resetFilter()
         populateEmpDGV()
     End Sub

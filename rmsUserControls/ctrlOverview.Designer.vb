@@ -83,10 +83,10 @@ Partial Class ctrlOverview
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.btnResetDate)
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(31, 246)
+        Me.GroupBox1.Location = New System.Drawing.Point(31, 248)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.GroupBox1.Size = New System.Drawing.Size(1104, 455)
+        Me.GroupBox1.Size = New System.Drawing.Size(1104, 435)
         Me.GroupBox1.TabIndex = 36
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Reservations Calendar"
@@ -137,7 +137,7 @@ Partial Class ctrlOverview
         Me.dgvReservations.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReservations.ShowEditingIcon = False
-        Me.dgvReservations.Size = New System.Drawing.Size(1104, 399)
+        Me.dgvReservations.Size = New System.Drawing.Size(1104, 379)
         Me.dgvReservations.TabIndex = 35
         '
         'Column1
@@ -184,7 +184,7 @@ Partial Class ctrlOverview
         Me.panelReserv.Controls.Add(Me.lblReservCanceled)
         Me.panelReserv.Controls.Add(Me.lblReserv)
         Me.panelReserv.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelReserv.Location = New System.Drawing.Point(31, 40)
+        Me.panelReserv.Location = New System.Drawing.Point(31, 39)
         Me.panelReserv.Name = "panelReserv"
         Me.panelReserv.Size = New System.Drawing.Size(264, 176)
         Me.panelReserv.TabIndex = 38
@@ -238,7 +238,7 @@ Partial Class ctrlOverview
         Me.panelATV.Controls.Add(Me.lblAtvMainten)
         Me.panelATV.Controls.Add(Me.lblAtvInUse)
         Me.panelATV.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelATV.Location = New System.Drawing.Point(310, 40)
+        Me.panelATV.Location = New System.Drawing.Point(310, 39)
         Me.panelATV.Name = "panelATV"
         Me.panelATV.Size = New System.Drawing.Size(264, 176)
         Me.panelATV.TabIndex = 39
@@ -306,7 +306,7 @@ Partial Class ctrlOverview
         Me.panelCustomer.Controls.Add(Me.lblCust)
         Me.panelCustomer.Controls.Add(Me.lblCustYest)
         Me.panelCustomer.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelCustomer.Location = New System.Drawing.Point(590, 40)
+        Me.panelCustomer.Location = New System.Drawing.Point(590, 39)
         Me.panelCustomer.Name = "panelCustomer"
         Me.panelCustomer.Size = New System.Drawing.Size(264, 176)
         Me.panelCustomer.TabIndex = 41
@@ -359,7 +359,7 @@ Partial Class ctrlOverview
         Me.panelRevenue.Controls.Add(Me.lblRevYest)
         Me.panelRevenue.Controls.Add(Me.lblRev)
         Me.panelRevenue.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelRevenue.Location = New System.Drawing.Point(871, 40)
+        Me.panelRevenue.Location = New System.Drawing.Point(871, 39)
         Me.panelRevenue.Name = "panelRevenue"
         Me.panelRevenue.Size = New System.Drawing.Size(264, 178)
         Me.panelRevenue.TabIndex = 42

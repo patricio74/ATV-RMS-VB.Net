@@ -22,10 +22,15 @@ Partial Class ctrlTransactions
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvTransactions = New System.Windows.Forms.DataGridView()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabTransactions = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.cbxAddTimeSlot = New System.Windows.Forms.ComboBox()
@@ -110,13 +115,6 @@ Partial Class ctrlTransactions
         Me.lblTodayTransac = New System.Windows.Forms.Label()
         Me.lblWaiting = New System.Windows.Forms.Label()
         Me.lblOngoing = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.cbxWaitStatus = New System.Windows.Forms.ComboBox()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvTransactions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTransactions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -132,15 +130,15 @@ Partial Class ctrlTransactions
         Me.dgvTransactions.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvTransactions.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvTransactions.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvTransactions.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvTransactions.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTransactions.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
         Me.dgvTransactions.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
@@ -151,25 +149,59 @@ Partial Class ctrlTransactions
         Me.dgvTransactions.Name = "dgvTransactions"
         Me.dgvTransactions.ReadOnly = True
         Me.dgvTransactions.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvTransactions.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvTransactions.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvTransactions.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvTransactions.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvTransactions.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvTransactions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvTransactions.ShowEditingIcon = False
         Me.dgvTransactions.Size = New System.Drawing.Size(1103, 280)
         Me.dgvTransactions.TabIndex = 95
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "CUSTOMER NAME"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "TOUR NAME"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 300
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "DATE"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 200
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "TIME SLOT"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 110
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "STATUS"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
         '
         'tabTransactions
         '
@@ -233,7 +265,7 @@ Partial Class ctrlTransactions
         Me.cbxAddTimeSlot.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.cbxAddTimeSlot.FormattingEnabled = True
         Me.cbxAddTimeSlot.ItemHeight = 22
-        Me.cbxAddTimeSlot.Items.AddRange(New Object() {"MORNING", "AFTERNOON", "EVENING"})
+        Me.cbxAddTimeSlot.Items.AddRange(New Object() {"Morning", "Afternoon", "Evening"})
         Me.cbxAddTimeSlot.Location = New System.Drawing.Point(133, 270)
         Me.cbxAddTimeSlot.Name = "cbxAddTimeSlot"
         Me.cbxAddTimeSlot.Size = New System.Drawing.Size(103, 30)
@@ -660,8 +692,6 @@ Partial Class ctrlTransactions
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.tbxWaitFName)
         Me.TabPage2.Controls.Add(Me.Label5)
-        Me.TabPage2.Controls.Add(Me.cbxWaitStatus)
-        Me.TabPage2.Controls.Add(Me.Label6)
         Me.TabPage2.Controls.Add(Me.tbxWaitTotPrice)
         Me.TabPage2.Controls.Add(Me.Label8)
         Me.TabPage2.Controls.Add(Me.Label9)
@@ -679,7 +709,7 @@ Partial Class ctrlTransactions
         Me.Label25.BackColor = System.Drawing.Color.White
         Me.Label25.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label25.Location = New System.Drawing.Point(787, 146)
+        Me.Label25.Location = New System.Drawing.Point(788, 158)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(24, 24)
         Me.Label25.TabIndex = 1039
@@ -692,7 +722,7 @@ Partial Class ctrlTransactions
         Me.Label26.BackColor = System.Drawing.Color.Transparent
         Me.Label26.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label26.Location = New System.Drawing.Point(781, 122)
+        Me.Label26.Location = New System.Drawing.Point(782, 134)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(130, 18)
         Me.Label26.TabIndex = 1038
@@ -706,7 +736,7 @@ Partial Class ctrlTransactions
         Me.tbxWaitBalance.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxWaitBalance.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxWaitBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxWaitBalance.Location = New System.Drawing.Point(784, 143)
+        Me.tbxWaitBalance.Location = New System.Drawing.Point(785, 155)
         Me.tbxWaitBalance.Name = "tbxWaitBalance"
         Me.tbxWaitBalance.ReadOnly = True
         Me.tbxWaitBalance.Size = New System.Drawing.Size(242, 30)
@@ -790,9 +820,9 @@ Partial Class ctrlTransactions
         Me.btnStartTrail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStartTrail.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStartTrail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnStartTrail.Location = New System.Drawing.Point(798, 208)
+        Me.btnStartTrail.Location = New System.Drawing.Point(825, 216)
         Me.btnStartTrail.Name = "btnStartTrail"
-        Me.btnStartTrail.Size = New System.Drawing.Size(215, 58)
+        Me.btnStartTrail.Size = New System.Drawing.Size(183, 50)
         Me.btnStartTrail.TabIndex = 1031
         Me.btnStartTrail.Text = "Start Trail"
         Me.btnStartTrail.UseVisualStyleBackColor = False
@@ -806,7 +836,7 @@ Partial Class ctrlTransactions
         Me.btnWaitAtv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnWaitAtv.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnWaitAtv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnWaitAtv.Location = New System.Drawing.Point(616, 237)
+        Me.btnWaitAtv.Location = New System.Drawing.Point(563, 238)
         Me.btnWaitAtv.Name = "btnWaitAtv"
         Me.btnWaitAtv.Size = New System.Drawing.Size(110, 30)
         Me.btnWaitAtv.TabIndex = 6
@@ -846,7 +876,7 @@ Partial Class ctrlTransactions
         Me.lblWaitClear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblWaitClear.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWaitClear.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblWaitClear.Location = New System.Drawing.Point(869, 282)
+        Me.lblWaitClear.Location = New System.Drawing.Point(880, 282)
         Me.lblWaitClear.Name = "lblWaitClear"
         Me.lblWaitClear.Size = New System.Drawing.Size(75, 18)
         Me.lblWaitClear.TabIndex = 9
@@ -858,7 +888,7 @@ Partial Class ctrlTransactions
         Me.Label3.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(788, 59)
+        Me.Label3.Location = New System.Drawing.Point(789, 71)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 35)
         Me.Label3.TabIndex = 1029
@@ -923,7 +953,7 @@ Partial Class ctrlTransactions
         Me.tbxWaitTotPrice.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxWaitTotPrice.Font = New System.Drawing.Font("Trebuchet MS", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxWaitTotPrice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxWaitTotPrice.Location = New System.Drawing.Point(784, 57)
+        Me.tbxWaitTotPrice.Location = New System.Drawing.Point(785, 69)
         Me.tbxWaitTotPrice.MaxLength = 11
         Me.tbxWaitTotPrice.Name = "tbxWaitTotPrice"
         Me.tbxWaitTotPrice.ReadOnly = True
@@ -950,7 +980,7 @@ Partial Class ctrlTransactions
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label9.Location = New System.Drawing.Point(781, 36)
+        Me.Label9.Location = New System.Drawing.Point(782, 48)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(82, 18)
         Me.Label9.TabIndex = 1023
@@ -1287,7 +1317,6 @@ Partial Class ctrlTransactions
         '
         Me.tbxOnGTime.BackColor = System.Drawing.Color.White
         Me.tbxOnGTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxOnGTime.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tbxOnGTime.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxOnGTime.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxOnGTime.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
@@ -1372,67 +1401,6 @@ Partial Class ctrlTransactions
         Me.lblOngoing.Size = New System.Drawing.Size(75, 18)
         Me.lblOngoing.TabIndex = 131
         Me.lblOngoing.Text = "Ongoing: 0"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(499, 216)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 18)
-        Me.Label6.TabIndex = 1024
-        Me.Label6.Text = "STATUS:"
-        '
-        'cbxWaitStatus
-        '
-        Me.cbxWaitStatus.BackColor = System.Drawing.Color.White
-        Me.cbxWaitStatus.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cbxWaitStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxWaitStatus.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxWaitStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.cbxWaitStatus.FormattingEnabled = True
-        Me.cbxWaitStatus.ItemHeight = 22
-        Me.cbxWaitStatus.Items.AddRange(New Object() {"waiting", "canceled"})
-        Me.cbxWaitStatus.Location = New System.Drawing.Point(502, 237)
-        Me.cbxWaitStatus.Name = "cbxWaitStatus"
-        Me.cbxWaitStatus.Size = New System.Drawing.Size(101, 30)
-        Me.cbxWaitStatus.TabIndex = 7
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "CUSTOMER NAME"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "TOUR NAME"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 300
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "DATE"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 200
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "TIME SLOT"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 110
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "STATUS"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
         '
         'ctrlTransactions
         '
@@ -1547,8 +1515,6 @@ Partial Class ctrlTransactions
     Friend WithEvents Label37 As Label
     Friend WithEvents tbxOnGNewPayment As TextBox
     Friend WithEvents Label39 As Label
-    Friend WithEvents cbxWaitStatus As ComboBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn

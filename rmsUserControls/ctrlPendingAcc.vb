@@ -2,7 +2,7 @@
 Imports MongoDB.Bson
 Imports MongoDB.Driver
 Imports MongoDB.Libmongocrypt
-Public Class ctrlNotif
+Public Class ctrlPendingAcc
     Private pendingTGuide As List(Of tgDoc)
     Private pendingAdmin As List(Of admDoc)
     Public Class tgDoc
@@ -79,6 +79,8 @@ Public Class ctrlNotif
     Private Sub dgvPendingTourGuides_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPendingTourGuides.CellClick
         If e.RowIndex >= 0 Then
             If pendingTGuide IsNot Nothing AndAlso e.RowIndex < pendingTGuide.Count Then
+                clearAdmin()
+                populatePendingAdminDGV()
                 Dim selectedTG = pendingTGuide(e.RowIndex)
                 Dim applicantName As String = $"{selectedTG.tgFname} {selectedTG.tgMname} {selectedTG.tgSname}".Trim()
                 tbxApplicantName.Text = applicantName
@@ -121,6 +123,8 @@ Public Class ctrlNotif
     Private Sub dgvPendingAdminAcc_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPendingAdminAcc.CellClick
         If e.RowIndex >= 0 Then
             If pendingAdmin IsNot Nothing AndAlso e.RowIndex < pendingAdmin.Count Then
+                clearApplicantForm()
+                populateApplicantDGV()
                 Dim selectedAdmnp = pendingAdmin(e.RowIndex)
                 Dim applicantName As String = $"{selectedAdmnp.admpFname} {selectedAdmnp.admpMname} {selectedAdmnp.admpSname}".Trim()
                 tbxAdminName.Text = applicantName
@@ -340,6 +344,13 @@ Public Class ctrlNotif
         End Try
     End Sub
     Private Sub ctrlNotif_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'disable dgv sorting on column header clikc
+        For Each column As DataGridViewColumn In dgvPendingAdminAcc.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In dgvPendingTourGuides.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         populateApplicantDGV()
         populatePendingAdminDGV()
     End Sub

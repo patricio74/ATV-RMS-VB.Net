@@ -219,6 +219,10 @@ Public Class ctrlTrails
         End If
     End Sub
     Private Sub ctrlTrails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'disable dgv sorting on column header clikc
+        For Each column As DataGridViewColumn In dgvTrails.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         populateTrails()
     End Sub
     Private Sub ctrlTrails_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged

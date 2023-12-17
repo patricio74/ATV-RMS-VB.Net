@@ -5,7 +5,7 @@
     Dim transac As New ctrlTransactions
     Dim trails As New ctrlTrails
     Dim customer As New ctrlCustomers
-    Dim pending As New ctrlNotif
+    Dim pending As New ctrlPendingAcc
     Dim inventory As New ctrlInventory
     Dim guide As New ctrlTourGuides
     Dim rules As New ctrlRules

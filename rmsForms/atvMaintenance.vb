@@ -42,16 +42,17 @@ Public Class atvMaintenance
                 Try
                     rmsSharedVar.colAtvMaintenance.InsertOne(docNewAtv)
                     MessageBox.Show("ATV maintenance info saved.")
+                    'update status ng selected atv to "MAINTENANCE"
+                    Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(rmsSharedVar.maintenanceID))
+                    'Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Eq(Of String)("_id", rmsSharedVar.maintenanceID)
+                    Dim update As UpdateDefinition(Of BsonDocument) = Builders(Of BsonDocument).Update.Set(Of String)("status", "MAINTENANCE")
+                    rmsSharedVar.colInventory.UpdateOne(filter, update)
                     Me.Close()
                 Catch ex As Exception
                     MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
-                'update status ng selected atv to "MAINTENANCE"
-                Dim filter As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Eq(Of String)("_id", rmsSharedVar.maintenanceID)
-                Dim update As UpdateDefinition(Of BsonDocument) = Builders(Of BsonDocument).Update.Set(Of String)("status", "MAINTENANCE")
-                rmsSharedVar.colInventory.UpdateOne(filter, update)
             Else
-                MessageBox.Show("ATV ID is empty.")
+                MessageBox.Show("ATV ID is empty. Please close this form and select an ATV again.")
             End If
         End If
     End Sub

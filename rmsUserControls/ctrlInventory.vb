@@ -1,5 +1,4 @@
-﻿Imports System.Windows.Controls
-Imports MongoDB.Bson
+﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class ctrlInventory
     Private inventoryy As List(Of inventoryDoc)
@@ -87,7 +86,7 @@ Public Class ctrlInventory
                 'get atv maintenance history based sa ID
                 Dim logMaintenance = getMaintenanceHist(atvID)
                 'populate dgvMaintenance with the fetched logMaintenance doc
-                populateMaintHistory(logMaintenance)
+                populateMaintenHistory(logMaintenance)
             End If
         End If
     End Sub
@@ -95,7 +94,9 @@ Public Class ctrlInventory
         Dim filter = Builders(Of BsonDocument).Filter.Eq(Of String)("atvID", atvID)
         Return rmsSharedVar.colAtvMaintenance.Find(filter).ToList()
     End Function
-    Private Sub populateMaintHistory(logMaintenance As List(Of BsonDocument))
+    Private Sub populateMaintenHistory(logMaintenance As List(Of BsonDocument))
+        'sort dgv ng maintenance history
+        logMaintenance.Sort(Function(x, y) DateTime.Compare(DateTime.Parse(x("maintenanceDate").ToString()), DateTime.Parse(y("maintenanceDate").ToString())))
         dgvAtvMaintenance.Rows.Clear()
         For Each maintt As BsonDocument In logMaintenance
             Dim row As New DataGridViewRow()
@@ -190,13 +191,12 @@ Public Class ctrlInventory
                     If rmsSharedVar.openMaintenanceForm = False Then
                         'repopulate maintenance dgv
                         'get atv maintenance history based sa ID
-                        Dim logMaintenance = getMaintenanceHist(atvID)
+                        'Dim logMaintenance = getMaintenanceHist(atvID)
                         'populate dgvMaintenance with the fetched logMaintenance doc
-                        populateMaintHistory(logMaintenance)
+                        'populateMaintenHistory(logMaintenance)
+                        'refresh dgv
+                        refreshInv()
                     End If
-                Else
-                    refreshInv()
-                    clearAtvForm()
                 End If
             Else
                 MessageBox.Show("Please select an ATV to update.")
@@ -248,6 +248,13 @@ Public Class ctrlInventory
         End Try
     End Sub
     Private Sub ctrlInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'disable dgv sorting on column header clikc
+        For Each column As DataGridViewColumn In dgvInventory.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In dgvAtvMaintenance.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
         refreshInv()
     End Sub
     Private Sub ctrlInventory_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
