@@ -249,9 +249,7 @@ Public Class ctrlTransactions
         lblOngoing.Text = $"Ongoing: {ongoingCount}"
         lblWaiting.Text = $"Waiting: {waitingCount}"
     End Sub
-
-
-    '!!!!!!!!!!! ADD WALK-IN TRANSAC TAB!!!!!!!!!!!!
+    '!!!!!!!!!!! A D D   W A L K - I N   T R A N S A C   T A B!!!!!!!!!!!!
     Private Function cbxToursList()
         Dim filter As New BsonDocument()
         Dim tourData As List(Of BsonDocument) = rmsSharedVar.colTrails.Find(filter).ToList()
@@ -490,10 +488,7 @@ Public Class ctrlTransactions
 
 
 
-
-
-
-    '!!!!!!!!!!! WAITING TAB!!!!!!!!!!!!
+    '!!!!!!!!!!! W A I T I N G   T A B !!!!!!!!!!!!
     Dim numberOfWaitPerson As Integer
     'select atv only if numberOfWaitPerson >0
     Private Sub btnWaitAtv_Click(sender As Object, e As EventArgs) Handles btnWaitAtv.Click
@@ -511,14 +506,13 @@ Public Class ctrlTransactions
         'add start time
         'update doc; dagdag tguide, atv array sa docu, set stat:not available
         'status=ongoing
-        'print invoice
     End Sub
 
 
 
 
 
-    '!!!!!!!!!!! ON GOING TAB!!!!!!!!!!!!
+    '!!!!!!!!!!! O N   G O I N G   T A B !!!!!!!!!!!!
     Private Sub btnOnGAtv_Click(sender As Object, e As EventArgs) Handles btnOnGAtv.Click
         'show form dialog with list of atvs used by selected row
         'from w/ dgv ng list na lang siguro
@@ -530,6 +524,6 @@ Public Class ctrlTransactions
         'dapat mag 0 balance bago magcontinue sa print ng resibo
         'status=done
         'add trail end date
-        'print resibo
     End Sub
+
 End Class

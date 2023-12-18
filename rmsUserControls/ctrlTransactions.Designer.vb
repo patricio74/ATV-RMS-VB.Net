@@ -94,9 +94,6 @@ Partial Class ctrlTransactions
         Me.tbxOnGChange = New System.Windows.Forms.TextBox()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.tbxOnGNewPayment = New System.Windows.Forms.TextBox()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.tbxOnGRemBalance = New System.Windows.Forms.TextBox()
         Me.tbxOnGTourGuide = New System.Windows.Forms.TextBox()
         Me.btnOnGAtv = New System.Windows.Forms.Button()
         Me.Label34 = New System.Windows.Forms.Label()
@@ -112,6 +109,9 @@ Partial Class ctrlTransactions
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.tbxTransacID = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.tbxOnGRemBalance = New System.Windows.Forms.TextBox()
         Me.lblTodayTransac = New System.Windows.Forms.Label()
         Me.lblWaiting = New System.Windows.Forms.Label()
         Me.lblOngoing = New System.Windows.Forms.Label()
@@ -1128,48 +1128,6 @@ Partial Class ctrlTransactions
         Me.tbxOnGNewPayment.TabStop = False
         Me.tbxOnGNewPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.BackColor = System.Drawing.Color.White
-        Me.Label27.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label27.Location = New System.Drawing.Point(123, 216)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(24, 24)
-        Me.Label27.TabIndex = 1042
-        Me.Label27.Text = "₱"
-        '
-        'Label30
-        '
-        Me.Label30.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label30.AutoSize = True
-        Me.Label30.BackColor = System.Drawing.Color.Transparent
-        Me.Label30.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label30.Location = New System.Drawing.Point(117, 192)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(130, 18)
-        Me.Label30.TabIndex = 1041
-        Me.Label30.Text = "REMAINING BALANCE:"
-        '
-        'tbxOnGRemBalance
-        '
-        Me.tbxOnGRemBalance.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbxOnGRemBalance.BackColor = System.Drawing.Color.White
-        Me.tbxOnGRemBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxOnGRemBalance.Cursor = System.Windows.Forms.Cursors.No
-        Me.tbxOnGRemBalance.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxOnGRemBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxOnGRemBalance.Location = New System.Drawing.Point(120, 213)
-        Me.tbxOnGRemBalance.Name = "tbxOnGRemBalance"
-        Me.tbxOnGRemBalance.ReadOnly = True
-        Me.tbxOnGRemBalance.Size = New System.Drawing.Size(277, 30)
-        Me.tbxOnGRemBalance.TabIndex = 1040
-        Me.tbxOnGRemBalance.TabStop = False
-        Me.tbxOnGRemBalance.Text = "0.00"
-        Me.tbxOnGRemBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
         'tbxOnGTourGuide
         '
         Me.tbxOnGTourGuide.BackColor = System.Drawing.Color.White
@@ -1374,6 +1332,48 @@ Partial Class ctrlTransactions
         Me.tbxTransacID.Size = New System.Drawing.Size(252, 14)
         Me.tbxTransacID.TabIndex = 10
         Me.tbxTransacID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.BackColor = System.Drawing.Color.White
+        Me.Label27.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.Label27.Location = New System.Drawing.Point(123, 216)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(24, 24)
+        Me.Label27.TabIndex = 1042
+        Me.Label27.Text = "₱"
+        '
+        'Label30
+        '
+        Me.Label30.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label30.AutoSize = True
+        Me.Label30.BackColor = System.Drawing.Color.Transparent
+        Me.Label30.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label30.Location = New System.Drawing.Point(117, 192)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(130, 18)
+        Me.Label30.TabIndex = 1041
+        Me.Label30.Text = "REMAINING BALANCE:"
+        '
+        'tbxOnGRemBalance
+        '
+        Me.tbxOnGRemBalance.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tbxOnGRemBalance.BackColor = System.Drawing.Color.White
+        Me.tbxOnGRemBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxOnGRemBalance.Cursor = System.Windows.Forms.Cursors.No
+        Me.tbxOnGRemBalance.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxOnGRemBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxOnGRemBalance.Location = New System.Drawing.Point(120, 213)
+        Me.tbxOnGRemBalance.Name = "tbxOnGRemBalance"
+        Me.tbxOnGRemBalance.ReadOnly = True
+        Me.tbxOnGRemBalance.Size = New System.Drawing.Size(277, 30)
+        Me.tbxOnGRemBalance.TabIndex = 1040
+        Me.tbxOnGRemBalance.TabStop = False
+        Me.tbxOnGRemBalance.Text = "0.00"
+        Me.tbxOnGRemBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblTodayTransac
         '
