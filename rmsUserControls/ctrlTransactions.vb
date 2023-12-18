@@ -3,14 +3,14 @@ Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class ctrlTransactions
     'para macompute total price
-    Dim tourPrice As Double = 0.00
+    Dim tourPrice As Double = 0.00 'price ng selected tour
     Dim numberOfPerson As Integer = 0
-    Dim totalPrice As Double = 0.00
+    Dim totalPrice As Double = 0.00 'selected tour * no. of person
     'compute change,balance
     Dim initPayment As Double = 0.00
-    Dim finPayment As Double = 0.00
-    Dim totChange As Double = 0.00
     Dim remBalance As Double = 0.00
+    'Dim finPayment As Double = 0.00
+    Dim totChange As Double = 0.00
     Private Sub clearAddTransacTab()
         tourPrice = 0.00
         numberOfPerson = 0
@@ -23,13 +23,12 @@ Public Class ctrlTransactions
         tbxAddMName.Clear()
         tbxAddSname.Clear()
         cbxAddTour.SelectedIndex = -1
-        cbxAddTour.SelectedIndex = -1
-        cbxAddPerson.SelectedIndex = -1
+        cbxAddPerson.SelectedIndex = 0
         tbxAddTotal.Text = totalPrice.ToString("N2")
         tbxAddInitPayment.Clear()
         tbxAddChange.Text = totChange.ToString("N2")
         tbxAddBalance.Text = remBalance.ToString("N2")
-        lblTourPrice.Text = 0.00
+        lblTourPrice.Text = tourPrice.ToString("N2")
         cbxAddTourGuide.SelectedIndex = -1
         cbxAddTimeSlot.SelectedIndex = -1
         transacCounter()
@@ -58,7 +57,7 @@ Public Class ctrlTransactions
         numberOfPerson = 0
         totalPrice = 0.00
         initPayment = 0.00
-        finPayment = 0.00
+        'finPayment = 0.00
         totChange = 0.00
         remBalance = 0.00
         tbxOnGName.Clear()
@@ -168,9 +167,10 @@ Public Class ctrlTransactions
         tbxWaitSname.Text = selTransac.trSname
         tbxWaitTour.Text = selTransac.trTourName
         tbxWaitPerson.Text = selTransac.trTotalPerson
-        'cbxWaitStatus.Text = selTransac.trStatus
-        tbxWaitTotPrice.Text = selTransac.trTotalPayment
-        tbxWaitBalance.Text = selTransac.trBalance
+        totalPrice = selTransac.trTotalPayment
+        tbxWaitTotPrice.Text = totalPrice.ToString("N2")
+        remBalance = selTransac.trBalance
+        tbxWaitBalance.Text = remBalance.ToString("N2")
         '!!!!!!!!!!
         'tourguide, atv array blank lang sya kasi iseselect pa lang value
     End Sub
@@ -181,8 +181,11 @@ Public Class ctrlTransactions
         tbxOnGTourGuide.Text = selTransac.trTGuide
         tbxOnGTime.Text = selTransac.trTimeSlot
         tbxOnGPerson.Text = selTransac.trTotalPerson
-        tbxOnGTotal.Text = selTransac.trTotalPayment
-        tbxOnGRemBalance.Text = selTransac.trBalance
+        totalPrice = selTransac.trTotalPayment
+        tbxOnGTotal.Text = totalPrice.ToString("N2")
+        remBalance = selTransac.trBalance
+        tbxOnGRemBalance.Text = remBalance.ToString("N2")
+        'finPayment
         '!!!!!!!!!!!
         'cocomputin pa lang to; payment, change
     End Sub
@@ -194,12 +197,14 @@ Public Class ctrlTransactions
         reloadTrailList()
         reloadTGuideList()
         populateTransac()
+        cbxAddPerson.SelectedIndex = 0
     End Sub
     Private Sub ctrlTransactions_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = True Then
             reloadTrailList()
             reloadTGuideList()
             populateTransac()
+            cbxAddPerson.SelectedIndex = 0
         ElseIf Me.Visible = False Then
             'closeMongoConn()
             clearAddTransacTab()
@@ -256,6 +261,8 @@ Public Class ctrlTransactions
         'clear combobox then repopulate list
         cbxAddTour.Items.Clear()
         cbxAddTour.SelectedIndex = -1
+        tourPrice = 0.00
+        lblTourPrice.Text = tourPrice.ToString("N2")
         Dim tourData As List(Of BsonDocument) = cbxToursList()
         For Each tourDocument As BsonDocument In tourData
             cbxAddTour.Items.Add(tourDocument("nameOfTour").ToString())
@@ -277,15 +284,19 @@ Public Class ctrlTransactions
                                 totalPrice = tourPrice * numberOfPerson
                                 tbxAddTotal.Text = totalPrice.ToString("N2")
                             Else
-                                tbxAddTotal.Text = "0.00"
+                                totalPrice = 0.00
                                 numberOfPerson = 0
+                                tbxAddTotal.Text = totalPrice.ToString("N2")
                             End If
                         Else
-                            tbxAddTotal.Text = "0.00"
+                            totalPrice = 0.00
                             numberOfPerson = 0
+                            tbxAddTotal.Text = totalPrice.ToString("N2")
                         End If
                     End If
                 Else
+                    tourPrice = 0.00
+                    lblTourPrice.Text = tourPrice.ToString("N2")
                 End If
             Else
             End If
@@ -389,7 +400,7 @@ Public Class ctrlTransactions
         End If
     End Sub
     Private Sub btnAddConfirm_Click(sender As Object, e As EventArgs) Handles btnAddConfirm.Click
-        If String.IsNullOrEmpty(tbxAddFName.Text) OrElse String.IsNullOrEmpty(tbxAddMName.Text) OrElse String.IsNullOrEmpty(tbxAddSname.Text) OrElse String.IsNullOrEmpty(tbxAddInitPayment.Text) OrElse cbxAddTimeSlot.SelectedIndex <= -1 OrElse cbxAddPerson.SelectedIndex <= -1 OrElse cbxAddTour.SelectedIndex <= -1 OrElse cbxAddTourGuide.SelectedIndex <= -1 OrElse rmsSharedVar.selectedATVs Is Nothing OrElse rmsSharedVar.selectedATVs.Count = 0 Then
+        If String.IsNullOrEmpty(tbxAddFName.Text) OrElse String.IsNullOrEmpty(tbxAddSname.Text) OrElse String.IsNullOrEmpty(tbxAddInitPayment.Text) OrElse cbxAddTimeSlot.SelectedIndex <= -1 OrElse cbxAddPerson.SelectedIndex <= -1 OrElse cbxAddTour.SelectedIndex <= -1 OrElse cbxAddTourGuide.SelectedIndex <= -1 OrElse rmsSharedVar.selectedATVs Is Nothing OrElse rmsSharedVar.selectedATVs.Count = 0 Then
             MessageBox.Show("Please fill in the required fields to continue.")
         Else
             'insert doc to logTransac, stat=ongoing

@@ -88,6 +88,8 @@ Partial Class ctrlTransactions
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.tbxOnGChange = New System.Windows.Forms.TextBox()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -106,15 +108,24 @@ Partial Class ctrlTransactions
         Me.tbxOnGName = New System.Windows.Forms.TextBox()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.tbxOnGTour = New System.Windows.Forms.TextBox()
-        Me.Label33 = New System.Windows.Forms.Label()
         Me.tbxOnGTotal = New System.Windows.Forms.TextBox()
-        Me.tbxOnGTime = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.tbxTransacID = New System.Windows.Forms.TextBox()
         Me.lblTodayTransac = New System.Windows.Forms.Label()
         Me.lblWaiting = New System.Windows.Forms.Label()
         Me.lblOngoing = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.tbxOnGTime = New System.Windows.Forms.TextBox()
+        Me.Label33 = New System.Windows.Forms.Label()
         CType(Me.dgvTransactions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTransactions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -1006,13 +1017,12 @@ Partial Class ctrlTransactions
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.TabPage3.Controls.Add(Me.Label32)
+        Me.TabPage3.Controls.Add(Me.Label6)
         Me.TabPage3.Controls.Add(Me.Label38)
         Me.TabPage3.Controls.Add(Me.tbxOnGChange)
         Me.TabPage3.Controls.Add(Me.Label37)
         Me.TabPage3.Controls.Add(Me.tbxOnGNewPayment)
-        Me.TabPage3.Controls.Add(Me.Label27)
-        Me.TabPage3.Controls.Add(Me.Label30)
-        Me.TabPage3.Controls.Add(Me.tbxOnGRemBalance)
         Me.TabPage3.Controls.Add(Me.tbxOnGTourGuide)
         Me.TabPage3.Controls.Add(Me.btnOnGAtv)
         Me.TabPage3.Controls.Add(Me.Label34)
@@ -1024,9 +1034,7 @@ Partial Class ctrlTransactions
         Me.TabPage3.Controls.Add(Me.tbxOnGName)
         Me.TabPage3.Controls.Add(Me.Label31)
         Me.TabPage3.Controls.Add(Me.tbxOnGTour)
-        Me.TabPage3.Controls.Add(Me.Label33)
         Me.TabPage3.Controls.Add(Me.tbxOnGTotal)
-        Me.TabPage3.Controls.Add(Me.tbxOnGTime)
         Me.TabPage3.Controls.Add(Me.Label35)
         Me.TabPage3.Controls.Add(Me.Label36)
         Me.TabPage3.Controls.Add(Me.tbxTransacID)
@@ -1037,6 +1045,30 @@ Partial Class ctrlTransactions
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "  Ongoing Transactions   "
         '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.BackColor = System.Drawing.Color.White
+        Me.Label32.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.Label32.Location = New System.Drawing.Point(453, 201)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(24, 24)
+        Me.Label32.TabIndex = 1048
+        Me.Label32.Text = "₱"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(453, 127)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(24, 24)
+        Me.Label6.TabIndex = 1047
+        Me.Label6.Text = "₱"
+        '
         'Label38
         '
         Me.Label38.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1044,7 +1076,7 @@ Partial Class ctrlTransactions
         Me.Label38.BackColor = System.Drawing.Color.Transparent
         Me.Label38.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label38.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label38.Location = New System.Drawing.Point(447, 253)
+        Me.Label38.Location = New System.Drawing.Point(447, 178)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(58, 18)
         Me.Label38.TabIndex = 1046
@@ -1058,7 +1090,7 @@ Partial Class ctrlTransactions
         Me.tbxOnGChange.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxOnGChange.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxOnGChange.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxOnGChange.Location = New System.Drawing.Point(450, 274)
+        Me.tbxOnGChange.Location = New System.Drawing.Point(450, 199)
         Me.tbxOnGChange.Name = "tbxOnGChange"
         Me.tbxOnGChange.ReadOnly = True
         Me.tbxOnGChange.Size = New System.Drawing.Size(277, 30)
@@ -1074,7 +1106,7 @@ Partial Class ctrlTransactions
         Me.Label37.BackColor = System.Drawing.Color.Transparent
         Me.Label37.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label37.Location = New System.Drawing.Point(447, 179)
+        Me.Label37.Location = New System.Drawing.Point(447, 104)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(64, 18)
         Me.Label37.TabIndex = 1044
@@ -1088,7 +1120,7 @@ Partial Class ctrlTransactions
         Me.tbxOnGNewPayment.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxOnGNewPayment.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxOnGNewPayment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxOnGNewPayment.Location = New System.Drawing.Point(450, 200)
+        Me.tbxOnGNewPayment.Location = New System.Drawing.Point(450, 125)
         Me.tbxOnGNewPayment.MaxLength = 6
         Me.tbxOnGNewPayment.Name = "tbxOnGNewPayment"
         Me.tbxOnGNewPayment.Size = New System.Drawing.Size(277, 30)
@@ -1102,7 +1134,7 @@ Partial Class ctrlTransactions
         Me.Label27.BackColor = System.Drawing.Color.White
         Me.Label27.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label27.Location = New System.Drawing.Point(453, 128)
+        Me.Label27.Location = New System.Drawing.Point(123, 216)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(24, 24)
         Me.Label27.TabIndex = 1042
@@ -1115,7 +1147,7 @@ Partial Class ctrlTransactions
         Me.Label30.BackColor = System.Drawing.Color.Transparent
         Me.Label30.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label30.Location = New System.Drawing.Point(447, 104)
+        Me.Label30.Location = New System.Drawing.Point(117, 192)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(130, 18)
         Me.Label30.TabIndex = 1041
@@ -1129,7 +1161,7 @@ Partial Class ctrlTransactions
         Me.tbxOnGRemBalance.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxOnGRemBalance.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxOnGRemBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxOnGRemBalance.Location = New System.Drawing.Point(450, 125)
+        Me.tbxOnGRemBalance.Location = New System.Drawing.Point(120, 213)
         Me.tbxOnGRemBalance.Name = "tbxOnGRemBalance"
         Me.tbxOnGRemBalance.ReadOnly = True
         Me.tbxOnGRemBalance.Size = New System.Drawing.Size(277, 30)
@@ -1161,11 +1193,11 @@ Partial Class ctrlTransactions
         Me.btnOnGAtv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnOnGAtv.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOnGAtv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnOnGAtv.Location = New System.Drawing.Point(774, 46)
+        Me.btnOnGAtv.Location = New System.Drawing.Point(506, 253)
         Me.btnOnGAtv.Name = "btnOnGAtv"
-        Me.btnOnGAtv.Size = New System.Drawing.Size(110, 38)
+        Me.btnOnGAtv.Size = New System.Drawing.Size(162, 51)
         Me.btnOnGAtv.TabIndex = 6
-        Me.btnOnGAtv.Text = "View ATVs"
+        Me.btnOnGAtv.Text = "View ATVs in use"
         Me.btnOnGAtv.UseVisualStyleBackColor = False
         '
         'Label34
@@ -1200,11 +1232,11 @@ Partial Class ctrlTransactions
         Me.btnEndTrail.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEndTrail.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
         Me.btnEndTrail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEndTrail.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEndTrail.Font = New System.Drawing.Font("Trebuchet MS", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEndTrail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnEndTrail.Location = New System.Drawing.Point(805, 171)
+        Me.btnEndTrail.Location = New System.Drawing.Point(816, 166)
         Me.btnEndTrail.Name = "btnEndTrail"
-        Me.btnEndTrail.Size = New System.Drawing.Size(215, 58)
+        Me.btnEndTrail.Size = New System.Drawing.Size(185, 59)
         Me.btnEndTrail.TabIndex = 8
         Me.btnEndTrail.Text = "End Trail"
         Me.btnEndTrail.UseVisualStyleBackColor = False
@@ -1287,18 +1319,6 @@ Partial Class ctrlTransactions
         Me.tbxOnGTour.Size = New System.Drawing.Size(348, 30)
         Me.tbxOnGTour.TabIndex = 1
         '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.BackColor = System.Drawing.Color.Transparent
-        Me.Label33.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label33.Location = New System.Drawing.Point(49, 253)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(70, 18)
-        Me.Label33.TabIndex = 158
-        Me.Label33.Text = "TIME SLOT:"
-        '
         'tbxOnGTotal
         '
         Me.tbxOnGTotal.BackColor = System.Drawing.Color.WhiteSmoke
@@ -1314,19 +1334,6 @@ Partial Class ctrlTransactions
         Me.tbxOnGTotal.TabIndex = 4
         Me.tbxOnGTotal.Text = "0.00"
         Me.tbxOnGTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'tbxOnGTime
-        '
-        Me.tbxOnGTime.BackColor = System.Drawing.Color.White
-        Me.tbxOnGTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxOnGTime.Cursor = System.Windows.Forms.Cursors.No
-        Me.tbxOnGTime.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxOnGTime.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxOnGTime.Location = New System.Drawing.Point(52, 274)
-        Me.tbxOnGTime.Name = "tbxOnGTime"
-        Me.tbxOnGTime.ReadOnly = True
-        Me.tbxOnGTime.Size = New System.Drawing.Size(153, 30)
-        Me.tbxOnGTime.TabIndex = 2
         '
         'Label35
         '
@@ -1404,16 +1411,176 @@ Partial Class ctrlTransactions
         Me.lblOngoing.TabIndex = 131
         Me.lblOngoing.Text = "Ongoing: 0"
         '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.BackColor = System.Drawing.Color.White
+        Me.Label40.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.Label40.Location = New System.Drawing.Point(591, 267)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(24, 24)
+        Me.Label40.TabIndex = 1048
+        Me.Label40.Text = "₱"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.BackColor = System.Drawing.Color.White
+        Me.Label41.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.Label41.Location = New System.Drawing.Point(610, 213)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(24, 24)
+        Me.Label41.TabIndex = 1047
+        Me.Label41.Text = "₱"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.BackColor = System.Drawing.Color.White
+        Me.Label42.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.Label42.Location = New System.Drawing.Point(610, 140)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(24, 24)
+        Me.Label42.TabIndex = 1046
+        Me.Label42.Text = "₱"
+        '
+        'Label43
+        '
+        Me.Label43.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label43.AutoSize = True
+        Me.Label43.BackColor = System.Drawing.Color.Transparent
+        Me.Label43.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label43.Location = New System.Drawing.Point(604, 116)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(130, 18)
+        Me.Label43.TabIndex = 1045
+        Me.Label43.Text = "REMAINING BALANCE:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.BackColor = System.Drawing.Color.White
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.No
+        Me.TextBox1.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.TextBox1.Location = New System.Drawing.Point(607, 137)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(196, 30)
+        Me.TextBox1.TabIndex = 1041
+        Me.TextBox1.TabStop = False
+        Me.TextBox1.Text = "0.00"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label44
+        '
+        Me.Label44.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label44.AutoSize = True
+        Me.Label44.BackColor = System.Drawing.Color.Transparent
+        Me.Label44.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label44.Location = New System.Drawing.Point(604, 189)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(58, 18)
+        Me.Label44.TabIndex = 1044
+        Me.Label44.Text = "CHANGE:"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox2.BackColor = System.Drawing.Color.White
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.No
+        Me.TextBox2.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.TextBox2.Location = New System.Drawing.Point(607, 210)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(196, 30)
+        Me.TextBox2.TabIndex = 1042
+        Me.TextBox2.TabStop = False
+        Me.TextBox2.Text = "0.00"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.BackColor = System.Drawing.Color.Transparent
+        Me.Label45.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label45.Location = New System.Drawing.Point(584, 244)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(107, 18)
+        Me.Label45.TabIndex = 1043
+        Me.Label45.Text = "INITIAL PAYMENT:"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.BackColor = System.Drawing.Color.White
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox3.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.TextBox3.Location = New System.Drawing.Point(587, 265)
+        Me.TextBox3.MaxLength = 6
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(311, 30)
+        Me.TextBox3.TabIndex = 1040
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'tbxOnGTime
+        '
+        Me.tbxOnGTime.BackColor = System.Drawing.Color.White
+        Me.tbxOnGTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxOnGTime.Cursor = System.Windows.Forms.Cursors.No
+        Me.tbxOnGTime.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxOnGTime.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxOnGTime.Location = New System.Drawing.Point(120, 277)
+        Me.tbxOnGTime.Name = "tbxOnGTime"
+        Me.tbxOnGTime.ReadOnly = True
+        Me.tbxOnGTime.Size = New System.Drawing.Size(153, 30)
+        Me.tbxOnGTime.TabIndex = 2
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.BackColor = System.Drawing.Color.Transparent
+        Me.Label33.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label33.Location = New System.Drawing.Point(117, 256)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(70, 18)
+        Me.Label33.TabIndex = 158
+        Me.Label33.Text = "TIME SLOT:"
+        '
         'ctrlTransactions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Controls.Add(Me.Label40)
         Me.Controls.Add(Me.lblOngoing)
+        Me.Controls.Add(Me.Label41)
         Me.Controls.Add(Me.lblWaiting)
+        Me.Controls.Add(Me.Label42)
         Me.Controls.Add(Me.lblTodayTransac)
+        Me.Controls.Add(Me.Label27)
+        Me.Controls.Add(Me.Label43)
+        Me.Controls.Add(Me.Label30)
         Me.Controls.Add(Me.tabTransactions)
+        Me.Controls.Add(Me.tbxOnGRemBalance)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label44)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.Label45)
+        Me.Controls.Add(Me.Label33)
+        Me.Controls.Add(Me.tbxOnGTime)
         Me.Controls.Add(Me.dgvTransactions)
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -1445,9 +1612,7 @@ Partial Class ctrlTransactions
     Friend WithEvents tbxOnGName As TextBox
     Friend WithEvents Label31 As Label
     Friend WithEvents tbxOnGTour As TextBox
-    Friend WithEvents Label33 As Label
     Friend WithEvents tbxOnGTotal As TextBox
-    Friend WithEvents tbxOnGTime As TextBox
     Friend WithEvents Label35 As Label
     Friend WithEvents Label36 As Label
     Friend WithEvents lblOnGClear As Label
@@ -1522,4 +1687,17 @@ Partial Class ctrlTransactions
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label40 As Label
+    Friend WithEvents Label41 As Label
+    Friend WithEvents Label42 As Label
+    Friend WithEvents Label43 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label44 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label45 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents tbxOnGTime As TextBox
+    Friend WithEvents Label33 As Label
 End Class

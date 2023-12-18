@@ -137,6 +137,7 @@ Public Class ctrlInventory
                         MessageBox.Show("New ATV added to the database")
                         refreshInv()
                         clearAtvForm()
+                        addBrand.Focus()
                     Catch ex As Exception
                         MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End Try
@@ -261,7 +262,6 @@ Public Class ctrlInventory
         If Me.Visible = True Then
             refreshInv()
         ElseIf Me.Visible = False Then
-            'closeMongoConn()
             clearAtvForm()
             tabInventory.SelectedIndex = 0
         End If

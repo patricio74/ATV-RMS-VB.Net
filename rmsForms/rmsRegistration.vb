@@ -30,9 +30,8 @@ Public Class rmsRegistration
         btnReg.Click, btnRegOk.Click, btnRet1.Click, btnRet2.Click
         If sender Is btnMinimize Then
             Me.WindowState = FormWindowState.Minimized
-
         ElseIf sender Is btnClose Then
-            Dim result As DialogResult = MessageBox.Show("Do you want to switch to login?" & vbCrLf & "Your registration will be discarded.", "Confirmation", MessageBoxButtons.YesNo)
+            Dim result As DialogResult = MessageBox.Show("Discard registration and return to Login?", "Confirmation", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
                 rmsLogin.Show()
                 rmsLogin.Location = Me.Location
@@ -40,7 +39,6 @@ Public Class rmsRegistration
                 loadRMSLogin()
                 rmsLogin.tboxUsername.Focus()
             End If
-
         ElseIf sender Is btnRet1 Then 'return sa panel1
             lblPanel2Note.Visible = False
             lblEmailUsed.Visible = False
@@ -48,7 +46,6 @@ Public Class rmsRegistration
             lblRFIDUsed.Visible = False
             hideRegPanelz()
             Panel1.Show()
-
         ElseIf sender Is btnRet2 Then 'return sa panel2
             'lblPanel1Note.Visible = False
             lblPanel3Note.Visible = False
@@ -83,14 +80,10 @@ Public Class rmsRegistration
                     Dim firstName As String = words(0)
                     lblHello.Text = "Hi, " & firstName & "!"
                 Else
-
-                    '??????????
-
                     MessageBox.Show("Hello!")
                 End If
                 regEmail.Focus()
             End If
-
         ElseIf sender Is btnNext2 Then 'panel2
             lblPanel2Note.Visible = False
             lblEmailUsed.Visible = False
@@ -152,7 +145,6 @@ Public Class rmsRegistration
                     MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End If
-
         ElseIf sender Is btnNext3 Then 'panel3
             lblPanel3Note.Visible = False
             lblUsernameUsed.Visible = False
@@ -165,7 +157,6 @@ Public Class rmsRegistration
             If String.IsNullOrWhiteSpace(regUsername.Text) Or String.IsNullOrWhiteSpace(regPassw.Text) Or String.IsNullOrWhiteSpace(regPassw2.Text) Then
                 lblPanel3Note.Visible = True
             Else
-                'add code to module
                 Dim pendingUsername As String = regUsername.Text
                 Dim checkUsername As FilterDefinition(Of BsonDocument) = Builders(Of BsonDocument).Filter.Or(Builders(Of BsonDocument).Filter.Eq(Of String)("Username", pendingUsername))
                 Dim usernameAvailability As Long = rmsSharedVar.colAdmin.CountDocuments(checkUsername)
@@ -211,7 +202,6 @@ Public Class rmsRegistration
                     MessageBox.Show("Error: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End If
-
         ElseIf sender Is btnReg Then 'REGISTER PANEL
             'insert to pendingAdminCollection
             If regFName.Text = "" Or regSname.Text = "" Or regEmail.Text = "" Or regPhone.Text = "" Or regRFID.Text = "" Or regUsername.Text = "" Or regPassw2.Text = "" Then
@@ -265,7 +255,6 @@ Public Class rmsRegistration
                     End Try
                 End If
             End If
-
         ElseIf sender Is btnRegOk Then
             rmsLogin.Show()
             loadRMSLogin()
@@ -278,17 +267,14 @@ Public Class rmsRegistration
         If sender Is panelSname OrElse sender Is panelFName OrElse sender Is panelMName OrElse sender Is lblReg1 OrElse sender Is lblReg2 OrElse sender Is lblReg3 Then
             hideRegPanelz()
             Panel1.Show()
-
         ElseIf sender Is panelEmail OrElse sender Is panelPhone OrElse sender Is panelRFID OrElse sender Is lblReg4 OrElse sender Is lblReg5 OrElse sender Is lblReg6 Then
             hideRegPanelz()
             Panel2.Show()
-
         ElseIf sender Is panelUsernam OrElse sender Is panelPasswor OrElse sender Is lblReg7 OrElse sender Is lblReg8 Then
             hideRegPanelz()
             Panel3.Show()
-
         ElseIf sender Is labelLogin Then
-            Dim result As DialogResult = MessageBox.Show("Do you want to switch to login?" & vbCrLf & "Your registration will be discarded.", "Confirmation", MessageBoxButtons.YesNo)
+            Dim result As DialogResult = MessageBox.Show("Discard registration and return to Login?", "Confirmation", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
                 rmsLogin.Show()
                 rmsLogin.Location = Me.Location
@@ -329,7 +315,6 @@ Public Class rmsRegistration
             Else
                 lblPanel2Note.Visible = False
             End If
-
         ElseIf sender Is regRFID Then
             Dim cursorPos As Integer = regRFID.SelectionStart
             regRFID.Text = regRFID.Text.Replace(" ", "")
@@ -340,7 +325,6 @@ Public Class rmsRegistration
             Else
                 lblPanel2Note.Visible = False
             End If
-
         ElseIf sender Is regUsername Then
             Dim cursorPos As Integer = regUsername.SelectionStart
             regUsername.Text = regUsername.Text.Replace(" ", "")
@@ -351,7 +335,6 @@ Public Class rmsRegistration
             Else
                 lblPanel3Note.Visible = False
             End If
-
         ElseIf sender Is regPassw Then
             Dim cursorPos As Integer = regPassw.SelectionStart
             regPassw.Text = regPassw.Text.Replace(" ", "")
@@ -367,7 +350,6 @@ Public Class rmsRegistration
             Else
                 lblPassShort.Visible = False
             End If
-
         ElseIf sender Is regPassw2 Then
             Dim cursorPos As Integer = regPassw2.SelectionStart
             regPassw2.Text = regPassw2.Text.Replace(" ", "")

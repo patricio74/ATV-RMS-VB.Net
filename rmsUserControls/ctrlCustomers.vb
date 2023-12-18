@@ -71,19 +71,6 @@ Public Class ctrlCustomers
         tbxSearchEmail.Clear()
         cbxSearchFilter.SelectedIndex = 0
     End Sub
-    Private Sub ctrlCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'disable dgv sorting on column header clikc
-        For Each column As DataGridViewColumn In dgvCustInfo.Columns
-            column.SortMode = DataGridViewColumnSortMode.NotSortable
-        Next
-        For Each column As DataGridViewColumn In dgvCustHistory.Columns
-            column.SortMode = DataGridViewColumnSortMode.NotSortable
-        Next
-        resetFilter()
-        refreshList()
-        tabCustomerz.SelectedIndex = 0
-        'tabCustInfo.SelectedIndex = 0
-    End Sub
     Private Sub refreshList()
         If rmsDashboard.switchCust = True Then
             dgvCustHistory.Rows.Clear()
@@ -429,9 +416,21 @@ Public Class ctrlCustomers
         refreshList()
         'tabCustInfo.SelectedIndex = 0
     End Sub
+    Private Sub ctrlCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'disable dgv sorting on column header clikc
+        For Each column As DataGridViewColumn In dgvCustInfo.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        For Each column As DataGridViewColumn In dgvCustHistory.Columns
+            column.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        resetFilter()
+        refreshList()
+        tabCustomerz.SelectedIndex = 0
+        'tabCustInfo.SelectedIndex = 0
+    End Sub
     Private Sub ctrlCustomers_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = False Then
-            'closeMongoConn()
             clearAddForm()
             clearUpdForm()
             resetFilter()

@@ -1,6 +1,5 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
-
 Public Class rmsPassReset
     Dim searchUsername As String
     Dim searchEmail As String
@@ -11,9 +10,12 @@ Public Class rmsPassReset
         tbxResetUsername.Focus()
     End Sub
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Me.Close()
-        rmsLogin.StartPosition = FormStartPosition.CenterScreen
-        rmsLogin.Show()
+        Dim response As DialogResult = MessageBox.Show("Cancel password reset and return to Login?", "Confirmation", MessageBoxButtons.YesNo)
+        If response = DialogResult.Yes Then
+            Me.Close()
+            rmsLogin.StartPosition = FormStartPosition.CenterScreen
+            rmsLogin.Show()
+        End If
     End Sub
     Private Sub lblReturnToLogin_Click(sender As Object, e As EventArgs) Handles lblReturnToLogin.Click
         Me.Close()
