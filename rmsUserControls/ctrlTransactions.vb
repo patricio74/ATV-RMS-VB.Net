@@ -128,6 +128,9 @@ Public Class ctrlTransactions
                 }
                 tranzac.Add(tr)
             Next
+            'sort reservDate in descending order
+            tranzac = tranzac.OrderByDescending(Function(tr) DateTime.Parse(tr.trReservDate)).ToList()
+
             dgvTransactions.Rows.Clear()
             For Each doc In tranzac
                 Dim applicant As String = $"{doc.trFname} {doc.trMname} {doc.trSname}".Trim()
@@ -215,7 +218,7 @@ Public Class ctrlTransactions
         End If
     End Sub
     Private Sub tbxPerson(sender As Object, e As KeyPressEventArgs) Handles tbxAddInitPayment.KeyPress, tbxAddTotal.KeyPress, tbxAddChange.KeyPress,
-        tbxAddBalance.KeyPress, tbxWaitTotPrice.KeyPress, tbxWaitPerson.KeyPress
+        tbxAddBalance.KeyPress, tbxWaitTotPrice.KeyPress, tbxWaitPerson.KeyPress, tbxOnGNewPayment.KeyPress
         'check if the inputted char is a number,backspace
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
             e.Handled = True

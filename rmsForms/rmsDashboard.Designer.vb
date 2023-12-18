@@ -454,7 +454,7 @@ Partial Class rmsDashboard
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "rmsDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ATV-RMS Dashboard"
+        Me.Text = "z"
         Me.panelSide.ResumeLayout(False)
         Me.panelSide.PerformLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()

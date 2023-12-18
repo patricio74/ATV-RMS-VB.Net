@@ -1,5 +1,4 @@
-﻿Imports MongoDB.Bson
-Public Class rmsLogin
+﻿Public Class rmsLogin
     Dim loginToolTip As New ToolTip
     Public Sub clearLoginForm()
         'rmsLogin.tboxUsername.Clear()

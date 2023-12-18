@@ -63,8 +63,8 @@ Public Class ctrlTrails
                     .trailID = idElement.Value.AsObjectId.ToString,
                     .trailName = document("nameOfTour").ToString,
                     .description = document("description").ToString,
-                    .minimumPax = document("minimumPax").ToString,
                     .duration = document("duration").ToString,
+                    .minimumPax = document("minimumPax").ToString,
                     .price = document("price").ToString,
                     .dateAdded = document("dateAdded").ToString
                 }
@@ -72,7 +72,8 @@ Public Class ctrlTrails
             Next
             dgvTrails.Rows.Clear()
             For Each trail In trailz
-                dgvTrails.Rows.Add(trail.trailName, trail.description, trail.minimumPax, trail.duration, trail.price)
+                Dim tourPrice As String = Double.Parse(trail.price).ToString("N2")
+                dgvTrails.Rows.Add(trail.trailName, trail.description, trail.minimumPax, tourPrice)
             Next
             dgvTrails.ClearSelection()
         End If
@@ -189,7 +190,7 @@ Public Class ctrlTrails
                 Dim document = rmsSharedVar.colTrails.Find(filter).FirstOrDefault()
                 If document IsNot Nothing Then
                     'Add date to accountDeletionDate bago iarchive
-                    document.Add("accountDeletionDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                    document.Add("trailDeletionDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                     rmsSharedVar.archiveTrail.InsertOne(document)
                     rmsSharedVar.colTrails.DeleteOne(filter)
                     MessageBox.Show("ATV trail deleted successfully.")

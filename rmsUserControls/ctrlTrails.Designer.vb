@@ -37,11 +37,6 @@ Partial Class ctrlTrails
         Me.Label2 = New System.Windows.Forms.Label()
         Me.addTrailName = New System.Windows.Forms.TextBox()
         Me.dgvTrails = New System.Windows.Forms.DataGridView()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.tabTrails = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -64,6 +59,10 @@ Partial Class ctrlTrails
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.updDuration = New System.Windows.Forms.TextBox()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvTrails, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabTrails.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -216,7 +215,7 @@ Partial Class ctrlTrails
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvTrails.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvTrails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTrails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
+        Me.dgvTrails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4, Me.Column6})
         Me.dgvTrails.EnableHeadersVisualStyles = False
         Me.dgvTrails.GridColor = System.Drawing.Color.DimGray
         Me.dgvTrails.Location = New System.Drawing.Point(32, 48)
@@ -243,40 +242,6 @@ Partial Class ctrlTrails
         Me.dgvTrails.ShowEditingIcon = False
         Me.dgvTrails.Size = New System.Drawing.Size(791, 642)
         Me.dgvTrails.TabIndex = 127
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "Trail name"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "Description"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Min. person"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 60
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Duration"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Price"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 90
         '
         'tabTrails
         '
@@ -555,6 +520,34 @@ Partial Class ctrlTrails
         Me.updDuration.Size = New System.Drawing.Size(118, 30)
         Me.updDuration.TabIndex = 1
         '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column2.HeaderText = "Trail name"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "Description"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Min. person"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 60
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Price"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 90
+        '
         'ctrlTrails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -612,6 +605,5 @@ Partial Class ctrlTrails
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
 End Class

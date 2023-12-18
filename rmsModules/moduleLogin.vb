@@ -43,6 +43,9 @@ Module moduleLogin
                 rmsLogin.lblLoginError.Visible = True
                 rmsLogin.tboxUsername.Focus()
             End If
+        Catch ex As MongoCommandException When ex.Code = 50 'para sa timeout
+            MessageBox.Show("Timeout error: Please try again.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         Catch ex As Exception
             MessageBox.Show("An error has occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -65,9 +68,10 @@ Module moduleLogin
                 rmsSharedVar.admnID = adminID
                 rmsDashboard.Show()
                 rmsLogin.Hide()
-            Else
-                MessageBox.Show("An error occurred: ", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
+        Catch ex As MongoCommandException When ex.Code = 50 'para sa timeout
+            MessageBox.Show("Timeout error: Please try again.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
         Catch ex As Exception
             MessageBox.Show("An error has occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return

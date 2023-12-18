@@ -22,33 +22,33 @@ Partial Class ctrlReservations
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.tbxReservTotalPaid = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.tbxReservTimeSlot = New System.Windows.Forms.TextBox()
         Me.tbxReservDate = New System.Windows.Forms.TextBox()
         Me.btnMoveToWaitList = New System.Windows.Forms.Button()
         Me.tbxReservTour = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.tbxReservBalance = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.lblClearUpd = New System.Windows.Forms.Label()
         Me.tbxReservPerson = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.tbxReservFName = New System.Windows.Forms.TextBox()
+        Me.tbxReservCustName = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.cbxReservStatus = New System.Windows.Forms.ComboBox()
-        Me.tbxReservMName = New System.Windows.Forms.TextBox()
         Me.btnUpdRes = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tbxReservTotal = New System.Windows.Forms.TextBox()
-        Me.tbxReservSName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btnViewRes = New System.Windows.Forms.Button()
+        Me.btnFilterRes = New System.Windows.Forms.Button()
         Me.dgvReservs = New System.Windows.Forms.DataGridView()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -96,26 +96,26 @@ Partial Class ctrlReservations
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.TabPage2.Controls.Add(Me.tbxReservTotalPaid)
+        Me.TabPage2.Controls.Add(Me.Label15)
         Me.TabPage2.Controls.Add(Me.tbxReservTimeSlot)
         Me.TabPage2.Controls.Add(Me.tbxReservDate)
         Me.TabPage2.Controls.Add(Me.btnMoveToWaitList)
         Me.TabPage2.Controls.Add(Me.tbxReservTour)
         Me.TabPage2.Controls.Add(Me.Label14)
+        Me.TabPage2.Controls.Add(Me.tbxReservBalance)
+        Me.TabPage2.Controls.Add(Me.Label2)
         Me.TabPage2.Controls.Add(Me.lblClearUpd)
         Me.TabPage2.Controls.Add(Me.tbxReservPerson)
         Me.TabPage2.Controls.Add(Me.Label10)
-        Me.TabPage2.Controls.Add(Me.tbxReservFName)
+        Me.TabPage2.Controls.Add(Me.tbxReservCustName)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Controls.Add(Me.Label7)
-        Me.TabPage2.Controls.Add(Me.Label2)
         Me.TabPage2.Controls.Add(Me.cbxReservStatus)
-        Me.TabPage2.Controls.Add(Me.tbxReservMName)
         Me.TabPage2.Controls.Add(Me.btnUpdRes)
         Me.TabPage2.Controls.Add(Me.Label8)
-        Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.Label4)
         Me.TabPage2.Controls.Add(Me.tbxReservTotal)
-        Me.TabPage2.Controls.Add(Me.tbxReservSName)
         Me.TabPage2.Controls.Add(Me.Label1)
         Me.TabPage2.Controls.Add(Me.Label6)
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
@@ -125,6 +125,32 @@ Partial Class ctrlReservations
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "  Update Reservation   "
         '
+        'tbxReservTotalPaid
+        '
+        Me.tbxReservTotalPaid.BackColor = System.Drawing.Color.White
+        Me.tbxReservTotalPaid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxReservTotalPaid.Cursor = System.Windows.Forms.Cursors.No
+        Me.tbxReservTotalPaid.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxReservTotalPaid.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxReservTotalPaid.Location = New System.Drawing.Point(529, 54)
+        Me.tbxReservTotalPaid.Name = "tbxReservTotalPaid"
+        Me.tbxReservTotalPaid.ReadOnly = True
+        Me.tbxReservTotalPaid.Size = New System.Drawing.Size(205, 30)
+        Me.tbxReservTotalPaid.TabIndex = 143
+        Me.tbxReservTotalPaid.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label15.Location = New System.Drawing.Point(448, 62)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(76, 18)
+        Me.Label15.TabIndex = 142
+        Me.Label15.Text = "TOTAL PAID:"
+        '
         'tbxReservTimeSlot
         '
         Me.tbxReservTimeSlot.BackColor = System.Drawing.Color.White
@@ -132,10 +158,10 @@ Partial Class ctrlReservations
         Me.tbxReservTimeSlot.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxReservTimeSlot.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxReservTimeSlot.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxReservTimeSlot.Location = New System.Drawing.Point(598, 133)
+        Me.tbxReservTimeSlot.Location = New System.Drawing.Point(196, 205)
         Me.tbxReservTimeSlot.Name = "tbxReservTimeSlot"
         Me.tbxReservTimeSlot.ReadOnly = True
-        Me.tbxReservTimeSlot.Size = New System.Drawing.Size(138, 30)
+        Me.tbxReservTimeSlot.Size = New System.Drawing.Size(112, 30)
         Me.tbxReservTimeSlot.TabIndex = 141
         '
         'tbxReservDate
@@ -145,10 +171,10 @@ Partial Class ctrlReservations
         Me.tbxReservDate.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxReservDate.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxReservDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxReservDate.Location = New System.Drawing.Point(395, 133)
+        Me.tbxReservDate.Location = New System.Drawing.Point(50, 205)
         Me.tbxReservDate.Name = "tbxReservDate"
         Me.tbxReservDate.ReadOnly = True
-        Me.tbxReservDate.Size = New System.Drawing.Size(172, 30)
+        Me.tbxReservDate.Size = New System.Drawing.Size(133, 30)
         Me.tbxReservDate.TabIndex = 140
         '
         'btnMoveToWaitList
@@ -160,9 +186,9 @@ Partial Class ctrlReservations
         Me.btnMoveToWaitList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMoveToWaitList.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMoveToWaitList.ForeColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnMoveToWaitList.Location = New System.Drawing.Point(813, 123)
+        Me.btnMoveToWaitList.Location = New System.Drawing.Point(803, 128)
         Me.btnMoveToWaitList.Name = "btnMoveToWaitList"
-        Me.btnMoveToWaitList.Size = New System.Drawing.Size(220, 47)
+        Me.btnMoveToWaitList.Size = New System.Drawing.Size(220, 55)
         Me.btnMoveToWaitList.TabIndex = 139
         Me.btnMoveToWaitList.Text = "Move to wait list"
         Me.btnMoveToWaitList.UseVisualStyleBackColor = False
@@ -174,10 +200,10 @@ Partial Class ctrlReservations
         Me.tbxReservTour.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxReservTour.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxReservTour.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxReservTour.Location = New System.Drawing.Point(395, 59)
+        Me.tbxReservTour.Location = New System.Drawing.Point(49, 128)
         Me.tbxReservTour.Name = "tbxReservTour"
         Me.tbxReservTour.ReadOnly = True
-        Me.tbxReservTour.Size = New System.Drawing.Size(341, 30)
+        Me.tbxReservTour.Size = New System.Drawing.Size(351, 30)
         Me.tbxReservTour.TabIndex = 138
         '
         'Label14
@@ -186,11 +212,38 @@ Partial Class ctrlReservations
         Me.Label14.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label14.Font = New System.Drawing.Font("Trebuchet MS", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(775, 61)
+        Me.Label14.Location = New System.Drawing.Point(455, 196)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(39, 37)
         Me.Label14.TabIndex = 129
         Me.Label14.Text = "₱"
+        '
+        'tbxReservBalance
+        '
+        Me.tbxReservBalance.BackColor = System.Drawing.Color.White
+        Me.tbxReservBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxReservBalance.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxReservBalance.Cursor = System.Windows.Forms.Cursors.No
+        Me.tbxReservBalance.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxReservBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxReservBalance.Location = New System.Drawing.Point(529, 114)
+        Me.tbxReservBalance.Name = "tbxReservBalance"
+        Me.tbxReservBalance.ReadOnly = True
+        Me.tbxReservBalance.Size = New System.Drawing.Size(205, 30)
+        Me.tbxReservBalance.TabIndex = 1
+        Me.tbxReservBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.Location = New System.Drawing.Point(459, 120)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(64, 18)
+        Me.Label2.TabIndex = 112
+        Me.Label2.Text = "BALANCE:"
         '
         'lblClearUpd
         '
@@ -199,7 +252,7 @@ Partial Class ctrlReservations
         Me.lblClearUpd.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblClearUpd.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblClearUpd.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblClearUpd.Location = New System.Drawing.Point(881, 241)
+        Me.lblClearUpd.Location = New System.Drawing.Point(877, 205)
         Me.lblClearUpd.Name = "lblClearUpd"
         Me.lblClearUpd.Size = New System.Drawing.Size(75, 18)
         Me.lblClearUpd.TabIndex = 11
@@ -212,7 +265,7 @@ Partial Class ctrlReservations
         Me.tbxReservPerson.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxReservPerson.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxReservPerson.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxReservPerson.Location = New System.Drawing.Point(395, 203)
+        Me.tbxReservPerson.Location = New System.Drawing.Point(319, 205)
         Me.tbxReservPerson.MaxLength = 1
         Me.tbxReservPerson.Name = "tbxReservPerson"
         Me.tbxReservPerson.ReadOnly = True
@@ -226,25 +279,25 @@ Partial Class ctrlReservations
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label10.Location = New System.Drawing.Point(392, 183)
+        Me.Label10.Location = New System.Drawing.Point(316, 185)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(85, 18)
         Me.Label10.TabIndex = 123
         Me.Label10.Text = "# OF PERSON:"
         '
-        'tbxReservFName
+        'tbxReservCustName
         '
-        Me.tbxReservFName.BackColor = System.Drawing.Color.White
-        Me.tbxReservFName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxReservFName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxReservFName.Cursor = System.Windows.Forms.Cursors.No
-        Me.tbxReservFName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxReservFName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxReservFName.Location = New System.Drawing.Point(43, 59)
-        Me.tbxReservFName.Name = "tbxReservFName"
-        Me.tbxReservFName.ReadOnly = True
-        Me.tbxReservFName.Size = New System.Drawing.Size(312, 30)
-        Me.tbxReservFName.TabIndex = 0
+        Me.tbxReservCustName.BackColor = System.Drawing.Color.White
+        Me.tbxReservCustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tbxReservCustName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tbxReservCustName.Cursor = System.Windows.Forms.Cursors.No
+        Me.tbxReservCustName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxReservCustName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.tbxReservCustName.Location = New System.Drawing.Point(49, 54)
+        Me.tbxReservCustName.Name = "tbxReservCustName"
+        Me.tbxReservCustName.ReadOnly = True
+        Me.tbxReservCustName.Size = New System.Drawing.Size(351, 30)
+        Me.tbxReservCustName.TabIndex = 0
         '
         'Label9
         '
@@ -252,7 +305,7 @@ Partial Class ctrlReservations
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label9.Location = New System.Drawing.Point(392, 112)
+        Me.Label9.Location = New System.Drawing.Point(47, 186)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(119, 18)
         Me.Label9.TabIndex = 122
@@ -264,23 +317,11 @@ Partial Class ctrlReservations
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(595, 115)
+        Me.Label7.Location = New System.Drawing.Point(193, 186)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 18)
         Me.Label7.TabIndex = 120
         Me.Label7.Text = "TIME SLOT:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(40, 114)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(92, 18)
-        Me.Label2.TabIndex = 112
-        Me.Label2.Text = "MIDDLE NAME:"
         '
         'cbxReservStatus
         '
@@ -293,24 +334,10 @@ Partial Class ctrlReservations
         Me.cbxReservStatus.FormattingEnabled = True
         Me.cbxReservStatus.ItemHeight = 22
         Me.cbxReservStatus.Items.AddRange(New Object() {"Pending", "Canceled"})
-        Me.cbxReservStatus.Location = New System.Drawing.Point(518, 205)
+        Me.cbxReservStatus.Location = New System.Drawing.Point(786, 55)
         Me.cbxReservStatus.Name = "cbxReservStatus"
-        Me.cbxReservStatus.Size = New System.Drawing.Size(121, 30)
+        Me.cbxReservStatus.Size = New System.Drawing.Size(115, 30)
         Me.cbxReservStatus.TabIndex = 7
-        '
-        'tbxReservMName
-        '
-        Me.tbxReservMName.BackColor = System.Drawing.Color.White
-        Me.tbxReservMName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxReservMName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxReservMName.Cursor = System.Windows.Forms.Cursors.No
-        Me.tbxReservMName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxReservMName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxReservMName.Location = New System.Drawing.Point(43, 133)
-        Me.tbxReservMName.Name = "tbxReservMName"
-        Me.tbxReservMName.ReadOnly = True
-        Me.tbxReservMName.Size = New System.Drawing.Size(312, 30)
-        Me.tbxReservMName.TabIndex = 1
         '
         'btnUpdRes
         '
@@ -321,11 +348,11 @@ Partial Class ctrlReservations
         Me.btnUpdRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdRes.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdRes.ForeColor = System.Drawing.Color.White
-        Me.btnUpdRes.Location = New System.Drawing.Point(813, 183)
+        Me.btnUpdRes.Location = New System.Drawing.Point(921, 50)
         Me.btnUpdRes.Name = "btnUpdRes"
-        Me.btnUpdRes.Size = New System.Drawing.Size(220, 47)
+        Me.btnUpdRes.Size = New System.Drawing.Size(120, 38)
         Me.btnUpdRes.TabIndex = 9
-        Me.btnUpdRes.Text = "Update Reservation"
+        Me.btnUpdRes.Text = "Update"
         Me.btnUpdRes.UseVisualStyleBackColor = False
         '
         'Label8
@@ -334,23 +361,11 @@ Partial Class ctrlReservations
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(515, 186)
+        Me.Label8.Location = New System.Drawing.Point(783, 36)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 18)
+        Me.Label8.Size = New System.Drawing.Size(102, 18)
         Me.Label8.TabIndex = 103
-        Me.Label8.Text = "STATUS:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(40, 186)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(66, 18)
-        Me.Label3.TabIndex = 114
-        Me.Label3.Text = "SURNAME:"
+        Me.Label8.Text = "CHANGE STATUS:"
         '
         'Label4
         '
@@ -358,7 +373,7 @@ Partial Class ctrlReservations
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(392, 40)
+        Me.Label4.Location = New System.Drawing.Point(46, 109)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 18)
         Me.Label4.TabIndex = 116
@@ -371,28 +386,14 @@ Partial Class ctrlReservations
         Me.tbxReservTotal.Cursor = System.Windows.Forms.Cursors.No
         Me.tbxReservTotal.Font = New System.Drawing.Font("Trebuchet MS", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxReservTotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.tbxReservTotal.Location = New System.Drawing.Point(771, 59)
+        Me.tbxReservTotal.Location = New System.Drawing.Point(451, 194)
         Me.tbxReservTotal.MaxLength = 11
         Me.tbxReservTotal.Name = "tbxReservTotal"
         Me.tbxReservTotal.ReadOnly = True
-        Me.tbxReservTotal.Size = New System.Drawing.Size(286, 41)
+        Me.tbxReservTotal.Size = New System.Drawing.Size(283, 41)
         Me.tbxReservTotal.TabIndex = 8
         Me.tbxReservTotal.Text = "0.00"
         Me.tbxReservTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'tbxReservSName
-        '
-        Me.tbxReservSName.BackColor = System.Drawing.Color.White
-        Me.tbxReservSName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxReservSName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tbxReservSName.Cursor = System.Windows.Forms.Cursors.No
-        Me.tbxReservSName.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxReservSName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.tbxReservSName.Location = New System.Drawing.Point(43, 205)
-        Me.tbxReservSName.Name = "tbxReservSName"
-        Me.tbxReservSName.ReadOnly = True
-        Me.tbxReservSName.Size = New System.Drawing.Size(312, 30)
-        Me.tbxReservSName.TabIndex = 2
         '
         'Label1
         '
@@ -400,11 +401,11 @@ Partial Class ctrlReservations
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(40, 40)
+        Me.Label1.Location = New System.Drawing.Point(46, 35)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 18)
+        Me.Label1.Size = New System.Drawing.Size(108, 18)
         Me.Label1.TabIndex = 110
-        Me.Label1.Text = "FIRST NAME:"
+        Me.Label1.Text = "CUSTOMER NAME:"
         '
         'Label6
         '
@@ -412,26 +413,26 @@ Partial Class ctrlReservations
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(768, 38)
+        Me.Label6.Location = New System.Drawing.Point(448, 173)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(82, 18)
         Me.Label6.TabIndex = 99
         Me.Label6.Text = "TOTAL PRICE:"
         '
-        'btnViewRes
+        'btnFilterRes
         '
-        Me.btnViewRes.BackColor = System.Drawing.Color.Gainsboro
-        Me.btnViewRes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnViewRes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnViewRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnViewRes.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViewRes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnViewRes.Location = New System.Drawing.Point(1073, 18)
-        Me.btnViewRes.Name = "btnViewRes"
-        Me.btnViewRes.Size = New System.Drawing.Size(60, 27)
-        Me.btnViewRes.TabIndex = 135
-        Me.btnViewRes.Text = "View"
-        Me.btnViewRes.UseVisualStyleBackColor = False
+        Me.btnFilterRes.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnFilterRes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnFilterRes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnFilterRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFilterRes.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFilterRes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        Me.btnFilterRes.Location = New System.Drawing.Point(1073, 18)
+        Me.btnFilterRes.Name = "btnFilterRes"
+        Me.btnFilterRes.Size = New System.Drawing.Size(60, 27)
+        Me.btnFilterRes.TabIndex = 135
+        Me.btnFilterRes.Text = "View"
+        Me.btnFilterRes.UseVisualStyleBackColor = False
         '
         'dgvReservs
         '
@@ -441,15 +442,15 @@ Partial Class ctrlReservations
         Me.dgvReservs.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvReservs.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvReservs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReservs.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReservs.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvReservs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReservs.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
         Me.dgvReservs.EnableHeadersVisualStyles = False
@@ -459,21 +460,21 @@ Partial Class ctrlReservations
         Me.dgvReservs.Name = "dgvReservs"
         Me.dgvReservs.ReadOnly = True
         Me.dgvReservs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReservs.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReservs.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvReservs.RowHeadersVisible = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvReservs.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvReservs.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvReservs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReservs.ShowEditingIcon = False
         Me.dgvReservs.Size = New System.Drawing.Size(1103, 320)
@@ -670,6 +671,7 @@ Partial Class ctrlReservations
         Me.tbxAddInitPayment.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddInitPayment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.tbxAddInitPayment.Location = New System.Drawing.Point(878, 49)
+        Me.tbxAddInitPayment.MaxLength = 6
         Me.tbxAddInitPayment.Name = "tbxAddInitPayment"
         Me.tbxAddInitPayment.Size = New System.Drawing.Size(158, 30)
         Me.tbxAddInitPayment.TabIndex = 1034
@@ -955,7 +957,7 @@ Partial Class ctrlReservations
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Controls.Add(Me.lblPendingRes)
         Me.Controls.Add(Me.lblTodayRes)
-        Me.Controls.Add(Me.btnViewRes)
+        Me.Controls.Add(Me.btnFilterRes)
         Me.Controls.Add(Me.cbxReservFilter)
         Me.Controls.Add(Me.tabReservations)
         Me.Controls.Add(Me.dgvReservs)
@@ -979,21 +981,19 @@ Partial Class ctrlReservations
     Friend WithEvents lblClearUpd As Label
     Friend WithEvents tbxReservPerson As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents tbxReservFName As TextBox
+    Friend WithEvents tbxReservCustName As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents cbxReservStatus As ComboBox
-    Friend WithEvents tbxReservMName As TextBox
+    Friend WithEvents tbxReservBalance As TextBox
     Friend WithEvents btnUpdRes As Button
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents tbxReservTotal As TextBox
-    Friend WithEvents tbxReservSName As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents btnViewRes As Button
+    Friend WithEvents btnFilterRes As Button
     Friend WithEvents dgvReservs As DataGridView
     Friend WithEvents cbxReservFilter As ComboBox
     Friend WithEvents tabReservations As TabControl
@@ -1036,4 +1036,6 @@ Partial Class ctrlReservations
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents tbxReservTotalPaid As TextBox
+    Friend WithEvents Label15 As Label
 End Class
