@@ -1,4 +1,4 @@
-﻿Imports ATV_RMS.atvSelect
+﻿Imports ATV_RMS.atvSelection
 Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class ctrlTransactions
@@ -9,7 +9,7 @@ Public Class ctrlTransactions
     'compute change,balance
     Dim initPayment As Double = 0.00
     Dim remBalance As Double = 0.00
-    'Dim finPayment As Double = 0.00
+    Dim finPayment As Double = 0.00
     Dim totChange As Double = 0.00
     Private Sub clearAddTransacTab()
         tourPrice = 0.00
@@ -25,9 +25,9 @@ Public Class ctrlTransactions
         cbxAddTour.SelectedIndex = -1
         cbxAddPerson.SelectedIndex = 0
         tbxAddTotal.Text = totalPrice.ToString("N2")
-        tbxAddInitPayment.Clear()
+        tbxAddNewPayment.Clear()
         tbxAddChange.Text = totChange.ToString("N2")
-        tbxAddBalance.Text = remBalance.ToString("N2")
+        tbxAddInitPayment.Text = remBalance.ToString("N2")
         lblTourPrice.Text = tourPrice.ToString("N2")
         cbxAddTourGuide.SelectedIndex = -1
         cbxAddTimeSlot.SelectedIndex = -1
@@ -40,6 +40,7 @@ Public Class ctrlTransactions
         initPayment = 0.00
         totChange = 0.00
         remBalance = 0.00
+        finPayment = 0.00
         tbxWaitFName.Clear()
         tbxWaitMName.Clear()
         tbxWaitSname.Clear()
@@ -49,6 +50,7 @@ Public Class ctrlTransactions
         'cbxWaitStatus.SelectedIndex = -1
         tbxWaitTotPrice.Text = totalPrice.ToString("N2")
         tbxWaitBalance.Text = remBalance.ToString("N2")
+        lblWaitID.Text = ""
         transacCounter()
         'clear selected atv array
     End Sub
@@ -57,18 +59,18 @@ Public Class ctrlTransactions
         numberOfPerson = 0
         totalPrice = 0.00
         initPayment = 0.00
-        'finPayment = 0.00
+        finPayment = 0.00
         totChange = 0.00
         remBalance = 0.00
         tbxOnGName.Clear()
         tbxOnGTour.Clear()
         tbxOnGTourGuide.Clear()
-        tbxOnGTime.Clear()
         tbxOnGPerson.Clear()
-        tbxOnGTotal.Text = totalPrice.ToString("N2")
-        tbxOnGRemBalance.Text = remBalance.ToString("N2")
-        tbxOnGNewPayment.Clear()
-        tbxOnGChange.Text = totChange.ToString("N2")
+        tbxOnGTotalPrice.Text = totalPrice.ToString("N2")
+        tbxOnGTourPrice.Clear()
+        tbxOnGTrailDate.Clear()
+        lblTransacID.Text = ""
+        rmsSharedVar.atvInUseID = Nothing
         transacCounter()
         'add code to clear selected atv array
     End Sub
@@ -132,7 +134,7 @@ Public Class ctrlTransactions
 
             dgvTransactions.Rows.Clear()
             For Each doc In tranzac
-                Dim applicant As String = $"{doc.trFname} {doc.trMname} {doc.trSname}".Trim()
+                Dim applicant As String = ($"{doc.trFname} {doc.trMname} {doc.trSname}").Trim()
                 'convert to datetime object
                 Dim resvDate As DateTime = DateTime.Parse(doc.trReservDate)
                 'change format para mas readable
@@ -167,27 +169,30 @@ Public Class ctrlTransactions
         tbxWaitSname.Text = selTransac.trSname
         tbxWaitTour.Text = selTransac.trTourName
         tbxWaitPerson.Text = selTransac.trTotalPerson
+        rmsSharedVar.atvTotNum = tbxWaitPerson.Text
         totalPrice = selTransac.trTotalPayment
         tbxWaitTotPrice.Text = totalPrice.ToString("N2")
         remBalance = selTransac.trBalance
         tbxWaitBalance.Text = remBalance.ToString("N2")
+        lblWaitID.Text = selTransac.trID
+        rmsSharedVar.atvInUseID = Nothing
         '!!!!!!!!!!
         'tourguide, atv array blank lang sya kasi iseselect pa lang value
     End Sub
     Private Sub popuOngoingTab(selTransac As trDoc)
         clearWaitList()
-        tbxOnGName.Text = selTransac.trFname + " " + selTransac.trMname + " " + selTransac.trSname
+        tbxOnGName.Text = (selTransac.trFname + " " + selTransac.trMname + " " + selTransac.trSname).Trim
         tbxOnGTour.Text = selTransac.trTourName
         tbxOnGTourGuide.Text = selTransac.trTGuide
-        tbxOnGTime.Text = selTransac.trTimeSlot
+        tourPrice = selTransac.trTourPrice
+        tbxOnGTourPrice.Text = tourPrice.ToString("N2")
         tbxOnGPerson.Text = selTransac.trTotalPerson
         totalPrice = selTransac.trTotalPayment
-        tbxOnGTotal.Text = totalPrice.ToString("N2")
-        remBalance = selTransac.trBalance
-        tbxOnGRemBalance.Text = remBalance.ToString("N2")
-        'finPayment
-        '!!!!!!!!!!!
-        'cocomputin pa lang to; payment, change
+        tbxOnGTotalPrice.Text = totalPrice.ToString("N2")
+        Dim startDate As DateTime = DateTime.Parse(selTransac.trTransacStart)
+        tbxOnGTrailDate.Text = startDate.ToString("MMM. dd, yyyy hh:mm tt")
+        lblTransacID.Text = selTransac.trID
+        rmsSharedVar.atvInUseID = Nothing
     End Sub
     Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'disable dgv sorting on column header clikc
@@ -214,16 +219,16 @@ Public Class ctrlTransactions
             tranzac = Nothing
         End If
     End Sub
-    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxOnGName.KeyPress, tbxOnGTour.KeyPress, tbxOnGTime.KeyPress, tbxOnGPerson.KeyPress,
-        tbxOnGTour.KeyPress, tbxAddSname.KeyPress, tbxAddMName.KeyPress, tbxAddFName.KeyPress, tbxAddBalance.KeyPress,
-        tbxWaitFName.KeyPress, tbxWaitPerson.KeyPress, tbxWaitTotPrice.KeyPress, tbxAddInitPayment.KeyPress, tbxAddChange.KeyPress
+    Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxOnGName.KeyPress, tbxOnGTour.KeyPress, tbxOnGPerson.KeyPress,
+        tbxOnGTour.KeyPress, tbxAddSname.KeyPress, tbxAddMName.KeyPress, tbxAddFName.KeyPress, tbxAddInitPayment.KeyPress,
+        tbxWaitFName.KeyPress, tbxWaitPerson.KeyPress, tbxWaitTotPrice.KeyPress, tbxAddNewPayment.KeyPress, tbxAddChange.KeyPress
         'suppress enter key sound sa mga textboxes
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
     End Sub
-    Private Sub tbxPerson(sender As Object, e As KeyPressEventArgs) Handles tbxAddInitPayment.KeyPress, tbxAddTotal.KeyPress, tbxAddChange.KeyPress,
-        tbxAddBalance.KeyPress, tbxWaitTotPrice.KeyPress, tbxWaitPerson.KeyPress, tbxOnGNewPayment.KeyPress
+    Private Sub tbxPerson(sender As Object, e As KeyPressEventArgs) Handles tbxAddNewPayment.KeyPress, tbxAddTotal.KeyPress, tbxAddChange.KeyPress,
+        tbxAddInitPayment.KeyPress, tbxWaitTotPrice.KeyPress, tbxWaitPerson.KeyPress, tbxOnGTourPrice.KeyPress
         'check if the inputted char is a number,backspace
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
             e.Handled = True
@@ -334,10 +339,12 @@ Public Class ctrlTransactions
             reloadTrailList()
             reloadTGuideList()
             populateTransac()
+            'rmsSharedVar.atvInUseID = Nothing
         ElseIf tabTransactions.SelectedIndex = 1 Then 'waiting list tab
             reloadTrailList()
             reloadTGuideList()
             transacCounter()
+            'rmsSharedVar.atvInUseID = Nothing
         ElseIf tabTransactions.SelectedIndex = 2 Then 'ongoing tab
             reloadTrailList()
             reloadTGuideList()
@@ -345,8 +352,8 @@ Public Class ctrlTransactions
         End If
     End Sub
     'compute total change, balance
-    Private Sub tbx_TextChanged(sender As Object, e As EventArgs) Handles tbxAddInitPayment.TextChanged, tbxAddTotal.TextChanged
-        Dim inputtedPayment As String = tbxAddInitPayment.Text
+    Private Sub tbx_TextChanged(sender As Object, e As EventArgs) Handles tbxAddNewPayment.TextChanged, tbxAddTotal.TextChanged
+        Dim inputtedPayment As String = tbxAddNewPayment.Text
         If tbxAddTotal.Text = "" Then
         Else
             If Not String.IsNullOrEmpty(inputtedPayment) AndAlso Double.TryParse(inputtedPayment, initPayment) Then
@@ -354,23 +361,23 @@ Public Class ctrlTransactions
                     totChange = 0.00
                     remBalance = totalPrice - initPayment
                     tbxAddChange.Text = totChange.ToString("N2")
-                    tbxAddBalance.Text = remBalance.ToString("N2")
+                    tbxAddInitPayment.Text = remBalance.ToString("N2")
                 ElseIf initPayment = totalPrice Then 'reset value ng balance&change pag eksakto binayad
                     totChange = 0.00
                     remBalance = 0.00
                     tbxAddChange.Text = totChange.ToString("N2")
-                    tbxAddBalance.Text = remBalance.ToString("N2")
+                    tbxAddInitPayment.Text = remBalance.ToString("N2")
                 Else 'display sukli kapag sobra binayad
                     totChange = initPayment - totalPrice
                     remBalance = 0.00
                     tbxAddChange.Text = totChange.ToString("N2")
-                    tbxAddBalance.Text = remBalance.ToString("N2")
+                    tbxAddInitPayment.Text = remBalance.ToString("N2")
                 End If
             Else
                 remBalance = 0.00
                 totChange = 0.00
                 tbxAddChange.Text = totChange.ToString("N2")
-                tbxAddBalance.Text = remBalance.ToString("N2")
+                tbxAddInitPayment.Text = remBalance.ToString("N2")
             End If
         End If
     End Sub
@@ -391,14 +398,14 @@ Public Class ctrlTransactions
         If cbxAddPerson.SelectedIndex <> -1 Then
             numberOfPerson = cbxAddPerson.Text
             rmsSharedVar.atvTotNum = numberOfPerson
-            atvSelect.ShowDialog()
+            atvSelection.ShowDialog()
         Else
             numberOfPerson = 0
             rmsSharedVar.atvTotNum = numberOfPerson
         End If
     End Sub
     Private Sub btnAddConfirm_Click(sender As Object, e As EventArgs) Handles btnAddConfirm.Click
-        If String.IsNullOrEmpty(tbxAddFName.Text) OrElse String.IsNullOrEmpty(tbxAddSname.Text) OrElse String.IsNullOrEmpty(tbxAddInitPayment.Text) OrElse cbxAddTimeSlot.SelectedIndex <= -1 OrElse cbxAddPerson.SelectedIndex <= -1 OrElse cbxAddTour.SelectedIndex <= -1 OrElse cbxAddTourGuide.SelectedIndex <= -1 OrElse rmsSharedVar.selectedATVs Is Nothing OrElse rmsSharedVar.selectedATVs.Count = 0 Then
+        If String.IsNullOrEmpty(tbxAddFName.Text) OrElse String.IsNullOrEmpty(tbxAddSname.Text) OrElse String.IsNullOrEmpty(tbxAddNewPayment.Text) OrElse cbxAddTimeSlot.SelectedIndex <= -1 OrElse cbxAddPerson.SelectedIndex <= -1 OrElse cbxAddTour.SelectedIndex <= -1 OrElse cbxAddTourGuide.SelectedIndex <= -1 OrElse rmsSharedVar.selectedATVs Is Nothing OrElse rmsSharedVar.selectedATVs.Count = 0 Then
             MessageBox.Show("Please fill in the required fields to continue.")
         Else
             'insert doc to logTransac, stat=ongoing
@@ -413,7 +420,6 @@ Public Class ctrlTransactions
                             {"Id", item.Id}
                         }
                         atvArray.Add(atvItemDoc)
-
                         'get _id
                         Dim selectedAtvId As ObjectId = item.Id
                         'set status to "not available"
@@ -447,23 +453,24 @@ Public Class ctrlTransactions
                         {"MName", tbxAddMName.Text},
                         {"Sname", tbxAddSname.Text},
                         {"tourName", cbxAddTour.SelectedItem.ToString},
-                        {"tourGuide", cbxAddTourGuide.SelectedItem.ToString},
+                        {"tourGuide", selectedTourGuideName},
+                        {"tourGuideID", selectedTourGuideId},
                         {"tourPrice", lblTourPrice.Text},
                         {"totalPerson", cbxAddPerson.SelectedItem.ToString},
                         {"timeSlot", cbxAddTimeSlot.SelectedItem.ToString},
                         {"status", "ongoing"},
-                        {"Balance", tbxAddBalance.Text.ToString},
-                        {"InitialPayment", tbxAddInitPayment.Text},
                         {"TotalPayment", tbxAddTotal.Text},
                         {"gCashNum", ""},
                         {"change", tbxAddChange.Text},
                         {"selectedATV", atvArray},
                         {"duration", ""},
                         {"customer", ""},
+                        {"Balance", "0.00"},
                         {"reservDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")},
-                        {"transacStart", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")}
+                        {"transacStart", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")},
+                        {"InitialPayment", "0.00"}, 'full payment pag walk in, reserve lang may downpayment
+                        {"finPayment", tbxAddNewPayment.Text} 'dito na agad bayad
                         }
-
                         rmsSharedVar.colTransac.InsertOne(newTransacDoc)
                         '
                         '
@@ -493,12 +500,13 @@ Public Class ctrlTransactions
     'select atv only if numberOfWaitPerson >0
     Private Sub btnWaitAtv_Click(sender As Object, e As EventArgs) Handles btnWaitAtv.Click
         If Not String.IsNullOrEmpty(tbxWaitPerson.Text) Then
-            numberOfWaitPerson = tbxWaitPerson.Text
-            rmsSharedVar.atvWaitTotNum = numberOfWaitPerson
-            atvSelect.ShowDialog()
-        Else
-            numberOfWaitPerson = 0
-            rmsSharedVar.atvWaitTotNum = numberOfWaitPerson
+            If Integer.TryParse(tbxWaitPerson.Text, numberOfWaitPerson) AndAlso numberOfWaitPerson > 0 Then
+                rmsSharedVar.atvWaitTotNum = numberOfWaitPerson
+                atvSelection.ShowDialog()
+            Else
+                numberOfWaitPerson = 0
+                rmsSharedVar.atvWaitTotNum = numberOfWaitPerson
+            End If
         End If
     End Sub
 
@@ -513,17 +521,38 @@ Public Class ctrlTransactions
 
 
     '!!!!!!!!!!! O N   G O I N G   T A B !!!!!!!!!!!!
-    Private Sub btnOnGAtv_Click(sender As Object, e As EventArgs) Handles btnOnGAtv.Click
+    Private Sub btnOnGAtv_Click(sender As Object, e As EventArgs) Handles btnOnGViewAtv.Click
         'show form dialog with list of atvs used by selected row
-        'from w/ dgv ng list na lang siguro
-        '2columns; brand, model
+        atvViewSelected.ShowDialog()
     End Sub
 
     Private Sub btnEndTrail_Click(sender As Object, e As EventArgs) Handles btnEndTrail.Click
-        'update mo lang yung field para sa  newPayment, change
-        'dapat mag 0 balance bago magcontinue sa print ng resibo
-        'status=done
-        'add trail end date
+        If dgvTransactions.SelectedRows.Count > 0 Then
+            Dim selectedRowIndex As Integer = dgvTransactions.SelectedRows(0).Index
+            If selectedRowIndex < tranzac.Count AndAlso tranzac(selectedRowIndex).trStatus = "ongoing" Then
+                Dim selectedTransac As trDoc = tranzac(selectedRowIndex)
+                Dim filter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTransac.trID))
+                Dim updateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "done").Set(Of String)("transacEnd", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
+                'update trail status=done
+                'add trail end date sa transac doc
+                rmsSharedVar.colTransac.UpdateOne(filter, updateDefinition)
+                'status=AVAILABLE sa bawat selected ATVs
+                'For Each selectedATV In selectedTransac.trATV
+                '    Dim atvFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedATV("Id").AsObjectId.ToString))
+                '    Dim atvUpdateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "AVAILABLE")
+                '    rmsSharedVar.colInventory.UpdateOne(atvFilter, atvUpdateDefinition)
+                'Next
+                'For Each tourGuide In selectedTransac.trTGuide
+                '    Dim tourGuideFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(tourGuide("Id").AsObjectId.ToString))
+                '    Dim tourGuideUpdateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "available")
+                'tour guide status=available
+                '    rmsSharedVar.colTourGuide.UpdateOne(tourGuideFilter, tourGuideUpdateDefinition)
+                'Next
+                populateTransac()
+                MessageBox.Show("Trail ended successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Please select on-going transaction first.")
+            End If
+        End If
     End Sub
-
 End Class

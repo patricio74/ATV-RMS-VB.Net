@@ -15,7 +15,7 @@ Public Class atvMaintenance
             e.Handled = True
         End If
     End Sub
-    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbxCost.KeyPress
+    Private Sub tbxCost_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbxCost.KeyPress
         'check if the inputted char is a number,backspace
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ChrW(Keys.Back) Then
             e.Handled = True ' Suppress the key press
@@ -56,21 +56,11 @@ Public Class atvMaintenance
             End If
         End If
     End Sub
-    Private Sub atvMaintenance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        initializeDraggablePanel(panelTop)
-    End Sub
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Dim response As DialogResult = MessageBox.Show("Are you sure you want to clear the selection and exit?", "Confirmation", MessageBoxButtons.YesNo)
-        If response = DialogResult.Yes Then
+    Private Sub atvMaintenance_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        If Me.Visible = False Then
             rmsSharedVar.maintenanceID = Nothing
             rmsSharedVar.openMaintenanceForm = False
             clearForm()
-            Me.Close()
         End If
-    End Sub
-    Private Sub atvMaintenance_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        rmsSharedVar.maintenanceID = Nothing
-        rmsSharedVar.openMaintenanceForm = False
-        clearForm()
     End Sub
 End Class

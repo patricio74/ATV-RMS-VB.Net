@@ -44,9 +44,14 @@ Partial Class ctrlInventory
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabInventory = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.btnMaintenance = New System.Windows.Forms.Button()
         Me.dgvAtvMaintenance = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.btnDelAtv = New System.Windows.Forms.Button()
+        Me.btnMaintenance = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.cbxAddStatus = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -58,11 +63,6 @@ Partial Class ctrlInventory
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblClearAtv = New System.Windows.Forms.Label()
         Me.btnAddAtv = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvInventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabInventory.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -293,21 +293,6 @@ Partial Class ctrlInventory
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "  Update ATV   "
         '
-        'btnMaintenance
-        '
-        Me.btnMaintenance.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnMaintenance.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMaintenance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMaintenance.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMaintenance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnMaintenance.Location = New System.Drawing.Point(809, 283)
-        Me.btnMaintenance.Name = "btnMaintenance"
-        Me.btnMaintenance.Size = New System.Drawing.Size(132, 44)
-        Me.btnMaintenance.TabIndex = 6
-        Me.btnMaintenance.Text = "Maintenance"
-        Me.btnMaintenance.UseVisualStyleBackColor = False
-        '
         'dgvAtvMaintenance
         '
         Me.dgvAtvMaintenance.AllowUserToAddRows = False
@@ -354,6 +339,46 @@ Partial Class ctrlInventory
         Me.dgvAtvMaintenance.Size = New System.Drawing.Size(598, 228)
         Me.dgvAtvMaintenance.TabIndex = 4
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "DATE"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 125
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "COST"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 85
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.HeaderText = "MAINTENANCE TYPE"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "NOTES"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label6.Location = New System.Drawing.Point(22, 78)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(156, 18)
+        Me.Label6.TabIndex = 64
+        Me.Label6.Text = "ATV MAINTENANCE LOG:"
+        '
         'btnDelAtv
         '
         Me.btnDelAtv.BackColor = System.Drawing.Color.Firebrick
@@ -368,6 +393,21 @@ Partial Class ctrlInventory
         Me.btnDelAtv.TabIndex = 7
         Me.btnDelAtv.Text = "Delete ATV"
         Me.btnDelAtv.UseVisualStyleBackColor = False
+        '
+        'btnMaintenance
+        '
+        Me.btnMaintenance.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnMaintenance.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMaintenance.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMaintenance.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMaintenance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.btnMaintenance.Location = New System.Drawing.Point(809, 283)
+        Me.btnMaintenance.Name = "btnMaintenance"
+        Me.btnMaintenance.Size = New System.Drawing.Size(132, 44)
+        Me.btnMaintenance.TabIndex = 6
+        Me.btnMaintenance.Text = "Maintenance"
+        Me.btnMaintenance.UseVisualStyleBackColor = False
         '
         'TabPage2
         '
@@ -516,46 +556,6 @@ Partial Class ctrlInventory
         Me.btnAddAtv.TabIndex = 4
         Me.btnAddAtv.Text = "Add ATV"
         Me.btnAddAtv.UseVisualStyleBackColor = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(22, 78)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(156, 18)
-        Me.Label6.TabIndex = 64
-        Me.Label6.Text = "ATV MAINTENANCE LOG:"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "DATE"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 125
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "COST"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 85
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn2.HeaderText = "MAINTENANCE TYPE"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "NOTES"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
         '
         'ctrlInventory
         '

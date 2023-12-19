@@ -1,6 +1,7 @@
-﻿Imports MongoDB.Bson
+﻿Imports System.ComponentModel
+Imports MongoDB.Bson
 Imports MongoDB.Driver
-Public Class atvSelect
+Public Class atvSelection
     Dim maxATV As Integer
     Public Class atvItem
         Public Property Name As String
@@ -26,22 +27,6 @@ Public Class atvSelect
                 Next
             End While
         End If
-    End Sub
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Dim response As DialogResult = MessageBox.Show("Are you sure you want to clear the selection and exit?", "Confirmation", MessageBoxButtons.YesNo)
-        If response = DialogResult.Yes Then
-            atvCheckList.Items.Clear()
-            atvCheckList.ClearSelected()
-            'reset array before closing
-            rmsSharedVar.selectedATVs.Clear()
-            Me.Close()
-        End If
-    End Sub
-    Private Sub selectATV_Load(sender As Object, e As EventArgs) Handles Me.Load
-        initializeDraggablePanel(panelTop)
-        maxATV = rmsSharedVar.atvTotNum
-        lblATVCount.Text = "Please select " + maxATV.ToString + " ATV:"
-        loadATVCheckList()
     End Sub
     Private Sub btnSaveList_Click(sender As Object, e As EventArgs) Handles btnSaveList.Click
         If atvCheckList.CheckedItems.Count < maxATV Then
@@ -75,6 +60,23 @@ Public Class atvSelect
                 'uncheck the last checked item
                 atvCheckList.SetItemChecked(atvCheckList.SelectedIndex, False)
             End If
+        End If
+    End Sub
+    Private Sub selectATV_Load(sender As Object, e As EventArgs) Handles Me.Load
+        maxATV = rmsSharedVar.atvTotNum
+        lblATVCount.Text = "Please select " + maxATV.ToString + " ATV:"
+        loadATVCheckList()
+    End Sub
+    Private Sub atvSelection_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        If Me.Visible = True Then
+            maxATV = rmsSharedVar.atvTotNum
+            lblATVCount.Text = "Please select " + maxATV.ToString + " ATV:"
+            loadATVCheckList()
+        ElseIf Me.Visible = False Then
+            atvCheckList.Items.Clear()
+            atvCheckList.ClearSelected()
+            'reset array before closing
+            rmsSharedVar.selectedATVs.Clear()
         End If
     End Sub
 End Class

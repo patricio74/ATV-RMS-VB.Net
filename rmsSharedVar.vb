@@ -1,4 +1,4 @@
-﻿Imports ATV_RMS.atvSelect
+﻿Imports ATV_RMS.atvSelection
 Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class rmsSharedVar
@@ -42,4 +42,6 @@ Public Class rmsSharedVar
     'waiting tab
     Public Shared atvWaitTotNum As Integer 'var para sa dami ng ATV
 
+    'on going tab
+    Public Shared atvInUseID As String
 End Class

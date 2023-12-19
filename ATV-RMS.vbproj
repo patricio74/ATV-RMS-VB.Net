@@ -230,6 +230,12 @@
     <Compile Include="rmsForms\atvMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="rmsForms\atvViewSelected.Designer.vb">
+      <DependentUpon>atvViewSelected.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rmsForms\atvViewSelected.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="rmsForms\rmsPassReset.Designer.vb">
       <DependentUpon>rmsPassReset.vb</DependentUpon>
     </Compile>
@@ -341,16 +347,19 @@
     <Compile Include="rmsUserControls\ctrlAdminSettings.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="rmsForms\atvSelect.Designer.vb">
-      <DependentUpon>atvSelect.vb</DependentUpon>
+    <Compile Include="rmsForms\atvSelection.Designer.vb">
+      <DependentUpon>atvSelection.vb</DependentUpon>
     </Compile>
-    <Compile Include="rmsForms\atvSelect.vb">
+    <Compile Include="rmsForms\atvSelection.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="rmsForms\atvMaintenance.resx">
       <DependentUpon>atvMaintenance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rmsForms\atvViewSelected.resx">
+      <DependentUpon>atvViewSelected.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rmsForms\rmsPassReset.resx">
       <DependentUpon>rmsPassReset.vb</DependentUpon>
@@ -403,8 +412,8 @@
     <EmbeddedResource Include="rmsUserControls\ctrlAdminSettings.resx">
       <DependentUpon>ctrlAdminSettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rmsForms\atvSelect.resx">
-      <DependentUpon>atvSelect.vb</DependentUpon>
+    <EmbeddedResource Include="rmsForms\atvSelection.resx">
+      <DependentUpon>atvSelection.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
