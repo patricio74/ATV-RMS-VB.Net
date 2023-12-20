@@ -65,11 +65,11 @@ Partial Class atvSelection
         Me.lblClearList.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblClearList.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblClearList.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.lblClearList.Location = New System.Drawing.Point(108, 319)
+        Me.lblClearList.Location = New System.Drawing.Point(121, 320)
         Me.lblClearList.Name = "lblClearList"
-        Me.lblClearList.Size = New System.Drawing.Size(114, 22)
+        Me.lblClearList.Size = New System.Drawing.Size(87, 22)
         Me.lblClearList.TabIndex = 13
-        Me.lblClearList.Text = "clear selection"
+        Me.lblClearList.Text = "refresh list"
         '
         'btnSaveList
         '

@@ -43,5 +43,5 @@ Public Class rmsSharedVar
     Public Shared atvWaitTotNum As Integer 'var para sa dami ng ATV
 
     'on going tab
-    Public Shared atvInUseID As String
+    'Public Shared atvInUseID As String
 End Class

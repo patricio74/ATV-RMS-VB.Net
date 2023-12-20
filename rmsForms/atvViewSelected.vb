@@ -1,14 +1,18 @@
 ﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class atvViewSelected
+    Private transactionID As String
+    Public Sub SetTransactionID(id As String)
+        transactionID = id
+    End Sub
     Private Sub loadList()
-        If rmsSharedVar.atvInUseID Is Nothing Then
+        If String.IsNullOrEmpty(transactionID) Then
             'clear dgv if atvInUseID=nothing
             dgvViewAtv.Rows.Clear()
             Return
         End If
         'get atvlist ng selected transaction
-        Dim filter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(rmsSharedVar.atvInUseID))
+        Dim filter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(transactionID))
         Dim projection = Builders(Of BsonDocument).Projection.Include("selectedATV")
         Dim result = rmsSharedVar.colTransac.Find(filter).Project(projection).FirstOrDefault()
         If result IsNot Nothing AndAlso result.Contains("selectedATV") Then

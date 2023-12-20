@@ -70,7 +70,7 @@ Public Class ctrlTransactions
         tbxOnGTourPrice.Clear()
         tbxOnGTrailDate.Clear()
         lblTransacID.Text = ""
-        rmsSharedVar.atvInUseID = Nothing
+        'rmsSharedVar.atvInUseID = Nothing
         transacCounter()
         'add code to clear selected atv array
     End Sub
@@ -92,8 +92,9 @@ Public Class ctrlTransactions
         Public Property trTotalPayment As String
         Public Property trGcashNum As String
         Public Property trChange As String
-        Public Property trATV As Array
+        Public Property trATV As List(Of BsonDocument)
         Public Property trTGuide As String
+        Public Property trTGuideID As String
         Public Property trTransacStart As String
         Public Property trCustomerID As String
     End Class
@@ -125,6 +126,7 @@ Public Class ctrlTransactions
                 .trChange = document("change").ToString,
                 .trTransacStart = document("transacStart").ToString,
                 .trTGuide = document("tourGuide").ToString,
+                .trTGuideID = document("tourGuideID").ToString,
                 .trCustomerID = document("customer").ToString
                 }
                 tranzac.Add(tr)
@@ -175,7 +177,7 @@ Public Class ctrlTransactions
         remBalance = selTransac.trBalance
         tbxWaitBalance.Text = remBalance.ToString("N2")
         lblWaitID.Text = selTransac.trID
-        rmsSharedVar.atvInUseID = Nothing
+        'rmsSharedVar.atvInUseID = Nothing
         '!!!!!!!!!!
         'tourguide, atv array blank lang sya kasi iseselect pa lang value
     End Sub
@@ -192,7 +194,7 @@ Public Class ctrlTransactions
         Dim startDate As DateTime = DateTime.Parse(selTransac.trTransacStart)
         tbxOnGTrailDate.Text = startDate.ToString("MMM. dd, yyyy hh:mm tt")
         lblTransacID.Text = selTransac.trID
-        rmsSharedVar.atvInUseID = Nothing
+        'rmsSharedVar.atvInUseID = Nothing
     End Sub
     Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'disable dgv sorting on column header clikc
@@ -522,8 +524,16 @@ Public Class ctrlTransactions
 
     '!!!!!!!!!!! O N   G O I N G   T A B !!!!!!!!!!!!
     Private Sub btnOnGAtv_Click(sender As Object, e As EventArgs) Handles btnOnGViewAtv.Click
-        'show form dialog with list of atvs used by selected row
-        atvViewSelected.ShowDialog()
+        If tranzac IsNot Nothing AndAlso dgvTransactions.SelectedRows.Count > 0 Then
+            Dim selectedRowIndex As Integer = dgvTransactions.SelectedRows(0).Index
+            Dim selectedTransaction As trDoc = tranzac(selectedRowIndex)
+
+            ' Pass the trID to the atvViewSelected form
+            atvViewSelected.SetTransactionID(selectedTransaction.trID)
+
+            'show form dialog with list of atvs used by selected row
+            atvViewSelected.ShowDialog()
+        End If
     End Sub
 
     Private Sub btnEndTrail_Click(sender As Object, e As EventArgs) Handles btnEndTrail.Click
@@ -531,25 +541,31 @@ Public Class ctrlTransactions
             Dim selectedRowIndex As Integer = dgvTransactions.SelectedRows(0).Index
             If selectedRowIndex < tranzac.Count AndAlso tranzac(selectedRowIndex).trStatus = "ongoing" Then
                 Dim selectedTransac As trDoc = tranzac(selectedRowIndex)
+
+                ' Update ATV status to "AVAILABLE"
+                Dim atvUpdateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "AVAILABLE")
+                If selectedTransac.trATV IsNot Nothing AndAlso TypeOf selectedTransac.trATV Is List(Of BsonDocument) Then
+                    For Each atv As BsonDocument In CType(selectedTransac.trATV, List(Of BsonDocument))
+                        Dim atvId As String = atv("_id").AsObjectId.ToString
+                        Dim atvFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(atvId))
+                        rmsSharedVar.colInventory.UpdateOne(atvFilter, atvUpdateDefinition)
+                    Next
+
+                End If
+
+                ' Update tour guide status to "available"
+                Dim guideFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTransac.trTGuideID))
+                Dim guideUpdateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "available")
+                rmsSharedVar.colTourGuide.UpdateOne(guideFilter, guideUpdateDefinition)
+
                 Dim filter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTransac.trID))
                 Dim updateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "done").Set(Of String)("transacEnd", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                 'update trail status=done
                 'add trail end date sa transac doc
                 rmsSharedVar.colTransac.UpdateOne(filter, updateDefinition)
-                'status=AVAILABLE sa bawat selected ATVs
-                'For Each selectedATV In selectedTransac.trATV
-                '    Dim atvFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedATV("Id").AsObjectId.ToString))
-                '    Dim atvUpdateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "AVAILABLE")
-                '    rmsSharedVar.colInventory.UpdateOne(atvFilter, atvUpdateDefinition)
-                'Next
-                'For Each tourGuide In selectedTransac.trTGuide
-                '    Dim tourGuideFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(tourGuide("Id").AsObjectId.ToString))
-                '    Dim tourGuideUpdateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "available")
-                'tour guide status=available
-                '    rmsSharedVar.colTourGuide.UpdateOne(tourGuideFilter, tourGuideUpdateDefinition)
-                'Next
+
                 populateTransac()
-                MessageBox.Show("Trail ended successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Trail ended successfully!" & vbCrLf & vbCrLf & "ATVs and tour guide are now set as available.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 MessageBox.Show("Please select on-going transaction first.")
             End If

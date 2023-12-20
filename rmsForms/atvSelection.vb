@@ -75,8 +75,6 @@ Public Class atvSelection
         ElseIf Me.Visible = False Then
             atvCheckList.Items.Clear()
             atvCheckList.ClearSelected()
-            'reset array before closing
-            rmsSharedVar.selectedATVs.Clear()
         End If
     End Sub
 End Class
