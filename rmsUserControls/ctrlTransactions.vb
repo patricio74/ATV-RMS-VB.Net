@@ -195,6 +195,26 @@ Public Class ctrlTransactions
         tbxOnGTrailDate.Text = startDate.ToString("MMM. dd, yyyy hh:mm tt")
         lblTransacID.Text = selTransac.trID
         'rmsSharedVar.atvInUseID = Nothing
+
+        'populate dgv ng list ng atv na ginamit
+        If String.IsNullOrEmpty(selTransac.trID) Then
+            'clear dgv if atvInUseID=nothing
+            dgvViewAtv.Rows.Clear()
+            Return
+        End If
+        'get atvlist ng selected transaction
+        Dim filter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selTransac.trID))
+        Dim projection = Builders(Of BsonDocument).Projection.Include("selectedATV")
+        Dim result = rmsSharedVar.colTransac.Find(filter).Project(projection).FirstOrDefault()
+        If result IsNot Nothing AndAlso result.Contains("selectedATV") Then
+            Dim selectedATVList As BsonArray = result("selectedATV").AsBsonArray
+            'populate dgv
+            dgvViewAtv.Rows.Clear()
+            For Each atv As BsonDocument In selectedATVList
+                Dim atvName As String = atv("Name").AsString
+                dgvViewAtv.Rows.Add(atvName)
+            Next
+        End If
     End Sub
     Private Sub ctrlTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'disable dgv sorting on column header clikc
@@ -527,36 +547,39 @@ Public Class ctrlTransactions
         If tranzac IsNot Nothing AndAlso dgvTransactions.SelectedRows.Count > 0 Then
             Dim selectedRowIndex As Integer = dgvTransactions.SelectedRows(0).Index
             Dim selectedTransaction As trDoc = tranzac(selectedRowIndex)
-
             ' Pass the trID to the atvViewSelected form
             atvViewSelected.SetTransactionID(selectedTransaction.trID)
-
             'show form dialog with list of atvs used by selected row
             atvViewSelected.ShowDialog()
         End If
     End Sub
-
     Private Sub btnEndTrail_Click(sender As Object, e As EventArgs) Handles btnEndTrail.Click
         If dgvTransactions.SelectedRows.Count > 0 Then
             Dim selectedRowIndex As Integer = dgvTransactions.SelectedRows(0).Index
             If selectedRowIndex < tranzac.Count AndAlso tranzac(selectedRowIndex).trStatus = "ongoing" Then
                 Dim selectedTransac As trDoc = tranzac(selectedRowIndex)
 
-                ' Update ATV status to "AVAILABLE"
-                Dim atvUpdateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "AVAILABLE")
-                If selectedTransac.trATV IsNot Nothing AndAlso TypeOf selectedTransac.trATV Is List(Of BsonDocument) Then
-                    For Each atv As BsonDocument In CType(selectedTransac.trATV, List(Of BsonDocument))
-                        Dim atvId As String = atv("_id").AsObjectId.ToString
-                        Dim atvFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(atvId))
-                        rmsSharedVar.colInventory.UpdateOne(atvFilter, atvUpdateDefinition)
-                    Next
-
-                End If
-
                 ' Update tour guide status to "available"
                 Dim guideFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTransac.trTGuideID))
                 Dim guideUpdateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "available")
                 rmsSharedVar.colTourGuide.UpdateOne(guideFilter, guideUpdateDefinition)
+
+                ' Fetch selectedATV field using trID
+                Dim trIDFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTransac.trID))
+                Dim selectedATVField = Builders(Of BsonDocument).Projection.Include("selectedATV")
+                Dim selectedATVDoc = rmsSharedVar.colTransac.Find(trIDFilter).Project(selectedATVField).FirstOrDefault()
+
+                If selectedATVDoc IsNot Nothing Then
+                    Dim selectedATVArray As BsonArray = selectedATVDoc.GetValue("selectedATV", New BsonArray())
+
+                    ' Update ATV statuses to "AVAILABLE"
+                    For Each atv As BsonDocument In selectedATVArray
+                        Dim atvId = atv("Id").AsObjectId
+                        Dim atvFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", atvId)
+                        Dim atvUpdateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "AVAILABLE")
+                        rmsSharedVar.colInventory.UpdateOne(atvFilter, atvUpdateDefinition)
+                    Next
+                End If
 
                 Dim filter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTransac.trID))
                 Dim updateDefinition = Builders(Of BsonDocument).Update.Set(Of String)("status", "done").Set(Of String)("transacEnd", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"))

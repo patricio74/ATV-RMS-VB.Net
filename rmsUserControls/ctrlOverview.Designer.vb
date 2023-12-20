@@ -23,9 +23,9 @@ Partial Class ctrlOverview
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnResetDate = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgvReservations = New System.Windows.Forms.DataGridView()
@@ -69,7 +69,7 @@ Partial Class ctrlOverview
         Me.btnResetDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnResetDate.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnResetDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.btnResetDate.Location = New System.Drawing.Point(1022, 20)
+        Me.btnResetDate.Location = New System.Drawing.Point(1144, 23)
         Me.btnResetDate.Name = "btnResetDate"
         Me.btnResetDate.Size = New System.Drawing.Size(62, 26)
         Me.btnResetDate.TabIndex = 23
@@ -78,15 +78,17 @@ Partial Class ctrlOverview
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.dgvReservations)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.btnResetDate)
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(31, 248)
+        Me.GroupBox1.Location = New System.Drawing.Point(35, 336)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 0)
-        Me.GroupBox1.Size = New System.Drawing.Size(1104, 435)
+        Me.GroupBox1.Size = New System.Drawing.Size(1245, 422)
         Me.GroupBox1.TabIndex = 36
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Reservations Calendar"
@@ -102,42 +104,42 @@ Partial Class ctrlOverview
         Me.dgvReservations.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvReservations.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvReservations.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle13.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReservations.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReservations.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReservations.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
         Me.dgvReservations.EnableHeadersVisualStyles = False
         Me.dgvReservations.GridColor = System.Drawing.Color.DarkGray
-        Me.dgvReservations.Location = New System.Drawing.Point(0, 56)
+        Me.dgvReservations.Location = New System.Drawing.Point(0, 62)
         Me.dgvReservations.MultiSelect = False
         Me.dgvReservations.Name = "dgvReservations"
         Me.dgvReservations.ReadOnly = True
         Me.dgvReservations.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReservations.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReservations.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvReservations.RowHeadersVisible = False
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvReservations.RowsDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(69, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvReservations.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvReservations.ShowEditingIcon = False
-        Me.dgvReservations.Size = New System.Drawing.Size(1104, 379)
+        Me.dgvReservations.Size = New System.Drawing.Size(1245, 360)
         Me.dgvReservations.TabIndex = 35
         '
         'Column1
@@ -172,7 +174,7 @@ Partial Class ctrlOverview
         '
         Me.DateTimePicker1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateTimePicker1.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(723, 21)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(836, 23)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(293, 26)
         Me.DateTimePicker1.TabIndex = 38
@@ -184,9 +186,9 @@ Partial Class ctrlOverview
         Me.panelReserv.Controls.Add(Me.lblReservCanceled)
         Me.panelReserv.Controls.Add(Me.lblReserv)
         Me.panelReserv.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelReserv.Location = New System.Drawing.Point(31, 39)
+        Me.panelReserv.Location = New System.Drawing.Point(35, 79)
         Me.panelReserv.Name = "panelReserv"
-        Me.panelReserv.Size = New System.Drawing.Size(264, 176)
+        Me.panelReserv.Size = New System.Drawing.Size(289, 214)
         Me.panelReserv.TabIndex = 38
         '
         'lblReservPending
@@ -197,7 +199,7 @@ Partial Class ctrlOverview
         Me.lblReservPending.ForeColor = System.Drawing.Color.White
         Me.lblReservPending.Location = New System.Drawing.Point(0, 44)
         Me.lblReservPending.Name = "lblReservPending"
-        Me.lblReservPending.Size = New System.Drawing.Size(264, 77)
+        Me.lblReservPending.Size = New System.Drawing.Size(289, 89)
         Me.lblReservPending.TabIndex = 34
         Me.lblReservPending.Text = "999"
         Me.lblReservPending.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -209,10 +211,10 @@ Partial Class ctrlOverview
         Me.lblReservCanceled.BackColor = System.Drawing.Color.Transparent
         Me.lblReservCanceled.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReservCanceled.ForeColor = System.Drawing.Color.LightGray
-        Me.lblReservCanceled.Location = New System.Drawing.Point(0, 133)
+        Me.lblReservCanceled.Location = New System.Drawing.Point(0, 172)
         Me.lblReservCanceled.Name = "lblReservCanceled"
         Me.lblReservCanceled.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.lblReservCanceled.Size = New System.Drawing.Size(264, 23)
+        Me.lblReservCanceled.Size = New System.Drawing.Size(289, 23)
         Me.lblReservCanceled.TabIndex = 36
         Me.lblReservCanceled.Text = "Canceled Reservations:  0"
         Me.lblReservCanceled.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -221,11 +223,11 @@ Partial Class ctrlOverview
         '
         Me.lblReserv.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lblReserv.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblReserv.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReserv.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReserv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.lblReserv.Location = New System.Drawing.Point(0, 0)
         Me.lblReserv.Name = "lblReserv"
-        Me.lblReserv.Size = New System.Drawing.Size(264, 44)
+        Me.lblReserv.Size = New System.Drawing.Size(289, 44)
         Me.lblReserv.TabIndex = 35
         Me.lblReserv.Text = "Pending Reservation"
         Me.lblReserv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -238,9 +240,9 @@ Partial Class ctrlOverview
         Me.panelATV.Controls.Add(Me.lblAtvMainten)
         Me.panelATV.Controls.Add(Me.lblAtvInUse)
         Me.panelATV.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelATV.Location = New System.Drawing.Point(310, 39)
+        Me.panelATV.Location = New System.Drawing.Point(354, 79)
         Me.panelATV.Name = "panelATV"
-        Me.panelATV.Size = New System.Drawing.Size(264, 176)
+        Me.panelATV.Size = New System.Drawing.Size(289, 214)
         Me.panelATV.TabIndex = 39
         '
         'lblAtvAvail
@@ -251,7 +253,7 @@ Partial Class ctrlOverview
         Me.lblAtvAvail.ForeColor = System.Drawing.Color.White
         Me.lblAtvAvail.Location = New System.Drawing.Point(0, 44)
         Me.lblAtvAvail.Name = "lblAtvAvail"
-        Me.lblAtvAvail.Size = New System.Drawing.Size(264, 77)
+        Me.lblAtvAvail.Size = New System.Drawing.Size(289, 89)
         Me.lblAtvAvail.TabIndex = 37
         Me.lblAtvAvail.Text = "99999"
         Me.lblAtvAvail.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -260,11 +262,11 @@ Partial Class ctrlOverview
         '
         Me.lblAtv.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lblAtv.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblAtv.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAtv.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAtv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.lblAtv.Location = New System.Drawing.Point(0, 0)
         Me.lblAtv.Name = "lblAtv"
-        Me.lblAtv.Size = New System.Drawing.Size(264, 44)
+        Me.lblAtv.Size = New System.Drawing.Size(289, 44)
         Me.lblAtv.TabIndex = 38
         Me.lblAtv.Text = "Available ATV"
         Me.lblAtv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -276,10 +278,10 @@ Partial Class ctrlOverview
         Me.lblAtvMainten.BackColor = System.Drawing.Color.Transparent
         Me.lblAtvMainten.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAtvMainten.ForeColor = System.Drawing.Color.LightGray
-        Me.lblAtvMainten.Location = New System.Drawing.Point(0, 149)
+        Me.lblAtvMainten.Location = New System.Drawing.Point(0, 183)
         Me.lblAtvMainten.Name = "lblAtvMainten"
         Me.lblAtvMainten.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.lblAtvMainten.Size = New System.Drawing.Size(264, 18)
+        Me.lblAtvMainten.Size = New System.Drawing.Size(289, 18)
         Me.lblAtvMainten.TabIndex = 40
         Me.lblAtvMainten.Text = "Under maintenance:  0"
         Me.lblAtvMainten.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -291,24 +293,25 @@ Partial Class ctrlOverview
         Me.lblAtvInUse.BackColor = System.Drawing.Color.Transparent
         Me.lblAtvInUse.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAtvInUse.ForeColor = System.Drawing.Color.LightGray
-        Me.lblAtvInUse.Location = New System.Drawing.Point(0, 124)
+        Me.lblAtvInUse.Location = New System.Drawing.Point(0, 158)
         Me.lblAtvInUse.Name = "lblAtvInUse"
         Me.lblAtvInUse.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.lblAtvInUse.Size = New System.Drawing.Size(264, 23)
+        Me.lblAtvInUse.Size = New System.Drawing.Size(289, 23)
         Me.lblAtvInUse.TabIndex = 39
         Me.lblAtvInUse.Text = "Currently in-use: 0"
         Me.lblAtvInUse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'panelCustomer
         '
+        Me.panelCustomer.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelCustomer.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.panelCustomer.Controls.Add(Me.lblCustMonth)
         Me.panelCustomer.Controls.Add(Me.lblCust)
         Me.panelCustomer.Controls.Add(Me.lblCustYest)
         Me.panelCustomer.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelCustomer.Location = New System.Drawing.Point(590, 39)
+        Me.panelCustomer.Location = New System.Drawing.Point(674, 79)
         Me.panelCustomer.Name = "panelCustomer"
-        Me.panelCustomer.Size = New System.Drawing.Size(264, 176)
+        Me.panelCustomer.Size = New System.Drawing.Size(289, 214)
         Me.panelCustomer.TabIndex = 41
         '
         'lblCustMonth
@@ -319,7 +322,7 @@ Partial Class ctrlOverview
         Me.lblCustMonth.ForeColor = System.Drawing.Color.White
         Me.lblCustMonth.Location = New System.Drawing.Point(0, 44)
         Me.lblCustMonth.Name = "lblCustMonth"
-        Me.lblCustMonth.Size = New System.Drawing.Size(264, 77)
+        Me.lblCustMonth.Size = New System.Drawing.Size(289, 89)
         Me.lblCustMonth.TabIndex = 38
         Me.lblCustMonth.Text = "9999"
         Me.lblCustMonth.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -328,11 +331,11 @@ Partial Class ctrlOverview
         '
         Me.lblCust.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lblCust.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblCust.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCust.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCust.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.lblCust.Location = New System.Drawing.Point(0, 0)
         Me.lblCust.Name = "lblCust"
-        Me.lblCust.Size = New System.Drawing.Size(264, 44)
+        Me.lblCust.Size = New System.Drawing.Size(289, 44)
         Me.lblCust.TabIndex = 37
         Me.lblCust.Text = "Customers This Month"
         Me.lblCust.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -344,24 +347,25 @@ Partial Class ctrlOverview
         Me.lblCustYest.BackColor = System.Drawing.Color.Transparent
         Me.lblCustYest.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCustYest.ForeColor = System.Drawing.Color.LightGray
-        Me.lblCustYest.Location = New System.Drawing.Point(0, 134)
+        Me.lblCustYest.Location = New System.Drawing.Point(1, 174)
         Me.lblCustYest.Name = "lblCustYest"
         Me.lblCustYest.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.lblCustYest.Size = New System.Drawing.Size(264, 23)
+        Me.lblCustYest.Size = New System.Drawing.Size(288, 23)
         Me.lblCustYest.TabIndex = 40
         Me.lblCustYest.Text = "Total yesterday:  0"
         Me.lblCustYest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'panelRevenue
         '
+        Me.panelRevenue.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelRevenue.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.panelRevenue.Controls.Add(Me.lblRevMonth)
         Me.panelRevenue.Controls.Add(Me.lblRevYest)
         Me.panelRevenue.Controls.Add(Me.lblRev)
         Me.panelRevenue.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.panelRevenue.Location = New System.Drawing.Point(871, 39)
+        Me.panelRevenue.Location = New System.Drawing.Point(991, 79)
         Me.panelRevenue.Name = "panelRevenue"
-        Me.panelRevenue.Size = New System.Drawing.Size(264, 178)
+        Me.panelRevenue.Size = New System.Drawing.Size(289, 214)
         Me.panelRevenue.TabIndex = 42
         '
         'lblRevMonth
@@ -372,7 +376,7 @@ Partial Class ctrlOverview
         Me.lblRevMonth.ForeColor = System.Drawing.Color.White
         Me.lblRevMonth.Location = New System.Drawing.Point(0, 44)
         Me.lblRevMonth.Name = "lblRevMonth"
-        Me.lblRevMonth.Size = New System.Drawing.Size(264, 77)
+        Me.lblRevMonth.Size = New System.Drawing.Size(289, 89)
         Me.lblRevMonth.TabIndex = 37
         Me.lblRevMonth.Text = "₱9,999,999"
         Me.lblRevMonth.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -384,10 +388,10 @@ Partial Class ctrlOverview
         Me.lblRevYest.BackColor = System.Drawing.Color.Transparent
         Me.lblRevYest.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRevYest.ForeColor = System.Drawing.Color.LightGray
-        Me.lblRevYest.Location = New System.Drawing.Point(0, 136)
+        Me.lblRevYest.Location = New System.Drawing.Point(0, 172)
         Me.lblRevYest.Name = "lblRevYest"
         Me.lblRevYest.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.lblRevYest.Size = New System.Drawing.Size(264, 23)
+        Me.lblRevYest.Size = New System.Drawing.Size(289, 23)
         Me.lblRevYest.TabIndex = 40
         Me.lblRevYest.Text = "Total yesterday:  ₱0,000,000"
         Me.lblRevYest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -396,11 +400,11 @@ Partial Class ctrlOverview
         '
         Me.lblRev.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lblRev.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblRev.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRev.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRev.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.lblRev.Location = New System.Drawing.Point(0, 0)
         Me.lblRev.Name = "lblRev"
-        Me.lblRev.Size = New System.Drawing.Size(264, 44)
+        Me.lblRev.Size = New System.Drawing.Size(289, 44)
         Me.lblRev.TabIndex = 38
         Me.lblRev.Text = "Revenue This Month"
         Me.lblRev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -421,7 +425,7 @@ Partial Class ctrlOverview
         Me.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "ctrlOverview"
-        Me.Size = New System.Drawing.Size(1161, 738)
+        Me.Size = New System.Drawing.Size(1333, 884)
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvReservations, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelReserv.ResumeLayout(False)

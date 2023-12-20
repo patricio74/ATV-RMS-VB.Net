@@ -61,17 +61,16 @@ Partial Class ctrlAdminSettings
         '
         'btnUpdate
         '
-        Me.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnUpdate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.btnUpdate.FlatAppearance.BorderSize = 0
+        Me.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdate.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnUpdate.Location = New System.Drawing.Point(659, 579)
+        Me.btnUpdate.Location = New System.Drawing.Point(700, 693)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(168, 48)
+        Me.btnUpdate.Size = New System.Drawing.Size(183, 60)
         Me.btnUpdate.TabIndex = 1
         Me.btnUpdate.Text = "Update Info"
         Me.btnUpdate.UseVisualStyleBackColor = False
@@ -82,7 +81,7 @@ Partial Class ctrlAdminSettings
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(121, 50)
+        Me.Label1.Location = New System.Drawing.Point(121, 68)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 18)
         Me.Label1.TabIndex = 0
@@ -94,7 +93,7 @@ Partial Class ctrlAdminSettings
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(121, 223)
+        Me.Label3.Location = New System.Drawing.Point(121, 241)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 18)
         Me.Label3.TabIndex = 4
@@ -106,7 +105,7 @@ Partial Class ctrlAdminSettings
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(121, 137)
+        Me.Label2.Location = New System.Drawing.Point(121, 155)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 18)
         Me.Label2.TabIndex = 2
@@ -114,16 +113,16 @@ Partial Class ctrlAdminSettings
         '
         'btnUndo
         '
-        Me.btnUndo.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnUndo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnUndo.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(46, Byte), Integer))
         Me.btnUndo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnUndo.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke
         Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUndo.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUndo.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUndo.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnUndo.Location = New System.Drawing.Point(467, 579)
+        Me.btnUndo.Location = New System.Drawing.Point(496, 693)
         Me.btnUndo.Name = "btnUndo"
-        Me.btnUndo.Size = New System.Drawing.Size(172, 48)
+        Me.btnUndo.Size = New System.Drawing.Size(180, 60)
         Me.btnUndo.TabIndex = 0
         Me.btnUndo.Text = "Undo Changes"
         Me.btnUndo.UseVisualStyleBackColor = False
@@ -134,7 +133,7 @@ Partial Class ctrlAdminSettings
         Me.usrPword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.usrPword.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrPword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrPword.Location = New System.Drawing.Point(124, 163)
+        Me.usrPword.Location = New System.Drawing.Point(124, 185)
         Me.usrPword.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.usrPword.Name = "usrPword"
         Me.usrPword.Size = New System.Drawing.Size(331, 32)
@@ -146,7 +145,7 @@ Partial Class ctrlAdminSettings
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(121, 145)
+        Me.Label12.Location = New System.Drawing.Point(121, 167)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(111, 18)
         Me.Label12.TabIndex = 2
@@ -158,7 +157,7 @@ Partial Class ctrlAdminSettings
         Me.usrRFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.usrRFID.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrRFID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrRFID.Location = New System.Drawing.Point(124, 73)
+        Me.usrRFID.Location = New System.Drawing.Point(124, 82)
         Me.usrRFID.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.usrRFID.MaxLength = 11
         Me.usrRFID.Name = "usrRFID"
@@ -171,7 +170,7 @@ Partial Class ctrlAdminSettings
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(121, 54)
+        Me.Label13.Location = New System.Drawing.Point(121, 63)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(66, 18)
         Me.Label13.TabIndex = 0
@@ -184,7 +183,7 @@ Partial Class ctrlAdminSettings
         Me.usrEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.usrEmail.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrEmail.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrEmail.Location = New System.Drawing.Point(124, 160)
+        Me.usrEmail.Location = New System.Drawing.Point(124, 169)
         Me.usrEmail.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.usrEmail.Name = "usrEmail"
         Me.usrEmail.Size = New System.Drawing.Size(331, 32)
@@ -196,7 +195,7 @@ Partial Class ctrlAdminSettings
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(121, 142)
+        Me.Label5.Location = New System.Drawing.Point(121, 151)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(105, 18)
         Me.Label5.TabIndex = 2
@@ -208,7 +207,7 @@ Partial Class ctrlAdminSettings
         Me.usrPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.usrPhone.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrPhone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrPhone.Location = New System.Drawing.Point(124, 246)
+        Me.usrPhone.Location = New System.Drawing.Point(124, 255)
         Me.usrPhone.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.usrPhone.MaxLength = 11
         Me.usrPhone.Name = "usrPhone"
@@ -221,7 +220,7 @@ Partial Class ctrlAdminSettings
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(121, 228)
+        Me.Label6.Location = New System.Drawing.Point(121, 237)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(110, 18)
         Me.Label6.TabIndex = 4
@@ -233,7 +232,7 @@ Partial Class ctrlAdminSettings
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(121, 304)
+        Me.Label4.Location = New System.Drawing.Point(121, 322)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 18)
         Me.Label4.TabIndex = 6
@@ -245,7 +244,7 @@ Partial Class ctrlAdminSettings
         Me.usrPword2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.usrPword2.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrPword2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrPword2.Location = New System.Drawing.Point(124, 249)
+        Me.usrPword2.Location = New System.Drawing.Point(124, 271)
         Me.usrPword2.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.usrPword2.Name = "usrPword2"
         Me.usrPword2.Size = New System.Drawing.Size(331, 32)
@@ -257,7 +256,7 @@ Partial Class ctrlAdminSettings
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(121, 231)
+        Me.Label7.Location = New System.Drawing.Point(121, 253)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(174, 18)
         Me.Label7.TabIndex = 4
@@ -269,7 +268,7 @@ Partial Class ctrlAdminSettings
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(121, 319)
+        Me.Label8.Location = New System.Drawing.Point(121, 328)
         Me.Label8.Margin = New System.Windows.Forms.Padding(0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(149, 18)
@@ -281,7 +280,7 @@ Partial Class ctrlAdminSettings
         Me.lblCreationDate.BackColor = System.Drawing.Color.Transparent
         Me.lblCreationDate.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCreationDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.lblCreationDate.Location = New System.Drawing.Point(270, 319)
+        Me.lblCreationDate.Location = New System.Drawing.Point(270, 328)
         Me.lblCreationDate.Margin = New System.Windows.Forms.Padding(0)
         Me.lblCreationDate.Name = "lblCreationDate"
         Me.lblCreationDate.Size = New System.Drawing.Size(210, 18)
@@ -295,7 +294,7 @@ Partial Class ctrlAdminSettings
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(121, 58)
+        Me.Label9.Location = New System.Drawing.Point(121, 80)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(140, 18)
         Me.Label9.TabIndex = 0
@@ -307,7 +306,7 @@ Partial Class ctrlAdminSettings
         Me.usrOldPword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.usrOldPword.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrOldPword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrOldPword.Location = New System.Drawing.Point(124, 76)
+        Me.usrOldPword.Location = New System.Drawing.Point(124, 98)
         Me.usrOldPword.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.usrOldPword.Name = "usrOldPword"
         Me.usrOldPword.Size = New System.Drawing.Size(331, 32)
@@ -322,7 +321,7 @@ Partial Class ctrlAdminSettings
         Me.btnDeleteAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDeleteAcc.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDeleteAcc.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnDeleteAcc.Location = New System.Drawing.Point(124, 337)
+        Me.btnDeleteAcc.Location = New System.Drawing.Point(124, 363)
         Me.btnDeleteAcc.Name = "btnDeleteAcc"
         Me.btnDeleteAcc.Size = New System.Drawing.Size(139, 30)
         Me.btnDeleteAcc.TabIndex = 6
@@ -334,10 +333,10 @@ Partial Class ctrlAdminSettings
         Me.tabAdmn.Controls.Add(Me.TabPage1)
         Me.tabAdmn.Controls.Add(Me.TabPage2)
         Me.tabAdmn.Controls.Add(Me.TabPage3)
-        Me.tabAdmn.Location = New System.Drawing.Point(293, 55)
+        Me.tabAdmn.Location = New System.Drawing.Point(319, 150)
         Me.tabAdmn.Name = "tabAdmn"
         Me.tabAdmn.SelectedIndex = 0
-        Me.tabAdmn.Size = New System.Drawing.Size(596, 468)
+        Me.tabAdmn.Size = New System.Drawing.Size(596, 486)
         Me.tabAdmn.TabIndex = 0
         '
         'TabPage1
@@ -355,7 +354,7 @@ Partial Class ctrlAdminSettings
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(588, 435)
+        Me.TabPage1.Size = New System.Drawing.Size(588, 453)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "   User Information   "
         '
@@ -366,7 +365,7 @@ Partial Class ctrlAdminSettings
         Me.usrFName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.usrFName.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrFName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrFName.Location = New System.Drawing.Point(124, 69)
+        Me.usrFName.Location = New System.Drawing.Point(124, 87)
         Me.usrFName.MaxLength = 50
         Me.usrFName.Name = "usrFName"
         Me.usrFName.Size = New System.Drawing.Size(331, 32)
@@ -379,7 +378,7 @@ Partial Class ctrlAdminSettings
         Me.usrUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.usrUsername.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrUsername.Location = New System.Drawing.Point(124, 321)
+        Me.usrUsername.Location = New System.Drawing.Point(124, 339)
         Me.usrUsername.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.usrUsername.MaxLength = 25
         Me.usrUsername.Name = "usrUsername"
@@ -393,7 +392,7 @@ Partial Class ctrlAdminSettings
         Me.usrSName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.usrSName.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrSName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrSName.Location = New System.Drawing.Point(124, 242)
+        Me.usrSName.Location = New System.Drawing.Point(124, 260)
         Me.usrSName.MaxLength = 50
         Me.usrSName.Name = "usrSName"
         Me.usrSName.Size = New System.Drawing.Size(331, 32)
@@ -406,7 +405,7 @@ Partial Class ctrlAdminSettings
         Me.usrMName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.usrMName.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usrMName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.usrMName.Location = New System.Drawing.Point(124, 156)
+        Me.usrMName.Location = New System.Drawing.Point(124, 174)
         Me.usrMName.MaxLength = 50
         Me.usrMName.Name = "usrMName"
         Me.usrMName.Size = New System.Drawing.Size(331, 32)
@@ -429,17 +428,18 @@ Partial Class ctrlAdminSettings
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(588, 435)
+        Me.TabPage2.Size = New System.Drawing.Size(588, 453)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "   Contact Details   "
         '
         'Label10
         '
+        Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(121, 360)
+        Me.Label10.Location = New System.Drawing.Point(121, 378)
         Me.Label10.Margin = New System.Windows.Forms.Padding(0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(91, 18)
@@ -448,13 +448,16 @@ Partial Class ctrlAdminSettings
         '
         'lblUsrRole
         '
+        Me.lblUsrRole.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblUsrRole.BackColor = System.Drawing.Color.Transparent
         Me.lblUsrRole.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsrRole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.lblUsrRole.Location = New System.Drawing.Point(212, 360)
+        Me.lblUsrRole.Location = New System.Drawing.Point(212, 369)
         Me.lblUsrRole.Margin = New System.Windows.Forms.Padding(0)
         Me.lblUsrRole.Name = "lblUsrRole"
-        Me.lblUsrRole.Size = New System.Drawing.Size(243, 18)
+        Me.lblUsrRole.Size = New System.Drawing.Size(243, 36)
         Me.lblUsrRole.TabIndex = 9
         Me.lblUsrRole.Text = "----------"
         Me.lblUsrRole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -472,7 +475,7 @@ Partial Class ctrlAdminSettings
         Me.TabPage3.Location = New System.Drawing.Point(4, 29)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(588, 435)
+        Me.TabPage3.Size = New System.Drawing.Size(588, 453)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "   Account Security   "
         '
@@ -488,7 +491,7 @@ Partial Class ctrlAdminSettings
         Me.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Margin = New System.Windows.Forms.Padding(0)
         Me.Name = "ctrlAdminSettings"
-        Me.Size = New System.Drawing.Size(1161, 738)
+        Me.Size = New System.Drawing.Size(1333, 884)
         Me.tabAdmn.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()

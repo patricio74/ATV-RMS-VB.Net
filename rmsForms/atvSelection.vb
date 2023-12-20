@@ -1,5 +1,4 @@
-﻿Imports System.ComponentModel
-Imports MongoDB.Bson
+﻿Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class atvSelection
     Dim maxATV As Integer
@@ -12,6 +11,9 @@ Public Class atvSelection
     End Class
     Private Sub loadATVCheckList()
         If Me.Visible = True Then
+            'clear array, repopulate list
+            ' rmsSharedVar.selectedATVs.Clear()
+            ' atvCheckList.Items.Clear()
             Dim atvFilter = Builders(Of BsonDocument).Filter.Eq(Of String)("status", "AVAILABLE")
             Dim atvField = Builders(Of BsonDocument).Projection.Include("atvBrand").Include("atvModel").Include("_id")
             Dim cursor = rmsSharedVar.colInventory.Find(atvFilter).Project(atvField).ToCursor()
@@ -33,6 +35,8 @@ Public Class atvSelection
             Dim kulang As Integer = maxATV - atvCheckList.CheckedItems.Count
             MessageBox.Show("Please select " + kulang.ToString + " ATV to continue.")
         Else
+            'clear muna array bago insert ng bago
+            rmsSharedVar.selectedATVs.Clear()
             'save selected list to an array
             For Each item As atvItem In atvCheckList.CheckedItems
                 'save only the model and _id to the array
@@ -42,7 +46,7 @@ Public Class atvSelection
         End If
     End Sub
     Private Sub lblClearList_Click(sender As Object, e As EventArgs) Handles lblClearList.Click
-        ' Unselect all items
+        'unselect all items
         For i As Integer = 0 To atvCheckList.Items.Count - 1
             atvCheckList.SetItemChecked(i, False)
         Next
@@ -65,16 +69,22 @@ Public Class atvSelection
     Private Sub selectATV_Load(sender As Object, e As EventArgs) Handles Me.Load
         maxATV = rmsSharedVar.atvTotNum
         lblATVCount.Text = "Please select " + maxATV.ToString + " ATV:"
+        'clear array, repopulate list
+        ' rmsSharedVar.selectedATVs.Clear()
+        ' atvCheckList.Items.Clear()
         loadATVCheckList()
     End Sub
     Private Sub atvSelection_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
         If Me.Visible = True Then
             maxATV = rmsSharedVar.atvTotNum
             lblATVCount.Text = "Please select " + maxATV.ToString + " ATV:"
+            'clear array, repopulate list
+            'rmsSharedVar.selectedATVs.Clear()
+            'atvCheckList.Items.Clear()
             loadATVCheckList()
         ElseIf Me.Visible = False Then
-            atvCheckList.Items.Clear()
-            atvCheckList.ClearSelected()
+            ' atvCheckList.Items.Clear()
+            ' atvCheckList.ClearSelected()
         End If
     End Sub
 End Class

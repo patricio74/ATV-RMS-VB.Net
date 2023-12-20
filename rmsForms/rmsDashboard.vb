@@ -84,7 +84,7 @@
     End Sub
     Private Sub rmsDashboard_Load(sender As Object, e As EventArgs) Handles Me.Load
         centerLoc()
-        initializeDraggablePanel(panelTop)
+        'initializeDraggablePanel(panelTop)
         btnAdminSettings.Text = rmsSharedVar.currentUser
         'load panelz
         admPanel.Controls.Add(overview)
@@ -105,87 +105,87 @@
         dashboardTimer.Start()
     End Sub
     Private Sub btnClick(sender As Object, e As EventArgs) Handles btnOverview.Click, btnReserv.Click, btnTransac.Click, btnTrails.Click,
-        btnCustomers.Click, btnPending.Click, btnInventory.Click, btnTGuides.Click, btnRules.Click, btnAdminSettings.Click, btnLogout.Click, btnClose.Click, btnMinimize.Click
-        If sender Is btnClose Then
-            Dim response As DialogResult = MessageBox.Show(" Are you sure you want to close ATV-RMS app?", "Confirmation", MessageBoxButtons.YesNo)
-            If response = DialogResult.Yes Then
+        btnCustomers.Click, btnPending.Click, btnInventory.Click, btnTGuides.Click, btnRules.Click, btnAdminSettings.Click, btnLogout.Click
+        '  If sender Is btnClose Then
+        '  Dim response As DialogResult = MessageBox.Show(" Are you sure you want to close ATV-RMS app?", "Confirmation", MessageBoxButtons.YesNo)
+        '  If response = DialogResult.Yes Then
+        '   rmsSharedVar.admnID = Nothing
+        '   rmsSharedVar.currentUser = Nothing
+        '   Me.Close()
+        '    rmsLogin.Close()
+        'End If
+        ' If sender Is btnMinimize Then
+        '         Me.WindowState = FormWindowState.Minimized
+        If sender Is btnOverview Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                switchOff()
+                switchOverview = True
+                overview.Visible = True
+            ElseIf sender Is btnReserv Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                switchOff()
+                switchReserv = True
+                reservv.Visible = True
+            ElseIf sender Is btnTransac Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                switchOff()
+                switchTransac = True
+                transac.Visible = True
+            ElseIf sender Is btnTrails Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                switchOff()
+                switchTrail = True
+                trails.Visible = True
+            ElseIf sender Is btnCustomers Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                switchOff()
+                switchCust = True
+                customer.Visible = True
+            ElseIf sender Is btnPending Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                switchOff()
+                switchPendi = True
+                pending.Visible = True
+            ElseIf sender Is btnInventory Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                switchOff()
+                switchInven = True
+                inventory.Visible = True
+            ElseIf sender Is btnTGuides Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                switchOff()
+                switchTgui = True
+                guide.Visible = True
+            ElseIf sender Is btnRules Then
+                resetButtonColor()
+                activeButtonColor(sender, e)
+                hidePanels()
+                switchOff()
+                rules.Visible = True
+            ElseIf sender Is btnAdminSettings Then
+                resetButtonColor()
+                hidePanels()
+                switchOff()
+                switchSett = True
+                settings.Visible = True
+            ElseIf sender Is btnLogout Then
                 rmsSharedVar.admnID = Nothing
-                rmsSharedVar.currentUser = Nothing
-                Me.Close()
-                rmsLogin.Close()
-            End If
-        ElseIf sender Is btnMinimize Then
-            Me.WindowState = FormWindowState.Minimized
-        ElseIf sender Is btnOverview Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            switchOff()
-            switchOverview = True
-            overview.Visible = True
-        ElseIf sender Is btnReserv Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            switchOff()
-            switchReserv = True
-            reservv.Visible = True
-        ElseIf sender Is btnTransac Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            switchOff()
-            switchTransac = True
-            transac.Visible = True
-        ElseIf sender Is btnTrails Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            switchOff()
-            switchTrail = True
-            trails.Visible = True
-        ElseIf sender Is btnCustomers Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            switchOff()
-            switchCust = True
-            customer.Visible = True
-        ElseIf sender Is btnPending Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            switchOff()
-            switchPendi = True
-            pending.Visible = True
-        ElseIf sender Is btnInventory Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            switchOff()
-            switchInven = True
-            inventory.Visible = True
-        ElseIf sender Is btnTGuides Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            switchOff()
-            switchTgui = True
-            guide.Visible = True
-        ElseIf sender Is btnRules Then
-            resetButtonColor()
-            activeButtonColor(sender, e)
-            hidePanels()
-            switchOff()
-            rules.Visible = True
-        ElseIf sender Is btnAdminSettings Then
-            resetButtonColor()
-            hidePanels()
-            switchOff()
-            switchSett = True
-            settings.Visible = True
-        ElseIf sender Is btnLogout Then
-            rmsSharedVar.admnID = Nothing
             rmsSharedVar.currentUser = Nothing
             switchOff()
             resetButtonColor()

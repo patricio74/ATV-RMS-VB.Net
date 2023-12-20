@@ -38,12 +38,11 @@ Partial Class atvSelection
         Me.Panel1.Controls.Add(Me.lblClearList)
         Me.Panel1.Controls.Add(Me.btnSaveList)
         Me.Panel1.Controls.Add(Me.atvCheckList)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(5, 5)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(334, 354)
+        Me.Panel1.Size = New System.Drawing.Size(435, 426)
         Me.Panel1.TabIndex = 20
         '
         'lblATVCount
@@ -51,10 +50,11 @@ Partial Class atvSelection
         Me.lblATVCount.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblATVCount.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblATVCount.Location = New System.Drawing.Point(3, 15)
+        Me.lblATVCount.Location = New System.Drawing.Point(4, 18)
+        Me.lblATVCount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblATVCount.Name = "lblATVCount"
-        Me.lblATVCount.Padding = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblATVCount.Size = New System.Drawing.Size(328, 21)
+        Me.lblATVCount.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblATVCount.Size = New System.Drawing.Size(427, 26)
         Me.lblATVCount.TabIndex = 14
         Me.lblATVCount.Text = "Please select x ATV:"
         '
@@ -65,9 +65,10 @@ Partial Class atvSelection
         Me.lblClearList.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblClearList.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblClearList.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.lblClearList.Location = New System.Drawing.Point(121, 320)
+        Me.lblClearList.Location = New System.Drawing.Point(156, 384)
+        Me.lblClearList.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblClearList.Name = "lblClearList"
-        Me.lblClearList.Size = New System.Drawing.Size(87, 22)
+        Me.lblClearList.Size = New System.Drawing.Size(110, 26)
         Me.lblClearList.TabIndex = 13
         Me.lblClearList.Text = "refresh list"
         '
@@ -80,10 +81,10 @@ Partial Class atvSelection
         Me.btnSaveList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSaveList.Font = New System.Drawing.Font("Trebuchet MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSaveList.ForeColor = System.Drawing.Color.White
-        Me.btnSaveList.Location = New System.Drawing.Point(65, 262)
+        Me.btnSaveList.Location = New System.Drawing.Point(82, 312)
         Me.btnSaveList.Margin = New System.Windows.Forms.Padding(0)
         Me.btnSaveList.Name = "btnSaveList"
-        Me.btnSaveList.Size = New System.Drawing.Size(202, 48)
+        Me.btnSaveList.Size = New System.Drawing.Size(269, 59)
         Me.btnSaveList.TabIndex = 12
         Me.btnSaveList.Text = "Save selection"
         Me.btnSaveList.UseVisualStyleBackColor = False
@@ -101,22 +102,23 @@ Partial Class atvSelection
         Me.atvCheckList.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.atvCheckList.FormattingEnabled = True
         Me.atvCheckList.HorizontalScrollbar = True
-        Me.atvCheckList.Location = New System.Drawing.Point(19, 52)
+        Me.atvCheckList.Location = New System.Drawing.Point(25, 64)
         Me.atvCheckList.Margin = New System.Windows.Forms.Padding(0)
         Me.atvCheckList.Name = "atvCheckList"
-        Me.atvCheckList.Size = New System.Drawing.Size(307, 198)
+        Me.atvCheckList.Size = New System.Drawing.Size(399, 216)
         Me.atvCheckList.TabIndex = 0
         '
         'atvSelection
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(334, 354)
+        Me.BackColor = System.Drawing.Color.Red
+        Me.ClientSize = New System.Drawing.Size(445, 436)
         Me.Controls.Add(Me.Panel1)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "atvSelection"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
