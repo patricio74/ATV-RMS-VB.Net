@@ -587,8 +587,9 @@ Public Class ctrlTransactions
                 'add trail end date sa transac doc
                 rmsSharedVar.colTransac.UpdateOne(filter, updateDefinition)
 
-                populateTransac()
                 MessageBox.Show("Trail ended successfully!" & vbCrLf & vbCrLf & "ATVs and tour guide are now set as available.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                populateTransac()
+                dgvViewAtv.Rows.Clear()
             Else
                 MessageBox.Show("Please select on-going transaction first.")
             End If
