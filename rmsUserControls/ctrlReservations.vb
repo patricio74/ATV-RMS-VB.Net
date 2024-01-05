@@ -268,6 +268,8 @@ Public Class ctrlReservations
                     'add some fields before moving to transac col
                     document.Add("change", "0.00")
                     document.Add("tourGuide", "")
+                    document.Add("tourGuideID", "")
+                    document.Add("finPayment", "")
                     document.Add("transacStart", waitStartDate.ToString)
                     document.Set("status", "waiting")
                     rmsSharedVar.colTransac.InsertOne(document)

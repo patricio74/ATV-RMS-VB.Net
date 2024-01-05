@@ -1,4 +1,6 @@
-﻿Imports ATV_RMS.atvSelection
+﻿Imports System.Drawing.Printing
+Imports System.Text
+Imports ATV_RMS.atvSelection
 Imports MongoDB.Bson
 Imports MongoDB.Driver
 Public Class ctrlTransactions
@@ -11,6 +13,15 @@ Public Class ctrlTransactions
     Dim remBalance As Double = 0.00
     Dim finPayment As Double = 0.00
     Dim totChange As Double = 0.00
+    'waitlist
+    Dim waitTourPrice As Double = 0.00
+    Dim waitPerson As Double = 0
+    Dim waitTotPrice As Double = 0.00
+    Dim waitInitPayment As Double = 0.00
+    Dim waitTotChange As Double = 0.00
+    Dim waitBalance As Double = 0.00
+    Dim waitFinPayment As Double = 0.00
+    Dim waitChange As Double = 0.00
     Private Sub clearAddTransacTab()
         tourPrice = 0.00
         numberOfPerson = 0
@@ -27,29 +38,31 @@ Public Class ctrlTransactions
         tbxAddTotal.Text = totalPrice.ToString("N2")
         tbxAddNewPayment.Clear()
         tbxAddChange.Text = totChange.ToString("N2")
-        tbxAddInitPayment.Text = remBalance.ToString("N2")
+        'tbxAddInitPayment.Text = remBalance.ToString("N2")
         lblTourPrice.Text = tourPrice.ToString("N2")
         cbxAddTourGuide.SelectedIndex = -1
         cbxAddTimeSlot.SelectedIndex = -1
         transacCounter()
     End Sub
     Private Sub clearWaitList()
-        tourPrice = 0.00
-        numberOfPerson = 0
-        totalPrice = 0.00
-        initPayment = 0.00
-        totChange = 0.00
-        remBalance = 0.00
-        finPayment = 0.00
-        tbxWaitFName.Clear()
-        tbxWaitMName.Clear()
-        tbxWaitSname.Clear()
+        waitTourPrice = 0.00
+        waitPerson = 0
+        waitTotPrice = 0.00
+        waitInitPayment = 0.00
+        waitTotChange = 0.00
+        waitBalance = 0.00
+        waitFinPayment = 0.00
+        waitChange = 0.00
+        tbxWaitCustName.Clear()
+        tbxWaitInitPayment.Text = waitinitPayment.ToString("N2")
+        tbxWaitFinPayment.Clear()
         tbxWaitTour.Clear()
         cbxWaitTourGuide.SelectedIndex = -1
         tbxWaitPerson.Clear()
+        tbxWaitChange.Text = waitChange.ToString("N2")
         'cbxWaitStatus.SelectedIndex = -1
-        tbxWaitTotPrice.Text = totalPrice.ToString("N2")
-        tbxWaitBalance.Text = remBalance.ToString("N2")
+        tbxWaitTotPrice.Text = waitTotPrice.ToString("N2")
+        tbxWaitBalance.Text = waitBalance.ToString("N2")
         lblWaitID.Text = ""
         transacCounter()
         'clear selected atv array
@@ -166,12 +179,12 @@ Public Class ctrlTransactions
     End Sub
     Private Sub popuWaitListTab(selTransac As trDoc)
         clearOngoingTab()
-        tbxWaitFName.Text = selTransac.trFname
-        tbxWaitMName.Text = selTransac.trMname
-        tbxWaitSname.Text = selTransac.trSname
+        tbxWaitCustName.Text = (selTransac.trFname + " " + selTransac.trMname + " " + selTransac.trSname).Trim
         tbxWaitTour.Text = selTransac.trTourName
         tbxWaitPerson.Text = selTransac.trTotalPerson
         rmsSharedVar.atvTotNum = tbxWaitPerson.Text
+        initPayment = selTransac.trInitPayment
+        tbxWaitInitPayment.Text = initPayment.ToString("N2")
         totalPrice = selTransac.trTotalPayment
         tbxWaitTotPrice.Text = totalPrice.ToString("N2")
         remBalance = selTransac.trBalance
@@ -242,15 +255,15 @@ Public Class ctrlTransactions
         End If
     End Sub
     Private Sub suppressKeyPre(sender As Object, e As KeyPressEventArgs) Handles tbxOnGName.KeyPress, tbxOnGTour.KeyPress, tbxOnGPerson.KeyPress,
-        tbxOnGTour.KeyPress, tbxAddSname.KeyPress, tbxAddMName.KeyPress, tbxAddFName.KeyPress, tbxAddInitPayment.KeyPress,
-        tbxWaitFName.KeyPress, tbxWaitPerson.KeyPress, tbxWaitTotPrice.KeyPress, tbxAddNewPayment.KeyPress, tbxAddChange.KeyPress
+        tbxOnGTour.KeyPress, tbxAddSname.KeyPress, tbxAddMName.KeyPress, tbxAddFName.KeyPress,
+        tbxWaitCustName.KeyPress, tbxWaitPerson.KeyPress, tbxWaitTotPrice.KeyPress, tbxAddNewPayment.KeyPress, tbxAddChange.KeyPress
         'suppress enter key sound sa mga textboxes
         If e.KeyChar = Chr(13) Then
             e.Handled = True
         End If
     End Sub
     Private Sub tbxPerson(sender As Object, e As KeyPressEventArgs) Handles tbxAddNewPayment.KeyPress, tbxAddTotal.KeyPress, tbxAddChange.KeyPress,
-        tbxAddInitPayment.KeyPress, tbxWaitTotPrice.KeyPress, tbxWaitPerson.KeyPress, tbxOnGTourPrice.KeyPress
+        tbxWaitTotPrice.KeyPress, tbxWaitPerson.KeyPress, tbxOnGTourPrice.KeyPress, tbxWaitFinPayment.KeyPress
         'check if the inputted char is a number,backspace
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
             e.Handled = True
@@ -379,27 +392,27 @@ Public Class ctrlTransactions
         If tbxAddTotal.Text = "" Then
         Else
             If Not String.IsNullOrEmpty(inputtedPayment) AndAlso Double.TryParse(inputtedPayment, initPayment) Then
-                If initPayment < totalPrice Then 'display remaining balance
+                If initPayment < totalPrice Then 'store remaining balance
                     totChange = 0.00
                     remBalance = totalPrice - initPayment
                     tbxAddChange.Text = totChange.ToString("N2")
-                    tbxAddInitPayment.Text = remBalance.ToString("N2")
+                    'tbxAddInitPayment.Text = remBalance.ToString("N2")
                 ElseIf initPayment = totalPrice Then 'reset value ng balance&change pag eksakto binayad
                     totChange = 0.00
                     remBalance = 0.00
                     tbxAddChange.Text = totChange.ToString("N2")
-                    tbxAddInitPayment.Text = remBalance.ToString("N2")
+                    'tbxAddInitPayment.Text = remBalance.ToString("N2")
                 Else 'display sukli kapag sobra binayad
                     totChange = initPayment - totalPrice
                     remBalance = 0.00
                     tbxAddChange.Text = totChange.ToString("N2")
-                    tbxAddInitPayment.Text = remBalance.ToString("N2")
+                    'tbxAddInitPayment.Text = remBalance.ToString("N2")
                 End If
             Else
                 remBalance = 0.00
                 totChange = 0.00
                 tbxAddChange.Text = totChange.ToString("N2")
-                tbxAddInitPayment.Text = remBalance.ToString("N2")
+                'tbxAddInitPayment.Text = remBalance.ToString("N2")
             End If
         End If
     End Sub
@@ -430,91 +443,152 @@ Public Class ctrlTransactions
         If String.IsNullOrEmpty(tbxAddFName.Text) OrElse String.IsNullOrEmpty(tbxAddSname.Text) OrElse String.IsNullOrEmpty(tbxAddNewPayment.Text) OrElse cbxAddTimeSlot.SelectedIndex <= -1 OrElse cbxAddPerson.SelectedIndex <= -1 OrElse cbxAddTour.SelectedIndex <= -1 OrElse cbxAddTourGuide.SelectedIndex <= -1 OrElse rmsSharedVar.selectedATVs Is Nothing OrElse rmsSharedVar.selectedATVs.Count = 0 Then
             MessageBox.Show("Please fill in the required fields to continue.")
         Else
-            'insert doc to logTransac, stat=ongoing
-            Dim addConfirmation As DialogResult = MessageBox.Show("Do you want to add this transaction?", "Confirmation", MessageBoxButtons.YesNo)
-            If addConfirmation = DialogResult.Yes Then
-                Try
-                    'convert selectedATVs into a BsonArray
-                    Dim atvArray As New BsonArray()
-                    For Each item As atvItem In rmsSharedVar.selectedATVs
-                        Dim atvItemDoc As New BsonDocument From {
-                            {"Name", item.Name},
-                            {"Id", item.Id}
-                        }
-                        atvArray.Add(atvItemDoc)
-                        'get _id
-                        Dim selectedAtvId As ObjectId = item.Id
-                        'set status to "not available"
-                        Dim updateAtvFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", selectedAtvId)
-                        Dim updateAtv = Builders(Of BsonDocument).Update.Set(Of String)("status", "NOT AVAILABLE")
-                        rmsSharedVar.colInventory.UpdateOne(updateAtvFilter, updateAtv)
-                    Next
+            Dim inputtedPayment As String = tbxAddNewPayment.Text
+            If remBalance >= 1 Then
+                MessageBox.Show("You need an additional " + remBalance.ToString("N2") + " to continue.", "Payment not enough!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                'check the balance
+                If remBalance < 1 Then
+                    'insert doc to logTransac, stat=ongoing
+                    Dim addConfirmation As DialogResult = MessageBox.Show("Do you want to add this transaction?", "Confirmation", MessageBoxButtons.YesNo)
+                    If addConfirmation = DialogResult.Yes Then
+                        Try
+                            'convert selectedATVs into a BsonArray
+                            Dim atvArray As New BsonArray()
+                            For Each item As atvItem In rmsSharedVar.selectedATVs
+                                Dim atvItemDoc As New BsonDocument From {
+                                        {"Name", item.Name},
+                                        {"Id", item.Id}
+                                    }
+                                atvArray.Add(atvItemDoc)
+                                'get _id
+                                Dim selectedAtvId As ObjectId = item.Id
+                                'set status to "not available"
+                                Dim updateAtvFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", selectedAtvId)
+                                Dim updateAtv = Builders(Of BsonDocument).Update.Set(Of String)("status", "NOT AVAILABLE")
+                                rmsSharedVar.colInventory.UpdateOne(updateAtvFilter, updateAtv)
+                            Next
 
-                    'get selected tour guide's name
-                    Dim selectedTourGuideName As String = cbxAddTourGuide.SelectedItem.ToString()
-                    'find the corresponding tuple in the array based on the selected name
-                    Dim selectedTourGuideTuple As Tuple(Of String, String) = Nothing
-                    For Each tourGuideTuple As Tuple(Of String, String) In rmsSharedVar.atvGuide
-                        If tourGuideTuple.Item1 = selectedTourGuideName Then
-                            selectedTourGuideTuple = tourGuideTuple
-                            Exit For
-                        End If
-                    Next
+                            'get selected tour guide's name
+                            Dim selectedTourGuideName As String = cbxAddTourGuide.SelectedItem.ToString()
+                            'find the corresponding tuple in the array based on the selected name
+                            Dim selectedTourGuideTuple As Tuple(Of String, String) = Nothing
+                            For Each tourGuideTuple As Tuple(Of String, String) In rmsSharedVar.atvGuide
+                                If tourGuideTuple.Item1 = selectedTourGuideName Then
+                                    selectedTourGuideTuple = tourGuideTuple
+                                    Exit For
+                                End If
+                            Next
 
-                    If selectedTourGuideTuple IsNot Nothing Then
-                        ' Retrieve the _id of the selected tour guide
-                        Dim selectedTourGuideId As String = selectedTourGuideTuple.Item2
-                        ' Update the selected tour guide's status to "not available"
-                        Dim updateTourGuideFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTourGuideId))
-                        Dim updateTourGuide = Builders(Of BsonDocument).Update.Set(Of String)("status", "not available")
-                        rmsSharedVar.colTourGuide.UpdateOne(updateTourGuideFilter, updateTourGuide)
+                            If selectedTourGuideTuple IsNot Nothing Then
+                                ' Retrieve the _id of the selected tour guide
+                                Dim selectedTourGuideId As String = selectedTourGuideTuple.Item2
+                                ' Update the selected tour guide's status to "not available"
+                                Dim updateTourGuideFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTourGuideId))
+                                Dim updateTourGuide = Builders(Of BsonDocument).Update.Set(Of String)("status", "not available")
+                                rmsSharedVar.colTourGuide.UpdateOne(updateTourGuideFilter, updateTourGuide)
 
-                        'save transaction sa db
-                        Dim newTransacDoc As New BsonDocument From {
-                        {"FName", tbxAddFName.Text},
-                        {"MName", tbxAddMName.Text},
-                        {"Sname", tbxAddSname.Text},
-                        {"tourName", cbxAddTour.SelectedItem.ToString},
-                        {"tourGuide", selectedTourGuideName},
-                        {"tourGuideID", selectedTourGuideId},
-                        {"tourPrice", lblTourPrice.Text},
-                        {"totalPerson", cbxAddPerson.SelectedItem.ToString},
-                        {"timeSlot", cbxAddTimeSlot.SelectedItem.ToString},
-                        {"status", "ongoing"},
-                        {"TotalPayment", tbxAddTotal.Text},
-                        {"gCashNum", ""},
-                        {"change", tbxAddChange.Text},
-                        {"selectedATV", atvArray},
-                        {"duration", ""},
-                        {"customer", ""},
-                        {"Balance", "0.00"},
-                        {"reservDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")},
-                        {"transacStart", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")},
-                        {"InitialPayment", "0.00"}, 'full payment pag walk in, reserve lang may downpayment
-                        {"finPayment", tbxAddNewPayment.Text} 'dito na agad bayad
-                        }
-                        rmsSharedVar.colTransac.InsertOne(newTransacDoc)
-                        '
-                        '
-                        '
-                        '
-                        '            
-                        'add code dito para magprint ng invoice
-                        '
-                        '
-                        '
-                        MessageBox.Show("New transaction added successfully!")
-                        'add code to reset atv array saka tourguide pagtapos ng transaction
-                        clearAddTransacTab()
-                        populateTransac()
+                                'save transaction sa db
+                                Dim newTransacDoc As New BsonDocument From {
+                                    {"FName", tbxAddFName.Text},
+                                    {"MName", tbxAddMName.Text},
+                                    {"Sname", tbxAddSname.Text},
+                                    {"tourName", cbxAddTour.SelectedItem.ToString},
+                                    {"tourGuide", selectedTourGuideName},
+                                    {"tourGuideID", selectedTourGuideId},
+                                    {"tourPrice", lblTourPrice.Text},
+                                    {"totalPerson", cbxAddPerson.SelectedItem.ToString},
+                                    {"timeSlot", cbxAddTimeSlot.SelectedItem.ToString},
+                                    {"status", "ongoing"},
+                                    {"TotalPayment", tbxAddTotal.Text},
+                                    {"gCashNum", ""},
+                                    {"change", tbxAddChange.Text},
+                                    {"selectedATV", atvArray},
+                                    {"duration", ""},
+                                    {"customer", ""},
+                                    {"Balance", "0.00"},
+                                    {"reservDate", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")},
+                                    {"transacStart", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")},
+                                    {"InitialPayment", "0.00"}, 'full payment pag walk in, reserve lang may downpayment
+                                    {"finPayment", tbxAddNewPayment.Text} 'dito na agad bayad
+                                    }
+                                rmsSharedVar.colTransac.InsertOne(newTransacDoc)
+                                MessageBox.Show("New transaction added successfully!")
+                                ' Generate and show receipt
+                                generateWalkInReceipt(newTransacDoc)
+
+                                'add code to reset atv array saka tourguide pagtapos ng transaction
+                                clearAddTransacTab()
+                                populateTransac()
+                            End If
+                        Catch ex As Exception
+                            MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
                     End If
-                Catch ex As Exception
-                    MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
+                End If
             End If
         End If
     End Sub
+    Private Sub generateWalkInReceipt(transacDoc As BsonDocument)
+        Try
+            ' Dim receipt As New StringBuilder()
+            ' ' Build receipt text using transacDoc values
+            '  receipt.AppendLine("ATV RENTAL RECEIPT")
+            '  receipt.AppendLine($"Customer: {tbxAddFName.Text} {tbxAddMName.Text} {tbxAddSname.Text}")
+            ' receipt.AppendLine($"Trail Name: {cbxAddTour.SelectedItem.ToString}")
+            '  receipt.AppendLine($"Tour Guide: {cbxAddTourGuide.SelectedItem.ToString}")
+            '  receipt.AppendLine($"Total Person: {cbxAddPerson.SelectedItem.ToString}")
+            '  Dim pricePerHead As String = lblTourPrice.Text
+            '  receipt.AppendLine($"Trail Price/Head: {pricePerHead}")
+            '  Dim totPayment As String = tbxAddNewPayment.Text
+            '   receipt.AppendLine($"Total Paid: {totPayment}")
+            '  Dim totChange As String = tbxAddChange.Text
+            '  receipt.AppendLine($"Total Change: {totChange}")
+            '  receipt.AppendLine($"Transaction Date: {DateTime.UtcNow.ToString("MMM. dd, yyyy hh:mm tt")}")
+            '  ' Display the receipt
+            '  MessageBox.Show(receipt.ToString(), "Receipt", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            ' Optionally, you can also print the receipt using PrintDocument and PrintPreviewDialog
+            ' Uncomment the following lines if you want to enable printing
+            Dim printDocument As New PrintDocument()
+            AddHandler printDocument.PrintPage, AddressOf printWalkInReceipt
+            Dim printPreviewDialog As New PrintPreviewDialog()
+            printPreviewDialog.Document = printDocument
+            printPreviewDialog.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while generating the receipt: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    ' Uncomment the following lines if you want to enable printing
+    Private Sub printWalkInReceipt(sender As Object, e As PrintPageEventArgs)
+        Dim graphics As Graphics = e.Graphics
+        Dim font As New Font("Courier New", 8)
+        Dim yPos As Single = 10
+
+        ' Use the graphics object to draw the receipt content
+        graphics.DrawString("ATV RENTAL RECEIPT", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Customer: {tbxAddFName.Text} {tbxAddMName.Text} {tbxAddSname.Text}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Trail Name: {cbxAddTour.SelectedItem.ToString}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Tour Guide: {cbxAddTourGuide.SelectedItem.ToString}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Total Person: {cbxAddPerson.SelectedItem.ToString}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        Dim pricePerHead As String = lblTourPrice.Text
+        Dim totPayment As String = tbxAddNewPayment.Text
+        Dim totChange As String = tbxAddChange.Text
+        graphics.DrawString($"Trail Price/Head: {pricePerHead}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Total Paid: {totPayment}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Total Change: {totChange}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Transaction Date: {DateTime.UtcNow.ToString("MMM. dd, yyyy hh:mm tt")}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+    End Sub
 
 
     '!!!!!!!!!!! W A I T I N G   T A B !!!!!!!!!!!!
@@ -531,13 +605,169 @@ Public Class ctrlTransactions
             End If
         End If
     End Sub
-
+    Private Sub tbxWaitFinPayment_TextChanged(sender As Object, e As EventArgs) Handles tbxWaitFinPayment.TextChanged
+        'check muna kung may laman
+        If Not String.IsNullOrEmpty(tbxWaitFinPayment.Text) Then
+            'compute change
+            Double.TryParse(tbxWaitBalance.Text, waitBalance)
+            Double.TryParse(tbxWaitFinPayment.Text, waitFinPayment)
+            waitChange = waitFinPayment - waitBalance
+            If waitBalance > waitFinPayment Then 'kulang bayad, 0 sukli
+                waitChange = 0.00
+                tbxWaitChange.Text = waitChange.ToString("N2")
+            ElseIf waitBalance < waitFinPayment Then 'mas mataas bayad kesa balance, display sukli
+                tbxWaitChange.Text = waitChange.ToString("N2")
+            ElseIf waitBalance = waitFinPayment Then 'wala sukli
+                tbxWaitChange.Text = waitChange.ToString("N2")
+            End If
+        Else
+            waitChange = 0.00
+        End If
+    End Sub
     Private Sub btnStartTrail_Click(sender As Object, e As EventArgs) Handles btnStartTrail.Click
-        'add start time
-        'update doc; dagdag tguide, atv array sa docu, set stat:not available
-        'status=ongoing
+        'check payment tbx
+        If String.IsNullOrEmpty(tbxWaitFinPayment.Text) OrElse cbxWaitTourGuide.SelectedIndex = -1 OrElse rmsSharedVar.selectedATVs Is Nothing OrElse rmsSharedVar.selectedATVs.Count = 0 Then
+            MessageBox.Show("Please enter payment/select tour guide, ATVs, to continue.")
+            Return
+        End If
+        'check balance
+        If waitFinPayment < waitBalance Then
+            MessageBox.Show("There is still a remaining balance. Please complete the payment.")
+            Return
+        End If
+
+        Dim waitConfirmation As DialogResult = MessageBox.Show("Do you want to start this trail now?", "Confirmation", MessageBoxButtons.YesNo)
+        If waitConfirmation = DialogResult.Yes Then
+            Try
+                'convert selectedATVs into a BsonArray
+                Dim atvArray As New BsonArray()
+                For Each item As atvItem In rmsSharedVar.selectedATVs
+                    Dim atvItemDoc As New BsonDocument From {
+                            {"Name", item.Name},
+                            {"Id", item.Id}
+                        }
+                    atvArray.Add(atvItemDoc)
+                    'get _id
+                    Dim selectedAtvId As ObjectId = item.Id
+                    'set status to "not available"
+                    Dim updateAtvFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", selectedAtvId)
+                    Dim updateAtv = Builders(Of BsonDocument).Update.Set(Of String)("status", "NOT AVAILABLE")
+                    rmsSharedVar.colInventory.UpdateOne(updateAtvFilter, updateAtv)
+                Next
+
+                'get selected tour guide's name
+                Dim selectedTourGuideName As String = cbxWaitTourGuide.SelectedItem.ToString()
+                'find the corresponding tuple in the array based on the selected name
+                Dim selectedTourGuideTuple As Tuple(Of String, String) = Nothing
+                For Each tourGuideTuple As Tuple(Of String, String) In rmsSharedVar.atvGuide
+                    If tourGuideTuple.Item1 = selectedTourGuideName Then
+                        selectedTourGuideTuple = tourGuideTuple
+                        Exit For
+                    End If
+                Next
+                If selectedTourGuideTuple IsNot Nothing Then
+                    ' Retrieve the _id of the selected tour guide
+                    Dim selectedTourGuideId As String = selectedTourGuideTuple.Item2
+                    ' Update the selected tour guide's status to "not available"
+                    Dim updateTourGuideFilter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(selectedTourGuideId))
+                    Dim updateTourGuide = Builders(Of BsonDocument).Update.Set(Of String)("status", "not available")
+                    rmsSharedVar.colTourGuide.UpdateOne(updateTourGuideFilter, updateTourGuide)
+
+                    'logTransac, stat=ongoing
+                    ' Update the status of the selected row to "ongoing"
+                    Dim filter = Builders(Of BsonDocument).Filter.Eq(Of ObjectId)("_id", ObjectId.Parse(lblWaitID.Text))
+                    'Dim updateStatus = Builders(Of BsonDocument).Update
+                    'rmsSharedVar.colTransac.UpdateOne(filter, updateStatus)
+
+                    ' Add new fields to the document
+                    Dim updateFields = Builders(Of BsonDocument).Update.Set(Of String)("change", waitChange.ToString) _
+                                                                        .Set(Of String)("finPayment", waitFinPayment.ToString) _
+                                                                        .Set(Of String)("Balance", waitBalance.ToString) _
+                                                                        .Set(Of String)("transacStart", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")) _
+                                                                        .Set(Of String)("tourGuide", selectedTourGuideName) _
+                                                                        .Set(Of String)("tourGuideID", selectedTourGuideId) _
+                                                                        .Set(Of BsonArray)("selectedATV", atvArray) _
+                                                                        .Set(Of String)("status", "ongoing")
+                    ' Update the document with the new fields and values
+                    rmsSharedVar.colTransac.UpdateOne(filter, updateFields)
+                    MessageBox.Show("Selected trail has now started!")
+
+                    ' ' Generate and show receipt
+                    generateWaitReceipt()
+                    '
+                    'add code to reset atv array saka tourguide pagtapos ng transaction
+                    clearWaitList()
+                    populateTransac()
+                End If
+            Catch ex As Exception
+                MessageBox.Show("An error occurred: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+    Private Sub generateWaitReceipt()
+        Try
+            ' Dim receipt As New StringBuilder()
+            ' ' Build receipt text using transacDoc values
+            '  receipt.AppendLine("ATV RENTAL RECEIPT")
+            '  receipt.AppendLine($"Customer: {tbxWaitCustName.Text}")
+            ' receipt.AppendLine($"Trail Name: {tbxWaitTour.Text}")
+            '  receipt.AppendLine($"Tour Guide: {cbxWaitTourGuide.SelectedItem.ToString}")
+            '  receipt.AppendLine($"Total Person: {tbxWaitPerson.Text}")
+            '  Dim pricePerHead As String = lblTourPrice.Text
+            '  receipt.AppendLine($"Trail Price/Head: {pricePerHead}")
+            '  Dim totPayment As String = tbxWaitTotPrice.Text
+            '   receipt.AppendLine($"Total Paid: {totPayment}")
+            '  Dim totChange As String = tbxAddChange.Text
+            '  receipt.AppendLine($"Total Change: {totChange}")
+            '  receipt.AppendLine($"Transaction Date: {DateTime.UtcNow.ToString("MMM. dd, yyyy hh:mm tt")}")
+            '  ' Display the receipt
+            '  MessageBox.Show(receipt.ToString(), "Receipt", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Optionally, you can also print the receipt using PrintDocument and PrintPreviewDialog
+            ' Uncomment the following lines if you want to enable printing
+            Dim printDocument As New PrintDocument()
+            AddHandler printDocument.PrintPage, AddressOf generateWaitPrintReceipt
+            Dim printPreviewDialog As New PrintPreviewDialog()
+            printPreviewDialog.Document = printDocument
+            printPreviewDialog.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while generating the receipt: " & ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
+    ' Uncomment the following lines if you want to enable printing
+    Private Sub generateWaitPrintReceipt(sender As Object, e As PrintPageEventArgs)
+        Dim graphics As Graphics = e.Graphics
+        Dim font As New Font("Courier New", 8)
+        Dim yPos As Single = 10
+
+        ' Use the graphics object to draw the receipt content
+        graphics.DrawString("ATV RENTAL RECEIPT", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Transaction Date: {DateTime.UtcNow.ToString("MMM. dd, yyyy hh:mm tt")}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Customer: {tbxWaitCustName.Text}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Trail Name: {tbxWaitTour.Text}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Tour Guide: {cbxWaitTourGuide.SelectedItem.ToString}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Total Person: {tbxWaitPerson.Text}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        'Dim pricePerHead As String = lblTourPrice.Text
+        'graphics.DrawString($"Trail Price/Head: {pricePerHead}", font, Brushes.Black, 10, yPos)
+        'yPos += 15
+        'Dim totPayment As String = tbxWaitTotPrice.Text
+        'Dim totChange As String = tbxWaitChange.Text
+        graphics.DrawString($"Downpayment: {tbxWaitInitPayment.Text}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Balance: {tbxWaitBalance.Text}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Total Paid: {tbxWaitFinPayment.Text}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+        graphics.DrawString($"Change: {tbxWaitChange.Text}", font, Brushes.Black, 10, yPos)
+        yPos += 15
+    End Sub
 
 
 
@@ -588,7 +818,7 @@ Public Class ctrlTransactions
                 rmsSharedVar.colTransac.UpdateOne(filter, updateDefinition)
 
                 populateTransac()
-                MessageBox.Show("Trail ended successfully!" & vbCrLf & vbCrLf & "ATVs and tour guide are now set as available.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Trail ended successfully!" & vbCrLf & vbCrLf & "ATVs and tour guide are now set as available.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 MessageBox.Show("Please select on-going transaction first.")
             End If

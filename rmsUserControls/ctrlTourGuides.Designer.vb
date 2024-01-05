@@ -413,7 +413,7 @@ Partial Class ctrlTourGuides
         Me.btnDelEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelEmp.Font = New System.Drawing.Font("Trebuchet MS", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelEmp.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnDelEmp.Location = New System.Drawing.Point(965, 177)
+        Me.btnDelEmp.Location = New System.Drawing.Point(945, 157)
         Me.btnDelEmp.Name = "btnDelEmp"
         Me.btnDelEmp.Size = New System.Drawing.Size(182, 60)
         Me.btnDelEmp.TabIndex = 10
@@ -429,7 +429,7 @@ Partial Class ctrlTourGuides
         Me.btnUpdEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdEmp.Font = New System.Drawing.Font("Trebuchet MS", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdEmp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(21, Byte), Integer))
-        Me.btnUpdEmp.Location = New System.Drawing.Point(965, 91)
+        Me.btnUpdEmp.Location = New System.Drawing.Point(945, 71)
         Me.btnUpdEmp.Name = "btnUpdEmp"
         Me.btnUpdEmp.Size = New System.Drawing.Size(182, 65)
         Me.btnUpdEmp.TabIndex = 9
@@ -458,7 +458,7 @@ Partial Class ctrlTourGuides
         Me.TabPage2.Location = New System.Drawing.Point(4, 29)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1224, 340)
+        Me.TabPage2.Size = New System.Drawing.Size(1235, 340)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "  Add new tour guide   "
         '
